@@ -12,11 +12,11 @@ endif()
 
 include_directories(${CCP4_INCLUDE_DIRS})
 
-add_executable(privateer
+add_executable(privateer-validate
                clipper-glyco.cpp clipper-glyco_data.cpp
                privateer-lib.cpp privateer-validate.cpp)
 
-target_link_libraries(privateer ${CCP4_LIBRARIES})
+target_link_libraries(privateer-validate ${CCP4_LIBRARIES})
 
-install(TARGETS privateer DESTINATION bin)
+install(TARGETS privateer-validate DESTINATION bin)
 
