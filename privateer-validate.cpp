@@ -174,7 +174,7 @@ int main(int argc, char** argv)
 		std::cout << "\t-radiusin <value>\t\tOptional: provide a radius for the calculation of the mask around the target sugar. Default value is 1.5 angstroems" << std::endl;
 		std::cout << "\t-mode <batch|normal>\t\tOptional: mode of operation. Defaults to normal.\n\t\t\t\t\tBatch mode produces a file containing handy tabbed values for use with your favourite spreadsheet software" << std::endl << std::endl;
 		std::cout << "\tThe program will also produce a visual checklist with the conflicting sugar models in the form of Scheme and Python scripts for use with Coot" << std::endl;
-	  	std::cout << "\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.scm'" << std::endl;
+	  	std::cout << "\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.py'" << std::endl;
 		std::cout << "\tBlue map: 2mFo-DFc map. Pink map: mFo-DFc omit map. All sugars are omitted from phase calculation for the fourier synthesis." << std::endl << std::endl;
 		std::cout << "\tThe Real Space Correlation Coefficient (RSCC) is computed against the omit map in order to avoid bias" << std::endl << std::endl;
 		
