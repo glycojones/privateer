@@ -84,20 +84,36 @@ void privateer::insert_coot_prologue_scheme ( std::fstream& output )
 
 void privateer::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit )
 {
-	output  << "(handle-read-draw-molecule \"" << pdb << "\")\n"
-			<< "(handle-read-ccp4-map \"" << mapbest << "\" 0)\n"
+	output  << "(handle-read-draw-molecule \"" << pdb << "\")\n";
+	if ( mapbest == "" )
+	{			
+		output << "(set-last-map-colour 1.00  0.13  0.89)\n"
+		<< "(interesting-things-gui \"Validation report from Privateer\"\n\t(list\n\t\t";
+	}
+	else
+	{		
+		output << "(handle-read-ccp4-map \"" << mapbest << "\" 0)\n"
 			<< "(handle-read-ccp4-map \"" << mapomit << "\" 1)\n"
 			<< "(set-last-map-colour 1.00  0.13  0.89)\n"
 		    << "(interesting-things-gui \"Validation report from Privateer\"\n\t(list\n\t\t";
+	}
 }
  
 void privateer::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit )
 {
-	output  << "handle_read_draw_molecule (\"" << pdb << "\")\n"
-			<< "handle_read_ccp4_map (\"" << mapbest << "\", 0)\n"
-			<< "handle_read_ccp4_map (\"" << mapomit << "\", 1)\n"
-			<< "set_last_map_colour  (1.00,  0.13,  0.89)\n"
-			<< "interesting_things_gui (\"Validation report from Privateer\",[\n";
+	output  << "handle_read_draw_molecule (\"" << pdb << "\")\n";
+	if ( mapbest == "" )
+	{
+		output << "set_last_map_colour  (1.00,  0.13,  0.89)\n"
+			   << "interesting_things_gui (\"Validation report from Privateer\",[\n";
+	}
+	else
+	{
+		output << "handle_read_ccp4_map (\"" << mapbest << "\", 0)\n"
+		<< "handle_read_ccp4_map (\"" << mapomit << "\", 1)\n"
+		<< "set_last_map_colour  (1.00,  0.13,  0.89)\n"
+		<< "interesting_things_gui (\"Validation report from Privateer\",[\n";
+	}
 } 
 
 void privateer::insert_coot_epilogue_scheme ( std::fstream& output )

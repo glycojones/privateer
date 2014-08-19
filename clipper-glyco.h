@@ -231,7 +231,8 @@ namespace clipper
 			stereochemistry_pairs 					get_stereochemistry ( const clipper::MiniMol& ); // accesses object
 			bool 									is_stereocentre ( const clipper::MAtom&, const clipper::MiniMol& ); // accesses object
 			bool 									is_part_of_ring ( const clipper::MAtom&, const std::vector<clipper::MAtom> ) const;
-			bool 									bonded ( const clipper::MAtom&, const clipper::MAtom& ) const;
+			bool 									bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
+			bool 									bonded ( const clipper::MAtom&, const clipper::MAtom& ) const; 
 			const char 								get_altconf ( const clipper::MAtom& ) const;
 			bool 									lookup_database ( clipper::String );
 			void									examine_linkages();

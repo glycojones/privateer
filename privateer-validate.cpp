@@ -62,6 +62,7 @@ int main(int argc, char** argv)
   	int n_param = 20;
   	bool useMTZ = false;
   	bool batch = false;
+	bool noMaps = false;
 	bool allSugars = true;
 	bool showGeom = false;
 	float ipradius = 1.5;    // default value, punishing enough!
@@ -141,7 +142,11 @@ int main(int argc, char** argv)
 	else if ( args[arg] == "-showgeom" )
 	{
 		showGeom = true;
-	} 
+	}
+    else if ( args[arg] == "-nomaps" )
+	{
+		noMaps = true;
+	}
 	else 
 	{
       std::cout << "\nUnrecognised:\t" << args[arg] << std::endl;
@@ -159,8 +164,10 @@ int main(int argc, char** argv)
 			return 1;
 		}
 	}
+  
+  if ( (ippdb != "NONE") && ((ipcif == "NONE") && (ipmtz == "NONE")) ) noMaps = true;
 
-  if ( (ippdb == "NONE") || ((ipcif == "NONE") && (ipmtz == "NONE")) )
+  if ( (ippdb == "NONE") || ((ipcif == "NONE") && (ipmtz == "NONE") && (noMaps == false)) )
   {
 		std::cout << "\nUsage: privateer-validate" << std::endl << std::endl;
 		std::cout << "\t-pdbin <.pdb>\t\t\tCOMPULSORY: input PDB file to examine" << std::endl;
@@ -171,7 +178,8 @@ int main(int argc, char** argv)
 		std::cout << "\t-codein <three-letter code>\tThree-letter code (those defined by the wwPDB) for the target sugar\n\t\t\t\t\tIf this parameter is not provided, Privateer will scan and score all monosaccharides present in it's database" << std::endl;
 		std::cout << "\t-showgeom\t\t\tBond lengths, then angles and finally torsions are reported clockwise for the ring.\n\t\t\t\t";
 		std::cout << "\tFirst bond, angle and torsion for an aldopyranose: (O5-C1), (C5-O5-C1), (C5-O5-C1-C2)" << std::endl;
-		std::cout << "\t-radiusin <value>\t\tOptional: provide a radius for the calculation of the mask around the target sugar. Default value is 1.5 angstroems" << std::endl;
+		std::cout << "\t-radiusin <value>\t\tProvide a radius for the calculation of the mask around the target sugar. Default value is 1.5 angstroems" << std::endl;
+		std::cout << "\t-nomaps\t\t\t\tBypass map generation and calculate the conformational parameters straight away." << std::endl; 
 		std::cout << "\t-mode <batch|normal>\t\tOptional: mode of operation. Defaults to normal.\n\t\t\t\t\tBatch mode produces a file containing handy tabbed values for use with your favourite spreadsheet software" << std::endl << std::endl;
 		std::cout << "\tThe program will also produce a visual checklist with the conflicting sugar models in the form of Scheme and Python scripts for use with Coot" << std::endl;
 	  	std::cout << "\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.py'" << std::endl;
@@ -197,9 +205,391 @@ int main(int argc, char** argv)
    	mfile.read_file( ippdb.trim() );
     mfile.import_minimol( tmpmol );
 	
-	const clipper::MiniMol& mmol = tmpmol;
-
+	clipper::MiniMol& mmol = tmpmol;
+	
 	if (!batch) std::cout << "done." << std::endl;
+
+	if ( mmol.cell().is_null() ) 
+	{
+
+		std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
+		std::cout << " Privateer-validate will still run, but may miss important contacts described by crystallographic symmetry." << std::endl << std::endl; 
+		mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 1000, 1000, 1000, 90, 90, 90 )) );  
+
+	}
+
+	if ( noMaps )
+	{	
+		
+		
+    	clipper::Atom_list mainAtoms;
+    	clipper::Atom_list ligandAtoms;
+    	clipper::Atom_list allAtoms;
+
+		if (!batch) std::cout << std::endl << "Analysing carbohydrates... "; fflush(0);
+
+    	std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
+		std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
+
+		const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 5.0 ); // was 1.0 
+
+		// erase ligand atoms from the model and then calculate phases using
+		// the omitted model, effectively computing an omit map
+   
+		for ( int p = 0; p < mmol.size(); p++ )
+    	{	
+        	for ( int m = 0; m < mmol[p].size(); m++ )
+        	{
+				if (allSugars)
+				{
+            		if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+            		{
+                		for (int id = 0; id < mmol[p][m].size(); id++ )
+                		{
+                    		mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                    		allAtoms.push_back(mmol[p][m][id]);
+                		}
+            		}
+            		else // it's one of the sugars contained in the database
+            		{
+					
+						clipper::MSugar msug(mmol, mmol[p][m], manb); 
+                
+						sugarList.push_back(mmol[p][m]);
+						ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+
+						if ( msug.type_of_sugar() == "unsupported" ) 
+						{
+							std::cout << std::endl << "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." << std::endl << std::endl;  
+							prog.set_termination_message( "Unrecoverable error" );
+							return 0;
+						}
+
+						for (int id = 0; id < mmol[p][m].size(); id++ )
+                		{
+                    		ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    		allAtoms.push_back(mmol[p][m][id]);
+                		}
+            		}
+
+				}
+
+				else
+				{ 
+					if ( strncmp( mmol[p][m].type().c_str(), ipcode.trim().c_str(), 3 )) // true if strings are different
+            		{
+               		 	for (int id = 0; id < mmol[p][m].size(); id++ )
+               		 	{
+                    		mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                    		allAtoms.push_back(mmol[p][m][id]);
+                		}
+            		}
+            		else // it's the ligand we're looking to omit
+            		{
+						const clipper::MSugar msug(mmol, mmol[p][m], manb);
+                
+						sugarList.push_back(mmol[p][m]);
+						ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+                
+						for (int id = 0; id < mmol[p][m].size(); id++ )
+                		{
+                	    	ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    		allAtoms.push_back(mmol[p][m][id]);
+                		}
+            		}	
+				}	
+    	    }
+   	 	}
+
+
+
+    	if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tBonds\tAngles\t Ok?");
+		if (!batch && showGeom) printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
+    	if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t-----\t------\t-----");
+		if (!batch && showGeom) printf("\t------------------------------------------------------------------------------------------------------------");
+		if (!batch) printf("\n");
+
+    	for (int index = 0; index < ligandList.size(); index++)
+    	{
+
+        	float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+        	x=y=z=0.0;
+        	maxX=maxY=maxZ=-999999.0;
+        	minX=minY=minZ=999999.0;
+
+        	for (int natom = 0; natom < sugarList[index].size(); natom++)
+        	{
+            	if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+            	if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+            	if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+            	if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+            	if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+            	if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+        	}
+
+        	x = minX + ((maxX - minX)/2);
+        	y = minY + ((maxY - minY)/2);
+        	z = minZ + ((maxZ - minZ)/2);
+
+			if (batch)
+			{
+				fprintf(output, "%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was trimmed
+				fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
+			}
+			else
+			{
+				printf("%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was also trimmed
+				std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
+			}
+
+			if (batch)
+			{
+				std::vector<clipper::ftype> cpParams(10, 0);
+				cpParams = ligandList[index].second.cremer_pople_params();
+				fprintf(output,"\t%1.3f\t%3.2f\t%3.2f\t",cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
+				fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
+				fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
+
+				float bfac = 0.0;
+				for (int i=0; i < ligandList[index].second.size(); i++)
+					bfac+=ligandList[index].second[i].u_iso();
+				bfac /= ligandList[index].second.size();
+				bfac  = clipper::Util::u2b(bfac);
+
+				fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());	// output <bfactor>
+
+
+				if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+				{
+					if ((ligandList[index].second.ring_members().size() == 6 ))
+					{
+						if (ligandList[index].second.is_sane())
+						{
+							if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() != "L" ))
+							|| ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() != "D")) ) 
+								fprintf(output, "\tcheck");
+							else fprintf(output, "\t yes");
+						}
+						else fprintf (output, "\t no");
+					}
+					else if (ligandList[index].second.is_sane()) fprintf(output, "\t yes");
+						 else fprintf(output, "\t no");
+				}
+				else fprintf(output, "\t unk"); 
+	
+				bool occupancy_check = false;
+				std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
+
+				for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+				{
+					if (get_altconformation(ringcomponents[i]) != ' ') occupancy_check = true;
+				}
+
+				if (showGeom)
+				{
+					std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+					std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+					std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+					for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  fprintf(output, "\t%1.2f", rbonds[i]);
+					for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  fprintf(output, "\t%3.1f", rangles[i]);
+					for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  fprintf(output, "\t%3.1f", rtorsions[i]);
+				}
+			
+				if (occupancy_check) fprintf(output, " (*)");
+
+				fprintf(output, "\n");
+		
+			}
+			else 
+			{
+		
+			std::vector<clipper::ftype> cpParams(10, 0);
+			cpParams = ligandList[index].second.cremer_pople_params();
+			printf("\t%1.3f\t%3.2f\t%3.2f\t",cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
+			printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
+			printf("%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
+
+			float bfac = 0.0;
+			
+			for (int i=0; i < ligandList[index].second.size(); i++)
+				bfac+=ligandList[index].second[i].u_iso();
+			bfac /= ligandList[index].second.size();
+			bfac  = clipper::Util::u2b(bfac);
+			printf("%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());			// output <Bfactor>
+
+			
+			if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+			{
+				if ((ligandList[index].second.ring_members().size() == 6 ))
+				{
+					if (ligandList[index].second.is_sane())
+					{
+						if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() == "D" ))
+						|| ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() == "L")) ) 
+							printf("\tcheck");
+						else printf("\t yes");
+					}
+					else printf ("\t no");
+				}
+				else if (ligandList[index].second.is_sane()) printf("\t yes");
+					 else printf("\t no");
+			}
+			else printf("\t unk"); 
+
+			bool occupancy_check = false;
+			std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
+
+			for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+			{
+				if (get_altconformation(ringcomponents[i]) != ' ') occupancy_check = true;
+			}
+			
+			if (showGeom)
+			{
+				std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+				std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+				std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+				for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%1.2f", rbonds[i]);
+				for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rangles[i]);
+				for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rtorsions[i]);
+			}
+
+			if (occupancy_check) std::cout << " (*)";
+			
+			std::cout << std::endl;
+		}
+	}
+
+	if (!batch) 
+	{		
+    	printf("\n");
+		std::cout << "The results for those monosaccharides marked with (*) correspond to the first of at least two possible conformations, each with occupancy < 1.0" << std::endl << std::endl;
+	}
+	else fclose(output);
+
+	std::fstream of_scm; std::fstream of_py;
+	of_scm.open("privateer-results.scm", std::fstream::out);
+	of_py.open("privateer-results.py", std::fstream::out);
+	privateer::insert_coot_prologue_scheme ( of_scm );
+	privateer::insert_coot_prologue_python ( of_py );
+
+	clipper::String all_MapName, dif_MapName, omit_dif_MapName;
+   	all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";	
+
+	privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName );
+	privateer::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName );
+	
+	int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
+		
+	int sugar_count = 0;
+
+	for (int k = 0 ; k < ligandList.size() ; k++)
+	{
+		int n_errors = 0;
+	
+		clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim() + ": " ;
+		
+		if (ligandList[k].second.is_supported() )
+ 		{	
+			if ( ! ligandList[k].second.is_sane() )
+			{
+				sugar_count++;
+
+				if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) ) 
+				{ 
+					diagnostic.append("bad geometry");
+					n_errors++; n_geom++;
+				}
+			
+				if (!ligandList[k].second.ok_with_anomer()) 
+				{
+					if ( n_errors > 0 ) diagnostic.append(", wrong anomer");
+					else diagnostic.append("wrong anomer");
+
+					n_errors++; n_anomer++;
+				}
+			
+				if (!ligandList[k].second.ok_with_chirality()) 
+				{
+					if ( n_errors > 0 ) diagnostic.append(", wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());
+					else diagnostic.append("wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());
+				
+					n_errors++; n_config++;
+				}
+
+				if ((ligandList[k].second.puckering_amplitude() < 0.5 ) ||(ligandList[k].second.puckering_amplitude() > 0.9 )) 
+				{
+					if ( n_errors > 0 ) diagnostic.append(", Q=" + clipper::String(ligandList[k].second.puckering_amplitude()) );
+					else diagnostic.append("Q=" + clipper::String( ligandList[k].second.puckering_amplitude() ));
+			
+					n_errors++; n_pucker++;
+				}
+
+				if (ligandList[k].second.ring_members().size() == 6 )	
+				{
+	
+					if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
+						|| ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) ) 
+					{
+						if ( n_errors > 0 ) diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+						else diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+							
+					n_errors++; n_conf++;
+	
+					}					
+
+				}
+
+				privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
+				privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+			}
+			else // sugar is sane, but still need to check higher-energy conformations
+			{
+				if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
+				|| ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
+				{
+					if ( n_errors > 0 ) diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+					else diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+					n_errors++; n_conf++;
+					sugar_count++;
+					privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );			
+					privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+				}
+			}
+		}
+	}
+	
+
+
+	privateer::insert_coot_epilogue_scheme ( of_scm );
+	privateer::insert_coot_epilogue_python ( of_py );
+	of_scm.close();
+	of_py.close();
+
+	std::cout << "SUMMARY: " << std::endl << std::endl ;
+	std::cout << "   Irregular geometry: " << n_geom << std::endl;
+	std::cout << "   Wrong anomer: " << n_anomer << std::endl;
+	std::cout << "   Wrong configuration: " << n_config << std::endl;
+	std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
+	std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
+	std::cout << std::endl;
+	std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf << " issues, with " << sugar_count << " sugars affected." << std::endl;
+	
+
+
+
+
+
+		prog.set_termination_message( "Normal termination" );
+    	system("touch scored");
+    	return 0;
+	
+	}
+
+
+
 
 
     if (useMTZ)
