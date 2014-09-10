@@ -44,7 +44,10 @@ char get_altconformation(clipper::MAtom ma);
 int main(int argc, char** argv)
 {
 
-	CCP4Program prog( "Privateer-validate", "MKII-b4", "$Date: 2014/08/01" );
+	clipper::String program_version = "MK II-";
+	program_version.append(SVN_REV);
+
+	CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2014/08/01" );
  	prog.set_termination_message( "Failed" );
 
 	clipper::HKL_info hklinfo; // allocate space for the hkl metadata
@@ -123,9 +126,9 @@ int main(int argc, char** argv)
       	}
 		if (!clipper::MSugar::search_database(ipcode.c_str()))
 		{
-				std::cout << std::endl << std::endl << "Error: " << ipcode << " is not a known monosaccharide." << std::endl << std::endl ;
-				prog.set_termination_message( "Failed" );
-				return 1;
+				std::cout << std::endl << std::endl << "Caution: " << ipcode << " is not a known monosaccharide. Skipping sanity check." << std::endl << std::endl ;
+				//prog.set_termination_message( "Failed" );
+				//return 1;
 		}	
       }
     } else if ( args[arg] == "-mode" ) 
@@ -226,7 +229,7 @@ int main(int argc, char** argv)
     	clipper::Atom_list ligandAtoms;
     	clipper::Atom_list allAtoms;
 
-		if (!batch) std::cout << std::endl << "Analysing carbohydrates... "; fflush(0);
+		if (!batch) std::cout << std::endl << "Analysing carbohydrates... \n"; fflush(0);
 
     	std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
 		std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
@@ -275,7 +278,7 @@ int main(int argc, char** argv)
 				}
 
 				else
-				{ 
+				{
 					if ( strncmp( mmol[p][m].type().c_str(), ipcode.trim().c_str(), 3 )) // true if strings are different
             		{
                		 	for (int id = 0; id < mmol[p][m].size(); id++ )
@@ -575,16 +578,11 @@ int main(int argc, char** argv)
 	std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
 	std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
 	std::cout << std::endl;
-	std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf << " issues, with " << sugar_count << " sugars affected." << std::endl;
+	std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
 	
-
-
-
-
-
-		prog.set_termination_message( "Normal termination" );
-    	system("touch scored");
-    	return 0;
+	prog.set_termination_message( "Normal termination" );
+    system("touch scored");
+    return 0;
 	
 	}
 
@@ -964,7 +962,7 @@ int main(int argc, char** argv)
 		else if (!batch) std::cout << "skipped. You must supply an input MTZ from which columns can be read and transferred to the output MTZ." << std::endl << std::endl;
 	}
 
-    if (!batch) printf("\n R-work = %1.3f  R-omit = %1.3f\n", (FobsFcalcAllSum / FobsSum), (FobsFcalcSum / FobsSum));
+    if (!batch) printf("\n R-all = %1.3f  R-omit = %1.3f\n", (FobsFcalcAllSum / FobsSum), (FobsFcalcSum / FobsSum));
 	if (!batch)
 		if (((FobsFcalcAllSum / FobsSum)*10) > hklinfo.resolution().limit() + 0.6) std::cout << " Warning: R-work is unusually high. Please ensure that your PDB file contains full B-factors instead of residuals after TLS refinement!" << std::endl;
 
@@ -1378,7 +1376,7 @@ int main(int argc, char** argv)
 	std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
 	std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
 	std::cout << std::endl;
-	std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf << " issues, with " << sugar_count << " sugars affected." << std::endl;
+	std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
 	
 
 	prog.set_termination_message( "Normal termination" );

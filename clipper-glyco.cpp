@@ -200,46 +200,56 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	
 	if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
-	
-	if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) ) 
-		|| ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
-			sugar_diag_chirality = true; 
-	else sugar_diag_chirality = false;
 
-
-	if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
-		|| ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
-			sugar_diag_anomer = true;
-	else sugar_diag_anomer = false;
-
-	if (sugar_ring_elements.size() == 5)
+	if (this->sugar_found_db)
 	{
-		if (sugar_ring_bond_rmsd < 0.040 ) 
-			sugar_diag_bonds_rmsd = true; 
-		else sugar_diag_bonds_rmsd = false; 
-	}
-	else 
-	{	
-		if (sugar_ring_bond_rmsd < 0.035 ) 
-			sugar_diag_bonds_rmsd = true; 
-		else sugar_diag_bonds_rmsd = false; 
-	}
 
-	if (sugar_ring_elements.size() ==  5)
-	{
-		if ((sugar_ring_angle_rmsd > 4.0 ) && (sugar_ring_angle_rmsd < 7.5)) 
-			sugar_diag_angles_rmsd = true; 
-		else sugar_diag_angles_rmsd = false;
-	}
-	else 
-	{
-		if (sugar_ring_angle_rmsd < 4.0 ) 
-			sugar_diag_angles_rmsd = true; 
-		else sugar_diag_angles_rmsd = false;
-	}
+		if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) ) 
+			|| ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
+				sugar_diag_chirality = true; 
+		else sugar_diag_chirality = false;
 
-	if (sugar_diag_angles_rmsd && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
-	
+
+		if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
+			|| ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
+				sugar_diag_anomer = true;
+		else sugar_diag_anomer = false;
+
+		if (sugar_ring_elements.size() == 5)
+		{
+			if (sugar_ring_bond_rmsd < 0.040 ) 
+				sugar_diag_bonds_rmsd = true; 
+			else sugar_diag_bonds_rmsd = false; 
+		}
+		else 
+		{		
+			if (sugar_ring_bond_rmsd < 0.035 ) 
+				sugar_diag_bonds_rmsd = true; 
+			else sugar_diag_bonds_rmsd = false; 
+		}
+
+		if (sugar_ring_elements.size() ==  5)
+		{
+			if ((sugar_ring_angle_rmsd > 4.0 ) && (sugar_ring_angle_rmsd < 7.5)) 
+				sugar_diag_angles_rmsd = true; 
+			else sugar_diag_angles_rmsd = false;
+		}
+		else 
+		{
+			if (sugar_ring_angle_rmsd < 4.0 ) 
+				sugar_diag_angles_rmsd = true; 
+			else sugar_diag_angles_rmsd = false;
+		}
+
+		if (sugar_diag_angles_rmsd && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+	}
+	else
+	{
+		sugar_diag_anomer=false;
+		sugar_diag_chirality=false;
+		sugar_diag_bonds_rmsd=false;
+		sugar_diag_angles_rmsd=false;
+	}
 
 	#ifdef DUMP
 		DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
