@@ -32,6 +32,9 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
+#ifndef SVN_REV
+#define SVN_REV "unknown"
+#endif
 
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
@@ -199,7 +202,7 @@ int main(int argc, char** argv)
     
 	clipper::MMDBManager mmdb;
     clipper::MMDBfile mfile;
-    const int mmdbflags = MMDBF_IgnoreBlankLines | MMDBF_IgnoreDuplSeqNum | MMDBF_IgnoreNonCoorPDBErrors | MMDBF_IgnoreRemarks | MMDBF_EnforceUniqueChainID;
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
     mfile.SetFlag( mmdbflags );
 	
 	clipper::MiniMol tmpmol;
