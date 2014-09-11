@@ -33,7 +33,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 #ifndef SVN_REV
-#define SVN_REV "unknown"
+#define SVN_REV "ccp4"
 #endif
 
 using clipper::data32::F_sigF;
