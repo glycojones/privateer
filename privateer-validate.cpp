@@ -211,6 +211,8 @@ int main(int argc, char** argv)
    	mfile.read_file( ippdb.trim() );
     mfile.import_minimol( tmpmol );
 	
+	int pos_slash = ippdb.rfind("/");
+
 	clipper::MiniMol& mmol = tmpmol;
 	
 	if (!batch) std::cout << "done." << std::endl;
@@ -339,12 +341,12 @@ int main(int argc, char** argv)
 
 			if (batch)
 			{
-				fprintf(output, "%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was trimmed
+				fprintf(output, "%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 				fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
 			}
 			else
 			{
-				printf("%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was also trimmed
+				printf("%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 				std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
 			}
 
@@ -984,15 +986,15 @@ int main(int argc, char** argv)
 	if (allSugars) ipcode = "all";
 
     char all_MapName[40];
-    sprintf(all_MapName, "%c%c%c%c_sigmaa_best_%s.map",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ipcode.trim().c_str());
+    sprintf(all_MapName, "%c%c%c%c_sigmaa_best_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
     all_MapName[24]='\0';
 	
     char dif_MapName[40];
-    sprintf(dif_MapName, "%c%c%c%c_sigmaa_diff_%s.map",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ipcode.trim().c_str());
+    sprintf(dif_MapName, "%c%c%c%c_sigmaa_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
     dif_MapName[24]='\0';
 
 	char omit_dif_MapName[40];
-    sprintf(omit_dif_MapName, "%c%c%c%c_sigmaa_omit_diff_%s.map",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ipcode.trim().c_str());
+    sprintf(omit_dif_MapName, "%c%c%c%c_sigmaa_omit_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
     omit_dif_MapName[29]='\0';
 
 	clipper::Map_stats ms;
@@ -1053,12 +1055,12 @@ int main(int argc, char** argv)
 
 		if (batch)
 		{
-			fprintf(output, "%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was trimmed
+			fprintf(output, "%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 			fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
 		}
 		else
 		{
-			printf("%c%c%c%c\t   %s-",ippdb[0],ippdb[1],ippdb[2],ippdb[3], ligandList[index].second.type().c_str()); // the latest was also trimmed
+			printf("%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 			std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
 		}
 
