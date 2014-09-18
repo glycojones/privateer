@@ -47,7 +47,7 @@ char get_altconformation(clipper::MAtom ma);
 int main(int argc, char** argv)
 {
 
-	clipper::String program_version = "MK II-";
+	clipper::String program_version = "MKII-";
 	program_version.append(SVN_REV);
 
 	CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2014/08/01" );
