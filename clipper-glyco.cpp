@@ -64,6 +64,13 @@
 using namespace clipper;
 
 
+/*! Constructor: Empty constructor for later initialisation. */
+
+MSugar::MSugar( )
+{
+
+}
+
 /*! Constructor: create a new sugar object from a standard MMonomer.
 	  If reference data for the sugar cannot be found in the database, the members of the ring will be determined using a recursive version of Fleury's algorithm for finding eulerian cycles in undirected graphs
 	\param ml A MiniMol object containing this and neighbouring sugars, which may affect the stereochemistry

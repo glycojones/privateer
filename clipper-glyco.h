@@ -78,7 +78,8 @@ namespace clipper
 
 		public:
 
-			MSugar(const clipper::MiniMol& mmol, const clipper::MMonomer& mmon); //!< default constructor
+            MSugar();
+            MSugar(const clipper::MiniMol& mmol, const clipper::MMonomer& mmon); //!< default constructor
 			MSugar(const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb); //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
 			clipper::String conformation_name()
@@ -146,7 +147,11 @@ namespace clipper
 			bool ok_with_bonds_rmsd() { return sugar_diag_bonds_rmsd; }
 			bool ok_with_angles_rmsd() { return sugar_diag_angles_rmsd; }
 			bool ok_with_anomer() { return sugar_diag_anomer; }
-			bool ok_with_chirality() { return sugar_diag_chirality; }			
+			bool ok_with_chirality() { return sugar_diag_chirality; }
+                        clipper::ftype get_rscc() { return sugar_rscc; }
+                        void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
+                        clipper::String get_diagnostic() { return sugar_diagnostic; }
+                        void set_diagnostic ( clipper::String message ) { sugar_diagnostic = message; }                       
 
 		private:
 
@@ -180,40 +185,42 @@ namespace clipper
 
 			// We'll use the sugar_ prefix throughout the class for private members
 
-			const MiniMol*					sugar_parent_molecule;
-			const MAtomNonBond*				sugar_parent_molecule_nonbond;
-			Coord_orth 						sugar_centre;
-			clipper::Vec3<clipper::ftype> 	sugar_mean_plane;
-			std::vector<MAtom> 				sugar_ring_elements;
-			std::vector<ftype> 				sugar_cremer_pople_params; 	 		// (1) puckering amplitude, (2..) angles
-			clipper::MAtom					sugar_anomeric_carbon;
-			clipper::MAtom					sugar_configurational_carbon;
-			clipper::MAtom					sugar_anomeric_substituent;
-			clipper::MAtom					sugar_configurational_substituent;
-			bool 							sugar_found_db; 					// true if the sugar's code is present in the reference data structure
-			bool 							sugar_sane; 						// true if passed sanity checks
-			bool							sugar_supported;					// false if the sugar has no connectivity, missing atoms, etc.
-			std::vector<clipper::ftype>		sugar_ring_bonds;					// bond lengths among ring. [0] is O to anomeric carbon
-			std::vector<clipper::ftype>		sugar_ring_angles;					// ring angles, starting with last_carbon-O-anomeric carbon
-			std::vector<clipper::ftype>		sugar_ring_torsion;					// torsion angles, starting with C5-O5-C1-C2
-			int 							sugar_index; 						// 9999 if unchecked, 101010 if absent from the database, 0-400 if found
-			String 							sugar_denomination;					// e.g. alpha-aldopyranose
-			String 							sugar_anomer;						// "alpha", "beta" or "undetermined"
-			String 							sugar_handedness; 					// "D", "L" or "undetermined"
-			String							sugar_type;							// i.e. "aldose" or "ketose"
-			String							sugar_name;
-			bool							sugar_diag_ring;
-			bool							sugar_diag_bonds_rmsd;
-			bool							sugar_diag_angles_rmsd;
-			bool							sugar_diag_anomer;
-			bool							sugar_diag_chirality;
-			clipper::ftype					sugar_ring_bond_rmsd;
-			clipper::ftype					sugar_ring_angle_rmsd;
-			int 							sugar_conformation;
-			clipper::String					sugar_alternate_confcode;
-			std::vector<MAtomIndexSymmetry>	sugar_linked_to;					// sugar_linked_to[0] -> Oxygen from OTHER sugar linked to C1, e.g. O4.
-																				// sugar_linked_to[5] -> Carbon from OTHER sugar linked 1-6 to THIS sugar, i.e. C1.
-																				// size: number of carbon atoms;
+			const MiniMol*                  sugar_parent_molecule;
+			const MAtomNonBond*             sugar_parent_molecule_nonbond;
+			Coord_orth                      sugar_centre;
+			clipper::Vec3<clipper::ftype>   sugar_mean_plane;
+			std::vector<MAtom>              sugar_ring_elements;
+			std::vector<ftype>              sugar_cremer_pople_params;          // (1) puckering amplitude, (2..) angles
+			clipper::MAtom                  sugar_anomeric_carbon;
+			clipper::MAtom                  sugar_configurational_carbon;
+			clipper::MAtom                  sugar_anomeric_substituent;
+			clipper::MAtom                  sugar_configurational_substituent;
+			bool                            sugar_found_db;                     // true if the sugar's code is present in the reference data structure
+			bool                            sugar_sane;                         // true if passed sanity checks
+			bool                            sugar_supported;                    // false if the sugar has no connectivity, missing atoms, etc.
+			std::vector<clipper::ftype>     sugar_ring_bonds;                   // bond lengths among ring. [0] is O to anomeric carbon
+			std::vector<clipper::ftype>     sugar_ring_angles;                  // ring angles, starting with last_carbon-O-anomeric carbon
+			std::vector<clipper::ftype>     sugar_ring_torsion;                 // torsion angles, starting with C5-O5-C1-C2
+			int                             sugar_index;                        // 9999 if unchecked, 101010 if absent from the database, 0-400 if found
+			String                          sugar_denomination;                 // e.g. alpha-aldopyranose
+			String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
+			String                          sugar_handedness;                   // "D", "L" or "undetermined"
+			String                          sugar_type;                         // i.e. "aldose" or "ketose"
+			String                          sugar_name;
+			bool                            sugar_diag_ring;
+			bool                            sugar_diag_bonds_rmsd;
+			bool                            sugar_diag_angles_rmsd;
+			bool                            sugar_diag_anomer;
+			bool                            sugar_diag_chirality;
+                        clipper::String                 sugar_diagnostic;                   // full diagnostic to be used in Coot and ccp4i2
+                        clipper::ftype                  sugar_rscc;                         // RSCC to be used in Coot and ccp4i2
+			clipper::ftype                  sugar_ring_bond_rmsd;
+			clipper::ftype                  sugar_ring_angle_rmsd;
+			int                             sugar_conformation;
+			clipper::String                 sugar_alternate_confcode;
+			std::vector<MAtomIndexSymmetry> sugar_linked_to;		    // sugar_linked_to[0] -> Oxygen from OTHER sugar linked to C1, e.g. O4.
+											    // sugar_linked_to[5] -> Carbon from OTHER sugar linked 1-6 to THIS sugar, i.e. C1.
+											    // size: number of carbon atoms;
 
 			// private methods
 

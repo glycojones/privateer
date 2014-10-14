@@ -59,13 +59,13 @@ int main(int argc, char** argv)
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
-    clipper::String ippdb = "NONE";
+    clipper::String ippdb    = "NONE";
     clipper::String ipcol_fo = "NONE";
-    clipper::String ipcif = "NONE";
-    clipper::String ipcode = "XXX";
-    clipper::String opfile = "privateer-validate.mtz";
-    clipper::String title = "generic title";
-    clipper::String ipmtz = "NONE";
+    clipper::String ipcif    = "NONE";
+    clipper::String ipcode   = "XXX";
+    clipper::String opfile   = "privateer-validate.mtz";
+    clipper::String title    = "generic title";
+    clipper::String ipmtz    = "NONE";
     bool useSigmaa = false;
     int n_refln = 1000;
     int n_param = 20;
@@ -259,8 +259,8 @@ int main(int argc, char** argv)
             fflush(0);
         }
 
-    	std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
-	std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
+    	std::vector < std::pair <clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
+	std::vector < clipper::MMonomer > sugarList; // store the original MMonomer
 
 	const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 5.0 ); // was 1.0 
 
@@ -286,7 +286,9 @@ int main(int argc, char** argv)
 			clipper::MSugar msug(mmol, mmol[p][m], manb); 
                 
 			sugarList.push_back(mmol[p][m]);
-			ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+                        clipper::String id = mmol[p].id();
+                        id.resize(1);
+			ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
 
 			if ( msug.type_of_sugar() == "unsupported" ) 
 			{
@@ -319,7 +321,7 @@ int main(int argc, char** argv)
 		        const clipper::MSugar msug(mmol, mmol[p][m], manb);
                 
 			sugarList.push_back(mmol[p][m]);
-			ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+			ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
                 
 			for (int id = 0; id < mmol[p][m].size(); id++ )
                 	{
@@ -339,10 +341,10 @@ int main(int argc, char** argv)
 
     	for (int index = 0; index < ligandList.size(); index++)
     	{
-            float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-            x=y=z=0.0;
-            maxX=maxY=maxZ=-999999.0;
-            minX=minY=minZ=999999.0;
+            float x, y, z, maxX, maxY, maxZ, minX, minY, minZ;
+            x = y = z = 0.0;
+            maxX = maxY = maxZ = -999999.0;
+            minX = minY = minZ =  999999.0;
 
             for (int natom = 0; natom < sugarList[index].size(); natom++)
             {
@@ -843,7 +845,10 @@ int main(int argc, char** argv)
 		    clipper::MSugar msug(mmol, mmol[p][m], manb); 
                 
 		    sugarList.push_back(mmol[p][m]);
-		    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+                    
+                    clipper::String id = mmol[p].id();
+                    id.resize(1); 
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
 
 		    if ( msug.type_of_sugar() == "unsupported" ) 
 		    {
@@ -876,8 +881,10 @@ int main(int argc, char** argv)
             	{
 		    const clipper::MSugar msug(mmol, mmol[p][m], manb);
                 
-		    sugarList.push_back(mmol[p][m]);
-		    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id(), msug));
+                    sugarList.push_back(mmol[p][m]);
+                    clipper::String id = mmol[p].id();
+                    id.resize(1);
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
                 
 		    for (int id = 0; id < mmol[p][m].size(); id++ )
                     {
@@ -1272,6 +1279,7 @@ int main(int argc, char** argv)
 	    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
 	    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
 	    fprintf(output,"%1.3f \t", accum);
+            ligandList[index].second.set_rscc ( corr_coeff );
 
 	    float bfac = 0.0;
 	    
@@ -1437,7 +1445,10 @@ int main(int argc, char** argv)
     {
         int n_errors = 0;
 	
-	clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim() + ": " ;
+	clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim();
+        clipper::String sugarRSCC = clipper::String( ligandList[k].second.get_rscc() );
+        sugarRSCC.resize(4);
+        diagnostic.append ( ": RSCC=" + sugarRSCC + ", " );
 		
 	if (ligandList[k].second.is_supported() )
  	{	
@@ -1523,6 +1534,9 @@ int main(int argc, char** argv)
 		}
 	    }
 	}
+        
+        ligandList[k].second.set_diagnostic ( diagnostic );
+    
     }
 	
 
@@ -1567,26 +1581,29 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
     of_xml.open("program.xml", std::fstream::out); 
 
     of_xml << "<PrivateerResult>\n";
-    of_xml << "\t<ValidationData>\n";
+    of_xml << "  <ValidationData>\n";
 
     for (int i = 0; i < sugarList.size() ; i++ )
     {
-        of_xml << "\t\t<Sugar>\n";
-        of_xml << "\t\t\t<SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"  ;
-        of_xml << "\t\t\t<SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n" ;
-        of_xml << "\t\t\t<SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"  ;
-        of_xml << "\t\t\t<SugarConformation>"   << sugarList[i].second.conformation_name_iupac()    << "</SugarConformation>\n" ;
-
-        //of_xml << "\t\t\t<SugarRSCC>"  << sugarList[i].second.
-
         std::vector<clipper::ftype> cpParams = sugarList[i].second.cremer_pople_params(); 
-        of_xml << "\t\t\t<SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"     ;
-        of_xml << "\t\t\t<SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"   ;
-        of_xml << "\t\t\t<SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n" ;
-        of_xml << "\t\t</Sugar>\n\n" ;
+        
+        clipper::String sugarRSCC = clipper::String ( sugarList[i].second.get_rscc() );
+        sugarRSCC.resize(4);
+
+        of_xml << "    <Sugar>\n";
+        of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
+        of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
+        of_xml << "      <SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"         ;
+        of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name_iupac()    << "</SugarConformation>\n" ;
+        of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
+        of_xml << "      <SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"            ;
+        of_xml << "      <SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"          ;
+        of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
+        of_xml << "      <SugarDiagnostic>"     << sugarList[i].second.get_diagnostic()             << "</SugarDiagnostic>\n"   ;
+        of_xml << "    </Sugar>\n\n" ;
     }
 
-    of_xml << "\t</ValidationData>\n";
+    of_xml << "  </ValidationData>\n";
     of_xml << "</PrivateerResult>\n";
 
 }
