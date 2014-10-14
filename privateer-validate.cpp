@@ -43,7 +43,7 @@ using clipper::data32::Flag;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 using namespace std;
 char get_altconformation(clipper::MAtom ma);
-
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > );
 
 int main(int argc, char** argv)
 {
@@ -1079,20 +1079,25 @@ int main(int argc, char** argv)
         ipcode = "all";
 
     char all_MapName[40];
-    if ( batch ) sprintf( all_MapName, "sigmaa_best.map\0" );
+    
+    if ( batch ) 
+        sprintf( all_MapName, "sigmaa_best.map\0" );
     else 
-    {
-        sprintf(all_MapName, "%c%c%c%c_sigmaa_best_%s.map\0",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-        //all_MapName[24]='\0';
-    }
+        sprintf ( all_MapName, "%c%c%c%c_sigmaa_best_%s.map\0",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
 
     char dif_MapName[40];
-    sprintf(dif_MapName, "%c%c%c%c_sigmaa_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-    dif_MapName[24]='\0';
+    
+    if ( batch )
+        sprintf ( dif_MapName, "sigmaa_diff.map\0" );
+    else 
+        sprintf(dif_MapName, "%c%c%c%c_sigmaa_diff_%s.map\0",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
 
     char omit_dif_MapName[40];
-    sprintf(omit_dif_MapName, "%c%c%c%c_sigmaa_omit_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-    omit_dif_MapName[29]='\0';
+
+    if ( batch )
+        sprintf ( omit_dif_MapName, "sigmaa_diff_omit.map\0" );
+    else
+        sprintf(omit_dif_MapName, "%c%c%c%c_sigmaa_omit_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
 
     clipper::Map_stats ms;
 
@@ -1537,6 +1542,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
     
+    printXML(ligandList);
 
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
@@ -1554,4 +1560,34 @@ char get_altconformation(clipper::MAtom ma)
 }			// We will return a blank character if there is no code present or if it is, but is blank
 
 
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList )
+{
+
+    std::fstream of_xml;
+    of_xml.open("program.xml", std::fstream::out); 
+
+    of_xml << "<PrivateerResult>\n";
+    of_xml << "\t<ValidationData>\n";
+
+    for (int i = 0; i < sugarList.size() ; i++ )
+    {
+        of_xml << "\t\t<Sugar>\n";
+        of_xml << "\t\t\t<SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"  ;
+        of_xml << "\t\t\t<SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n" ;
+        of_xml << "\t\t\t<SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"  ;
+        of_xml << "\t\t\t<SugarConformation>"   << sugarList[i].second.conformation_name_iupac()    << "</SugarConformation>\n" ;
+
+        //of_xml << "\t\t\t<SugarRSCC>"  << sugarList[i].second.
+
+        std::vector<clipper::ftype> cpParams = sugarList[i].second.cremer_pople_params(); 
+        of_xml << "\t\t\t<SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"     ;
+        of_xml << "\t\t\t<SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"   ;
+        of_xml << "\t\t\t<SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n" ;
+        of_xml << "\t\t</Sugar>\n\n" ;
+    }
+
+    of_xml << "\t</ValidationData>\n";
+    of_xml << "</PrivateerResult>\n";
+
+}
 
