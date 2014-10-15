@@ -1623,7 +1623,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
         of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
         of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
         of_xml << "      <SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"         ;
-        of_xml << "      <SugarConformation><![CDATA[<html>"   << sugarList[i].second.conformation_name_iupac()          << "</html>]]></SugarConformation>\n" ;
+        of_xml << "      <SugarConformation><![CDATA["   << sugarList[i].second.conformation_name_iupac()          << "]]></SugarConformation>\n" ;
         of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
         of_xml << "      <SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"            ;
         of_xml << "      <SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"          ;
