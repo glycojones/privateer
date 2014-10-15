@@ -1446,6 +1446,7 @@ int main(int argc, char** argv)
         int n_errors = 0;
 	
 	clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim();
+        clipper::String report = "";
         clipper::String sugarRSCC = clipper::String( ligandList[k].second.get_rscc() );
         sugarRSCC.resize(4);
         diagnostic.append ( ": RSCC=" + sugarRSCC + ", " );
@@ -1459,16 +1460,23 @@ int main(int argc, char** argv)
 		if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) ) 
 		{ 
 		    diagnostic.append("bad geometry");
+                    report.append("Bad geometry");
 		    n_errors++; 
                     n_geom++;
 		}
 			
 		if (!ligandList[k].second.ok_with_anomer()) 
 		{
-		    if ( n_errors > 0 ) 
+		    if ( n_errors > 0 )
+                    { 
                         diagnostic.append(", wrong anomer");
-		    else 
+                        report.append(", wrong anomer");
+                    }
+                    else
+                    { 
                         diagnostic.append("wrong anomer");
+                        report.append("Wrong anomer");
+                    }
 
 		    n_errors++; 
                     n_anomer++;
@@ -1476,22 +1484,33 @@ int main(int argc, char** argv)
 			
 		if (!ligandList[k].second.ok_with_chirality()) 
 		{
-		    if ( n_errors > 0 ) 
+		    if ( n_errors > 0 )
+                    { 
                         diagnostic.append(", wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());
-		    else 
+                        report.append(", wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());
+                    }
+                    else
+                    { 
                         diagnostic.append("wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());
-				
-		    n_errors++; 
+			report.append("Wrong configuration at " + ligandList[k].second.configurational_carbon().name().trim());	
+                    }
+                    n_errors++; 
                     n_config++;
 		}
 
 		if ((ligandList[k].second.puckering_amplitude() < 0.5 ) ||(ligandList[k].second.puckering_amplitude() > 0.9 )) 
 		{
-		    if ( n_errors > 0 ) 
+		    if ( n_errors > 0 )
+                    { 
                         diagnostic.append(", Q=" + clipper::String(ligandList[k].second.puckering_amplitude()) );
-		    else 
+                        report.append(", Q=" + clipper::String(ligandList[k].second.puckering_amplitude()) );
+                    }
+                    else 
+                    {
                         diagnostic.append("Q=" + clipper::String( ligandList[k].second.puckering_amplitude() ));
-			
+			report.append("Q=" + clipper::String(ligandList[k].second.puckering_amplitude()) );
+                    }
+
 		    n_errors++; 
                     n_pucker++;
 		}
@@ -1502,10 +1521,16 @@ int main(int argc, char** argv)
 		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) ) 
 		    {
 		        if ( n_errors > 0 ) 
+                        {
                             diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-			else 
+                            report.append(", conformation might be mistaken");
+                        }
+                        else 
+                        {
                             diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-							
+			    report.append("Conformation might be mistaken");
+                        }
+
 			n_errors++; 
                         n_conf++;
                     }					
@@ -1521,10 +1546,16 @@ int main(int argc, char** argv)
 		|| ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
 		{
 		    if ( n_errors > 0 ) 
+                    {
                         diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-		    else 
+		        report.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                    }
+                    else 
+                    {
                         diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-		    
+                        report.append("Conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                    }
+                    
                     n_errors++; 
                     n_conf++;
 					
@@ -1535,11 +1566,9 @@ int main(int argc, char** argv)
 	    }
 	}
         
-        ligandList[k].second.set_diagnostic ( diagnostic );
+        ligandList[k].second.set_diagnostic ( report );
     
     }
-	
-
 
     privateer::insert_coot_epilogue_scheme ( of_scm );
     privateer::insert_coot_epilogue_python ( of_py );
@@ -1594,7 +1623,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
         of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
         of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
         of_xml << "      <SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"         ;
-        of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name_iupac()    << "</SugarConformation>\n" ;
+        of_xml << "      <SugarConformation><![CDATA[<html>"   << sugarList[i].second.conformation_name_iupac()          << "</html>]]></SugarConformation>\n" ;
         of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
         of_xml << "      <SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"            ;
         of_xml << "      <SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"          ;
@@ -1606,5 +1635,6 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
     of_xml << "  </ValidationData>\n";
     of_xml << "</PrivateerResult>\n";
 
+    of_xml.close(); 
 }
 
