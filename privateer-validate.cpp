@@ -1515,7 +1515,7 @@ int main(int argc, char** argv)
                     n_pucker++;
 		}
 
-	        if (ligandList[k].second.ring_members().size() == 6 )	
+	        if ( (ligandList[k].second.ring_members().size() == 6 ) && (ligandList[k].second.handedness() != "N" ) )	
 	        {
 		    if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
 		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) ) 
@@ -1542,32 +1542,38 @@ int main(int argc, char** argv)
 	    }
 	    else // sugar is sane, but still need to check higher-energy conformations
 	    {
-	        if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
-		|| ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
-		{
-		    if ( n_errors > 0 ) 
-                    {
-                        diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-		        report.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-                    }
-                    else 
-                    {
-                        diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-                        report.append("Conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-                    }
+                if ( ligandList[k].second.handedness() != "N" )
+                { 
+	            if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
+		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
+		    {
+		        if ( n_errors > 0 ) 
+                        {
+                            diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+		            report.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                        }
+                        else 
+                        {
+                            diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+                            report.append("Conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                        }
                     
-                    n_errors++; 
-                    n_conf++;
+                        n_errors++; 
+                        n_conf++;
 					
-                    sugar_count++;
-		    privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );			
-		    privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
-		}
+                        sugar_count++;
+		        privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );			
+		        privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+		    }
+                }
 	    }
 	}
+
+        if ( report == "" )
+            report = "Ok";
         
         ligandList[k].second.set_diagnostic ( report );
-    
+        
     }
 
     privateer::insert_coot_epilogue_scheme ( of_scm );
@@ -1607,7 +1613,13 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
 {
 
     std::fstream of_xml;
+
     of_xml.open("program.xml", std::fstream::out); 
+    
+    of_xml << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+    of_xml << "<?xml-stylesheet type=\"text/xsl\" href=\"program.xml\"?>\n";
+    of_xml << "<xsl:stylesheet id=\"stylesheet\" version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">\n";
+    of_xml << "<xsl:value-of select=\".\" disable-output-escaping = \"yes\"/>\n" ;
 
     of_xml << "<PrivateerResult>\n";
     of_xml << "  <ValidationData>\n";
@@ -1622,18 +1634,20 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
         of_xml << "    <Sugar>\n";
         of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
         of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
-        of_xml << "      <SugarType>"           << sugarList[i].second.type_of_sugar()              << "</SugarType>\n"         ;
-        of_xml << "      <SugarConformation><![CDATA["   << sugarList[i].second.conformation_name_iupac()          << "]]></SugarConformation>\n" ;
-        of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
         of_xml << "      <SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"            ;
         of_xml << "      <SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"          ;
         of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
+        of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
+        of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;
+        of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name()          << "</SugarConformation>\n" ;
+        of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
         of_xml << "      <SugarDiagnostic>"     << sugarList[i].second.get_diagnostic()             << "</SugarDiagnostic>\n"   ;
         of_xml << "    </Sugar>\n\n" ;
     }
 
     of_xml << "  </ValidationData>\n";
     of_xml << "</PrivateerResult>\n";
+    of_xml << "</xsl:stylesheet>\n\n";
 
     of_xml.close(); 
 }
