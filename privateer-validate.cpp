@@ -1281,13 +1281,7 @@ int main(int argc, char** argv)
 	    fprintf(output,"%1.3f \t", accum);
             ligandList[index].second.set_rscc ( corr_coeff );
 
-	    float bfac = 0.0;
-	    
-            for (int i=0; i < ligandList[index].second.size(); i++)
-	        bfac+=ligandList[index].second[i].u_iso();
-			
-            bfac /= ligandList[index].second.size();
-	    bfac  = clipper::Util::u2b(bfac);
+	    float bfac = ligandList[index].second.get_bfactor ();
 
 	    fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());	// output <bfactor>
 
@@ -1542,7 +1536,7 @@ int main(int argc, char** argv)
 	    }
 	    else // sugar is sane, but still need to check higher-energy conformations
 	    {
-                if ( ligandList[k].second.handedness() != "N" )
+                if ( ( ligandList[k].second.handedness() != "N" ) && (ligandList[k].second.ring_members().size() == 6) )
                 { 
 	            if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
 		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
@@ -1626,23 +1620,43 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
 
     for (int i = 0; i < sugarList.size() ; i++ )
     {
-        std::vector<clipper::ftype> cpParams = sugarList[i].second.cremer_pople_params(); 
+        if ( ( sugarList[i].second.ring_cardinality() == 6 ) || ( sugarList[i].second.ring_cardinality() == 5 ) )
+        {
+            std::vector<clipper::ftype> cpParams = sugarList[i].second.cremer_pople_params(); 
         
-        clipper::String sugarRSCC = clipper::String ( sugarList[i].second.get_rscc() );
-        sugarRSCC.resize(4);
+            clipper::String sugarRSCC = clipper::String ( sugarList[i].second.get_rscc() );
+            sugarRSCC.resize(4);
 
-        of_xml << "    <Sugar>\n";
-        of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
-        of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
-        of_xml << "      <SugarQ>"              << cpParams[0]                                      << "</SugarQ>\n"            ;
-        of_xml << "      <SugarPhi>"            << cpParams[1]                                      << "</SugarPhi>\n"          ;
-        of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
-        of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
-        of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;
-        of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name()          << "</SugarConformation>\n" ;
-        of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
-        of_xml << "      <SugarDiagnostic>"     << sugarList[i].second.get_diagnostic()             << "</SugarDiagnostic>\n"   ;
-        of_xml << "    </Sugar>\n\n" ;
+            clipper::String puckering_amplitude = clipper::String ( sugarList[i].second.puckering_amplitude() );
+            puckering_amplitude.resize(5);
+
+            if (sugarList[i].second.ring_cardinality() == 6 ) 
+                of_xml << "    <Pyranose>\n";
+            else
+                of_xml << "    <Furanose>\n";
+
+            of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
+            of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
+            of_xml << "      <SugarQ>"              << puckering_amplitude                              << "</SugarQ>\n"            ;
+
+            if (sugarList[i].second.ring_cardinality() == 6 )
+                of_xml << "      <SugarPhi>"        << cpParams[1]                                      << "</SugarPhi>\n"          ;
+
+            of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
+            of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
+            of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;
+            of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name()          << "</SugarConformation>\n" ;
+            of_xml << "      <SugarBondRMSD>"       << sugarList[i].second.ring_bond_rmsd()             << "</SugarBondRMSD>\n"     ;
+            of_xml << "      <SugarAngleRMSD>"      << sugarList[i].second.ring_angle_rmsd()            << "</SugarAngleRMSD>\n"    ;
+            of_xml << "      <SugarBFactor>"        << sugarList[i].second.get_bfactor()                << "</SugarBFactor>\n"      ;
+            of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
+            of_xml << "      <SugarDiagnostic>"     << sugarList[i].second.get_diagnostic()             << "</SugarDiagnostic>\n"   ;
+        
+            if (sugarList[i].second.ring_cardinality() == 6 ) 
+                of_xml << "    </Pyranose>\n\n";
+            else
+                of_xml << "    </Furanose>\n\n";
+        }
     }
 
     of_xml << "  </ValidationData>\n";

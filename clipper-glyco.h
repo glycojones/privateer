@@ -132,7 +132,8 @@ namespace clipper
 				{ return sugar_ring_bond_rmsd; }
 			clipper::ftype ring_angle_rmsd()
 				{ return sugar_ring_angle_rmsd; }
-			bool in_database(clipper::String name) { return sugar_found_db; }
+                        clipper::ftype get_bfactor() { return sugar_bfactor; }
+                        bool in_database(clipper::String name) { return sugar_found_db; }
 			bool is_supported() { return sugar_supported; }
 
 			static bool search_database(clipper::String name) 
@@ -216,7 +217,8 @@ namespace clipper
                         clipper::ftype                  sugar_rscc;                         // RSCC to be used in Coot and ccp4i2
 			clipper::ftype                  sugar_ring_bond_rmsd;
 			clipper::ftype                  sugar_ring_angle_rmsd;
-			int                             sugar_conformation;
+                        clipper::ftype                  sugar_bfactor;
+                        int                             sugar_conformation;
 			clipper::String                 sugar_alternate_confcode;
 			std::vector<MAtomIndexSymmetry> sugar_linked_to;		    // sugar_linked_to[0] -> Oxygen from OTHER sugar linked to C1, e.g. O4.
 											    // sugar_linked_to[5] -> Carbon from OTHER sugar linked 1-6 to THIS sugar, i.e. C1.

@@ -96,70 +96,82 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm)
 MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb)
 {	
 
-	copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
+    copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
-	this->sugar_supported = true; 
-	this->sugar_parent_molecule = &ml;
-	this->sugar_parent_molecule_nonbond = &nb; // store pointers
+    this->sugar_supported = true; 
+    this->sugar_parent_molecule = &ml;
+    this->sugar_parent_molecule_nonbond = &nb; // store pointers
     this->sugar_index = db_not_checked;
-	this->sugar_index = 9999; // default value for "not found in database".
-	this->sugar_alternate_confcode = " "; // initially, we would like to suppose this	
+    this->sugar_index = 9999; // default value for "not found in database".
+    this->sugar_alternate_confcode = " "; // initially, we would like to suppose this	
 
-	#ifdef DUMP
-		DBG << std::endl << std::endl << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
-	#endif
+    #ifdef DUMP
+        DBG << std::endl << std::endl << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
+    #endif
 
     this->sugar_found_db = lookup_database(this->type().trim());
-	
-	if ( this->sugar_found_db )
-	{
-		#ifdef DUMP
-			DBG << "found it! " << std::endl;
-		#endif
 
-		std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
-		for (int i=0 ; i < buffer.size() ; i++) 
-		{
-			int index_atom = 0;
-			index_atom = this->lookup(buffer[i],clipper::MM::ANY);
-			if (index_atom == -1) 
-			{
-				this->sugar_supported = false;
-				this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
-				this->sugar_denomination = "    unsupported    ";
-				this->sugar_anomer = "X";
-				this->sugar_handedness = "X";
-				return;
-			}
-			else if ((*this)[index_atom].occupancy() < 1.0) // we will need to grab conformation A
-			{
-				if ( get_altconf((*this)[index_atom]) != ' ' )
-				{ 
-					index_atom = this->lookup(buffer[i].trim()+" :A",clipper::MM::UNIQUE);
-				
-					if (index_atom == -1) // same case as above
-						index_atom = this->lookup(buffer[i].trim()+" :B",clipper::MM::UNIQUE); // try grabbing conformation B instead 
-					else sugar_alternate_confcode = " :A";
-	
-					if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now 
-					{
-						this->sugar_supported = false;
-						this->sugar_sane = false;
-						this->sugar_denomination = "    unsupported    ";
-						this->sugar_anomer = "X";
-						this->sugar_handedness = "X";
-						return;
-					}
-					else sugar_alternate_confcode = " :B";
-				}
- 			}
-			sugar_ring_elements.push_back((*this)[index_atom]);
-		}
-	}
-	else
+    sugar_bfactor = 0.0;
+
+    for (int i=0; i < this->size(); i++)
+    {
+        MSugar mstmp= *this;
+        sugar_bfactor += mstmp[i].u_iso();
+    }
+
+    sugar_bfactor /= this->size();
+    sugar_bfactor = clipper::Util::u2b(sugar_bfactor);
+
+    if ( this->sugar_found_db )
+    {
+        #ifdef DUMP
+	    DBG << "found it! " << std::endl;
+	#endif
+
+	std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
+	for (int i=0 ; i < buffer.size() ; i++) 
 	{
-		this->sugar_ring_elements = this->ringMembers();
+	    int index_atom = 0;
+	    index_atom = this->lookup(buffer[i],clipper::MM::ANY);
+	    if (index_atom == -1) 
+	    {
+		this->sugar_supported = false;
+		this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
+		this->sugar_denomination = "    unsupported    ";
+		this->sugar_anomer = "X";
+		this->sugar_handedness = "X";
+		return;
+	    }
+	    else if ((*this)[index_atom].occupancy() < 1.0) // we will need to grab conformation A
+	    {
+		if ( get_altconf((*this)[index_atom]) != ' ' )
+		{ 
+		    index_atom = this->lookup(buffer[i].trim()+" :A",clipper::MM::UNIQUE);
+				
+		    if (index_atom == -1) // same case as above
+		        index_atom = this->lookup(buffer[i].trim()+" :B",clipper::MM::UNIQUE); // try grabbing conformation B instead 
+		    else 
+                        sugar_alternate_confcode = " :A";
+	
+		    if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now 
+		    {
+			this->sugar_supported = false;
+			this->sugar_sane = false;
+			this->sugar_denomination = "    unsupported    ";
+			this->sugar_anomer = "X";
+		        this->sugar_handedness = "X";
+			return;
+		    }
+		    else sugar_alternate_confcode = " :B";
+		}
+ 	    }
+	    sugar_ring_elements.push_back((*this)[index_atom]);
 	}
+    }
+    else
+    {
+	this->sugar_ring_elements = this->ringMembers();
+    }
 
 	///#ifdef DUMP
 	//	DBG << "Ring members successfully determined." << std::endl;
