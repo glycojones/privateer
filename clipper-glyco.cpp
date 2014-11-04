@@ -1340,72 +1340,72 @@ bool MSugar::is_part_of_ring(const clipper::MAtom& ma, const std::vector<clipper
 
 bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MAtom& ma_two) const
 {
-	////////////// CRITICAL: check symm mates ///////////////
+    ////////////// CRITICAL: check symm mates ///////////////
 
-	const int poly = ma_one.polymer();
-	const int mono = ma_one.monomer();
-	const int atom = ma_one.atom();
+    const int poly = ma_one.polymer();
+    const int mono = ma_one.monomer();
+    const int atom = ma_one.atom();
 
-	double distance = 0.0;
+    double distance = 0.0;
 
-	if ( ma_one.symmetry() == 0 )
-	{
-		distance = clipper::Coord_orth::length(sugar_parent_molecule->atom(ma_one).coord_orth(), ma_two.coord_orth());
-	}
-	else // this neighbour is actually a symmetry mate, so let's find the symmetry operator that places a copy of the molecule close to the anomeric carbon
-	{
-		clipper::Spacegroup spgr = sugar_parent_molecule->spacegroup();
-		//clipper::Coord_frac f1 = sugar_parent_molecule[poly][mono][atom].coord_orth().coord_frac(sugar_parent_molecule->cell());
-		clipper::Coord_frac f1 = sugar_parent_molecule->atom(ma_one).coord_orth().coord_frac(sugar_parent_molecule->cell());
-		clipper::Coord_frac f2 = ma_two.coord_orth().coord_frac(sugar_parent_molecule->cell());
-		f1 = spgr.symop(ma_one.symmetry()) * f1;
-		f1 = f1.lattice_copy_near( f2 );
+    if ( ma_one.symmetry() == 0 )
+    {
+    	distance = clipper::Coord_orth::length(sugar_parent_molecule->atom(ma_one).coord_orth(), ma_two.coord_orth());
+    }
+    else // this neighbour is actually a symmetry mate, so let's find the symmetry operator that places a copy of the molecule close to the anomeric carbon
+    {
+    	clipper::Spacegroup spgr = sugar_parent_molecule->spacegroup();
+    	//clipper::Coord_frac f1 = sugar_parent_molecule[poly][mono][atom].coord_orth().coord_frac(sugar_parent_molecule->cell());
+    	clipper::Coord_frac f1 = sugar_parent_molecule->atom(ma_one).coord_orth().coord_frac(sugar_parent_molecule->cell());
+    	clipper::Coord_frac f2 = ma_two.coord_orth().coord_frac(sugar_parent_molecule->cell());
+    	f1 = spgr.symop(ma_one.symmetry()) * f1;
+    	f1 = f1.lattice_copy_near( f2 );
 		
-		distance = sqrt(( f2 - f1 ).lengthsq( sugar_parent_molecule->cell() ));
+	distance = sqrt(( f2 - f1 ).lengthsq( sugar_parent_molecule->cell() ));
 
-	}
+    }
 	
-	if ( sugar_parent_molecule->atom(ma_one).element().trim() == "C" )
+    if ( sugar_parent_molecule->atom(ma_one).element().trim() == "C" )
+    {
+        if ( ma_two.element().trim() == "C" )
+	    if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
+	    else return false;
+	else if ( ma_two.element().trim() == "N" )
+	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
+	    else return false;
+	else if ( ma_two.element().trim() == "O" )
+	    if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
+	    else return false;
+	else if ( ma_two.element().trim() == "H" )
 	{
-		if ( ma_two.element().trim() == "C" )
-			if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
-			else return false;
-		else if ( ma_two.element().trim() == "N" )
-			if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
-			else return false;
-		else if ( ma_two.element().trim() == "O" )
-			if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
-			else return false;
-		else if ( ma_two.element().trim() == "H" )
-			 {
-				if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H
-				else return false;
-			 }
+	    if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H
+	    else return false;
 	}
-	else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "N" )
+    }
+    else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "N" )
+    {
+        if ( ma_two.element().trim() == "C" )
+	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
+	    else return false;
+        else if ( ma_two.element().trim() == "H" )
 	{
-		if ( ma_two.element().trim() == "C" )
-			if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
-			else return false;
-		else if ( ma_two.element().trim() == "H" )
-			 {
-			 	if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
-				else return false;
-			 }
+	    if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
+	    else return false;
 	}
-	else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "O" )
+    }
+    else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "O" )
+    {
+	if ( ma_two.element().trim() == "C" )
+	    if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
+	    else return false;
+        else if ( ma_two.element().trim() == "H" )
 	{
-		if ( ma_two.element().trim() == "C" )
-			if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
-			else return false;
-		else if ( ma_two.element().trim() == "H" )
-			 {
-				if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
-				else return false;
-			 }
+	    if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
+	    else return false;
 	}
-	else if (( distance > 1.2) && (distance < 1.8)) return true; // unknown bond
-		 else return false;
+    }
+    else if (( distance > 1.2) && (distance < 1.8)) return true; // unknown bond
+	else return false;
 
     return false; // in case we haven't found any match
 }
@@ -1420,134 +1420,118 @@ const char MSugar::get_altconf(const clipper::MAtom& ma) const
 {
 	clipper::String identifier = ma.id();
 	if (identifier.size() > 5) return identifier[5];
-	else return ' ';									// The alternate conformation code is the fifth character in the complete identificator.
-}                  										// We will return a blank character if there is no code present or if it is, but is blank
+	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
+}                                                           // We will return a blank character if there is no code present or if it is, but is blank
 
-/*! Still it does nothing, I'm afraid. 
-*/
-
-void MSugar::examine_linkages()
-{
-
-}
 
 /*! Internal function for getting the alternate conformation code
 */
 
 bool MSugar::examine_ring()
 {
-	int i;
+    int i;
 
-	{ // first element: angle ( [n-1] - O - anomeric C ), bond ( [n-1] - O ), torsion ( [n-1] - O - anomeric C - next C )
-		clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().x() - sugar_ring_elements[0].coord_orth().x(),
-											sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().y() - sugar_ring_elements[0].coord_orth().y(),
-											sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().z() - sugar_ring_elements[0].coord_orth().z() 
-											);
+    { // first element: angle ( [n-1] - O - anomeric C ), bond ( [n-1] - O ), torsion ( [n-1] - O - anomeric C - next C )
+	clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().x() - sugar_ring_elements[0].coord_orth().x(),
+					    sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().y() - sugar_ring_elements[0].coord_orth().y(),
+					    sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth().z() - sugar_ring_elements[0].coord_orth().z() );
 
-		clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[1].coord_orth().x() - sugar_ring_elements[0].coord_orth().x(),
-											sugar_ring_elements[1].coord_orth().y() - sugar_ring_elements[0].coord_orth().y(),
-											sugar_ring_elements[1].coord_orth().z() - sugar_ring_elements[0].coord_orth().z() 
-											);
-
-		clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
-		clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
-		sugar_ring_angles.push_back( ( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) ))) );
-		sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),sugar_ring_elements[0].coord_orth()) ); 
-		
-		sugar_ring_torsion.push_back ( clipper::Util::rad2d( clipper::Coord_orth::torsion(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),
-															 sugar_ring_elements[0].coord_orth(),
-															 sugar_ring_elements[1].coord_orth(),
-															 sugar_ring_elements[2].coord_orth() ) ) );
-	}
-
-
-	for (i = 1 ; i < sugar_ring_elements.size() -1 ; i++ )  // calculate bond angles (all), lengths (all) and torsions (minus last one)
-	{
-		clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[i-1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
-											sugar_ring_elements[i-1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
-											sugar_ring_elements[i-1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() 
-											);
-
-		clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[i+1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
-											sugar_ring_elements[i+1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
-											sugar_ring_elements[i+1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() 
-											);
-
-		clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
-		clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
-
-		sugar_ring_angles.push_back( clipper::Util::rad2d((acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a * norm_b) ))) );
-		sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[i+1].coord_orth(),sugar_ring_elements[i].coord_orth()) ); 
-
-		if ( i != (sugar_ring_elements.size()-2 ) )
-		
-			sugar_ring_torsion.push_back (clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_ring_elements[i-1].coord_orth(),
-						  											   sugar_ring_elements[i].coord_orth(),
-															 		   sugar_ring_elements[i+1].coord_orth(),
-															 		   sugar_ring_elements[i+2].coord_orth() ) ));
-		else 
-			
-			sugar_ring_torsion.push_back ((clipper::Util::rad2d( clipper::Coord_orth::torsion(sugar_ring_elements[i-1].coord_orth(),
-						  											   sugar_ring_elements[i].coord_orth(),
-															 		   sugar_ring_elements[i+1].coord_orth(),
-															 		   sugar_ring_elements[0].coord_orth() )) ))  ;
-	
-	}
-
-	// calculate last torsion angle
-
-	sugar_ring_torsion.push_back (clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_ring_elements[sugar_ring_elements.size()-2].coord_orth(),
-			     											   sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),
-													 		   sugar_ring_elements[0].coord_orth(),
-													 		   sugar_ring_elements[1].coord_orth() ) ));
-
-
-	clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[i-1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
-										sugar_ring_elements[i-1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
-										sugar_ring_elements[i-1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() 
-										);
-
-	clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[0].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
-										sugar_ring_elements[0].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
-										sugar_ring_elements[0].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() 
-										);
+	clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[1].coord_orth().x() - sugar_ring_elements[0].coord_orth().x(),
+					    sugar_ring_elements[1].coord_orth().y() - sugar_ring_elements[0].coord_orth().y(),
+					    sugar_ring_elements[1].coord_orth().z() - sugar_ring_elements[0].coord_orth().z() );
 
 	clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
 	clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
-
-	sugar_ring_angles.push_back( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) )));
-	sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[0].coord_orth(),sugar_ring_elements[i].coord_orth()) ); 
-
-	clipper::ftype rmsd_bonds, rmsd_angles;
-	rmsd_bonds = 0.0;
-	rmsd_angles = 0.0;
-
-	for (int j = 0 ; j < sugar_ring_bonds.size() ; j++ )
-	{
-		if (( j == 0) || (j == sugar_ring_bonds.size()-1)) rmsd_bonds = rmsd_bonds + pow((sugar_ring_bonds[j] - 1.430), 2);
-		else rmsd_bonds = rmsd_bonds + pow((sugar_ring_bonds[j] - 1.530), 2);  
-		
-		if (( j == 0) || (j == sugar_ring_angles.size()-1)) rmsd_angles = rmsd_angles + pow((sugar_ring_angles[j] - 112.0), 2);
-		else rmsd_angles = rmsd_angles + pow((sugar_ring_angles[j] - 109.0), 2);  
-	}
-
-	rmsd_bonds = rmsd_bonds / sugar_ring_bonds.size();
-	rmsd_bonds = sqrt(rmsd_bonds);
-
-	rmsd_angles = rmsd_angles / sugar_ring_angles.size();
-	rmsd_angles = sqrt(rmsd_angles);
 	
-	sugar_ring_angle_rmsd = rmsd_angles;
-	sugar_ring_bond_rmsd = rmsd_bonds;
+        sugar_ring_angles.push_back( ( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) ))) );
+	sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),sugar_ring_elements[0].coord_orth()) ); 
+		
+	sugar_ring_torsion.push_back ( clipper::Util::rad2d ( clipper::Coord_orth::torsion ( sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),
+													      sugar_ring_elements[0].coord_orth(),
+													      sugar_ring_elements[1].coord_orth(),
+													      sugar_ring_elements[2].coord_orth() ) ) );
+    }
 
-	for (i = 0 ; i < sugar_ring_elements.size() -1 ; i++)
-		if (!bonded(sugar_ring_elements[i], sugar_ring_elements[i+1])) 
-			return false; 
+    for (i = 1 ; i < sugar_ring_elements.size() -1 ; i++ )  // calculate bond angles (all), lengths (all) and torsions (minus last one)
+    {
+        clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[i-1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
+                                                                                        sugar_ring_elements[i-1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
+                                                                                        sugar_ring_elements[i-1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() );
 
-	if (!bonded(sugar_ring_elements[i], sugar_ring_elements[0])) 
-			return false;
-	else 
-			return true;
+        clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[i+1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
+                                                                                        sugar_ring_elements[i+1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
+                                                                                        sugar_ring_elements[i+1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() );
+
+        clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
+        clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
+
+        sugar_ring_angles.push_back( clipper::Util::rad2d((acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a * norm_b) ))) );
+        sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[i+1].coord_orth(),sugar_ring_elements[i].coord_orth()) ); 
+
+        if ( i != (sugar_ring_elements.size()-2 ) )
+	    sugar_ring_torsion.push_back (clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_ring_elements[i-1].coord_orth(),
+                                                                                            sugar_ring_elements[i].coord_orth(),
+                                                                                            sugar_ring_elements[i+1].coord_orth(),
+                                                                                            sugar_ring_elements[i+2].coord_orth() ) ));
+        else 
+	    sugar_ring_torsion.push_back ((clipper::Util::rad2d( clipper::Coord_orth::torsion(sugar_ring_elements[i-1].coord_orth(),
+                                                                                              sugar_ring_elements[i].coord_orth(),
+                                                                                              sugar_ring_elements[i+1].coord_orth(),
+                                                                                              sugar_ring_elements[0].coord_orth() )) ))  ;
+    }
+    
+    // calculate last torsion angle
+    
+    sugar_ring_torsion.push_back (clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_ring_elements[sugar_ring_elements.size()-2].coord_orth(),
+                                                                                    sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),
+                                                                                    sugar_ring_elements[0].coord_orth(),
+                                                                                    sugar_ring_elements[1].coord_orth() ) ));
+
+
+    clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[i-1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
+                                                                                    sugar_ring_elements[i-1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
+                                                                                    sugar_ring_elements[i-1].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() );
+
+    clipper::Vec3<clipper::ftype> vec_b(sugar_ring_elements[0].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
+                                                                                  sugar_ring_elements[0].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
+                                                                                  sugar_ring_elements[0].coord_orth().z() - sugar_ring_elements[i].coord_orth().z() );
+
+    clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
+    clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
+
+    sugar_ring_angles.push_back( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) )));
+    sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[0].coord_orth(),sugar_ring_elements[i].coord_orth()) ); 
+
+    clipper::ftype rmsd_bonds, rmsd_angles;
+    rmsd_bonds = 0.0;
+    rmsd_angles = 0.0;
+
+    for (int j = 0 ; j < sugar_ring_bonds.size() ; j++ )
+    {
+        if (( j == 0) || (j == sugar_ring_bonds.size()-1)) rmsd_bonds = rmsd_bonds + pow((sugar_ring_bonds[j] - 1.430), 2);
+	else rmsd_bonds = rmsd_bonds + pow((sugar_ring_bonds[j] - 1.530), 2);  
+		
+	if (( j == 0) || (j == sugar_ring_angles.size()-1)) rmsd_angles = rmsd_angles + pow((sugar_ring_angles[j] - 112.0), 2);
+	else rmsd_angles = rmsd_angles + pow((sugar_ring_angles[j] - 109.0), 2);  
+    }
+
+    rmsd_bonds = rmsd_bonds / sugar_ring_bonds.size();
+    rmsd_bonds = sqrt(rmsd_bonds);
+
+    rmsd_angles = rmsd_angles / sugar_ring_angles.size();
+    rmsd_angles = sqrt(rmsd_angles);
+	
+    sugar_ring_angle_rmsd = rmsd_angles;
+    sugar_ring_bond_rmsd = rmsd_bonds;
+
+    for (i = 0 ; i < sugar_ring_elements.size() -1 ; i++)
+        if (!bonded(sugar_ring_elements[i], sugar_ring_elements[i+1])) 
+	    return false; 
+
+        if (!bonded(sugar_ring_elements[i], sugar_ring_elements[0])) 
+	    return false;
+        else 
+	    return true;
 }
 
 /*! Internal function for checking whether two atoms are bonded or not
@@ -1556,51 +1540,303 @@ bool MSugar::examine_ring()
  * 			\return A boolean value with the obvious answer
  * 			*/
 
-bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) const  // I'm still questioning the data this function uses
+bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) const
 {
-	clipper::ftype distance = clipper::Coord_orth::length( ma_one.coord_orth(), ma_two.coord_orth() );
+    clipper::ftype distance = clipper::Coord_orth::length( ma_one.coord_orth(), ma_two.coord_orth() );
 	
-	if ( ma_one.element().trim() == "C" )
-	{
-		if ( ma_two.element().trim() == "C" )
-			if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
-			else return false;
-		else if ( ma_two.element().trim() == "N" )
-		if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
-																else return false;
-															else if ( ma_two.element().trim() == "O" )
-																				if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
-																		else return false;
-																	else if ( ma_two.element().trim() == "H" )
-																						 {
-																								 				if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H
-																																else return false;
-																																			 }
-																		}
-					else if ( ma_one.element().trim() == "N" )
-								{
-												if ( ma_two.element().trim() == "C" )
-																	if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
-															else return false;
-														else if ( ma_two.element().trim() == "H" )
-																			 {
-																					 			 	if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
-																													else return false;
-																																 }
-															}
-						else if ( ma_one.element().trim() == "O" )
-									{
-													if ( ma_two.element().trim() == "C" )
-																		if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
-																else return false;
-															else if ( ma_two.element().trim() == "H" )
-																				 {
-																						 				if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
-																														else return false;
-																																	 }
-																}
-							else if (( distance > 1.2) && (distance < 1.8)) return true; // unknown bond
-									 else return false;
+    if ( ma_one.element().trim() == "C" )
+    {
+        if ( ma_two.element().trim() == "C" )
+	    if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
+	    else return false;
+	else if ( ma_two.element().trim() == "N" )
+	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
+	    else return false;
+        else if ( ma_two.element().trim() == "O" )
+            if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
+            else return false;
+        else if ( ma_two.element().trim() == "H" )
+            if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H				
+            else return false;
+    }
+    else if ( ma_one.element().trim() == "N" )
+    {
+        if ( ma_two.element().trim() == "C" )
+            if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
+            else return false;
+        else if ( ma_two.element().trim() == "H" )
+            if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
+            else return false;
+    }
+    else if ( ma_one.element().trim() == "O" )
+    {
+        if ( ma_two.element().trim() == "C" )
+            if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
+            else return false;
+        else if ( ma_two.element().trim() == "H" )
+            if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
+            else return false;
+    }
+    else if (( distance > 1.2) && (distance < 1.8)) return true; // unknown bond
+    else return false;
 
-									     return false; // in case we haven't found any match
+    return false; // in case we haven't found any match
 }
+
+
+MGlycan::MGlycan ( const clipper::MMonomer& root_aa, clipper::MSugar& root_sugar )
+{
+    root.first = root_aa;
+    t_node first_node;
+    sugars.push_back ( root_sugar ); 
+    first_node.sugar = sugars.back();
+    node_list.push_back ( first_node );
+    root.second = node_list[0];
+    
+}
+
+
+clipper::String MGlycan::print_linear ( const bool print_info, const bool html_format )
+{
+    clipper::String buffer;
+    
+    if ( html_format ) buffer.insert ( 0, "<sub>" ); 
+    buffer.insert ( 0, root.first.id().trim() );
+    if ( html_format ) buffer.insert ( 0, "</sub>" );
+    
+    buffer.insert( 0, this->get_root().type().c_str() );
+    
+    buffer.insert( 0, "-" );
+    clipper::String anomer;
+    root.second.sugar.anomer() == "alpha" ? anomer = "a" : anomer = "b"; 
+    html_format ? buffer.insert ( 0, anomer ) : buffer.insert ( 0, anomer );
+    html_format ? buffer.insert ( 0, " &#10141; " ) : buffer.insert( 0, "-" );
+        
+    bool branching = false;
+    t_node branched_from;
+
+    for ( int i = 0 ; i < node_list.size() ; i++ )
+    {
+        clipper::MSugar& msug = node_list[i].sugar;    
+        msug.anomer() == "alpha" ? anomer = "a" : anomer = "b";
+        
+        if ( print_info )
+        {
+            if ( html_format ) buffer.insert ( 0, "<sub>" ); 
+            buffer.insert ( 0, msug.id().trim() );
+            if ( html_format ) buffer.insert ( 0, "</sub>" ); 
+        }
+        
+        buffer.insert( 0, msug.type().c_str() );
+        
+        if ( node_list[i].connections.size() > 0 )
+        {
+            std::ostringstream s;
+            s << node_list[i].connections[0].index;
+            buffer.insert( 0, "-" );
+            buffer.insert( 0, s.str() );
+            buffer.insert( 0, anomer );
+            buffer.insert( 0, "-" );
+        }
+
+        if (( node_list[i].connections.size() == 0 ) && branching )
+        {
+            branching = false;
+            buffer.insert ( 0, "(" );
+        }    
+        else if ( node_list[i].connections.size() > 1 )
+        {
+            branching = true;
+            buffer.insert ( 0, ")" );
+            branched_from = node_list[i];
+        }
+    }
+    return buffer;
+}   
+
+
+bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar )
+{
+    int index = 0;
+    bool found;
+
+    for ( int i = 0 ; i < node_list.size() ; i++ )
+        if ( node_list[i].sugar.id().c_str() == first_sugar.id().c_str() )
+        {
+            found = true;
+            index = i;
+            break;
+        }
+    
+    if (!found) return true;
+
+    t_node new_node;
+    new_node.sugar = next_sugar; // create a new node with the next sugar
+
+    t_connection new_connection;  // create a new connection pointing to the next sugar, to be added to the previous one
+    new_connection.index = link; // temporary fix to enable early testing, substitute with an elaborate thing
+    new_connection.node = &new_node; 
+    
+    node_list[index].connections.push_back ( new_connection ); // add the new connection to the previous node
+    node_list.push_back ( new_node ); // add the new sugar to the node list
+    
+    return false;
+}
+
+
+/*! Internal function for getting the alternate conformation code
+	\param ma A clipper::MAtom object
+	\return A character containing the code
+*/
+
+const char MGlycology::get_altconf(const clipper::MAtom& ma) const
+{
+	clipper::String identifier = ma.id();
+	if (identifier.size() > 5) return identifier[5];
+	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
+}                                                           // We will return a blank character if there is no code present or if it is, but is blank
+
+
+void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
+{
+//    std::cout << "Extending tree with " << msug.type() << msug.id() << ", number of contacts: ";
+    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > contacts = get_contacts ( msug );
+//    std::cout << contacts.size() << std::endl;
+
+    const clipper::MiniMol& tmpmol = *this->mmol;
+
+    for (int i = 0 ; i < contacts.size() ; i++ )
+    {
+        clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb );
+        mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
+        extend_tree ( mg, tmpsug );
+    }
+}
+
+MGlycology::MGlycology ( const clipper::MiniMol& mmol )
+{
+    const clipper::MAtomNonBond nb = MAtomNonBond ( mmol, 1.0 );
+    MGlycology( mmol, nb );
+}
+
+
+MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb)
+{
+
+    this->manb = &manb;
+    this->mmol = &mmol;
+
+    std::vector < clipper::MMonomer > potential_n_roots;
+    std::vector < clipper::MMonomer > potential_o_roots;
+
+    for ( int pol = 0; pol < mmol.size() ; pol++ )
+        for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
+            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] );
+
+    for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n glycan roots with first sugar
+    {        
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i] ) ;    
+        
+        for ( int j = 0 ; j < linked.size() ; j++ )
+        {
+            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()]; 
+            
+            if ( tmpmon.type().trim() == "NAG" ) 
+            { 
+                if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+                {
+                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    list_of_sugars.push_back ( sugar );
+                    clipper::MGlycan mg = clipper::MGlycan ( potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
+            }
+        }
+    }
+
+    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+    {
+        std::vector < clipper::MSugar > sugar_list = list_of_glycans[i].get_sugars();
+        extend_tree ( list_of_glycans[i] , sugar_list[0] );
+    }
+    
+
+}
+
+const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > MGlycology::get_contacts ( const clipper::MMonomer& mm )
+{
+    // mm can be aminoacid (typically ASN) or sugar: ND2, O2, O3, O4, O6  
+
+    std::vector < clipper::MAtom > candidates; // look for the possibilities
+    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
+
+    if ( mm.type().trim() == "ASN" ) 
+    {
+        int id = mm.lookup ( "ND2", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else 
+    {
+
+        int id = mm.lookup ( "O2", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O3", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O4", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O6", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+    }
+ 
+    if ( candidates.size() == 0 ) 
+        return tmpresults;  // empty result
+    else 
+    {
+        const clipper::MiniMol& tmpmol = *mmol;
+
+        for ( int i = 0 ; i < candidates.size() ; i++ )
+        {
+            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.0 );
+
+            for (int j = 0 ; j < contacts.size() ; j++ ) 
+            {
+                if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 1.55 ))
+                {   
+                    if (( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == 'A')
+                    || (get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == ' '))
+                    {    
+                        std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                        link_tmp.first = candidates[i];                   
+                        link_tmp.second = contacts[j];
+                        tmpresults.push_back ( link_tmp );
+                    }
+                }  
+            }
+        }
+        return tmpresults;
+    }
+}
+
+
+
+
+
+
+

@@ -247,6 +247,7 @@ int main(int argc, char** argv)
 
     }
 
+    
     if ( noMaps )
     {			
     	clipper::Atom_list mainAtoms;
@@ -262,7 +263,19 @@ int main(int argc, char** argv)
     	std::vector < std::pair <clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
 	std::vector < clipper::MMonomer > sugarList; // store the original MMonomer
 
-	const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 5.0 ); // was 1.0 
+	const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0 
+
+        clipper::MGlycology mgl(mmol, manb);
+        //for (int i = 0; i < mgl.get_sugar_list().size() ; i++ ) std::cout << "I've found one sugar" << std::endl ;
+
+        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+
+        if ( !batch ) std::cout << "List of detected glycans: " << std::endl << std::endl ; 
+
+        for (int i = 0; i < list_of_glycans.size() ; i++ )
+            std::cout << list_of_glycans[i].print_linear ( true, false ) << std::endl;
+
+        std::cout << std::endl << "Number of n-glycans detected: " << list_of_glycans.size() << std::endl ;
 
 	// erase ligand atoms from the model and then calculate phases using
 	// the omitted model, effectively computing an omit map
@@ -1544,12 +1557,12 @@ int main(int argc, char** argv)
 		        if ( n_errors > 0 ) 
                         {
                             diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-		            report.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+		            report.append(", conformation might be mistaken");
                         }
                         else 
                         {
                             diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-                            report.append("Conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                            report.append("Conformation might be mistaken");
                         }
                     
                         n_errors++; 
