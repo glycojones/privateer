@@ -266,16 +266,28 @@ int main(int argc, char** argv)
 	const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0 
 
         clipper::MGlycology mgl(mmol, manb);
-        //for (int i = 0; i < mgl.get_sugar_list().size() ; i++ ) std::cout << "I've found one sugar" << std::endl ;
 
         std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
 
-        if ( !batch ) std::cout << "List of detected glycans: " << std::endl << std::endl ; 
+        if ( !batch ) std::cout << std::endl << "Number of detected glycans: " << list_of_glycans.size(); 
 
-        for (int i = 0; i < list_of_glycans.size() ; i++ )
-            std::cout << list_of_glycans[i].print_linear ( true, false ) << std::endl;
+        if ( list_of_glycans.size() > 0 )
+        {    
+            clipper::String current_chain = "" ;
+      
+            for (int i = 0; i < list_of_glycans.size() ; i++ )
+            {
+                if ( current_chain != list_of_glycans[i].get_chain() )
+                {
+                    current_chain = list_of_glycans[i].get_chain();
+                    std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
+                }
+                std::cout << std::endl << list_of_glycans[i].print_linear ( true, false ) << std::endl;
+            }
+        }
 
-        std::cout << std::endl << "Number of n-glycans detected: " << list_of_glycans.size() << std::endl ;
+        std::cout << "\n\nDetailed validation data" << std::endl;
+        std::cout << "------------------------" << std::endl;
 
 	// erase ligand atoms from the model and then calculate phases using
 	// the omitted model, effectively computing an omit map

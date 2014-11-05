@@ -1584,7 +1584,7 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
 }
 
 
-MGlycan::MGlycan ( const clipper::MMonomer& root_aa, clipper::MSugar& root_sugar )
+MGlycan::MGlycan ( clipper::String chain, const clipper::MMonomer& root_aa, clipper::MSugar& root_sugar )
 {
     root.first = root_aa;
     t_node first_node;
@@ -1592,7 +1592,7 @@ MGlycan::MGlycan ( const clipper::MMonomer& root_aa, clipper::MSugar& root_sugar
     first_node.sugar = sugars.back();
     node_list.push_back ( first_node );
     root.second = node_list[0];
-    
+    this->chain = chain;
 }
 
 
@@ -1612,13 +1612,35 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
     html_format ? buffer.insert ( 0, anomer ) : buffer.insert ( 0, anomer );
     html_format ? buffer.insert ( 0, " &#10141; " ) : buffer.insert( 0, "-" );
         
+    clipper::MSugar& msug = node_list[0].sugar;    
+
+    if ( print_info )
+    {
+        if ( html_format ) buffer.insert ( 0, "<sub>" ); 
+        buffer.insert ( 0, msug.id().trim() );
+        if ( html_format ) buffer.insert ( 0, "</sub>" ); 
+    }
+        
+    buffer.insert( 0, msug.type().c_str() ); 
+    
+    if ( node_list.size() < 2 ) return buffer;
+    else
+    {
+        node_list[0].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+        std::ostringstream s;
+        s << node_list[0].connections[0].index;
+        buffer.insert( 0, "-" );
+        buffer.insert( 0, s.str() );
+        buffer.insert( 0, anomer );
+        buffer.insert( 0, "-" );
+    }   
+
     bool branching = false;
     t_node branched_from;
 
-    for ( int i = 0 ; i < node_list.size() ; i++ )
+    for ( int i = 1 ; i < node_list.size() ; i++ )
     {
-        clipper::MSugar& msug = node_list[i].sugar;    
-        msug.anomer() == "alpha" ? anomer = "a" : anomer = "b";
+        msug = node_list[i].sugar;    
         
         if ( print_info )
         {
@@ -1626,23 +1648,20 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
             buffer.insert ( 0, msug.id().trim() );
             if ( html_format ) buffer.insert ( 0, "</sub>" ); 
         }
-        
-        buffer.insert( 0, msug.type().c_str() );
-        
-        if ( node_list[i].connections.size() > 0 )
-        {
-            std::ostringstream s;
-            s << node_list[i].connections[0].index;
-            buffer.insert( 0, "-" );
-            buffer.insert( 0, s.str() );
-            buffer.insert( 0, anomer );
-            buffer.insert( 0, "-" );
-        }
+         
+        buffer.insert( 0, msug.type().c_str() ); 
 
         if (( node_list[i].connections.size() == 0 ) && branching )
         {
             branching = false;
             buffer.insert ( 0, "(" );
+            buffer.insert ( 0, "-" );
+            branched_from.connections[1].type == "alpha" ? anomer = "a" : anomer = "b";
+            std::ostringstream s;
+            s << branched_from.connections[1].index;
+            buffer.insert( 0, s.str() );
+            buffer.insert( 0, anomer );
+            buffer.insert( 0, "-" );        
         }    
         else if ( node_list[i].connections.size() > 1 )
         {
@@ -1650,6 +1669,18 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
             buffer.insert ( 0, ")" );
             branched_from = node_list[i];
         }
+        
+        if ( node_list[i].connections.size() > 0 )
+        {
+            node_list[i].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+            std::ostringstream s;
+            s << node_list[i].connections[0].index;
+            buffer.insert( 0, "-" );
+            buffer.insert( 0, s.str() );
+            buffer.insert( 0, anomer );
+            buffer.insert( 0, "-" );
+        }
+        
     }
     return buffer;
 }   
@@ -1675,6 +1706,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
     t_connection new_connection;  // create a new connection pointing to the next sugar, to be added to the previous one
     new_connection.index = link; // temporary fix to enable early testing, substitute with an elaborate thing
+    new_connection.type = next_sugar.anomer();
     new_connection.node = &new_node; 
     
     node_list[index].connections.push_back ( new_connection ); // add the new connection to the previous node
@@ -1699,9 +1731,7 @@ const char MGlycology::get_altconf(const clipper::MAtom& ma) const
 
 void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
 {
-//    std::cout << "Extending tree with " << msug.type() << msug.id() << ", number of contacts: ";
     std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > contacts = get_contacts ( msug );
-//    std::cout << contacts.size() << std::endl;
 
     const clipper::MiniMol& tmpmol = *this->mmol;
 
@@ -1709,6 +1739,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
     {
         clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb );
         mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
+        //std::cout << "id: " << contacts[i].first.id() << " parsed: " << parse_order(contacts[i].first.id()) << std::endl;
         extend_tree ( mg, tmpsug );
     }
 }
@@ -1747,7 +1778,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
+                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()), 
+                                                             potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
                     list_of_glycans.push_back ( mg );
                     break;
                 }
