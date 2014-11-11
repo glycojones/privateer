@@ -62,7 +62,7 @@ const clipper::String conformational_landscape[] =
 
 const clipper::String iupac_conformational_landscape[] =
 {
-    "Planar ring", "&lt;sup&gt;4&lt;/sup&gt;C&lt;sub&gt;1&lt;/sub&gt;", "<sup>1</sup>C<sub>4",
+    "Planar ring", "<sup>4</sup>C<sub>1</sub>", "<sup>1</sup>C<sub>4",
     "<sup>3,O</sup>B", "B<sub>2,5</sub>", "<sup>1,4</sup>B", "B<sub>3,O</sub>", "<sup>2,5</sup>B", "B<sub>1,4</sub>",
     "<sup>O</sup>E", "E<sub>5</sub>", "<sup>4</sup>E", "E<sub>3</sub>", "<sup>2</sup>E", "E<sub>1</sub>", "<sup>3</sup>E", 
     "E<sub>2</sub>", "<sup>1</sup>E", "E<sub>O</sub>", "<sup>5</sup>E", "E<sub>4</sub>",

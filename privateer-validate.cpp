@@ -43,7 +43,7 @@ using clipper::data32::Flag;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 using namespace std;
 char get_altconformation(clipper::MAtom ma);
-void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > );
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > >, std::vector < clipper::MGlycan > list_of_glycans );
 
 int main(int argc, char** argv)
 {
@@ -77,6 +77,7 @@ int main(int argc, char** argv)
     float ipradius = 1.5;    // default value, punishing enough!
     FILE *output;
     bool output_mtz = false;
+    std::vector < clipper::MGlycan > list_of_glycans;
 
     // command input
     CCP4CommandInput args( argc, argv, true );
@@ -267,7 +268,7 @@ int main(int argc, char** argv)
 
         clipper::MGlycology mgl(mmol, manb);
 
-        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+        list_of_glycans = mgl.get_list_of_glycans();
 
         if ( !batch ) std::cout << std::endl << "Number of detected glycans: " << list_of_glycans.size(); 
 
@@ -282,7 +283,7 @@ int main(int argc, char** argv)
                     current_chain = list_of_glycans[i].get_chain();
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
-                std::cout << std::endl << list_of_glycans[i].print_linear ( true, false ) << std::endl;
+                std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
             }
         }
 
@@ -837,16 +838,37 @@ int main(int argc, char** argv)
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
 
-    if (!batch)
-    { 
-        std::cout << std::endl << "Analysing carbohydrates... "; 
-        fflush(0);
-    }
-
     std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
     std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
 
-    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 5.0 ); // was 1.0 
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0 
+    
+    clipper::MGlycology mgl(mmol, manb);
+
+    list_of_glycans = mgl.get_list_of_glycans();
+
+    if ( !batch ) 
+    {
+        std::cout << std::endl << "Number of detected glycans: " << list_of_glycans.size(); 
+
+        if ( list_of_glycans.size() > 0 )
+        {    
+            clipper::String current_chain = "" ;
+      
+            for (int i = 0; i < list_of_glycans.size() ; i++ )
+            {
+                if ( current_chain != list_of_glycans[i].get_chain() )
+                {
+                    current_chain = list_of_glycans[i].get_chain();
+                    std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
+                }
+                std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
+            }
+        }
+    
+        std::cout << std::endl << "Analysing carbohydrates... "; 
+        fflush(0);
+    }
 
     // erase ligand atoms from the model and then calculate phases using
     // the omitted model, effectively computing an omit map
@@ -1161,8 +1183,12 @@ int main(int argc, char** argv)
     }
     
     if (!batch) 
+    {
         std::cout << "done." << std::endl; 
-
+        std::cout << "\n\nDetailed validation data" << std::endl;
+        std::cout << "------------------------" << std::endl;
+    }
+    
     if (!batch) 
         printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tBonds\tAngles\t Ok?");
     if (!batch && showGeom) 
@@ -1610,7 +1636,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
     
-    printXML(ligandList);
+    printXML(ligandList, list_of_glycans);
 
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
@@ -1628,7 +1654,7 @@ char get_altconformation(clipper::MAtom ma)
 }			// We will return a blank character if there is no code present or if it is, but is blank
 
 
-void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList )
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans )
 {
 
     std::fstream of_xml;
@@ -1670,7 +1696,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
             of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
             of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;
-            of_xml << "      <SugarConformation>"   << sugarList[i].second.conformation_name()          << "</SugarConformation>\n" ;
+            of_xml << "      <SugarConformation><![CDATA["   << sugarList[i].second.conformation_name()          << "]]></SugarConformation>\n" ;
             of_xml << "      <SugarBondRMSD>"       << sugarList[i].second.ring_bond_rmsd()             << "</SugarBondRMSD>\n"     ;
             of_xml << "      <SugarAngleRMSD>"      << sugarList[i].second.ring_angle_rmsd()            << "</SugarAngleRMSD>\n"    ;
             of_xml << "      <SugarBFactor>"        << sugarList[i].second.get_bfactor()                << "</SugarBFactor>\n"      ;
@@ -1682,6 +1708,17 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             else
                 of_xml << "    </Furanose>\n\n";
         }
+    }
+
+    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+    {
+        of_xml << "    <Glycan>\n" ;
+        of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"        ;
+        of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().type().trim() + list_of_glycans[i].get_root().id().trim() << "</GlycanRoot>\n" ;
+        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"       ;
+        of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"        ;
+        of_xml << "     <GlycanSVG>"        << "placeholder.svg"                                << "</GlycanSVG>\n"          ;
+        of_xml << "    </Glycan>\n" ;    
     }
 
     of_xml << "  </ValidationData>\n";

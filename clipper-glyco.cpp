@@ -1596,43 +1596,73 @@ MGlycan::MGlycan ( clipper::String chain, const clipper::MMonomer& root_aa, clip
 }
 
 
-clipper::String MGlycan::print_linear ( const bool print_info, const bool html_format )
+clipper::String MGlycan::carbname_of(clipper::String name) const
+{
+    clipper::String new_name = name;
+    
+    if ( name == "NAG" ) new_name = "GlcNac";
+    else if ( name == "NGA" ) new_name = "GalNac";
+    else if ( name == "MAN" ) new_name = "Man"   ;
+    else if ( name == "BMA" ) new_name = "Man"   ;
+    else if ( name == "SIA" ) new_name = "Sia"   ;
+    else if ( name == "GAL" ) new_name = "Gal"   ;
+    else if ( name == "GLA" ) new_name = "Gal"   ;
+    
+    return new_name;
+}
+
+
+
+clipper::String MGlycan::print_linear ( const bool print_info, const bool html_format, const bool translate )
 {
     clipper::String buffer;
     
-    if ( html_format ) buffer.insert ( 0, "<sub>" ); 
+    if ( html_format ) buffer.insert ( 0, "</sub>" ); 
     buffer.insert ( 0, root.first.id().trim() );
-    if ( html_format ) buffer.insert ( 0, "</sub>" );
+    if ( html_format ) buffer.insert ( 0, "<sub>" );
     
     buffer.insert( 0, this->get_root().type().c_str() );
     
-    buffer.insert( 0, "-" );
+    html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
     clipper::String anomer;
-    root.second.sugar.anomer() == "alpha" ? anomer = "a" : anomer = "b"; 
+    if ( html_format ) root.second.sugar.anomer() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+    else root.second.sugar.anomer() == "alpha" ? anomer = "a" : anomer = "b"; 
+    
     html_format ? buffer.insert ( 0, anomer ) : buffer.insert ( 0, anomer );
-    html_format ? buffer.insert ( 0, " &#10141; " ) : buffer.insert( 0, "-" );
+    html_format ? buffer.insert ( 0, " &#8592; " ) : buffer.insert( 0, "-" );
         
-    clipper::MSugar& msug = node_list[0].sugar;    
+    clipper::MSugar msug = node_list[0].sugar;    
 
     if ( print_info )
     {
-        if ( html_format ) buffer.insert ( 0, "<sub>" ); 
-        buffer.insert ( 0, msug.id().trim() );
         if ( html_format ) buffer.insert ( 0, "</sub>" ); 
+        buffer.insert ( 0, msug.id().trim() );
+        if ( html_format ) buffer.insert ( 0, "<sub>" ); 
     }
-        
-    buffer.insert( 0, msug.type().c_str() ); 
-    
+    if ( html_format ) buffer.insert ( 0, "</span>" );     
+    translate ? buffer.insert ( 0, carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() ); 
+    if ( html_format ) 
+    {
+        buffer.insert ( 0, "\">" );
+        buffer.insert ( 0, msug.type() + "/" + msug.id().trim() );
+        buffer.insert ( 0, "<span title=\"" );      
+    }
+
     if ( node_list.size() < 2 ) return buffer;
     else
     {
-        node_list[0].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+        if ( html_format ) 
+            node_list[0].connections[0].type == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+        else 
+            node_list[0].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+        
         std::ostringstream s;
         s << node_list[0].connections[0].index;
-        buffer.insert( 0, "-" );
+        
+        html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
         buffer.insert( 0, s.str() );
         buffer.insert( 0, anomer );
-        buffer.insert( 0, "-" );
+        html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
     }   
 
     bool branching = false;
@@ -1644,24 +1674,40 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         
         if ( print_info )
         {
-            if ( html_format ) buffer.insert ( 0, "<sub>" ); 
+            if ( html_format ) 
+                buffer.insert ( 0, "</sub>" ); 
+            
             buffer.insert ( 0, msug.id().trim() );
-            if ( html_format ) buffer.insert ( 0, "</sub>" ); 
+            
+            if ( html_format ) 
+                buffer.insert ( 0, "<sub>" ); 
         }
-         
-        buffer.insert( 0, msug.type().c_str() ); 
+    
+        if ( html_format ) buffer.insert ( 0, "</span>" );      
+        translate ? buffer.insert ( 0, carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() ); 
+        if ( html_format ) 
+        {
+            buffer.insert ( 0, "\">" );
+            buffer.insert ( 0, msug.type() + "/" + msug.id().trim() );
+            buffer.insert ( 0, "<span title=\"" );      
+        }
 
         if (( node_list[i].connections.size() == 0 ) && branching )
         {
-            branching = false;
-            buffer.insert ( 0, "(" );
-            buffer.insert ( 0, "-" );
-            branched_from.connections[1].type == "alpha" ? anomer = "a" : anomer = "b";
+            if ( html_format ) 
+                branched_from.connections[1].type == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+            else 
+                branched_from.connections[1].type == "alpha" ? anomer = "a" : anomer = "b";
+            
             std::ostringstream s;
             s << branched_from.connections[1].index;
+            
+            branching = false;
+            buffer.insert ( 0, "(" );
+            html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert ( 0, "-" );
             buffer.insert( 0, s.str() );
             buffer.insert( 0, anomer );
-            buffer.insert( 0, "-" );        
+            html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );        
         }    
         else if ( node_list[i].connections.size() > 1 )
         {
@@ -1672,13 +1718,18 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         
         if ( node_list[i].connections.size() > 0 )
         {
-            node_list[i].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+            if ( html_format ) 
+                node_list[i].connections[0].type == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+            else 
+                node_list[i].connections[0].type == "alpha" ? anomer = "a" : anomer = "b";
+            
             std::ostringstream s;
             s << node_list[i].connections[0].index;
-            buffer.insert( 0, "-" );
+            
+            html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
             buffer.insert( 0, s.str() );
             buffer.insert( 0, anomer );
-            buffer.insert( 0, "-" );
+            html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
         }
         
     }

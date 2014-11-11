@@ -291,7 +291,7 @@ namespace clipper
 
             clipper::MMonomer get_root () { return root.first; }
             clipper::String get_type () { return kind_of_glycan; } // n-glycan or o-glycan
-            clipper::String print_linear ( const bool print_info, const bool html_format );
+            clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
             std::vector < clipper::MSugar > get_sugars () { return sugars; }
             clipper::String get_chain () { return chain; }
@@ -319,6 +319,7 @@ namespace clipper
             std::pair < clipper::MMonomer, t_node > root;   // this is the root, should be null if this is a ligand saccharide
             std::vector < clipper::MSugar > sugars;         // vector of sugars    
             clipper::String chain;     
+            clipper::String carbname_of(clipper::String name) const;
     }; // class MGlycan
 
     class MGlycology
@@ -346,6 +347,7 @@ namespace clipper
             int parse_order ( clipper::String str ) { const char *s = str.c_str(); return atoi(&s[2]); }
             void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug );   
             const char get_altconf ( const clipper::MAtom& ) const;
+
 
             // private methods
     

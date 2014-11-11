@@ -49,19 +49,23 @@
 
 namespace clipper {
 
-  namespace data {
+    namespace data {
 
-		struct sugar_database_entry
-		{
-			clipper::String name_short; // three-character name
-			clipper::String anomer; // A=alpha, B=beta, N=unknown
-			clipper::String handedness; // D, L or N for unknown
-			clipper::String name_long; // longer name
-			clipper::String ring_atoms; // e.g. ring_atoms = { "C1","C2","C3","C4","C5","O5" };
-		};
+    struct sugar_database_entry
+    {
+        clipper::String name_short;      // three-character name
+        clipper::String anomer;          // A=alpha, B=beta, N=unknown
+        clipper::String handedness;      // D, L or N for unknown
+        clipper::String name_long;       // longer name
+        clipper::String ring_atoms;      // e.g. ring_atoms = { "C1","C2","C3","C4","C5","O5" };
+        clipper::ftype  le_puckering;    // puckering amplitude calculated from CCP4 monomer library-idealised coordinates 
+        clipper::String le_conformation; // conformation detected from the idealised coordinates
+        clipper::ftype  le_rms_bonds;    // rms bonds calculated from CCP4 monomer library-idealised coordinates 
+        clipper::ftype  le_rms_angles;   // rms angles calculated from CCP4 monomer library-idealised coordinates
+    };
 
-		extern const clipper::String iupac_conformational_landscape[];
-		extern const clipper::String conformational_landscape[];
+    extern const clipper::String iupac_conformational_landscape[];
+    extern const clipper::String conformational_landscape[];
     extern const sugar_database_entry sugar_database[];
     extern const int sugar_database_size;
 
