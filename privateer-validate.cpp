@@ -243,9 +243,8 @@ int main(int argc, char** argv)
     if ( mmol.cell().is_null() ) 
     {
         std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
-	std::cout << " Privateer-validate will still run, but may miss important contacts described by crystallographic symmetry." << std::endl << std::endl; 
-	mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 1000, 1000, 1000, 90, 90, 90 )) );  
-
+	std::cout << " Privateer-validate will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl; 
+	mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );  
     }
 
     
@@ -1102,6 +1101,32 @@ int main(int argc, char** argv)
                 std::cout << "skipped. You must supply an input MTZ from which columns can be read and transferred to the output MTZ." << std::endl << std::endl;
     }
 
+    if (batch) // create miniMTZ files for ccp4i2
+    {
+        clipper::CCP4MTZfile opmtz_best, opmtz_omit;
+        clipper::MTZcrystal opxtal;
+        mtzin.import_crystal(opxtal, "FP,SIGFP");
+        
+        clipper::MTZdataset opdset;
+        mtzin.import_dataset(opdset, "FP,SIGFP");
+        
+        clipper::String path = "/" + opxtal.crystal_name() + "/" + opdset.dataset_name() + "/[F,PHI]";
+        
+        opmtz_best.open_write ( "FPHIOUT.mtz" );
+        opmtz_best.export_crystal ( opxtal, path );
+        opmtz_best.export_dataset ( opdset, path );
+        opmtz_best.export_hkl_data ( fb_all, path );
+        opmtz_best.close_write ();
+        
+        opmtz_omit.open_write ( "OMITFPHIOUT.mtz" );
+        opmtz_omit.export_crystal ( opxtal, path );
+        opmtz_omit.export_dataset ( opdset, path );
+        opmtz_omit.export_hkl_data ( fd_omit, path );
+        opmtz_omit.close_write ();
+    } 
+
+
+
     if (!batch) 
         printf("\n R-all = %1.3f  R-omit = %1.3f\n", (FobsFcalcAllSum / FobsSum), (FobsFcalcSum / FobsSum));
     
@@ -1160,30 +1185,30 @@ int main(int argc, char** argv)
     else 
         ms = clipper::Map_stats(sigmaa_omit_fd);
 
-    #pragma omp parallel sections
-    {
-	#pragma omp section
-	{
-    	    sigmaa_all_MapOut.open_write( all_MapName );      // write maps
-   	    sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
-    	    sigmaa_all_MapOut.close_write();
-	}
-	#pragma omp section
-	{
-    	    sigmaa_dif_MapOut.open_write( dif_MapName );
-    	    sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
-    	    sigmaa_dif_MapOut.close_write();
-	}
-	#pragma omp section
-	{
-    	    sigmaa_omit_fd_MapOut.open_write( omit_dif_MapName );
-    	    sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
-    	    sigmaa_omit_fd_MapOut.close_write();
-	}
-    }
-    
-    if (!batch) 
-    {
+    if (!batch)
+    {    
+        #pragma omp parallel sections
+        {
+	    #pragma omp section
+	    {
+    	        sigmaa_all_MapOut.open_write( all_MapName );      // write maps
+   	        sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
+    	        sigmaa_all_MapOut.close_write();
+	    }
+	    #pragma omp section
+	    {
+    	        sigmaa_dif_MapOut.open_write( dif_MapName );
+    	        sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
+    	        sigmaa_dif_MapOut.close_write();
+	    }
+	    #pragma omp section
+            {
+    	        sigmaa_omit_fd_MapOut.open_write( omit_dif_MapName );
+    	        sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
+    	        sigmaa_omit_fd_MapOut.close_write();
+	    }
+        }
+
         std::cout << "done." << std::endl; 
         std::cout << "\n\nDetailed validation data" << std::endl;
         std::cout << "------------------------" << std::endl;

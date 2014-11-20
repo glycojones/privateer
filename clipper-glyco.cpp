@@ -559,28 +559,28 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 }
 
 
-/*! Internal function, not for public use
-		\param mmol The parent MiniMol object
-		\return A vector of real values containing the cremer-pople parameters
-*/
+    /*! Internal function, not for public use
+        \param mmol The parent MiniMol object
+	\return A vector of real values containing the cremer-pople parameters
+    */
 
-std::vector<clipper::ftype> MSugar::cremerPople_furanose(const clipper::MiniMol& mmol, clipper::MMonomer mm) // modifies object, copies mm
-{
-    clipper::ftype centre_x, centre_y, centre_z;
-    centre_x = centre_y = centre_z = 0.0;
+    std::vector<clipper::ftype> MSugar::cremerPople_furanose(const clipper::MiniMol& mmol, clipper::MMonomer mm) // modifies object, copies mm
+    {
+        clipper::ftype centre_x, centre_y, centre_z;
+        centre_x = centre_y = centre_z = 0.0;
 
 	MSugar sugar = *this;
 
 	std::vector<clipper::MAtom> ring_atoms = ring_members();
 
-	bool lurd_reverse = false; // to be used when the configurational carbon is lower-ranked than the carbon making the link,
-															// which is involved in a configurational switch that effectively reverses the LURD mnemonic
+	bool lurd_reverse = false; // to be used when the configurational carbon is ranked lower than the carbon making the link,
+				   // which is involved in a configurational switch that effectively reverses the LURD mnemonic
 
 	clipper::String nz1 = ring_atoms[0].name().trim(); // determine the relevant atoms
-    clipper::String nz2 = ring_atoms[1].name().trim();
-    clipper::String nz3 = ring_atoms[2].name().trim();
-    clipper::String nz4 = ring_atoms[3].name().trim();
-    clipper::String nz5 = ring_atoms[4].name().trim();
+        clipper::String nz2 = ring_atoms[1].name().trim();
+        clipper::String nz3 = ring_atoms[2].name().trim();
+        clipper::String nz4 = ring_atoms[3].name().trim();
+        clipper::String nz5 = ring_atoms[4].name().trim();
 
 	stereochemistry_pairs stereo = get_stereochemistry( mmol );
 	clipper::String anomeric_carbon = stereo.first.first.name().trim();
@@ -599,83 +599,84 @@ std::vector<clipper::ftype> MSugar::cremerPople_furanose(const clipper::MiniMol&
 
 	
 	if ( configurational_carbon != "XXX" )
-		if ( ( ring_atoms[4].name().trim() == configurational_carbon) || !is_part_of_ring( sugar_configurational_carbon, ring_atoms ) ) // we have to take into account the rotation performed prior to closing the ring
-			lurd_reverse = true;
+	    if ( ( ring_atoms[4].name().trim() == configurational_carbon) || !is_part_of_ring( sugar_configurational_carbon, ring_atoms ) ) 
+                // we have to take into account the rotation performed prior to closing the ring
+	        lurd_reverse = true;
 
-    // find geometrical centre
-    centre_x += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().x();
-    centre_y += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().y();
-    centre_z += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().z();
+        // find geometrical centre
+        centre_x += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().x();
+        centre_y += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().y();
+        centre_z += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth().z();
 
-    centre_x += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().x();
-    centre_y += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().y();
-    centre_z += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().z();
+        centre_x += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().x();
+        centre_y += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().y();
+        centre_z += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth().z();
 
-    centre_x += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().x();
-    centre_y += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().y();
-    centre_z += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().z();
+        centre_x += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().x();
+        centre_y += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().y();
+        centre_z += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth().z();
 
-    centre_x += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().x();
-    centre_y += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().y();
-    centre_z += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().z();
+        centre_x += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().x();
+        centre_y += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().y();
+        centre_z += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth().z();
 
-    centre_x += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().x();
-    centre_y += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().y();
-    centre_z += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().z();
+        centre_x += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().x();
+        centre_y += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().y();
+        centre_z += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth().z();
 
-    centre_x = centre_x / 5;
-    centre_y = centre_y / 5;
-    centre_z = centre_z / 5;
+        centre_x = centre_x / 5;
+        centre_y = centre_y / 5;
+        centre_z = centre_z / 5;
 
-    clipper::Coord_orth centre(centre_x,centre_y,centre_z);
+        clipper::Coord_orth centre(centre_x,centre_y,centre_z);
 	this->sugar_centre = centre;
 
-    #ifdef DUMP
-			DBG << "Ring centre: " << centre.format() << std::endl;
+        #ifdef DUMP
+	    DBG << "Ring centre: " << centre.format() << std::endl;
 	#endif
 
-    clipper::RTop_orth shift(clipper::Mat33<>::identity(), (- centre)); //clipper::Vec3<>::null()
-    sugar.transform(shift); // recentre the sugar coordinates
+        clipper::RTop_orth shift(clipper::Mat33<>::identity(), (- centre)); //clipper::Vec3<>::null()
+        sugar.transform(shift); // recentre the sugar coordinates
 
-		stereo.first.first.transform(shift);
-		stereo.first.second.transform(shift);
+	stereo.first.first.transform(shift);
+	stereo.first.second.transform(shift);
 
-		stereo.second.first.transform(shift);
-		stereo.second.second.transform(shift);
+	stereo.second.first.transform(shift);
+	stereo.second.second.transform(shift);
 
-    clipper::Vec3<clipper::ftype> rPrime(0.0, 0.0, 0.0);
-    clipper::Vec3<clipper::ftype> r2Prime(0.0, 0.0, 0.0);
-    clipper::Vec3<clipper::ftype> n(0.0, 0.0, 0.0);
+        clipper::Vec3<clipper::ftype> rPrime(0.0, 0.0, 0.0);
+        clipper::Vec3<clipper::ftype> r2Prime(0.0, 0.0, 0.0);
+        clipper::Vec3<clipper::ftype> n(0.0, 0.0, 0.0);
 
-    double argument = 0.0; // (j-1) = 0 for the first case
-    rPrime +=  sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth() * sin(argument);
-    r2Prime += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth() * cos(argument);
+        double argument = 0.0; // (j-1) = 0 for the first case
+        rPrime +=  sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth() * sin(argument);
+        r2Prime += sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth() * cos(argument);
 
-    argument = (2.0 * clipper::Util::pi())/5.0;
-    rPrime +=  sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth() * sin(argument);
-    r2Prime += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth() * cos(argument);
+        argument = (2.0 * clipper::Util::pi())/5.0;
+        rPrime +=  sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth() * sin(argument);
+        r2Prime += sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth() * cos(argument);
 
-    argument = (2.0 * clipper::Util::pi() * 2)/5.0;
-    rPrime +=  sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth() * sin(argument);
-    r2Prime += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth() * cos(argument);
+        argument = (2.0 * clipper::Util::pi() * 2)/5.0;
+        rPrime +=  sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth() * sin(argument);
+        r2Prime += sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth() * cos(argument);
 
-    argument = (2.0 * clipper::Util::pi() * 3)/5.0;
-    rPrime +=  sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth() * sin(argument);
-    r2Prime += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth() * cos(argument);
+        argument = (2.0 * clipper::Util::pi() * 3)/5.0;
+        rPrime +=  sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth() * sin(argument);
+        r2Prime += sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth() * cos(argument);
 
-    argument = (2.0 * clipper::Util::pi() * 4)/5.0;
-    rPrime +=  sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth() * sin(argument);
-    r2Prime += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth() * cos(argument);
+        argument = (2.0 * clipper::Util::pi() * 4)/5.0;
+        rPrime +=  sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth() * sin(argument);
+        r2Prime += sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth() * cos(argument);
 
-    n = (clipper::Vec3<clipper::ftype>::cross(rPrime, r2Prime)).unit();
+        n = (clipper::Vec3<clipper::ftype>::cross(rPrime, r2Prime)).unit();
 
-    clipper::ftype z1, z2, z3, z4, z5, z_anomeric_carbon, z_anomeric_substituent, z_configurational_carbon, z_configurational_substituent;
+        clipper::ftype z1, z2, z3, z4, z5, z_anomeric_carbon, z_anomeric_substituent, z_configurational_carbon, z_configurational_substituent;
 
-    z1 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth(), n);
-    z2 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth(), n);
-    z3 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth(), n);
-    z4 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth(), n);
-    z5 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth(), n);
+        z1 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz1,clipper::MM::ANY)].coord_orth(), n);
+        z2 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz2,clipper::MM::ANY)].coord_orth(), n);
+        z3 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz3,clipper::MM::ANY)].coord_orth(), n);
+        z4 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz4,clipper::MM::ANY)].coord_orth(), n);
+        z5 = clipper::Vec3<clipper::ftype>::dot(sugar[sugar.lookup(nz5,clipper::MM::ANY)].coord_orth(), n);
 
 	///////// handedness //////////////
 
@@ -688,22 +689,26 @@ std::vector<clipper::ftype> MSugar::cremerPople_furanose(const clipper::MiniMol&
 
 	for ( int i = 0 ; i < neighbourhood.size() ; i++ )
 	{
-		#ifdef DUMP
-			DBG << "Neighbour found for " << ring_atoms[4].name() << ": " << (mmol.atom(neighbourhood[i]).name()) << " at distance " << clipper::Coord_orth::length ( mmol.atom(neighbourhood[i]).coord_orth(), ring_atoms[4].coord_orth() ) << std::endl;
-		#endif
+	    #ifdef DUMP
+	        DBG << "Neighbour found for " << ring_atoms[4].name() << ": " << (mmol.atom(neighbourhood[i]).name()) 
+                    << " at distance " << clipper::Coord_orth::length ( mmol.atom(neighbourhood[i]).coord_orth(), ring_atoms[4].coord_orth() ) << std::endl;
+	    #endif
 		
-		if (( mmol.atom(neighbourhood[i]).element().trim() != "H" ) && (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[4].name().trim())) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
-		{
-			if ( clipper::Coord_orth::length(mmol.atom(neighbourhood[i]).coord_orth(), ring_atoms[4].coord_orth()) < 1.8 ) // check link
-				if ( !is_part_of_ring ( mmol.atom(neighbourhood[i]), ring_atoms ) ) // eliminate ring neighbours
-				{
-					#ifdef DUMP
-						DBG << "Analysing " <<  mmol.atom(neighbourhood[i]).name() << " with ID " <<  mmol.atom(neighbourhood[i]).id() << " as substituent for C4" << std::endl;
-					#endif  
-					if ( mmol.atom(neighbourhood[i]).element().trim() != "C" ) nz5_substituent = mmol.atom ( neighbourhood[i] ); // don't grab a carbon as substituent unless there's really no other option
-					else if ( nz5_substituent.name().trim() == "XXX" ) nz5_substituent = mmol.atom ( neighbourhood[i] );
-				}
-		}
+	    if (( mmol.atom(neighbourhood[i]).element().trim() != "H" ) && 
+                (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[4].name().trim())) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
+	    {
+	        if ( clipper::Coord_orth::length(mmol.atom(neighbourhood[i]).coord_orth(), ring_atoms[4].coord_orth()) < 1.8 ) // check link
+		    if ( !is_part_of_ring ( mmol.atom(neighbourhood[i]), ring_atoms ) ) // eliminate ring neighbours
+		    {
+		        #ifdef DUMP
+                            DBG << "Analysing " <<  mmol.atom(neighbourhood[i]).name() << " with ID " <<  mmol.atom(neighbourhood[i]).id() << " as substituent for C4" << std::endl;
+			#endif  
+			if ( mmol.atom(neighbourhood[i]).element().trim() != "C" ) 
+                            nz5_substituent = mmol.atom ( neighbourhood[i] ); // don't grab a carbon as substituent unless there's really no other option
+			else if ( nz5_substituent.name().trim() == "XXX" ) 
+                            nz5_substituent = mmol.atom ( neighbourhood[i] );
+		    }
+	    }
 	}
 
 	#ifdef DUMP
@@ -715,84 +720,93 @@ std::vector<clipper::ftype> MSugar::cremerPople_furanose(const clipper::MiniMol&
 
 	///////// stereochemistry ///////////
 
-    z_anomeric_carbon = clipper::Vec3<clipper::ftype>::dot( stereo.first.first.coord_orth(), n );
-    z_anomeric_substituent = clipper::Vec3<clipper::ftype>::dot( stereo.first.second.coord_orth(), n );
+        z_anomeric_carbon = clipper::Vec3<clipper::ftype>::dot( stereo.first.first.coord_orth(), n );
+        z_anomeric_substituent = clipper::Vec3<clipper::ftype>::dot( stereo.first.second.coord_orth(), n );
 
-    z_configurational_carbon = clipper::Vec3<clipper::ftype>::dot( stereo.second.first.coord_orth(), n );
-    z_configurational_substituent = clipper::Vec3<clipper::ftype>::dot( stereo.second.second.coord_orth(), n );
+        z_configurational_carbon = clipper::Vec3<clipper::ftype>::dot( stereo.second.first.coord_orth(), n );
+        z_configurational_substituent = clipper::Vec3<clipper::ftype>::dot( stereo.second.second.coord_orth(), n );
 
 	#ifdef DUMP
-		DBG << "Projections done." << std::endl;
+            DBG << "Projections done." << std::endl;
 	#endif
 
-    clipper::ftype totalPuckering = sqrt(pow(z1,2) + pow(z2,2) + pow(z3,2) + pow(z4,2) + pow(z5,2));
+        clipper::ftype totalPuckering = sqrt(pow(z1,2) + pow(z2,2) + pow(z3,2) + pow(z4,2) + pow(z5,2));
 
-    clipper::ftype phi2, q2, argACos, argASin;
+        clipper::ftype phi2, q2, argACos, argASin;
 
-    argACos =  sqrt(1.0/3.0) * (z1 + z2*cos(4.0*clipper::Util::pi()/5.0) + z3*cos(8.0*clipper::Util::pi()/5.0) + z4*cos(12.0*clipper::Util::pi()/5.0) + z5*cos(16.0*clipper::Util::pi()/5.0));
-    argASin = -sqrt(1.0/3.0) * (z2*sin(4.0*clipper::Util::pi()/5.0) + z3*sin(8.0*clipper::Util::pi()/5.0) + z4*sin(12.0*clipper::Util::pi()/5.0) + z5*sin(16.0*clipper::Util::pi()/5.0));
+        argACos =  sqrt(2.0/5.0) * (z1 + z2*cos(4.0*clipper::Util::pi()/5.0) 
+                    + z3*cos(8.0*clipper::Util::pi()/5.0) + z4*cos(12.0*clipper::Util::pi()/5.0) 
+                    + z5*cos(16.0*clipper::Util::pi()/5.0));
+    
+        argASin = -sqrt(2.0/5.0) * (z2*sin(4.0*clipper::Util::pi()/5.0) + z3*sin(8.0*clipper::Util::pi()/5.0) 
+                    + z4*sin(12.0*clipper::Util::pi()/5.0) + z5*sin(16.0*clipper::Util::pi()/5.0));
+    
+        std::cout << " ArgACos:  " << argACos << " ArgASin: " << argASin << std::endl;
 
-    phi2 = atan( argASin / argACos);
-    phi2 += clipper::Util::pi()/2; // atan(w) result is given in the [-pi/2,+pi/2] range
+        phi2 = atan( argASin / argACos);
+        phi2 += clipper::Util::pi()/2; // atan(w) result is given in the [-pi/2,+pi/2] range
 
-    //if (float((q2*sin(phi2)) != float(argASin)) || (float(q2*cos(phi2)) != float(argACos))) phi2 += clipper::Util::pi();
+        //if (float((q2*sin(phi2)) != float(argASin)) || (float(q2*cos(phi2)) != float(argACos))) phi2 += clipper::Util::pi();
 
-    q2 = (argACos / cos(phi2));
+        q2 = (argACos / cos(phi2));
+        
+        std::cout << "phi2: " << phi2 << " q2: " << q2 << std::endl; 
 
-    phi2 *= (180.0/clipper::Util::pi()); // convert phi2 to degrees as well
+        phi2 *= (180.0/clipper::Util::pi()); // convert phi2 to degrees as well
 
-    std::vector<clipper::ftype> cpParams;
+        std::vector<clipper::ftype> cpParams;
 
 	this->sugar_cremer_pople_params.push_back(totalPuckering);
 	this->sugar_cremer_pople_params.push_back(-1); // there's no theta for furanoses
-	this->sugar_cremer_pople_params.push_back(phi2);
-    
+	this->sugar_cremer_pople_params.push_back(phi2);    
+
 	cpParams.push_back(totalPuckering);
-    cpParams.push_back(-1); // theta not defined for furanoses
-    cpParams.push_back(phi2);
-    cpParams.push_back(q2);
-    cpParams.push_back(-1); // m=2, so there's no q3
+        cpParams.push_back(-1); // theta not defined for furanoses
+        cpParams.push_back(phi2);
+        cpParams.push_back(q2);
+        cpParams.push_back(-1); // m=2, so there's no q3
     
-    if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
-		{
-			if (lurd_reverse)
-			{
-				cpParams.push_back(anomer_beta);
-				this->sugar_anomer="beta";
-			}
-			else
-			{
-				cpParams.push_back(anomer_alpha);
-				this->sugar_anomer="alpha";
-			}
-		}
-		else
-		{
-			if (lurd_reverse)
-			{
-				cpParams.push_back(anomer_alpha);
-				this->sugar_anomer="alpha";
-			}
-			else
-			{
-				cpParams.push_back(anomer_beta);
-				this->sugar_anomer="beta";
-			}
-		}
+        if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || 
+            ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
+	{
+	    if (lurd_reverse)
+	    {
+		cpParams.push_back(anomer_beta);
+		this->sugar_anomer="beta";
+	    }
+	    else
+	    {
+                cpParams.push_back(anomer_alpha);
+                this->sugar_anomer="alpha";
+	    }
+	}
+	else
+	{
+            if (lurd_reverse)
+            {
+                cpParams.push_back(anomer_alpha);
+                this->sugar_anomer="alpha";
+            }
+            else
+            {
+                cpParams.push_back(anomer_beta);
+                this->sugar_anomer="beta";
+            }
+        }
 
-		#ifdef DUMP
-			DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
-			DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " << configurational_substituent << "/" << z_configurational_substituent << std::endl;
-			DBG << "z5= " << z5 << " z5_subs= " << z5_substituent << std::endl;
-		#endif
+	#ifdef DUMP
+            DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
+            DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " 
+                << configurational_substituent << "/" << z_configurational_substituent << std::endl;
+	    DBG << "z5= " << z5 << " z5_subs= " << z5_substituent << std::endl;
+	#endif
 
-    cpParams.push_back( z5 - z5_substituent );
+        cpParams.push_back( z5 - z5_substituent );
 
-    if ((is_part_of_ring(nz5_substituent, this->sugar_ring_elements)) || (nz5_substituent.name().trim() == "XXX")) this->sugar_handedness = "N";
-    else if ((z5 - z5_substituent) < 0) this->sugar_handedness = "D"; else this->sugar_handedness = "L";
+        if ((is_part_of_ring(nz5_substituent, this->sugar_ring_elements)) || (nz5_substituent.name().trim() == "XXX")) this->sugar_handedness = "N";
+        else if ((z5 - z5_substituent) < 0) this->sugar_handedness = "D"; else this->sugar_handedness = "L";
 
-    return cpParams;
-
+        return cpParams;
 }
 
 
@@ -1644,7 +1658,10 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
     if ( html_format ) 
     {
         buffer.insert ( 0, "\">" );
-        buffer.insert ( 0, msug.type() + "/" + msug.id().trim() );
+//        std::ostringstream rscc;
+//        rscc <<  msug.get_rscc();
+//        buffer.insert ( 0, rscc.str() );
+        buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
         buffer.insert ( 0, "<span title=\"" );      
     }
 
@@ -1688,7 +1705,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         if ( html_format ) 
         {
             buffer.insert ( 0, "\">" );
-            buffer.insert ( 0, msug.type() + "/" + msug.id().trim() );
+            buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
             buffer.insert ( 0, "<span title=\"" );      
         }
 
@@ -1900,7 +1917,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             for (int j = 0 ; j < contacts.size() ; j++ ) 
             {
                 if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 1.55 ))
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 1.61 ))
                 {   
                     if (( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == 'A')
                     || (get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == ' '))
