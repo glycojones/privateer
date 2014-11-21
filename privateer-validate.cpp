@@ -222,20 +222,20 @@ int main(int argc, char** argv)
         fflush(0);
     }
 
-    clipper::MMDBManager mmdb;
+    clipper::MMDBManager mmanager;
     clipper::MMDBfile mfile;
     const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
     mfile.SetFlag( mmdbflags );
 	
-    clipper::MiniMol tmpmol;
-    static_cast<clipper::MMDBfile&>(mmdb).import_minimol( tmpmol );
+    clipper::MiniMol mmol;
+    static_cast<clipper::MMDBfile&>(mmanager).import_minimol( mmol );
     
     mfile.read_file( ippdb.trim() );
-    mfile.import_minimol( tmpmol );
+    mfile.import_minimol( mmol );
 	
     int pos_slash = ippdb.rfind("/");
 
-    clipper::MiniMol& mmol = tmpmol;
+    //clipper::MiniMol& mmol = mmol;
 	
     if (!batch) 
         std::cout << "done." << std::endl;
@@ -400,8 +400,9 @@ int main(int argc, char** argv)
 	    {
 	        std::vector<clipper::ftype> cpParams(10, 0);
 		cpParams = ligandList[index].second.cremer_pople_params();
-		fprintf(output,"\t%1.3f\t%3.2f\t%3.2f\t",cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
-		fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
+		fprintf(output,"\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		// output cremer-pople parameters
+		if ( cpParams[2] == -1 ) fprintf ( output, " ----\t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+                fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
 		fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
 
 		float bfac = 0.0;
@@ -468,9 +469,10 @@ int main(int argc, char** argv)
 	    {	
 	        std::vector<clipper::ftype> cpParams(10, 0);
 		cpParams = ligandList[index].second.cremer_pople_params();
-		printf("\t%1.3f\t%3.2f\t%3.2f\t",cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
-		printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 		// output the type of sugar, e.g. alpha-D-aldopyranose
-		printf("%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
+		printf("\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		        // output cremer-pople parameters
+		if ( cpParams[2] == -1 ) printf ( " ----\t" ); else printf ( "%3.2f\t", cpParams[2] );
+		printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 	// output the type of sugar, e.g. alpha-D-aldopyranose
+		printf("%s\t", ligandList[index].second.conformation_name().c_str());	// output a 3 letter code for the conformation
 
 		float bfac = 0.0;
 			
@@ -1350,10 +1352,11 @@ int main(int argc, char** argv)
 	{
 	    std::vector<clipper::ftype> cpParams(10, 0);
 	    cpParams = ligandList[index].second.cremer_pople_params();
-	    fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
-	    fprintf(output,"%1.2f\t", corr_coeff); 		// output RSCC and data resolution
-	    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
-	    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
+	    fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] ); 	// output cremer-pople parameters
+	    if ( cpParams[2] == -1 ) fprintf ( output, " ----\t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+	    fprintf(output,"%1.2f\t", corr_coeff); 		                                                // output RSCC and data resolution
+	    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 		// output the type of sugar, e.g. alpha-D-aldopyranose
+	    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());	// output a 3 letter code for the conformation
 	    fprintf(output,"%1.3f \t", accum);
             ligandList[index].second.set_rscc ( corr_coeff );
 
@@ -1418,7 +1421,8 @@ int main(int argc, char** argv)
 	{
 	    std::vector<clipper::ftype> cpParams(10, 0);
 	    cpParams = ligandList[index].second.cremer_pople_params();
-	    printf("\t%1.2f\t%1.3f\t%3.2f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1],cpParams[2]); 		// output cremer-pople parameters
+	    printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]); 		// output cremer-pople parameters
+	    if ( cpParams[2] == -1 ) printf ( " ----\t" ); else printf ( "%3.2f\t", cpParams[2] );
 	    printf("%1.2f\t", corr_coeff); 												// output RSCC and data resolution
 	    printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
 	    printf("%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
@@ -1715,9 +1719,9 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
             of_xml << "      <SugarQ>"              << puckering_amplitude                              << "</SugarQ>\n"            ;
 
+            of_xml << "      <SugarPhi>"        << cpParams[1]                                      << "</SugarPhi>\n"          ;
+            
             if (sugarList[i].second.ring_cardinality() == 6 )
-                of_xml << "      <SugarPhi>"        << cpParams[1]                                      << "</SugarPhi>\n"          ;
-
             of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
             of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
             of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;

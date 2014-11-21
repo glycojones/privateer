@@ -489,8 +489,13 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 
     theta *= (180.0/clipper::Util::pi()); // convert theta to degrees for sharing data
 
-    angleCos = acos ( sqrt(1.0/3.0) * (z1 + z2*cos(4.0*clipper::Util::pi()/6.0) + z3*cos(8.0*clipper::Util::pi()/6.0) + z4*cos(12.0*clipper::Util::pi()/6.0) + z5*cos(16.0*clipper::Util::pi()/6.0) + z6*cos(20.0*clipper::Util::pi()/6.0)) / q2 );
-    argASin = -sqrt(1.0/3.0) * (z2*sin(4.0*clipper::Util::pi()/6.0) + z3*sin(8.0*clipper::Util::pi()/6.0) + z4*sin(12.0*clipper::Util::pi()/6.0) + z5*sin(16.0*clipper::Util::pi()/6.0) + z6*sin(20.0*clipper::Util::pi()/6.0));
+    angleCos = acos ( sqrt(1.0/3.0) * (z1 + z2*cos(4.0*clipper::Util::pi()/6.0) 
+                + z3*cos(8.0*clipper::Util::pi()/6.0) + z4*cos(12.0*clipper::Util::pi()/6.0) 
+                + z5*cos(16.0*clipper::Util::pi()/6.0) + z6*cos(20.0*clipper::Util::pi()/6.0)) / q2 );
+    
+    argASin = -sqrt(1.0/3.0) * (z2*sin(4.0*clipper::Util::pi()/6.0) + z3*sin(8.0*clipper::Util::pi()/6.0) 
+                + z4*sin(12.0*clipper::Util::pi()/6.0) + z5*sin(16.0*clipper::Util::pi()/6.0) 
+                + z6*sin(20.0*clipper::Util::pi()/6.0));
 
     // two possible values for phi, check other equivalence with sin (eqn 13 in the cremer-pople paper)
 
@@ -743,26 +748,28 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     
         std::cout << " ArgACos:  " << argACos << " ArgASin: " << argASin << std::endl;
 
-        phi2 = atan( argASin / argACos);
-        phi2 += clipper::Util::pi()/2; // atan(w) result is given in the [-pi/2,+pi/2] range
+        phi2 = (clipper::Util::pi()/2) - atan( argACos / argASin); // we want arccotan but there's no such thing in C math I'm afraid
 
-        //if (float((q2*sin(phi2)) != float(argASin)) || (float(q2*cos(phi2)) != float(argACos))) phi2 += clipper::Util::pi();
+
+        //phi2 += clipper::Util::pi()/2; // atan(w) result is given in the [-pi/2,+pi/2] range
 
         q2 = (argACos / cos(phi2));
         
-        std::cout << "phi2: " << phi2 << " q2: " << q2 << std::endl; 
+        //if (float((q2*sin(phi2)) != float(argASin)) || (float(q2*cos(phi2)) != float(argACos))) phi2 += clipper::Util::pi();
+        
+        std::cout << " phi2: " << phi2 << " q2: " << q2 << std::endl; 
 
         phi2 *= (180.0/clipper::Util::pi()); // convert phi2 to degrees as well
 
         std::vector<clipper::ftype> cpParams;
 
 	this->sugar_cremer_pople_params.push_back(totalPuckering);
-	this->sugar_cremer_pople_params.push_back(-1); // there's no theta for furanoses
 	this->sugar_cremer_pople_params.push_back(phi2);    
+	this->sugar_cremer_pople_params.push_back(-1); // there's no theta for furanoses
 
 	cpParams.push_back(totalPuckering);
-        cpParams.push_back(-1); // theta not defined for furanoses
         cpParams.push_back(phi2);
+        cpParams.push_back(-1); // theta not defined for furanoses
         cpParams.push_back(q2);
         cpParams.push_back(-1); // m=2, so there's no q3
     
