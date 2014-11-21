@@ -222,20 +222,13 @@ int main(int argc, char** argv)
         fflush(0);
     }
 
-    clipper::MMDBManager mmanager;
     clipper::MMDBfile mfile;
-    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
-    mfile.SetFlag( mmdbflags );
-	
     clipper::MiniMol mmol;
-    static_cast<clipper::MMDBfile&>(mmanager).import_minimol( mmol );
-    
+
     mfile.read_file( ippdb.trim() );
     mfile.import_minimol( mmol );
 	
     int pos_slash = ippdb.rfind("/");
-
-    //clipper::MiniMol& mmol = mmol;
 	
     if (!batch) 
         std::cout << "done." << std::endl;
@@ -246,7 +239,6 @@ int main(int argc, char** argv)
 	std::cout << " Privateer-validate will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl; 
 	mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );  
     }
-
     
     if ( noMaps )
     {			
