@@ -393,7 +393,7 @@ int main(int argc, char** argv)
 	        std::vector<clipper::ftype> cpParams(10, 0);
 		cpParams = ligandList[index].second.cremer_pople_params();
 		fprintf(output,"\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		// output cremer-pople parameters
-		if ( cpParams[2] == -1 ) fprintf ( output, " ----\t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+		if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
                 fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
 		fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
 
@@ -462,7 +462,7 @@ int main(int argc, char** argv)
 	        std::vector<clipper::ftype> cpParams(10, 0);
 		cpParams = ligandList[index].second.cremer_pople_params();
 		printf("\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		        // output cremer-pople parameters
-		if ( cpParams[2] == -1 ) printf ( " ----\t" ); else printf ( "%3.2f\t", cpParams[2] );
+		if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
 		printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 	// output the type of sugar, e.g. alpha-D-aldopyranose
 		printf("%s\t", ligandList[index].second.conformation_name().c_str());	// output a 3 letter code for the conformation
 
@@ -1345,7 +1345,7 @@ int main(int argc, char** argv)
 	    std::vector<clipper::ftype> cpParams(10, 0);
 	    cpParams = ligandList[index].second.cremer_pople_params();
 	    fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] ); 	// output cremer-pople parameters
-	    if ( cpParams[2] == -1 ) fprintf ( output, " ----\t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+	    if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
 	    fprintf(output,"%1.2f\t", corr_coeff); 		                                                // output RSCC and data resolution
 	    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 		// output the type of sugar, e.g. alpha-D-aldopyranose
 	    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());	// output a 3 letter code for the conformation
@@ -1414,7 +1414,7 @@ int main(int argc, char** argv)
 	    std::vector<clipper::ftype> cpParams(10, 0);
 	    cpParams = ligandList[index].second.cremer_pople_params();
 	    printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]); 		// output cremer-pople parameters
-	    if ( cpParams[2] == -1 ) printf ( " ----\t" ); else printf ( "%3.2f\t", cpParams[2] );
+	    if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
 	    printf("%1.2f\t", corr_coeff); 												// output RSCC and data resolution
 	    printf("%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
 	    printf("%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation

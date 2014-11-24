@@ -180,7 +180,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 	if (this->sugar_ring_elements.size() == 5)
 	{
 		this->cremerPople_furanose(*this->sugar_parent_molecule, mm);	
-		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[2]);
+		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
 		
 		#ifdef DUMP
 			DBG << "After checking the conformation..." << std::endl;
@@ -746,20 +746,21 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         argASin = -sqrt(2.0/5.0) * (z2*sin(4.0*clipper::Util::pi()/5.0) + z3*sin(8.0*clipper::Util::pi()/5.0) 
                     + z4*sin(12.0*clipper::Util::pi()/5.0) + z5*sin(16.0*clipper::Util::pi()/5.0));
     
-        std::cout << " ArgACos:  " << argACos << " ArgASin: " << argASin << std::endl;
-
         phi2 = (clipper::Util::pi()/2) - atan( argACos / argASin); // we want arccotan but there's no such thing in C math I'm afraid
-
-
+        clipper::ftype phi3 = atan (argASin / argACos );
         //phi2 += clipper::Util::pi()/2; // atan(w) result is given in the [-pi/2,+pi/2] range
 
         q2 = (argACos / cos(phi2));
         
-        //if (float((q2*sin(phi2)) != float(argASin)) || (float(q2*cos(phi2)) != float(argACos))) phi2 += clipper::Util::pi();
+//        if (float((q2*sin(phi2)) != float(argASin) )) phi2 = 2*clipper::Util::pi() - phi2;
         
-        std::cout << " phi2: " << phi2 << " q2: " << q2 << std::endl; 
+//        std::cout << " phi2: " << phi2 << " phi3: " << phi3 << " q2: " << q2 << std::endl;
+//        std::cout << " argASin: " << argASin << " q2*sin(phi2): " << float(q2*sin(phi2)) << " q2*sin(phi3): " << float(q2*sin(phi3)) << std::endl; 
+//        std::cout << " argACos: " << argACos << " q2*cos(phi2): " << float(q2*cos(phi2)) << " q2*cos(phi3): " << float(q2*cos(phi3)) << std::endl;
 
-        phi2 *= (180.0/clipper::Util::pi()); // convert phi2 to degrees as well
+        q2 < 0 ? phi2 = 180.0 + phi2 * ( 180.0/clipper::Util::pi() ) :  phi2 *= (180.0/clipper::Util::pi()); // convert phi2 to degrees as well
+        
+        if ( q2 < 0 ) q2 *= -1;
 
         std::vector<clipper::ftype> cpParams;
 
@@ -886,31 +887,31 @@ int MSugar::conformationPyranose(const clipper::ftype& phi, const clipper::ftype
 	\return An integer value describing the conformation
 */
 
-int MSugar::conformationFuranose(const clipper::ftype& theta) const
+int MSugar::conformationFuranose(const clipper::ftype& phi) const
 {
     int confCode = 0;
+    
+    if ((phi > 9.0) && (phi <= 27.0)) confCode = conf_furanose_OT1;
+    else if ((phi > 27.0)  && (phi <=  45.0)) confCode = conf_furanose_EV1;
+    else if ((phi > 45.0)  && (phi <=  63.0)) confCode = conf_furanose_2T1;
+    else if ((phi > 63.0)  && (phi <=  81.0)) confCode = conf_furanose_2EV;
+    else if ((phi > 81.0)  && (phi <=  99.0)) confCode = conf_furanose_2T3;
+    else if ((phi > 99.0)  && (phi <= 117.0)) confCode = conf_furanose_EV3;
+    else if ((phi >117.0)  && (phi <= 135.0)) confCode = conf_furanose_4T3;
+    else if ((phi >135.0)  && (phi <= 153.0)) confCode = conf_furanose_4EV;
+    else if ((phi >153.0)  && (phi <= 171.0)) confCode = conf_furanose_4TO;
+    else if ((phi > 171.0) && (phi <= 189.0)) confCode = conf_furanose_EVO;
+    else if ((phi > 189.0) && (phi <= 207.0)) confCode = conf_furanose_1TO;
+    else if ((phi > 207.0) && (phi <= 225.0)) confCode = conf_furanose_1EV;
+    else if ((phi > 225.0) && (phi <= 243.0)) confCode = conf_furanose_1T2;
+    else if ((phi > 243.0) && (phi <= 261.0)) confCode = conf_furanose_EV2;
+    else if ((phi > 261.0) && (phi <= 279.0)) confCode = conf_furanose_3T2;
+    else if ((phi > 279.0) && (phi <= 297.0)) confCode = conf_furanose_3EV;
+    else if ((phi > 297.0) && (phi <= 315.0)) confCode = conf_furanose_3T4;
+    else if ((phi > 315.0) && (phi <= 333.0)) confCode = conf_furanose_EV4;
+    else if ((phi > 333.0) && (phi <= 351.0)) confCode = conf_furanose_OT4;
+    else if ((phi > 351.0) || (phi <=   9.0)) confCode = conf_furanose_OEV;
 
-    	 if ((theta > 175.5) || (theta < 4.5 ))    confCode = conf_furanose_3T2;
-	else if ((theta > 4.5) && (theta < 13.5 ))     confCode = conf_furanose_3EV;
-	else if ((theta > 13.5) && (theta < 22.5 ))    confCode = conf_furanose_3T4;
-	else if ((theta > 22.5) && (theta < 31.5 ))    confCode = conf_furanose_4EV;
-	else if ((theta > 31.5) && (theta < 40.5 ))    confCode = conf_furanose_OT4;
-	else if ((theta > 40.5) && (theta < 49.5 ))    confCode = conf_furanose_OEV;
-	else if ((theta > 49.5) && (theta < 58.5 ))    confCode = conf_furanose_OT1;
-	else if ((theta > 58.5) && (theta < 67.5 ))    confCode = conf_furanose_EV1;
-	else if ((theta > 67.5) && (theta < 76.5 ))    confCode = conf_furanose_2T1;
-	else if ((theta > 76.5) && (theta < 85.5 ))    confCode = conf_furanose_2EV;
-	else if ((theta > 85.5) && (theta < 94.5 ))    confCode = conf_furanose_2T3;
-	else if ((theta > 94.5) && (theta < 103.5 ))   confCode = conf_furanose_EV3;
-	else if ((theta > 103.5) && (theta < 112.5 ))  confCode = conf_furanose_4T3;
-	else if ((theta > 112.5) && (theta < 121.5 ))  confCode = conf_furanose_4EV;
-	else if ((theta > 121.5) && (theta < 130.5 ))  confCode = conf_furanose_4TO;
-	else if ((theta > 130.5) && (theta < 139.5 ))  confCode = conf_furanose_EVO;
-	else if ((theta > 139.5) && (theta < 148.5 ))  confCode = conf_furanose_1TO;
-	else if ((theta > 148.5) && (theta < 157.5 ))  confCode = conf_furanose_1EV;
-	else if ((theta > 157.5) && (theta < 166.5 ))  confCode = conf_furanose_1T2;
-	else if ((theta > 166.5) && (theta < 175.5 ))  confCode = conf_furanose_2EV;
-	
     return confCode;
 }
 
