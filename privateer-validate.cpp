@@ -78,6 +78,9 @@ int main(int argc, char** argv)
     FILE *output;
     bool output_mtz = false;
     std::vector < clipper::MGlycan > list_of_glycans;
+    clipper::CCP4MTZfile opmtz_best, opmtz_omit;
+    clipper::MTZcrystal opxtal;
+    clipper::MTZdataset opdset;
 
     // command input
     CCP4CommandInput args( argc, argv, true );
@@ -724,6 +727,8 @@ int main(int argc, char** argv)
 	{
 	    if (!batch) std::cout << "MTZ file supplied. Using " << ipcol_fo << "...\n";
 	    mtzin.import_hkl_data( fobs, "*/*/["+ ipcol_fo+"]" );
+            mtzin.import_crystal(opxtal, ipcol_fo);
+            mtzin.import_dataset(opdset, ipcol_fo);
 	    mtzin.close_read();
 	    notFound = false;
         }
@@ -735,6 +740,8 @@ int main(int argc, char** argv)
             	{
                     if (!batch) std::cout << "\nMTZ file supplied. Using FOBS & SIGFOBS...\n";
                     mtzin.import_hkl_data( fobs, "*/*/[FOBS,SIGFOBS]" );
+                    mtzin.import_crystal(opxtal, "*/*/[FOBS,SIGFOBS]" );
+                    mtzin.import_dataset(opdset, "*/*/[FOBS,SIGFOBS]" );
                     mtzin.close_read();
                     notFound = false;
             	}
@@ -742,6 +749,8 @@ int main(int argc, char** argv)
             	{
                     if (!batch) std::cout << "\nMTZ file supplied. Using FP & SIGFP...\n";
                     mtzin.import_hkl_data( fobs, "*/*/[FP,SIGFP]" );
+                    mtzin.import_crystal(opxtal, "*/*/[FP,SIGFP]" );
+                    mtzin.import_dataset(opdset, "*/*/[FP,SIGFP]" );
                     mtzin.close_read();
                     notFound = false;
             	}
@@ -749,6 +758,8 @@ int main(int argc, char** argv)
             	{
                     if (!batch) std::cout << "\nMTZ file supplied. Using FOSC & SIGFOSC...\n";
                     mtzin.import_hkl_data( fobs, "*/*/[FOSC,SIGFOSC]" );
+                    mtzin.import_crystal(opxtal, "*/*/[FOSC,SIGFOSC]" );
+                    mtzin.import_dataset(opdset, "*/*/[FOSC,SIGFOSC]" );
                     mtzin.close_read();
                     notFound = false;
             	}
@@ -756,6 +767,8 @@ int main(int argc, char** argv)
             	{
                     if (!batch) std::cout << "\nMTZ file supplied. Using F-obs & SIGF-obs...\n";
                     mtzin.import_hkl_data( fobs, "*/*/[F-obs,SIGF-obs]" );
+                    mtzin.import_crystal(opxtal, "*/*/[F-obs,SIGF-obs]" );
+                    mtzin.import_dataset(opdset, "*/*/[F-obs,SIGF-obs]" );
                     mtzin.close_read();
                     notFound = false;
             	}
@@ -763,6 +776,8 @@ int main(int argc, char** argv)
             	{
                     if (!batch) std::cout << "\nMTZ file supplied. Using F & SIGF...\n";
                     mtzin.import_hkl_data( fobs, "*/*/[F,SIGF]" );
+                    mtzin.import_crystal(opxtal, "*/*/[F,SIGF]" );
+                    mtzin.import_dataset(opdset, "*/*/[F,SIGF]" );
                     mtzin.close_read();
                     notFound = false;
             	}
@@ -798,6 +813,8 @@ int main(int argc, char** argv)
                 ampmtzin.set_column_label_mode( clipper::CCP4MTZfile::Legacy );
                 ampmtzin.open_read( "amplitudes.mtz" );   // open file, no security checks
                 ampmtzin.import_hkl_data( fobs, "*/*/[F,SIGF]" );
+                ampmtzin.import_crystal(opxtal, "*/*/[F,SIGF]" );
+                ampmtzin.import_dataset(opdset, "*/*/[F,SIGF]" );
                 ampmtzin.close_read();
 
                 if (!batch) std::cout << "\nPresent hklinfo: " << hklinfo.cell().format() << " " << hklinfo.spacegroup().spacegroup_number() << " " << hklinfo.num_reflections() << "\n";
@@ -1097,22 +1114,18 @@ int main(int argc, char** argv)
 
     if (batch) // create miniMTZ files for ccp4i2
     {
-        clipper::CCP4MTZfile opmtz_best, opmtz_omit;
-        clipper::MTZcrystal opxtal;
-        mtzin.import_crystal(opxtal, "FP,SIGFP");
-        
-        clipper::MTZdataset opdset;
-        mtzin.import_dataset(opdset, "FP,SIGFP");
-        
+        std::cout << opxtal.crystal_name() << " " << opxtal.project_name() << " " << opdset.dataset_name() << " " << opdset.wavelength() << std::endl;   
         clipper::String path = "/" + opxtal.crystal_name() + "/" + opdset.dataset_name() + "/[F,PHI]";
         
         opmtz_best.open_write ( "FPHIOUT.mtz" );
+        opmtz_best.export_hkl_info ( hklinfo );
         opmtz_best.export_crystal ( opxtal, path );
         opmtz_best.export_dataset ( opdset, path );
         opmtz_best.export_hkl_data ( fb_all, path );
         opmtz_best.close_write ();
         
         opmtz_omit.open_write ( "OMITFPHIOUT.mtz" );
+        opmtz_omit.export_hkl_info ( hklinfo );
         opmtz_omit.export_crystal ( opxtal, path );
         opmtz_omit.export_dataset ( opdset, path );
         opmtz_omit.export_hkl_data ( fd_omit, path );
