@@ -56,15 +56,15 @@ namespace privateer
 {
 	void insert_coot_prologue_scheme ( std::fstream& );
 	void insert_coot_epilogue_scheme ( std::fstream& );
-	void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String& );
+	void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
 	void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
-	void insert_coot_statusbar_text_scheme ( std::fstream&, const clipper::String& );
+	void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
 	
-	void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String& );
+	void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
 	void insert_coot_prologue_python ( std::fstream& );
 	void insert_coot_epilogue_python ( std::fstream& );
 	void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
-	void insert_coot_statusbar_text_python ( std::fstream&, const clipper::String& );
+	void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
 
 	clipper::ftype real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
 

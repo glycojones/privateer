@@ -169,14 +169,18 @@ namespace clipper
 			
             bool ok_with_ring() { return sugar_diag_ring; }
 			
-            bool ok_with_bonds_rmsd() { return sugar_diag_bonds_rmsd; }
+            bool ok_with_bonds_rmsd() { return sugar_diag_bonds_rmsd; }  // compare with database, if not found report dev from ideal  
 			
-            bool ok_with_angles_rmsd() { return sugar_diag_angles_rmsd; }
+            bool ok_with_angles_rmsd() { return sugar_diag_angles_rmsd; } // same
 			
             bool ok_with_anomer() { return sugar_diag_anomer; }
 			
             bool ok_with_chirality() { return sugar_diag_chirality; }
-                        
+            
+            bool ok_with_conformation() { return sugar_diag_conformation; }
+
+            bool ok_with_puckering() { return sugar_diag_puckering; }
+
             clipper::ftype get_rscc() { return sugar_rscc; }
                         
             void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
@@ -245,6 +249,8 @@ namespace clipper
 	    bool                            sugar_diag_angles_rmsd;
 	    bool                            sugar_diag_anomer;
 	    bool                            sugar_diag_chirality;
+            bool                            sugar_diag_conformation;
+            bool                            sugar_diag_puckering;
             clipper::String                 sugar_diagnostic;                   // full diagnostic to be used in Coot and ccp4i2
             clipper::ftype                  sugar_rscc;                         // RSCC to be used in Coot and ccp4i2
 	    clipper::ftype                  sugar_ring_bond_rmsd;

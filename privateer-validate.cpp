@@ -540,8 +540,8 @@ int main(int argc, char** argv)
 	clipper::String all_MapName, dif_MapName, omit_dif_MapName;
    	all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";	
 
-	privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName );
-	privateer::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName );
+	privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+	privateer::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
 	
 	int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 		
@@ -561,7 +561,7 @@ int main(int argc, char** argv)
 
 		    if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) ) 
 		    { 
-		        diagnostic.append("bad geometry");
+		        diagnostic.append("check geometry");
 			n_errors++; n_geom++;
 		    }
 			
@@ -585,7 +585,7 @@ int main(int argc, char** argv)
 			n_errors++; n_config++;
 		    }
 
-		    if ((ligandList[k].second.puckering_amplitude() < 0.5 ) ||(ligandList[k].second.puckering_amplitude() > 0.9 )) 
+		    if (!ligandList[k].second.ok_with_puckering()) 
 		    {
 		        if ( n_errors > 0 ) 
                             diagnostic.append(", Q=" + clipper::String(ligandList[k].second.puckering_amplitude()) );
@@ -595,29 +595,22 @@ int main(int argc, char** argv)
 			n_errors++; n_pucker++;
 		    }
 
-		    if (ligandList[k].second.ring_members().size() == 6 )	
-		    {
-			if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
-		        || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) ) 
-			{
-			    if ( n_errors > 0 ) 
-                                diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-			    else 
-                                diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+                    if (!ligandList[k].second.ok_with_conformation() )
+                    {
+		        if ( n_errors > 0 ) 
+                            diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+			else 
+                            diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
 							
 			    n_errors++; n_conf++;
-	
-			}					
-
-		    }
+		    }					
 
 		    privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
 		    privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
 		}
 		else // sugar is sane, but still need to check higher-energy conformations
 		{
-		    if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
-		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
+		    if ( !ligandList[k].second.ok_with_conformation() )
 		    {
 		        if ( n_errors > 0 ) 
                             diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
@@ -634,14 +627,20 @@ int main(int argc, char** argv)
 		}
 	    }
 	}
-	
-	privateer::insert_coot_epilogue_scheme ( of_scm );
+
+        clipper::String status_msg = "Blue map: 2mFo-DFc. Pink map: omit mFo-DFc. Torsion restraints have been enabled.";        
+        	
+        privateer::insert_coot_epilogue_scheme ( of_scm );
 	privateer::insert_coot_epilogue_python ( of_py );
-	of_scm.close();
+	
+        privateer::insert_coot_statusbar_text_scheme ( of_scm, status_msg ); 
+        privateer::insert_coot_statusbar_text_python ( of_py, status_msg ); 
+        
+        of_scm.close();
 	of_py.close();
 
 	std::cout << "SUMMARY: " << std::endl << std::endl ;
-	std::cout << "   Irregular geometry: " << n_geom << std::endl;
+	std::cout << "   Check ring geometry: " << n_geom << std::endl;
 	std::cout << "   Wrong anomer: " << n_anomer << std::endl;
 	std::cout << "   Wrong configuration: " << n_config << std::endl;
 	std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
@@ -1513,8 +1512,8 @@ int main(int argc, char** argv)
     
     privateer::insert_coot_prologue_scheme ( of_scm );
     privateer::insert_coot_prologue_python ( of_py );
-    privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName );
-    privateer::insert_coot_files_loadup_python (of_py, ippdb, all_MapName, dif_MapName, omit_dif_MapName );
+    privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+    privateer::insert_coot_files_loadup_python (of_py, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
 	
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 		
@@ -1538,8 +1537,8 @@ int main(int argc, char** argv)
 
 		if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) ) 
 		{ 
-		    diagnostic.append("bad geometry");
-                    report.append("Bad geometry");
+		    diagnostic.append("check geometry");
+                    report.append("Check geometry");
 		    n_errors++; 
                     n_geom++;
 		}
@@ -1577,7 +1576,7 @@ int main(int argc, char** argv)
                     n_config++;
 		}
 
-		if ((ligandList[k].second.puckering_amplitude() < 0.5 ) ||(ligandList[k].second.puckering_amplitude() > 0.9 )) 
+		if ( !ligandList[k].second.ok_with_puckering() ) 
 		{
 		    if ( n_errors > 0 )
                     { 
@@ -1594,57 +1593,49 @@ int main(int argc, char** argv)
                     n_pucker++;
 		}
 
-	        if ( (ligandList[k].second.ring_members().size() == 6 ) && (ligandList[k].second.handedness() != "N" ) )	
+	        if ( !ligandList[k].second.ok_with_conformation() )	
 	        {
-		    if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
-		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) ) 
-		    {
-		        if ( n_errors > 0 ) 
-                        {
-                            diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-                            report.append(", conformation might be mistaken");
-                        }
-                        else 
-                        {
-                            diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-			    report.append("Conformation might be mistaken");
-                        }
+		    if ( n_errors > 0 ) 
+                    {
+                        diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+                        report.append(", conformation might be mistaken");
+                    }
+                    else 
+                    {
+                        diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+			report.append("Conformation might be mistaken");
+                    }
 
-			n_errors++; 
-                        n_conf++;
-                    }					
-
-		}
+		    n_errors++; 
+                    n_conf++;
+                }					
 
 		privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
 		privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
 	    }
 	    else // sugar is sane, but still need to check higher-energy conformations
 	    {
-                if ( ( ligandList[k].second.handedness() != "N" ) && (ligandList[k].second.ring_members().size() == 6) )
+                if ( !ligandList[k].second.ok_with_conformation() )
                 { 
-	            if ( ((ligandList[k].second.conformation_name() != "4c1" ) && (ligandList[k].second.handedness() != "L" ))
-		    || ((ligandList[k].second.conformation_name() != "1c4" ) && (ligandList[k].second.handedness() != "D")) )
-		    {
-		        if ( n_errors > 0 ) 
-                        {
-                            diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
-		            report.append(", conformation might be mistaken");
-                        }
-                        else 
-                        {
-                            diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
-                            report.append("Conformation might be mistaken");
-                        }
+		    if ( n_errors > 0 ) 
+                    {
+                        diagnostic.append(", conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken") );
+		        report.append(", conformation might be mistaken");
+                    }
+                    else 
+                    {
+                        diagnostic.append("conformation (" + ligandList[k].second.conformation_name() + clipper::String(") might be mistaken"));
+                        report.append("Conformation might be mistaken");
+                    }
                     
-                        n_errors++; 
-                        n_conf++;
+                    n_errors++; 
+                    n_conf++;
 					
-                        sugar_count++;
-		        privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );			
-		        privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
-		    }
-                }
+                    sugar_count++;
+		    privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );			
+		    privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+		}
+                
 	    }
 	}
 
@@ -1661,7 +1652,7 @@ int main(int argc, char** argv)
     of_py.close();
 
     std::cout << "SUMMARY: " << std::endl << std::endl ;
-    std::cout << "   Irregular geometry: " << n_geom << std::endl;
+    std::cout << "   Check ring geometry: " << n_geom << std::endl;
     std::cout << "   Wrong anomer: " << n_anomer << std::endl;
     std::cout << "   Wrong configuration: " << n_config << std::endl;
     std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;

@@ -209,7 +209,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
 
-	// basic sanity check:
+	// sanity check:
 
 	this->sugar_sane = false;
 
@@ -220,61 +220,116 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 	
 	if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
 
+        clipper::String ref_conformation;
+        clipper::ftype  ref_puckering;   
+        clipper::ftype  ref_bonds_rmsd;
+        clipper::ftype  ref_angles_rmsd;
+
 	if (this->sugar_found_db)
 	{
 
-		if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) ) 
-			|| ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
-				sugar_diag_chirality = true; 
-		else sugar_diag_chirality = false;
+            ref_conformation = clipper::data::sugar_database[sugar_index].ref_conformation;
+            ref_puckering    = clipper::data::sugar_database[sugar_index].ref_puckering;
+            ref_bonds_rmsd   = clipper::data::sugar_database[sugar_index].ref_bonds_rmsd;
+            ref_angles_rmsd  = clipper::data::sugar_database[sugar_index].ref_angles_rmsd;
+
+	    if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) ) 
+		     || ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
+	        sugar_diag_chirality = true; 
+	    else sugar_diag_chirality = false;
 
 
-		if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
-			|| ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
-				sugar_diag_anomer = true;
-		else sugar_diag_anomer = false;
+	    if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
+		     || ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
+	        sugar_diag_anomer = true;
+	    else sugar_diag_anomer = false;
 
-		if (sugar_ring_elements.size() == 5)
-		{
-			if (sugar_ring_bond_rmsd < 0.040 ) 
-				sugar_diag_bonds_rmsd = true; 
-			else sugar_diag_bonds_rmsd = false; 
-		}
-		else 
-		{		
-			if (sugar_ring_bond_rmsd < 0.035 ) 
-				sugar_diag_bonds_rmsd = true; 
-			else sugar_diag_bonds_rmsd = false; 
-		}
+            if ( ref_conformation == conformation_name() )
+                sugar_diag_conformation = true;
+            else 
+            {
+                if ( ( conformation_name() == "4c1" ) && ( sugar_handedness != "L" ))
+                    sugar_diag_conformation = true;
+                else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
+                    sugar_diag_conformation = true;
+                else if ( ring_cardinality() < 6) 
+                   sugar_diag_conformation = true;
+                else  sugar_diag_conformation = false;
+            }
 
-		if (sugar_ring_elements.size() ==  5)
-		{
-			if ((sugar_ring_angle_rmsd > 4.0 ) && (sugar_ring_angle_rmsd < 7.5)) 
-				sugar_diag_angles_rmsd = true; 
-			else sugar_diag_angles_rmsd = false;
-		}
-		else 
-		{
-			if (sugar_ring_angle_rmsd < 4.0 ) 
-				sugar_diag_angles_rmsd = true; 
-			else sugar_diag_angles_rmsd = false;
-		}
+            if ( sugar_diag_conformation )
+            {    
+                if (( puckering_amplitude() > ref_puckering - 0.15 ) && (puckering_amplitude() < ref_puckering + 0.15))
+                    sugar_diag_puckering = true;
+                else sugar_diag_puckering = false;
+            
+                if ( sugar_ring_bond_rmsd < ( ref_bonds_rmsd + 0.039 ) ) 
+                    sugar_diag_bonds_rmsd = true; 
+	        else sugar_diag_bonds_rmsd = false; 
 
-		if (sugar_diag_angles_rmsd && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+	        if ( sugar_ring_angle_rmsd < ( ref_angles_rmsd + 3.0 ) )
+	            sugar_diag_angles_rmsd = true; 
+	        else sugar_diag_angles_rmsd = false; 
+            }
+            else 
+            {
+                if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.4 ))
+                    sugar_diag_puckering = false;
+                else sugar_diag_puckering = true;
+
+                sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
+            }
+
+	    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
 	}
 	else
 	{
-		sugar_diag_anomer=false;
-		sugar_diag_chirality=false;
-		sugar_diag_bonds_rmsd=false;
-		sugar_diag_angles_rmsd=false;
+	    sugar_diag_anomer=true;
+	    sugar_diag_chirality=true;  // perform a generic test based on rough ideal values
+
+	    if (sugar_ring_elements.size() == 5)
+	    {
+                if (sugar_ring_bond_rmsd < 0.040 ) 
+                    sugar_diag_bonds_rmsd = true; 
+		else sugar_diag_bonds_rmsd = false; 
+	    }
+	    else 
+	    {		
+	        if (sugar_ring_bond_rmsd < 0.035 ) 
+		    sugar_diag_bonds_rmsd = true; 
+		else sugar_diag_bonds_rmsd = false; 
+	    }
+
+	    if (sugar_ring_elements.size() ==  5)
+	    {
+	        if ((sugar_ring_angle_rmsd > 4.0 ) && (sugar_ring_angle_rmsd < 8.0)) 
+		    sugar_diag_angles_rmsd = true; 
+		else sugar_diag_angles_rmsd = false;
+	    }
+	    else 
+	    {
+	        if (sugar_ring_angle_rmsd < 4.0 ) 
+		    sugar_diag_angles_rmsd = true; 
+	        else sugar_diag_angles_rmsd = false;
+	    }
+
+            if ( ( conformation_name() == "4c1" ) && ( sugar_handedness != "L" ))
+                sugar_diag_conformation = true;
+            else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
+                sugar_diag_conformation = true;
+            else sugar_diag_conformation = false;
+
+            if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.4 ))
+                sugar_diag_puckering = false;
+            else sugar_diag_puckering = true;
+            
+	    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+
 	}
 
 	#ifdef DUMP
-		DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
+	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
 	#endif
-	
-	// fill in linkage fields
 
 }
 
