@@ -301,6 +301,8 @@ namespace clipper
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
             std::vector < clipper::MSugar > get_sugars () { return sugars; }
             clipper::String get_chain () { return chain; }
+            void set_kind_of_glycan ( clipper::String input ) { kind_of_glycan = input; }
+            clipper::String get_kind_of_glycan ( ) { return kind_of_glycan; }
 
         private:
             

@@ -1681,10 +1681,15 @@ clipper::String MGlycan::carbname_of(clipper::String name) const
     else if ( name == "NGA" ) new_name = "GalNac";
     else if ( name == "MAN" ) new_name = "Man"   ;
     else if ( name == "BMA" ) new_name = "Man"   ;
-    else if ( name == "SIA" ) new_name = "Sia"   ;
+    else if ( name == "SIA" ) new_name = "SiaAc" ;
     else if ( name == "GAL" ) new_name = "Gal"   ;
     else if ( name == "GLA" ) new_name = "Gal"   ;
-    
+    else if ( name == "FUC" ) new_name = "Fuc"   ;
+    else if ( name == "FCB" ) new_name = "Fuc"   ; 
+    else if ( name == "GLC" ) new_name = "Glc"   ;
+    else if ( name == "BGC" ) new_name = "Glc"   ;
+    else if ( name == "DAN" ) new_name = "NeuAc"   ; 
+
     return new_name;
 }
 
@@ -1893,9 +1898,13 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
+        {
             if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] );
+            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( mmol[pol][mon] );
+            else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( mmol[pol][mon] );
+        }
 
-    for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n glycan roots with first sugar
+    for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {        
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i] ) ;    
         
@@ -1911,6 +1920,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     list_of_sugars.push_back ( sugar );
                     clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()), 
                                                              potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
+                    mg.set_kind_of_glycan ( "n-glycan" );
                     list_of_glycans.push_back ( mg );
                     break;
                 }
@@ -1918,6 +1928,32 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         }
     }
 
+
+    for ( int i = 0 ; i < potential_o_roots.size() ; i++ )  // create o-glycan roots with first sugar
+    {        
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_o_roots[i] ) ;    
+        
+        for ( int j = 0 ; j < linked.size() ; j++ )
+        {
+            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()]; 
+            
+            if (( tmpmon.type().trim() == "NGA" ) || (tmpmon.type().trim() == "FUC" ))
+            { 
+                if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+                {
+                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    list_of_sugars.push_back ( sugar );
+                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()), 
+                                                             potential_o_roots[i], list_of_sugars[list_of_sugars.size()-1] );
+                    mg.set_kind_of_glycan ( "o-glycan" );
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
+            }
+        }
+    }
+
+    
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
         std::vector < clipper::MSugar > sugar_list = list_of_glycans[i].get_sugars();
@@ -1937,6 +1973,24 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
     if ( mm.type().trim() == "ASN" ) 
     {
         int id = mm.lookup ( "ND2", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "SER" )
+    {
+        int id = mm.lookup ( "OG", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "THR" )
+    {
+        int id = mm.lookup ( "OG1", clipper::MM::ANY );
         
         if ( id != -1 )
             candidates.push_back ( mm[id] );
