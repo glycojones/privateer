@@ -1721,7 +1721,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             of_xml << "      <SugarTheta>"          << cpParams[2]                                      << "</SugarTheta>\n"        ;
             of_xml << "      <SugarAnomer>"         << sugarList[i].second.anomer()                     << "</SugarAnomer>\n"       ;
             of_xml << "      <SugarHand>"           << sugarList[i].second.handedness()                 << "</SugarHand>\n"         ;
-            of_xml << "      <SugarConformation><![CDATA["   << sugarList[i].second.conformation_name()          << "]]></SugarConformation>\n" ;
+            of_xml << "      <SugarConformation><![CDATA["   << sugarList[i].second.conformation_name_iupac()          << "]]></SugarConformation>\n" ;
             of_xml << "      <SugarBondRMSD>"       << sugarList[i].second.ring_bond_rmsd()             << "</SugarBondRMSD>\n"     ;
             of_xml << "      <SugarAngleRMSD>"      << sugarList[i].second.ring_angle_rmsd()            << "</SugarAngleRMSD>\n"    ;
             of_xml << "      <SugarBFactor>"        << sugarList[i].second.get_bfactor()                << "</SugarBFactor>\n"      ;
