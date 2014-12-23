@@ -32,9 +32,6 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-#ifndef SVN_REV
-#define SVN_REV "ccp4"
-#endif
 
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
@@ -48,10 +45,15 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > >, 
 int main(int argc, char** argv)
 {
 
-    clipper::String program_version = "MKII-";
-    program_version.append(SVN_REV);
+    #ifndef SVN_REV
+        clipper::String program_version = "MKII";
+        CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2014/12/23" );
+    #else
+        clipper::String program_version = "MKII-";
+        program_version.append(SVN_REV);
+        CCP4Program prog( "prval", program_version.c_str(), "$Date: 2014/12/23" );
+    #endif
 
-    CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2014/10/13" );
     prog.set_termination_message( "Failed" );
 
     std::cout << std::endl << "Copyright 2013-2014 Jon Agirre, Kevin Cowtan and University of York." << std::endl;
