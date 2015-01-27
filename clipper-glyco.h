@@ -84,7 +84,7 @@ namespace clipper
             MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb ); 
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
-	    clipper::String conformation_name() { return clipper::data::conformational_landscape[sugar_conformation]; } 
+	        clipper::String conformation_name() { return clipper::data::conformational_landscape[sugar_conformation]; } 
             //!< get a fixed three-character code for the conformation
 			
             clipper::String conformation_name_iupac() { return clipper::data::iupac_conformational_landscape[sugar_conformation]; } 
@@ -189,6 +189,9 @@ namespace clipper
                         
             void set_diagnostic ( clipper::String message ) { sugar_diagnostic = message; }                       
 
+            clipper::String get_context ( ) { return sugar_context; }
+
+            void set_context ( clipper::String context ) { this->sugar_context = context; }
 
 	private:
 
@@ -249,16 +252,17 @@ namespace clipper
 	    bool                            sugar_diag_angles_rmsd;
 	    bool                            sugar_diag_anomer;
 	    bool                            sugar_diag_chirality;
-            bool                            sugar_diag_conformation;
-            bool                            sugar_diag_puckering;
-            clipper::String                 sugar_diagnostic;                   // full diagnostic to be used in Coot and ccp4i2
-            clipper::ftype                  sugar_rscc;                         // RSCC to be used in Coot and ccp4i2
+        bool                            sugar_diag_conformation;
+        bool                            sugar_diag_puckering;
+        clipper::String                 sugar_diagnostic;               // full diagnostic to be used in Coot and ccp4i2
+        clipper::ftype                  sugar_rscc;                     // RSCC to be used in Coot and ccp4i2
 	    clipper::ftype                  sugar_ring_bond_rmsd;
 	    clipper::ftype                  sugar_ring_angle_rmsd;
-            clipper::ftype                  sugar_bfactor;
-            int                             sugar_conformation;
+        clipper::ftype                  sugar_bfactor;
+        int                             sugar_conformation;
 	    clipper::String                 sugar_alternate_confcode;
-	    std::vector < MSugar >          sugar_linked_to;		        // size: number of carbon atoms - 1 ;
+	    std::vector < MSugar >          sugar_linked_to;		        // size: number of carbon atoms - 1
+        clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
 
 	    // private methods
 

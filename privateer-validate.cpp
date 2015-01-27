@@ -40,23 +40,23 @@ using clipper::data32::Flag;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 using namespace std;
 char get_altconformation(clipper::MAtom ma);
-void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > >, std::vector < clipper::MGlycan > list_of_glycans );
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > >, std::vector < clipper::MGlycan > list_of_glycans, clipper::String pdbname );
 
 int main(int argc, char** argv)
 {
 
     #ifndef SVN_REV
         clipper::String program_version = "MKII";
-        CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2014/12/23" );
+        CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2015/01/06" );
     #else
         clipper::String program_version = "MKII-";
         program_version.append(SVN_REV);
-        CCP4Program prog( "prval", program_version.c_str(), "$Date: 2014/12/23" );
+        CCP4Program prog( "prval", program_version.c_str(), "$Date: 2015/01/06" );
     #endif
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << std::endl << "Copyright 2013-2014 Jon Agirre, Kevin Cowtan and University of York." << std::endl;
+    std::cout << std::endl << "Copyright 2013-2015 Jon Agirre, Kevin Cowtan and The University of York." << std::endl;
 
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
@@ -83,6 +83,7 @@ int main(int argc, char** argv)
     clipper::CCP4MTZfile opmtz_best, opmtz_omit;
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
+    clipper::MGlycology mgl;
 
     // command input
     CCP4CommandInput args( argc, argv, true );
@@ -120,31 +121,45 @@ int main(int argc, char** argv)
         	ipmtz = args[arg];
             }
 	} 
-        else if ( args[arg] == "-cifin" ) 
+    else if ( args[arg] == "-cifin" ) 
 	{
             if ( ++arg < args.size() ) 
                 ipcif = args[arg];
-	} 
+	}
+    else if ( args[arg] == "-list" )
+    {
+        std::cout << std::endl << std::endl << "Printing list of supported three-letter codes:" << std::endl ;
+        for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
+        {
+            if ( (i % 22) == 0 ) std::cout << std::endl; 
+            std::cout << clipper::data::sugar_database[i].name_short << " " ;
+        }
+        std::cout << std::endl << std::endl ;
+
+        prog.set_termination_message( "Success" );
+        return 0;
+    } 
 	else if ( args[arg] == "-codein" ) 
 	{
-            if ( ++arg < args.size() )
-            {
-      	        ipcode = clipper::String(args[arg]);
+        if ( ++arg < args.size() )
+        {
+      	    ipcode = clipper::String(args[arg]);
 	        allSugars = false;
 
-      	        if (ipcode.trim().length() != 3)
-      	        {
+      	    if (ipcode.trim().length() != 3)
+      	    {
 	            std::cout << std::endl << std::endl << "Error: the sugar code must be three characters long, e.g. GLC."
-			      << "\nPlease refer to the Chemical Component Dictionary (http://www.wwpdb.org/ccd.html).\n\nExiting..." << std::endl << std::endl;
-		    prog.set_termination_message( "Failed" );
-		    return 1;
-      	        }
+			         << "\nPlease refer to the Chemical Component Dictionary (http://www.wwpdb.org/ccd.html).\n"
+                     << "Alternatively, use the -list option to get a full list of supported codes\nExiting..." << std::endl << std::endl;
+		        prog.set_termination_message( "Failed" );
+		        return 1;
+      	    }
 
 	        if (!clipper::MSugar::search_database(ipcode.c_str()))
 	            std::cout << std::endl << std::endl << "Caution: " << ipcode << " is not a known monosaccharide. Skipping sanity check." << std::endl << std::endl ;
-            }
         }
-        else if ( args[arg] == "-mode" ) 
+    }
+    else if ( args[arg] == "-mode" ) 
 	{
             if ( ++arg < args.size() ) 
                 if (clipper::String(args[arg]) == "ccp4i2") 
@@ -196,22 +211,23 @@ int main(int argc, char** argv)
 	std::cout << "\t-pdbin <.pdb>\t\t\tCOMPULSORY: input PDB file to examine" << std::endl;
 	std::cout << "\t-cifin <.cif> OR -mtzin <.mtz>\tCIF file containing F's or MTZ file containing I's or F's" << std::endl; 
 	std::cout << "\t\t\t\t\tIf intensities are supplied, Privateer will run 'ctruncate'" << std::endl;
-        std::cout << "\t\t\t\t\tin order to convert intensities to amplitudes" << std::endl;
-        std::cout << "\t\t\t\t\tObservations are required for RSCC calculation and map output" << std::endl;
+    std::cout << "\t\t\t\t\tin order to convert intensities to amplitudes" << std::endl;
+    std::cout << "\t\t\t\t\tObservations are required for RSCC calculation and map output" << std::endl;
 	std::cout << "\t-mtzout <.mtz>\t\t\tOutput best and difference map coefficients to MTZ files" << std::endl; 
 	std::cout << "\t-colin-fo\t\t\tColumns containing F & SIGF, e.g. FOBS,SIGFOBS" << std::endl; 
-        std::cout << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path" << std::endl;
+    std::cout << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path" << std::endl;
 	std::cout << "\t-codein <3-letter code>\t\tA 3-letter code for the target sugar" << std::endl; 
-        std::cout << "\t\t\t\t\tIf not supplied, Privateer will check all known sugar codes" << std::endl;
+    std::cout << "\t\t\t\t\tIf not supplied, Privateer will check all known sugar codes" << std::endl;
 	std::cout << "\t-showgeom\t\t\tRing bond lengths, angles and torsions are reported clockwise" << std::endl;
-        std::cout << "\t\t\t\t\tExample: first bond, angle and torsion for an aldopyranose:" << std::endl; 
-        std::cout << "\t\t\t\t\t\t (O5-C1), (C5-O5-C1), (C5-O5-C1-C2)" << std::endl;
+    std::cout << "\t\t\t\t\tExample: first bond, angle and torsion for an aldopyranose:" << std::endl; 
+    std::cout << "\t\t\t\t\t\t (O5-C1), (C5-O5-C1), (C5-O5-C1-C2)" << std::endl;
 	std::cout << "\t-radiusin <value>\t\tA radius for the calculation of a mask around the target sugar" << std::endl;
-        std::cout << "\t\t\t\t\tDefault value is 1.5 angstroems" << std::endl;
-	std::cout << "\t-mode <normal|ccp4i2>\t\tOptional: mode of operation. Defaults to normal" << std::endl; 
-        std::cout << "\t\t\t\t\tccp4i2 mode produces XML and tabbed-value files" << std::endl << std::endl;
+    std::cout << "\t\t\t\t\tDefault value is 1.5 angstroems" << std::endl;
+    std::cout << "\t-list\t\t\t\tProduces a list of space-separated supported 3-letter codes and stops" << std::endl;
+    std::cout << "\t-mode <normal|ccp4i2>\t\tOptional: mode of operation. Defaults to normal" << std::endl; 
+    std::cout << "\t\t\t\t\tccp4i2 mode produces XML and tabbed-value files" << std::endl << std::endl;
 	std::cout << "\tThe program will also produce a visual checklist with the conflicting sugar models in the form" << std::endl;
-        std::cout << "\tof Scheme and Python scripts for use with Coot" << std::endl;
+    std::cout << "\tof Scheme and Python scripts for use with Coot" << std::endl;
 	std::cout << "\n\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.py'" << std::endl;
 	std::cout << "\tBlue map: 2mFo-DFc map. Pink map: mFo-DFc omit map. RSCC is computed against this map" << std::endl;
 		
@@ -230,9 +246,19 @@ int main(int argc, char** argv)
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
 
-    mfile.read_file( ippdb.trim() );
-    mfile.import_minimol( mmol );
-	
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
+    mfile.SetFlag( mmdbflags );
+
+    try
+    {
+        mfile.read_file( ippdb.trim() );
+        mfile.import_minimol( mmol );
+    }
+    catch (...)
+    {
+        std::cout << std::endl << "There has been an unexpected error reading coordinates" << std::endl ;
+    }   
+
     int pos_slash = ippdb.rfind("/");
 	
     if (!batch) 
@@ -262,7 +288,7 @@ int main(int argc, char** argv)
 
 	const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0 
 
-        clipper::MGlycology mgl(mmol, manb);
+        mgl = clipper::MGlycology(mmol, manb);
 
         list_of_glycans = mgl.get_list_of_glycans();
 
@@ -355,9 +381,9 @@ int main(int argc, char** argv)
     	    }
    	}
 
-    	if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tBonds\tAngles\t Ok?");
+    	if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tBonds\tAngles\tCtx\t Ok?");
 	if (!batch && showGeom) printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
-    	if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t-----\t------\t-----");
+    	if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t-----\t------\t---\t-----");
 	if (!batch && showGeom) printf("\t------------------------------------------------------------------------------------------------------------");
 	if (!batch) printf("\n");
 
@@ -410,6 +436,43 @@ int main(int argc, char** argv)
 
 		fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());	// output <bfactor>
 
+
+        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+        bool found_in_tree = false;
+
+        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+        {
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+            {
+                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() ) 
+                {
+                    if ( list_of_glycans[i].get_kind_of_glycan() == "n-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "n-glycan" );
+                        fprintf ( output, "\t(n) " );
+                    }
+                    else
+                    {
+                        ligandList[index].second.set_context ( "o-glycan" ); 
+                        fprintf ( output, "\t(o) " );
+                    }
+                    found_in_tree = true;
+                    break;
+                }
+            }
+
+            if ( found_in_tree ) break;
+        }
+
+        if ( !found_in_tree ) 
+        {
+            ligandList[index].second.set_context ( "ligand" ); 
+            fprintf ( output, "\t(l) ");
+	    }
+
+
 		if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
 		{
 		    if ((ligandList[index].second.ring_members().size() == 6 ))
@@ -420,17 +483,17 @@ int main(int argc, char** argv)
 			    || ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() != "D")) ) 
 			        fprintf(output, "\tcheck");
 			    else 
-                                fprintf(output, "\t yes");
+                                fprintf(output, "\tyes");
 			}
-			else fprintf (output, "\t no");
+			else fprintf (output, "\tno");
 		    }
 		    else 
                         if (ligandList[index].second.is_sane()) 
-                            fprintf(output, "\t yes");
-		        else fprintf(output, "\t no");
+                            fprintf(output, "\tyes");
+		        else fprintf(output, "\tno");
 		}
-		else fprintf(output, "\t unk"); 
-	
+		else fprintf(output, "\tunk");
+                
 		bool occupancy_check = false;
 		std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
 
@@ -479,7 +542,38 @@ int main(int argc, char** argv)
                 bfac /= ligandList[index].second.size();
 		bfac  = clipper::Util::u2b(bfac);
 		printf("%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd()); // output <Bfactor>
-			
+
+
+        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+        bool found_in_tree = false;
+
+        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+        {
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+            {
+                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() ) 
+                {
+                    if ( list_of_glycans[i].get_kind_of_glycan() == "n-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "n-glycan" ); 
+                        std::cout << "\t(n) ";
+                    }
+                    else
+                    {
+                        ligandList[index].second.set_context ( "o-glycan" ); 
+                        std::cout << "\t(o) ";
+                    }
+                    found_in_tree = true;
+                    break;
+                }
+            }
+            
+            if ( found_in_tree ) break;
+        }
+
+
 		if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
 		{
 		    if ((ligandList[index].second.ring_members().size() == 6 ))
@@ -489,16 +583,23 @@ int main(int argc, char** argv)
 			    if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() == "D" ))
 			    || ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() == "L")) ) 
 			        printf("\tcheck");
-			    else printf("\t yes");
+			    else printf("\tyes");
 			}
-			else printf ("\t no");
+			else printf ("\tno");
 		    }
 		    else 
-                        if (ligandList[index].second.is_sane()) printf("\t yes");
-			else printf("\t no");
+                        if (ligandList[index].second.is_sane()) printf("\tyes");
+			else printf("\tno");
 		}
-		else printf("\t unk"); 
+		else printf("\tunk"); 
 
+
+        if ( !found_in_tree ) 
+        {
+            ligandList[index].second.set_context ( "ligand" );
+            std::cout << "\t(l) ";
+        }
+                
 		bool occupancy_check = false;
 		std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
 
@@ -854,7 +955,7 @@ int main(int argc, char** argv)
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0 
     
-    clipper::MGlycology mgl(mmol, manb);
+    mgl = clipper::MGlycology(mmol, manb);
 
     list_of_glycans = mgl.get_list_of_glycans();
 
@@ -1223,11 +1324,11 @@ int main(int argc, char** argv)
     }
     
     if (!batch) 
-        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tBonds\tAngles\t Ok?");
+        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tBonds\tAngles\tCtx\t Ok?");
     if (!batch && showGeom) 
         printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
     if (!batch) 
-        printf("\n----\t------------\t----\t-----\t------\t------\t----\t-------------------\t---\t-----\t------\t-----\t------\t-----");
+        printf("\n----\t------------\t----\t-----\t------\t------\t----\t-------------------\t---\t-----\t------\t-----\t------\t---\t-----");
     if (!batch && showGeom) 
         printf("\t------------------------------------------------------------------------------------------------------------");
     if (!batch) 
@@ -1370,6 +1471,39 @@ int main(int argc, char** argv)
 
 	    fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());	// output <bfactor>
 
+        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+        bool found_in_tree = false;
+
+        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+        {
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+            {
+                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() ) 
+                {
+                    if ( list_of_glycans[i].get_kind_of_glycan() == "n-glycan" ) 
+                    {
+                        ligandList[index].second.set_context ( "n-glycan" );
+                        fprintf ( output, "\t(n)");
+                    }
+                    else
+                    {
+                        ligandList[index].second.set_context ( "o-glycan" ); 
+                        fprintf ( output, "\t(o)");
+                    }
+                    found_in_tree = true;
+                    break;
+                }
+            }
+            if ( found_in_tree ) break;
+        }
+            
+        if ( !found_in_tree ) 
+        {
+            ligandList[index].second.set_context ( "ligand" );
+            fprintf ( output, "\t(l)");
+        }
 
 	    if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
 	    {
@@ -1380,18 +1514,20 @@ int main(int argc, char** argv)
 		        if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() != "L" ))
 			|| ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() != "D")) ) 
 			    fprintf(output, "\tcheck");
-			else fprintf(output, "\t yes");
+			else fprintf(output, "\tyes");
 		    }
 		    else 
-                        fprintf (output, "\t no");
+                        fprintf (output, "\tno");
 		}
 		else 
                     if (ligandList[index].second.is_sane()) 
-                        fprintf(output, "\t yes");
-		    else fprintf(output, "\t no");
+                        fprintf(output, "\tyes");
+		    else fprintf(output, "\tno");
 	    }
 	    else 
-                fprintf(output, "\t unk"); 
+                fprintf(output, "\tunk"); 
+
+
 
 	    bool occupancy_check = false;
 	    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
@@ -1444,7 +1580,40 @@ int main(int argc, char** argv)
 	    
             printf("%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());			// output <Bfactor>
 
-			
+        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+        bool found_in_tree = false;
+
+        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+        {
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+            {
+                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() ) 
+                {
+                    if ( list_of_glycans[i].get_kind_of_glycan() == "n-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "n-glycan" );
+                        std::cout << "\t(n) ";
+                    }
+                    else 
+                    {
+                        std::cout << "\t(o) ";
+                        ligandList[index].second.set_context ( "o-glycan" );
+                    }
+                    found_in_tree = true;
+                    break;
+                }
+            }
+            if ( found_in_tree ) break;
+        }
+            
+        if ( !found_in_tree ) 
+        {
+            ligandList[index].second.set_context ( "ligand" );
+            std::cout << "\t(l) ";
+        }
+
 	    if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
 	    {
 	        if ((ligandList[index].second.ring_members().size() == 6 ))
@@ -1455,18 +1624,19 @@ int main(int argc, char** argv)
 			|| ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() == "L")) ) 
 		            printf("\tcheck");
 			else 
-                            printf("\t yes");
+                            printf("\tyes");
 		    }
 		    else 
-                        printf ("\t no");
+                        printf ("\tno");
 		}
 		else 
                     if (ligandList[index].second.is_sane()) 
-                        printf("\t yes");
-		    else printf("\t no");
+                        printf("\tyes");
+		    else printf("\tno");
 	    }
 	    else 
-                printf("\t unk"); 
+                printf("\tunk"); 
+
 
 	    bool occupancy_check = false;
 	    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
@@ -1479,21 +1649,21 @@ int main(int argc, char** argv)
 	    if (showGeom)
 	    {
 	        std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
-		std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
-		std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+		    std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+		    std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
 
-		for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
-                    printf("\t%1.2f", rbonds[i]);
+	    	for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
+                printf("\t%1.2f", rbonds[i]);
 		
-                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
-                    printf("\t%3.1f", rangles[i]);
+            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
+                printf("\t%3.1f", rangles[i]);
 		
-                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
-                    printf("\t%3.1f", rtorsions[i]);
+            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  
+                printf("\t%3.1f", rtorsions[i]);
 	    }
 
 	    if (occupancy_check) 
-                std::cout << " (*)";
+            std::cout << " (*)";
 			
 	    std::cout << std::endl;
 	}
@@ -1525,7 +1695,7 @@ int main(int argc, char** argv)
     {
         int n_errors = 0;
 	
-	clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim();
+	    clipper::String diagnostic = ligandList[k].second.type().trim() + "/" + ligandList[k].first + "/" + ligandList[k].second.id().trim();
         clipper::String report = "";
         clipper::String sugarRSCC = clipper::String( ligandList[k].second.get_rscc() );
         sugarRSCC.resize(4);
@@ -1663,7 +1833,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
     
-    printXML(ligandList, list_of_glycans);
+    printXML(ligandList, list_of_glycans, ippdb);
 
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
@@ -1681,7 +1851,7 @@ char get_altconformation(clipper::MAtom ma)
 }			// We will return a blank character if there is no code present or if it is, but is blank
 
 
-void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans )
+void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, clipper::String pdbname )
 {
 
     std::fstream of_xml;
@@ -1713,6 +1883,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             else
                 of_xml << "    <Furanose>\n";
 
+            of_xml << "      <SugarPDB>"            << pdbname                                          << "</SugarPDB>\n"          ;
             of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
             of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
             of_xml << "      <SugarQ>"              << puckering_amplitude                              << "</SugarQ>\n"            ;
@@ -1729,7 +1900,8 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
             of_xml << "      <SugarBFactor>"        << sugarList[i].second.get_bfactor()                << "</SugarBFactor>\n"      ;
             of_xml << "      <SugarRSCC>"           << sugarRSCC                                        << "</SugarRSCC>\n"         ;     
             of_xml << "      <SugarDiagnostic>"     << sugarList[i].second.get_diagnostic()             << "</SugarDiagnostic>\n"   ;
-        
+            of_xml << "      <SugarContext>"        << sugarList[i].second.get_context()                << "</SugarContext>\n"      ;
+
             if (sugarList[i].second.ring_cardinality() == 6 ) 
                 of_xml << "    </Pyranose>\n\n";
             else
@@ -1740,11 +1912,12 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
         of_xml << "    <Glycan>\n" ;
-        of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"        ;
+        of_xml << "     <GlycanPDB>"        << pdbname                                           << "</SugarPDB>\n"                                         ;
+        of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
         of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().type().trim() + list_of_glycans[i].get_root().id().trim() << "</GlycanRoot>\n" ;
-        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"       ;
-        of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"        ;
-        of_xml << "     <GlycanSVG>"        << "placeholder.svg"                                << "</GlycanSVG>\n"          ;
+        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
+        of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
+        of_xml << "     <GlycanSVG>"        << "placeholder.svg"                                 << "</GlycanSVG>\n"                                        ;
         of_xml << "    </Glycan>\n" ;    
     }
 

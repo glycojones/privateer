@@ -104,7 +104,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_index = db_not_checked;
     this->sugar_index = 9999; // default value for "not found in database".
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this	
-
+    this->sugar_context = "";
+    
     #ifdef DUMP
         DBG << std::endl << std::endl << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
     #endif
@@ -1844,7 +1845,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     new_connection.index = link; // temporary fix to enable early testing, substitute with an elaborate thing
     new_connection.type = next_sugar.anomer();
     new_connection.node = &new_node; 
-    
+    sugars.push_back ( next_sugar ); 
     node_list[index].connections.push_back ( new_connection ); // add the new connection to the previous node
     node_list.push_back ( new_node ); // add the new sugar to the node list
     
