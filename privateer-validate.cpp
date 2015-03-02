@@ -470,7 +470,7 @@ int main(int argc, char** argv)
         {
             ligandList[index].second.set_context ( "ligand" ); 
             fprintf ( output, "\t(l) ");
-	    }
+	}
 
 
 		if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
@@ -479,8 +479,7 @@ int main(int argc, char** argv)
 		    {
 		        if (ligandList[index].second.is_sane())
 			{
-			    if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() != "L" ))
-			    || ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() != "D")) ) 
+			    if ( ! ligandList[index].second.ok_with_conformation() ) 
 			        fprintf(output, "\tcheck");
 			    else 
                                 fprintf(output, "\tyes");
@@ -572,59 +571,62 @@ int main(int argc, char** argv)
             
             if ( found_in_tree ) break;
         }
-
-
-		if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
-		{
-		    if ((ligandList[index].second.ring_members().size() == 6 ))
-		    {
-		        if (ligandList[index].second.is_sane())
-			{
-			    if ( ((ligandList[index].second.conformation_name() != "4c1" ) && (ligandList[index].second.handedness() == "D" ))
-			    || ((ligandList[index].second.conformation_name() != "1c4" ) && (ligandList[index].second.handedness() == "L")) ) 
-			        printf("\tcheck");
-			    else printf("\tyes");
-			}
-			else printf ("\tno");
-		    }
-		    else 
-                        if (ligandList[index].second.is_sane()) printf("\tyes");
-			else printf("\tno");
-		}
-		else printf("\tunk"); 
-
-
+        
         if ( !found_in_tree ) 
         {
             ligandList[index].second.set_context ( "ligand" );
             std::cout << "\t(l) ";
         }
-                
-		bool occupancy_check = false;
-		std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
 
-		for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+
+	if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+	{
+	    if ((ligandList[index].second.ring_members().size() == 6 ))
+	    {
+	        if (ligandList[index].second.is_sane())
 		{
-		    if (get_altconformation(ringcomponents[i]) != ' ') occupancy_check = true;
+		    if ( ! ligandList[index].second.ok_with_conformation () ) 
+		        printf("\tcheck");
+		    else printf("\tyes");
 		}
-			
-		if (showGeom)
-		{
-		    std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
-		    std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
-		    std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
-
-			
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%1.2f", rbonds[i]);
-		    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rangles[i]);
-		    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rtorsions[i]);
-		}
-
-		if (occupancy_check) std::cout << " (*)";
-			
-		std::cout << std::endl;
+		else 
+                    printf ("\tno");
 	    }
+	    else 
+                if (ligandList[index].second.is_sane()) 
+                    printf("\tyes");
+		else 
+                    printf("\tno");
 	}
+	else printf("\tunk"); 
+ 
+	bool occupancy_check = false;
+	std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members(); 
+
+	for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+	{
+	    if (get_altconformation(ringcomponents[i]) != ' ') 
+                occupancy_check = true;
+	}
+			
+	    if (showGeom)
+	    {
+	        std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+		std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+		std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+			
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%1.2f", rbonds[i]);
+		for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rangles[i]);
+		for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )  printf("\t%3.1f", rtorsions[i]);
+	    }
+
+	    if (occupancy_check) 
+                std::cout << " (*)";
+			
+	    std::cout << std::endl;
+	}
+    }
 
 	if (!batch) 
 	{		
