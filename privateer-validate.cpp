@@ -321,7 +321,18 @@ int main(int argc, char** argv)
             {
 		if (allSugars)
 		{
-            	    if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+                    if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+                    {
+                        clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                        sugarList.push_back ( mmol[p][m] );
+                        sugarList.push_back ( mmol[p][m] );
+                        clipper::String id = mmol[p].id();
+                        id.resize(1); 
+
+                        ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar())); 
+                        ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar())); 
+		    } 
+                    else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
             	    {
                         for (int id = 0; id < mmol[p][m].size(); id++ )
                 	{
@@ -364,7 +375,7 @@ int main(int argc, char** argv)
                     	    allAtoms.push_back(mmol[p][m][id]);
                 	}
             	    }
-            	    else // it's the ligand we're looking to omit
+            	    else // it's the sugar we're looking to omit
             	    {
 		        const clipper::MSugar msug(mmol, mmol[p][m], manb);
                 
@@ -410,12 +421,12 @@ int main(int argc, char** argv)
 
 	    if (batch)
 	    {
-	        fprintf(output, "%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+	        fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 		fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
 	    }
 	    else
 	    {
-	        printf("%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+	        printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 	        std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
 	    }
 
@@ -423,10 +434,10 @@ int main(int argc, char** argv)
 	    {
 	        std::vector<clipper::ftype> cpParams(10, 0);
 		cpParams = ligandList[index].second.cremer_pople_params();
-		fprintf(output,"\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		// output cremer-pople parameters
+		fprintf(output,"\t%1.3f\t%3.2f\t",cpParams[0],cpParams[1]); 		            // output cremer-pople parameters
 		if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
-                fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 			// output the type of sugar, e.g. alpha-D-aldopyranose
-		fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());		// output a 3 letter code for the conformation
+                fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 	    // output the type of sugar, e.g. alpha-D-aldopyranose
+		fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());	    // output a 3 letter code for the conformation
 
 		float bfac = 0.0;
 		for (int i=0; i < ligandList[index].second.size(); i++)
@@ -993,7 +1004,33 @@ int main(int argc, char** argv)
         {
 	    if (allSugars)
 	    {
-            	if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+                if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+                {
+                    clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                    sugarList.push_back ( mmol[p][m] );
+                    sugarList.push_back ( mmol[p][m] );
+                    clipper::String id = mmol[p].id();
+                    id.resize(1); 
+
+                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar())); 
+                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar())); 
+		    
+                    if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
+		    {
+                        std::cout << std::endl;
+		        std::cout << "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." << std::endl << std::endl;  
+			prog.set_termination_message( "Unrecoverable error" );
+			return 0;
+		    }
+		    
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                    	ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    	allAtoms.push_back(mmol[p][m][id]);
+                    }
+
+                }
+                else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
             	{
                     for (int id = 0; id < mmol[p][m].size(); id++ )
                     {
@@ -1359,12 +1396,12 @@ int main(int argc, char** argv)
 
 	if (batch)
 	{
-	    fprintf(output, "%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+	    fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().trim().c_str());
 	    fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
 	}
 	else
 	{
-	    printf("%c%c%c%c\t   %s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+	    printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
 	    std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
 	}
 
@@ -1463,7 +1500,7 @@ int main(int argc, char** argv)
 	    cpParams = ligandList[index].second.cremer_pople_params();
 	    fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] ); 	// output cremer-pople parameters
 	    if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
-	    fprintf(output,"%1.2f\t", corr_coeff); 		                                                // output RSCC and data resolution
+	    fprintf(output,"%1.2f\t", corr_coeff); 		                                // output RSCC and data resolution
 	    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str()); 		// output the type of sugar, e.g. alpha-D-aldopyranose
 	    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());	// output a 3 letter code for the conformation
 	    fprintf(output,"%1.3f \t", accum);

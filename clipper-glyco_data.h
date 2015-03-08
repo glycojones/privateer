@@ -64,9 +64,19 @@ namespace clipper {
         clipper::ftype  ref_angles_rmsd;  // rms angles calculated from CCP4 monomer library-idealised coordinates
     };
 
+    struct disaccharide                   // for those particular cases
+    {
+        clipper::String name_short;
+        clipper::String name_long;
+        sugar_database_entry sugar_one;
+        sugar_database_entry sugar_two;
+    };
+
     extern const clipper::String iupac_conformational_landscape[];
     extern const clipper::String conformational_landscape[];
     extern const sugar_database_entry sugar_database[];
+    extern const disaccharide disaccharide_database[];
+    extern const int disaccharide_database_size;
     extern const int sugar_database_size;
 
   } // namespace data

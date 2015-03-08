@@ -79,6 +79,41 @@ const clipper::String iupac_conformational_landscape[] =
     "E<sub>O</sub>","<sup>1</sup>T<sub>O</sub>", "<sup>1</sup>E","<sup>1</sup>T<sub>2</sub>", "E<sub>2</sub>"
 };
 
+const disaccharide disaccharide_database[] =
+{
+    { "SUC" ,  "Sucrose",  
+        { "FRU" ,	 "B", 	 "D", 	 "FRUCTOSE" ,                                     "O2' C2' C3' C4' C5'", 0.377, "ev4", 0.016, 5.815 },
+        { "GLC" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOSE" ,                                "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.358 }
+    },
+
+    { "LAT" ,  "Beta-lactose",
+        { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                    "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    },
+
+    { "LBT" ,  "Alpha-lactose",
+        { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                    "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    },
+
+    { "CBI" ,  "Cellobiose",
+        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    },
+
+    { "MAL" ,  "Maltose",
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    },
+
+    { "TRE" ,  "Trehalose",
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    } 
+};
+
+const int disaccharide_database_size = sizeof( disaccharide_database ) / sizeof( disaccharide_database[0] );
+
 const sugar_database_entry sugar_database[] =
 {
     { "13A" ,    "B",    "L",    "7-(3,4-DIHYDROXY-5R-HYDROXYMETHYLTETRAHYDROFU" ,  "O1 C2 C3 C4 C5",    0.380, "4ev", 0.017, 5.882 },
@@ -89,7 +124,7 @@ const sugar_database_entry sugar_database[] =
     { "18D" ,	 "A", 	 "L", 	 "3,5-DIDEOXY-5-(PROPANOYLAMINO)-D-GLYCERO-ALPH" ,  "O6 C2 C3 C4 C5 C6", 0.592, "1c4", 0.001, 1.404 },
     { "1GL" ,	 "A", 	 "D", 	 "4-O-METHYL-2,6-DIDEOXY-ALPHA-D-GALACTO-HEXOPY" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.037 },
     { "1GN" ,	 "B", 	 "D", 	 "2-DEOXY-2-AMINOGALACTOSE" , 			    "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.004, 2.022 },
-    { "289" ,	 "A", 	 "L", 	 "D-GLYCERO-ALPHA-D-MANNO-HEPTOPYRANOSE" , 	    "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.387 },
+    { "289" ,	 "B", 	 "D", 	 "D-GLYCERO-ALPHA-D-MANNO-HEPTOPYRANOSE" , 	    "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.387 },
     { "291" ,	 "A", 	 "D", 	 "PROP-2-EN-1-YL7-O-CARBAMOYL-L-GLYCERO-ALPHA-" ,   "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.001, 1.363 },
     { "293" ,	 "A", 	 "D", 	 "(2S,4R,5S,6R)-6-((S)-1,2-DIHYDROXYETHYL)TETRAH" , "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.386 },
     { "2DG" ,	 "A", 	 "D", 	 "2-DEOXY-BETA-D-GALACTOSE" , 	 		    "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.036 },
@@ -105,8 +140,8 @@ const sugar_database_entry sugar_database[] =
     { "445" ,	 "B", 	 "D", 	 "N-[OXO(PHENYLAMINO)ACETYL]-BETA-D-GLUCOPYRANO" ,  "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.001, 1.352 },
     { "46M" ,	 "N", 	 "D", 	 "(4AR,6R,7S,8R,8AS)-HEXAHYDRO-6,7,8-TRIHYDROXY" ,  "O5 C1 C2 C3 C4 C5", 0.626, "4c1", 0.004, 2.322 },
     { "475" ,	 "B", 	 "D", 	 "N-[OXO(PYRIDIN-2-YLAMINO)ACETYL]-BETA-D-GLUCO" ,  "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.001, 1.380 },
-    { "49A" ,	 "N", 	 "D", 	 "4,9-AMINO-2,4-DEOXY-2,3-DEHYDRO-N-ACETYL-NEUR" ,  "O6 C2 C3 C4 C5 C6", 0.540, "5h4", 0.087, 9.082 },
-    { "4AM" ,	 "A", 	 "D", 	 "N4-AMINO-2-DEOXY-2,3-DEHYDRO-N-NEURAMINICACID" ,  "O6 C2 C3 C4 C5 C6", 0.540, "5h4", 0.087, 9.071 },
+    { "49A" ,	 "N", 	 "L", 	 "4,9-AMINO-2,4-DEOXY-2,3-DEHYDRO-N-ACETYL-NEUR" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.082 },
+    { "4AM" ,	 "N", 	 "L", 	 "N4-AMINO-2-DEOXY-2,3-DEHYDRO-N-NEURAMINICACID" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.071 },
     { "4GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)OXAMICACID" ,            "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.075 },
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
@@ -133,7 +168,7 @@ const sugar_database_entry sugar_database[] =
     { "ARB" ,	 "B", 	 "L", 	 "BETA-L-ARABINOSE" ,                               "O5 C1 C2 C3 C4 C5", 0.624, "4c1", 0.003, 2.029 },
     { "ARW" ,	 "B", 	 "D", 	 "METHYLBETA-D-ARABINOPYRANOSIDE" ,                 "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.031 },
     { "ASO" ,	 "N", 	 "D", 	 "1,5-ANHYDROSORBITOL" ,                            "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.032 },
-    { "AXP" ,	 "A", 	 "D", 	 "4-ACETAMIDO-2,4-DIDEXOY-D-GLYCERO-BETA-D-GALA" ,  "O6 C2 C3 C4 C5 C6", 0.621, "4c1", 0.002, 2.023 },
+    { "AXP" ,	 "A", 	 "L", 	 "4-ACETAMIDO-2,4-DIDEXOY-D-GLYCERO-BETA-D-GALA" ,  "O6 C2 C3 C4 C5 C6", 0.621, "4c1", 0.002, 2.023 },
     { "AXR" ,	 "A", 	 "D", 	 "METHYLALPHA-D-ARABINOFURANOSIDE" ,                "O4 C1 C2 C3 C4"   , 0.379, "1ev", 0.014, 5.457 },
     { "B16" ,	 "B", 	 "D", 	 "1,6-DI-O-PHOSPHONO-BETA-D-GLUCOPYRANOSE" ,        "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.377 },
     { "B7G" ,    "B",    "D",    "HEPTYL-BETA-D-GLUCOPYRANOSIDE",                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.033 },
@@ -160,7 +195,7 @@ const sugar_database_entry sugar_database[] =
     { "CBF" ,	 "A", 	 "D", 	 "C-(1-HYDROGYL-BETA-D-GLUCOPYRANOSYL)FORMAMID" ,   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.400 },
     { "CDG" ,	 "B", 	 "D", 	 "METHYL4,6-O-[(1R)-1-CARBOXYETHYLIDENE]-BETA-" ,   "O5 C1 C2 C3 C4 C5", 0.612, "4c1", 0.006, 1.980 },
     { "CEG" ,	 "B", 	 "D", 	 "4,6-O-(1-CARBOXYETHYLIDENE)-BETA-D-GLUCOSE" ,     "O5 C1 C2 C3 C4 C5", 0.626, "4c1", 0.004, 2.299 },
-    { "CGF" ,	 "A", 	 "D", 	 "C-(1-AZIDO-ALPHA-D-GLUCOPYRANOSYL)FORMAMIDE" ,    "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.016 },
+    { "CGF" ,	 "B", 	 "D", 	 "C-(1-AZIDO-ALPHA-D-GLUCOPYRANOSYL)FORMAMIDE" ,    "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.016 },
     { "CNP" ,	 "N", 	 "N", 	 "2-PROPENYL-N-ACETYL-NEURAMICACID" ,               "O6 C2 C3 C4 C5 C6", 0.620, "1c4", 0.003, 2.003 },
     { "CR1" ,	 "B", 	 "D", 	 "1-DEOXY-1-METHOXYCARBAMIDO-BETA-D-GLUCOPYRANO" ,  "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.010 },
     { "CR6" ,	 "B", 	 "D", 	 "1-DEOXY-1-ACETYLAMINO-BETA-D-GLUCO-2-HEPTULOP" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.009 },
@@ -260,14 +295,14 @@ const sugar_database_entry sugar_database[] =
     { "IDS" ,	 "A", 	 "L", 	 "2-O-SULFO-ALPHA-L-IDOPYRANURONICACID" ,           "O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.016 },
     { "IMK" ,	 "B", 	 "D", 	 "2-(BETA-D-GLUCOPYRANOSYL)-5-METHYL-1-BENZIMID" ,  "O5 C1 C2 C3 C4 C5", 0.555, "4c1", 0.002, 1.855 },
     { "IPT" ,	 "B", 	 "D", 	 "ISOPROPYL-1-BETA-D-THIOGALACTOSIDE" ,             "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.042 },
-    { "IXD" ,	 "B", 	 "D", 	 "4-DEOXY-2-O-SULFO-BETA-D-ERYTHRO-HEX-4-ENOPYR" ,  "O5 C1 C2 C3 C4 C5", 0.511, "2h1", 0.095, 7.412 },
+    { "IXD" ,	 "N", 	 "N", 	 "4-DEOXY-2-O-SULFO-BETA-D-ERYTHRO-HEX-4-ENOPYR" ,  "O5 C1 C2 C3 C4 C5", 0.511, "2h1", 0.095, 7.412 },
     { "JHM" ,	 "A", 	 "D", 	 "2-DEOXY-6-O-SULFO-ALPHA-D-ARABINO-HEXOPYRANOS" ,  "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.001, 1.370 },
     { "JZR" ,	 "B", 	 "D", 	 "HEXYLBETA-D-GLUCOPYRANOSIDE" ,                    "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.001, 1.393 },
     { "KDA" ,	 "A", 	 "D", 	 "(3-DEOXY-D-MANNO-OCT-2-ULOSONICACID)-2-O-ALL" ,   "O6 C2 C3 C4 C5 C6", 0.622, "4c1", 0.003, 2.027 },
-    { "KDB" ,	 "A", 	 "D", 	 "3,4,5-TRIDEOXY-ALPHA-D-ERYTHRO-OCT-3-EN-2-ULO" ,  "O6 C2 C3 C4 C5 C6", 0.500, "Oh5", 0.095, 8.063 },
+    { "KDB" ,	 "B", 	 "D", 	 "3,4,5-TRIDEOXY-ALPHA-D-ERYTHRO-OCT-3-EN-2-ULO" ,  "O6 C2 C3 C4 C5 C6", 0.500, "Oh5", 0.095, 8.063 },
     { "KDE" ,	 "B", 	 "L", 	 "PROP-2-EN-1-YL3-DEOXY-BETA-L-GULO-OCT-2-ULOP" ,   "O6 C2 C3 C4 C5 C6", 0.592, "4c1", 0.001, 1.366 },
-    { "KDO" ,	 "A", 	 "D", 	 "3-DEOXY-D-MANNO-OCT-2-ULOSONICACID" ,             "O6 C2 C3 C4 C5 C6", 0.621, "4c1", 0.003, 2.048 },
-    { "KDR" ,	 "A", 	 "D", 	 "PROP-2-EN-1-YL3-DEOXY-ALPHA-D-MANNO-OCTOS-2-" ,   "O6 C2 C3 C4 C5 C6", 0.592, "4c1", 0.001, 1.348 },
+    { "KDO" ,	 "B", 	 "D", 	 "3-DEOXY-D-MANNO-OCT-2-ULOSONICACID" ,             "O6 C2 C3 C4 C5 C6", 0.621, "4c1", 0.003, 2.048 },
+    { "KDR" ,	 "B", 	 "D", 	 "PROP-2-EN-1-YL3-DEOXY-ALPHA-D-MANNO-OCTOS-2-" ,   "O6 C2 C3 C4 C5 C6", 0.592, "4c1", 0.001, 1.348 },
     { "KME" ,	 "A", 	 "D", 	 "(1E)-PROP-1-EN-1-YL3-DEOXY-7-O-METHYL-ALPHA-" ,   "O6 C2 C3 C4 C5 C6", 0.593, "4c1", 0.001, 1.348 },
     { "KO1" ,	 "A", 	 "D", 	 "D-GLYCERO-ALPHA-D-TALO-OCT-2-ULOPYRANOSONICA" ,   "O6 C2 C3 C4 C5 C6", 0.593, "4c1", 0.001, 1.379 },
     { "KO2" ,	 "A", 	 "D", 	 "PROP-2-EN-1-YLD-GLYCERO-ALPHA-D-TALO-OCT-2-U" ,   "O6 C2 C3 C4 C5 C6", 0.593, "4c1", 0.002, 1.365 },
@@ -382,7 +417,7 @@ const sugar_database_entry sugar_database[] =
     { "TOA" ,	 "A", 	 "D", 	 "3-DEOXY-3-AMINOGLUCOSE" ,                         "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.021 },
     { "TOC" ,	 "A", 	 "D", 	 "2,3,6-TRIDEOXY-2,6-DIAMINOGLUCOSE" , 	            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.047 },
     { "TYV" ,	 "A", 	 "D", 	 "TYVELOSE" ,                                       "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.047 },
-    { "UAP" ,	 "A", 	 "D", 	 "1,4-DIDEOXY-5-DEHYDRO-O2-SULFO-GLUCURONICACI" ,   "O5 C1 C2 C3 C4 C5", 0.542, "1h2", 0.100, 8.090 },
+    { "UAP" ,	 "A", 	 "D", 	 "1,4-DIDEOXY-5-DEHYDRO-O2-SULFO-GLUCURONICACI" ,   "O5 C1 C2 C3 C4 C5", 0.442, "1h2", 0.100, 8.090 },
     { "VG1" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOSE-1-PHOSPHATE-6-VANADATE" ,         "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 2.033 },
     { "X1P" ,	 "A", 	 "D", 	 "1-O-PHOSPHONO-ALPHA-D-XYLOPYRANOSE" ,             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.039 },
     { "X2F" ,	 "A", 	 "D", 	 "2-DEOXY-2-FLUOROXYLOPYRANOSE" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.070 },

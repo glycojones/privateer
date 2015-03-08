@@ -82,99 +82,100 @@ namespace clipper
             MSugar ();
             MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon ); //!< default constructor
             MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb ); 
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data ); 
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
-	        clipper::String conformation_name() { return clipper::data::conformational_landscape[sugar_conformation]; } 
+            clipper::String conformation_name() { return clipper::data::conformational_landscape[sugar_conformation]; } 
             //!< get a fixed three-character code for the conformation
-			
+                        
             clipper::String conformation_name_iupac() { return clipper::data::iupac_conformational_landscape[sugar_conformation]; } 
             //!< get HTML-formatted, iupac-compliant codes describing the conformation of the sugar ring
-			
+                        
             clipper::ftype puckering_amplitude() { return sugar_cremer_pople_params[0]; } 
             //!< convenience function for getting the puckering amplitude (in Angstroems) of the sugar ring
-	    
+            
             int conformation_code() { return sugar_conformation; } 
             //!< function for working with a numerical denomination of sugar conformation
-	    
+            
             const clipper::MAtom& anomeric_carbon() { return this->sugar_anomeric_carbon; } 
             //!< returns the anomeric carbon
-		    
+                    
             const clipper::MAtom& anomeric_substituent() { return this->sugar_anomeric_substituent; } 
             //!< returns the anomeric substituent
-			
+                        
             const clipper::MAtom& configurational_carbon() { return this->sugar_configurational_carbon; } 
             //!< returns the configurational carbon
-	    
+            
             const clipper::MAtom& configurational_substituent() { return this->sugar_configurational_substituent; } 
             //!< returns the configurational substituent
-	    
+            
             clipper::String anomer() { return sugar_anomer; } 
             //!< convenience function to get the anomer type, e.g. "alpha"
-	    
+            
             clipper::String handedness() { return sugar_handedness; } 
             //!< get the sugar's handedness: "D" for dextro, "L" for laevo, "N" for undetermined and "X" for unsupported (missing from the clipper::data sugar database)
-	    
+            
             clipper::String type_of_sugar() { return sugar_denomination; } 
             //!< returns a string containing an anomer-handedness-type denomination, e.g. "beta-D-aldopyranose"
-	    
+            
             int ring_cardinality() { return sugar_ring_elements.size(); } 
             //!< get the number of atoms forming the main sugar ring
-			
+                        
             std::vector<clipper::MAtom> ring_members() { return sugar_ring_elements; } 
             //!< returns an standard vector containing those MAtom's forming the ring
-			
+                        
             const clipper::Coord_orth& ring_centre() { return this->sugar_centre; } 
             //!< get the ring's centre (original coordinates)
-			
+                        
             const clipper::Vec3<ftype>& ring_mean_plane() { return sugar_mean_plane; } 
             //!< get the vector normal to the sugar ring's mean plane, with origin in ring_centre()
-	    
+            
             std::vector<ftype> cremer_pople_params() { return sugar_cremer_pople_params; } 
             //!< returns Cremer-Pople parameters (Cremer and Pople, 1975) in the form { Q , Angle1, ... }
-	    
+            
             int potential_linkages() { return sugar_linked_to.size(); } 
             //!<  returns the number of potential linkages to other sugars
-	    
+            
             bool is_sane() { return sugar_sane; }
             //!< checks it against the internal clipper::data sugar database for correct anomer, handedness and ring members
 
             clipper::String full_name() { return sugar_name; }
-			
+                        
             clipper::String full_type() { return sugar_type; }
-	    
+            
             std::vector<clipper::ftype> ring_angles() { return sugar_ring_angles; }
-			
+                        
             std::vector<clipper::ftype> ring_bonds() { return sugar_ring_bonds; }
-			
+                        
             std::vector<clipper::ftype> ring_torsions() { return sugar_ring_torsion; }
-			
+                        
             clipper::ftype ring_bond_rmsd() { return sugar_ring_bond_rmsd; }
-			
+                        
             clipper::ftype ring_angle_rmsd() { return sugar_ring_angle_rmsd; }
                         
             clipper::ftype get_bfactor() { return sugar_bfactor; }
                         
             bool in_database(clipper::String name) { return sugar_found_db; }
-			
+                        
             bool is_supported() { return sugar_supported; }
 
-	    static bool search_database(clipper::String name) 
+            static bool search_database(clipper::String name) 
             {
-	        for (int i = 0; i < clipper::data::sugar_database_size ; i++) 
-		    if (name.trim() == clipper::data::sugar_database[i].name_short.trim()) 
-		        return true; 
-					
-		return false;
-	    } //!< returns true if found
-			
+                for (int i = 0; i < clipper::data::sugar_database_size ; i++) 
+                    if (name.trim() == clipper::data::sugar_database[i].name_short.trim()) 
+                        return true; 
+                                        
+                return false;
+            } //!< returns true if found
+             
             bool ok_with_ring() { return sugar_diag_ring; }
-			
+                        
             bool ok_with_bonds_rmsd() { return sugar_diag_bonds_rmsd; }  // compare with database, if not found report dev from ideal  
-			
+                        
             bool ok_with_angles_rmsd() { return sugar_diag_angles_rmsd; } // same
-			
+                        
             bool ok_with_anomer() { return sugar_diag_anomer; }
-			
+                        
             bool ok_with_chirality() { return sugar_diag_chirality; }
             
             bool ok_with_conformation() { return sugar_diag_conformation; }
@@ -193,102 +194,126 @@ namespace clipper
 
             void set_context ( clipper::String context ) { this->sugar_context = context; }
 
-	private:
+        private:
 
-	    typedef std::vector< std::pair< clipper::MAtom, clipper::MAtom > > visited_arcs;
-	    typedef std::pair< std::pair<clipper::MAtom, clipper::MAtom>, std::pair<clipper::MAtom, clipper::MAtom > > stereochemistry_pairs;
+            typedef std::vector< std::pair< clipper::MAtom, clipper::MAtom > > visited_arcs;
+            typedef std::pair< std::pair<clipper::MAtom, clipper::MAtom>, std::pair<clipper::MAtom, clipper::MAtom > > stereochemistry_pairs;
 
-	    // int codes for conformations, types and anomers
+            // int codes for conformations, types and anomers
 
-	    static const int conf_pyranose_4C1 = 1;  static const int conf_pyranose_1C4 = 2;  static const int conf_pyranose_3OB = 3;  static const int conf_pyranose_B25 = 4;  
-	    static const int conf_pyranose_14B = 5;  static const int conf_pyranose_B3O = 6;  static const int conf_pyranose_25B = 7;  static const int conf_pyranose_B14 = 8;  
-	    static const int conf_pyranose_OE  = 9;  static const int conf_pyranose_E5 = 10;  static const int conf_pyranose_4E = 11;  static const int conf_pyranose_E3 = 12;
-	    static const int conf_pyranose_2E = 13;  static const int conf_pyranose_E1 = 14;  static const int conf_pyranose_3E = 15;  static const int conf_pyranose_E2 = 16;  
-	    static const int conf_pyranose_1E = 17;  static const int conf_pyranose_EO = 18;  static const int conf_pyranose_5E = 19;  static const int conf_pyranose_E4 = 20;  
-	    static const int conf_pyranose_OH5 =21;  static const int conf_pyranose_4H5 = 22; static const int conf_pyranose_4H3 = 23; static const int conf_pyranose_2H3 = 24;
-	    static const int conf_pyranose_2H1 =25;  static const int conf_pyranose_OH1 = 26; static const int conf_pyranose_3H2 = 27; static const int conf_pyranose_1H2 = 28; 
-	    static const int conf_pyranose_1HO =29;  static const int conf_pyranose_5HO = 30; static const int conf_pyranose_5H4 = 31; static const int conf_pyranose_3H4 = 32; 
-	    static const int conf_pyranose_OS2 = 33; static const int conf_pyranose_1S5 = 34; static const int conf_pyranose_1S3 = 35; static const int conf_pyranose_2SO = 36;
-	    static const int conf_pyranose_5S1 = 37; static const int conf_pyranose_3S1 = 38; 
-			
-	    static const int conf_furanose_3T2 = 39; static const int conf_furanose_3EV = 40; static const int conf_furanose_3T4 = 41; static const int conf_furanose_EV4 = 42;  
-	    static const int conf_furanose_OT4 = 43; static const int conf_furanose_OEV = 44; static const int conf_furanose_OT1 = 45; static const int conf_furanose_EV1 = 46;  
-	    static const int conf_furanose_2T1 = 47; static const int conf_furanose_2EV = 48; static const int conf_furanose_2T3 = 49; static const int conf_furanose_EV3 = 50;  
-	    static const int conf_furanose_4T3 = 51; static const int conf_furanose_4EV = 52; static const int conf_furanose_4TO = 53; static const int conf_furanose_EVO = 54;  
+            static const int conf_pyranose_4C1 = 1;  static const int conf_pyranose_1C4 = 2;  static const int conf_pyranose_3OB = 3;  static const int conf_pyranose_B25 = 4;  
+            static const int conf_pyranose_14B = 5;  static const int conf_pyranose_B3O = 6;  static const int conf_pyranose_25B = 7;  static const int conf_pyranose_B14 = 8;  
+            static const int conf_pyranose_OE  = 9;  static const int conf_pyranose_E5 = 10;  static const int conf_pyranose_4E = 11;  static const int conf_pyranose_E3 = 12;
+            static const int conf_pyranose_2E = 13;  static const int conf_pyranose_E1 = 14;  static const int conf_pyranose_3E = 15;  static const int conf_pyranose_E2 = 16;  
+            static const int conf_pyranose_1E = 17;  static const int conf_pyranose_EO = 18;  static const int conf_pyranose_5E = 19;  static const int conf_pyranose_E4 = 20;  
+            static const int conf_pyranose_OH5 =21;  static const int conf_pyranose_4H5 = 22; static const int conf_pyranose_4H3 = 23; static const int conf_pyranose_2H3 = 24;
+            static const int conf_pyranose_2H1 =25;  static const int conf_pyranose_OH1 = 26; static const int conf_pyranose_3H2 = 27; static const int conf_pyranose_1H2 = 28; 
+            static const int conf_pyranose_1HO =29;  static const int conf_pyranose_5HO = 30; static const int conf_pyranose_5H4 = 31; static const int conf_pyranose_3H4 = 32; 
+            static const int conf_pyranose_OS2 = 33; static const int conf_pyranose_1S5 = 34; static const int conf_pyranose_1S3 = 35; static const int conf_pyranose_2SO = 36;
+            static const int conf_pyranose_5S1 = 37; static const int conf_pyranose_3S1 = 38; 
+                        
+            static const int conf_furanose_3T2 = 39; static const int conf_furanose_3EV = 40; static const int conf_furanose_3T4 = 41; static const int conf_furanose_EV4 = 42;  
+            static const int conf_furanose_OT4 = 43; static const int conf_furanose_OEV = 44; static const int conf_furanose_OT1 = 45; static const int conf_furanose_EV1 = 46;  
+            static const int conf_furanose_2T1 = 47; static const int conf_furanose_2EV = 48; static const int conf_furanose_2T3 = 49; static const int conf_furanose_EV3 = 50;  
+            static const int conf_furanose_4T3 = 51; static const int conf_furanose_4EV = 52; static const int conf_furanose_4TO = 53; static const int conf_furanose_EVO = 54;  
             static const int conf_furanose_1TO = 55; static const int conf_furanose_1EV = 56; static const int conf_furanose_1T2 = 57; static const int conf_furanose_EV2 = 58;  
-			
-	    static const int db_not_checked = 9999;  static const int db_not_found = 101010;
+                        
+            static const int db_not_checked = 9999;  static const int db_not_found = 101010;
 
-	    static const int anomer_alpha = 100;     static const int anomer_beta = 101; 	  static const int handedness_d = 200;     static const int handedness_l = 201;     
-	    static const int type_aldose = 1000;     static const int type_ketose = 2000;
+            static const int anomer_alpha = 100;     static const int anomer_beta = 101;          static const int handedness_d = 200;     static const int handedness_l = 201;     
+            static const int type_aldose = 1000;     static const int type_ketose = 2000;
 
 
-	    // We'll use the sugar_ prefix throughout the class for private members
+            // We'll use the sugar_ prefix throughout the class for private members
 
-	    const MiniMol*                  sugar_parent_molecule;
-	    const MAtomNonBond*             sugar_parent_molecule_nonbond;
-	    Coord_orth                      sugar_centre;
-	    clipper::Vec3<clipper::ftype>   sugar_mean_plane;
-	    std::vector<MAtom>              sugar_ring_elements;
-	    std::vector<ftype>              sugar_cremer_pople_params;          // (1) puckering amplitude, (2..) angles
-	    clipper::MAtom                  sugar_anomeric_carbon;
-	    clipper::MAtom                  sugar_configurational_carbon;
-	    clipper::MAtom                  sugar_anomeric_substituent;
-	    clipper::MAtom                  sugar_configurational_substituent;
-	    bool                            sugar_found_db;                     // true if the sugar's code is present in the reference data structure
-	    bool                            sugar_sane;                         // true if passed sanity checks
-	    bool                            sugar_supported;                    // false if the sugar has no connectivity, missing atoms, etc.
-	    std::vector<clipper::ftype>     sugar_ring_bonds;                   // bond lengths among ring. [0] is O to anomeric carbon
-	    std::vector<clipper::ftype>     sugar_ring_angles;                  // ring angles, starting with last_carbon-O-anomeric carbon
-	    std::vector<clipper::ftype>     sugar_ring_torsion;                 // torsion angles, starting with C5-O5-C1-C2
-	    int                             sugar_index;                        // 9999 if unchecked, 101010 if absent from the database, 0-400 if found
-	    String                          sugar_denomination;                 // e.g. alpha-aldopyranose
-	    String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
-	    String                          sugar_handedness;                   // "D", "L" or "undetermined"
-	    String                          sugar_type;                         // i.e. "aldose" or "ketose"
-	    String                          sugar_name;
-	    bool                            sugar_diag_ring;
-	    bool                            sugar_diag_bonds_rmsd;
-	    bool                            sugar_diag_angles_rmsd;
-	    bool                            sugar_diag_anomer;
-	    bool                            sugar_diag_chirality;
-        bool                            sugar_diag_conformation;
-        bool                            sugar_diag_puckering;
-        clipper::String                 sugar_diagnostic;               // full diagnostic to be used in Coot and ccp4i2
-        clipper::ftype                  sugar_rscc;                     // RSCC to be used in Coot and ccp4i2
-	    clipper::ftype                  sugar_ring_bond_rmsd;
-	    clipper::ftype                  sugar_ring_angle_rmsd;
-        clipper::ftype                  sugar_bfactor;
-        int                             sugar_conformation;
-	    clipper::String                 sugar_alternate_confcode;
-	    std::vector < MSugar >          sugar_linked_to;		        // size: number of carbon atoms - 1
-        clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
+            const MiniMol*                  sugar_parent_molecule;
+            const MAtomNonBond*             sugar_parent_molecule_nonbond;
+            Coord_orth                      sugar_centre;
+            clipper::Vec3<clipper::ftype>   sugar_mean_plane;
+            std::vector<MAtom>              sugar_ring_elements;
+            std::vector<ftype>              sugar_cremer_pople_params;          // (1) puckering amplitude, (2..) angles
+            clipper::MAtom                  sugar_anomeric_carbon;
+            clipper::MAtom                  sugar_configurational_carbon;
+            clipper::MAtom                  sugar_anomeric_substituent;
+            clipper::MAtom                  sugar_configurational_substituent;
+            bool                            sugar_found_db;                     // true if the sugar's code is present in the reference data structure
+            bool                            sugar_sane;                         // true if passed sanity checks
+            bool                            sugar_supported;                    // false if the sugar has no connectivity, missing atoms, etc.
+            std::vector<clipper::ftype>     sugar_ring_bonds;                   // bond lengths among ring. [0] is O to anomeric carbon
+            std::vector<clipper::ftype>     sugar_ring_angles;                  // ring angles, starting with last_carbon-O-anomeric carbon
+            std::vector<clipper::ftype>     sugar_ring_torsion;                 // torsion angles, starting with C5-O5-C1-C2
+            int                             sugar_index;                        // 9999 if unchecked, 101010 if absent from the database, 0-400 if found
+            String                          sugar_denomination;                 // e.g. alpha-aldopyranose
+            String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
+            String                          sugar_handedness;                   // "D", "L" or "undetermined"
+            String                          sugar_type;                         // i.e. "aldose" or "ketose"
+            String                          sugar_name;
+            bool                            sugar_diag_ring;
+            bool                            sugar_diag_bonds_rmsd;
+            bool                            sugar_diag_angles_rmsd;
+            bool                            sugar_diag_anomer;
+            bool                            sugar_diag_chirality;
+            bool                            sugar_diag_conformation;
+            bool                            sugar_diag_puckering;
+            clipper::String                 sugar_diagnostic;               // full diagnostic to be used in Coot and ccp4i2
+            clipper::ftype                  sugar_rscc;                     // RSCC to be used in Coot and ccp4i2
+            clipper::ftype                  sugar_ring_bond_rmsd;
+            clipper::ftype                  sugar_ring_angle_rmsd;
+            clipper::ftype                  sugar_bfactor;
+            int                             sugar_conformation;
+            clipper::String                 sugar_alternate_confcode;
+            std::vector < MSugar >          sugar_linked_to;                    // size: number of carbon atoms - 1
+            clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
 
-	    // private methods
+            // private methods
 
-	    std::vector<clipper::ftype>                     cremerPople_pyranose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
-	    std::vector<clipper::ftype>                     cremerPople_furanose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
-	    std::vector<clipper::MAtom&>                    find_bonded ( const clipper::MAtom& ) const; // accesses object
-	    int                                             conformationPyranose ( const clipper::ftype&, const clipper::ftype& ) const;
-	    int                                             conformationFuranose ( const clipper::ftype& ) const;
+            std::vector<clipper::ftype>                     cremerPople_pyranose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
+            std::vector<clipper::ftype>                     cremerPople_furanose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
+            std::vector<clipper::MAtom&>                    find_bonded ( const clipper::MAtom& ) const; // accesses object
+            int                                             conformationPyranose ( const clipper::ftype&, const clipper::ftype& ) const;
+            int                                             conformationFuranose ( const clipper::ftype& ) const;
 
-	    std::vector<clipper::MAtom> 		    ringMembers ( ) const; // internal function, accesses object
-	    const std::vector<clipper::MAtom> 		    findPath ( const clipper::MMonomer&, int, MSugar::visited_arcs& ) const;
-	    bool 					    closes_ring ( const clipper::MAtom&, MSugar::visited_arcs& ) const;
-	    const std::vector<clipper::MAtom>               findBonded ( const clipper::MAtom&, MSugar::visited_arcs& ) const; // accesses object
-	    bool                                            lookup_visited ( const MSugar::visited_arcs&, const std::pair<clipper::MAtom, clipper::MAtom> ) const;
-	    stereochemistry_pairs                           get_stereochemistry ( const clipper::MiniMol& ); // accesses object
-	    bool                                            is_stereocentre ( const clipper::MAtom&, const clipper::MiniMol& ); // accesses object
-	    bool                                            is_part_of_ring ( const clipper::MAtom&, const std::vector<clipper::MAtom> ) const;
-	    bool                                            bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
-	    bool                                            bonded ( const clipper::MAtom&, const clipper::MAtom& ) const; 
-	    bool                                            lookup_database ( clipper::String );
-	    bool                                            examine_ring();
+            std::vector<clipper::MAtom>                     ringMembers ( ) const; // internal function, accesses object
+            const std::vector<clipper::MAtom>               findPath ( const clipper::MMonomer&, int, MSugar::visited_arcs& ) const;
+            bool                                            closes_ring ( const clipper::MAtom&, MSugar::visited_arcs& ) const;
+            const std::vector<clipper::MAtom>               findBonded ( const clipper::MAtom&, MSugar::visited_arcs& ) const; // accesses object
+            bool                                            lookup_visited ( const MSugar::visited_arcs&, const std::pair<clipper::MAtom, clipper::MAtom> ) const;
+            stereochemistry_pairs                           get_stereochemistry ( const clipper::MiniMol& ); // accesses object
+            bool                                            is_stereocentre ( const clipper::MAtom&, const clipper::MiniMol& ); // accesses object
+            bool                                            is_part_of_ring ( const clipper::MAtom&, const std::vector<clipper::MAtom> ) const;
+            bool                                            bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
+            bool                                            bonded ( const clipper::MAtom&, const clipper::MAtom& ) const; 
+            bool                                            lookup_database ( clipper::String );
+            bool                                            examine_ring();
     
             const char get_altconf ( const clipper::MAtom& ) const;
-	    	
+                
     }; // class MSugar
 
+
+    class MDisaccharide
+    {
+        public:
+            
+            MDisaccharide () {} //!< null constructor
+            MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; }
+            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm );
+            clipper::MSugar& get_first_sugar () { return sugar_one; }
+            clipper::MSugar& get_second_sugar () { return sugar_two; }
+            
+            static int search_disaccharides(clipper::String name) 
+            {
+                for (int i = 0; i < clipper::data::disaccharide_database_size ; i++) 
+                    if (name.trim() == clipper::data::disaccharide_database[i].name_short.trim()) 
+                        return i; 
+                                        
+                return -1;
+            } //!< returns -1 if not found
+        
+        private:
+            clipper::MSugar sugar_one;
+            clipper::MSugar sugar_two;
+    }; // class MDisaccharide
 
     class MGlycan
     {

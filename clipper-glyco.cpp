@@ -331,8 +331,209 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 	#ifdef DUMP
 	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
 	#endif
+}
+
+
+
+
+/*! Constructor: create a new sugar object from a standard clipper::MMonomer, providing external validation data.
+	If reference data for the sugar cannot be found in the database, the members of the ring will be determined using a recursive version of Fleury's algorithm for finding eulerian cycles in undirected graphs
+	\param ml A MiniMol object containing this and neighbouring sugars
+	\param mm An MMonomer object that will be extended into a sugar
+	\param nb An MAtomNonBond object to be used for the determination of the stereochemistry
+	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
+
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data)
+{	
+    copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
+
+    this->sugar_supported = true; 
+    this->sugar_parent_molecule = &ml;
+    this->sugar_parent_molecule_nonbond = &nb; // store pointers
+    this->sugar_index = db_not_checked;
+    this->sugar_index = 9999; // default value for "not found in database".
+    this->sugar_alternate_confcode = " "; // initially, we would like to suppose this	
+    this->sugar_context = "";
+    
+    #ifdef DUMP
+        DBG << std::endl << std::endl << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
+    #endif
+
+    this->sugar_found_db = true;
+
+    sugar_bfactor = 0.0;
+
+    for (int i=0; i < this->size(); i++)
+    {
+        MSugar mstmp= *this;
+        sugar_bfactor += mstmp[i].u_iso();
+    }
+
+    sugar_bfactor /= this->size();
+    sugar_bfactor = clipper::Util::u2b(sugar_bfactor);
+
+    #ifdef DUMP
+	DBG << "found it! " << std::endl;
+    #endif
+
+    std::vector <clipper::String> buffer = validation_data.ring_atoms.trim().split(" ");
+    for (int i=0 ; i < buffer.size() ; i++) 
+    {
+	int index_atom = 0;
+	index_atom = this->lookup(buffer[i],clipper::MM::ANY);
+	if (index_atom == -1) 
+	{
+	    this->sugar_supported = false;
+	    this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
+	    this->sugar_denomination = "    unsupported    ";
+	    this->sugar_anomer = "X";
+	    this->sugar_handedness = "X";
+	    return;
+	}
+	else if ((*this)[index_atom].occupancy() < 1.0) // we will need to grab conformation A
+	{
+	    if ( get_altconf((*this)[index_atom]) != ' ' )
+	    { 
+		index_atom = this->lookup(buffer[i].trim()+" :A",clipper::MM::UNIQUE);
+				
+		if (index_atom == -1) // same case as above
+		    index_atom = this->lookup(buffer[i].trim()+" :B",clipper::MM::UNIQUE); // try grabbing conformation B instead 
+		else 
+                    sugar_alternate_confcode = " :A";
+	
+		if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now 
+		{
+		    this->sugar_supported = false;
+		    this->sugar_sane = false;
+		    this->sugar_denomination = "    unsupported    ";
+		    this->sugar_anomer = "X";
+		    this->sugar_handedness = "X";
+		    return;
+		}
+		else sugar_alternate_confcode = " :B";
+	    }
+ 	}
+	sugar_ring_elements.push_back((*this)[index_atom]);
+    }
+
+    if (this->sugar_ring_elements.size() == 5)
+    {
+	this->cremerPople_furanose(*this->sugar_parent_molecule, mm);	
+	this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
+		
+	#ifdef DUMP
+	    DBG << "After checking the conformation..." << std::endl;
+	#endif
+
+    }
+    else if (this->sugar_ring_elements.size() == 6)
+    {
+	this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
+	this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
+    }
+    else
+    {
+	this->sugar_supported = false;
+	this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
+	this->sugar_denomination = "    unsupported    ";
+	this->sugar_anomer = "X";
+	this->sugar_handedness = "X";
+    }
+
+    if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos) this->sugar_denomination = "aldo";
+    else this->sugar_denomination = "keto";
+
+    if (sugar_ring_elements.size() == 5) this->sugar_denomination = this->sugar_denomination + "furanose";
+    else this->sugar_denomination = this->sugar_denomination + "pyranose";
+
+    this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
+
+    // sanity check:
+
+    this->sugar_sane = false;
+
+    #ifdef DUMP
+	DBG << "Just before examining the ring..." << std::endl;
+    #endif
+
+	
+    if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
+
+    clipper::String ref_conformation;
+    clipper::ftype  ref_puckering;   
+    clipper::ftype  ref_bonds_rmsd;
+    clipper::ftype  ref_angles_rmsd;
+
+
+    ref_conformation = validation_data.ref_conformation;
+    ref_puckering    = validation_data.ref_puckering;
+    ref_bonds_rmsd   = validation_data.ref_bonds_rmsd;
+    ref_angles_rmsd  = validation_data.ref_angles_rmsd;
+
+    if ( ( ( sugar_handedness != "D" ) && ( validation_data.handedness != "D" ) ) 
+	    || ( ( sugar_handedness != "L" ) && ( validation_data.handedness != "L" ) ) )
+	sugar_diag_chirality = true; 
+    else 
+        sugar_diag_chirality = false;
+
+
+    if ( ( ( sugar_anomer == "alpha") && ( validation_data.anomer != "B" ) )
+	    || ( ( sugar_anomer == "beta") && ( validation_data.anomer != "A" ) ) )
+	sugar_diag_anomer = true;
+    else 
+        sugar_diag_anomer = false;
+
+    if ( ref_conformation == conformation_name() )
+        sugar_diag_conformation = true;
+    else 
+    {
+        if ( ( conformation_name() == "4c1" ) && ( sugar_handedness != "L" ))
+            sugar_diag_conformation = true;
+        else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
+            sugar_diag_conformation = true;
+        else if ( ring_cardinality() < 6) 
+            sugar_diag_conformation = true;
+        else  sugar_diag_conformation = false;
+    }
+
+    if ( sugar_diag_conformation )
+    {    
+        if (( puckering_amplitude() > ref_puckering - 0.15 ) && (puckering_amplitude() < ref_puckering + 0.15))
+            sugar_diag_puckering = true;
+        else sugar_diag_puckering = false;
+            
+        if ( sugar_ring_bond_rmsd < ( ref_bonds_rmsd + 0.039 ) ) 
+            sugar_diag_bonds_rmsd = true; 
+	else sugar_diag_bonds_rmsd = false; 
+
+	if ( sugar_ring_angle_rmsd < ( ref_angles_rmsd + 3.0 ) )
+	    sugar_diag_angles_rmsd = true; 
+	else sugar_diag_angles_rmsd = false; 
+    }
+    else 
+    {
+        if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.4 ))
+            sugar_diag_puckering = false;
+        else sugar_diag_puckering = true;
+
+        sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
+    }
+
+    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+
+    #ifdef DUMP
+	DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
+    #endif
 
 }
+
+
+
+
+
+
+
+
 
 /*! Checks if the sugar is in the database of sugars. If found, it stores
 		its index and returns true.
@@ -1678,6 +1879,21 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
     else return false;
 
     return false; // in case we haven't found any match
+}
+
+
+MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm )
+{
+    int index = search_disaccharides ( mm.type().c_str() ); // we know beforehand that this is a known disaccharide, no need to re-check
+        
+    clipper::data::sugar_database_entry val_string_one = clipper::data::disaccharide_database[index].sugar_one;
+    clipper::data::sugar_database_entry val_string_two = clipper::data::disaccharide_database[index].sugar_two;
+
+    sugar_one = clipper::MSugar ( mmol, mm, manb, val_string_one );
+    sugar_two = clipper::MSugar ( mmol, mm, manb, val_string_two ); 
+    
+    sugar_one.set_type ( clipper::String( sugar_one.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_one.name_short + "]" ));
+    sugar_two.set_type ( clipper::String( sugar_two.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_two.name_short + "]" ));
 }
 
 
