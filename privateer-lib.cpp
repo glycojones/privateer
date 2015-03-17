@@ -47,6 +47,7 @@
 
 #include "privateer-lib.h"
 
+
 void privateer::insert_coot_prologue_scheme ( std::fstream& output )
 {
     output  << "; This script has been created by Privateer-validate (Agirre and Cowtan, 2013-15)\n"	
@@ -187,7 +188,7 @@ void privateer::insert_coot_statusbar_text_scheme ( std::fstream& output, clippe
 	output  << "(add-status-bar-text \"" << text << "\")" ; 
 }
 
-void privateer::insert_coot_statusbar_text_python ( std::fstream& output, clipper::String& text)
+void privateer::insert_coot_statusbar_text_python ( std::fstream& output, clipper::String& text )
 {
 	output  << "add_status_bar_text (\"" << text << "\")" ; 
 }
@@ -195,4 +196,101 @@ void privateer::insert_coot_statusbar_text_python ( std::fstream& output, clippe
 clipper::ftype privateer::real_space_correlation ( const clipper::Xmap<float>& map1, const clipper::Xmap<float>& map2 ) 
 {
 	return 0.0;
+}
+
+clipper::MMonomer get_ideal_monomer ( privateer::data::fingerprint& fp )
+{
+    clipper::MMonomer tmp_mon;
+    tmp_mon.set_type ( fp.name_short );
+    tmp_mon.set_id ( 0 );
+    
+    for ( int index = 0; index < fp.num_control_points ; index++ )
+    {
+        clipper::MAtom tmp_atm;
+        clipper::Coord_orth coords(fp.atoms[index].x, fp.atoms[index].y, fp.atoms[index].z );
+        tmp_atm.set_coord_orth ( coords );
+        tmp_atm.set_name ( fp.atoms[index].atom_name );
+        tmp_atm.set_element ( fp.atoms[index].atom_name[0] );
+        tmp_atm.set_id ( 1 );
+        tmp_atm.set_occupancy ( 1.0 );
+        tmp_atm.set_u_iso ( 0.25 ); // aiming for an iso-B of ~20.0 
+        tmp_mon.insert ( tmp_atm );
+    }
+    return tmp_mon;
+}
+
+clipper::MMonomer get_peak_monomer ( privateer::data::fingerprint& fp )
+{
+    clipper::MMonomer tmp_mon;
+    tmp_mon.set_type ( fp.name_short );
+    tmp_mon.set_id ( 0 );
+    
+    for ( int index = 0; index < fp.num_control_points ; index++ )
+    {
+        clipper::MAtom tmp_atm;
+        clipper::Coord_orth coords(fp.peaks[index].x, fp.peaks[index].y, fp.peaks[index].z );
+        tmp_atm.set_coord_orth ( coords );
+        tmp_atm.set_name ( fp.peaks[index].atom_name );
+        tmp_atm.set_element ( fp.peaks[index].atom_name[0] );
+        tmp_atm.set_id ( 1 );
+        tmp_atm.set_occupancy ( 1.0 );
+        tmp_atm.set_u_iso ( 0.25 ); // aiming for an iso-B of ~20.0 
+        tmp_mon.insert ( tmp_atm );
+    }
+    return tmp_mon;
+}
+
+clipper::MMonomer get_void_monomer ( privateer::data::fingerprint& fp )
+{
+    clipper::MMonomer tmp_mon;
+    tmp_mon.set_type ( fp.name_short );
+    tmp_mon.set_id ( 0 );
+    
+    for ( int index = 0; index < fp.num_control_points ; index++ )
+    {
+        clipper::MAtom tmp_atm;
+        clipper::Coord_orth coords(fp.voids[index].x, fp.voids[index].y, fp.voids[index].z );
+        tmp_atm.set_coord_orth ( coords );
+        tmp_atm.set_name ( fp.voids[index].atom_name );
+        tmp_atm.set_element ( fp.voids[index].atom_name[0] );
+        tmp_atm.set_id ( 1 );
+        tmp_atm.set_occupancy ( 1.0 );
+        tmp_atm.set_u_iso ( 0.25 ); // aiming for an iso-B of ~20.0 
+        tmp_mon.insert ( tmp_atm );
+    }
+    return tmp_mon;
+}
+namespace privateer
+{
+    namespace data
+    {
+        const fingerprint fingerprint_list[] =
+        {
+            {
+                "ARA", "ligand", "A", "L", "alpha-L-Arabinose", 10,
+                { { "AO5", 2.826, 0.443, 0.013 }, { "AC5", 2.182, 0.000,-1.193 }, { "AC4", 0.772, 0.418,-1.248 }, 
+                  { "AO4", 0.631, 1.605,-1.628 }, { "AC1", 2.206, 0.000, 1.183 }, { "AO1", 2.875, 0.588, 2.298 }, 
+                  { "AC2", 0.731, 0.512, 1.249 }, { "AO2", 0.131, 0.300, 2.188 }, { "AC3", 0.000, 0.000, 0.000 }, { "AO3",-1.125, 0.610, 0.003 } } , 
+                { { "V01", 2.758, 2.629, 3.794 }, { "V02", 2.490, 5.743,-5.634 }, { "V03", 0.870, 1.227, 5.015 }, 
+                  { "V04",-5.376, 2.851, 3.476 }, { "V05",-3.243, 3.161, 4.321 }, { "V06",-1.485,-2.860, 2.153 }, 
+                  { "V07",-3.001,-0.086,-6.081 }, { "V08", 2.412,-2.704,-0.215 }, { "V09", 3.461, 0.901,-3.155 }, { "V10",-0.204, 4.505,-2.072 } } , 
+                { { "C1",  2.178, 0.000, 1.206 }, { "C2",  0.733, 0.508, 1.236 }, { "C3",  0.000, 0.000, 0.000 }, 
+                  { "C4",  0.728, 0.462,-1.271 }, { "C5",  2.172, 0.000,-1.203 }, { "O1",  2.874, 0.596, 2.298 }, 
+                  { "O2",  0.088, 0.115, 2.439 }, { "O3", -1.357, 0.457,-0.031 }, { "O4",  0.635, 1.868,-1.478 }, { "O5", 2.817, 0.460, 0.003 } }  
+            },
+            {
+                "NAG", "nglycan", "B", "D", "N-Acetyl-D-Glucosamine", 3,
+                { { "P", 0.0, 0.0, 0.0 }, { "P", 0.0, 0.0, 0.0 }, { "P", 0.0, 0.0, 0.0 } } , 
+                { { "V", 0.0, 0.0, 0.0 }, { "V", 0.0, 0.0, 0.0 }, { "V", 0.0, 0.0, 0.0 } } , 
+                { { "C", 0.0, 0.0, 0.0 }, { "C", 0.0, 0.0, 0.0 }, { "C", 0.0, 0.0, 0.0 } }  
+            },
+            
+            {
+                "BMA", "nglycan", "B", "D", "beta-D-mannopyranose", 3, 
+                { { "P", 0.0, 0.0, 0.0 }, { "P", 0.0, 0.0, 0.0 }, { "P", 0.0, 0.0, 0.0 } } , 
+                { { "V", 0.0, 0.0, 0.0 }, { "V", 0.0, 0.0, 0.0 }, { "V", 0.0, 0.0, 0.0 } } , 
+                { { "C", 0.0, 0.0, 0.0 }, { "C", 0.0, 0.0, 0.0 }, { "C", 0.0, 0.0, 0.0 } }  
+            }
+        };
+    }
 }
