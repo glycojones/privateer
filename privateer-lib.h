@@ -1,6 +1,6 @@
 /*! \file privateer-lib.h
   A collection of tools that help the Privateer do his job */
-// version  0.1.0
+// version  MKII
 // 2013 Jon Agirre & Kevin Cowtan, The University of York
 // mailto: jon.agirre@york.ac.uk
 // mailto: kevin.cowtan@york.ac.uk
@@ -47,14 +47,16 @@
 #define PRIVATEER_LIB_H_INCLUDED
 
 #include <fstream>
+#include <algorithm>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
+#include "privateer-ss-find.h"
 
 
 namespace privateer
 {
-    
+
     // Data for Privateer
     namespace data
     {
@@ -65,6 +67,7 @@ namespace privateer
             clipper::ftype y;
             clipper::ftype z;
         };
+
         struct fingerprint
         {
             clipper::String name_short;
@@ -78,17 +81,24 @@ namespace privateer
             dummy_atom atoms[20];
         };
 
+        struct build_options
+        {
+            bool nglycans;
+            bool oglycans;
+            bool ligands;
+        };
+
         extern const fingerprint fingerprint_list[];
         extern const int fingerprint_list_size;
     } // namespace data
-    
+
     // Coot support, Scheme
     void insert_coot_prologue_scheme ( std::fstream& );
     void insert_coot_epilogue_scheme ( std::fstream& );
     void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
     void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
     void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
-	
+
     // Coot support, Python
     void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
     void insert_coot_prologue_python ( std::fstream& );
@@ -98,9 +108,13 @@ namespace privateer
 
     // General Privateer functions
     clipper::ftype real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
-    clipper::MMonomer get_ideal_monomer ( privateer::data::fingerprint fp );
-    clipper::MMonomer get_peak_monomer ( privateer::data::fingerprint fp );
-    clipper::MMonomer get_void_monomer ( privateer::data::fingerprint fp );
+
+    clipper::MMonomer get_ideal_monomer ( const privateer::data::fingerprint& fp );
+    clipper::MMonomer get_peak_monomer  ( const privateer::data::fingerprint& fp );
+    clipper::MMonomer get_void_monomer  ( const privateer::data::fingerprint& fp );
+
+		void process_building_options ( clipper::String building_options, privateer::data::build_options &flags );
+    clipper::MiniMol build_sugars ( clipper::Xmap<float>& xwrk, privateer::data::build_options& options, double step, int nhit );
 
 } // namespace privateer
 

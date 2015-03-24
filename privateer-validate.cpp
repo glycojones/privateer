@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 
     #ifndef SVN_REV
         clipper::String program_version = "MKII";
-        CCP4Program prog( "Privateer-validate", program_version.c_str(), "$Date: 2015/01/06" );
+        CCP4Program prog( "privateer-validate", program_version.c_str(), "$Date: 2015/01/06" );
     #else
         clipper::String program_version = "MKII-";
         program_version.append(SVN_REV);
@@ -131,15 +131,51 @@ int main(int argc, char** argv)
         }
         else if ( args[arg] == "-list" )
         {
-            std::cout << std::endl << std::endl << "Printing list of supported three-letter codes:" << std::endl ;
+            std::cout << std::endl << std::endl << "Printing list of supported three-letter codes" << std::endl ;
+            std::cout << std::endl << "Pyranoses: " << std::endl;;
+
+            int n_printed = 0;
+
             for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
             {
-                if ( (i % 22) == 0 ) 
-                    std::cout << std::endl; 
-                std::cout << clipper::data::sugar_database[i].name_short << " " ;
+                if ( clipper::data::sugar_database[i].ring_atoms.split(" ").size() == 6 )
+                {
+                    if ( (n_printed % 22) == 0 ) 
+                        std::cout << std::endl; 
+                    std::cout << clipper::data::sugar_database[i].name_short << " " ;
+                    n_printed++;
+                }
             }
             std::cout << std::endl << std::endl ;
+            std::cout << std::endl << "Furanoses: " << std::endl;;
 
+            n_printed = 0;
+
+            for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
+            {
+                if ( clipper::data::sugar_database[i].ring_atoms.split(" ").size() == 5 )
+                {
+                    if ( (n_printed % 22) == 0 ) 
+                        std::cout << std::endl; 
+                    std::cout << clipper::data::sugar_database[i].name_short << " " ;
+                    n_printed++;
+                }
+            }
+            std::cout << std::endl << std::endl ;
+            
+            n_printed = 0;
+
+            std::cout << std::endl << "Disaccharides: " << std::endl;
+
+            for ( int i = 0 ; i < clipper::data::disaccharide_database_size ; i++ )
+            {
+                if ( (n_printed % 22) == 0 ) 
+                    std::cout << std::endl; 
+                std::cout << clipper::data::disaccharide_database[i].name_short << " " ;
+                n_printed++;
+            }
+            std::cout << std::endl << std::endl ;
+            
             prog.set_termination_message( "Success" );
             return 0;
         } 

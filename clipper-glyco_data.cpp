@@ -92,8 +92,8 @@ const disaccharide disaccharide_database[] =
     },
 
     { "LBT" ,  "Alpha-lactose",
-        { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                    "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
-        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+        { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                          "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 },
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 } 
     },
 
     { "CBI" ,  "Cellobiose",
@@ -107,7 +107,7 @@ const disaccharide disaccharide_database[] =
     },
 
     { "TRE" ,  "Trehalose",
-        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5P C1P C2P C3P C4P C5P", 0.621, "4c1", 0.003, 2.036 },
         { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
     } 
 };
