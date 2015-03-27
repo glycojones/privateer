@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 project(privateer C CXX)
 
+option(BUILD_SHARED_LIBS "Build as a shared library" ON)
+
+if(NOT DEFINED LIB_INSTALL_DIR)
+    set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+endif()
+
 find_package(CCP4 REQUIRED mmdb2 ccp4c clipper-core clipper-mmdb clipper-minimol
                            clipper-contrib clipper-ccp4 clipper-cif)
 
@@ -12,16 +18,26 @@ endif()
 
 include_directories(${CCP4_INCLUDE_DIRS})
 
-#add_library(privat
-#            .cpp)
-#target_link_libraries(privat )
+add_library(privateer
+            clipper-glyco.cpp
+            clipper-glyco_data.cpp
+            privateer-lib.cpp
+            privateer-ss-find.cpp)
+target_link_libraries(privateer ${CCP4_LIBRARIES})
 
 add_executable(privateer-validate
-               clipper-glyco.cpp clipper-glyco_data.cpp
-               privateer-lib.cpp privateer-validate.cpp
-               privateer-ss-find.cpp)
+               privateer-validate.cpp)
+target_link_libraries(privateer-validate privateer)
 
-target_link_libraries(privateer-validate ${CCP4_LIBRARIES})
+#add_executable(privateer-bin privateer.cpp)
+#set_target_properties(privateer-bin PROPERTIES OUTPUT_NAME privateer)
+#target_link_libraries(privateer-bin privateer)
 
+install(FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
+        DESTINATION include/privateer)
+install(TARGETS privateer
+        RUNTIME DESTINATION bin
+        ARCHIVE DESTINATION "${LIB_INSTALL_DIR}"
+        LIBRARY DESTINATION "${LIB_INSTALL_DIR}")
 install(TARGETS privateer-validate DESTINATION bin)
 
