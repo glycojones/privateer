@@ -2072,7 +2072,7 @@ void printXML ( std::vector < std::pair < clipper::String, clipper::MSugar > > s
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
         of_xml << "    <Glycan>\n" ;
-        of_xml << "     <GlycanPDB>"        << pdbname                                           << "</SugarPDB>\n"                                         ;
+        of_xml << "     <GlycanPDB>"        << pdbname                                           << "</GlycanPDB>\n"                                         ;
         of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
         of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().type().trim() + list_of_glycans[i].get_root().id().trim() << "</GlycanRoot>\n" ;
         of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
