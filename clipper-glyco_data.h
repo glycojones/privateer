@@ -47,39 +47,43 @@
 
 #include <clipper/clipper.h>
 
-namespace clipper {
-
-    namespace data {
-
-    struct sugar_database_entry
+namespace clipper 
+{
+    namespace data 
     {
-        clipper::String name_short;       // three-character name
-        clipper::String anomer;           // A=alpha, B=beta, N=unknown
-        clipper::String handedness;       // D, L or N for unknown
-        clipper::String name_long;        // longer name
-        clipper::String ring_atoms;       // e.g. ring_atoms = { "C1","C2","C3","C4","C5","O5" };
-        clipper::ftype  ref_puckering;    // puckering amplitude calculated from CCP4 monomer library-idealised coordinates 
-        clipper::String ref_conformation; // conformation detected from the idealised coordinates
-        clipper::ftype  ref_bonds_rmsd;   // rms bonds calculated from CCP4 monomer library-idealised coordinates 
-        clipper::ftype  ref_angles_rmsd;  // rms angles calculated from CCP4 monomer library-idealised coordinates
-    };
 
-    struct disaccharide                   // for those particular cases
-    {
-        clipper::String name_short;
-        clipper::String name_long;
-        sugar_database_entry sugar_one;
-        sugar_database_entry sugar_two;
-    };
+        struct sugar_database_entry
+        {
+            String name_short;       // three-character name
+            String anomer;           // A=alpha, B=beta, N=unknown
+            String handedness;       // D, L or N for unknown
+            String name_long;        // longer name
+            String ring_atoms;       // e.g. ring_atoms = { "C1","C2","C3","C4","C5","O5" };
+            ftype  ref_puckering;    // puckering amplitude calculated from CCP4 monomer library-idealised coordinates 
+            String ref_conformation; // conformation detected from the idealised coordinates
+            ftype  ref_bonds_rmsd;   // rms bonds calculated from CCP4 monomer library-idealised coordinates 
+            ftype  ref_angles_rmsd;  // rms angles calculated from CCP4 monomer library-idealised coordinates
+        };
 
-    extern const clipper::String iupac_conformational_landscape[];
-    extern const clipper::String conformational_landscape[];
-    extern const sugar_database_entry sugar_database[];
-    extern const disaccharide disaccharide_database[];
-    extern const int disaccharide_database_size;
-    extern const int sugar_database_size;
+        struct disaccharide                   // for those particular cases
+        {
+            String name_short;
+            String name_long;
+            sugar_database_entry sugar_one;
+            sugar_database_entry sugar_two;
+        };
 
-  } // namespace data
+        extern const String iupac_conformational_landscape[];
+        extern const String conformational_landscape[];
+        extern const sugar_database_entry sugar_database[];
+        extern const disaccharide disaccharide_database[];
+        extern const int disaccharide_database_size;
+        extern const int sugar_database_size;
+
+        bool found_in_database(clipper::String name);
+    
+  
+    } // namespace data
 
 } // namespace clipper
 

@@ -419,6 +419,7 @@ const sugar_database_entry sugar_database[] =
     { "SUS" ,	 "A", 	 "D", 	 "2-DEOXY-3,6-DI-O-SULFO-2-(SULFOAMINO)-ALPHA-D" ,  "O5 C1 C2 C3 C4 C5", 0.584, "4c1", 0.004, 2.350 },
     { "TA6" ,	 "B", 	 "D", 	 "6-O-PHOSPHONO-BETA-D-TAGATOFURANOSE" ,            "O5 C2 C3 C4 C5"   , 0.372, "3ev", 0.016, 5.716 },
     { "TGA" ,	 "B", 	 "D", 	 "METHANETHIOSULFONYL-GALACTOSIDE" ,                "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.368 },
+    { "TM9" ,    "B",    "D",    "WRONG INTERPRETATION OF GCS (GLUCOSAMINE)",       "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.368 },
     { "TMR" ,	 "B", 	 "D", 	 "2,6-DIDEOXY-4-THIOMETHYL-BETA-D-RIBOHEXOPYRAN" ,  "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.020 },
     { "TMX" ,	 "B", 	 "D", 	 "2-DEOXY-2-(TRIMETHYLAMMONIO)-BETA-D-GLUCOPYRA" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.370 },
     { "TNR" ,	 "A", 	 "D", 	 "O-(2-ACETAMIDO-2-DEOXY-ALPHA-D-GALACTOPYRANOS" ,  "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.001 },
@@ -444,6 +445,14 @@ const sugar_database_entry sugar_database[] =
     { " DT" ,    "B",    "D",    "2'-DEOXYTHYMIDINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.245, "ev3", 0.017, 4.176 } } ;
 
     const int sugar_database_size = sizeof( sugar_database ) / sizeof( sugar_database[0] );
+
+    bool found_in_database(clipper::String name)
+    {
+        for (int i = 0; i < sugar_database_size ; i++)
+            if (name.trim() == sugar_database[i].name_short.trim())
+                return true;
+        return false;
+    } //!< returns true if found
 
 } // namespace data
 
