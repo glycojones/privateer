@@ -1947,6 +1947,9 @@ int main(int argc, char** argv)
 // ############# helper functions ############## //
 
 
+
+
+
 char get_altconformation(clipper::MAtom ma)
 {
     clipper::String identifier = ma.id();
@@ -1955,6 +1958,10 @@ char get_altconformation(clipper::MAtom ma)
     else
         return ' ';     // The alternate conformation code is the fifth character in the complete identificator.
 }                       // We will return a blank character if there is no code present or if it is, but is blank
+
+
+
+
 
 
 void print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, clipper::String pdbname )
@@ -2036,6 +2043,10 @@ void print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > 
 }
 
 
+
+
+
+
 void print_usage ( )
 {
     std::cout << "Usage: privateer-validate" << std::endl << std::endl;
@@ -2066,6 +2077,10 @@ void print_usage ( )
     std::cout << "\tBlue map: 2mFo-DFc map. Pink map: mFo-DFc omit map. RSCC is computed against this map" << std::endl;
 
 }
+
+
+
+
 
 
 bool compute_and_print_external_validation ( const std::vector<clipper::String> validation_options, clipper::data::sugar_database_entry& external_validation )
@@ -2117,6 +2132,11 @@ bool compute_and_print_external_validation ( const std::vector<clipper::String> 
 }
 
 
+
+
+
+
+
 bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch)
 {
     if (!batch)
@@ -2146,6 +2166,11 @@ bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, cli
     return true;
 
 }
+
+
+
+
+
 
 
 void print_supported_code_list ()
@@ -2198,20 +2223,38 @@ void print_supported_code_list ()
 }
 
 
+
+
+
+
 void write_refmac_keywords ( std::vector < clipper::String > code_list )
 {
     std::fstream of_keywords;
     of_keywords.open("keywords_refmac5.txt", std::fstream::out);
 
+    // remove replicas
+
     std::sort ( code_list.begin(), code_list.end() );
     std::vector< clipper::String>::iterator last = std::unique(code_list.begin(), code_list.end());
     code_list.erase ( last, code_list.end() );
-    // remove replicas
     
-//    for ( int index = 0; index < code_list.size() ; index++ )
-//        for ( int next = index + 1; next < code_list.size();
+    // output unique keywords
     
     for ( int index = 0; index < code_list.size() ; index++ )
+    {
         of_keywords << "restr tors include resi " << code_list[index] << std::endl;
+        if ( index == 0 )
+            std::cout << std::endl << std::endl << "The keywords_refmac5.txt file has been generated. This activates torsion restraints in refmac5 for " << code_list[index];
+        else if ( index == code_list.size() -1 )
+            std::cout << " and " << code_list[index] << std::endl;
+        else
+            std::cout << ", " << code_list[index];
+    }
+    std::cout << std::endl << std::endl;
     of_keywords.close();
 }
+
+
+
+
+
