@@ -1,7 +1,7 @@
 
-// Clipper app to score a target cyclic carbohydrate
+// Clipper app to validate cyclic carbohydrates
 // See below for a complete description of the calculations
-// 2013 Jon Agirre & Kevin Cowtan @ University of York
+// 2013-5 Jon Agirre & Kevin Cowtan @ University of York
 // mailto: jon.agirre@york.ac.uk
 // mailto: kevin.cowtan@york.ac.uk
 //
@@ -33,6 +33,8 @@
 #include <clipper/clipper-minimol.h>
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
+#include <ccp4srs/ccp4srs_manager.h>
+#include <ccp4srs/ccp4srs_defs.h>
 
 
 using clipper::data32::F_sigF;
@@ -44,6 +46,15 @@ using namespace std;
 
 
 // begin helper function declarations //
+
+class PrTorsion : public ccp4srs::Torsion
+{
+    public:
+    void set_period ( int period  ) { this->torsion_period = period; }
+    void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
+    void set_value  ( float value ) { this->torsion        = value;  }
+    bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer );
+};
 
 void print_usage ();
 
@@ -59,6 +70,8 @@ char get_altconformation(clipper::MAtom ma);
 
 void write_refmac_keywords ( std::vector < clipper::String > code_list );
 
+bool write_libraries ( std::vector < clipper::String > code_list );
+
 // end helper function declarations //
 
 
@@ -67,10 +80,10 @@ int main(int argc, char** argv)
 {
     
 #ifndef SVN_REV
-    clipper::String program_version = "MKII";
+    clipper::String program_version = "MKIII";
     CCP4Program prog( "privateer-validate", program_version.c_str(), "$Date: 2015/07/10" );
 #else
-    clipper::String program_version = "MKII-";
+    clipper::String program_version = "MKIII-";
     program_version.append(SVN_REV);
     CCP4Program prog( "prval", program_version.c_str(), "$Date: 2015/07/10" );
 #endif
@@ -791,7 +804,10 @@ int main(int argc, char** argv)
         std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
         
         if ( enable_torsions_for.size() > 0 )
+        {
             write_refmac_keywords ( enable_torsions_for );
+            write_libraries( enable_torsions_for );
+        }
         
         prog.set_termination_message( "Normal termination" );
         system("touch scored");
@@ -1928,7 +1944,10 @@ int main(int argc, char** argv)
     print_XML(ligandList, list_of_glycans, ippdb);
     
     if ( enable_torsions_for.size() > 0 )
+    {
         write_refmac_keywords ( enable_torsions_for );
+        write_libraries( enable_torsions_for );
+    }
     
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
@@ -2244,17 +2263,217 @@ void write_refmac_keywords ( std::vector < clipper::String > code_list )
     {
         of_keywords << "restr tors include resi " << code_list[index] << std::endl;
         if ( index == 0 )
-            std::cout << std::endl << std::endl << "The keywords_refmac5.txt file has been generated. This activates torsion restraints in refmac5 for " << code_list[index];
+            std::cout << std::endl << std::endl << "The produced 'keywords_refmac5.txt' file will activate torsion restraints in refmac5 for " << code_list[index];
         else if ( index == code_list.size() -1 )
-            std::cout << " and " << code_list[index] << std::endl;
+            std::cout << " and " << code_list[index];
         else
             std::cout << ", " << code_list[index];
     }
-    std::cout << std::endl << std::endl;
+    std::cout << "." << std::endl << std::endl ;
     of_keywords.close();
 }
 
 
+
+
+
+bool write_libraries ( std::vector < clipper::String > code_list )
+{
+    std::cout << "Writing out tighter geometry restraints to 'privateer-lib.cif'... " << std::endl;
+    mmdb::InitMatType();
+    
+    ccp4srs::PManager srs;
+    ccp4srs::PMonomer Monomer;
+    mmdb::math::PGraph Graph;
+    
+    // remove replicas
+    
+    std::sort ( code_list.begin(), code_list.end() );
+    std::vector< clipper::String>::iterator last = std::unique(code_list.begin(), code_list.end());
+    code_list.erase ( last, code_list.end() );
+    
+    int rc;
+    char *S;
+    S = getenv ( "CCP4" );
+    
+    if (strlen(S) < 200 )
+        strcat ( S,"/share/ccp4srs" );
+    else
+        return true;
+    
+    srs = new ccp4srs::Manager();
+    rc = srs->loadIndex ( S );
+    
+    if (rc!=ccp4srs::CCP4SRS_Ok)
+    {
+        printf ( "\tError: unable to access CCP4 SRS library.\n",S );
+        delete srs;
+        return true;
+    }
+    
+    std::vector < ccp4srs::PMonomer > pmonomer_list;
+    
+    for ( int base_index = 0 ; base_index < code_list.size(); base_index++ )
+    {
+        Monomer = srs->getMonomer ( code_list[base_index].c_str(), NULL );
+        
+        std::vector < clipper::String > ring_atoms;
+        
+        for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
+            if ( code_list[base_index].trim() == clipper::data::sugar_database[i].name_short.trim() )
+            {
+                ring_atoms = clipper::data::sugar_database[i].ring_atoms.trim().split(" ");
+                break;
+            }
+    
+        if ( ring_atoms.size() < 3 )
+            return true; // this means we haven't found our stuff
+                         // by design, the only reason would be that we're handling a novel
+                         // sugar we don't have a dictionary for yet
+                
+        // now we set period to 1 for ring torsions
+
+        PrTorsion* torsion;
+        
+        for ( int i = 0; i < Monomer->n_torsions(); i++ )
+        {
+            torsion = (PrTorsion*)Monomer->torsion(i);
+            
+            if ( torsion->is_ring_torsion( ring_atoms, Monomer ) )
+            {
+                torsion->set_period(1);
+                torsion->set_esd ( 5.0 );
+                
+                clipper::Coord_orth atom1_coords ( Monomer->atom ( torsion->atom1() )->x(),
+                                                   Monomer->atom ( torsion->atom1() )->y(),
+                                                   Monomer->atom ( torsion->atom1() )->z() );
+                
+                clipper::Coord_orth atom2_coords ( Monomer->atom ( torsion->atom2() )->x(),
+                                                   Monomer->atom ( torsion->atom2() )->y(),
+                                                   Monomer->atom ( torsion->atom2() )->z() );
+                
+                clipper::Coord_orth atom3_coords ( Monomer->atom ( torsion->atom3() )->x(),
+                                                   Monomer->atom ( torsion->atom3() )->y(),
+                                                   Monomer->atom ( torsion->atom3() )->z() );
+            
+                clipper::Coord_orth atom4_coords ( Monomer->atom ( torsion->atom4() )->x(),
+                                                   Monomer->atom ( torsion->atom4() )->y(),
+                                                   Monomer->atom ( torsion->atom4() )->z() );
+                
+                float torsion_value = clipper::Coord_orth::torsion ( atom1_coords,
+                                                                     atom2_coords,
+                                                                     atom3_coords,
+                                                                     atom4_coords );
+                
+                float measured_period = clipper::Util::rad2d ( torsion_value );
+                
+                if ( abs( measured_period - torsion->value()) > 10 )
+                    std::cout << std::endl << "\tWarning: the reported value for torsion restraint " << i << " does not match the measured torsion!!!!" <<
+                    std::endl << "\tPlease send this information to ccp4@ccp4.ac.uk" << std::endl ;
+                
+                torsion->set_period(1);
+                torsion->set_esd ( 5.0 );
+                torsion->set_value ( measured_period );
+            }
+        }
+        
+        pmonomer_list.push_back ( Monomer );
+    }
+    
+    // write out the library file
+    
+    mmdb::io::File f;
+    f.assign ( "privateer-lib.cif", true, false );
+    
+    if (!f.rewrite())
+    {
+        printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
+        return true;
+    }
+
+    /*mmdb::mmcif::Data header;
+    header.PutDataName ( "global_" );
+    header.WriteMMCIF ( f );
+    header.PutDataName ( "_lib_name\tPrivateer" );
+    header.WriteMMCIF ( f );
+    header.PutDataName ( "_lib_version\tMKIII" );
+    header.WriteMMCIF ( f );
+    header.PutDataName ( "_lib_update\t7.0" );
+    header.WriteMMCIF ( f );
+    */
+    
+    mmdb::mmcif::Data data;
+    data.PutDataName ( "comp_list" );
+    data.WriteMMCIF ( f );
+    
+    mmdb::mmcif::Loop loop_components;
+    
+    loop_components.SetCategoryName ( "_chem_comp" );
+    loop_components.AddLoopTag ( "id" );
+    loop_components.AddLoopTag ( "three_letter_code" );
+    loop_components.AddLoopTag ( "name" );
+    loop_components.AddLoopTag ( "group" );
+    loop_components.AddLoopTag ( "number_atoms_all" );
+    loop_components.AddLoopTag ( "number_atoms_nh" );
+    loop_components.AddLoopTag ( "desc_level" );
+    
+    loop_components.AddString ( "NAG" );
+    loop_components.AddString ( "NAG" );
+    loop_components.AddString ( "'N-ACETYL-D-GLUCOSAMINE'" );
+    loop_components.AddString ( "pyranose" );
+    loop_components.AddInteger ( 30 );
+    loop_components.AddInteger ( 15 );
+    loop_components.AddString ( "." );
+    
+    loop_components.WriteMMCIF ( f );
+    
+    for ( int individual_monomer = 0 ; individual_monomer < pmonomer_list.size() ; individual_monomer++ )
+    {
+        mmdb::mmcif::PData data_out = pmonomer_list[individual_monomer]->makeCIF();
+        data_out->WriteMMCIF ( f );
+        data_out->FreeMemory ( 0 );
+        delete data_out;
+    }
+    
+    f.shut();
+    
+    // kill used resources //
+    
+    if ( Monomer )
+        delete Monomer;
+    
+    if ( srs )
+        delete srs;
+    
+    return false;
+}
+
+
+bool PrTorsion::is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
+{
+    // TO DO: check that a particular torsion restraint covers four ring atoms
+    
+    int n_atoms_checked = 0;
+    
+    for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
+    {
+        if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
+            n_atoms_checked++;
+        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
+            n_atoms_checked++;
+        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
+            n_atoms_checked++;
+        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
+            n_atoms_checked++;
+    }
+    
+    if ( n_atoms_checked == 4 )
+        return true;
+    else
+        return false;
+}
+
+  
 
 
 

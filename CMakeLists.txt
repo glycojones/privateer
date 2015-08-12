@@ -7,7 +7,7 @@ if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
 endif()
 
-find_package(CCP4 REQUIRED mmdb2 ccp4c clipper-core clipper-mmdb clipper-minimol
+find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs ccp4srs-data clipper-core clipper-mmdb clipper-minimol
                            clipper-contrib clipper-ccp4 clipper-cif)
 
 find_package(OpenMP)

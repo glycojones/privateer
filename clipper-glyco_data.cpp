@@ -369,6 +369,7 @@ const sugar_database_entry sugar_database[] =
     { "NGK" ,	 "A", 	 "D", 	 "2-(ACETYLAMINO)-2-DEOXY-4-O-SULFO-ALPHA-D-GALAC" ,"O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.347 },
     { "NGZ" ,	 "A", 	 "L", 	 "2-(ACETYLAMINO)-2-DEOXY-ALPHA-L-GLUCOPYRANOSE" ,  "O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.015 },
     { "NNG" ,	 "A", 	 "D", 	 "2-DEOXY-2-{[(S)-HYDROXY(METHYL)PHOSPHORYL]AMI" ,  "O5 C1 C2 C3 C4 C5", 0.557, "4c1", 0.002, 1.599 },
+    { "NOK" ,	 "N", 	 "D", 	 "2-ACETAMIDO-1,2-DIDEOXYNOJIRMYCIN" ,              "N5 C1 C2 C3 C4 C5", 0.557, "4c1", 0.010, 2.599 },
     { "NTF" ,	 "B", 	 "D", 	 "N-TRIFLURO-ACETYL-BETA-D-GLUCOPYRANOSYLAMINE" ,   "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.002, 2.084 },
     { "NXD" ,	 "B", 	 "L", 	 "METHYL5-(ACETYLAMINO)-9-{[AMINO(OXO)ACETYL]A" ,   "O6 C2 C3 C4 C5 C6", 0.621, "1c4", 0.002, 2.064 },
     { "OAK" ,	 "B", 	 "D", 	 "N-(PHENYLCARBONYL)-BETA-D-GLUCOPYRANOSYLAMINE" ,  "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.001, 1.368 },

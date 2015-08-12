@@ -126,8 +126,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     if ( this->sugar_found_db )
     {
         #ifdef DUMP
-	    DBG << "found it! " << std::endl;
-	#endif
+            DBG << "found it! " << std::endl;
+        #endif
 
 	std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
 	for (int i=0 ; i < buffer.size() ; i++) 
