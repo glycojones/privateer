@@ -25,7 +25,7 @@ add_library(privateer
             privateer-ss-find.cpp)
 target_link_libraries(privateer ${CCP4_LIBRARIES})
 
-add_executable(privateer-validate
+add_executable(privateer
                privateer-validate.cpp)
 target_link_libraries(privateer-validate privateer)
 
@@ -39,5 +39,5 @@ install(TARGETS privateer
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION "${LIB_INSTALL_DIR}"
         LIBRARY DESTINATION "${LIB_INSTALL_DIR}")
-install(TARGETS privateer-validate DESTINATION bin)
+install(TARGETS privateer DESTINATION bin)
 

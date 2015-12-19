@@ -419,7 +419,7 @@ int main(int argc, char** argv)
         
         if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tCtx\t Ok?");
         if (!batch && showGeom) printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
-        if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t-----\t------\t---\t-----");
+        if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t---\t-----");
         if (!batch && showGeom) printf("\t------------------------------------------------------------------------------------------------------------");
         if (!batch) printf("\n");
         
@@ -447,12 +447,12 @@ int main(int argc, char** argv)
             if (batch)
             {
                 fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
-                fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
+                fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
             }
             else
             {
                 printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
-                std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
+                std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
             }
             
             if (batch)
@@ -1423,11 +1423,11 @@ int main(int argc, char** argv)
     }
     
     if (!batch)
-        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tBonds\tAngles\tCtx\t Ok?");
+        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tCtx\t Ok?");
     if (!batch && showGeom)
         printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
     if (!batch)
-        printf("\n----\t------------\t----\t-----\t------\t------\t----\t-------------------\t---\t-----\t------\t-----\t------\t---\t-----");
+        printf("\n----\t------------\t----\t-----\t------\t------\t----\t-------------------\t---\t-----\t------\t---\t-----");
     if (!batch && showGeom)
         printf("\t------------------------------------------------------------------------------------------------------------");
     if (!batch)
@@ -1457,12 +1457,12 @@ int main(int argc, char** argv)
         if (batch)
         {
             fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().trim().c_str());
-            fprintf(output, "%s-%s  ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
+            fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
         }
         else
         {
             printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
-            std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim();
+            std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
         }
         
         // now calculate the correlation between the weighted experimental & calculated maps
