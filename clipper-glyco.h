@@ -369,7 +369,12 @@ namespace clipper
             
             clipper::MGlycan get_glycan_by_id ( int id );
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root ) 
-                { for (int i=0;i<list_of_glycans.size();i++) if (list_of_glycans[i].get_root().id()==root.id()) return list_of_glycans[i]; }
+            {
+                for (int i=0;i<list_of_glycans.size();i++)
+                    if (list_of_glycans[i].get_root().id()==root.id())
+                        return list_of_glycans[i];
+                return clipper::MGlycan();
+            }
             std::vector < clipper::MGlycan > get_list_of_glycans () { return list_of_glycans; }
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; } 
 

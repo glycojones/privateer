@@ -92,20 +92,23 @@ namespace privateer
         extern const int fingerprint_list_size;
     } // namespace data
 
-    // Coot support, Scheme
-    void insert_coot_prologue_scheme ( std::fstream& );
-    void insert_coot_epilogue_scheme ( std::fstream& );
-    void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
-    void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
-    void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
+    namespace coot
+    {
+        // Coot support, Scheme
+        void insert_coot_prologue_scheme ( std::fstream& );
+        void insert_coot_epilogue_scheme ( std::fstream& );
+        void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
+        void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
 
-    // Coot support, Python
-    void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
-    void insert_coot_prologue_python ( std::fstream& );
-    void insert_coot_epilogue_python ( std::fstream& );
-    void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
-    void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
-
+        // Coot support, Python
+        void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_prologue_python ( std::fstream& );
+        void insert_coot_epilogue_python ( std::fstream& );
+        void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
+        void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
+    }
+        
     // General Privateer functions
     clipper::ftype real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
 
@@ -113,7 +116,7 @@ namespace privateer
     clipper::MMonomer get_peak_monomer  ( const privateer::data::fingerprint& fp );
     clipper::MMonomer get_void_monomer  ( const privateer::data::fingerprint& fp );
 
-		void process_building_options ( clipper::String building_options, privateer::data::build_options &flags );
+    void process_building_options ( clipper::String building_options, privateer::data::build_options &flags );
     clipper::MiniMol build_sugars ( clipper::Xmap<float>& xwrk, privateer::data::build_options& options, double step, int nhit );
 
 } // namespace privateer

@@ -281,7 +281,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
             }
 
-	    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
+            sugar_sane = true;
 	}
 	else
 	{
@@ -324,7 +325,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 sugar_diag_puckering = false;
             else sugar_diag_puckering = true;
             
-	    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
+            sugar_sane = true;
 
 	}
 
@@ -519,7 +521,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
         sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
     }
 
-    if (sugar_diag_angles_rmsd && sugar_diag_puckering && sugar_diag_bonds_rmsd && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring ) sugar_sane = true;
+    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
+        sugar_sane = true;
 
     #ifdef DUMP
 	DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;

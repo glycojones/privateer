@@ -447,7 +447,7 @@ const sugar_database_entry sugar_database[] =
 
     const int sugar_database_size = sizeof( sugar_database ) / sizeof( sugar_database[0] );
 
-    bool found_in_database(clipper::String name)
+    bool found_in_database ( clipper::String name )
     {
         for (int i = 0; i < sugar_database_size ; i++)
             if (name.trim() == sugar_database[i].name_short.trim())
@@ -455,6 +455,16 @@ const sugar_database_entry sugar_database[] =
         return false;
     } //!< returns true if found
 
+    bool found_in_database ( std::string name )
+    {
+        clipper::String name_clipper = name.c_str();
+        for (int i = 0; i < sugar_database_size ; i++)
+            if ( name_clipper.trim() == sugar_database[i].name_short.trim() )
+                return true;
+        return false;
+    } //!< returns true if found
+    
+    
 } // namespace data
 
 } // namespace clipper

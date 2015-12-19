@@ -80,8 +80,8 @@ namespace clipper
         extern const int disaccharide_database_size;
         extern const int sugar_database_size;
 
-        bool found_in_database(clipper::String name);
-    
+        bool found_in_database ( clipper::String name );
+        bool found_in_database ( std::string name );
   
     } // namespace data
 

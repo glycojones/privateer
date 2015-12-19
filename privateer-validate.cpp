@@ -81,7 +81,7 @@ int main(int argc, char** argv)
     
 #ifndef SVN_REV
     clipper::String program_version = "MKIII";
-    CCP4Program prog( "privateer-validate", program_version.c_str(), "$Date: 2015/07/10" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
 #else
     clipper::String program_version = "MKIII-";
     program_version.append(SVN_REV);
@@ -90,7 +90,12 @@ int main(int argc, char** argv)
     
     prog.set_termination_message( "Failed" );
     
-    std::cout << std::endl << "Copyright 2013-2015 Jon Agirre, Kevin Cowtan and The University of York." << std::endl;
+    std::cout << "\nCopyright 2013-2016 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
+    std::cout << "\n\nPlease reference these articles: "<< std::endl ;
+    std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
+    std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;
+    std::cout << "\n  'Carbohydrate anomalies in the PDB'";
+    std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
     
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
@@ -99,7 +104,7 @@ int main(int argc, char** argv)
     clipper::String ipcol_fo = "NONE";
     clipper::String ipcif    = "NONE";
     clipper::String ipcode   = "XXX";
-    clipper::String opfile   = "privateer-validate.mtz";
+    clipper::String opfile   = "privateer-hklout.mtz";
     clipper::String title    = "generic title";
     clipper::String ipmtz    = "NONE";
     clipper::String validation_string = "";
@@ -236,10 +241,10 @@ int main(int argc, char** argv)
     {
         if ((( !clipper::MSugar::search_database(ipcode.c_str())) && (clipper::MDisaccharide::search_disaccharides(ipcode.c_str())==-1)) && (validation_options.size() == 0) )
         {
-            std::cout << std::endl << std::endl << "Error: no internal validation data found for " << ipcode << std::endl;
-            std::cout << "\nYou can provide external validation data with -valstring <data>" << std::endl
-            << "\n\tAccepted format: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n"
-            << "\tThree-letter code, ring atoms separated by /, anomer, handedness, expected conformation.\n" << std::endl;
+            std::cout << "\n\nError: no internal validation data found for " << ipcode << std::endl;
+            std::cout << "\nYou can provide external validation data with -valstring <data>" << std::endl;
+            std::cout << "\n\tAccepted format: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n";
+            std::cout << "\tThree-letter code, ring atoms separated by /, anomer, handedness, expected conformation.\n" << std::endl;
             prog.set_termination_message("Failed");
             return 1;
         }
@@ -412,7 +417,7 @@ int main(int argc, char** argv)
             }
         }
         
-        if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tBonds\tAngles\tCtx\t Ok?");
+        if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tCtx\t Ok?");
         if (!batch && showGeom) printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
         if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t-----\t------\t---\t-----");
         if (!batch && showGeom) printf("\t------------------------------------------------------------------------------------------------------------");
@@ -465,7 +470,7 @@ int main(int argc, char** argv)
                 bfac /= ligandList[index].second.size();
                 bfac  = clipper::Util::u2b(bfac);
                 
-                fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());     // output <bfactor>
+                fprintf ( output, "%3.2f", bfac );     // output <bfactor>
                 
                 
                 std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
@@ -579,7 +584,7 @@ int main(int argc, char** argv)
                 
                 bfac /= ligandList[index].second.size();
                 bfac  = clipper::Util::u2b(bfac);
-                printf("%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd()); // output <Bfactor>
+                printf ( "%3.2f", bfac ); // output <Bfactor>
                 
                 
                 std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
@@ -688,14 +693,14 @@ int main(int argc, char** argv)
         std::fstream of_scm; std::fstream of_py;
         of_scm.open("privateer-results.scm", std::fstream::out);
         of_py.open("privateer-results.py", std::fstream::out);
-        privateer::insert_coot_prologue_scheme ( of_scm );
-        privateer::insert_coot_prologue_python ( of_py );
+        privateer::coot::insert_coot_prologue_scheme ( of_scm );
+        privateer::coot::insert_coot_prologue_python ( of_py );
         
         clipper::String all_MapName, dif_MapName, omit_dif_MapName;
         all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
         
-        privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
-        privateer::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
         
         int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
         
@@ -712,12 +717,6 @@ int main(int argc, char** argv)
                 if ( ! ligandList[k].second.is_sane() )
                 {
                     sugar_count++;
-                    
-                    if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) )
-                    {
-                        diagnostic.append("check geometry");
-                        n_errors++; n_geom++;
-                    }
                     
                     if (!ligandList[k].second.ok_with_anomer())
                     {
@@ -759,8 +758,8 @@ int main(int argc, char** argv)
                         n_errors++; n_conf++;
                     }
                     
-                    privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
-                    privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+                    privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
+                    privateer::coot::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
                 }
                 else // sugar is sane, but still need to check higher-energy conformations
                 {
@@ -775,8 +774,8 @@ int main(int argc, char** argv)
                         n_conf++;
                         sugar_count++;
                         
-                        privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
-                        privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
                     }
                 }
             }
@@ -784,23 +783,22 @@ int main(int argc, char** argv)
         
         clipper::String status_msg = "Blue map: 2mFo-DFc. Pink map: omit mFo-DFc. Torsion restraints have been enabled.";
         
-        privateer::insert_coot_epilogue_scheme ( of_scm );
-        privateer::insert_coot_epilogue_python ( of_py );
+        privateer::coot::insert_coot_epilogue_scheme ( of_scm );
+        privateer::coot::insert_coot_epilogue_python ( of_py );
         
-        privateer::insert_coot_statusbar_text_scheme ( of_scm, status_msg );
-        privateer::insert_coot_statusbar_text_python ( of_py, status_msg );
+        privateer::coot::insert_coot_statusbar_text_scheme ( of_scm, status_msg );
+        privateer::coot::insert_coot_statusbar_text_python ( of_py, status_msg );
         
         of_scm.close();
         of_py.close();
         
         std::cout << "SUMMARY: " << std::endl << std::endl ;
-        std::cout << "   Check ring geometry: " << n_geom << std::endl;
         std::cout << "   Wrong anomer: " << n_anomer << std::endl;
         std::cout << "   Wrong configuration: " << n_config << std::endl;
         std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
         std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
         std::cout << std::endl;
-        std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf;
+        std::cout << "   Privateer-validate has identified " << n_anomer + n_config + n_pucker + n_conf;
         std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
         
         if ( enable_torsions_for.size() > 0 )
@@ -1570,7 +1568,7 @@ int main(int argc, char** argv)
             
             float bfac = ligandList[index].second.get_bfactor ();
             
-            fprintf(output,"%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd()); // output <bfactor>
+            fprintf ( output, "%3.2f", bfac ); // output <bfactor>
             
             std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
             bool found_in_tree = false;
@@ -1685,7 +1683,7 @@ int main(int argc, char** argv)
             bfac /= ligandList[index].second.size();
             bfac  = clipper::Util::u2b(bfac);
             
-            printf("%3.2f\t%1.3f\t%1.3f", bfac, ligandList[index].second.ring_bond_rmsd(), ligandList[index].second.ring_angle_rmsd());                 // output <Bfactor>
+            printf ( "%3.2f", bfac );                 // output <Bfactor>
             
             std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
             bool found_in_tree = false;
@@ -1790,10 +1788,10 @@ int main(int argc, char** argv)
     of_scm.open("privateer-results.scm", std::fstream::out);
     of_py.open("privateer-results.py", std::fstream::out);
     
-    privateer::insert_coot_prologue_scheme ( of_scm );
-    privateer::insert_coot_prologue_python ( of_py );
-    privateer::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
-    privateer::insert_coot_files_loadup_python (of_py, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+    privateer::coot::insert_coot_prologue_scheme ( of_scm );
+    privateer::coot::insert_coot_prologue_python ( of_py );
+    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+    privateer::coot::insert_coot_files_loadup_python (of_py, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
     
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
     
@@ -1814,14 +1812,6 @@ int main(int argc, char** argv)
             if ( ! ligandList[k].second.is_sane() )
             {
                 sugar_count++;
-                
-                if ( (!ligandList[k].second.ok_with_ring()) || (!ligandList[k].second.ok_with_bonds_rmsd()) || (!ligandList[k].second.ok_with_angles_rmsd()) )
-                {
-                    diagnostic.append("check geometry");
-                    report.append("Check geometry");
-                    n_errors++;
-                    n_geom++;
-                }
                 
                 if (!ligandList[k].second.ok_with_anomer())
                 {
@@ -1890,8 +1880,8 @@ int main(int argc, char** argv)
                     n_conf++;
                 }
                 
-                privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
-                privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+                privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
+                privateer::coot::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
             }
             else // sugar is sane, but still need to check higher-energy conformations
             {
@@ -1912,8 +1902,8 @@ int main(int argc, char** argv)
                     n_conf++;
                     
                     sugar_count++;
-                    privateer::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
-                    privateer::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
+                    privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, ligandList[k].second.ring_centre(), diagnostic );
+                    privateer::coot::insert_coot_go_to_sugar_python ( of_py, ligandList[k].second.ring_centre(), diagnostic );
                 }
                 
             }
@@ -1926,19 +1916,18 @@ int main(int argc, char** argv)
         
     }
     
-    privateer::insert_coot_epilogue_scheme ( of_scm );
-    privateer::insert_coot_epilogue_python ( of_py );
+    privateer::coot::insert_coot_epilogue_scheme ( of_scm );
+    privateer::coot::insert_coot_epilogue_python ( of_py );
     of_scm.close();
     of_py.close();
     
     std::cout << "SUMMARY: " << std::endl << std::endl ;
-    std::cout << "   Check ring geometry: " << n_geom << std::endl;
     std::cout << "   Wrong anomer: " << n_anomer << std::endl;
     std::cout << "   Wrong configuration: " << n_config << std::endl;
     std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
     std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
     std::cout << std::endl;
-    std::cout << "   Privateer-validate has identified " << n_geom + n_anomer + n_config + n_pucker + n_conf;
+    std::cout << "   Privateer-validate has identified " << n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
     
     print_XML(ligandList, list_of_glycans, ippdb);
@@ -2094,6 +2083,8 @@ void print_usage ( )
     std::cout << "\tof Scheme and Python scripts for use with Coot" << std::endl;
     std::cout << "\n\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.py'\n";
     std::cout << "\tBlue map: 2mFo-DFc map. Pink map: mFo-DFc omit map. RSCC is computed against this map" << std::endl;
+    
+    return;
 
 }
 
@@ -2306,16 +2297,66 @@ bool write_libraries ( std::vector < clipper::String > code_list )
     
     if (rc!=ccp4srs::CCP4SRS_Ok)
     {
-        printf ( "\tError: unable to access CCP4 SRS library.\n",S );
+        printf ( "\tError: unable to access CCP4 SRS library.\n", S );
         delete srs;
         return true;
     }
     
     std::vector < ccp4srs::PMonomer > pmonomer_list;
+
+    // write out the library file
+    
+    mmdb::io::File f;
+    f.assign ( "privateer-lib.cif", true, false );
+    
+    if (!f.rewrite())
+    {
+        printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
+        return true;
+    }
+    
+    /*mmdb::mmcif::Data header;
+     header.PutDataName ( "global_" );
+     header.WriteMMCIF ( f );
+     header.PutDataName ( "_lib_name\tPrivateer" );
+     header.WriteMMCIF ( f );
+     header.PutDataName ( "_lib_version\tMKIII" );
+     header.WriteMMCIF ( f );
+     header.PutDataName ( "_lib_update\t7.0" );
+     header.WriteMMCIF ( f );
+     */
+    
+    mmdb::mmcif::Data data;
+    data.PutDataName ( "comp_list" );
+    data.WriteMMCIF ( f );
+    
+    mmdb::mmcif::Loop loop_components;
+    
+    loop_components.SetCategoryName ( "_chem_comp" );
+    loop_components.AddLoopTag ( "id" );
+    loop_components.AddLoopTag ( "three_letter_code" );
+    loop_components.AddLoopTag ( "name" );
+    loop_components.AddLoopTag ( "group" );
+    loop_components.AddLoopTag ( "number_atoms_all" );
+    loop_components.AddLoopTag ( "number_atoms_nh" );
+    loop_components.AddLoopTag ( "desc_level" );
     
     for ( int base_index = 0 ; base_index < code_list.size(); base_index++ )
     {
+        
         Monomer = srs->getMonomer ( code_list[base_index].c_str(), NULL );
+        
+        if ( !Monomer )
+        {
+            std::cout << "Monomer not found... " << std::endl;
+            return true;
+        }
+        else if ( Monomer->n_torsions() == 0 )
+        {
+            std::cout << std::endl << "\tWARNING: minimal description found for sugar " << code_list[base_index] << " in monomer library."
+                      << std::endl << "\tSkipping..." << std::endl;
+            continue;
+        }
         
         std::vector < clipper::String > ring_atoms;
         
@@ -2327,12 +2368,21 @@ bool write_libraries ( std::vector < clipper::String > code_list )
             }
     
         if ( ring_atoms.size() < 3 )
-            return true; // this means we haven't found our stuff
+            continue; // this means we haven't found our stuff
                          // by design, the only reason would be that we're handling a novel
                          // sugar we don't have a dictionary for yet
                 
-        // now we set period to 1 for ring torsions
-
+        // now we set period to 1 on JUST ring torsions
+        
+        loop_components.AddString ( code_list[base_index].c_str() );
+        loop_components.AddString ( code_list[base_index].c_str() );
+        loop_components.AddString ( Monomer->chem_name() );
+        loop_components.AddString ( "pyranose" );
+        loop_components.AddInteger ( Monomer->n_atoms() );
+        loop_components.AddInteger ( Monomer->n_atoms() / 2 );
+        loop_components.AddString ( "." );
+        
+        
         PrTorsion* torsion;
         
         for ( int i = 0; i < Monomer->n_torsions(); i++ )
@@ -2368,8 +2418,12 @@ bool write_libraries ( std::vector < clipper::String > code_list )
                 float measured_period = clipper::Util::rad2d ( torsion_value );
                 
                 if ( abs( measured_period - torsion->value()) > 10 )
-                    std::cout << std::endl << "\tWarning: the reported value for torsion restraint " << i << " does not match the measured torsion!!!!" <<
-                    std::endl << "\tPlease send this information to ccp4@ccp4.ac.uk" << std::endl ;
+                    std::cout << std::endl << "\tWARNING: torsion " << i << " ("
+                                              + code_list[base_index]
+                                              + ") from the monomer library doesn't match the measured torsion!!"
+                              << std::endl << "\tThe measured value will be used, but this means the CCP4 monomer library is probably wrong."
+                              << std::endl << "\tPlease report this to ccp4@ccp4.ac.uk"
+                              << std::endl ;
                 
                 torsion->set_period(1);
                 torsion->set_esd ( 5.0 );
@@ -2379,51 +2433,6 @@ bool write_libraries ( std::vector < clipper::String > code_list )
         
         pmonomer_list.push_back ( Monomer );
     }
-    
-    // write out the library file
-    
-    mmdb::io::File f;
-    f.assign ( "privateer-lib.cif", true, false );
-    
-    if (!f.rewrite())
-    {
-        printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
-        return true;
-    }
-
-    /*mmdb::mmcif::Data header;
-    header.PutDataName ( "global_" );
-    header.WriteMMCIF ( f );
-    header.PutDataName ( "_lib_name\tPrivateer" );
-    header.WriteMMCIF ( f );
-    header.PutDataName ( "_lib_version\tMKIII" );
-    header.WriteMMCIF ( f );
-    header.PutDataName ( "_lib_update\t7.0" );
-    header.WriteMMCIF ( f );
-    */
-    
-    mmdb::mmcif::Data data;
-    data.PutDataName ( "comp_list" );
-    data.WriteMMCIF ( f );
-    
-    mmdb::mmcif::Loop loop_components;
-    
-    loop_components.SetCategoryName ( "_chem_comp" );
-    loop_components.AddLoopTag ( "id" );
-    loop_components.AddLoopTag ( "three_letter_code" );
-    loop_components.AddLoopTag ( "name" );
-    loop_components.AddLoopTag ( "group" );
-    loop_components.AddLoopTag ( "number_atoms_all" );
-    loop_components.AddLoopTag ( "number_atoms_nh" );
-    loop_components.AddLoopTag ( "desc_level" );
-    
-    loop_components.AddString ( "NAG" );
-    loop_components.AddString ( "NAG" );
-    loop_components.AddString ( "'N-ACETYL-D-GLUCOSAMINE'" );
-    loop_components.AddString ( "pyranose" );
-    loop_components.AddInteger ( 30 );
-    loop_components.AddInteger ( 15 );
-    loop_components.AddString ( "." );
     
     loop_components.WriteMMCIF ( f );
     

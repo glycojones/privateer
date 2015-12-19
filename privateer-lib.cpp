@@ -47,9 +47,9 @@
 
 #include "privateer-lib.h"
 
-void privateer::insert_coot_prologue_scheme ( std::fstream& output )
+void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
 {
-    output  << "; This script has been created by Privateer-validate (Agirre and Cowtan, 2013-15)\n"
+    output  << "; This script has been created by Privateer (Agirre, Iglesias, Rovira, Davies, Wilson and Cowtan, 2013-16)\n"
             << "(set-graphics-window-size 1873 968)\n"
         << "(set-graphics-window-position 0 0)\n"
             << "(set-go-to-atom-window-position 0 19)\n"
@@ -82,7 +82,7 @@ void privateer::insert_coot_prologue_scheme ( std::fstream& output )
             << "(set-run-state-file-status 0)\n";
 }
 
-void privateer::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
 {
     if (!mode) output << "(handle-read-draw-molecule \"" << pdb << "\")\n";
 
@@ -101,7 +101,7 @@ void privateer::insert_coot_files_loadup_scheme ( std::fstream& output, const cl
     }
 }
 
-void privateer::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
 {
     if (!mode) output  << "handle_read_draw_molecule (\"" << pdb << "\")\n";
 
@@ -120,7 +120,7 @@ void privateer::insert_coot_files_loadup_python ( std::fstream& output, const cl
     }
 }
 
-void privateer::insert_coot_epilogue_scheme ( std::fstream& output )
+void privateer::coot::insert_coot_epilogue_scheme ( std::fstream& output )
 {
     output  << "\n\n))\n(set-scroll-wheel-map 3)\n"
             << "(set-matrix 60.00)\n"
@@ -128,10 +128,10 @@ void privateer::insert_coot_epilogue_scheme ( std::fstream& output )
             << "(set-show-symmetry-master 0)\n";
 }
 
-void privateer::insert_coot_prologue_python ( std::fstream& output )
+void privateer::coot::insert_coot_prologue_python ( std::fstream& output )
 {
 
-    output  << "# This script has been created by Privateer-validate (Agirre and Cowtan, 2013-15)\n"
+    output  << "# This script has been created by Privateer (Agirre, Iglesias, Rovira, Davies, Wilson and Cowtan, 2013-16)\n"
             << "set_graphics_window_size (1873, 968)\n"
         << "set_graphics_window_position (0, 0)\n"
         << "set_go_to_atom_window_position (0, 19)\n"
@@ -164,7 +164,7 @@ void privateer::insert_coot_prologue_python ( std::fstream& output )
             << "toggle_idle_spin_function\n";
 }
 
-void privateer::insert_coot_epilogue_python ( std::fstream& output )
+void privateer::coot::insert_coot_epilogue_python ( std::fstream& output )
 {
     output  << "\n\n])\nset_scroll_wheel_map (3)\n"
             << "set_matrix (60.00)\n"
@@ -172,22 +172,22 @@ void privateer::insert_coot_epilogue_python ( std::fstream& output )
             << "set_show_symmetry_master (0)\n";
 }
 
-void privateer::insert_coot_go_to_sugar_scheme ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )
+void privateer::coot::insert_coot_go_to_sugar_scheme ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )
 {
     output  << "\t(list\t\"" << diagnostic << "\"\t" << sugar_centre.x() << "\t" << sugar_centre.y() << "\t" << sugar_centre.z() << ")\n";
 }
 
-void privateer::insert_coot_go_to_sugar_python ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )
+void privateer::coot::insert_coot_go_to_sugar_python ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )
 {
     output  << "\t[\"" << diagnostic << "\",\t" << sugar_centre.x() << ",\t" << sugar_centre.y() << ",\t" << sugar_centre.z() << "],\n";
 }
 
-void privateer::insert_coot_statusbar_text_scheme ( std::fstream& output, clipper::String& text)
+void privateer::coot::insert_coot_statusbar_text_scheme ( std::fstream& output, clipper::String& text)
 {
     output  << "(add-status-bar-text \"" << text << "\")" ;
 }
 
-void privateer::insert_coot_statusbar_text_python ( std::fstream& output, clipper::String& text )
+void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, clipper::String& text )
 {
     output  << "add_status_bar_text (\"" << text << "\")" ;
 }
