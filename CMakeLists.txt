@@ -25,13 +25,10 @@ add_library(privateer
             privateer-ss-find.cpp)
 target_link_libraries(privateer ${CCP4_LIBRARIES})
 
-add_executable(privateer
+add_executable(privateer-validate
                privateer-validate.cpp)
 target_link_libraries(privateer-validate privateer)
-
-#add_executable(privateer-bin privateer.cpp)
-#set_target_properties(privateer-bin PROPERTIES OUTPUT_NAME privateer)
-#target_link_libraries(privateer-bin privateer)
+set_target_properties(privateer-validate PROPERTIES OUTPUT_NAME privateer)
 
 install(FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
         DESTINATION include/privateer)
@@ -39,5 +36,10 @@ install(TARGETS privateer
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION "${LIB_INSTALL_DIR}"
         LIBRARY DESTINATION "${LIB_INSTALL_DIR}")
-install(TARGETS privateer DESTINATION bin)
-
+install(TARGETS privateer-validate DESTINATION bin)
+if (UNIX)
+  install(CODE "
+    execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink privateer
+            \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/privateer-validate\")
+        ")
+endif()
