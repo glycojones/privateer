@@ -2138,9 +2138,16 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
-            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] );
-            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( mmol[pol][mon] );
+            // Will need to keep this list up to date with the latest discoveries
+            // To do: include check on other ligands, such as lipids (ceramide O-glycosylation, for instance)
+            
+            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] ); // n-linked GlcNAc ?
+            else if ( mmol[pol][mon].type() == "ARG" ) potential_n_roots.push_back ( mmol[pol][mon] ); // Arginine rhamnosylation?
+            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( mmol[pol][mon] ); // o-linked stuff ?
             else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( mmol[pol][mon] );
+            else if ( mmol[pol][mon].type() == "LYS" ) potential_o_roots.push_back ( mmol[pol][mon] );
+            else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( mmol[pol][mon] );
+            else if ( mmol[pol][mon].type() == "PRO" ) potential_o_roots.push_back ( mmol[pol][mon] );
         }
 
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
@@ -2176,7 +2183,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         {
             const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()]; 
             
-            if (( tmpmon.type().trim() == "NGA" ) || (tmpmon.type().trim() == "FUC" ))
+            if (( tmpmon.type().trim() == "NGA" ) || (tmpmon.type().trim() == "FUC" ) || (tmpmon.type().trim() == "RAM" ) || (tmpmon.type().trim() == "BGC" ) || (tmpmon.type().trim() == "BMA" ) || (tmpmon.type().trim() == "NAG" ))
             { 
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {

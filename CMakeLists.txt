@@ -26,7 +26,7 @@ add_library(privateer
 target_link_libraries(privateer ${CCP4_LIBRARIES})
 
 add_executable(privateer-validate
-               privateer-validate.cpp)
+               privateer.cpp)
 target_link_libraries(privateer-validate privateer)
 set_target_properties(privateer-validate PROPERTIES OUTPUT_NAME privateer)
 

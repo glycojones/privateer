@@ -85,7 +85,7 @@ int main(int argc, char** argv)
 #else
     clipper::String program_version = "MKIII-";
     program_version.append(SVN_REV);
-    CCP4Program prog( "prval", program_version.c_str(), "$Date: 2015/07/10" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
 #endif
     
     prog.set_termination_message( "Failed" );
