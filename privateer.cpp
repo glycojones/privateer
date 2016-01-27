@@ -1365,27 +1365,6 @@ int main(int argc, char** argv)
     if (allSugars)
         ipcode = "all";
     
-    char all_MapName[40];
-    
-    if ( batch )
-        sprintf( all_MapName, "sigmaa_best.map\0" );
-    else
-        sprintf ( all_MapName, "%c%c%c%c_sigmaa_best_%s.map\0",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-    
-    char dif_MapName[40];
-    
-    if ( batch )
-        sprintf ( dif_MapName, "sigmaa_diff.map\0" );
-    else
-        sprintf(dif_MapName, "%c%c%c%c_sigmaa_diff_%s.map\0",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-    
-    char omit_dif_MapName[40];
-    
-    if ( batch )
-        sprintf ( omit_dif_MapName, "sigmaa_diff_omit.map\0" );
-    else
-        sprintf(omit_dif_MapName, "%c%c%c%c_sigmaa_omit_diff_%s.map",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ipcode.trim().c_str());
-    
     clipper::Map_stats ms;
     
     if (useSigmaa)
@@ -1399,19 +1378,19 @@ int main(int argc, char** argv)
         {
 #pragma omp section
             {
-                sigmaa_all_MapOut.open_write( all_MapName );      // write maps
+                sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                 sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
                 sigmaa_all_MapOut.close_write();
             }
 #pragma omp section
             {
-                sigmaa_dif_MapOut.open_write( dif_MapName );
+                sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
                 sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
                 sigmaa_dif_MapOut.close_write();
             }
 #pragma omp section
             {
-                sigmaa_omit_fd_MapOut.open_write( omit_dif_MapName );
+                sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                 sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
                 sigmaa_omit_fd_MapOut.close_write();
             }
@@ -1790,8 +1769,8 @@ int main(int argc, char** argv)
     
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
-    privateer::coot::insert_coot_files_loadup_python (of_py, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch );
+    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch );
     
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
     
@@ -2297,7 +2276,7 @@ bool write_libraries ( std::vector < clipper::String > code_list )
     
     if (rc!=ccp4srs::CCP4SRS_Ok)
     {
-        printf ( "\tError: unable to access CCP4 SRS library.\n", S );
+        printf ( "\tError: unable to access CCP4 SRS library.\n" );
         delete srs;
         return true;
     }

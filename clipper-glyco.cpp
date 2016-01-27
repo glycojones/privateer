@@ -1612,7 +1612,7 @@ bool MSugar::is_part_of_ring(const clipper::MAtom& ma, const std::vector<clipper
 /*! Internal function for checking whether two atoms are bonded or not
 	\param ma_one A clipper::MAtom object
 	\param ma_two A clipper::MAtom object
-	\return A boolean value with the obvious answer
+	\return A boolean value with the answer
 */
 
 bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MAtom& ma_two) const
@@ -1638,63 +1638,102 @@ bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MA
     	f1 = spgr.symop(ma_one.symmetry()) * f1;
     	f1 = f1.lattice_copy_near( f2 );
 		
-	distance = sqrt(( f2 - f1 ).lengthsq( sugar_parent_molecule->cell() ));
+        distance = sqrt(( f2 - f1 ).lengthsq( sugar_parent_molecule->cell() ));
 
     }
 	
     if ( sugar_parent_molecule->atom(ma_one).element().trim() == "C" )
     {
         if ( ma_two.element().trim() == "C" )
-	    if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
-	    else return false;
-	else if ( ma_two.element().trim() == "N" )
-	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
-	    else return false;
-	else if ( ma_two.element().trim() == "O" )
-	    if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
-	    else return false;
+        {
+            if ((distance >  1.18 ) && ( distance < 1.60 ))
+                return true; // C-C or C=C
+            else
+                return false;
+        }
+        else if ( ma_two.element().trim() == "N" )
+        {
+            if ((distance >  1.24 ) && ( distance < 1.52 ))
+                return true; // C-N or C=N
+            else
+                return false;
+        }
+        else if ( ma_two.element().trim() == "O" )
+        {
+            if ((distance >  1.16 ) && ( distance < 1.50 ))
+                return true; // C-O or C=O
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "S" )
-            if ((distance >  1.50 ) && ( distance < 2.00 )) return true; // C-S or C=S
-            else return false;
-	else if ( ma_two.element().trim() == "H" )
-	{
-	    if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H
-	    else return false;
-	}
+        {
+            if ((distance >  1.50 ) && ( distance < 2.00 ))
+                return true; // C-S or C=S
+            else
+                return false;
+        }
+        else if ( ma_two.element().trim() == "H" )
+        {
+            if ((distance >  0.96 ) && ( distance < 1.14 ))
+                return true; // C-H
+            else
+                return false;
+        }
     }
     else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "N" )
     {
         if ( ma_two.element().trim() == "C" )
-	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
-	    else return false;
+        {
+            if ((distance >  1.24 ) && ( distance < 1.52 ))
+                return true; // N-C or N=C
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-	{
-	    if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
-	    else return false;
-	}
+        {
+            if ((distance >  0.90 ) && ( distance < 1.10 ))
+                return true; // N-H
+            else
+                return false;
+        }
     }
     else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "O" )
     {
-	if ( ma_two.element().trim() == "C" )
-	    if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
-	    else return false;
+        if ( ma_two.element().trim() == "C" )
+        {
+            if ((distance >  1.16 ) && ( distance < 1.50 ))
+                return true; // O-C or O=C
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-	{
-	    if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
-	    else return false;
-	}
+        {
+            if ((distance >  0.88 ) && ( distance < 1.04 ))
+                return true; // O-H
+            else
+                return false;
+        }
     }
     else if ( sugar_parent_molecule->atom(ma_one).element().trim() == "S" )
-	if ( ma_two.element().trim() == "C" )
-	    if ((distance >  1.26 ) && ( distance < 2.00 )) return true; // O-C or O=C
-	    else return false;
+    {
+        if ( ma_two.element().trim() == "C" )
+        {
+            if ((distance >  1.26 ) && ( distance < 2.00 ))
+                return true; // S-C or S=C
+            else return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-	{
-	    if ((distance >  0.78 ) && ( distance < 1.44 )) return true; // O-H
-	    else return false;
-	}
-    else if (( distance > 1.2) && (distance < 1.8)) return true; // unknown bond
-	else return false;
+        {
+            if ((distance >  0.78 ) && ( distance < 1.44 ))
+                return true; // S-H
+            else return false;
+        }
+    }
+    else     /// unknown bond
+        if (( distance > 1.2) && (distance < 1.8))
+            return true;
+        else
+            return false;
 
     return false; // in case we haven't found any match
 }
@@ -1836,50 +1875,96 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
     if ( ma_one.element().trim() == "C" )
     {
         if ( ma_two.element().trim() == "C" )
-	    if ((distance >  1.18 ) && ( distance < 1.60 )) return true; // C-C or C=C
-	    else return false;
-	else if ( ma_two.element().trim() == "N" )
-	    if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // C-N or C=N
-	    else return false;
+        {
+            if ((distance >  1.18 ) && ( distance < 1.60 ))
+                return true; // C-C or C=C
+            else
+                return false;
+        }
+        else if ( ma_two.element().trim() == "N" )
+        {
+            if ((distance >  1.24 ) && ( distance < 1.52 ))
+                return true; // C-N or C=N
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "O" )
-            if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // C-O or C=O
-            else return false;
+        {
+            if ((distance >  1.16 ) && ( distance < 1.50 ))
+                return true; // C-O or C=O
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "S" )
-            if (( distance > 1.2 ) && ( distance < 2.0 )) return true; // C-S or C=S
-            else return false;
+        {
+            if (( distance > 1.2 ) && ( distance < 2.0 ))
+                return true; // C-S or C=S
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-            if ((distance >  0.96 ) && ( distance < 1.14 )) return true; // C-H				
-            else return false;
+        {
+            if ((distance >  0.96 ) && ( distance < 1.14 ))
+                return true; // C-H
+            else
+                return false;
+        }
     }
     else if ( ma_one.element().trim() == "N" )
     {
         if ( ma_two.element().trim() == "C" )
-            if ((distance >  1.24 ) && ( distance < 1.52 )) return true; // N-C or N=C
-            else return false;
+        {
+            if ((distance >  1.24 ) && ( distance < 1.52 ))
+                return true; // N-C or N=C
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-            if ((distance >  0.90 ) && ( distance < 1.10 )) return true; // N-H
-            else return false;
+        {
+            if ((distance >  0.90 ) && ( distance < 1.10 ))
+                return true; // N-H
+            else
+                return false;
+        }
     }
     else if ( ma_one.element().trim() == "O" )
     {
         if ( ma_two.element().trim() == "C" )
-            if ((distance >  1.16 ) && ( distance < 1.50 )) return true; // O-C or O=C
-            else return false;
+        {
+            if ((distance >  1.16 ) && ( distance < 1.50 ))
+                return true; // O-C or O=C
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-            if ((distance >  0.88 ) && ( distance < 1.04 )) return true; // O-H
-            else return false;
+        {
+            if ((distance >  0.88 ) && ( distance < 1.04 ))
+                return true; // O-H
+            else
+                return false;
+        }
     }
     else if ( ma_one.element().trim() == "S" )
     {
         if ( ma_two.element().trim() == "C" )
-            if ((distance >  1.26 ) && ( distance < 2.00 )) return true; // O-C or O=C
-            else return false;
+        {
+            if ((distance >  1.26 ) && ( distance < 2.00 ))
+                return true; // O-C or O=C
+            else
+                return false;
+        }
         else if ( ma_two.element().trim() == "H" )
-            if ((distance >  0.78 ) && ( distance < 1.24 )) return true; // O-H
-            else return false;
+        {
+            if ((distance >  0.78 ) && ( distance < 1.24 ))
+                return true; // O-H
+            else
+                return false;
+        }
     }
-    else if (( distance > 1.2) && (distance < 2.0)) return true; // unknown bond
-    else return false;
+    else if (( distance > 1.2) && (distance < 2.0))
+        return true; // unknown bond
+    else
+        return false;
 
     return false; // in case we haven't found any match
 }
@@ -1916,18 +2001,21 @@ clipper::String MGlycan::carbname_of(clipper::String name) const
 {
     clipper::String new_name = name;
     
-    if ( name == "NAG" ) new_name = "GlcNac";
-    else if ( name == "NGA" ) new_name = "GalNac";
+    if      ( name == "NAG" ) new_name = "GlcNAc";
+    else if ( name == "NGA" ) new_name = "GalNAc";
     else if ( name == "MAN" ) new_name = "Man"   ;
     else if ( name == "BMA" ) new_name = "Man"   ;
+    else if ( name == "XYP" ) new_name = "Xyl"   ;
+    else if ( name == "XYS" ) new_name = "Xyl"   ;
     else if ( name == "SIA" ) new_name = "SiaAc" ;
     else if ( name == "GAL" ) new_name = "Gal"   ;
     else if ( name == "GLA" ) new_name = "Gal"   ;
     else if ( name == "FUC" ) new_name = "Fuc"   ;
-    else if ( name == "FCB" ) new_name = "Fuc"   ; 
+    else if ( name == "FCB" ) new_name = "Fuc"   ;
+    else if ( name == "FUL" ) new_name = "Fuc"   ;
     else if ( name == "GLC" ) new_name = "Glc"   ;
     else if ( name == "BGC" ) new_name = "Glc"   ;
-    else if ( name == "DAN" ) new_name = "NeuAc"   ; 
+    else if ( name == "DAN" ) new_name = "NeuAc" ;
 
     return new_name;
 }
@@ -2171,6 +2259,19 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     break;
                 }
             }
+            else if ( tmpmon.type().trim() == "NDG" )
+            {
+                if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+                {
+                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    list_of_sugars.push_back ( sugar );
+                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()),
+                                                            potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
+                    mg.set_kind_of_glycan ( "n-glycan" );
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
+            }
         }
     }
 
@@ -2218,12 +2319,20 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
     if ( mm.type().trim() == "ASN" ) 
     {
-        int id = mm.lookup ( "ND2", clipper::MM::ANY );
+        int id1 = mm.lookup ( "ND2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
         
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+            
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
         else return tmpresults; // empty result
-
+        
     }
     else if ( mm.type().trim() == "SER" )
     {
