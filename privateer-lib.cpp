@@ -161,8 +161,28 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
     output  << "add_status_bar_text (\"" << text << "\")" ;
 }
 
-clipper::ftype privateer::real_space_correlation ( const clipper::Xmap<float>& map1, const clipper::Xmap<float>& map2 )
+float privateer::real_space_correlation ( const clipper::Xmap<float>& map1, const clipper::Xmap<float>& map2 )
 {
-    return 0.0;
+    return 0.0; // to be implemented
+}
+
+void privateer::glycoplot::Plot::write_svg_header   ( std::fstream& of )
+{
+    of << "<?xml version=\"1.0\" standalone=\"no\"?>"
+    << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">"
+    << "<svg viewBox = \"0 0 1000 1000\" version = \"1.1\">" ;
+}
+
+void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
+{
+    for (int i = 0; i < this->list_of_shapes.size() ; i ++)
+    {
+        of << list_of_shapes[i].paint();
+    }
+}
+
+void privateer::glycoplot::Plot::write_svg_footer   ( std::fstream& of )
+{
+    of << "</svg>" ;
 }
 

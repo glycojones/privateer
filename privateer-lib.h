@@ -39,7 +39,7 @@ namespace privateer
         void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
     }
     
-    clipper::ftype real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
+    float real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
 
     
     namespace glycoplot
@@ -54,6 +54,7 @@ namespace privateer
                 int  get_y  ( ) { return pos_y; }
                 int  get_x  ( ) { return pos_x; }
                 void set_tooltip ( std::string tooltip ) { this->tooltip = tooltip; }
+                std::string paint ( ) { return ""; };
             
             private:
                 int pos_x;
@@ -66,14 +67,15 @@ namespace privateer
             public:
                 Plot() {} //!< null constructor
                 Plot( int width, int height, bool vertical ) { this->width=width; this->height=height; this->vertical=vertical; }
-                bool plot_to_file ( std::fstream& ); //!< returns true if there have been any problems
+                bool plot_to_file ( std::string file_path ); //!< returns true if there have been any problems
+                void add_shape ( Shape shape ) { this->list_of_shapes.push_back ( shape ); }
             private:
                 int width;
                 int height;
                 bool vertical;
-                bool write_svg_header   ( std::fstream& );
-                bool write_svg_contents ( std::fstream& );
-                bool write_svg_footer   ( std::fstream& );
+                void write_svg_header   ( std::fstream& of );
+                void write_svg_contents ( std::fstream& of );
+                void write_svg_footer   ( std::fstream& of );
                 
                 std::vector < Shape > list_of_shapes;
                 
