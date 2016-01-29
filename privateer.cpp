@@ -1,19 +1,24 @@
 
-// Clipper app to validate cyclic carbohydrates
-// See below for a complete description of the calculations
-// 2013-5 Jon Agirre & Kevin Cowtan @ University of York
+// YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
+// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+//
+// 2013-2016 Jon Agirre & Kevin Cowtan
+// York Structural Biology Laboratory
+// The University of York
 // mailto: jon.agirre@york.ac.uk
 // mailto: kevin.cowtan@york.ac.uk
 //
 // Targets supported: structures containing furanose and pyranose rings
 //
 //  Currently, the application calculates:
-//   - SFcalc from model (internal)
-//   - Fo-Fc sigmaa weighted omit maps (output)
-//   - Fo-Fc omit maps for comparison (output)
+//
+//   - SFcalc with bulk solvent correction from model (internal)
+//   - Fo-Fc sigmaa weighted omit maps (output as map or coeffs)
+//   - Fo-Fc omit maps for comparison (output as map or coeffs)
 //   - Fc maps for RSCC calculation (internal)
-//   - Correlation coefficient + score
+//   - Correlation coefficient + score (console and XML)
 //   - Cremer-pople puckering parameters (q2,phi2) + q3 for pyranose rings, (q2,phi2) for furanose rings
+//   - Mean B-factors, <mFo> and other metrics
 
 #include <stdio.h>
 #include <string.h>

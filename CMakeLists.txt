@@ -21,13 +21,14 @@ include_directories(${CCP4_INCLUDE_DIRS})
 add_library(privateer
             clipper-glyco.cpp
             clipper-glyco_data.cpp
-            privateer-lib.cpp
-            privateer-ss-find.cpp)
+            privateer-lib.cpp)
 target_link_libraries(privateer ${CCP4_LIBRARIES})
 
 add_executable(privateer-validate
                privateer.cpp)
+
 target_link_libraries(privateer-validate privateer)
+
 set_target_properties(privateer-validate PROPERTIES OUTPUT_NAME privateer)
 
 install(FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
