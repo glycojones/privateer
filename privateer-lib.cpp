@@ -181,8 +181,40 @@ void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
     }
 }
 
-void privateer::glycoplot::Plot::write_svg_footer   ( std::fstream& of )
+void privateer::glycoplot::Plot::write_svg_footer ( std::fstream& of )
 {
     of << "</svg>" ;
 }
+
+bool privateer::glycoplot::Plot::write_file  ( std::string file_path )
+{
+    return false;
+}
+
+bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
+{
+    
+    
+    return false;
+}
+
+
+std::string privateer::glycoplot::Square::paint ()
+{
+    std::ostringstream tmp;
+    
+    tmp   <<  "<rect \n" <<
+              "      width =\""  << this->get_width()  << "\"\n" <<
+              "      height=\""  << this->get_height() << "\"\n" <<
+              "      rx=\"0\"\n" <<
+              "      ry=\"0\"\n" <<
+              "      x=\""       << this->get_x()      << "\"\n" <<
+              "      y=\""       << this->get_y()      << "\"\n" <<
+              "      id=\""      << this->get_id()     << "\"\n" <<
+              "      title=\""   << this->get_title()  << "\"\n" <<
+              "/>";
+
+    return tmp.str();
+}
+
 

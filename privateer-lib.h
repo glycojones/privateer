@@ -14,6 +14,7 @@
 
 #include <fstream>
 #include <algorithm>
+#include "clipper-glyco.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -53,12 +54,16 @@ namespace privateer
                 void set_pos( int x, int y ) { pos_x = x; pos_y =y ; }
                 int  get_y  ( ) { return pos_y; }
                 int  get_x  ( ) { return pos_x; }
+                std::string get_id() { return this->svg_id; }
                 void set_tooltip ( std::string tooltip ) { this->tooltip = tooltip; }
                 std::string paint ( ) { return ""; };
+                std::string get_title () { return this->title; }
             
             private:
                 int pos_x;
                 int pos_y;
+                std::string svg_id;
+                std::string title;
                 std::string tooltip;
         };
         
@@ -67,8 +72,9 @@ namespace privateer
             public:
                 Plot() {} //!< null constructor
                 Plot( int width, int height, bool vertical ) { this->width=width; this->height=height; this->vertical=vertical; }
-                bool plot_to_file ( std::string file_path ); //!< returns true if there have been any problems
-                void add_shape ( Shape shape ) { this->list_of_shapes.push_back ( shape ); }
+                bool write_file  ( std::string file_path ); //!< returns true if there have been any problems
+                bool plot_glycan ( clipper::MGlycan glycan );
+            
             private:
                 int width;
                 int height;
@@ -76,7 +82,8 @@ namespace privateer
                 void write_svg_header   ( std::fstream& of );
                 void write_svg_contents ( std::fstream& of );
                 void write_svg_footer   ( std::fstream& of );
-                
+                void add_shape ( Shape shape ) { this->list_of_shapes.push_back ( shape ); }
+            
                 std::vector < Shape > list_of_shapes;
                 
         };
@@ -88,6 +95,8 @@ namespace privateer
                 Square( int x, int y, int width, int height ) { set_pos(x, y); this->width=width; this->height=height; } //!< constructor
                 int  get_width  ( ) { return width;  }
                 int  get_height ( ) { return height; }
+                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
+                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
                 std::string paint ( );
             
             private:
@@ -126,6 +135,17 @@ namespace privateer
                 std::string colour_fill;
                 std::string colour_border;
                 int width_border;
+        };
+        
+        
+        
+        // Standard conventions for Glycobiology
+        
+        class GlcNAc : public Square
+        {
+            public:
+            GlcNAc() { set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); } //!< null constructor
+            GlcNAc( int x, int y ) { set_pos (x, y); set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); }
         };
     }
     
