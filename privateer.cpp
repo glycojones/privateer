@@ -326,6 +326,11 @@ int main(int argc, char** argv)
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
+                privateer::glycoplot::Plot plot(100,100,true);
+                plot.plot_glycan ( list_of_glycans[i] );
+                std::ostringstream os;
+                os << i << ".svg";
+                plot.write_to_file ( os.str() );
             }
         }
         
@@ -1045,6 +1050,11 @@ int main(int argc, char** argv)
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
+                privateer::glycoplot::Plot plot(100,100,true);
+                plot.plot_glycan ( list_of_glycans[i] );
+                std::ostringstream os;
+                os << i << ".svg";
+                plot.write_to_file ( os.str() );
             }
         }
         

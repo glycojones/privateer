@@ -166,40 +166,65 @@ float privateer::real_space_correlation ( const clipper::Xmap<float>& map1, cons
     return 0.0; // to be implemented
 }
 
+
+
+
+///////// Privateer's glycoplot /////////
+
+
+
 void privateer::glycoplot::Plot::write_svg_header   ( std::fstream& of )
 {
-    of << "<?xml version=\"1.0\" standalone=\"no\"?>"
-    << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">"
-    << "<svg viewBox = \"0 0 1000 1000\" version = \"1.1\">" ;
+    of << "<?xml version=\"1.0\" standalone=\"no\"?>\n"
+    << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n\n"
+    << "<svg width=\"" << get_width() << "\" height=\"" << get_height() << "\" version = \"1.1\">\n" ;
 }
+
 
 void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
 {
-    for (int i = 0; i < this->list_of_shapes.size() ; i ++)
+    for (int i = 0; i < list_of_shapes.size() ; i ++)
     {
-        of << list_of_shapes[i].paint();
+        of << list_of_shapes[i]->get_XML();
     }
 }
+
 
 void privateer::glycoplot::Plot::write_svg_footer ( std::fstream& of )
 {
     of << "</svg>" ;
 }
 
-bool privateer::glycoplot::Plot::write_file  ( std::string file_path )
+
+bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
 {
+    std::fstream out;
+    
+    out.open( file_path, std::fstream::out);
+    
+    write_svg_header   ( out );
+    write_svg_contents ( out );
+    write_svg_footer   ( out );
+    
+    out.close();
+    
     return false;
 }
+
 
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
     
+    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2,3);
+    add_shape(glcnac);
+    
+    std::cout << "adding one GlcNAc" << std::endl;
     
     return false;
 }
 
 
-std::string privateer::glycoplot::Square::paint ()
+std::string privateer::glycoplot::GlcNAc::get_XML ()
 {
     std::ostringstream tmp;
     
@@ -211,9 +236,10 @@ std::string privateer::glycoplot::Square::paint ()
               "      x=\""       << this->get_x()      << "\"\n" <<
               "      y=\""       << this->get_y()      << "\"\n" <<
               "      id=\""      << this->get_id()     << "\"\n" <<
+//              "      style=\""   << this->get_colour_stroke() << "\"\n" <<
               "      title=\""   << this->get_title()  << "\"\n" <<
-              "/>";
-
+              "/>\n";
+    
     return tmp.str();
 }
 
