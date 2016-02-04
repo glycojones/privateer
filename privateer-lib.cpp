@@ -215,9 +215,10 @@ bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
     
-    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2,3);
+    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2,3); // ignored for now
+    privateer::glycoplot::Man *man = new privateer::glycoplot::Man(2,3);
     add_shape(glcnac);
-    
+    add_shape(man);
     std::cout << "adding one GlcNAc" << std::endl;
     
     return false;
@@ -229,18 +230,35 @@ std::string privateer::glycoplot::GlcNAc::get_XML ()
     std::ostringstream tmp;
     
     tmp   <<  "<rect \n" <<
-              "      width =\""  << this->get_width()  << "\"\n" <<
-              "      height=\""  << this->get_height() << "\"\n" <<
+              "      width =\""  << get_width()  << "\"\n" <<
+              "      height=\""  << get_height() << "\"\n" <<
               "      rx=\"0\"\n" <<
               "      ry=\"0\"\n" <<
-              "      x=\""       << this->get_x()      << "\"\n" <<
-              "      y=\""       << this->get_y()      << "\"\n" <<
-              "      id=\""      << this->get_id()     << "\"\n" <<
-//              "      style=\""   << this->get_colour_stroke() << "\"\n" <<
-              "      title=\""   << this->get_title()  << "\"\n" <<
+              "      x=\""       << get_x()      << "\"\n" <<
+              "      y=\""       << get_y()      << "\"\n" <<
+              "      id=\""      << get_id()     << "\"\n" <<
+              "      style=\"stroke:"   << get_colour_border() << "fill:" << get_colour_fill() << "stroke-width:0.6;\"\n" <<
+              "      title=\""   << get_title()  << "\"\n" <<
               "/>\n";
     
     return tmp.str();
 }
 
+std::string privateer::glycoplot::Man::get_XML ()
+{
+    std::ostringstream tmp;
+    
+    tmp   <<  "<circle \n" <<
+    "      r =\""      << get_radius() << "\"\n" <<
+    "      rx=\"0\"\n" <<
+    "      ry=\"0\"\n" <<
+    "      cx=\""      << get_x()      << "\"\n" <<
+    "      cy=\""      << get_y()      << "\"\n" <<
+    "      id=\""      << get_id()     << "\"\n" <<
+    "      style=\"stroke:"   << get_colour_border() << "fill:" << get_colour_fill() << "stroke-width:0.6;\"\n" <<
+    "      title=\""   << get_title()  << "\"\n" <<
+    "/>\n";
+    
+    return tmp.str();
+}
 

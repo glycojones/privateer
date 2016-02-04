@@ -121,8 +121,12 @@ namespace privateer
             public:
                 Circle() { } //!< null constructor
                 Circle( int x, int y, int radius ) { set_pos(x, y); this->radius=radius; } //!< constructor
-                void set_size ( int r ) { radius=r; }
+                void set_radius ( int r ) { radius=r; }
                 int  get_radius  ( ) { return radius;  }
+                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
+                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
+                std::string get_colour_fill ( ) { return colour_fill; }
+                std::string get_colour_border ( ) { return colour_border; }
                 virtual std::string get_XML ( ) = 0;
             
             protected:
@@ -140,6 +144,10 @@ namespace privateer
                 Triangle( int x, int y, int side ) { set_pos(x, y); this->side=side; } //!< constructor
                 void set_size ( int s ) { side=s; }
                 int get_side  ( ) { return side;  }
+                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
+                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
+                std::string get_colour_fill ( ) { return colour_fill; }
+                std::string get_colour_border ( ) { return colour_border; }
                 virtual std::string get_XML ( );
             
             protected:
@@ -156,9 +164,18 @@ namespace privateer
         {
             public:
                 GlcNAc() { set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); } //!< null constructor
-                GlcNAc( int x, int y ) { set_size(10,10); set_pos(0,0); set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); }
+                GlcNAc( int x, int y ) { set_size(10,10); set_pos(72,50); set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); }
                 std::string get_XML ( );
             
+        };
+        
+        class Man : public virtual Circle
+        {
+            public:
+                Man() { set_colour_fill ("#00ff00;"); set_colour_border ("#21421e;"); } //!< null constructor
+                Man( int x, int y ) { set_radius(6); set_pos(32,50); set_colour_fill ("#00ff00;"); set_colour_border ("#21421e;"); }
+                std::string get_XML ( );
+                
         };
     }
     
