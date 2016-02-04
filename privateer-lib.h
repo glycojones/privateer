@@ -83,9 +83,12 @@ namespace privateer
                 int width;
                 int height;
                 bool vertical;
-                void write_svg_header   ( std::fstream& of );
-                void write_svg_contents ( std::fstream& of );
-                void write_svg_footer   ( std::fstream& of );
+                void write_svg_header        ( std::fstream& of );
+                void write_svg_contents      ( std::fstream& of );
+                void write_svg_footer        ( std::fstream& of );
+                std::ostringstream& get_svg_string_header   ( );
+                std::ostringstream& get_svg_string_contents ( );
+                std::ostringstream& get_svg_string_footer   ( );
                 void add_shape ( Shape * shape ) { list_of_shapes.push_back ( shape );}
             
                 std::vector < Shape * > list_of_shapes;

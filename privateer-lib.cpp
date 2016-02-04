@@ -196,6 +196,39 @@ void privateer::glycoplot::Plot::write_svg_footer ( std::fstream& of )
 }
 
 
+std::ostringstream& privateer::glycoplot::Plot::get_svg_string_header   ( )
+{
+    std::ostringstream of;
+    
+    of << "<svg width=\"" << get_width() << "\" height=\"" << get_height() << "\" version = \"1.1\">\n" ;
+    
+    return of;
+}
+
+
+std::ostringstream& privateer::glycoplot::Plot::get_svg_string_contents ( )
+{
+    std::ostringstream of;
+    
+    for (int i = 0; i < list_of_shapes.size() ; i ++)
+    {
+        of << list_of_shapes[i]->get_XML();
+    }
+    
+    return of;
+}
+
+
+std::ostringstream& privateer::glycoplot::Plot::get_svg_string_footer ( )
+{
+    std::ostringstream of;
+    
+    of << "</svg>" ;
+    
+    return of;
+}
+
+
 bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
 {
     std::fstream out;
@@ -211,6 +244,10 @@ bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
     return false;
 }
 
+std::string privateer::glycoplot::Plot::get_XML  ( )
+{
+    return get_svg_string_header().str() + get_svg_string_contents().str() + get_svg_string_footer().str();
+}
 
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
