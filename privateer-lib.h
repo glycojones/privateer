@@ -171,7 +171,7 @@ namespace privateer
         {
             public:
                 Man() { } //!< null constructor
-                Man( int x, int y ) { set_radius(6); set_pos(32,50); }
+                Man( int x, int y, std::string message ) { set_pos(x, y); set_tooltip ( message ); }
                 std::string get_XML ( );
                 
         };
@@ -180,7 +180,7 @@ namespace privateer
         {
             public:
                 Fuc() { } //!< null constructor
-                Fuc( int x, int y ) { set_side(6); set_pos(32,50); }
+                Fuc( int x, int y, std::string message ) { set_pos(x, y); set_tooltip ( message ); }
                 std::string get_XML ( );
                 
         };

@@ -15,7 +15,7 @@ void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
 {
     output  << "; This script has been created by Privateer (Agirre, Iglesias, Rovira, Davies, Wilson and Cowtan, 2013-16)\n"
             << "(set-graphics-window-size 1873 968)\n"
-        << "(set-graphics-window-position 0 0)\n"
+            << "(set-graphics-window-position 0 0)\n"
             << "(set-go-to-atom-window-position 0 19)\n"
             << "(set-display-control-dialog-position 366 20)\n"
             << "(vt-surface 2)\n"
@@ -87,8 +87,8 @@ void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, co
 void privateer::coot::insert_coot_epilogue_scheme ( std::fstream& output )
 {
     output  << "\n\n))\n(set-scroll-wheel-map 3)\n"
-            << "(set-matrix 60.00)\n"
-                        << "(set-refine-with-torsion-restraints 1)\n"
+            << "(set-matrix 20.00)\n"
+            << "(set-refine-with-torsion-restraints 1)\n"
             << "(set-show-symmetry-master 0)\n";
 }
 
@@ -131,8 +131,8 @@ void privateer::coot::insert_coot_prologue_python ( std::fstream& output )
 void privateer::coot::insert_coot_epilogue_python ( std::fstream& output )
 {
     output  << "\n\n])\nset_scroll_wheel_map (3)\n"
-            << "set_matrix (60.00)\n"
-                        << "set_refine_with_torsion_restraints (1)\n"
+            << "set_matrix (20.00)\n"
+            << "set_refine_with_torsion_restraints (1)\n"
             << "set_show_symmetry_master (0)\n";
 }
 
@@ -198,26 +198,26 @@ std::string privateer::glycoplot::get_colour ( Colour colour, bool original_styl
         }
         return "#ffffff;";
     }
-    else                      // Use washed-out colours, less disruptive in a publication //
+    else        // Use Privateer's washed-out colours, less disruptive in a publication //
     {
         switch (colour)
         {
             case blue:
-                return "#0000fa;";
+                return "#014f87;";
             case green:
-                return "#00c832;";
+                return "#3b994f;";
             case black:
                 return "#000000;";
             case orange:
                 return "#fa6400;";
             case yellow:
-                return "#ffff00;";
+                return "#fabc1d;";
             case tan:
                 return "#966432;";
             case purple:
-                return "#7d007d;";
+                return "#a5197d;";
             case red:
-                return "#fa0000;";
+                return "#b70017;";
             case cyan:
                 return "#c8fafa;";
         }
@@ -245,11 +245,30 @@ void privateer::glycoplot::Plot::write_svg_header   ( std::fstream& of )
 void privateer::glycoplot::Plot::write_svg_definitions( std::fstream& of )
 {
     of << "  <defs>\n"
+    
        << "    <!-- GlcNAc --> "
        <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( blue, original_colour_scheme )
-       << "stroke-width:0.6;\" />\n"
+       << "stroke-width:1.5;\" />\n"
+    
+       << "    <!-- GalNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"galnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:1.5;\" />\n"
+    
+       << "    <!-- Man --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"man\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:1.5;\" />\n"
+    
+       << "    <!-- Fuc --> "
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( red, original_colour_scheme )
+       << "stroke-width:1.5;\" />\n"
+    
+    
        << "  </defs>\n\n" ;
+    
 }
 
 void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
@@ -263,7 +282,7 @@ void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
 
 void privateer::glycoplot::Plot::write_svg_footer ( std::fstream& of )
 {
-    of << "</svg>" ;
+    of << "\n</svg>" ;
 }
 
 
@@ -326,14 +345,21 @@ std::string privateer::glycoplot::Plot::get_XML  ( )
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
     
-    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2, 3, "This GlcNAc is quite all right" ); // ignored for now
-    //privateer::glycoplot::Man *man = new privateer::glycoplot::Man(2,3);
-    //privateer::glycoplot::Fuc *fuc = new privateer::glycoplot::Fuc(2,3);
+    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc (140, 3, "This GlcNAc is quite all right" );
+    privateer::glycoplot::GlcNAc *glcnac1 = new privateer::glycoplot::GlcNAc(140, 80, "This GlcNAc is not so good" );
+    privateer::glycoplot::GlcNAc *glcnac2 = new privateer::glycoplot::GlcNAc(140, 170, "This GlcNAc is fucked up" );
+    privateer::glycoplot::Man *man = new privateer::glycoplot::Man(70,3, "This Man rocks!");
+    privateer::glycoplot::Man *man1 = new privateer::glycoplot::Man(70,80, "Beautiful!" );
+    privateer::glycoplot::Man *man2 = new privateer::glycoplot::Man(70,170, "I don't like this Man" );
+    privateer::glycoplot::Fuc *fuc = new privateer::glycoplot::Fuc(10,170, "Wonderful Fucose, lad!");
     add_shape(glcnac);
-    //add_shape(man);
-    //add_shape(fuc);
-    std::cout << "adding one GlcNAc" << std::endl;
-    
+    add_shape(glcnac2);
+    add_shape(glcnac1);
+    add_shape(man);
+    add_shape(man2);
+    add_shape(man1);
+    add_shape(fuc);
+
     return false;
 }
 
@@ -343,9 +369,9 @@ std::string privateer::glycoplot::GlcNAc::get_XML ()
     std::ostringstream tmp;
     
     tmp   <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" " << "title=\"" << get_tooltip() << "\">\n"
-          <<  "    <title>" << get_tooltip() << "</title>\n"
-          <<  "  </use>";
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
     
     return tmp.str();
 }
@@ -355,13 +381,11 @@ std::string privateer::glycoplot::Man::get_XML ()
 {
     std::ostringstream tmp;
     
-    tmp   <<  "<circle \n" <<
-              "      r =\""             << get_radius()      << "\"\n" <<
-              "      cx=\""             << get_x()           << "\"\n" <<
-              "      cy=\""             << get_y()           << "\"\n" <<
-              "      id=\""             << get_id()          << "\"\n" <<
-              "      title=\""          << get_tooltip()     << "\"\n" <<
-              "/>\n";
+    tmp   <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
     
     return tmp.str();
 }
@@ -371,13 +395,12 @@ std::string privateer::glycoplot::Fuc::get_XML ()
 {
     std::ostringstream tmp;
     
-    tmp   <<  "<polygon \n" <<
-              "       points='210 100, 210 200, 270 150'"  <<
-              "      rx=\"0\"\n"        <<
-              "      ry=\"0\"\n"        <<
-              "      id=\""             << get_id()          << "\"\n"  <<
-              "      title=\""          << get_tooltip()     << "\"\n"  <<
-              "/>\n";
-    
+    tmp   <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
     return tmp.str();
 }
+
+
