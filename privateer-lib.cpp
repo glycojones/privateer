@@ -304,7 +304,7 @@ bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
 {
     std::fstream out;
     
-    out.open( file_path, std::fstream::out);
+    out.open( file_path.c_str(), std::fstream::out);
     
     write_svg_header      ( out );
     write_svg_definitions ( out );
