@@ -169,17 +169,88 @@ float privateer::real_space_correlation ( const clipper::Xmap<float>& map1, cons
 
 
 
-///////// Privateer's glycoplot /////////
+///////// Privateer's glycoplot library /////////
 
-
+std::string privateer::glycoplot::get_colour ( Colour colour, bool original_style )
+{
+    if ( original_style )    // Essentials of glycobiology, 3rd edition //
+    {
+        switch (colour)
+        {
+            case blue:
+                return "#0000fa;";
+            case green:
+                return "#00c832;";
+            case black:
+                return "#000000;";
+            case orange:
+                return "#fa6400;";
+            case yellow:
+                return "#ffff00;";
+            case tan:
+                return "#966432;";
+            case purple:
+                return "#7d007d;";
+            case red:
+                return "#fa0000;";
+            case cyan:
+                return "#c8fafa;";
+        }
+        return "#ffffff;";
+    }
+    else                      // Use washed-out colours, less disruptive in a publication //
+    {
+        switch (colour)
+        {
+            case blue:
+                return "#0000fa;";
+            case green:
+                return "#00c832;";
+            case black:
+                return "#000000;";
+            case orange:
+                return "#fa6400;";
+            case yellow:
+                return "#ffff00;";
+            case tan:
+                return "#966432;";
+            case purple:
+                return "#7d007d;";
+            case red:
+                return "#fa0000;";
+            case cyan:
+                return "#c8fafa;";
+        }
+        return "#ffffff;";
+    }
+}
 
 void privateer::glycoplot::Plot::write_svg_header   ( std::fstream& of )
 {
-    of << "<?xml version=\"1.0\" standalone=\"no\"?>\n"
-    << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n\n"
-    << "<svg width=\"" << get_width() << "\" height=\"" << get_height() << "\" version = \"1.1\">\n" ;
+    
+    of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
+       << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
+       << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
+       << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
+       << "  xmlns:cc=\"http://creativecommons.org/ns#\"\n"
+       << "  xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
+       << "  xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
+       << "  xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
+       << "  xmlns=\"http://www.w3.org/2000/svg\"\n"
+       << "  version=\"1.1\"\n"
+       << "  width=\"" << get_width() << "\" height=\"" << get_height() << "\">\n\n" ;
+    
 }
 
+void privateer::glycoplot::Plot::write_svg_definitions( std::fstream& of )
+{
+    of << "  <defs>\n"
+       << "    <!-- GlcNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:0.6;\" />\n"
+       << "  </defs>\n\n" ;
+}
 
 void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
 {
@@ -196,17 +267,17 @@ void privateer::glycoplot::Plot::write_svg_footer ( std::fstream& of )
 }
 
 
-std::ostringstream& privateer::glycoplot::Plot::get_svg_string_header   ( )
+std::string privateer::glycoplot::Plot::get_svg_string_header   ( )
 {
     std::ostringstream of;
     
-    of << "<svg width=\"" << get_width() << "\" height=\"" << get_height() << "\" version = \"1.1\">\n" ;
+    of << "<svg version=\"1.1\" width=\"" << get_width() << "\" height=\"" << get_height() << "\">\n" ;
     
-    return of;
+    return of.str();
 }
 
 
-std::ostringstream& privateer::glycoplot::Plot::get_svg_string_contents ( )
+std::string privateer::glycoplot::Plot::get_svg_string_contents ( )
 {
     std::ostringstream of;
     
@@ -215,17 +286,17 @@ std::ostringstream& privateer::glycoplot::Plot::get_svg_string_contents ( )
         of << list_of_shapes[i]->get_XML();
     }
     
-    return of;
+    return of.str();
 }
 
 
-std::ostringstream& privateer::glycoplot::Plot::get_svg_string_footer ( )
+std::string privateer::glycoplot::Plot::get_svg_string_footer ( )
 {
     std::ostringstream of;
     
     of << "</svg>" ;
     
-    return of;
+    return of.str();
 }
 
 
@@ -235,27 +306,32 @@ bool privateer::glycoplot::Plot::write_to_file  ( std::string file_path )
     
     out.open( file_path, std::fstream::out);
     
-    write_svg_header   ( out );
-    write_svg_contents ( out );
-    write_svg_footer   ( out );
+    write_svg_header      ( out );
+    write_svg_definitions ( out );
+    write_svg_contents    ( out );
+    write_svg_footer      ( out );
     
     out.close();
     
     return false;
 }
 
+
 std::string privateer::glycoplot::Plot::get_XML  ( )
 {
-    return get_svg_string_header().str() + get_svg_string_contents().str() + get_svg_string_footer().str();
+    return get_svg_string_header() + get_svg_string_contents() + get_svg_string_footer();
 }
+
 
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
     
-    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2,3); // ignored for now
-    privateer::glycoplot::Man *man = new privateer::glycoplot::Man(2,3);
+    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc(2, 3, "This GlcNAc is quite all right" ); // ignored for now
+    //privateer::glycoplot::Man *man = new privateer::glycoplot::Man(2,3);
+    //privateer::glycoplot::Fuc *fuc = new privateer::glycoplot::Fuc(2,3);
     add_shape(glcnac);
-    add_shape(man);
+    //add_shape(man);
+    //add_shape(fuc);
     std::cout << "adding one GlcNAc" << std::endl;
     
     return false;
@@ -266,36 +342,42 @@ std::string privateer::glycoplot::GlcNAc::get_XML ()
 {
     std::ostringstream tmp;
     
-    tmp   <<  "<rect \n" <<
-              "      width =\""  << get_width()  << "\"\n" <<
-              "      height=\""  << get_height() << "\"\n" <<
-              "      rx=\"0\"\n" <<
-              "      ry=\"0\"\n" <<
-              "      x=\""       << get_x()      << "\"\n" <<
-              "      y=\""       << get_y()      << "\"\n" <<
-              "      id=\""      << get_id()     << "\"\n" <<
-              "      style=\"stroke:"   << get_colour_border() << "fill:" << get_colour_fill() << "stroke-width:0.6;\"\n" <<
-              "      title=\""   << get_title()  << "\"\n" <<
-              "/>\n";
+    tmp   <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" " << "title=\"" << get_tooltip() << "\">\n"
+          <<  "    <title>" << get_tooltip() << "</title>\n"
+          <<  "  </use>";
     
     return tmp.str();
 }
+
 
 std::string privateer::glycoplot::Man::get_XML ()
 {
     std::ostringstream tmp;
     
     tmp   <<  "<circle \n" <<
-    "      r =\""      << get_radius() << "\"\n" <<
-    "      rx=\"0\"\n" <<
-    "      ry=\"0\"\n" <<
-    "      cx=\""      << get_x()      << "\"\n" <<
-    "      cy=\""      << get_y()      << "\"\n" <<
-    "      id=\""      << get_id()     << "\"\n" <<
-    "      style=\"stroke:"   << get_colour_border() << "fill:" << get_colour_fill() << "stroke-width:0.6;\"\n" <<
-    "      title=\""   << get_title()  << "\"\n" <<
-    "/>\n";
+              "      r =\""             << get_radius()      << "\"\n" <<
+              "      cx=\""             << get_x()           << "\"\n" <<
+              "      cy=\""             << get_y()           << "\"\n" <<
+              "      id=\""             << get_id()          << "\"\n" <<
+              "      title=\""          << get_tooltip()     << "\"\n" <<
+              "/>\n";
     
     return tmp.str();
 }
 
+
+std::string privateer::glycoplot::Fuc::get_XML ()
+{
+    std::ostringstream tmp;
+    
+    tmp   <<  "<polygon \n" <<
+              "       points='210 100, 210 200, 270 150'"  <<
+              "      rx=\"0\"\n"        <<
+              "      ry=\"0\"\n"        <<
+              "      id=\""             << get_id()          << "\"\n"  <<
+              "      title=\""          << get_tooltip()     << "\"\n"  <<
+              "/>\n";
+    
+    return tmp.str();
+}

@@ -45,6 +45,8 @@ namespace privateer
     
     namespace glycoplot
     {
+        enum Colour { blue, red, yellow, orange, green, purple, cyan, tan, black };
+        static std::string get_colour ( Colour colour, bool original_style );
         
         class Shape
         {
@@ -55,15 +57,14 @@ namespace privateer
                 int  get_y  ( ) { return pos_y; }
                 int  get_x  ( ) { return pos_x; }
                 std::string get_id() { return svg_id; }
-                void set_tooltip ( std::string tooltip ) { this->tooltip = tooltip; }
                 virtual std::string get_XML ( ) = 0;
-                std::string get_title () { return title; }
+                void set_tooltip ( std::string tooltip ) { this->tooltip = tooltip;  }
+                std::string get_tooltip ( ) { return this->tooltip; }
             
             protected:
                 int pos_x;
                 int pos_y;
                 std::string svg_id;
-                std::string title;
                 std::string tooltip;
         };
         
@@ -72,7 +73,14 @@ namespace privateer
         {
             public:
                 Plot() {} //!< null constructor
-                Plot( int width, int height, bool vertical ) { this->width=width; this->height=height; this->vertical=vertical; }
+                Plot( bool vertical, bool bigger, bool original_style )
+                {
+                    bigger ? width  = 800 : width  = 266;
+                    bigger ? height = 300 : height = 100;
+                    this->vertical=vertical;
+                    this->original_colour_scheme = original_style;
+                }
+            
                 int get_width  ( ) { return width;  }
                 int get_height ( ) { return height; }
                 bool plot_glycan ( clipper::MGlycan glycan );
@@ -83,14 +91,18 @@ namespace privateer
                 int width;
                 int height;
                 bool vertical;
+                bool original_colour_scheme;
                 void write_svg_header        ( std::fstream& of );
+                void write_svg_definitions   ( std::fstream& of );
                 void write_svg_contents      ( std::fstream& of );
                 void write_svg_footer        ( std::fstream& of );
-                std::ostringstream& get_svg_string_header   ( );
-                std::ostringstream& get_svg_string_contents ( );
-                std::ostringstream& get_svg_string_footer   ( );
-                void add_shape ( Shape * shape ) { list_of_shapes.push_back ( shape );}
+
+                std::string get_svg_string_header      ( );
+                std::string get_svg_string_definitions ( );
+                std::string get_svg_string_contents    ( );
+                std::string get_svg_string_footer      ( );
             
+                void add_shape ( Shape * shape ) { list_of_shapes.push_back ( shape );}
                 std::vector < Shape * > list_of_shapes;
                 
         };
@@ -104,38 +116,11 @@ namespace privateer
                 int  get_width  ( ) { return width;  }
                 int  get_height ( ) { return height; }
                 void set_size ( int w, int h ) { width=w; height=h; }
-                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
-                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
-                std::string get_colour_fill ( ) { return colour_fill; }
-                std::string get_colour_border ( ) { return colour_border; }
                 virtual std::string get_XML ( ) = 0;
             
             protected:
                 int width;
                 int height;
-                std::string colour_fill;
-                std::string colour_border;
-                int width_border;
-        };
-        
-        
-        class Circle : public Shape
-        {
-            public:
-                Circle() { } //!< null constructor
-                Circle( int x, int y, int radius ) { set_pos(x, y); this->radius=radius; } //!< constructor
-                void set_radius ( int r ) { radius=r; }
-                int  get_radius  ( ) { return radius;  }
-                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
-                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
-                std::string get_colour_fill ( ) { return colour_fill; }
-                std::string get_colour_border ( ) { return colour_border; }
-                virtual std::string get_XML ( ) = 0;
-            
-            protected:
-                int radius;
-                std::string colour_fill;
-                std::string colour_border;
                 int width_border;
         };
         
@@ -145,18 +130,28 @@ namespace privateer
             public:
                 Triangle() { } //!< null constructor
                 Triangle( int x, int y, int side ) { set_pos(x, y); this->side=side; } //!< constructor
-                void set_size ( int s ) { side=s; }
+                void set_side ( int s ) { side=s; }
                 int get_side  ( ) { return side;  }
-                void set_colour_fill ( std::string colour ) { this->colour_fill = colour; }
-                void set_colour_border ( std::string colour ) { this->colour_border = colour; }
-                std::string get_colour_fill ( ) { return colour_fill; }
-                std::string get_colour_border ( ) { return colour_border; }
-                virtual std::string get_XML ( );
-            
+                virtual std::string get_XML ( ) =0;
+                
             protected:
                 int side;
-                std::string colour_fill;
-                std::string colour_border;
+                int width_border;
+        };
+        
+        
+        
+        class Circle : public Shape
+        {
+            public:
+                Circle() { } //!< null constructor
+                Circle( int x, int y, int radius ) { set_pos(x, y); this->radius=radius; } //!< constructor
+                void set_radius ( int r ) { radius=r; }
+                int  get_radius  ( ) { return radius;  }
+                virtual std::string get_XML ( ) = 0;
+            
+            protected:
+                int radius;
                 int width_border;
         };
         
@@ -166,8 +161,8 @@ namespace privateer
         class GlcNAc : public virtual Square
         {
             public:
-                GlcNAc() { set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); } //!< null constructor
-                GlcNAc( int x, int y ) { set_size(10,10); set_pos(72,50); set_colour_fill ("#1836ff;"); set_colour_border ("#000056;"); }
+                GlcNAc() { } //!< null constructor
+                GlcNAc( int x, int y, std::string message) { set_pos(x, y); set_tooltip ( message ); }
                 std::string get_XML ( );
             
         };
@@ -175,8 +170,17 @@ namespace privateer
         class Man : public virtual Circle
         {
             public:
-                Man() { set_colour_fill ("#00ff00;"); set_colour_border ("#21421e;"); } //!< null constructor
-                Man( int x, int y ) { set_radius(6); set_pos(32,50); set_colour_fill ("#00ff00;"); set_colour_border ("#21421e;"); }
+                Man() { } //!< null constructor
+                Man( int x, int y ) { set_radius(6); set_pos(32,50); }
+                std::string get_XML ( );
+                
+        };
+        
+        class Fuc : public virtual Triangle
+        {
+            public:
+                Fuc() { } //!< null constructor
+                Fuc( int x, int y ) { set_side(6); set_pos(32,50); }
                 std::string get_XML ( );
                 
         };

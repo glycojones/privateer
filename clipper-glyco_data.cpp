@@ -436,14 +436,14 @@ const sugar_database_entry sugar_database[] =
     { "XYS" ,	 "A", 	 "D", 	 "XYLOPYRANOSE" ,                                   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 },
     { "YX0" ,	 "A", 	 "L", 	 "[(3E)-3-(1-HYDROXYETHYLIDENE)-2,3-DIHYDROISOX" ,  "O5 C1 C2 C3 C4 C5", 0.594, "1c4", 0.002, 1.379 },
     { "YX1" ,	 "B", 	 "D", 	 "2-DEOXY-2-{[(2-HYDROXY-1-METHYLHYDRAZINO)CARB" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.385 },
-    { "  A" ,	 "B",	 "D", 	 "ADENOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.236, "Oev", 0.016, 3.834 },  // auxiliary support for RNA/DNA
-    { "  U" ,    "B",    "D",    "URIDINE-5'-MONOPHOSPHATE" ,                     "O4' C1' C2' C3' C4'", 0.291, "Oev", 0.019, 4.394 },  // riboses/deoxyriboses
-    { "  G" ,    "B",    "D",    "GUANOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.241, "Oev", 0.016, 3.844 },
-    { "  C" ,    "B",    "D",    "CYTIDINE-5'-MONOPHOSPHATE" ,                    "O4' C1' C2' C3' C4'", 0.272, "Oev", 0.017, 4.170 },
-    { " DA" ,	 "B",	 "D", 	 "2'-DEOXYADENOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.193, "ev4", 0.015, 3.993 },
-    { " DG" ,    "B",    "D",    "2'-DEOXYGUANOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.181, "ev4", 0.019, 4.432 },
-    { " DC" ,    "B",    "D",    "2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE" ,            "O4' C1' C2' C3' C4'", 0.189, "Ot4", 0.018, 3.623 },
-    { " DT" ,    "B",    "D",    "2'-DEOXYTHYMIDINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.245, "ev3", 0.017, 4.176 } } ;
+    { "  A" ,	 "B",	 "D", 	 "ADENOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.236, "Oev", 0.016, 3.834 },   // RNA/DNA
+    { "  U" ,    "B",    "D",    "URIDINE-5'-MONOPHOSPHATE" ,                     "O4' C1' C2' C3' C4'", 0.291, "Oev", 0.019, 4.394 },   //
+    { "  G" ,    "B",    "D",    "GUANOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.241, "Oev", 0.016, 3.844 },   //
+    { "  C" ,    "B",    "D",    "CYTIDINE-5'-MONOPHOSPHATE" ,                    "O4' C1' C2' C3' C4'", 0.272, "Oev", 0.017, 4.170 },   //
+    { " DA" ,	 "B",	 "D", 	 "2'-DEOXYADENOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.193, "ev4", 0.015, 3.993 },   //
+    { " DG" ,    "B",    "D",    "2'-DEOXYGUANOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.181, "ev4", 0.019, 4.432 },   //
+    { " DC" ,    "B",    "D",    "2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE" ,            "O4' C1' C2' C3' C4'", 0.189, "Ot4", 0.018, 3.623 },   //
+    { " DT" ,    "B",    "D",    "2'-DEOXYTHYMIDINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.245, "ev3", 0.017, 4.176 } } ;//
 
     const int sugar_database_size = sizeof( sugar_database ) / sizeof( sugar_database[0] );
 
