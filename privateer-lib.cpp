@@ -256,16 +256,22 @@ void privateer::glycoplot::Plot::write_svg_definitions( std::fstream& of )
        << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( yellow, original_colour_scheme )
        << "stroke-width:1.5;\" />\n"
     
-       << "    <!-- Man --> "
+       << "    <!--  Man   --> "
        <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"man\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:1.5;\" />\n"
     
-       << "    <!-- Fuc --> "
+       << "    <!--  Fuc   --> "
        << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:1.5;\" />\n"
     
+    
+       << "    <!-- alpha  --> "
+       << "<line x1=\"0\" y1=\"0\" x2=\"110\" y2=\"0\" stroke=\"rgb(0,0,0)\" stroke-width=\"3\" id=\"alpha\" />\n"
+    
+       << "    <!--  beta  --> "
+       << "<line x1=\"0\" y1=\"0\" x2=\"110\" y2=\"0\" stroke=\"rgb(0,0,0)\" stroke-width=\"3\" id=\"beta\" stroke-dasharray=\"10,5\" />\n"
     
        << "  </defs>\n\n" ;
     
@@ -273,6 +279,8 @@ void privateer::glycoplot::Plot::write_svg_definitions( std::fstream& of )
 
 void privateer::glycoplot::Plot::write_svg_contents ( std::fstream& of )
 {
+    of << "<title>" << get_title() << "</title>\n";
+    
     for (int i = 0; i < list_of_shapes.size() ; i ++)
     {
         of << list_of_shapes[i]->get_XML();
@@ -345,19 +353,20 @@ std::string privateer::glycoplot::Plot::get_XML  ( )
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
     
-    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc (140, 3, "This GlcNAc is quite all right" );
-    privateer::glycoplot::GlcNAc *glcnac1 = new privateer::glycoplot::GlcNAc(140, 80, "This GlcNAc is not so good" );
-    privateer::glycoplot::GlcNAc *glcnac2 = new privateer::glycoplot::GlcNAc(140, 170, "This GlcNAc is fucked up" );
-    privateer::glycoplot::Man *man = new privateer::glycoplot::Man(70,3, "This Man rocks!");
-    privateer::glycoplot::Man *man1 = new privateer::glycoplot::Man(70,80, "Beautiful!" );
-    privateer::glycoplot::Man *man2 = new privateer::glycoplot::Man(70,170, "I don't like this Man" );
-    privateer::glycoplot::Fuc *fuc = new privateer::glycoplot::Fuc(10,170, "Wonderful Fucose, lad!");
+    privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc (350, 90, "beta-D-GlcNAc in 4C1 conformation" );
+    privateer::glycoplot::GlcNAc *glcnac1 = new privateer::glycoplot::GlcNAc(240, 90, "This GlcNAc is not so good" );
+    privateer::glycoplot::Man *man = new privateer::glycoplot::Man(130,90, "This Man rocks!");
+    privateer::glycoplot::Fuc *fuc = new privateer::glycoplot::Fuc(350,0, "Wonderful Fucose, lad!");
+    privateer::glycoplot::AlphaBond *alphabond = new privateer::glycoplot::AlphaBond(265,115, privateer::glycoplot::side, "This is an alpha link");
+    privateer::glycoplot::BetaBond *betabond = new privateer::glycoplot::BetaBond(180,115, privateer::glycoplot::side, "This is a beta link");
+    privateer::glycoplot::AlphaBond *alphabond2 = new privateer::glycoplot::AlphaBond(375,115, privateer::glycoplot::up, "This is an alpha link");
+    
+    add_shape(alphabond);
+    add_shape(betabond);
+    add_shape(alphabond2);
     add_shape(glcnac);
-    add_shape(glcnac2);
     add_shape(glcnac1);
     add_shape(man);
-    add_shape(man2);
-    add_shape(man1);
     add_shape(fuc);
 
     return false;
@@ -404,3 +413,74 @@ std::string privateer::glycoplot::Fuc::get_XML ()
 }
 
 
+std::string privateer::glycoplot::AlphaBond::get_XML ()
+{
+    std::ostringstream tmp;
+    
+    std::string transformation = "";
+    
+    switch ( this->bond_type )
+    {
+        case up:
+            transformation = " transform=\"rotate(-90 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+    
+        case up_side:
+            transformation = " transform=\"rotate(-135 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+            
+        case down_side:
+            transformation = " transform=\"rotate(-180 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+            
+        case down:
+            transformation = " transform=\"rotate(-225 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+            
+        default:
+            transformation = "";
+    }
+    
+    tmp   <<  "  <use xlink:href=\"#alpha\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\"" << transformation << " >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+    
+    return tmp.str();
+}
+
+
+std::string privateer::glycoplot::BetaBond::get_XML ()
+{
+    std::ostringstream tmp;
+    
+    std::string transformation = "";
+    
+    switch ( this->bond_type )
+    {
+        case up:
+            transformation = " transform=\"rotate(-90 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+    
+        case up_side:
+            transformation = " transform=\"rotate(-135 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+    
+        case down_side:
+            transformation = " transform=\"rotate(-180 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+            
+        case down:
+            transformation = " transform=\"rotate(-225 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+            break;
+            
+        default:
+            transformation = "";
+    }
+    tmp   <<  "  <use xlink:href=\"#beta\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\"" << transformation << " >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+    
+    return tmp.str();
+}

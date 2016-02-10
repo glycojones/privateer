@@ -326,6 +326,7 @@ namespace clipper
 
             clipper::MMonomer get_root () { return root.first; }
             clipper::String get_type () { return kind_of_glycan; } // n-glycan or o-glycan
+            std::string get_root_by_name () { return get_root().type().trim() + "-" + get_root().id().trim() + "/" + get_chain().trim(); }
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
             std::vector < clipper::MSugar > get_sugars () { return sugars; }

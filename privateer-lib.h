@@ -46,6 +46,8 @@ namespace privateer
     namespace glycoplot
     {
         enum Colour { blue, red, yellow, orange, green, purple, cyan, tan, black };
+        enum Link_type { up, up_side, side, down_side, down };
+        
         static std::string get_colour ( Colour colour, bool original_style );
         
         class Shape
@@ -72,17 +74,28 @@ namespace privateer
         class Plot
         {
             public:
-                Plot() {} //!< null constructor
-                Plot( bool vertical, bool bigger, bool original_style )
+                Plot()
+                {
+                    this->width  = 800;
+                    this->height = 300;
+                    this->vertical=false;
+                    this->original_colour_scheme = true;
+                    this->title = "Figure generated with Privateer";
+                } //!< default constructor
+            
+                Plot( bool vertical, bool bigger, bool original_style, std::string title )
                 {
                     bigger ? width  = 800 : width  = 266;
                     bigger ? height = 300 : height = 100;
                     this->vertical=vertical;
                     this->original_colour_scheme = original_style;
+                    this->title = title;
                 }
             
                 int get_width  ( ) { return width;  }
                 int get_height ( ) { return height; }
+                void set_title ( std::string title ) { this->title = title; }
+                std::string get_title () { return this->title; }
                 bool plot_glycan ( clipper::MGlycan glycan );
                 bool write_to_file  ( std::string file_path ); //!< returns true if there have been any problems
                 std::string get_XML ();
@@ -90,13 +103,14 @@ namespace privateer
             private:
                 int width;
                 int height;
+                std::string title;
                 bool vertical;
                 bool original_colour_scheme;
                 void write_svg_header        ( std::fstream& of );
                 void write_svg_definitions   ( std::fstream& of );
                 void write_svg_contents      ( std::fstream& of );
                 void write_svg_footer        ( std::fstream& of );
-
+            
                 std::string get_svg_string_header      ( );
                 std::string get_svg_string_definitions ( );
                 std::string get_svg_string_contents    ( );
@@ -132,7 +146,7 @@ namespace privateer
                 Triangle( int x, int y, int side ) { set_pos(x, y); this->side=side; } //!< constructor
                 void set_side ( int s ) { side=s; }
                 int get_side  ( ) { return side;  }
-                virtual std::string get_XML ( ) =0;
+                virtual std::string get_XML ( )=0;
                 
             protected:
                 int side;
@@ -183,6 +197,32 @@ namespace privateer
                 Fuc( int x, int y, std::string message ) { set_pos(x, y); set_tooltip ( message ); }
                 std::string get_XML ( );
                 
+        };
+        
+        class AlphaBond : public virtual Shape
+        {
+            public:
+                AlphaBond() { } //!< null constructor
+                AlphaBond( int x, int y, Link_type bond, std::string message ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond);}
+                std::string get_XML ( );
+            
+            private:
+                Link_type bond_type;
+                void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
+                Link_type get_bond_type () { return bond_type; }
+        };
+        
+        class BetaBond : public virtual Shape
+        {
+            public:
+                BetaBond() { } //!< null constructor
+                BetaBond( int x, int y, Link_type bond, std::string message ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); }
+                std::string get_XML ( );
+            
+            private:
+                Link_type bond_type;
+                void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
+                Link_type get_bond_type () { return bond_type; }
         };
     }
     
