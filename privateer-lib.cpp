@@ -422,21 +422,33 @@ std::string privateer::glycoplot::AlphaBond::get_XML ()
     switch ( this->bond_type )
     {
         case up:
-            transformation = " transform=\"rotate(-90 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-    
+        }
         case up_side:
-            transformation = " transform=\"rotate(-135 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-135 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-            
+        }
         case down_side:
-            transformation = " transform=\"rotate(-180 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-            
+        }
         case down:
-            transformation = " transform=\"rotate(-225 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-            
+        }
         default:
             transformation = "";
     }
@@ -459,21 +471,34 @@ std::string privateer::glycoplot::BetaBond::get_XML ()
     switch ( this->bond_type )
     {
         case up:
-            transformation = " transform=\"rotate(-90 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
     
+        }
         case up_side:
-            transformation = " transform=\"rotate(-135 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-135 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-    
+        }
         case down_side:
-            transformation = " transform=\"rotate(-180 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-            
+        }
         case down:
-            transformation = " transform=\"rotate(-225 " + std::to_string(get_x()) + " " + std::to_string(get_y()) + ")\"";
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
             break;
-            
+        }
         default:
             transformation = "";
     }
