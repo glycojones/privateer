@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.1)
 project(privateer C CXX)
 
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
+
+set(CMAKE_CXX_STANDARD 11)
 
 if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
