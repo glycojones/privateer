@@ -98,6 +98,7 @@ namespace privateer
                 std::string get_title () { return this->title; }
                 bool plot_glycan ( clipper::MGlycan glycan );
                 bool write_to_file  ( std::string file_path ); //!< returns true if there have been any problems
+                std::string write_to_string ( );
                 std::string get_XML ();
             
             private:
@@ -106,6 +107,7 @@ namespace privateer
                 std::string title;
                 bool vertical;
                 bool original_colour_scheme;
+            
                 void write_svg_header        ( std::fstream& of );
                 void write_svg_definitions   ( std::fstream& of );
                 void write_svg_contents      ( std::fstream& of );
