@@ -472,6 +472,7 @@ std::string privateer::glycoplot::BetaBond::get_XML ()
     {
         case up:
         {
+        
             std::stringstream stream;
             stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();

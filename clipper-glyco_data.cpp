@@ -119,7 +119,7 @@ const sugar_database_entry sugar_database[] =
     { "13A" ,    "B",    "L",    "7-(3,4-DIHYDROXY-5R-HYDROXYMETHYLTETRAHYDROFU" ,  "O1 C2 C3 C4 C5",    0.380, "4ev", 0.017, 5.882 },
     { "145" ,	 "B", 	 "D", 	 "1-O-[O-NITROPHENYL]-BETA-D-GALACTOPYRANOSE" ,     "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "147" ,	 "B", 	 "D", 	 "1-O-[P-NITROPHENYL]-BETA-D-GALACTOSE" ,           "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
-    { "149" ,	 "A", 	 "D", 	 "D-GALACTONOLACTONE" ,				    "O5 C1 C2 C3 C4 C5", 0.541, "4c1", 0.038, 5.168 },
+    { "149" ,	 "A", 	 "D", 	 "D-GALACTONOLACTONE" ,				    "O5 C1 C2 C3 C4 C5", 0.553, "4h3", 0.038, 7.168 },
     { "15L" ,	 "A", 	 "D", 	 "GALACTARO-1,5-LACTONE" , 			    "O5 C1 C2 C3 C4 C5", 0.552, "4c1", 0.018, 4.147 },
     { "16G" ,	 "A", 	 "D", 	 "N-ACETYL-D-GLUCOSAMINE-6-PHOSPHATE" , 	    "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.405 },
     { "18D" ,	 "A", 	 "L", 	 "3,5-DIDEOXY-5-(PROPANOYLAMINO)-D-GLYCERO-ALPH" ,  "O6 C2 C3 C4 C5 C6", 0.592, "1c4", 0.001, 1.404 },
