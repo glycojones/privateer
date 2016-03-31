@@ -2252,7 +2252,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()), 
+                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                              potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
                     mg.set_kind_of_glycan ( "n-glycan" );
                     list_of_glycans.push_back ( mg );
@@ -2265,7 +2265,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()),
+                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                             potential_n_roots[i], list_of_sugars[list_of_sugars.size()-1] );
                     mg.set_kind_of_glycan ( "n-glycan" );
                     list_of_glycans.push_back ( mg );
@@ -2290,7 +2290,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( clipper::MPolymer::id_tidy(mmol[linked[j].second.polymer()].id()), 
+                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(), 
                                                              potential_o_roots[i], list_of_sugars[list_of_sugars.size()-1] );
                     mg.set_kind_of_glycan ( "o-glycan" );
                     list_of_glycans.push_back ( mg );

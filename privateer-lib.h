@@ -39,8 +39,6 @@ namespace privateer
         void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
         void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
     }
-    
-    float real_space_correlation ( const clipper::Xmap<float>&, const clipper::Xmap<float>& );
 
     
     namespace glycoplot
@@ -227,7 +225,13 @@ namespace privateer
                 Link_type get_bond_type () { return bond_type; }
         };
     }
-    
+ 
+    namespace scripting
+    {
+        std::string get_annotated_glycans ( std::string pdb_filename );
+        //std::vector< std::vector <std::string> > get_glyco_categories ( std::string pdb_filename );
+    }
+
 } // namespace privateer
 
 #endif

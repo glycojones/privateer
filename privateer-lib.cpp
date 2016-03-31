@@ -161,11 +161,6 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
     output  << "add_status_bar_text (\"" << text << "\")" ;
 }
 
-float privateer::real_space_correlation ( const clipper::Xmap<float>& map1, const clipper::Xmap<float>& map2 )
-{
-    return 0.0; // to be implemented
-}
-
 
 
 
@@ -509,4 +504,53 @@ std::string privateer::glycoplot::BetaBond::get_XML ()
           <<  "</use>\n";
     
     return tmp.str();
+}
+
+std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filename )
+{
+    std::ostringstream of_xml;
+    
+    clipper::MMDBfile mfile;
+    clipper::MiniMol mmol;
+
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum |
+                          mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks |
+                          mmdb::MMDBF_EnforceUniqueChainID;
+
+    mfile.SetFlag( mmdbflags );
+    
+    mfile.read_file( pdb_filename );
+    mfile.import_minimol( mmol );
+    
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
+        
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb);
+
+    std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+    
+    of_xml << "<privateer>\n" ;
+    
+    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+    {
+        of_xml << "<glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""
+               << "/" + list_of_glycans[i].get_chain().substr(0,1)
+                      + "/" + list_of_glycans[i].get_root().id().trim()
+                      + "(" + list_of_glycans[i].get_root().type().trim() + ")\""
+               << " chain=\"" << list_of_glycans[i].get_chain().substr(0,1) << "\">";
+        
+        std::vector< clipper::MSugar> sugars = list_of_glycans[i].get_sugars();
+        
+        for ( int j = 0 ; j < sugars.size(); j++ )
+            of_xml << "<sugar id=\""
+                   << "/" + list_of_glycans[i].get_chain().substr(0,1)
+                          + "/" + sugars[j].id().trim()
+                          + "(" + sugars[j].type().trim()
+                          + ")\" />\n";
+        
+        of_xml << "</glycan>\n" ;
+    }
+    
+    of_xml << "</privateer>\n";
+    
+    return of_xml.str();
 }
