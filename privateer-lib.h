@@ -20,6 +20,12 @@
 #include <clipper/clipper-minimol.h>
 
 
+inline const std::string b2s ( bool b )
+{
+  return b ? "yes" : "no";
+}
+
+
 namespace privateer
 {
     namespace coot

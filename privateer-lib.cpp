@@ -532,22 +532,42 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
     
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
-        of_xml << "<glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""
+        of_xml << "  <glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""
                << "/" + list_of_glycans[i].get_chain().substr(0,1)
                       + "/" + list_of_glycans[i].get_root().id().trim()
                       + "(" + list_of_glycans[i].get_root().type().trim() + ")\""
-               << " chain=\"" << list_of_glycans[i].get_chain().substr(0,1) << "\">";
+               << " chain=\"" << list_of_glycans[i].get_chain().substr(0,1) << "\">\n";
         
         std::vector< clipper::MSugar> sugars = list_of_glycans[i].get_sugars();
         
         for ( int j = 0 ; j < sugars.size(); j++ )
-            of_xml << "<sugar id=\""
+        {
+            of_xml << "    <sugar id=\""
                    << "/" + list_of_glycans[i].get_chain().substr(0,1)
                           + "/" + sugars[j].id().trim()
-                          + "(" + sugars[j].type().trim()
-                          + ")\" />\n";
+                          + "(" + sugars[j].type().trim() << ")\" >\n";
+            
+            of_xml << "      <detected_type>"    << sugars[j].type_of_sugar()               << "</detected_type>\n"
+                   << "      <cremer-pople_Q>"   << sugars[j].puckering_amplitude()         << "</cremer-pople_Q>\n"
+                   << "      <cremer-pople_Phi>" << sugars[j].cremer_pople_params()[1]      << "</cremer-pople_Phi>\n";
+            if (sugars[j].ring_cardinality() == 6 )
+                of_xml << "      <cremer-pople_Theta>" << sugars[j].get_bfactor()           << "</cremer-pople_Theta>\n";
+            
+            of_xml << "      <mean_bfactor>"     << sugars[j].get_bfactor()                 << "</mean_bfactor>\n"
+                   << "      <conformation>"     << sugars[j].conformation_name()           << "</conformation>\n"
+                   << "      <anomer>"           << sugars[j].anomer()                      << "</anomer>\n"
+                   << "      <hand>"             << sugars[j].handedness()                  << "</hand>\n"
+                   << "      <validation>\n"
+                   << "        <conformation>"   << b2s(sugars[j].ok_with_conformation())   << "</conformation>\n"
+                   << "        <anomer>"         << b2s(sugars[j].ok_with_anomer())         << "</anomer>\n"
+                   << "        <hand>"           << b2s(sugars[j].ok_with_chirality())      << "</hand>\n"
+                   << "        <puckering>"      << b2s(sugars[j].ok_with_puckering())      << "</puckering>\n"
+                   << "      </validation>\n";
+            
+            of_xml << "    </sugar>\n";
+        }
         
-        of_xml << "</glycan>\n" ;
+        of_xml << "  </glycan>\n" ;
     }
     
     of_xml << "</privateer>\n";

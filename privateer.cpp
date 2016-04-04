@@ -84,15 +84,9 @@ bool write_libraries ( std::vector < clipper::String > code_list );
 int main(int argc, char** argv)
 {
     
-#ifndef SVN_REV
     clipper::String program_version = "MKIII";
     CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
-#else
-    clipper::String program_version = "MKIII-";
-    program_version.append(SVN_REV);
-    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
-#endif
-    
+
     prog.set_termination_message( "Failed" );
     
     std::cout << "\nCopyright 2013-2016 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
@@ -107,7 +101,8 @@ int main(int argc, char** argv)
     clipper::CCP4MTZfile mtzin, ampmtzin;
     clipper::String ippdb    = "NONE";
     clipper::String ipcol_fo = "NONE";
-    clipper::String ipcif    = "NONE";
+    clipper::String ipsfcif  = "NONE";
+    clipper::String ipmmcif  = "NONE";
     clipper::String ipcode   = "XXX";
     clipper::String opfile   = "privateer-hklout.mtz";
     clipper::String title    = "generic title";
@@ -171,7 +166,7 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-cifin" )
         {
             if ( ++arg < args.size() )
-                ipcif = args[arg];
+                ipsfcif = args[arg];
         }
         else if ( args[arg] == "-list" )
         {
@@ -267,10 +262,10 @@ int main(int argc, char** argv)
         }
     }
     
-    if ( (ippdb != "NONE") && ((ipcif == "NONE") && (ipmtz == "NONE")) )
+    if ( (ippdb != "NONE") && ((ipsfcif == "NONE") && (ipmtz == "NONE")) )
         noMaps = true;
     
-    if ( (ippdb == "NONE") || ((ipcif == "NONE") && (ipmtz == "NONE") && (noMaps == false)) )
+    if ( (ippdb == "NONE") || ((ipsfcif == "NONE") && (ipmtz == "NONE") && (noMaps == false)) )
     {
         print_usage();
         prog.set_termination_message( "Failed" );
@@ -808,7 +803,7 @@ int main(int argc, char** argv)
         std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
         std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
         std::cout << std::endl;
-        std::cout << "   Privateer-validate has identified " << n_anomer + n_config + n_pucker + n_conf;
+        std::cout << "   Privateer has identified " << n_anomer + n_config + n_pucker + n_conf;
         std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
         
         if ( enable_torsions_for.size() > 0 )
@@ -867,9 +862,9 @@ int main(int argc, char** argv)
     else
     {   // assume CIF file format instead
         if (!batch)
-            std::cout << "Opening CIF file: " << ipcif.trim() << std::endl;
+            std::cout << "Opening CIF file: " << ipsfcif.trim() << std::endl;
         
-        cifin.open_read( ipcif.trim().c_str() );
+        cifin.open_read( ipsfcif.trim().c_str() );
         
         try // we could be in trouble should the CIF file not have cell parameters
         {
@@ -1921,7 +1916,7 @@ int main(int argc, char** argv)
     std::cout << "   Unphysical puckering amplitude: " << n_pucker << std::endl;
     std::cout << "   In higher-energy conformations: " << n_conf << std::endl;
     std::cout << std::endl;
-    std::cout << "   Privateer-validate has identified " << n_anomer + n_config + n_pucker + n_conf;
+    std::cout << "   Privateer has identified " << n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
     
     print_XML(ligandList, list_of_glycans, ippdb);
@@ -2051,12 +2046,12 @@ void print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > 
 
 void print_usage ( )
 {
-    std::cout << "Usage: privateer-validate" << std::endl << std::endl;
-    std::cout << "\t-pdbin <.pdb>\t\t\tCOMPULSORY: input PDB file to examine" << std::endl;
-    std::cout << "\t-cifin <.cif> OR -mtzin <.mtz>\tCIF file containing F's or MTZ file containing I's or F's\n";
-    std::cout << "\t\t\t\t\tIf intensities are supplied, Privateer will run 'ctruncate'" << std::endl;
-    std::cout << "\t\t\t\t\tin order to convert intensities to amplitudes" << std::endl;
-    std::cout << "\t\t\t\t\tObservations are required for RSCC calculation and map output" << std::endl;
+    std::cout << "Usage: privateer" << std::endl << std::endl;
+    std::cout << "\t-pdbin <.pdb>\t\t\tCOMPULSORY: input model in PDB or mmCIF format" << std::endl;
+    std::cout << "\t-cifin <.cif> OR -mtzin <.mtz>\tan mmCIF or MTZ file containing merged I's or F's\n";
+    std::cout << "\t\t\t\t\tNote: intensities will be run through 'ctruncate'" << std::endl;
+    std::cout << "\t\t\t\t\t      in order to generate amplitudes" << std::endl;
+    std::cout << "\t\t\t\t\t      Observations are required for RSCC calculation and map output" << std::endl;
     std::cout << "\t-mtzout <.mtz>\t\t\tOutput best and difference map coefficients to MTZ files" << std::endl;
     std::cout << "\t-colin-fo\t\t\tColumns containing F & SIGF, e.g. FOBS,SIGFOBS" << std::endl;
     std::cout << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path" << std::endl;
@@ -2162,7 +2157,7 @@ bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, cli
     if ( mmol.cell().is_null() )
     {
         std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
-        std::cout << " Privateer-validate will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl;
+        std::cout << " Privateer will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl;
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
         return false;
     }
