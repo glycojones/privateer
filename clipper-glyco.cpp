@@ -2003,6 +2003,7 @@ clipper::String MGlycan::carbname_of(clipper::String name) const
     
     if      ( name == "NAG" ) new_name = "GlcNAc";
     else if ( name == "NGA" ) new_name = "GalNAc";
+    else if ( name == "A2G" ) new_name = "GalNAc";
     else if ( name == "MAN" ) new_name = "Man"   ;
     else if ( name == "BMA" ) new_name = "Man"   ;
     else if ( name == "XYP" ) new_name = "Xyl"   ;
@@ -2284,7 +2285,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         {
             const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()]; 
             
-            if (( tmpmon.type().trim() == "NGA" ) || (tmpmon.type().trim() == "FUC" ) || (tmpmon.type().trim() == "RAM" ) || (tmpmon.type().trim() == "BGC" ) || (tmpmon.type().trim() == "BMA" ) || (tmpmon.type().trim() == "NAG" ))
+            if (( tmpmon.type().trim() == "NGA" ) || ( tmpmon.type().trim() == "A2G" ) || (tmpmon.type().trim() == "FUC" ) || (tmpmon.type().trim() == "RAM" ) || (tmpmon.type().trim() == "BGC" ) || (tmpmon.type().trim() == "BMA" ) || (tmpmon.type().trim() == "NAG" ))
             { 
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
