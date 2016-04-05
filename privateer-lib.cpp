@@ -347,6 +347,7 @@ std::string privateer::glycoplot::Plot::get_XML  ( )
 
 bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
+    // add positioning, etc 
     
     privateer::glycoplot::GlcNAc *glcnac = new privateer::glycoplot::GlcNAc (350, 90, "beta-D-GlcNAc in 4C1 conformation" );
     privateer::glycoplot::GlcNAc *glcnac1 = new privateer::glycoplot::GlcNAc(240, 90, "This GlcNAc is not so good" );

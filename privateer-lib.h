@@ -187,6 +187,15 @@ namespace privateer
             
         };
         
+        class GalNAc : public virtual Square
+        {
+        public:
+            GalNAc() { } //!< null constructor
+            GalNAc( int x, int y, std::string message) { set_pos(x, y); set_tooltip ( message ); }
+            std::string get_XML ( );
+            
+        };
+        
         class Man : public virtual Circle
         {
             public:
