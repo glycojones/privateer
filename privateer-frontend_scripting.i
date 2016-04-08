@@ -51,13 +51,22 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
             if force_field.CalcEnergy() < lowest_energy :
                 best_conformer_id = conformer_id
                 lowest_energy = force_field.CalcEnergy()
-            from rdkit.Chem import PDBWriter
-            writer = PDBWriter ( "minimised_" + str(conformer_id) + ".pdb" )
-            writer.write ( mol = mol_with_h, confId = conformer_id )
+                print "Energy: %f kcal/mol" % lowest_energy
 
     from rdkit.Chem import PDBWriter
-    writer = PDBWriter ( "lowest.pdb" )
+    writer = PDBWriter ( "privateer-minimised.pdb" )
     writer.write ( mol = mol_with_h, confId = best_conformer_id )
+    writer.close()
+    
+    with open("privateer-minimised.pdb", 'r+') as f:
+        content = f.read()
+        f.seek(0,0)
+        f.write ( 'REMARK 300 THIS MOLECULE HAS BEEN PRODUCED BY PRIVATEER USING RDKIT\n')
+        f.write ( 'REMARK 300 SMILES STRING: ' + smiles_string + '\n')
+        f.write ( 'REMARK 300 NUMBER OF CONFORMERS EXPLORED: %i\n' % n_conformers )
+        f.write ( 'REMARK 300 ENERGY AFTER MINIMISATION: %f KCAL/MOL\n' % lowest_energy )
+        f.write ( content )
+    
     
     print "lowest energy: %f" % lowest_energy
     
