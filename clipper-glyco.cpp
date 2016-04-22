@@ -51,7 +51,7 @@
 #include <fstream>
 #include <algorithm>
 #include <stdio.h>
-#include <string>
+#include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include <sstream>
