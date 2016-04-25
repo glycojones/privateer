@@ -52,7 +52,7 @@ namespace privateer
         enum Colour { blue, red, yellow, orange, green, purple, cyan, tan, black };
         enum Link_type { up, up_side, side, down_side, down };
         
-        static std::string get_colour ( Colour colour, bool original_style );
+        std::string get_colour ( Colour colour, bool original_style );
         
         class Shape
         {

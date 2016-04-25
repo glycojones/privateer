@@ -9,7 +9,6 @@
 
 #include "clipper-glyco_data.h"
 #include "privateer-lib.h"
-bool clipper::data::found_in_database ( std::string name );
 
 %}
 
@@ -26,6 +25,12 @@ namespace privateer
     namespace scripting
     {
         std::string get_annotated_glycans ( std::string pdb_filename );
+    }
+    
+    namespace glycoplot
+    {
+        static std::string get_colour ( privateer::glycoplot::Colour colour, bool original_style );
+        enum Colour { blue, red, yellow, orange, green, purple, cyan, tan, black, white };
     }
 }
 

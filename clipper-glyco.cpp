@@ -2390,8 +2390,8 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             for (int j = 0 ; j < contacts.size() ; j++ ) 
             {
                 if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 1.61 ))
-                {   
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                {                            //         of crappy structures in MG
                     if (( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == 'A')
                     || (get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]) == ' '))
                     {    
