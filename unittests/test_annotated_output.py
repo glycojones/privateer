@@ -1,13 +1,7 @@
 import unittest
 import os
 import shutil
-
 import sys
-
-script_dir = os.path.dirname(os.path.realpath(__file__))
-
-sys.path.insert ( 1, script_dir + '/../')
-
 import privateer
 import test_data
 
