@@ -1,6 +1,10 @@
 import unittest
 import os
 import shutil
+
+import sys
+sys.path.insert ( 1, '../')
+
 import privateer
 import test_data
 
@@ -27,7 +31,8 @@ class Test(unittest.TestCase):
             os.path.dirname(os.path.realpath(__file__)),
             'test_output')
         if not os.path.exists(self.test_output):
-            os.makedirs(self.test_output)
+            os.makedirs ( self.test_output )
+        
 
     def tearDown(self):
         '''
