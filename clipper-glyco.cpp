@@ -1436,6 +1436,16 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
                                 // don't grab a carbon as substituent unless there's really no other option
                                 else if (anomeric_substituent.name().trim() == "XXX") anomeric_substituent = mmol.atom(neighbourhood[i]);
                             }
+                            else if ( get_altconf ( mmol.atom(neighbourhood[i]) ) == 'A' )
+                            {
+                                if (mmol.atom(neighbourhood[i]).element().trim() != "C" ) // O6 is part of the ring if only checking by name!!!
+                                    anomeric_substituent = mmol.atom(neighbourhood[i]);
+                            }
+                            else if ( get_altconf ( ring_atoms[1] ) )
+                            {
+                                if (mmol.atom(neighbourhood[i]).element().trim() != "C" ) // O6 is part of the ring if only checking by name!!!
+                                    anomeric_substituent = mmol.atom(neighbourhood[i]);
+                            }
                         }
                     }
                 }
