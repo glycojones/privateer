@@ -37,6 +37,38 @@ namespace privateer
 %pythoncode
 %{
 
+def print_glycosidic_torsions ( pdb_filename = "", first="ASN", second="NAG" ) :
+
+    import privateer
+    xml = privateer.get_annotated_glycans_hierarchical ( pdb_filename )
+    
+    from lxml import etree
+    xml_tree = etree.fromstring ( xml )
+    
+    if not privateer.found_in_database ( first ) :
+        first_residues  = xml_tree.xpath("glycan[contains(@root, '" + first + "')]")
+    
+        print "RESIDUE ".rjust(18) + "SUGAR  ".rjust(18) + "PHI  ".rjust(18) + "PSI  ".rjust(18)
+    
+        for residue in first_residues :
+            for linked in residue.xpath("./sugar[contains(@id, '" + second + "')]") :
+                print residue.get('root').rjust(18) + linked.get('id').rjust(18) +\
+                      linked.find('link').find('phi').text.rjust(18) +\
+                      linked.find('link').find('psi').text.rjust(18)
+    
+    else :
+        first_residues  = xml_tree.xpath(".//sugar[contains(@id, '" + first + "')]")
+    
+        print "SUGAR 1  ".rjust(18) + "SUGAR 2  ".rjust(18) + "PHI  ".rjust(18) + "PSI  ".rjust(18)
+    
+        for residue in first_residues :
+            linked_sugars = residue.xpath("./sugar[contains(@id, '" + second + "')]")
+            for linked in linked_sugars :
+                print residue.get('id').rjust(18) + linked.get('id').rjust(18) +\
+                      linked.find('link').find('phi').text.rjust(18) +\
+                      linked.find('link').find('psi').text.rjust(18)
+
+
 def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
     from rdkit import Chem
     from rdkit.Chem import AllChem
