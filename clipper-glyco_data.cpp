@@ -109,6 +109,11 @@ const disaccharide disaccharide_database[] =
     { "TRE" ,  "Trehalose",
         { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5P C1P C2P C3P C4P C5P", 0.621, "4c1", 0.003, 2.036 },
         { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+    }, 
+    
+    { "BXP" ,  "Xylobiose",
+        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5A C1A C2A C3A C4A C5A", 0.621, "4c1", 0.003, 2.036 },
+        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5B C1B C2B C3B C4B C5B", 0.621, "4c1", 0.003, 2.036 } 
     } 
 };
 
