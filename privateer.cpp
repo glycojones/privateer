@@ -2428,6 +2428,14 @@ bool write_libraries ( std::vector < clipper::String > code_list )
     for ( int individual_monomer = 0 ; individual_monomer < pmonomer_list.size() ; individual_monomer++ )
     {
         mmdb::mmcif::PData data_out = pmonomer_list[individual_monomer]->makeCIF();
+        
+        // Fix for an mmdb2 bug that produces empty blocks
+
+        if ( data_out->GetLoopLength("_chem_comp_plane_atom") == 0 )
+        {
+           data_out->DeleteLoop("_chem_comp_plane_atom"); 
+        }
+
         data_out->WriteMMCIF ( f );
         data_out->FreeMemory ( 0 );
         delete data_out;
