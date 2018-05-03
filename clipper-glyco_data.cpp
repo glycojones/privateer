@@ -64,57 +64,57 @@ const clipper::String iupac_conformational_landscape[] =
 {
     "Planar ring", "<sup>4</sup>C<sub>1</sub>", "<sup>1</sup>C<sub>4",
     "<sup>3,O</sup>B", "B<sub>2,5</sub>", "<sup>1,4</sup>B", "B<sub>3,O</sub>", "<sup>2,5</sup>B", "B<sub>1,4</sub>",
-    "<sup>O</sup>E", "E<sub>5</sub>", "<sup>4</sup>E", "E<sub>3</sub>", "<sup>2</sup>E", "E<sub>1</sub>", "<sup>3</sup>E", 
+    "<sup>O</sup>E", "E<sub>5</sub>", "<sup>4</sup>E", "E<sub>3</sub>", "<sup>2</sup>E", "E<sub>1</sub>", "<sup>3</sup>E",
     "E<sub>2</sub>", "<sup>1</sup>E", "E<sub>O</sub>", "<sup>5</sup>E", "E<sub>4</sub>",
-    "<sup>O</sup>H<sub>5</sub>", "<sup>4</sup>H<sub>5</sub>", "<sup>4</sup>H<sub>3</sub>", "<sup>2</sup>H<sub>3</sub>", 
+    "<sup>O</sup>H<sub>5</sub>", "<sup>4</sup>H<sub>5</sub>", "<sup>4</sup>H<sub>3</sub>", "<sup>2</sup>H<sub>3</sub>",
     "<sup>2</sup>H<sub>1</sub>",
-    "<sup>O</sup>H<sub>1</sub>", "<sup>3</sup>H<sub>2</sub>", "<sup>1</sup>H<sub>2</sub>", "<sup>1</sup>H<sub>O</sub>", 
-    "<sup>5</sup>H<sub>O</sub>", 
+    "<sup>O</sup>H<sub>1</sub>", "<sup>3</sup>H<sub>2</sub>", "<sup>1</sup>H<sub>2</sub>", "<sup>1</sup>H<sub>O</sub>",
+    "<sup>5</sup>H<sub>O</sub>",
     "<sup>5</sup>H<sub>4</sub>", "<sup>3</sup>H<sub>4</sub>",
-    "<sup>O</sup>S<sub>2</sub>", "<sup>1</sup>S<sub>5</sub>", "<sup>1</sup>S<sub>3</sub>", "<sup>2</sup>S<sub>O</sub>", 
+    "<sup>O</sup>S<sub>2</sub>", "<sup>1</sup>S<sub>5</sub>", "<sup>1</sup>S<sub>3</sub>", "<sup>2</sup>S<sub>O</sub>",
     "<sup>5</sup>S<sub>1</sub>", "<sup>3</sup>S<sub>1</sub>",
-    "<sup>3</sup>T<sub>2</sub>", "<sup>3</sup>E","<sup>3</sup>T<sub>4</sub>", "E<sub>4</sub>","<sup>O</sup>T<sub>4</sub>", 
+    "<sup>3</sup>T<sub>2</sub>", "<sup>3</sup>E","<sup>3</sup>T<sub>4</sub>", "E<sub>4</sub>","<sup>O</sup>T<sub>4</sub>",
     "<sup>O</sup>E","<sup>O</sup>T<sub>1</sub>", "E<sub>1</sub>","<sup>2</sup>T<sub>1</sub>", "<sup>2</sup>E",
-    "<sup>2</sup>T<sub>3</sub>", "E<sub>3</sub>","<sup>4</sup>T<sub>3</sub>", "<sup>4</sup>E","<sup>4</sup>T<sub>O</sub>", 
+    "<sup>2</sup>T<sub>3</sub>", "E<sub>3</sub>","<sup>4</sup>T<sub>3</sub>", "<sup>4</sup>E","<sup>4</sup>T<sub>O</sub>",
     "E<sub>O</sub>","<sup>1</sup>T<sub>O</sub>", "<sup>1</sup>E","<sup>1</sup>T<sub>2</sub>", "E<sub>2</sub>"
 };
 
 const disaccharide disaccharide_database[] =
 {
-    { "SUC" ,  "Sucrose",  
+    { "SUC" ,  "Sucrose",
         { "FRU" ,	 "B", 	 "D", 	 "FRUCTOSE" ,                                     "O2' C2' C3' C4' C5'", 0.377, "ev4", 0.016, 5.815 },
         { "GLC" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOSE" ,                                "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.358 }
     },
 
     { "LAT" ,  "Beta-lactose",
         { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                    "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
-        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 }
     },
 
     { "LBT" ,  "Alpha-lactose",
         { "GAL" ,        "B",    "D",   "Beta-D-galactopyranose" ,                          "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 },
-        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 } 
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 }
     },
 
     { "CBI" ,  "Cellobiose",
         { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
-        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+        { "BGC" ,        "B",    "D",   "Beta-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 }
     },
 
     { "MAL" ,  "Maltose",
         { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5' C1' C2' C3' C4' C5'", 0.621, "4c1", 0.003, 2.036 },
-        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 }
     },
 
     { "TRE" ,  "Trehalose",
         { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                     "O5P C1P C2P C3P C4P C5P", 0.621, "4c1", 0.003, 2.036 },
-        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 } 
-    }, 
-    
+        { "GLC" ,        "A",    "D",   "Alpha-D-glucopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 }
+    },
+
     { "BXP" ,  "Xylobiose",
         { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5A C1A C2A C3A C4A C5A", 0.621, "4c1", 0.003, 2.036 },
-        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5B C1B C2B C3B C4B C5B", 0.621, "4c1", 0.003, 2.036 } 
-    } 
+        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5B C1B C2B C3B C4B C5B", 0.621, "4c1", 0.003, 2.036 }
+    }
 };
 
 const int disaccharide_database_size = sizeof( disaccharide_database ) / sizeof( disaccharide_database[0] );
@@ -151,6 +151,8 @@ const sugar_database_entry sugar_database[] =
     { "4GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)OXAMICACID" ,            "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.075 },
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
+    { "7D1" ,    "N",    "D",    "1,2-Dideoxy-D-mannose",                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
+    { "7LQ" ,    "N",    "D",    "GLC-CHEX",                                        "C7 C1 C2 C3 C4 C5", 0.593, "4h5", 0.003, 1.304 },
     { "7GP" ,	 "B", 	 "D", 	 "ETHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,         "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.011 },
     { "7JZ" ,	 "B", 	 "D", 	 "2-DEOXY-2,2-DIFLUORO-BETA-D-LYXO-HEXOPYRANOSE" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.342 },
     { "8GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)-N'-CYCLOPROPYLOXAL" ,   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.006 },
@@ -208,6 +210,7 @@ const sugar_database_entry sugar_database[] =
     { "CR1" ,	 "B", 	 "D", 	 "1-DEOXY-1-METHOXYCARBAMIDO-BETA-D-GLUCOPYRANO" ,  "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.010 },
     { "CR6" ,	 "B", 	 "D", 	 "1-DEOXY-1-ACETYLAMINO-BETA-D-GLUCO-2-HEPTULOP" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.009 },
     { "CRA" ,	 "B", 	 "D", 	 "1-DEOXY-1-METHOXYCARBAMIDO-BETA-D-GLUCO-2-HEP" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.035 },
+    { "CYH" ,	 "N", 	 "N", 	 "CYCLOHEXANONE"                                 ,  "C6 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.035 },
     { "D6G" ,	 "A", 	 "D", 	 "2-DEOXY-6-O-PHOSPHONO-ALPHA-D-ARABINO-HEXOPYR" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.061 },
     { "DAG" ,	 "B", 	 "D", 	 "4,6-DIDEOXY-4-AMINO-BETA-D-GLUCOPYRANOSIDE" ,     "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.043 },
     { "DAN" ,	 "N", 	 "L", 	 "2-DEOXY-2,3-DEHYDRO-N-ACETYL-NEURAMINICACID" ,    "O6 C2 C3 C4 C5 C6", 0.540, "5h4", 0.087, 9.083 },
@@ -392,7 +395,7 @@ const sugar_database_entry sugar_database[] =
     { "PNW" ,	 "B", 	 "D", 	 "4-NITROPHENYLBETA-D-GLUCOPYRANOSIDE" ,            "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.339 },
     { "PPC" ,	 "A", 	 "D", 	 "5-PHOSPHORIBOSYL-1-(BETA-METHYLENE)PYROPHOSP" ,   "O4 C1 C2 C3 C4"   , 0.381, "Oev", 0.015, 5.688 },
     { "PRP" ,	 "A", 	 "D", 	 "ALPHA-PHOSPHORIBOSYLPYROPHOSPHORICACID" ,         "O4 C1 C2 C3 C4"   , 0.381, "Oev", 0.015, 5.696 },
-    { "PSG" ,	 "B", 	 "D", 	 "PARA-NITROPHENYL1-THIO-BETA-D-GLUCOPYRANOSID" ,   "O5 C1 C2 C3 C4 C5", 0.558, "4c1", 0.002, 1.830 },    
+    { "PSG" ,	 "B", 	 "D", 	 "PARA-NITROPHENYL1-THIO-BETA-D-GLUCOPYRANOSID" ,   "O5 C1 C2 C3 C4 C5", 0.558, "4c1", 0.002, 1.830 },
     { "PSV" ,	 "A", 	 "D", 	 "ALPHA-D-PSICOFURANOSE" ,                          "O5 C2 C3 C4 C5"   , 0.378, "ev4", 0.017, 5.851 },
     { "RAM" ,	 "A", 	 "L", 	 "ALPHA-L-RHAMNOSE" ,                               "O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.041 },
     { "RAO" ,	 "A", 	 "L", 	 "1-O-METHYL-ALPHA-RHAMNOSE" ,                      "O5 C1 C2 C3 C4 C5", 0.621, "1c4", 0.002, 2.046 },
@@ -468,8 +471,8 @@ const sugar_database_entry sugar_database[] =
                 return true;
         return false;
     } //!< returns true if found
-    
-    
+
+
 } // namespace data
 
 } // namespace clipper
