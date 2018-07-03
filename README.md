@@ -21,7 +21,7 @@ The following related articles might be of interest too:
 - McNicholas, S. and Agirre, J., 2017. Glycoblocks: a schematic three-dimensional representation for glycans and their interactions. Acta Crystallographica Section D: Structural Biology, 73(2), pp.187-194.
 - Hudson, K.L., Bartlett, G.J., Diehl, R.C., Agirre, J., Gallagher, T., Kiessling, L.L. and Woolfson, D.N., 2015. Carbohydrate–aromatic interactions in proteins. Journal of the American Chemical Society, 137(48), pp.15152-15160.
 
-Some examples where Privateer has been useful (thank you for the citations!:
+Some examples where Privateer has been useful (thank _you_ for the citations!):
 
 - Hastie, Kathryn M., et al. "Structural basis for antibody-mediated neutralization of Lassa virus." Science 356.6341 (2017): 923-928.
 - Gristick, Harry B., et al. "Natively glycosylated HIV-1 Env structure reveals new mode for antibody recognition of the CD4-binding site." Nature Structural and Molecular Biology 23.10 (2016): 906.
