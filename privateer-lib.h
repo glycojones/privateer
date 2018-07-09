@@ -29,15 +29,6 @@ inline const std::string b2s ( bool b )
   return b ? "yes" : "no";
 }
 
-class PrTorsion : public ccp4srs::Torsion
-{
-    public:
-    void set_period ( int period  ) { this->torsion_period = period; }
-    void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
-    void set_value  ( float value ) { this->torsion        = value;  }
-    bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer );
-};
-
 namespace privateer
 {
     namespace coot
@@ -116,8 +107,8 @@ namespace privateer
         class Shape
         {
             public:
-                Shape() { } //!< null constructor
-                Shape( int x, int y ) { pos_x = x; pos_y = y; } //!< constructor
+                Shape() { }
+                Shape( int x, int y ) { pos_x = x; pos_y = y; }
                 virtual ~Shape() { };
                 void set_pos( int x, int y ) { pos_x = x; pos_y =y ; }
                 int  get_y  ( ) { return pos_y; }
@@ -293,8 +284,8 @@ namespace privateer
         class Square : public Shape
         {
             public:
-                Square() { } //!< null constructor
-                Square( int x, int y, int width, int height ) { set_pos(x, y); this->width=width; this->height=height; } //!< constructor
+                Square() { }
+                Square( int x, int y, int width, int height ) { set_pos(x, y); this->width=width; this->height=height; }
                 virtual ~Square() {};
                 int  get_width  ( ) { return width;  }
                 int  get_height ( ) { return height; }

@@ -221,6 +221,37 @@ void privateer::util::print_supported_code_list ()
 
 bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
 {
+
+    class PrTorsion : public ccp4srs::Torsion
+    {
+      public:
+        void set_period ( int period  ) { this->torsion_period = period; }
+        void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
+        void set_value  ( float value ) { this->torsion        = value;  }
+
+        bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
+        {
+            int n_atoms_checked = 0;
+
+            for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
+            {
+                if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
+                    n_atoms_checked++;
+            }
+
+            if ( n_atoms_checked == 4 )
+                return true;
+            else
+                return false;
+        }
+    };
+
     std::cout << "Writing out tighter geometry restraints to 'privateer-lib.cif'... " << std::endl;
     mmdb::InitMatType();
 
@@ -678,34 +709,6 @@ void privateer::util::print_usage ( )
     return;
 
 }
-
-
-bool PrTorsion::is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
-{
-    int n_atoms_checked = 0;
-
-    for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
-    {
-        if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
-            n_atoms_checked++;
-        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
-            n_atoms_checked++;
-        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
-            n_atoms_checked++;
-        else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
-            n_atoms_checked++;
-    }
-
-    if ( n_atoms_checked == 4 )
-        return true;
-    else
-        return false;
-}
-
-
-
-
-
 
 ///////// Privateer's glycoplot /////////
 
