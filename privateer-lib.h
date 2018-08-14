@@ -51,6 +51,9 @@ namespace privateer
 
     namespace util
     {
+        clipper::Xmap<float> calculate_difference_map (clipper::MiniMol& mmol, 
+                                                       clipper::HKL_data<clipper::data32::F_sigF> reflection_data,
+                                                       clipper::HKL_data<clipper::data32::F_Phi>)
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);
@@ -636,8 +639,8 @@ namespace privateer
         };
     }
 
-    namespace scripting
-    {
+    namespace scripting // These are functions explicitly designed for a higher-level operation
+    {                   // Please be aware that selected functions in other namespaces will be exposed as well
         std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
         std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );

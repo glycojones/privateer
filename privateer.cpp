@@ -49,7 +49,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 
-clipper::String program_version = "MKIII";
+clipper::String program_version = "MKIV_a";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
@@ -66,15 +66,17 @@ int main(int argc, char** argv)
     prog.set_termination_message( "Failed" );
 
     std::cout << "\nCopyright 2013-2016 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
+    std::cout << "\nWith contributions from Haroldas Bagdonas, Marcin Wojdyr and Jacob Sorensen." << std::endl  ;
     std::cout << "\n\nPlease reference these articles: "<< std::endl ;
     std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
     std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;
     std::cout << "\n  'Carbohydrate anomalies in the PDB'";
     std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
 
-    #ifdef DUMP
-        std::cout << "   WARNING: THIS IS A DEBUG VERSION - NOT INTENDED FOR PUBLIC DISTRIBUTION" << std::endl ;
-    #endif
+    std::size_t found = program_version.find("_"); // if found, this indicates that we are running a test version
+
+    if ( found != std::string::npos )
+        std::cout << "   \nWARNING: TEST VERSION - DO NOT USE IN A PRODUCTION ENVIRONMENT.\n" << std::endl;
 
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
