@@ -40,7 +40,7 @@ message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
 find_library(PYTHON_LIBRARY NAMES python2.7 python27
              HINTS ${_PY_PREFIX}/lib ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/libs
              NO_DEFAULT_PATH)
-                                                          
+
 if (NOT PYTHON_LIBRARY)
     message(FATAL_ERROR "Python library not found.")
 endif()
@@ -73,6 +73,7 @@ include_directories(${CCP4_INCLUDE_DIRS}
                     "${PYTHON_INCLUDE_DIR}")
 
 add_library(privateer
+            blobs.cpp
             clipper-glyco.cpp
             clipper-glyco_data.cpp
             privateer-lib.cpp)
