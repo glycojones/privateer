@@ -390,7 +390,7 @@ mmdbwrk.read_file(ippdb);
 mmdbwrk.import_minimol(molwrk);
 
 
-clipper::MiniMol molwrk_new( molwrk.spacegroup(), molwrk.cell() );
+clipper::MiniMol& molwrk_new( molwrk.spacegroup(), molwrk.cell() );
 for ( int c = 0; c < molwrk.size(); c++ )
 {
 	clipper::MPolymer mp;
