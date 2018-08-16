@@ -375,12 +375,12 @@ std::string get_HTML_output(const clipper::String& title, const clipper::String&
 
 
 	}
-	std::string HTMLoutput = HTMLfile;
+	std::string HTMLoutput(HTMLfile.c_str());
 	return HTMLoutput;
 }
 
 
-clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
+clipper::MiniMol& get_model_without_waters(const clipper::String& ippdb)
 {
 const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
 clipper::MMDBfile mmdbwrk;
