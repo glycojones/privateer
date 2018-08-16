@@ -51,9 +51,10 @@ namespace privateer
 
     namespace util
     {
-        clipper::Xmap<float> calculate_difference_map (clipper::MiniMol& mmol, 
-                                                       clipper::HKL_data<clipper::data32::F_sigF> reflection_data,
-                                                       clipper::HKL_data<clipper::data32::F_Phi>)
+        bool calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
+                                    const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                    clipper::Xmap<float>& best_map,
+                                    clipper::Xmap<float>& difference_map );
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);

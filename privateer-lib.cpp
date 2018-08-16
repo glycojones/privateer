@@ -170,6 +170,20 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
 
 ///////// Privateer - utilities /////////
 
+bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
+                                             const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                             clipper::Xmap<float>& best_map,
+                                             clipper::Xmap<float>& difference_map )
+{
+
+  if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
+       ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
+    return false;
+
+  return true;
+}
+
+
 void privateer::util::print_supported_code_list ()
 {
     std::cout << std::endl << std::endl << "Printing list of supported three-letter codes" << std::endl ;

@@ -380,35 +380,35 @@ std::string get_HTML_output(const clipper::String& title, const clipper::String&
 }
 
 
-clipper::MiniMol& get_model_without_waters(const clipper::String& ippdb)
+clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
 {
-const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
-clipper::MMDBfile mmdbwrk;
-clipper::MiniMol molwrk;
-mmdbwrk.SetFlag(mmdbflags);
-mmdbwrk.read_file(ippdb);
-mmdbwrk.import_minimol(molwrk);
+	const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
+	clipper::MMDBfile mmdbwrk;
+	clipper::MiniMol molwrk;
+	mmdbwrk.SetFlag(mmdbflags);
+	mmdbwrk.read_file(ippdb);
+	mmdbwrk.import_minimol(molwrk);
 
 
-clipper::MiniMol& molwrk_new( molwrk.spacegroup(), molwrk.cell() );
-for ( int c = 0; c < molwrk.size(); c++ )
-{
-	clipper::MPolymer mp;
-	for ( int r = 0; r < molwrk[c].size(); r++ )
-		{
-			if ( molwrk[c][r].type() != "HOH" )
-				{
-				mp.insert( molwrk[c][r] );
-				}
-			if ( r == (molwrk[c].size() - 1))
-				{
-				molwrk_new.insert(mp);
-				mp = clipper::MPolymer();
-				}
-		}
- }
+	clipper::MiniMol molwrk_new( molwrk.spacegroup(), molwrk.cell() );
+	for ( int c = 0; c < molwrk.size(); c++ )
+	{
+		clipper::MPolymer mp;
+		for ( int r = 0; r < molwrk[c].size(); r++ )
+			{
+				if ( molwrk[c][r].type() != "HOH" )
+					{
+					mp.insert( molwrk[c][r] );
+					}
+				if ( r == (molwrk[c].size() - 1))
+					{
+					molwrk_new.insert(mp);
+					mp = clipper::MPolymer();
+					}
+			}
+	 }
 
-return molwrk_new;
+	return molwrk_new;
 }
 
 //Compiler settings: -I/y/people/hb1115/devtools/install/include -L/y/people/hb1115/devtools/install/lib -lclipper-minimol -lclipper-core -lclipper-mmdb -lmmdb2 -lclipper-ccp4

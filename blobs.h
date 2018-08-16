@@ -38,6 +38,6 @@ struct GlycosylationMonomerMatch
 
 std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_mmonomer_positons(const clipper::String& ippdb);
 std::string get_HTML_output(const clipper::String& title, const clipper::String& ippdb);
-clipper::MiniMol& get_model_without_waters(const clipper::String& ippdb);
+clipper::MiniMol get_model_without_waters(const clipper::String& ippdb);
 
 #endif
