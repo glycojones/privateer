@@ -441,12 +441,6 @@ int main(int argc, char** argv)
 	  exit(1);
 	}
 
-	get_HTML_output(title, ippdb);
-	clipper::MiniMol modelnohohcopy = get_model_without_waters(ippdb);
-
-	std::vector<std::vector<GlycosylationMonomerMatch> > copy;
-	copy = get_matching_mmonomer_positons(ippdb);
-
 	std::cout << copy[0][1].LastMMonomer; // [0] = N-Glycosylation MMonomers std::vector, [1]=Second Match info of NGlc pattern in struct form.
 
 
