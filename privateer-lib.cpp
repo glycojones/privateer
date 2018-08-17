@@ -193,7 +193,8 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
   if ( reflection_data.missing(0) )
     model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
 
-  clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( hkl_info );
+  clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
+  //reflection_data_scaled = reflection_data; // we can't touch the original data!
 
   HRI ih;
   clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
@@ -493,25 +494,6 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     if (!myfile.is_open())
         std::cout << "Cannot open library file - this is a bug, please report (jon.agirre@york.ac.uk)" << std::endl;
 
-    //std::string header = "global_\n_lib_name       Privateer\n_lib_version    " + program_version + "\n_lib_update        7.0\n";
-
-    //myfile.sputn ( header.c_str(), header.length() + 4);
-    //myfile.close();
-
-    //mmdb::mmcif::Struct header;
-    //header.PutString ( "global_\n_lib_name","Privateer" );
-    //header.WriteMMCIF ( f );
-    //header.PutDataName ( "_lib_name\tPrivateer" );
-     //header.WriteMMCIF ( f );
-     //header.PutDataName ( "_lib_version\tMKIII" );
-     //header.WriteMMCIF ( f );
-     //header.PutDataName ( "_lib_update\t7.0" );
-     //header.WriteMMCIF ( f );
-
-
-
-    // kill used resources //
-
     if ( Monomer )
         delete Monomer;
 
@@ -758,6 +740,7 @@ void privateer::util::print_usage ( )
               << "\t-list\t\t\t\tProduces a list of space-separated supported 3-letter codes and stops\n"
               << "\t-mode <normal|ccp4i2>\t\tOptional: mode of operation. Defaults to normal\n"
               << "\t\t\t\t\tccp4i2 mode produces XML and tabbed-value files\n\n"
+              << "\t-check-unmodelled\t\tPrivateer will scan a waterless difference map for unmodelled N-, C- and O-glycosylation\n"
               << "\t-expression\t\t\tSpecify which expression system the input glycoprotein was produced in\n"
               << "\t\t\t\t\tSupported systems: undefined, fungal, yeast, plant, insect, mammalian, human\n"
               << "\t-vertical\t\t\tGenerate vertical glycan plots\n"

@@ -102,6 +102,7 @@ int main(int argc, char** argv)
     bool noMaps = false;
     bool allSugars = true;
     bool showGeom = false;
+    bool check_unmodelled = false;
     float ipradius = 2.5;    // default value, punishing enough!
     FILE *output;
     bool output_mtz = false;
@@ -243,6 +244,9 @@ int main(int argc, char** argv)
 
         else if ( args[arg] == "-nomaps" )
             noMaps = true;
+
+        else if ( args[arg] == "-check-unmodelled" )
+            check_unmodelled = true;
 
         else
         {
@@ -864,8 +868,6 @@ int main(int argc, char** argv)
     }
 
 
-
-
     // Full analysis, slower but much more complete //
 
     std::vector< std::string > enable_torsions_for;
@@ -1057,6 +1059,20 @@ int main(int argc, char** argv)
     {
         std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
         std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+    }
+
+    if ( check_unmodelled )
+    {
+
+      std::cout << "Scanning a waterless difference map for unmodelled glycosylation..." << std::endl;
+
+      clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
+      clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+      clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+      bool no_errors = privateer::util::calculate_sigmaa_maps ( mmol.atom_list(),
+                                                                fobs,
+                                                                sigmaa_all_map,
+                                                                sigmaa_dif_map );
     }
 
     clipper::Atom_list mainAtoms;

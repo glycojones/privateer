@@ -441,7 +441,7 @@ int main(int argc, char** argv)
 	  exit(1);
 	}
 
-	std::cout << copy[0][1].LastMMonomer; // [0] = N-Glycosylation MMonomers std::vector, [1]=Second Match info of NGlc pattern in struct form.
+	//std::cout << copy[0][1].LastMMonomer; // [0] = N-Glycosylation MMonomers std::vector, [1]=Second Match info of NGlc pattern in struct form.
 
 
 }
