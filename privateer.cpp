@@ -1089,7 +1089,6 @@ int main(int argc, char** argv)
         std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
     }
 
-<<<<<<< HEAD
     if ( check_unmodelled )
     {
 
@@ -1103,8 +1102,6 @@ int main(int argc, char** argv)
                                                                 sigmaa_all_map,
                                                                 sigmaa_dif_map );
     }
-=======
->>>>>>> e3c93a73c6ca6f378c8f765ca8273574092045e2
 
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
