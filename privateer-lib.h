@@ -19,10 +19,12 @@
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-ccp4.h>
+#include <clipper/clipper-contrib.h>
 #include <clipper/clipper-minimol.h>
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
 
+typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 inline const std::string b2s ( bool b )
 {
@@ -54,7 +56,9 @@ namespace privateer
         bool calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                     const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
                                     clipper::Xmap<float>& best_map,
-                                    clipper::Xmap<float>& difference_map );
+                                    clipper::Xmap<float>& difference_map,
+                                    int n_refln = 1000,
+                                    int n_param = 20 );
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);

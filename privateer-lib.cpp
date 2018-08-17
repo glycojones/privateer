@@ -173,12 +173,60 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
 bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                              const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
                                              clipper::Xmap<float>& best_map,
-                                             clipper::Xmap<float>& difference_map )
+                                             clipper::Xmap<float>& difference_map,
+                                             int n_refln,
+                                             int n_param )
 {
 
+  // need equal cell parameters...
   if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
        ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
     return false;
+
+  clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
+  clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
+  clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
+
+  if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
+    return false;
+
+  if ( reflection_data.missing(0) )
+    model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+
+  clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( hkl_info );
+
+  HRI ih;
+  clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
+  clipper::SFscale_aniso<float> scaler;
+
+  if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
+    return false;
+
+  for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+  {
+      if ( !reflection_data_scaled[ih].missing() )
+        flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+      else
+        flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
+  }
+
+  // intermediate data structures for the sigmaa calculation
+  // will output real-space maps later on
+  clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
+  clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
+  clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
+
+  clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
+
+  if ( ! sigmaa_weighting ( best_map_coefficients,
+                            difference_map_coefficients,
+                            phase_and_fom,
+                            reflection_data_scaled,
+                            model_structure_factors, flag ) )
+    return false;
+
+  best_map.fft_from ( best_map_coefficients );
+  difference_map.fft_from ( difference_map_coefficients );
 
   return true;
 }
