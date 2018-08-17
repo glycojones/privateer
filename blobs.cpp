@@ -14,7 +14,7 @@
 #include "blobs.h"
 
 
-std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_mmonomer_positons(const clipper::String& ippdb)
+std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(const clipper::String& ippdb)
 {
 	const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
 	clipper::MMDBfile mmdbwrk;
@@ -412,36 +412,3 @@ clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
 }
 
 //Compiler settings: -I/y/people/hb1115/devtools/install/include -L/y/people/hb1115/devtools/install/lib -lclipper-minimol -lclipper-core -lclipper-mmdb -lmmdb2 -lclipper-ccp4
-
-int main(int argc, char** argv)
-{
-
-	CCP4Program prog( "GlycoSeqChecker", "0.3", "$Date: 2018/08/15" );
-
-	// defaults
-	clipper::String title 	 = "No Title";
-	clipper::String ippdb    = "No File";
-
-
-	// command input
-	CCP4CommandInput args( argc, argv, true );
-	int arg = 0;
-	while ( ++arg < args.size() ) {
-	  if ( args[arg] == "-title" ) {
-		if ( ++arg < args.size() ) title = args[arg];
-	  } else if ( args[arg] == "-pdbin" ) {
-		if ( ++arg < args.size() ) ippdb = args[arg];
-	  } else {
-		std::cout << "Unrecognized:\t" << args[arg] << "\n";
-		args.clear();
-	  }
-	}
-	if ( args.size() <= 1 ) {
-	  std::cout << "Usage: GlycoSeqChecker\n\t-pdbin <filename>\n\t\n-title <protein_title>\n";
-	  exit(1);
-	}
-
-	std::cout << copy[0][1].LastMMonomer; // [0] = N-Glycosylation MMonomers std::vector, [1]=Second Match info of NGlc pattern in struct form.
-
-
-}

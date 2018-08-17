@@ -15,14 +15,16 @@
 
 #include <iostream>
 #include <fstream>
-#include <clipper/clipper.h>
-#include <clipper/clipper-ccp4.h>
-#include <clipper/clipper-minimol.h>
 #include <iterator>
 #include <regex>
 #include <string>
 #include <vector>
 #include <utility>
+#include <clipper/clipper.h>
+#include <clipper/clipper-ccp4.h>
+#include <clipper/clipper-minimol.h>
+
+
 
 extern "C"{
 #include <stdlib.h>
@@ -36,7 +38,7 @@ struct GlycosylationMonomerMatch
 	int LastMMonomer;
 };
 
-std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_mmonomer_positons(const clipper::String& ippdb);
+std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(const clipper::String& ippdb);
 std::string get_HTML_output(const clipper::String& title, const clipper::String& ippdb);
 clipper::MiniMol get_model_without_waters(const clipper::String& ippdb);
 
