@@ -1056,6 +1056,31 @@ int main(int argc, char** argv)
     fobs_scaled = fobs;
 
 
+        if ( !batch )
+        {
+
+            std::vector<std::vector<GlycosylationMonomerMatch> > glycosylationFromSequence = get_matching_monomer_positions(ippdb);
+            clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
+
+            clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
+
+            clipper::Grid_sampling fakegrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
+
+            clipper::Xmap<float> two_times_observed_minus_one_model(mmol.spacegroup(), mmol.cell(), fakegrid);
+            clipper::Xmap<float> observed_minus_model(mmol.spacegroup(), mmol.cell(), fakegrid);
+
+            bool test = privateer::util::calculate_sigmaa_maps (withoutWaterModelAtomList,
+                                                                fobs,
+                                                                two_times_observed_minus_one_model,
+                                                                observed_minus_model,
+                                                                n_refln,
+                                                                n_param);
+
+           std::cout << "Test says: ";
+           // << std::boolalpha << test << std::endl;
+
+        }
+
     if (!batch)
     {
         std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
@@ -1077,31 +1102,6 @@ int main(int argc, char** argv)
     list_of_glycans = mgl.get_list_of_glycans();
 
 
-
-    if ( !batch )
-    {
-
-        std::vector<std::vector<GlycosylationMonomerMatch> > glycosylationFromSequence = get_matching_monomer_positions(ippdb);
-        clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
-
-        clipper::Atom_list originalMiniMolAtomList = mmol.atom_list();
-
-        clipper::Grid_sampling fakegrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
-
-        clipper::Xmap<float> two_times_observed_minus_one_model(modelRemovedWaters.spacegroup(), modelRemovedWaters.cell(), fakegrid);
-        clipper::Xmap<float> observed_minus_model(modelRemovedWaters.spacegroup(), modelRemovedWaters.cell(), fakegrid);
-
-        bool test = privateer::util::calculate_sigmaa_maps (originalMiniMolAtomList,
-                                                            fobs,
-                                                            two_times_observed_minus_one_model,
-                                                            observed_minus_model,
-                                                            n_refln,
-                                                            n_param);
-
-       std::cout << "Test says: ";
-       // << std::boolalpha << test << std::endl;
-
-    }
 
     if ( !batch )
     {
