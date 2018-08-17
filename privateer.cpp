@@ -39,6 +39,7 @@
 #include <iostream>
 #include "privateer-lib.h"
 #include "clipper-glyco.h"
+#include "blobs.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -47,6 +48,7 @@
 #include <clipper/clipper-minimol.h>
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
+
 
 
 clipper::String program_version = "MKIV_a";
@@ -1055,12 +1057,39 @@ int main(int argc, char** argv)
 
     fobs_scaled = fobs;
 
+
+        if ( !batch )
+        {
+
+            std::vector<std::vector<GlycosylationMonomerMatch> > glycosylationFromSequence = get_matching_monomer_positions(ippdb);
+            clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
+
+            clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
+
+            clipper::Grid_sampling fakegrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
+
+            clipper::Xmap<float> two_times_observed_minus_one_model(mmol.spacegroup(), mmol.cell(), fakegrid);
+            clipper::Xmap<float> observed_minus_model(mmol.spacegroup(), mmol.cell(), fakegrid);
+
+            bool test = privateer::util::calculate_sigmaa_maps (withoutWaterModelAtomList,
+                                                                fobs,
+                                                                two_times_observed_minus_one_model,
+                                                                observed_minus_model,
+                                                                n_refln,
+                                                                n_param);
+
+           std::cout << "Test says: ";
+           // << std::boolalpha << test << std::endl;
+
+        }
+
     if (!batch)
     {
         std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
         std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
     }
 
+<<<<<<< HEAD
     if ( check_unmodelled )
     {
 
@@ -1074,6 +1103,8 @@ int main(int argc, char** argv)
                                                                 sigmaa_all_map,
                                                                 sigmaa_dif_map );
     }
+=======
+>>>>>>> e3c93a73c6ca6f378c8f765ca8273574092045e2
 
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
@@ -1087,6 +1118,8 @@ int main(int argc, char** argv)
     mgl = clipper::MGlycology(mmol, manb, expsys);
 
     list_of_glycans = mgl.get_list_of_glycans();
+
+
 
     if ( !batch )
     {
@@ -1115,6 +1148,7 @@ int main(int argc, char** argv)
         std::cout << std::endl << "Analysing carbohydrates... ";
         fflush(0);
     }
+
     else
     {
         for (int i = 0; i < list_of_glycans.size() ; i++ )

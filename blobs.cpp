@@ -14,7 +14,7 @@
 #include "blobs.h"
 
 
-std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_mmonomer_positons(const clipper::String& ippdb)
+std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(const clipper::String& ippdb)
 {
 	const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
 	clipper::MMDBfile mmdbwrk;
@@ -412,6 +412,7 @@ clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
 }
 
 //Compiler settings: -I/y/people/hb1115/devtools/install/include -L/y/people/hb1115/devtools/install/lib -lclipper-minimol -lclipper-core -lclipper-mmdb -lmmdb2 -lclipper-ccp4
+<<<<<<< HEAD
 
 int main(int argc, char** argv)
 {
@@ -445,3 +446,5 @@ int main(int argc, char** argv)
 
 
 }
+=======
+>>>>>>> e3c93a73c6ca6f378c8f765ca8273574092045e2
