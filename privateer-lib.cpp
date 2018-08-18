@@ -174,6 +174,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                              const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
                                              clipper::Xmap<float>& best_map,
                                              clipper::Xmap<float>& difference_map,
+                                             bool ignore_set_null,
                                              int n_refln,
                                              int n_param )
 {
@@ -190,8 +191,11 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
   if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
     return false;
 
-  if ( reflection_data.missing(0) )
-    model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+    if (!ignore_set_null)
+    {
+        if ( reflection_data.missing(0) )
+            model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+    }
 
   clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
   //reflection_data_scaled = reflection_data; // we can't touch the original data!

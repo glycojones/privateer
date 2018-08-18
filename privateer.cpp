@@ -105,6 +105,7 @@ int main(int argc, char** argv)
     bool allSugars = true;
     bool showGeom = false;
     bool check_unmodelled = false;
+    bool ignore_set_null = false;
     float ipradius = 2.5;    // default value, punishing enough!
     FILE *output;
     bool output_mtz = false;
@@ -249,6 +250,10 @@ int main(int argc, char** argv)
 
         else if ( args[arg] == "-check-unmodelled" )
             check_unmodelled = true;
+
+        else if ( args[arg] == "-ignore_missing" )
+            ignore_set_null = true;
+
 
         else
         {
@@ -1058,31 +1063,6 @@ int main(int argc, char** argv)
     fobs_scaled = fobs;
 
 
-        if ( !batch )
-        {
-
-            std::vector<std::vector<GlycosylationMonomerMatch> > glycosylationFromSequence = get_matching_monomer_positions(ippdb);
-            clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
-
-            clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
-
-            clipper::Grid_sampling fakegrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
-
-            clipper::Xmap<float> two_times_observed_minus_one_model(mmol.spacegroup(), mmol.cell(), fakegrid);
-            clipper::Xmap<float> observed_minus_model(mmol.spacegroup(), mmol.cell(), fakegrid);
-
-            bool test = privateer::util::calculate_sigmaa_maps (withoutWaterModelAtomList,
-                                                                fobs,
-                                                                two_times_observed_minus_one_model,
-                                                                observed_minus_model,
-                                                                n_refln,
-                                                                n_param);
-
-           std::cout << "Test says: ";
-           // << std::boolalpha << test << std::endl;
-
-        }
-
     if (!batch)
     {
         std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
@@ -1094,13 +1074,24 @@ int main(int argc, char** argv)
 
       std::cout << "Scanning a waterless difference map for unmodelled glycosylation..." << std::endl;
 
+      clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
+
+      clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
+
       clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
+
       clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
       clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-      bool no_errors = privateer::util::calculate_sigmaa_maps ( mmol.atom_list(),
+
+      std::cout << "Imports were successful." << std::endl;
+
+      bool no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList,
                                                                 fobs,
                                                                 sigmaa_all_map,
-                                                                sigmaa_dif_map );
+                                                                sigmaa_dif_map,
+                                                                ignore_set_null );
+
+    std::cout << std::endl << "Unmodelled glycosylation: " << std::boolalpha << no_errors << std::endl;
     }
 
     clipper::Atom_list mainAtoms;

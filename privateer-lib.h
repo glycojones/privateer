@@ -57,8 +57,9 @@ namespace privateer
                                     const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
                                     clipper::Xmap<float>& best_map,
                                     clipper::Xmap<float>& difference_map,
+                                    bool ignore_set_null,
                                     int n_refln = 1000,
-                                    int n_param = 20 );
+                                    int n_param = 20);
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);
