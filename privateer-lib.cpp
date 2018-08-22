@@ -227,7 +227,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                             difference_map_coefficients,
                             phase_and_fom,
                             reflection_data_scaled,
-                            model_structure_factors, flag ) )
+                            model_structure_factors, flag) )
     return false;
 
   best_map.fft_from ( best_map_coefficients );
