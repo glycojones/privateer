@@ -1091,7 +1091,7 @@ int main(int argc, char** argv)
                                                                 sigmaa_dif_map,
                                                                 ignore_set_null );
 
-    std::cout << std::endl << "no_errors retrun: " << std::boolalpha << no_errors << std::endl;
+    std::cout << std::endl << "no_errors return: " << std::boolalpha << no_errors << std::endl;
 
 
     // if (no_errors)
@@ -1172,10 +1172,13 @@ int main(int argc, char** argv)
                                                 meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
 
+                                                if (mmol[PotentialMonomers[0][c].PolymerID][r].type() == "ASN")
+                                                {
                                                 std::cout << std::endl << "N-Glycosylation: Value of calculated electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[0][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[0][c].PolymerID][r].type()
                                                 << " monomer in polymer " << mmol[PotentialMonomers[0][c].PolymerID].id() << ": "
                                                 << meanDensityExp << std::endl;
+                                                }
 
                     }
                 }
@@ -1259,11 +1262,13 @@ int main(int argc, char** argv)
 
                                                 meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
-
+                                                if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP")
+                                                {
                                                 std::cout << std::endl << "C-Glycosylation: Value of calculated electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[1][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[1][c].PolymerID][r].type()
                                                 << " monomer in polymer " << mmol[PotentialMonomers[1][c].PolymerID].id() << ": "
                                                 << meanDensityExp << std::endl;
+                                                }
 
                     }
                 }
@@ -1348,10 +1353,13 @@ int main(int argc, char** argv)
                                                 meanDensityExp = meanDensityExp / n_points;
 
 
+                                                if (mmol[PotentialMonomers[2][c].PolymerID][r].type() == "SER" || mmol[PotentialMonomers[2][c].PolymerID][r].type() == "THR")
+                                                {
                                                 std::cout << std::endl << "O-Glycosylation: Value of calculated electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[2][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[2][c].PolymerID][r].type()
                                                 << " monomer in polymer " << mmol[PotentialMonomers[2][c].PolymerID].id() << ": "
                                                 << meanDensityExp << std::endl;
+                                                }
 
                     }
                 }
@@ -1435,11 +1443,13 @@ int main(int argc, char** argv)
                                                 meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
 
-
+                                                if (mmol[PotentialMonomers[3][c].PolymerID][r].type() == "ALA" || mmol[PotentialMonomers[3][c].PolymerID][r].type() == "GLN")
+                                                {
                                                 std::cout << std::endl << "N-Glycosylation REMOVED: Value of calculated electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[3][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[3][c].PolymerID][r].type()
                                                 << " monomer in polymer " << mmol[PotentialMonomers[3][c].PolymerID].id() << ": "
                                                 << meanDensityExp << std::endl;
+                                                }
 
                     }
                 }
