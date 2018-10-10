@@ -51,6 +51,7 @@
 
 
 
+
 clipper::String program_version = "MKIV_a";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
@@ -1091,11 +1092,11 @@ int main(int argc, char** argv)
                                                                 sigmaa_dif_map,
                                                                 ignore_set_null );
 
-    std::cout << std::endl << "no_errors return: " << std::boolalpha << no_errors << std::endl;
+    std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
 
 
-    // if (no_errors)
-    //     {
+    if (no_errors)
+        {
             std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
             clipper::Map_stats ms;
 
@@ -1108,48 +1109,29 @@ int main(int argc, char** argv)
                     {
                     for (int r = PotentialMonomers[0][c].FirstMMonomer; r <= PotentialMonomers[0][c].LastMMonomer; ++r)
                         {
-                                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                                x=y=z=0.0;
-                                maxX=maxY=maxZ=-999999.0;
-                                minX=minY=minZ=999999.0;
+                            if (mmol[PotentialMonomers[0][c].PolymerID][r].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
+                            {
+                                clipper::Coord_orth ND2Coordinate; // A glycan is attached to ASN residue via ND2 atom
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[0][c].PolymerID][r].size(); natom++)
                                     {
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().x() > maxX) maxX=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().x(); // calculation of the sugar centre
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().y() > maxY) maxY=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().z() > maxZ) maxZ=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().z();
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().x() < minX) minX=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().x();
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().y() < minY) minY=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().z() < minZ) minZ=mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth().z();
+                                        if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].id() == " ND2")
+                                        ND2Coordinate = mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                x = minX + ((maxX - minX)/2);
-                                y = minY + ((maxY - minY)/2);
-                                z = minZ + ((maxZ - minZ)/2);
-                                double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
-                                meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
 
+                                double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                //////// mask calculation //////////
-
-                                clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-                                clipper::EDcalc_mask<float> masker( ipradius );
-                                masker(mask, mmol[PotentialMonomers[0][c].PolymerID][r].atom_list());
-
-                                ////////////////////////////////////
-
-                                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+                                clipper::Coord_orth origin(ND2Coordinate.x()-2, ND2Coordinate.y()-2, ND2Coordinate.z()-2);
+                                clipper::Coord_orth destination(ND2Coordinate.x()+2, ND2Coordinate.y()+2, ND2Coordinate.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
-                                double accum = 0.0;
+
 
                                 // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
-                                std::vector<clipper::Xmap_base::Map_reference_coord> buffer_coord;
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
@@ -1157,33 +1139,21 @@ int main(int argc, char** argv)
                                     for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
                                         for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
                                             {
-                                                if ( mask[iw] == 1.0)
-                                                {
-                                                    meanDensityCalc = meanDensityCalc + sigmaa_all_map[iw];
-                                                    meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-
-                                                    n_points++;
-                                                }
+                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
+                                                n_points++;
                                             }
 
-                                                accum = meanDensityExp / ms.std_dev();
-                                                accum /= n_points;
-
-                                                meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
 
-                                                if (mmol[PotentialMonomers[0][c].PolymerID][r].type() == "ASN")
-                                                {
-                                                std::cout << std::endl << "N-Glycosylation: Value of calculated electron density in detected consensus sequence for"
+                                                std::cout << std::endl << "N-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[0][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[0][c].PolymerID][r].type()
-                                                << " monomer in polymer " << mmol[PotentialMonomers[0][c].PolymerID].id() << ": "
-                                                << meanDensityExp << std::endl;
-                                                }
+                                                << " residue in polymer " << mmol[PotentialMonomers[0][c].PolymerID].id() << ": " << meanDensityExp
+                                                << std::endl;
+                            }
 
+                        }
                     }
                 }
-            }
-
             else
                 {
                 std::cout << std::endl << "No potential missed N-Glycosylations were detected according to consensus sequence" << std::endl;
@@ -1191,52 +1161,32 @@ int main(int argc, char** argv)
 
             if (!PotentialMonomers[1].empty()) // C-glycosylation information vector
                 {
-                    for (int c = 0; c < PotentialMonomers[1].size(); ++c)
+                for (int c = 0; c < PotentialMonomers[1].size(); ++c)
+                    {
+                    for (int r = PotentialMonomers[1][c].FirstMMonomer; r <= PotentialMonomers[1][c].LastMMonomer; ++r)
                         {
-                        for (int r = PotentialMonomers[1][c].FirstMMonomer; r <= PotentialMonomers[1][c].LastMMonomer; ++r)
+                            if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
                             {
-                                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                                x=y=z=0.0;
-                                maxX=maxY=maxZ=-999999.0;
-                                minX=minY=minZ=999999.0;
+                                clipper::Coord_orth CD1Coordinate; // A glycan is attached to ASN residue via ND2 atom
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[1][c].PolymerID][r].size(); natom++)
                                     {
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().x() > maxX) maxX=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().x(); // calculation of the sugar centre
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().y() > maxY) maxY=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().z() > maxZ) maxZ=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().z();
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().x() < minX) minX=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().x();
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().y() < minY) minY=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().z() < minZ) minZ=mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth().z();
+                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CD1")
+                                        CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                x = minX + ((maxX - minX)/2);
-                                y = minY + ((maxY - minY)/2);
-                                z = minZ + ((maxZ - minZ)/2);
-                                double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
-                                meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
-
+                                double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                //////// mask calculation //////////
-
-                                clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-                                clipper::EDcalc_mask<float> masker( ipradius );
-                                masker(mask, mmol[PotentialMonomers[1][c].PolymerID][r].atom_list());
-
-                                ////////////////////////////////////
-
-                                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+                                clipper::Coord_orth origin(CD1Coordinate.x()-2, CD1Coordinate.y()-2, CD1Coordinate.z()-2);
+                                clipper::Coord_orth destination(CD1Coordinate.x()+2, CD1Coordinate.y()+2, CD1Coordinate.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
-                                double accum = 0.0;
+
 
                                 // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
-                                std::vector<clipper::Xmap_base::Map_reference_coord> buffer_coord;
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
@@ -1244,35 +1194,21 @@ int main(int argc, char** argv)
                                     for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
                                         for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
                                             {
-                                                if ( mask[iw] == 1.0)
-                                                {
-                                                    meanDensityCalc = meanDensityCalc + sigmaa_all_map[iw];
-
-                                                    if (useSigmaa)
-                                                        meanDensityExp = meanDensityExp + sigmaa_all_map[iw];
-                                                    else
-                                                        meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-
-                                                    n_points++;
-                                                }
+                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
+                                                n_points++;
                                             }
 
-                                                accum = meanDensityExp / ms.std_dev();
-                                                accum /= n_points;
-
-                                                meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
-                                                if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP")
-                                                {
-                                                std::cout << std::endl << "C-Glycosylation: Value of calculated electron density in detected consensus sequence for"
-                                                << mmol[PotentialMonomers[1][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[1][c].PolymerID][r].type()
-                                                << " monomer in polymer " << mmol[PotentialMonomers[1][c].PolymerID].id() << ": "
-                                                << meanDensityExp << std::endl;
-                                                }
 
+                                                std::cout << std::endl << "C-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
+                                                << mmol[PotentialMonomers[1][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[1][c].PolymerID][r].type()
+                                                << " residue in polymer " << mmol[PotentialMonomers[1][c].PolymerID].id() << ": " << meanDensityExp
+                                                << std::endl;
+                            }
+
+                        }
                     }
                 }
-            }
             else
                 {
                 std::cout << std::endl << "No potential missed C-Glycosylations were detected according to consensus sequence" << std::endl;
@@ -1280,52 +1216,32 @@ int main(int argc, char** argv)
 
             if (!PotentialMonomers[2].empty()) // O-glycosylation information vector
                 {
-                    for (int c = 0; c < PotentialMonomers[2].size(); ++c)
+                for (int c = 0; c < PotentialMonomers[2].size(); ++c)
+                    {
+                    for (int r = PotentialMonomers[2][c].FirstMMonomer; r <= PotentialMonomers[2][c].LastMMonomer; ++r)
                         {
-                        for (int r = PotentialMonomers[2][c].FirstMMonomer; r <= PotentialMonomers[2][c].LastMMonomer; ++r)
+                            if (mmol[PotentialMonomers[2][c].PolymerID][r].type() == "SER" || mmol[PotentialMonomers[2][c].PolymerID][r].type() == "THR") // in O-Glycosylation a glycan is attached through Thr or Ser residue
                             {
-                                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                                x=y=z=0.0;
-                                maxX=maxY=maxZ=-999999.0;
-                                minX=minY=minZ=999999.0;
+                                clipper::Coord_orth OGCoordinate; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[2][c].PolymerID][r].size(); natom++)
                                     {
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().x() > maxX) maxX=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().x(); // calculation of the sugar centre
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().y() > maxY) maxY=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().z() > maxZ) maxZ=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().z();
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().x() < minX) minX=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().x();
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().y() < minY) minY=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().z() < minZ) minZ=mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth().z();
+                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG" || mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG1")
+                                        OGCoordinate = mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                x = minX + ((maxX - minX)/2);
-                                y = minY + ((maxY - minY)/2);
-                                z = minZ + ((maxZ - minZ)/2);
-                                double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
-                                meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
-
+                                double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                //////// mask calculation //////////
-
-                                clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-                                clipper::EDcalc_mask<float> masker( ipradius );
-                                masker(mask, mmol[PotentialMonomers[2][c].PolymerID][r].atom_list());
-
-                                ////////////////////////////////////
-
-                                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+                                clipper::Coord_orth origin(OGCoordinate.x()-2, OGCoordinate.y()-2, OGCoordinate.z()-2);
+                                clipper::Coord_orth destination(OGCoordinate.x()+2, OGCoordinate.y()+2, OGCoordinate.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
-                                double accum = 0.0;
+
 
                                 // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
-                                std::vector<clipper::Xmap_base::Map_reference_coord> buffer_coord;
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
@@ -1333,90 +1249,54 @@ int main(int argc, char** argv)
                                     for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
                                         for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
                                             {
-                                                if ( mask[iw] == 1.0)
-                                                {
-                                                    meanDensityCalc = meanDensityCalc + sigmaa_all_map[iw];
+                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
+                                                n_points++;
+                                            }
 
-                                                    if (useSigmaa)
-                                                        meanDensityExp = meanDensityExp + sigmaa_all_map[iw];
-                                                    else
-                                                        meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-
-                                                    n_points++;
-                                                }
-                                                }
-
-                                                accum = meanDensityExp / ms.std_dev();
-                                                accum /= n_points;
-
-                                                meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
 
-
-                                                if (mmol[PotentialMonomers[2][c].PolymerID][r].type() == "SER" || mmol[PotentialMonomers[2][c].PolymerID][r].type() == "THR")
-                                                {
-                                                std::cout << std::endl << "O-Glycosylation: Value of calculated electron density in detected consensus sequence for"
+                                                std::cout << std::endl << "O-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[2][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[2][c].PolymerID][r].type()
-                                                << " monomer in polymer " << mmol[PotentialMonomers[2][c].PolymerID].id() << ": "
-                                                << meanDensityExp << std::endl;
-                                                }
+                                                << " residue in polymer " << mmol[PotentialMonomers[2][c].PolymerID].id() << ": " << meanDensityExp
+                                                << std::endl;
+                            }
 
+                        }
                     }
                 }
-            }
             else
                 {
                 std::cout << std::endl << "No potential missed O-Glycosylations were detected according to consensus sequence" << std::endl;
                 }
 
-            if (!PotentialMonomers[3].empty()) // N-glycosylation removed information vector
+            if (!PotentialMonomers[3].empty()) // O-glycosylation information vector
                 {
-                    for (int c = 0; c < PotentialMonomers[3].size(); ++c)
+                for (int c = 0; c < PotentialMonomers[3].size(); ++c)
+                    {
+                    for (int r = PotentialMonomers[3][c].FirstMMonomer; r <= PotentialMonomers[3][c].LastMMonomer; ++r)
                         {
-                        for (int r = PotentialMonomers[3][c].FirstMMonomer; r <= PotentialMonomers[3][c].LastMMonomer; ++r)
-                            {
-                                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                                x=y=z=0.0;
-                                maxX=maxY=maxZ=-999999.0;
-                                minX=minY=minZ=999999.0;
+                            if (mmol[PotentialMonomers[3][c].PolymerID][r].type() == "ALA" || mmol[PotentialMonomers[3][c].PolymerID][r].type() == "GLN")
+                                {
+                                clipper::Coord_orth CBorNE2Coordinate; // CB, NE2
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[3][c].PolymerID][r].size(); natom++)
                                     {
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().x() > maxX) maxX=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().x(); // calculation of the sugar centre
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().y() > maxY) maxY=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().z() > maxZ) maxZ=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().z();
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().x() < minX) minX=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().x();
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().y() < minY) minY=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().y();
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().z() < minZ) minZ=mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth().z();
+                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CB" || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " NE2")
+                                        CBorNE2Coordinate = mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                x = minX + ((maxX - minX)/2);
-                                y = minY + ((maxY - minY)/2);
-                                z = minZ + ((maxZ - minZ)/2);
-                                double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
-                                meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
-
+                                double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                //////// mask calculation //////////
-
-                                clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-                                clipper::EDcalc_mask<float> masker( ipradius );
-                                masker(mask, mmol[PotentialMonomers[3][c].PolymerID][r].atom_list());
-
-                                ////////////////////////////////////
-
-                                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+                                clipper::Coord_orth origin(CBorNE2Coordinate.x()-2, CBorNE2Coordinate.y()-2, CBorNE2Coordinate.z()-2);
+                                clipper::Coord_orth destination(CBorNE2Coordinate.x()+2, CBorNE2Coordinate.y()+2, CBorNE2Coordinate.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
-                                double accum = 0.0;
+
 
                                 // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
-                                std::vector<clipper::Xmap_base::Map_reference_coord> buffer_coord;
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
@@ -1424,43 +1304,28 @@ int main(int argc, char** argv)
                                     for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
                                         for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
                                             {
-                                                if ( mask[iw] == 1.0)
-                                                {
-                                                    meanDensityCalc = meanDensityCalc + sigmaa_all_map[iw];
-
-                                                    if (useSigmaa)
-                                                        meanDensityExp = meanDensityExp + sigmaa_all_map[iw];
-                                                    else
-                                                        meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-
-                                                    n_points++;
-                                                }
+                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
+                                                n_points++;
                                             }
 
-                                                accum = meanDensityExp / ms.std_dev();
-                                                accum /= n_points;
-
-                                                meanDensityCalc = meanDensityCalc / n_points;
                                                 meanDensityExp = meanDensityExp / n_points;
 
-                                                if (mmol[PotentialMonomers[3][c].PolymerID][r].type() == "ALA" || mmol[PotentialMonomers[3][c].PolymerID][r].type() == "GLN")
-                                                {
-                                                std::cout << std::endl << "N-Glycosylation REMOVED: Value of calculated electron density in detected consensus sequence for"
+                                                std::cout << std::endl << "N-Glycosylation-REMOVED: Value of experimental mean electron density in detected consensus sequence for"
                                                 << mmol[PotentialMonomers[3][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[3][c].PolymerID][r].type()
-                                                << " monomer in polymer " << mmol[PotentialMonomers[3][c].PolymerID].id() << ": "
-                                                << meanDensityExp << std::endl;
-                                                }
+                                                << " residue in polymer " << mmol[PotentialMonomers[3][c].PolymerID].id() << ": " << meanDensityExp
+                                                << std::endl;
+                                }
 
+                        }
                     }
                 }
-            }
             else
                 {
-                std::cout << std::endl << "No potential missed N-Glycosylations that were removed detected according to consensus sequence" << std::endl;
+                std::cout << std::endl << "No potential mutations to remove N-Glycosylation were detected according to consensus sequence" << std::endl;
                 }
 
 
-            // }
+            }
         }
 
 
