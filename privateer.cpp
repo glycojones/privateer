@@ -1098,10 +1098,10 @@ int main(int argc, char** argv)
     if (no_errors)
         {
             std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
-            clipper::Map_stats ms;
+            // clipper::Map_stats ms;
 
 
-            ms = clipper::Map_stats(sigmaa_dif_map);
+            // ms = clipper::Map_stats(sigmaa_dif_map);
 
             if (!PotentialMonomers[0].empty()) // N-glycosylation information vector
                 {
@@ -1112,25 +1112,37 @@ int main(int argc, char** argv)
                             if (mmol[PotentialMonomers[0][c].PolymerID][r].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
                             {
                                 clipper::Coord_orth ND2Coordinate; // A glycan is attached to ASN residue via ND2 atom
+                                clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
 
+                                // looping through atoms of ASN residue to find ND2 and CB atoms.
                                 for (int natom = 0; natom < mmol[PotentialMonomers[0][c].PolymerID][r].size(); natom++)
                                     {
                                         if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].id() == " ND2")
                                         ND2Coordinate = mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth();
+
+                                        if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].id() == " CB ")
+                                        CBCoordinate = mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth();
                                     }
+
+
+
+                                // Create a vector between ND2 and CB
+                                clipper::Vec3<clipper::ftype> baseVector((ND2Coordinate.x()-CBCoordinate.x()),(ND2Coordinate.y()-CBCoordinate.y()), (ND2Coordinate.z()-CBCoordinate.z()));
+                                // Create a 1A unit vector out of baseVector, to be used later in vector shifting
+                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+
+                                // Obtain coordinates in the middle of suspected glycan density via 5A vector shift. This is the nearest glycan bonded via ND2 atom to ASN residue.
+                                clipper::Coord_orth target( (CBCoordinate.x()+(unitVector[0]*5)), (CBCoordinate.y()+(unitVector[1]*5)), (CBCoordinate.z()+(unitVector[2]*5)) );
 
 
                                 double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                clipper::Coord_orth origin(ND2Coordinate.x()-2, ND2Coordinate.y()-2, ND2Coordinate.z()-2);
-                                clipper::Coord_orth destination(ND2Coordinate.x()+2, ND2Coordinate.y()+2, ND2Coordinate.z()+2);
+                                // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
+                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
+                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-
-                                // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
@@ -1168,25 +1180,35 @@ int main(int argc, char** argv)
                             if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
                             {
                                 clipper::Coord_orth CD1Coordinate; // A glycan is attached to ASN residue via ND2 atom
+                                clipper::Coord_orth CBCoordinate;
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[1][c].PolymerID][r].size(); natom++)
                                     {
                                         if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CD1")
                                         CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
+
+                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CB ")
+                                        CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
                                     }
+
+                                    // Create a vector between ND2 and CB
+                                clipper::Vec3<clipper::ftype> baseVector((CD1Coordinate.x()-CBCoordinate.x()),(CD1Coordinate.y()-CBCoordinate.y()), (CD1Coordinate.z()-CBCoordinate.z()));
+                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
+                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+
+                                    // Stopped working here, need to adjust the values better, replace the atoms between which I am drawing a vector
+                                clipper::Coord_orth target( (CD1Coordinate.x()+(unitVector[0]*0.5)), (CD1Coordinate.y()+(unitVector[1]*3)), (CD1Coordinate.z()+(unitVector[2])) );
+
+                                std::cout << std::endl << "Coordinate value is " << target.format() << std::endl;
 
                                 double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                clipper::Coord_orth origin(CD1Coordinate.x()-2, CD1Coordinate.y()-2, CD1Coordinate.z()-2);
-                                clipper::Coord_orth destination(CD1Coordinate.x()+2, CD1Coordinate.y()+2, CD1Coordinate.z()+2);
+                                    // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
+                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
+                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-
-                                // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
-
 
                                 i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
@@ -1243,7 +1265,7 @@ int main(int argc, char** argv)
                                 // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
 
 
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
+                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_all_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
 
                                 for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
                                     for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
