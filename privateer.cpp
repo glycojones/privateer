@@ -1098,11 +1098,6 @@ int main(int argc, char** argv)
     if (no_errors)
         {
             std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
-            // clipper::Map_stats ms;
-
-
-            // ms = clipper::Map_stats(sigmaa_dif_map);
-
             if (!PotentialMonomers[0].empty()) // N-glycosylation information vector
                 {
                 for (int c = 0; c < PotentialMonomers[0].size(); ++c)
@@ -1180,26 +1175,25 @@ int main(int argc, char** argv)
                             if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
                             {
                                 clipper::Coord_orth CD1Coordinate; // A glycan is attached to ASN residue via ND2 atom
-                                clipper::Coord_orth CBCoordinate;
+                                clipper::Coord_orth CZ3Coordinate;
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[1][c].PolymerID][r].size(); natom++)
                                     {
                                         if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CD1")
                                         CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
 
-                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CB ")
-                                        CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
+                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CZ3")
+                                        CZ3Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
                                     }
 
                                     // Create a vector between ND2 and CB
-                                clipper::Vec3<clipper::ftype> baseVector((CD1Coordinate.x()-CBCoordinate.x()),(CD1Coordinate.y()-CBCoordinate.y()), (CD1Coordinate.z()-CBCoordinate.z()));
+                                clipper::Vec3<clipper::ftype> baseVector((CD1Coordinate.x()-CZ3Coordinate.x()),(CD1Coordinate.y()-CZ3Coordinate.y()), (CD1Coordinate.z()-CZ3Coordinate.z()));
                                     // Create a 1A unit vector out of baseVector, to be used later in vector shifting
                                 clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
 
-                                    // Stopped working here, need to adjust the values better, replace the atoms between which I am drawing a vector
-                                clipper::Coord_orth target( (CD1Coordinate.x()+(unitVector[0]*0.5)), (CD1Coordinate.y()+(unitVector[1]*3)), (CD1Coordinate.z()+(unitVector[2])) );
+                                    // Create a target coordinate by applying 7A shift via unitVector, specific to Trp only.
+                                clipper::Coord_orth target( (CZ3Coordinate.x()+(unitVector[0]*7)), (CZ3Coordinate.y()+(unitVector[1]*7)), (CZ3Coordinate.z()+(unitVector[2]*7)) );
 
-                                std::cout << std::endl << "Coordinate value is " << target.format() << std::endl;
 
                                 double meanDensityExp = 0.0;
                                 int n_points = 0;
@@ -1245,18 +1239,30 @@ int main(int argc, char** argv)
                             if (mmol[PotentialMonomers[2][c].PolymerID][r].type() == "SER" || mmol[PotentialMonomers[2][c].PolymerID][r].type() == "THR") // in O-Glycosylation a glycan is attached through Thr or Ser residue
                             {
                                 clipper::Coord_orth OGCoordinate; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
+                                clipper::Coord_orth CACoordinate; // CA coordinate used in both Ser and Thr to establish a proper direction for the vector.
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[2][c].PolymerID][r].size(); natom++)
                                     {
-                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG" || mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG1")
+                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG " || mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG1")
                                         OGCoordinate = mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth();
+
+                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " CA ")
+                                        CACoordinate = mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth();
                                     }
+
+                                    // Create a vector between OG/OG1 and CA for either Ser or Thr
+                                clipper::Vec3<clipper::ftype> baseVector((OGCoordinate.x()-CACoordinate.x()),(OGCoordinate.y()-CACoordinate.y()), (OGCoordinate.z()-CACoordinate.z()));
+                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
+                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+
+                                    // Create a target coordinate by applying 5A shift via unitVector
+                                clipper::Coord_orth target( (CACoordinate.x()+(unitVector[0]*5)), (CACoordinate.y()+(unitVector[1]*5)), (CACoordinate.z()+(unitVector[2]*5)) );
 
                                 double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                clipper::Coord_orth origin(OGCoordinate.x()-2, OGCoordinate.y()-2, OGCoordinate.z()-2);
-                                clipper::Coord_orth destination(OGCoordinate.x()+2, OGCoordinate.y()+2, OGCoordinate.z()+2);
+                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
+                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
@@ -1299,19 +1305,31 @@ int main(int argc, char** argv)
                         {
                             if (mmol[PotentialMonomers[3][c].PolymerID][r].type() == "ALA" || mmol[PotentialMonomers[3][c].PolymerID][r].type() == "GLN")
                                 {
-                                clipper::Coord_orth CBorNE2Coordinate; // CB, NE2
+                                clipper::Coord_orth CBorNE2Coordinate; // CA to CB for Ala, CG to NE2 for GLN
+                                clipper::Coord_orth CAorCGCoordinate;
 
                                 for (int natom = 0; natom < mmol[PotentialMonomers[3][c].PolymerID][r].size(); natom++)
                                     {
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CB" || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " NE2")
+                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CB " || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " NE2")
                                         CBorNE2Coordinate = mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth();
+
+                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CA " || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CG ")
+                                        CAorCGCoordinate = mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth();
                                     }
+
+                                    // Create a vector between CA to CB for Ala and CG to NE2 for GLN
+                                clipper::Vec3<clipper::ftype> baseVector((CBorNE2Coordinate.x()-CAorCGCoordinate.x()),(CBorNE2Coordinate.y()-CAorCGCoordinate.y()), (CBorNE2Coordinate.z()-CAorCGCoordinate.z()));
+                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
+                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+                                    // Create a target coordinate by applying 5A shift via unitVector. Values may need adjusting as haven't found a proper pdb file to test with. Significant differences between Ala and Gln
+                                clipper::Coord_orth target( (CAorCGCoordinate.x()+(unitVector[0]*5)), (CAorCGCoordinate.y()+(unitVector[1]*5)), (CAorCGCoordinate.z()+(unitVector[2]*5)) );
+
 
                                 double meanDensityExp = 0.0;
                                 int n_points = 0;
 
-                                clipper::Coord_orth origin(CBorNE2Coordinate.x()-2, CBorNE2Coordinate.y()-2, CBorNE2Coordinate.z()-2);
-                                clipper::Coord_orth destination(CBorNE2Coordinate.x()+2, CBorNE2Coordinate.y()+2, CBorNE2Coordinate.z()+2);
+                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
+                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
 
                                 clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
