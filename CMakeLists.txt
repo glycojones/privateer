@@ -20,7 +20,7 @@ if(APPLE)
                         HINTS ${CMAKE_INSTALL_PREFIX}/bin
                         PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
 else()
-    find_program(PYTHON NAMES $ENV{PYTHON} python2.7 python.exe
+    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python2.7 python.exe
                         HINTS ${CMAKE_INSTALL_PREFIX}/bin
                         PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
 endif()
