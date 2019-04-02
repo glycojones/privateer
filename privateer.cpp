@@ -49,7 +49,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 
-clipper::String program_version = "MKIII";
+clipper::String program_version = "MKIV";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
@@ -61,11 +61,11 @@ using namespace std;
 int main(int argc, char** argv)
 {
 
-    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2019/04/14" );
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nCopyright 2013-2016 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
+    std::cout << "\nCopyright 2013-2019 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
     std::cout << "\n\nPlease reference these articles: "<< std::endl ;
     std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
     std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;

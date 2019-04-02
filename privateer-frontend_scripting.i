@@ -13,20 +13,12 @@
 
 %}
 
-std::string carbname_of ( std::string name );
-
-namespace clipper
-{
-    namespace data
-    {
-        bool found_in_database ( std::string name );
-    }
-}
-
 namespace privateer
 {
     namespace scripting
     {
+        std::string carbname_of ( std::string name );
+        bool found_in_database ( std::string name );
         std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
         std::string get_annotated_glycans_hierarchical ( std::string pdb_filename,  bool original_colour_scheme = false, std::string expression_system = "undefined" );
         void privateer::scripting::svg_graphics_demo ( bool original_colour_scheme, bool inverted_background );
