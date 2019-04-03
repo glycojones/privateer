@@ -653,6 +653,8 @@ namespace privateer
         std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
+        inline void write_refmac_keywords ( std::vector < std::string > code_list ) { return privateer::util::write_refmac_keywords(code_list); }
+        inline bool write_libraries ( std::vector < std::string > code_list, float esd ) { return privateer::util::write_libraries(code_list, esd); }
     }
 
     namespace util

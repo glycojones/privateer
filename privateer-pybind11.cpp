@@ -47,4 +47,15 @@ PYBIND11_MODULE(privateer, m)
         "original_colour_scheme"_a = true,
         "expression_system"_a = "undefined" );
 
+  m.def("write_refmac_keywords",
+        &privateer::scripting::write_refmac_keywords,
+        "Writes refmac5 keywords",
+        "code_list"_a );
+
+  m.def("write_libraries",
+        &privateer::scripting::write_libraries,
+        "Writes refmac5 libraries",
+        "code_list"_a,
+        "esd"_a );
+
 }
