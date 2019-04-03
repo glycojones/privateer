@@ -4,6 +4,7 @@ import shutil
 import sys
 import privateer
 import test_data
+from lxml import etree
 from datetime import datetime
 
 class Test(unittest.TestCase):
@@ -29,7 +30,7 @@ class Test(unittest.TestCase):
             'test_output')
         if not os.path.exists(self.test_output):
             os.makedirs ( self.test_output )
-        
+
 
     def tearDown(self):
         '''
@@ -37,81 +38,98 @@ class Test(unittest.TestCase):
         '''
         #shutil.rmtree(self.test_output)
 
-    def test_annotated_output (self, verbose=False):
-        
+
+    def test_nomenclature (self, verbose=True):
         '''
-        Test Privateer
+        Test Privateer's nomenclature translations
         '''
-        
+
+        print ("Testing nomenclature")
+
+        assert ( privateer.found_in_database ("GLC") == True )
+        assert ( privateer.found_in_database ("ALA") == False )
+
+        assert ( privateer.carbname_of ( "GLC" ) == "Glc" )
+        assert ( privateer.carbname_of ( "BGC" ) == "Glc" )
+        assert ( privateer.carbname_of ( "SIA" ) == "Neu5Ac" )
+        assert ( privateer.carbname_of ( "ALA" ) == "Unknown" )
+
+
+    def test_sequentially_annotated_output (self, verbose=False):
+
+        '''
+        Test sequentially annotated XML
+        '''
+
         pdb_input = os.path.join(self.test_data_path, "5fjj-high_mannose.pdb")
-        
         assert os.path.exists(pdb_input)
-        
-        
-        
-        
-        # TEST: SEQUENTIAL ANNOTATION
-        
-        print "Testing sequential annotation    (heaviest glycosylation in PDB)"
+
+        print ("Testing sequential annotation    (heaviest glycosylation in PDB)")
         tick = datetime.now()
         xml = privateer.get_annotated_glycans ( pdb_input, True, "fungal" )
         tock = datetime.now()
-        
+
         diff = tock - tick
-        print " -> executed in %f seconds" % diff.total_seconds()
-        
+        print ( " -> executed in %f seconds" % diff.total_seconds() )
+
         # this stuff will be used interactively, so let's clock it under 1 second
         assert ( diff.total_seconds() < 1.0 )
-        
-        from lxml import etree
+
         xml_tree = etree.fromstring ( xml )
 
         tick = datetime.now()
-        with open ( "test_output/annotated_glycans_sequential.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "annotated_glycans_sequential.xml" ) , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
         tock = datetime.now()
-        
+
         diff = tock - tick
-        print " -> results parsed in %f seconds" % diff.total_seconds()
-        
+        print (" -> results parsed in %f seconds" % diff.total_seconds() )
+
         # again, let's keep this within acceptable limits
         assert ( diff.total_seconds() < 0.05 )
-        
-        
+
+
         assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'NAG')]")) == 69 )
         assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'BMA')]")) == 22 )
         assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'MAN')]")) == 66 )
 
-        assert ( os.path.exists ("test_output/annotated_glycans_sequential.xml") )
-        
-        
-        
-        
+        assert ( os.path.exists ( os.path.join ( self.test_output, "annotated_glycans_sequential.xml")) )
+
+
+    def test_hierarchically_annotated_output (self, verbose=False):
+
+        '''
+        Test sequentially annotated XML
+        '''
+
+        pdb_input = os.path.join(self.test_data_path, "5fjj-high_mannose.pdb")
+        assert os.path.exists(pdb_input)
+
         # TEST: HEAVIEST HIGH MANNOSE GLYCOSYLATION IN THE PDB
-        
-        print "Testing hierarchical annotation  (heaviest glycosylation in PDB)"
-        
+
+        print ("Testing hierarchical annotation  (heaviest glycosylation in PDB)")
+
         tick = datetime.now()
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal" )
         tock = datetime.now()
-        
+
         diff = tock - tick
-        print " -> executed in %f seconds" % diff.total_seconds()
-        
+        print (" -> executed in %f seconds" % diff.total_seconds())
+
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-high_mannose_ao.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-high_mannose_ao.xml" ) , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-high_mannose_ao.xml") )
-        
+
+        assert ( os.path.exists (os.path.join ( self.test_output, "test-high_mannose_ao.xml" )) )
+
         assert ( len(xml_tree.xpath("//sugar[contains(@id, 'NAG')]")) == 69 )
         assert ( len(xml_tree.xpath("//sugar[contains(@id, 'BMA')]")) == 22 )
         assert ( len(xml_tree.xpath("//sugar[contains(@id, 'MAN')]")) == 66 )
 
 
-        print "Testing conformational code"
-        
+        print ("Testing conformational code")
+
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('anomer').text == 'beta' )
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('conformation').text == '4c1' )
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('hand').text == 'D' )
@@ -119,231 +137,215 @@ class Test(unittest.TestCase):
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Phi').text == '350.524' )
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Theta').text == '50.2343' )
 
-        print "Testing detection of stacked residues"
-        
+        print ("Testing detection of stacked residues")
+
         assert ( xml_tree.xpath("//sugar[@id = '/A/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/A/431(TRP)' )
         assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/B/431(TRP)' )
         assert ( xml_tree.xpath("//sugar[@id = '/C/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/C/431(TRP)' )
         assert ( xml_tree.xpath("//sugar[@id = '/D/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/D/431(TRP)' )
-        
-        
-        
-        
+
+
+    def test_high_mannose_glycans (self, verbose=False):
+
+        '''
+        Test high-mannose glycans
+        '''
+
         # TEST: CLEAREST (MAYBE) HIGH MANNOSE GLYCOSYLATION IN THE PDB
-        
-        print "Testing hierarchical annotation  (high-mannose glycans with double conformations)"
-        
+        print ("Testing hierarchical annotation  (high-mannose glycans with double conformations)")
+
         pdb_input = os.path.join(self.test_data_path, "5fji-high_mannose.pdb")
-        
+        assert os.path.exists(pdb_input)
+
         tick = datetime.now()
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal"  )
         tock = datetime.now()
-        
+
         diff = tock - tick
-        print " -> executed in %f seconds" % diff.total_seconds()
-        
+        print (" -> executed in %f seconds" % diff.total_seconds())
+
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-high_mannose_af.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-high_mannose_af.xml" ) , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-high_mannose_af.xml") )
+
+        assert ( os.path.exists (os.path.join(self.test_output, "test-high_mannose_af.xml")) )
 
 
+    def test_plant_glycans (self, verbose=False):
 
-        
+        '''
+        Test plant glycans
+        '''
+
         # TEST: PLANT GLYCANS
-        
-        print "Testing hierarchical annotation  (plant glycans)"
+        print ("Testing hierarchical annotation  (plant glycans)")
         pdb_input = os.path.join(self.test_data_path, "5aog-plant_glycans.pdb")
-        
         assert os.path.exists(pdb_input)
+
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "plant" )
+        xml_tree = etree.fromstring ( xml )
         # write the file before parsing it in case there are problems
-        
-        with open ( "test_output/test-plant_glycans.xml" , "w" ) as xml_file :
+
+        with open ( os.path.join ( self.test_output, "test-plant_glycans.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
 
-        assert ( os.path.exists ("test_output/test-plant_glycans.xml") )
-
+        assert ( os.path.exists ( os.path.join(self.test_output, "test-plant_glycans.xml")) )
 
         xml_tree = etree.fromstring ( xml )
 
 
-        
+    def test_mammalian_glycans (self, verbose=False):
+
+        '''
+        Test mammalian glycans
+        '''
 
         # TEST: MAMMALIAN GLYCANS
-
-        print "Testing hierarchical annotation  (mammalian glycans)"
+        print ("Testing hierarchical annotation  (mammalian glycans)")
         pdb_input = os.path.join(self.test_data_path, "5ajm-mammalian_glycans.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "mammalian" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-mammalian_glycans.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-mammalian_glycans.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-mammalian_glycans.xml") )
+
+        assert ( os.path.exists (os.path.join(self.test_output,"test-mammalian_glycans.xml")) )
 
 
-        
-        
+    def test_human_glycans_simple (self, verbose=False):
+
+        '''
+        Test human glycans (antibodies)
+        '''
+
         # TEST: HUMAN ANTIBODIES
-
-        print "Testing hierarchical annotation (human antibodies, wrong links)"
+        print ("Testing hierarchical annotation (human antibodies, wrong links)")
         pdb_input = os.path.join(self.test_data_path, "3sgk-nglycans_antibodies.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-human_antibodies.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-human_antibodies.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-human_antibodies.xml") )
+
+        assert ( os.path.exists (os.path.join(self.test_output,"test-human_antibodies.xml")) )
 
 
+    def test_human_glycans_sialylated (self, verbose=False):
 
+        '''
+        Test human glycans (sialylated antibodies)
+        '''
 
         # TEST: HUMAN ANTIBODIES (SIALYLATED ANTENNAE)
-
-        print "Testing hierarchical annotation (human antibodies with sialylated antennae)"
+        print ("Testing hierarchical annotation (human antibodies with sialylated antennae)")
         pdb_input = os.path.join(self.test_data_path, "4byh-antibodies_sialylated_fc.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-human_sialylated_antibodies.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-human_sialylated_antibodies.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
 
-        assert ( os.path.exists ("test_output/test-human_sialylated_antibodies.xml" ) )
+        assert ( os.path.exists (os.path.join(self.test_output, "test-human_sialylated_antibodies.xml" )) )
 
 
+    def test_cellulose_ligand (self, verbose=False):
 
-        
+        '''
+        Test cellulose ligand
+        '''
+
         # TEST: HIGH RESOLUTION CELLULASE DATA
-
-        print "Testing hierarchical annotation  (high resolution cellulase)"
+        print ("Testing hierarchical annotation  (high resolution cellulase)")
         pdb_input = os.path.join(self.test_data_path, "1kwf-ligand_cellulose_boat.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        #with open ( "annotated_glycans_hierarchical.xml" , "w" ) as xml_file :
+        #with open ( os.path.join ( self.test_output, "annotated_glycans_hierarchical.xml") , "wb" ) as xml_file :
         #    xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
+
         #assert ( len(xml_tree.xpath("//sugar[contains(@id, 'BGC')]")) == 8 )
 
         #glucose_boat = xml_tree.xpath("//sugar[@id='BGC' and ]")
 
 
 
+    def test_o_glycans (self, verbose=False):
+
+        '''
+        Test o-glycans
+        '''
 
         # TEST: O-GLYCOSYLATION (X-RAY)
 
-        print "Testing hierarchical annotation  (o-glycans)"
+        print ("Testing hierarchical annotation  (o-glycans)")
         pdb_input = os.path.join ( self.test_data_path, "4a5t-o_glycans.pdb" )
-        
+
         assert os.path.exists ( pdb_input )
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-o_glycans.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-o_glycans.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-o_glycans.xml") )
+
+        assert ( os.path.exists (os.path.join(self.test_output, "test-o_glycans.xml")) )
 
 
 
+    def test_nmr_glycans_simple (self, verbose=False):
+
+        '''
+        Test glycans as determined by nmr
+        '''
 
         # TEST: NMR (HIGH-MANNOSE)
-        
-        print "Testing support for NMR models (high mannose n-glycan)"
+        print ("Testing support for NMR models (high mannose n-glycan)")
         pdb_input = os.path.join(self.test_data_path, "1gya-nmr_n-glycan.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-nmr_high_mannose.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-nmr_high_mannose.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-nmr_high_mannose.xml") )
-        
+
+        assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_high_mannose.xml")) )
 
 
-        
+
+    def test_nmr_o_glycans (self, verbose=False):
+
+        '''
+        Test o-glycans as determined by nmr
+        '''
+
         # TEST: NMR (O-GLYCOSYLATION)
-        
-        print "Testing support for NMR models (o-glycosylation)"
+        print ("Testing support for NMR models (o-glycosylation)")
         pdb_input = os.path.join(self.test_data_path, "2lhx-nmr_o-glycans.pdb")
-        
+
         assert os.path.exists(pdb_input)
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "undefined" )
 
-        from lxml import etree
         xml_tree = etree.fromstring ( xml )
 
-        with open ( "test_output/test-nmr_o_glycans.xml" , "w" ) as xml_file :
+        with open ( os.path.join ( self.test_output, "test-nmr_o_glycans.xml") , "wb" ) as xml_file :
             xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-        
-        assert ( os.path.exists ("test_output/test-nmr_o_glycans.xml") )
 
-
-
-        # GRAPHICS AND LIBRARY CALLS
-
-        print "Testing SVG graphics output demo (Essentials colour scheme)"
-
-        privateer.svg_graphics_demo ( True, False )
-
-        assert os.path.exists ( "privateer-glycoplot_demo.svg" )
-        os.rename ( "privateer-glycoplot_demo.svg", "test_output/privateer-glycoplot_demo_original.svg" )
-
-        print "Testing SVG graphics output demo (Privateer colour scheme)"
-
-        privateer.svg_graphics_demo ( False, False )
-
-        assert os.path.exists ( "privateer-glycoplot_demo.svg" )
-        os.rename ( "privateer-glycoplot_demo.svg", "test_output/privateer-glycoplot_demo_new.svg" )
-
-        print "Testing SVG graphics output demo (Essentials colour scheme, dark background)"
-
-        privateer.svg_graphics_demo ( True, True )
-
-        assert os.path.exists ( "privateer-glycoplot_demo.svg" )
-        os.rename ( "privateer-glycoplot_demo.svg", "test_output/privateer-glycoplot_demo_original_dark.svg" )
-
-        print "Testing SVG graphics output demo (Privateer colour scheme, dark background)"
-
-        privateer.svg_graphics_demo ( False, True )
-
-        assert os.path.exists ( "privateer-glycoplot_demo.svg" )
-        os.rename ( "privateer-glycoplot_demo.svg", "test_output/privateer-glycoplot_demo_new_dark.svg" )
-
-
-        print "Testing nomenclature"
-
-        assert ( privateer.carbname_of ( "GLC" ) == "Glc" )
-        assert ( privateer.carbname_of ( "BGC" ) == "Glc" )
-        assert ( privateer.carbname_of ( "SIA" ) == "Neu5Ac" )
-        assert ( privateer.carbname_of ( "ALA" ) == "Unknown" )
-
+        assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_o_glycans.xml")) )
 
 
 if __name__ == '__main__':

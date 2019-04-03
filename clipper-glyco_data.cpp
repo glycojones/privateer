@@ -472,6 +472,60 @@ const sugar_database_entry sugar_database[] =
         return false;
     } //!< returns true if found
 
+    std::string carbname_of( std::string name )
+    {
+        clipper::String new_name;
+
+        // codes for hexoses
+
+        if      ( name == "GLC" ) new_name = "Glc"   ; // alpha
+        else if ( name == "BGC" ) new_name = "Glc"   ;
+        else if ( name == "MAN" ) new_name = "Man"   ; // alpha
+        else if ( name == "BMA" ) new_name = "Man"   ;
+        else if ( name == "GAL" ) new_name = "Gal"   ;
+        else if ( name == "GLA" ) new_name = "Gal"   ;
+        else if ( name == "FUC" ) new_name = "Fuc"   ;
+        else if ( name == "FCB" ) new_name = "Fuc"   ;
+        else if ( name == "FUL" ) new_name = "Fuc"   ;
+        else if ( name == "XYP" ) new_name = "Xyl"   ;
+        else if ( name == "XYS" ) new_name = "Xyl"   ;
+
+        // codes for hexosamines
+        // couldn't find codes for: ManN (either), GalN (either)
+
+        else if ( name == "GCS" ) new_name = "GlcN"  ;
+        else if ( name == "PA1" ) new_name = "GlcN"  ;
+
+        // codes for N-acetyl hexosamines
+        // couldn't find codes for: ManNAc (beta)
+
+        else if ( name == "NAG" ) new_name = "GlcNAc";
+        else if ( name == "NDG" ) new_name = "GlcNAc"; // alpha
+        else if ( name == "NGA" ) new_name = "GalNAc";
+        else if ( name == "A2G" ) new_name = "GalNAc"; // alpha
+        else if ( name == "BM3" ) new_name = "ManNAc"; // alpha
+
+        // codes for acidic sugars
+        // couldn't find codes for: Neu5Gc (either)
+
+        else if ( name == "SIA" ) new_name = "Neu5Ac" ; // alpha
+        else if ( name == "SLB" ) new_name = "Neu5Ac" ; // beta
+        else if ( name == "IDR" ) new_name = "IdoA"   ; // alpha
+        else if ( name == "KDM" ) new_name = "KDN"    ; // alpha
+        else if ( name == "KDN" ) new_name = "KDN"    ; // beta
+        else if ( name == "BDP" ) new_name = "GlcA"   ; // beta
+        else if ( name == "GCU" ) new_name = "GlcA"   ; // alpha
+        else if ( name == "MAV" ) new_name = "ManA"   ; // alpha
+        else if ( name == "BEM" ) new_name = "ManA"   ; // beta
+        else if ( name == "GTR" ) new_name = "GalA"   ; // beta
+        else if ( name == "ADA" ) new_name = "GalA"   ; // alpha
+
+        else if ( name == "DAN" ) new_name = "NeuAc" ;
+        else new_name = "Unknown";
+
+        return new_name;
+    }
+
 
 } // namespace data
 

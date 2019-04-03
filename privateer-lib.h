@@ -647,7 +647,7 @@ namespace privateer
 
     namespace scripting
     {
-        inline std::string carbname_of ( std::string name ) { return carbname_of ( name ); }
+        inline std::string carbname_of ( std::string name ) { return clipper::data::carbname_of ( name ); }
         inline bool found_in_database ( std::string name ) { return clipper::data::found_in_database ( name ); }
         std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
         std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );

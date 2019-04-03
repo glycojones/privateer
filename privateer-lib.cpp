@@ -1295,7 +1295,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
     const clipper::MSugar& sugar = node.get_sugar();
 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
-    std::string sugname = carbname_of ( sugar.type() );
+    std::string sugname = clipper::data::carbname_of ( sugar.type() );
 
     if ( sugname == "Glc" )
     {
@@ -1520,7 +1520,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
 
             // first deal with a couple of special cases: Fucose and Xylose
 
-            if ( carbname_of(linked_node.get_sugar().type()) == "Fuc" )
+            if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
             {
                 up_down++;
 
@@ -1553,7 +1553,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
                     recursive_paint ( mg, linked_node, x, y + 110 );
                 }
             }
-            else if ( carbname_of(linked_node.get_sugar().type()) == "Xyl" )
+            else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
             {
                 up_down++;
 
