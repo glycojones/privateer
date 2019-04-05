@@ -61,15 +61,24 @@ PYBIND11_MODULE(privateer, m)
         "esd"_a );
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
-            .value("blue", privateer::glycoplot::blue)
-            .value("red" , privateer::glycoplot::red )
+            .value("blue",    privateer::glycoplot::blue)
+            .value("red" ,    privateer::glycoplot::red )
+            .value("yellow" , privateer::glycoplot::yellow )
+            .value("orange" , privateer::glycoplot::orange )
+            .value("green" ,  privateer::glycoplot::green )
+            .value("purple" , privateer::glycoplot::purple )
+            .value("cyan" ,   privateer::glycoplot::cyan )
+            .value("tan" ,    privateer::glycoplot::tan )
+            .value("black" ,  privateer::glycoplot::black )
+            .value("white" ,  privateer::glycoplot::white )
             .export_values();
 
   m.def("get_colour",
         &privateer::glycoplot::get_colour,
         "Returns RGB colour values in two keys (SNFG or Privateer)",
         "colour"_a,
-        "original_style"_a );
+        "original_style"_a,
+        "inverted"_a );
 
 //blue, red, yellow, orange, green, purple, cyan, tan, black, white
 
