@@ -14,6 +14,7 @@
 #include "privateer-lib.h"
 using namespace pybind11::literals;
 
+
 // pybind11 module definition
 //
 PYBIND11_MODULE(privateer, m)
@@ -58,5 +59,18 @@ PYBIND11_MODULE(privateer, m)
         "Writes refmac5 libraries",
         "code_list"_a,
         "esd"_a );
+
+  pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
+            .value("blue", privateer::glycoplot::blue)
+            .value("red" , privateer::glycoplot::red )
+            .export_values();
+
+  m.def("get_colour",
+        &privateer::glycoplot::get_colour,
+        "Returns RGB colour values in two keys (SNFG or Privateer)",
+        "colour"_a,
+        "original_style"_a );
+
+//blue, red, yellow, orange, green, purple, cyan, tan, black, white
 
 }
