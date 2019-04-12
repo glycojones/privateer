@@ -33,3 +33,11 @@ Some examples where Privateer has been useful (thank _you_ for the citations!):
 - Raj, Isha, et al. "Structural basis of egg coat-sperm recognition at fertilization." Cell 169.7 (2017): 1315-1326.
 - Snijder, Joost, et al. "An Antibody Targeting the Fusion Machinery Neutralizes Dual-Tropic Infection and Defines a Site of Vulnerability on Epstein-Barr Virus." Immunity 48.4 (2018): 799-811.
 - Wu, Liang, et al. "Structural characterization of human heparanase reveals insights into substrate recognition." Nature Structural and Molecular Biology 22.12 (2015): 1016.
+
+#### Funding 
+* 2013-2015 BBSRC grant awarded to Keith Wilson (York)
+* 2015-2017 BBSRC grant awarded to CCP4/Kevin Cowtan (York)
+* 2017-     Royal Society University Research Fellowship awarded to Jon Agirre (York)
+* 2018-2021 EPSRC DTP studentship allocated to Jon Agirre & awarded to Mihaela Atanasova (York)
+* 2019-2023 Royal Society Research Grant awarded to Jon Agirre (York)
+
