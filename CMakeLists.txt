@@ -97,22 +97,22 @@ target_link_libraries ( privateer_exec privateer_lib ${CCP4_LIBRARIES} )
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
-set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer )
+set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
 
 target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
 
-set ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
+set ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
 
-message(STATUS "Python module path: ${PYTHON_MODULE_PATH}")
+message(STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 
+file (COPY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
 
 install(FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
         DESTINATION include/privateer)
 install(TARGETS privateer_lib
         LIBRARY DESTINATION "${LIB_INSTALL_DIR}")
 install ( TARGETS privateer_exec DESTINATION bin)
-install ( TARGETS privateer_module DESTINATION ${PYTHON_MODULE_PATH} )
-
+install ( TARGETS privateer_module DESTINATION ${PYTHON_MODULE_PATH}/privateer )
 
 if (UNIX)
   install(CODE "
