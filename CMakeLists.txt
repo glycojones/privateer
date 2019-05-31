@@ -17,13 +17,11 @@ find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper
 #
 
 if(APPLE)
-    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python
-                        HINTS ${CMAKE_INSTALL_PREFIX}/bin
-                        PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
+    find_program(PYTHON NAMES $ENV{PYTHON} python3.6
+                        HINTS ${CMAKE_INSTALL_PREFIX}/bin)
 else()
-    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python python.exe
-                        HINTS ${CMAKE_INSTALL_PREFIX}/bin
-                        PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
+    find_program(PYTHON NAMES $ENV{PYTHON} python3.6
+                        HINTS ${CMAKE_INSTALL_PREFIX}/bin)
 endif()
 
 
@@ -38,7 +36,7 @@ else()
 endif()
 
 message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
-find_library(PYTHON_LIBRARY NAMES python
+find_library(PYTHON_LIBRARY NAMES python3.6m
              HINTS ${_PY_PREFIX}/lib ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/libs
              NO_DEFAULT_PATH)
 
@@ -50,7 +48,7 @@ message(STATUS "Python library: ${PYTHON_LIBRARY}")
 
 find_path(PYTHON_INCLUDE_DIR NAMES Python.h
           HINTS ${_PY_PREFIX}/include
-                ${_PY_PREFIX}/include/python
+                ${_PY_PREFIX}/include/python3.6m
           NO_DEFAULT_PATH)
 
 message(STATUS "Python.h is in: ${PYTHON_INCLUDE_DIR}")
@@ -81,7 +79,7 @@ MESSAGE( "--   pybind11_LIBRARIES    = ${pybind11_LIBRARIES}" )
 include_directories(${CCP4_INCLUDE_DIRS}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${pybind11_INCLUDE_DIRS}
-                    "${PYTHON_INCLUDE_DIR}")
+                    ${PYTHON_INCLUDE_DIR})
 
 add_library(privateer_lib
             clipper-glyco.cpp
