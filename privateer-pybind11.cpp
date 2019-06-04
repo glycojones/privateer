@@ -17,7 +17,7 @@ using namespace pybind11::literals;
 
 // pybind11 module definition
 //
-PYBIND11_MODULE(privateer, m)
+PYBIND11_MODULE(privateer_core, m)
 {
   m.doc() = "Privateer's Python interface.\nVersion history:\n- 2016-2018 MKIII (SWIG)\n2019-present MKIV (pybind11)"; // docstring
 
@@ -79,7 +79,5 @@ PYBIND11_MODULE(privateer, m)
         "colour"_a,
         "original_style"_a,
         "inverted"_a );
-
-//blue, red, yellow, orange, green, purple, cyan, tan, black, white
 
 }
