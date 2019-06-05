@@ -14,14 +14,28 @@ endif()
 find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
                            clipper-contrib clipper-ccp4 clipper-cif )
 
-## Required Python libraries
+## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
-if(APPLE)
-    find_program(PYTHON NAMES $ENV{PYTHON} python3.6
-                        HINTS ${CMAKE_INSTALL_PREFIX}/bin)
+if (DEVKIT)
+    if(APPLE)
+        find_program(PYTHON NAMES $ENV{PYTHON} python3.7
+                            HINTS ${CMAKE_INSTALL_PREFIX}/bin)
+    else()
+        find_program(PYTHON NAMES $ENV{PYTHON} python3.6m python3.6 python3
+                            HINTS ${CMAKE_INSTALL_PREFIX}/bin
+                            HINTS /usr/local/bin
+                            HINTS /usr/bin )
+    endif()
 else()
-    find_program(PYTHON NAMES $ENV{PYTHON} python3.6
-                        HINTS ${CMAKE_INSTALL_PREFIX}/bin)
+    # Link against CCP4-distributed Python
+    if(APPLE)
+        find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python
+                            HINTS ${CMAKE_INSTALL_PREFIX}/bin )
+    else()
+        find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python.exe
+                            HINTS ${CMAKE_INSTALL_PREFIX}/bin
+                            PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
+    endif()
 endif()
 
 ## Configure Python
@@ -36,25 +50,45 @@ else()
     message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
 endif()
 # Get Python libraries
-find_library(PYTHON_LIBRARY NAMES python3.6m
+find_library(PYTHON_LIBRARY NAMES python3.7 python3.6m python
              HINTS ${_PY_PREFIX}/lib ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/libs
              NO_DEFAULT_PATH)
 if (NOT PYTHON_LIBRARY)
     message(FATAL_ERROR "Python library not found.")
 else ()
     message(STATUS "Python library: ${PYTHON_LIBRARY}")
+    set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
 endif()
 # Get Python includes
-find_path(PYTHON_INCLUDE_DIR NAMES Python.h
-          HINTS ${_PY_PREFIX}/include
-                ${_PY_PREFIX}/include/python3.6m
-          NO_DEFAULT_PATH)
+if(DEVKIT)
+  if (APPLE)
+    find_path(PYTHON_INCLUDE_DIR NAMES Python.h
+              HINTS /usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/include/python3.7m
+              NO_DEFAULT_PATH )
+  else()
+    find_path(PYTHON_INCLUDE_DIR NAMES Python.h
+              HINTS ${_PY_PREFIX}/include
+                    ${_PY_PREFIX}/include/python3.7
+                    ${_PY_PREFIX}/include/python3.6m
+              NO_DEFAULT_PATH)
+  endif()
+else()
+  find_path(PYTHON_INCLUDE_DIR NAMES Python.h
+            HINTS ${_PY_PREFIX}/include
+                  ${_PY_PREFIX}/include/python2.7
+            NO_DEFAULT_PATH)
+endif()
+
 if (NOT PYTHON_INCLUDE_DIR)
     message(FATAL_ERROR "Python header not found.")
 else ()
     message(STATUS "Python.h is in: ${PYTHON_INCLUDE_DIR}")
-    set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
 endif()
+
+## Run pytest through 'make test'
+#
+enable_testing()
+add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
 
 ## Get Pybind11 through cmake
 #
@@ -101,6 +135,6 @@ file    ( COPY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
 install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
           DESTINATION include/privateer)
 install ( TARGETS privateer_lib
-          LIBRARY DESTINATION "${LIB_INSTALL_DIR}")
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 install ( TARGETS privateer_exec DESTINATION bin)
 install ( TARGETS privateer_module DESTINATION ${PYTHON_MODULE_PATH}/privateer )

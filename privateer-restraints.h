@@ -32,7 +32,6 @@ namespace privateer {
   };
 
   namespace restraints {
-    boolean 
     void create_library ();
     void add_to_library ();
     void sign_library_header();
