@@ -11,9 +11,8 @@
 
 #include "privateer-restraints.h"
 
-using namespace privateer;
 
-bool test_monlib_access () {
+bool privateer::restraints::test_monlib_access () {
 
   // try complete path first
   std::string mlib_path(std::getenv ( "CLIBD_MON" ));
@@ -30,29 +29,29 @@ bool test_monlib_access () {
     return true;
 }
 
-void create_library () {
+void privateer::restraints::create_library () {
 
 }
 
-void add_to_library () {
+void privateer::restraints::add_to_library () {
 
 }
 
-void sign_library_header() {
+void privateer::restraints::sign_library_header() {
 
 }
 
-void read_dictionary() {
+void privateer::restraints::read_dictionary() {
 
 }
 
-void write_dictionary() {
+void privateer::restraints::write_dictionary() {
 
 }
 
-void read_library ( gemmi::cif::Document &doc,
-                    std::vector<gemmi::ChemComp>& list_of_chemicals,
-                    std::string filename ) {
+void privateer::restraints::read_library ( gemmi::cif::Document &doc,
+                                           std::vector<gemmi::ChemComp>& list_of_chemicals,
+                                           std::string filename ) {
 
   doc = gemmi::cif::read_file( filename );
   for (gemmi::cif::Block& block : doc.blocks)
@@ -62,7 +61,7 @@ void read_library ( gemmi::cif::Document &doc,
     }
 }
 
-void write_library( gemmi::cif::Document &doc,
+void privateer::restraints::write_library( gemmi::cif::Document &doc,
                     std::string filename ) {
 
   std::ofstream of(filename);
@@ -72,15 +71,16 @@ void write_library( gemmi::cif::Document &doc,
   of.close();
 }
 
-void add_torsion_set (float phi) {
+void privateer::restraints::add_torsion_set (float phi) {
 
 }
 
-void add_torsion_set (float phi, float theta) {
+void privateer::restraints::add_torsion_set (float phi, float theta) {
 
 }
 
-void add_torsion_set ( gemmi::ChemComp &chem_comp, privateer::Conformation id) {
+void privateer::restraints::add_torsion_set ( gemmi::ChemComp &chem_comp,
+                                              privateer::Conformation id) {
 // TODO: everything
   for (gemmi::Restraints::Torsion& tor : chem_comp.rt.torsions) {
     std::printf("[%s] torsion %3s - %3s - %3s - %3s  %f +/- %f\n",
@@ -93,27 +93,27 @@ void add_torsion_set ( gemmi::ChemComp &chem_comp, privateer::Conformation id) {
   }
 }
 
-void restrain_conformation (privateer::Conformation) {
+void privateer::restraints::restrain_conformation (privateer::Conformation) {
 
 }
 
-Conformation get_conformation ( clipper::MMonomer sugar ) {
+privateer::Conformation privateer::restraints::get_conformation ( clipper::MMonomer sugar ) {
 
   return privateer::pyranose_4C1;
 }
 
-void replace_conformer () {
+void privateer::restraints::replace_conformer () {
 
 }
 
-void read_conformer( clipper::MMonomer &sugar ) {
+void privateer::restraints::read_conformer( clipper::MMonomer &sugar ) {
 
 }
 
-void calculate_conformer () {
+void privateer::restraints::calculate_conformer () {
 
 }
 
-void refine_conformer () {
+void privateer::restraints::refine_conformer () {
 
 }

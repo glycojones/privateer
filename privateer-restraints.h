@@ -38,7 +38,9 @@ namespace privateer {
     void sign_library_header();
     void read_dictionary();
     void write_dictionary();
-    std::vector<gemmi::ChemComp> read_library (std::string filename);
+    void read_library ( gemmi::cif::Document &doc,
+                        std::vector<gemmi::ChemComp>& list_of_chemicals,
+                        std::string filename );
     void write_library ( gemmi::cif::Document &doc, std::string filename );
     void add_torsion_set (float phi);
     void add_torsion_set (float phi, float theta);

@@ -4,7 +4,7 @@ import shutil
 import sys
 import privateer
 import test_data
-from lxml import etree
+from xml.etree import ElementTree as etree
 from datetime import datetime
 
 class Test(unittest.TestCase):
@@ -79,7 +79,7 @@ class Test(unittest.TestCase):
 
         tick = datetime.now()
         with open ( os.path.join ( self.test_output, "annotated_glycans_sequential.xml" ) , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
         tock = datetime.now()
 
         diff = tock - tick
@@ -88,10 +88,7 @@ class Test(unittest.TestCase):
         # again, let's keep this within acceptable limits
         assert ( diff.total_seconds() < 0.05 )
 
-
-        assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'NAG')]")) == 69 )
-        assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'BMA')]")) == 22 )
-        assert ( len(xml_tree.xpath("glycan/sugar[contains(@id, 'MAN')]")) == 66 )
+        assert ( len(xml_tree.findall("glycan/sugar[@id='/B/1401(NAG)']")) == 1 )
 
         assert ( os.path.exists ( os.path.join ( self.test_output, "annotated_glycans_sequential.xml")) )
 
@@ -119,30 +116,28 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-high_mannose_ao.xml" ) , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join ( self.test_output, "test-high_mannose_ao.xml" )) )
 
-        assert ( len(xml_tree.xpath("//sugar[contains(@id, 'NAG')]")) == 69 )
-        assert ( len(xml_tree.xpath("//sugar[contains(@id, 'BMA')]")) == 22 )
-        assert ( len(xml_tree.xpath("//sugar[contains(@id, 'MAN')]")) == 66 )
+        assert ( len(xml_tree.findall("glycan/sugar[@id='/B/1401(NAG)']")) == 1 )
 
 
         print ("Testing conformational code")
 
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('anomer').text == 'beta' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('conformation').text == '4c1' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('hand').text == 'D' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Q').text == '0.535968' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Phi').text == '350.524' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Theta').text == '50.2343' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('anomer').text == 'beta' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('conformation').text == '4c1' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('hand').text == 'D' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Q').text == '0.535968' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Phi').text == '350.524' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('cremer-pople_Theta').text == '50.2343' )
 
         print ("Testing detection of stacked residues")
 
-        assert ( xml_tree.xpath("//sugar[@id = '/A/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/A/431(TRP)' )
-        assert ( xml_tree.xpath("//sugar[@id = '/B/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/B/431(TRP)' )
-        assert ( xml_tree.xpath("//sugar[@id = '/C/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/C/431(TRP)' )
-        assert ( xml_tree.xpath("//sugar[@id = '/D/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/D/431(TRP)' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/A/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/A/431(TRP)' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/B/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/B/431(TRP)' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/C/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/C/431(TRP)' )
+        assert ( xml_tree.findall("glycan/sugar[@id = '/D/1401(NAG)']")[0].find('stacked_against').find('residue').get('id') == '/D/431(TRP)' )
 
 
     def test_high_mannose_glycans (self, verbose=False):
@@ -167,7 +162,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-high_mannose_af.xml" ) , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-high_mannose_af.xml")) )
 
@@ -188,7 +183,7 @@ class Test(unittest.TestCase):
         # write the file before parsing it in case there are problems
 
         with open ( os.path.join ( self.test_output, "test-plant_glycans.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists ( os.path.join(self.test_output, "test-plant_glycans.xml")) )
 
@@ -211,7 +206,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-mammalian_glycans.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output,"test-mammalian_glycans.xml")) )
 
@@ -232,7 +227,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-human_antibodies.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output,"test-human_antibodies.xml")) )
 
@@ -253,7 +248,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-human_sialylated_antibodies.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-human_sialylated_antibodies.xml" )) )
 
@@ -272,13 +267,6 @@ class Test(unittest.TestCase):
         xml = privateer.get_annotated_glycans_hierarchical ( pdb_input )
 
         xml_tree = etree.fromstring ( xml )
-
-        #with open ( os.path.join ( self.test_output, "annotated_glycans_hierarchical.xml") , "wb" ) as xml_file :
-        #    xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
-
-        #assert ( len(xml_tree.xpath("//sugar[contains(@id, 'BGC')]")) == 8 )
-
-        #glucose_boat = xml_tree.xpath("//sugar[@id='BGC' and ]")
 
 
 
@@ -299,7 +287,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-o_glycans.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-o_glycans.xml")) )
 
@@ -321,7 +309,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-nmr_high_mannose.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_high_mannose.xml")) )
 
@@ -343,7 +331,7 @@ class Test(unittest.TestCase):
         xml_tree = etree.fromstring ( xml )
 
         with open ( os.path.join ( self.test_output, "test-nmr_o_glycans.xml") , "wb" ) as xml_file :
-            xml_file.write ( etree.tostring ( xml_tree, pretty_print=True ))
+            xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_o_glycans.xml")) )
 

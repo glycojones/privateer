@@ -1,5 +1,3 @@
-from privateer.analysis import print_glycosidic_torsions
-from privateer.restraints import minimise_from_smiles
 from privateer_core import carbname_of
 from privateer_core import found_in_database
 from privateer_core import get_annotated_glycans
