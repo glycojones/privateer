@@ -9,6 +9,10 @@ if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
 endif()
 
+if (DEVKIT)
+  message(STATUS "Building with local devkit options")
+endif()
+
 ## Required CCP4 CCP4_LIBRARIES
 #
 find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
@@ -125,6 +129,7 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 #
 pybind11_add_module(privateer_module privateer-pybind11.cpp)
 set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
+target_compile_options( privateer_module PRIVATE "-Wno-shadow")
 target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
 
 ## And finally, install everything in their reet places

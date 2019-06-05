@@ -9,10 +9,10 @@
 // mailto: jon.agirre@york.ac.uk
 //
 
-#include "clipper-glyco.h"
-#include <gemmi/cif.hpp>
 #include <gemmi/chemcomp.hpp>
+#include <gemmi/cif.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include "clipper-glyco.h"
 
 namespace privateer {
 
@@ -32,6 +32,7 @@ namespace privateer {
   };
 
   namespace restraints {
+    bool test_monlib_access ();
     void create_library ();
     void add_to_library ();
     void sign_library_header();

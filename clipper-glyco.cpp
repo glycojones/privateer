@@ -2245,7 +2245,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         if ( html_format ) buffer.insert ( 0, "<sub>" );
     }
     if ( html_format ) buffer.insert ( 0, "</span>" );
-    translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() ); 
+    translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() );
     if ( html_format )
     {
         buffer.insert ( 0, "\">" );

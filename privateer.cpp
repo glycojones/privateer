@@ -55,7 +55,6 @@ using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
 using clipper::data32::Flag;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
-using namespace std;
 
 
 int main(int argc, char** argv)
@@ -299,7 +298,7 @@ int main(int argc, char** argv)
         clipper::Atom_list mainAtoms;
         clipper::Atom_list ligandAtoms;
         clipper::Atom_list allAtoms;
-        std:vector< std::string > enable_torsions_for;
+        std::vector< std::string > enable_torsions_for;
 
         if (!batch)
         {

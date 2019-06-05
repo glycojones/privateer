@@ -12,8 +12,9 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include "privateer-lib.h"
-using namespace pybind11::literals;
+#include "privateer-restraints.h"
 
+using namespace pybind11::literals;
 
 // pybind11 module definition
 //
@@ -59,6 +60,10 @@ PYBIND11_MODULE(privateer_core, m)
         "Writes refmac5 libraries",
         "code_list"_a,
         "esd"_a );
+
+  m.def("test_monlib_access",
+        &privateer::restraints::test_monlib_access,
+        "Checks if the CCP4 monomer library is accessible via environment");
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
             .value("blue",    privateer::glycoplot::blue)

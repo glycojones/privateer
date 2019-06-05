@@ -13,6 +13,23 @@
 
 using namespace privateer;
 
+bool test_monlib_access () {
+
+  // try complete path first
+  std::string mlib_path(std::getenv ( "CLIBD_MON" ));
+
+  if (mlib_path.length() == 0) {
+    // try general CCP4 environment variable
+    std::string ccp4_path(std::getenv ( "CCP4" ));
+    if (ccp4_path.length() == 0)
+      return false;
+    else
+      return true;
+  }
+  else
+    return true;
+}
+
 void create_library () {
 
 }
