@@ -12,11 +12,11 @@
 #include "privateer-restraints.h"
 
 
-bool privateer::restraints::test_monlib_access () {
+bool privateer::restraints::check_monlib_access () {
 
   // try complete path first
   std::string mlib_path = std::getenv ( "CLIBD_MON" );
-  std::cout << "this is mlib path " << mlib_path << std::endl; 
+  std::cout << "this is mlib path " << mlib_path << std::endl;
   if (mlib_path.length() == 0) {
     // try general CCP4 environment variable
     std::string ccp4_path = std::getenv ( "CCP4" );

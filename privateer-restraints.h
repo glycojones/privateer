@@ -32,7 +32,7 @@ namespace privateer {
   };
 
   namespace restraints {
-    bool test_monlib_access ();
+    bool check_monlib_access ();
     void create_library ();
     void add_to_library ();
     void sign_library_header();

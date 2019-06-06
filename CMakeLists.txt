@@ -127,7 +127,7 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
 #
-pybind11_add_module(privateer_module privateer-pybind11.cpp)
+pybind11_add_module(privateer_module privateer-pybind11.cpp )
 set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
 target_compile_options( privateer_module PRIVATE "-Wno-shadow")
 target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )

@@ -61,8 +61,8 @@ PYBIND11_MODULE(privateer_core, m)
         "code_list"_a,
         "esd"_a );
 
-  m.def("test_monlib_access",
-        &privateer::restraints::test_monlib_access,
+  m.def("check_monlib_access",
+        &privateer::restraints::check_monlib_access,
         "Checks if the CCP4 monomer library is accessible via environment, returns boolean");
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
