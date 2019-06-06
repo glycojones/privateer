@@ -12,21 +12,25 @@
 #include "privateer-restraints.h"
 
 
-bool privateer::restraints::check_monlib_access () {
+bool privateer::restraints::check_monlib_access (std::string &pathname) {
 
   // try complete path first
-  std::string mlib_path = std::getenv ( "CLIBD_MON" );
-  std::cout << "this is mlib path " << mlib_path << std::endl;
-  if (mlib_path.length() == 0) {
+  char * tmp = std::getenv ( "CLIBD_MON" );
+  pathname = tmp == NULL ? std::string ("") : std::string(tmp);
+  if ( tmp == NULL ) {
     // try general CCP4 environment variable
-    std::string ccp4_path = std::getenv ( "CCP4" );
-    if (ccp4_path.length() == 0)
+    tmp = std::getenv ( "CCP4" );
+    pathname = tmp == NULL ? std::string ("") : std::string(tmp);
+    if ( tmp == NULL )
       return false;
-    else
+    else {
+      pathname.append("/lib/data/monomers");
       return true;
+    }
   }
-  else
+  else {
     return true;
+  }
 }
 
 void privateer::restraints::create_library () {

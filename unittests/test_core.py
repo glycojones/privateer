@@ -86,7 +86,7 @@ class Test(unittest.TestCase):
         print (" -> results parsed in %f seconds" % diff.total_seconds() )
 
         # again, let's keep this within acceptable limits
-        assert ( diff.total_seconds() < 0.05 )
+        assert ( diff.total_seconds() < 0.08 )
 
         assert ( len(xml_tree.findall("glycan/sugar[@id='/B/1401(NAG)']")) == 1 )
 
