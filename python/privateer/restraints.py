@@ -1,7 +1,7 @@
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import PDBWriter
-from privateer_core import test_monlib_access
+from privateer_core import check_monlib_access
 
 def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
 
