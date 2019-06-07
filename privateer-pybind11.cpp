@@ -63,14 +63,22 @@ PYBIND11_MODULE(privateer_core, m)
         "esd"_a );
 
   m.def("check_monlib_access",
-        &privateer::restraints::check_monlib_access,
+        &pr::check_monlib_access,
         "Checks if the CCP4 monomer library is accessible via environment, returns either path or empty string" );
 
-  pybind11::class_<privateer::restraints::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
+  pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
             .def(pybind11::init<std::string&>())
             .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
             .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
             .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib);
+
+  pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
+            .def(pybind11::init<>())
+            .def(pybind11::init<std::string&>())
+            .def("read_from_file",    &pr::CarbohydrateLibrary::read_from_file)
+            .def("write_to_file",     &pr::CarbohydrateLibrary::write_to_file)
+            .def("number_of_entries", &pr::CarbohydrateLibrary::number_of_entries)
+            .def("add_dictionary",    &pr::CarbohydrateLibrary::add_dictionary);
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
             .value("blue",    privateer::glycoplot::blue)

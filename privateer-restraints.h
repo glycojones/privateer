@@ -64,13 +64,19 @@ namespace privateer {
 
     class CarbohydrateLibrary {
     public:
-        CarbohydrateLibrary();
+        CarbohydrateLibrary() { };
         CarbohydrateLibrary( std::string filename ) {
-          this->read_library(filename);
+          this->read_from_file(filename);
         };
         ~CarbohydrateLibrary() { };
-        void read_library ( std::string filename );
-        void write_library ( std::string filename );
+        void read_from_file   ( std::string filename );
+        void write_to_file    ( std::string filename );
+        int number_of_entries ( ) {
+          return list_of_chemicals.size();
+        };
+        void add_dictionary ( privateer::restraints::CarbohydrateDictionary dict) {
+          list_of_chemicals.push_back(dict);
+        }
 
       private:
         std::vector<CarbohydrateDictionary> list_of_chemicals;

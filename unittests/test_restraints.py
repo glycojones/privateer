@@ -22,3 +22,8 @@ def test_svg_graphics ( ):
 
     dictionary.read_from_monlib("MAN")
     assert(dictionary.get_chemcomp_id() == "MAN")
+
+    library = privateer.restraints.CarbohydrateLibrary()
+    assert (library.number_of_entries() == 0)
+    library.add_dictionary (dictionary)
+    assert (library.number_of_entries() == 1)

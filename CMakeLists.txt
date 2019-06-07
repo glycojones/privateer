@@ -136,7 +136,7 @@ target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES}
 #
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
-file    ( COPY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
+install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
 install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
           DESTINATION include/privateer)
 install ( TARGETS privateer_lib

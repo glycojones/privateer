@@ -1,10 +1,12 @@
-from rdkit import Chem
-from rdkit.Chem import AllChem
-from rdkit.Chem import PDBWriter
 from privateer_core import check_monlib_access
 from privateer_core import CarbohydrateDictionary
+from privateer_core import CarbohydrateLibrary
 
 def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
+    # encapsulate imports here so they don't show up when importing the module
+    from rdkit import Chem
+    from rdkit.Chem import AllChem
+    from rdkit.Chem import PDBWriter
 
     mol = Chem.MolFromSmiles( smiles_string )
 

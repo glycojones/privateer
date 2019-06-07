@@ -79,7 +79,7 @@ void privateer::restraints::CarbohydrateDictionary::write_dictionary( std::strin
 // Class CarbohydrateLibrary
 
 
-void privateer::restraints::CarbohydrateLibrary::read_library ( std::string filename ) {
+void privateer::restraints::CarbohydrateLibrary::read_from_file ( std::string filename ) {
 
   this->path_to_cif_file = filename;
   this->cif_document = gemmi::cif::read_file( filename );
@@ -90,7 +90,7 @@ void privateer::restraints::CarbohydrateLibrary::read_library ( std::string file
     }
 }
 
-void privateer::restraints::CarbohydrateLibrary::write_library( std::string filename = "" ) {
+void privateer::restraints::CarbohydrateLibrary::write_to_file( std::string filename = "" ) {
 
   std::ofstream of;
   if (filename.empty()) {
