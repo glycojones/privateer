@@ -16,3 +16,9 @@ def test_svg_graphics ( ):
     path_to_monlib = privateer.restraints.check_monlib_access ( )
 
     assert ( len(path_to_monlib) > 5 )
+
+    dictionary = privateer.restraints.CarbohydrateDictionary(path_to_monlib + "/n/NAG.cif")
+    assert(dictionary.get_chemcomp_id() == "NAG")
+
+    dictionary.read_from_monlib("MAN")
+    assert(dictionary.get_chemcomp_id() == "MAN")

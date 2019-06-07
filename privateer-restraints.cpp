@@ -36,28 +36,48 @@ std::string privateer::restraints::check_monlib_access ( ) {
   }
 }
 
-void privateer::restraints::create_library () {
+// Class CarbohydrateDictionary
+
+
+void privateer::restraints::CarbohydrateDictionary::read_from_file( std::string filename ) {
+
+  this->path_to_cif_file = filename;
+  this->cif_document = gemmi::cif::read_file( filename );
+  for (gemmi::cif::Block& block : cif_document.blocks)
+    if (!block.name.empty() && block.name != "comp_list") {
+      this->chemical_component = gemmi::make_chemcomp_from_block(block);
+    }
+}
+
+void privateer::restraints::CarbohydrateDictionary::read_from_monlib ( std::string ccd_id ) {
+
+  this->from_monlib = true;
+  std::string path_to_lib = privateer::restraints::check_monlib_access();
+  std::stringstream str;
+
+  if (!path_to_lib.empty()) {
+    str << path_to_lib << ccd_id[0] << "/" << ccd_id << ".cif";
+    this->cif_document = gemmi::cif::read_file( str.str() );
+    for (gemmi::cif::Block& block : cif_document.blocks)
+      if (!block.name.empty() && block.name != "comp_list") {
+        this->chemical_component = gemmi::make_chemcomp_from_block(block);
+      }
+  }
+}
+
+void privateer::restraints::CarbohydrateDictionary::write_dictionary( std::string filename ) {
 
 }
 
-void privateer::restraints::add_to_library () {
 
-}
+// End CarbohydrateDictionary class
 
-void privateer::restraints::sign_library_header() {
+// Class CarbohydrateLibrary
 
-}
-
-void privateer::restraints::read_dictionary() {
-
-}
-
-void privateer::restraints::write_dictionary() {
-
-}
 
 void privateer::restraints::CarbohydrateLibrary::read_library ( std::string filename ) {
 
+  this->path_to_cif_file = filename;
   this->cif_document = gemmi::cif::read_file( filename );
   for (gemmi::cif::Block& block : cif_document.blocks)
     if (!block.name.empty() && block.name != "comp_list") {
@@ -66,15 +86,41 @@ void privateer::restraints::CarbohydrateLibrary::read_library ( std::string file
     }
 }
 
-void privateer::restraints::write_library( gemmi::cif::Document &doc,
-                    std::string filename ) {
+void privateer::restraints::CarbohydrateLibrary::write_library( std::string filename = "" ) {
 
-  std::ofstream of(filename);
+  std::ofstream of;
+  if (filename.empty()) {
+    of.open(this->path_to_cif_file); // write to input cif file
+  }
+  else {
+    of.open(filename);
+  }
+
   of << "# " << filename << '\n';
   of << "# modified by Privateer\n";
-  gemmi::cif::write_cif_to_stream(of, doc);
+  gemmi::cif::write_cif_to_stream(of, cif_document);
   of.close();
 }
+
+void privateer::restraints::CarbohydrateLibrary::add_to_library () {
+
+}
+
+// End CarbohydrateLibrary class
+
+
+void privateer::restraints::create_library () {
+
+}
+
+
+void privateer::restraints::sign_library_header() {
+
+}
+
+
+
+
 
 void privateer::restraints::add_torsion_set (float phi) {
 

@@ -12,6 +12,8 @@
 #include <gemmi/chemcomp.hpp>
 #include <gemmi/cif.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include <string>
+#include <algorithm>
 #include "clipper-glyco.h"
 
 namespace privateer {
@@ -38,39 +40,55 @@ namespace privateer {
     class CarbohydrateDictionary {
       public:
         CarbohydrateDictionary();
-        CarbohydrateDictionary(std::string& path_to_cif_file);
-        CarbohydrateDictionary(gemmi::ChemComp chem_comp) {
+        CarbohydrateDictionary(std::string& path_to_cif_file) {
+          this->read_from_file ( path_to_cif_file );
+        };
+        CarbohydrateDictionary(gemmi::ChemComp& chem_comp) {
           this->chemical_component = chem_comp;
           this->path_to_cif_file = "";
           this->from_monlib = false;
         };
         ~CarbohydrateDictionary() { };
+        std::string get_chemcomp_id () {
+          return this->chemical_component.name;
+        }
+        void read_from_file( std::string filename );
+        void read_from_monlib ( std::string ccd_id );
+        void write_dictionary( std::string filename );
       private:
         gemmi::ChemComp chemical_component;
+        gemmi::cif::Document cif_document;
         std::string path_to_cif_file;
         bool from_monlib; // we don't want to write to mon_lib, right?
+        char to_lowercase(char in) {
+          if(in <= 'Z' && in >= 'A')
+            return in - ('Z' - 'z');
+          return in;
+        }
     };
 
     class CarbohydrateLibrary {
     public:
         CarbohydrateLibrary();
-        CarbohydrateLibrary( std::string filename );
+        CarbohydrateLibrary( std::string filename ) {
+          this->read_library(filename);
+        };
         ~CarbohydrateLibrary() { };
+        void read_library ( std::string filename );
+        void write_library ( std::string filename );
 
       private:
         std::vector<CarbohydrateDictionary> list_of_chemicals;
         gemmi::cif::Document cif_document;
-        void read_library ( std::string filename );
+        std::string path_to_cif_file = "";
+
+        void add_to_library ();
     };
 
 
     void create_library ();
-    void add_to_library ();
     void sign_library_header();
-    void read_dictionary();
-    void write_dictionary();
 
-    void write_library ( gemmi::cif::Document &doc, std::string filename );
     void add_torsion_set (float phi);
     void add_torsion_set (float phi, float theta);
     void add_torsion_set ( gemmi::ChemComp &cc, privateer::Conformation id);

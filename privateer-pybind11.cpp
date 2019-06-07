@@ -15,6 +15,7 @@
 #include "privateer-restraints.h"
 
 using namespace pybind11::literals;
+namespace pr = privateer::restraints;
 
 // pybind11 module definition
 //
@@ -64,6 +65,12 @@ PYBIND11_MODULE(privateer_core, m)
   m.def("check_monlib_access",
         &privateer::restraints::check_monlib_access,
         "Checks if the CCP4 monomer library is accessible via environment, returns either path or empty string" );
+
+  pybind11::class_<privateer::restraints::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
+            .def(pybind11::init<std::string&>())
+            .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
+            .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
+            .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib);
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
             .value("blue",    privateer::glycoplot::blue)
