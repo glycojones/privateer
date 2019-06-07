@@ -11,7 +11,6 @@
 
 #include "privateer-restraints.h"
 
-
 std::string privateer::restraints::check_monlib_access ( ) {
 
   std::string pathname("");
@@ -57,15 +56,13 @@ void privateer::restraints::write_dictionary() {
 
 }
 
-void privateer::restraints::read_library ( gemmi::cif::Document &doc,
-                                           std::vector<gemmi::ChemComp>& list_of_chemicals,
-                                           std::string filename ) {
+void privateer::restraints::CarbohydrateLibrary::read_library ( std::string filename ) {
 
-  doc = gemmi::cif::read_file( filename );
-  for (gemmi::cif::Block& block : doc.blocks)
+  this->cif_document = gemmi::cif::read_file( filename );
+  for (gemmi::cif::Block& block : cif_document.blocks)
     if (!block.name.empty() && block.name != "comp_list") {
       gemmi::ChemComp chem_comp = gemmi::make_chemcomp_from_block(block);
-      list_of_chemicals.push_back(chem_comp);
+      this->list_of_chemicals.push_back(privateer::restraints::CarbohydrateDictionary(chem_comp));
     }
 }
 

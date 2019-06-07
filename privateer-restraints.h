@@ -39,7 +39,12 @@ namespace privateer {
       public:
         CarbohydrateDictionary();
         CarbohydrateDictionary(std::string& path_to_cif_file);
-        ~CarbohydrateDictionary();
+        CarbohydrateDictionary(gemmi::ChemComp chem_comp) {
+          this->chemical_component = chem_comp;
+          this->path_to_cif_file = "";
+          this->from_monlib = false;
+        };
+        ~CarbohydrateDictionary() { };
       private:
         gemmi::ChemComp chemical_component;
         std::string path_to_cif_file;
@@ -49,9 +54,13 @@ namespace privateer {
     class CarbohydrateLibrary {
     public:
         CarbohydrateLibrary();
-        ~CarbohydrateLibrary();
+        CarbohydrateLibrary( std::string filename );
+        ~CarbohydrateLibrary() { };
+
       private:
-        std::vector<CarbohydrateDictionary> list_of_entries;
+        std::vector<CarbohydrateDictionary> list_of_chemicals;
+        gemmi::cif::Document cif_document;
+        void read_library ( std::string filename );
     };
 
 
@@ -60,9 +69,7 @@ namespace privateer {
     void sign_library_header();
     void read_dictionary();
     void write_dictionary();
-    void read_library ( gemmi::cif::Document &doc,
-                        std::vector<gemmi::ChemComp>& list_of_chemicals,
-                        std::string filename );
+
     void write_library ( gemmi::cif::Document &doc, std::string filename );
     void add_torsion_set (float phi);
     void add_torsion_set (float phi, float theta);
