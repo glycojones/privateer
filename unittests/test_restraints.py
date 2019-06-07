@@ -3,11 +3,8 @@ import shutil
 import sys
 import privateer.restraints
 
-def test_svg_graphics ( ):
+def test_dictionaries ( ):
 
-    '''
-    Test restraint and conformer generation
-    '''
     test_output = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_output')
     if not os.path.exists ( test_output ) : os.makedirs ( test_output )
 
@@ -23,7 +20,21 @@ def test_svg_graphics ( ):
     dictionary.read_from_monlib("MAN")
     assert(dictionary.get_chemcomp_id() == "MAN")
 
+    dictionary.read_from_monlib("XYP")
+    assert(dictionary.get_chemcomp_id() == "XYP")
+
+    dictionary.read_from_monlib("15L")
+    assert(dictionary.get_chemcomp_id() == "15L")
+
+
+def test_libraries ( ):
+
+    dictionary = privateer.restraints.CarbohydrateDictionary()
+    dictionary.read_from_monlib("GLC")
     library = privateer.restraints.CarbohydrateLibrary()
     assert (library.number_of_entries() == 0)
     library.add_dictionary (dictionary)
     assert (library.number_of_entries() == 1)
+    dictionary.read_from_monlib("BGC")
+    library.add_dictionary (dictionary)
+    assert (library.number_of_entries() == 2)

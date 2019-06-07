@@ -67,6 +67,7 @@ PYBIND11_MODULE(privateer_core, m)
         "Checks if the CCP4 monomer library is accessible via environment, returns either path or empty string" );
 
   pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
+            .def(pybind11::init<>())
             .def(pybind11::init<std::string&>())
             .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
             .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)

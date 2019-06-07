@@ -39,7 +39,7 @@ namespace privateer {
 
     class CarbohydrateDictionary {
       public:
-        CarbohydrateDictionary();
+        CarbohydrateDictionary() { };
         CarbohydrateDictionary(std::string& path_to_cif_file) {
           this->read_from_file ( path_to_cif_file );
         };
