@@ -32,7 +32,29 @@ namespace privateer {
   };
 
   namespace restraints {
-    bool check_monlib_access (std::string &pathname);
+
+    std::string check_monlib_access ();
+
+    class CarbohydrateDictionary {
+      public:
+        CarbohydrateDictionary();
+        CarbohydrateDictionary(std::string& path_to_cif_file);
+        ~CarbohydrateDictionary();
+      private:
+        gemmi::ChemComp chemical_component;
+        std::string path_to_cif_file;
+        bool from_monlib; // we don't want to write to mon_lib, right?
+    };
+
+    class CarbohydrateLibrary {
+    public:
+        CarbohydrateLibrary();
+        ~CarbohydrateLibrary();
+      private:
+        std::vector<CarbohydrateDictionary> list_of_entries;
+    };
+
+
     void create_library ();
     void add_to_library ();
     void sign_library_header();

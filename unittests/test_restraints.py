@@ -13,11 +13,6 @@ def test_svg_graphics ( ):
 
     print ("Testing access to the CCP4 monomer library")
     path_to_monlib = ""
-    access = privateer.restraints.check_monlib_access ( path_to_monlib )
+    path_to_monlib = privateer.restraints.check_monlib_access ( )
 
-    if ( access ) :
-        print ("We have access to the CCP4 monomer library at %s\n" % path_to_monlib )
-    else :
-        print ("WARNING: no access to CCP4 monomer library.\n")
-
-    assert ( access )
+    assert ( len(path_to_monlib) > 5 )
