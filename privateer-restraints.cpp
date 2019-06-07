@@ -54,9 +54,13 @@ void privateer::restraints::CarbohydrateDictionary::read_from_monlib ( std::stri
   this->from_monlib = true;
   std::string path_to_lib = privateer::restraints::check_monlib_access();
   std::stringstream str;
+  std::locale loc;
+
+  char initial = std::tolower(ccd_id[0],loc);
 
   if (!path_to_lib.empty()) {
-    str << path_to_lib << ccd_id[0] << "/" << ccd_id << ".cif";
+    str << path_to_lib << initial << "/" << ccd_id << ".cif";
+    std::cout << str.str() << std::endl;
     this->cif_document = gemmi::cif::read_file( str.str() );
     for (gemmi::cif::Block& block : cif_document.blocks)
       if (!block.name.empty() && block.name != "comp_list") {

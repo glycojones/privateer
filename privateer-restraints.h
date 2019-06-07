@@ -13,7 +13,7 @@
 #include <gemmi/cif.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
 #include <string>
-#include <algorithm>
+#include <locale>
 #include "clipper-glyco.h"
 
 namespace privateer {
@@ -60,11 +60,6 @@ namespace privateer {
         gemmi::cif::Document cif_document;
         std::string path_to_cif_file;
         bool from_monlib; // we don't want to write to mon_lib, right?
-        char to_lowercase(char in) {
-          if(in <= 'Z' && in >= 'A')
-            return in - ('Z' - 'z');
-          return in;
-        }
     };
 
     class CarbohydrateLibrary {
