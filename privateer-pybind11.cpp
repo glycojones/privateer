@@ -71,7 +71,9 @@ PYBIND11_MODULE(privateer_core, m)
             .def(pybind11::init<std::string&>())
             .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
             .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
-            .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib);
+            .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
+            .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
+            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal);
 
   pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
             .def(pybind11::init<>())

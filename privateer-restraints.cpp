@@ -69,8 +69,24 @@ void privateer::restraints::CarbohydrateDictionary::read_from_monlib ( std::stri
   }
 }
 
-void privateer::restraints::CarbohydrateDictionary::write_dictionary( std::string filename ) {
+void privateer::restraints::CarbohydrateDictionary::write_to_file( std::string filename ) {
+  std::ofstream of;
+  of.open(filename);
 
+  of << "# " << filename << '\n';
+  of << "# modified by Privateer\n";
+  gemmi::cif::write_cif_to_stream(of, cif_document);
+  of.close();
+}
+
+void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
+  for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
+    std::vector<gemmi::Restraints::AtomId> ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
+    if (!ring.empty()) {
+      tor.esd = 3.0;  // turn esd pretty tight
+      tor.period = 1; // unimodal
+    }
+  }
 }
 
 

@@ -37,6 +37,23 @@ namespace privateer {
 
     std::string check_monlib_access ();
 
+    class Ring {
+      public:
+        Ring() { };
+        Ring(std::vector<gemmi::Restraints::AtomId> list_of_atoms) {
+          this->list_of_atoms = list_of_atoms;
+        }
+        ~Ring() { };
+        std::vector<gemmi::Restraints::AtomId> get_list_of_atoms () {
+          return list_of_atoms;
+        }
+        void set_list_of_atoms ( std::vector<gemmi::Restraints::AtomId> list_of_atoms ) {
+          this->list_of_atoms = list_of_atoms;
+        }
+      private:
+        std::vector<gemmi::Restraints::AtomId> list_of_atoms;
+    };
+
     class CarbohydrateDictionary {
       public:
         CarbohydrateDictionary() { };
@@ -54,7 +71,9 @@ namespace privateer {
         }
         void read_from_file( std::string filename );
         void read_from_monlib ( std::string ccd_id );
-        void write_dictionary( std::string filename );
+        void write_to_file( std::string filename );
+        void restrain_rings_unimodal ();
+        std::vector<Ring> list_of_rings;
       private:
         gemmi::ChemComp chemical_component;
         gemmi::cif::Document cif_document;
