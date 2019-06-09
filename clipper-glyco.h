@@ -132,11 +132,11 @@ inline clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::V
     return angle;
 }
 
-
+//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions 
 namespace clipper
 {
 
-    //! MiniMol Sugar object for handling cyclic carbohydrate data
+    //! A class for handling monosaccharides in the pyranose or furanose forms
     /*! The MiniMol Sugar object is a derivation of clipper::MMonomer,
         and holds information specific to 5- and 6-membered cyclic sugars
 
@@ -373,7 +373,7 @@ namespace clipper
 
     }; // class MSugar
 
-
+    //! A class that holds two MSugar objects
     class MDisaccharide
     {
         public:
@@ -399,6 +399,7 @@ namespace clipper
 
     }; // class MDisaccharide
 
+    //! Stores a tree built with Node(s) and Linkage(s), which contain references to MSugar(s)
     class MGlycan
     {
         public:
