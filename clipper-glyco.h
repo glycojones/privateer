@@ -56,8 +56,6 @@
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
 
-std::string carbname_of ( std::string name );
-
 inline bool altconf_compatible ( char m1, char m2 )
 {
     if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))

@@ -47,9 +47,9 @@
 
 #include <clipper/clipper.h>
 
-namespace clipper 
+namespace clipper
 {
-    namespace data 
+    namespace data
     {
 
         struct sugar_database_entry
@@ -59,9 +59,9 @@ namespace clipper
             String handedness;       // D, L or N for unknown
             String name_long;        // longer name
             String ring_atoms;       // e.g. ring_atoms = { "C1","C2","C3","C4","C5","O5" };
-            ftype  ref_puckering;    // puckering amplitude calculated from CCP4 monomer library-idealised coordinates 
+            ftype  ref_puckering;    // puckering amplitude calculated from CCP4 monomer library-idealised coordinates
             String ref_conformation; // conformation detected from the idealised coordinates
-            ftype  ref_bonds_rmsd;   // rms bonds calculated from CCP4 monomer library-idealised coordinates 
+            ftype  ref_bonds_rmsd;   // rms bonds calculated from CCP4 monomer library-idealised coordinates
             ftype  ref_angles_rmsd;  // rms angles calculated from CCP4 monomer library-idealised coordinates
         };
 
@@ -82,10 +82,10 @@ namespace clipper
 
         bool found_in_database ( clipper::String name );
         bool found_in_database ( std::string name );
-  
+        std::string carbname_of ( std::string name );
+
     } // namespace data
 
 } // namespace clipper
 
 #endif
-
