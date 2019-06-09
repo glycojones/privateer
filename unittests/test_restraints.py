@@ -4,7 +4,6 @@ import sys
 import privateer.restraints
 
 def test_dictionaries ( ):
-
     test_output = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_output')
     if not os.path.exists ( test_output ) : os.makedirs ( test_output )
 
@@ -28,7 +27,6 @@ def test_dictionaries ( ):
 
 
 def test_libraries ( ):
-
     dictionary = privateer.restraints.CarbohydrateDictionary()
     dictionary.read_from_monlib("GLC")
     library = privateer.restraints.CarbohydrateLibrary()
@@ -45,5 +43,6 @@ def test_restraints ( ):
     dictionary = privateer.restraints.CarbohydrateDictionary()
     dictionary.read_from_monlib("GLC")
     dictionary.restrain_rings_unimodal()
+    dictionary.print_torsions()
     dictionary.write_to_file(test_output + "/GLC_unimodal.cif")
     assert os.path.exists(test_output + "/GLC_unimodal.cif")

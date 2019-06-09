@@ -60,7 +60,7 @@ namespace privateer {
         CarbohydrateDictionary(std::string& path_to_cif_file) {
           this->read_from_file ( path_to_cif_file );
         };
-        CarbohydrateDictionary(gemmi::ChemComp& chem_comp) {
+        CarbohydrateDictionary(gemmi::ChemComp chem_comp) {
           this->chemical_component = chem_comp;
           this->path_to_cif_file = "";
           this->from_monlib = false;
@@ -73,12 +73,14 @@ namespace privateer {
         void read_from_monlib ( std::string ccd_id );
         void write_to_file( std::string filename );
         void restrain_rings_unimodal ();
-        std::vector<Ring> list_of_rings;
+        void print_torsions ();
+
       private:
         gemmi::ChemComp chemical_component;
         gemmi::cif::Document cif_document;
         std::string path_to_cif_file;
         bool from_monlib; // we don't want to write to mon_lib, right?
+        std::vector<Ring> list_of_rings;
     };
 
     class CarbohydrateLibrary {

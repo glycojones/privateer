@@ -36,8 +36,8 @@ std::string privateer::restraints::check_monlib_access ( ) {
   }
 }
 
-// Class CarbohydrateDictionary
 
+// Class CarbohydrateDictionary
 
 void privateer::restraints::CarbohydrateDictionary::read_from_file( std::string filename ) {
 
@@ -75,7 +75,7 @@ void privateer::restraints::CarbohydrateDictionary::write_to_file( std::string f
 
   of << "# " << filename << '\n';
   of << "# modified by Privateer\n";
-  gemmi::cif::write_cif_to_stream(of, cif_document);
+  gemmi::cif::write_cif_to_stream(of, this->cif_document);
   of.close();
 }
 
@@ -89,11 +89,19 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
   }
 }
 
-
+void privateer::restraints::CarbohydrateDictionary::print_torsions () {
+  int i = 0;
+  for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
+    i++;
+    std::cout << "Torsion " << i << "\t" << tor.id1.atom.c_str() << "\t"
+              << tor.id2.atom.c_str() << "\t" << tor.id3.atom.c_str() << "\t" << tor.id4.atom.c_str() << "\t"
+              << tor.value << "\t" << tor.esd << "\t" << tor.period << std::endl;
+  }
+}
 // End CarbohydrateDictionary class
 
-// Class CarbohydrateLibrary
 
+// Class CarbohydrateLibrary
 
 void privateer::restraints::CarbohydrateLibrary::read_from_file ( std::string filename ) {
 
