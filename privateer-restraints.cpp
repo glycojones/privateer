@@ -80,15 +80,22 @@ void privateer::restraints::CarbohydrateDictionary::write_to_file( std::string f
 }
 
 void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
-  for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
-    std::vector<gemmi::Restraints::AtomId> ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
-    if (!ring.empty()) {
-      tor.esd = 3.0;  // turn esd pretty tight
-      tor.period = 1; // unimodal
+  for (gemmi::cif::Block& block : cif_document.blocks)
+    if (!block.name.empty() && block.name != "comp_list") {
+      gemmi::cif::Table chem_comp_tor = block.find("_chem_comp_tor.",
+                               {"value_angle", "value_angle_esd", "period"});
+      assert(chemical_component.rt.torsions.size() == chem_comp_tor.length());
+      for (size_t j = 0; j != chemical_component.rt.torsions.size(); ++j) {
+        gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
+        auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
+        if (!ring.empty()) {
+          auto row = chem_comp_tor[j];
+          row[1] = "3.0";
+          row[2] = "1"; // unimodal
+        }
+      }
     }
-  }
 }
-
 void privateer::restraints::CarbohydrateDictionary::print_torsions () {
   int i = 0;
   for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
