@@ -73,6 +73,7 @@ namespace privateer {
         void read_from_monlib ( std::string ccd_id );
         void write_to_file( std::string filename );
         void restrain_rings_unimodal ();
+        void add_inverted_torsions ();
         void print_torsions ();
 
       private:

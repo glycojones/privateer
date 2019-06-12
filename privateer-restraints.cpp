@@ -96,6 +96,22 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
       }
     }
 }
+
+void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
+  for (gemmi::cif::Block& block : cif_document.blocks)
+    if (!block.name.empty() && block.name != "comp_list") {
+      gemmi::cif::Table chem_comp_tor = block.find("_chem_comp_tor.",{});
+      assert(chemical_component.rt.torsions.size() == chem_comp_tor.length());
+      for (size_t j = 0; j != chemical_component.rt.torsions.size(); ++j) {
+        gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
+        auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
+        if (!ring.empty()) {
+          //to do
+        }
+      }
+    }
+}
+
 void privateer::restraints::CarbohydrateDictionary::print_torsions () {
   int i = 0;
   for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
