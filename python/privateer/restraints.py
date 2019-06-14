@@ -46,4 +46,4 @@ def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
         if len(path_to_monlib) > 5 :
             dictionary = privateer.restraints.CarbohydrateDictionary()
             dictionary.read_from_monlib(three_letter_code)
-            # need to access bond length and angles and return that from dictionary
+            # need to access bond length and esd and return that from dictionary

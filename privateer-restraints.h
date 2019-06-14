@@ -12,6 +12,7 @@
 #include <gemmi/chemcomp.hpp>
 #include <gemmi/cif.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include <pybind11/pybind11.h>
 #include <string>
 #include <locale>
 #include "clipper-glyco.h"
@@ -75,6 +76,7 @@ namespace privateer {
         void restrain_rings_unimodal ();
         void add_inverted_torsions ();
         void print_torsion_restraints ();
+        pybind11::dict get_bond (std::string atom_1, std::string atom_2);
 
       private:
         gemmi::ChemComp chemical_component;

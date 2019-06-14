@@ -10,6 +10,7 @@
 //
 
 #include "privateer-restraints.h"
+using namespace pybind11::literals;
 
 std::string privateer::restraints::check_monlib_access ( ) {
 
@@ -120,6 +121,22 @@ void privateer::restraints::CarbohydrateDictionary::print_torsion_restraints () 
               << tor.id2.atom.c_str() << "\t" << tor.id3.atom.c_str() << "\t" << tor.id4.atom.c_str() << "\t"
               << tor.value << "\t" << tor.esd << "\t" << tor.period << std::endl;
   }
+}
+
+pybind11::dict privateer::restraints::CarbohydrateDictionary::get_bond (std::string atom_1, std::string atom_2) {
+
+  for ( auto bond : this->chemical_component.rt.bonds ) {
+    if (( bond.id1 == atom_1 ) && (bond.id2 == atom_2)) {
+      auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
+      return result;
+    }
+    else if (( bond.id1 == atom_2 ) && (bond.id2 == atom_1)) {
+      auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
+      return result;
+    }
+  }
+  auto result = pybind11::dict ("length"_a="", "esd"_a="");
+  return result;
 }
 // End CarbohydrateDictionary class
 

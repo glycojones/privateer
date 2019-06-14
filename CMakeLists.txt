@@ -115,7 +115,7 @@ add_library(privateer_lib
             clipper-glyco_data.cpp
             privateer-restraints.cpp
             privateer-lib.cpp)
-target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} )
+target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
 ## Create Privateer executable
