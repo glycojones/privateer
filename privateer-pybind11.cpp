@@ -64,7 +64,7 @@ PYBIND11_MODULE(privateer_core, m)
 
   m.def("check_monlib_access",
         &pr::check_monlib_access,
-        "Checks if the CCP4 monomer library is accessible via environment, returns either path or empty string" );
+        "Checks if the CCP4 monomer library is accessible via environment, returns either a valid pathname or an empty string" );
 
   pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
             .def(pybind11::init<>())
@@ -73,7 +73,7 @@ PYBIND11_MODULE(privateer_core, m)
             .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
             .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
             .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
-            .def("print_torsions",    &pr::CarbohydrateDictionary::print_torsions)
+            .def("print_torsion_restraints",    &pr::CarbohydrateDictionary::print_torsions)
             .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal);
 
   pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")

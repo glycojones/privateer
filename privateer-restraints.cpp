@@ -112,7 +112,7 @@ void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
     }
 }
 
-void privateer::restraints::CarbohydrateDictionary::print_torsions () {
+void privateer::restraints::CarbohydrateDictionary::print_torsion_restraints () {
   int i = 0;
   for (gemmi::Restraints::Torsion& tor : chemical_component.rt.torsions) {
     i++;

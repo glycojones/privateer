@@ -39,3 +39,11 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
         f.write ( content )
 
     print ("Lowest energy: %f" % lowest_energy)
+
+def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
+    if three_letter_code != "" and first_atom != "" and second_atom != "" :
+        path_to_monlib = privateer.restraints.check_monlib_access ( )
+        if len(path_to_monlib) > 5 :
+            dictionary = privateer.restraints.CarbohydrateDictionary()
+            dictionary.read_from_monlib(three_letter_code)
+            # need to access bond length and angles and return that from dictionary

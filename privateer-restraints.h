@@ -74,7 +74,7 @@ namespace privateer {
         void write_to_file( std::string filename );
         void restrain_rings_unimodal ();
         void add_inverted_torsions ();
-        void print_torsions ();
+        void print_torsion_restraints ();
 
       private:
         gemmi::ChemComp chemical_component;
