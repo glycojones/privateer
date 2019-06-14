@@ -29,7 +29,7 @@ namespace privateer {
     pyranose_5S1, pyranose_3S1, furanose_3T2, furanose_3EV, furanose_3T4,
     furanose_EV4, furanose_OT4, furanose_OEV, furanose_OT1, furanose_EV1,
     furanose_2T1, furanose_2EV, furanose_2T3, furanose_EV3, furanose_4T3,
-    furanose_4EV, furanose_4TO, furanose_EVO, furanose, furanose_1EV,
+    furanose_4EV, furanose_4TO, furanose_EVO, furanose_1TO, furanose_1EV,
     furanose_1T2, furanose_EV2
   };
 
