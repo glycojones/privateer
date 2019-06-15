@@ -37,6 +37,7 @@ def test_libraries ( ):
     library.add_dictionary (dictionary)
     assert (library.number_of_entries() == 2)
 
+
 def test_restraints ( ):
     test_output = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_output')
     if not os.path.exists ( test_output ) : os.makedirs ( test_output )
@@ -46,3 +47,7 @@ def test_restraints ( ):
     dictionary.print_torsions()
     dictionary.write_to_file(test_output + "/GLC_unimodal.cif")
     assert os.path.exists(test_output + "/GLC_unimodal.cif")
+
+
+def test_chemistry ( ):
+    assert(privateer.restraints.get_bond_params("GLC", "C1", "C2")=="1.524", "0.020")

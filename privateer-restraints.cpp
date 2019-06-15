@@ -123,6 +123,7 @@ void privateer::restraints::CarbohydrateDictionary::print_torsion_restraints () 
   }
 }
 
+// This function is similar to gemmi's but returns a standard python object
 pybind11::dict privateer::restraints::CarbohydrateDictionary::get_bond (std::string atom_1, std::string atom_2) {
 
   for ( auto bond : this->chemical_component.rt.bonds ) {
