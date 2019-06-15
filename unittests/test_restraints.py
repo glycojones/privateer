@@ -44,10 +44,12 @@ def test_restraints ( ):
     dictionary = privateer.restraints.CarbohydrateDictionary()
     dictionary.read_from_monlib("GLC")
     dictionary.restrain_rings_unimodal()
-    dictionary.print_torsions()
+    dictionary.print_torsion_restraints()
     dictionary.write_to_file(test_output + "/GLC_unimodal.cif")
     assert os.path.exists(test_output + "/GLC_unimodal.cif")
 
 
 def test_chemistry ( ):
-    assert(privateer.restraints.get_bond_params("GLC", "C1", "C2")=="1.524", "0.020")
+    bond_length, bond_esd = privateer.restraints.get_bond_params("GLC", "C1", "C2")
+    assert (bond_length == 1.524)
+    # to do: test esd's

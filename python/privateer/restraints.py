@@ -42,9 +42,9 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
 
 def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
     if three_letter_code != "" and first_atom != "" and second_atom != "" :
-        path_to_monlib = privateer.restraints.check_monlib_access ( )
+        path_to_monlib = check_monlib_access ( )
         if len(path_to_monlib) > 5 :
-            dictionary = privateer.restraints.CarbohydrateDictionary()
+            dictionary = CarbohydrateDictionary()
             dictionary.read_from_monlib(three_letter_code)
             bond_params = dictionary.get_bond(first_atom, second_atom)
-            return bond_params["value"], bond_params["esd"]
+            return bond_params["length"], bond_params["esd"]
