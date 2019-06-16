@@ -2,7 +2,7 @@ from privateer_core import check_monlib_access
 from privateer_core import CarbohydrateDictionary
 from privateer_core import CarbohydrateLibrary
 
-def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
+def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privateer-minimised.pdb" ) :
     # encapsulate imports here so they don't show up when importing the module
     from rdkit import Chem
     from rdkit.Chem import AllChem
@@ -25,11 +25,11 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50 ) :
                 lowest_energy = force_field.CalcEnergy()
                 print ("Energy: %f kcal/mol" % lowest_energy)
 
-    writer = PDBWriter ( "privateer-minimised.pdb" )
+    writer = PDBWriter ( filename )
     writer.write ( mol = mol_with_h, confId = best_conformer_id )
     writer.close()
 
-    with open("privateer-minimised.pdb", 'r+') as f:
+    with open(filename, 'r+') as f:
         content = f.read()
         f.seek(0,0)
         f.write ( 'REMARK 300 THIS MOLECULE HAS BEEN PRODUCED BY PRIVATEER USING RDKIT\n')
