@@ -115,14 +115,14 @@ add_library(privateer_lib
             clipper-glyco_data.cpp
             privateer-restraints.cpp
             privateer-lib.cpp)
-target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
+target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} ${PYTHON_LIBRARY} )
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
 ## Create Privateer executable
 #
 add_executable(privateer_exec
                privateer.cpp)
-target_link_libraries ( privateer_exec privateer_lib ${CCP4_LIBRARIES} )
+target_link_libraries ( privateer_exec privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
