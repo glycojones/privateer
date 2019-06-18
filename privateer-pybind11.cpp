@@ -12,7 +12,6 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include "privateer-lib.h"
-#include "privateer-restraints.h"
 
 using namespace pybind11::literals;
 namespace pr = privateer::restraints;
@@ -74,6 +73,7 @@ PYBIND11_MODULE(privateer_core, m)
             .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
             .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
             .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
+            .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
             .def("print_torsion_restraints",    &pr::CarbohydrateDictionary::print_torsion_restraints)
             .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal);
 

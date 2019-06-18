@@ -45,6 +45,9 @@ def test_restraints ( ):
     dictionary.read_from_monlib("GLC")
     dictionary.restrain_rings_unimodal()
     dictionary.print_torsion_restraints()
+    print ("Now adding inverted (1C4) torsions...")
+    dictionary.add_inverted_torsions()
+    dictionary.print_torsion_restraints()
     dictionary.write_to_file(test_output + "/GLC_unimodal.cif")
     assert os.path.exists(test_output + "/GLC_unimodal.cif")
 

@@ -51,3 +51,16 @@ def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
             return bond_params["length"], bond_params["esd"]
         else :
             return 0.0, 0.0
+
+def unimodalise_file ( filename = "", also_1c4 = False ) :
+    dictionary = CarbohydrateDictionary(filename)
+    dictionary.restrain_rings_unimodal()
+    if also_1c4 : dictionary.add_inverted_torsions()
+    dictionary.write_to_file(filename + "_unimodal.cif")
+
+def unimodalise_from_monlib ( code = "", also_1c4 = False ) :
+    dictionary = CarbohydrateDictionary()
+    dictionary.read_from_monlib (code)
+    dictionary.restrain_rings_unimodal()
+    if also_1c4 : dictionary.add_inverted_torsions()
+    dictionary.write_to_file(code + "_unimodal.cif")
