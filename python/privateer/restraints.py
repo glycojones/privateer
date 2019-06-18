@@ -40,6 +40,7 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privat
 
     print ("Lowest energy: %f" % lowest_energy)
 
+
 def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
     if three_letter_code != "" and first_atom != "" and second_atom != "" :
         path_to_monlib = check_monlib_access ( )
@@ -48,3 +49,5 @@ def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
             dictionary.read_from_monlib(three_letter_code)
             bond_params = dictionary.get_bond(first_atom, second_atom)
             return bond_params["length"], bond_params["esd"]
+        else :
+            return 0.0, 0.0

@@ -10,7 +10,7 @@ if(NOT DEFINED LIB_INSTALL_DIR)
 endif()
 
 if (DEVKIT)
-  message(STATUS "Building with local devkit options")
+  message(STATUS "Building with system-wide Python3")
 endif()
 
 ## Required CCP4 CCP4_LIBRARIES
@@ -63,6 +63,7 @@ else ()
     message(STATUS "Python library: ${PYTHON_LIBRARY}")
     set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
 endif()
+
 # Get Python includes
 if(DEVKIT)
   if (APPLE)
@@ -127,7 +128,7 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
 #
-pybind11_add_module(privateer_module privateer-pybind11.cpp )
+pybind11_add_module(privateer_module privateer-pybind11.cpp privateer-restraints.cpp)
 set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
 target_compile_options( privateer_module PRIVATE "-Wno-shadow")
 target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )

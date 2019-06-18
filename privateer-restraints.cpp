@@ -107,7 +107,7 @@ void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
         gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
         auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
         if (!ring.empty()) {
-          //to do
+
         }
       }
     }
