@@ -3,7 +3,9 @@ Privateer
 
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
-Languages: C++ and Python (via SWIG interface), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
+Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
+
+Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
 
 Features: Automatic assignment of ring conformation (IUPAC nomenclature), anomeric form, absolute configuration and comparison to reference values for validation. It computes omit mFo-DFc maps and calculates a correlation coefficient between model and electron density. For structure refinement, it is able to generate chemical dictionaries with unimodal torsion restraints which will help keep the lowest energy conformation. In terms of graphical analysis, it will produce vector diagrams in SNFG nomenclature (SVG format), which are annotated using the validation information (ring conformation, anomeric form, etc).
 
@@ -41,3 +43,5 @@ Some examples where Privateer has been useful (thank _you_ for the citations!):
 * 2018-2021 EPSRC DTP studentship allocated to Jon Agirre & awarded to Mihaela Atanasova (York)
 * 2019-2023 Royal Society Research Grant awarded to Jon Agirre (York), covering 4-year studentship awarded to Haroldas Bagdonas
 
+#### Acknowledgements
+Marcin Wojdyr, Robbie Joosten, Gideon Davies, Wendy Offen, Christian Roth, Paul Emsley, Garib Murshudov, Eleanor Dodson, Jacob Sorensen, Stuart McNicholas... 
