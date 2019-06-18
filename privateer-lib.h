@@ -22,7 +22,7 @@
 #include <clipper/clipper-minimol.h>
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
-
+#include "privateer-restraints.h"
 
 inline const std::string b2s ( bool b )
 {

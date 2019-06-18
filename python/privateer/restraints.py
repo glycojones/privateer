@@ -1,6 +1,6 @@
-from privateer_core import check_monlib_access
-from privateer_core import CarbohydrateDictionary
-from privateer_core import CarbohydrateLibrary
+from .privateer_core import check_monlib_access
+from .privateer_core import CarbohydrateDictionary
+from .privateer_core import CarbohydrateLibrary
 
 def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privateer-minimised.pdb" ) :
     # encapsulate imports here so they don't show up when importing the module

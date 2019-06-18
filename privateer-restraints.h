@@ -17,6 +17,9 @@
 #include <locale>
 #include "clipper-glyco.h"
 
+#ifndef PRIVATEER_RESTRAINTS_H_INCLUDED
+#define PRIVATEER_RESTRAINTS_H_INCLUDED
+
 namespace privateer {
 
   enum Conformation {
@@ -126,3 +129,5 @@ namespace privateer {
 
   }
 }
+
+#endif

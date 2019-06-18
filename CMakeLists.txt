@@ -114,7 +114,7 @@ include_directories(${CCP4_INCLUDE_DIRS}
 add_library(privateer_lib
             clipper-glyco.cpp
             clipper-glyco_data.cpp
-            privateer-restraints.cpp
+#            privateer-restraints.cpp
             privateer-lib.cpp)
 target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} ${PYTHON_LIBRARY} )
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
