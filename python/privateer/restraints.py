@@ -1,6 +1,7 @@
 from .privateer_core import check_monlib_access
 from .privateer_core import CarbohydrateDictionary
 from .privateer_core import CarbohydrateLibrary
+import os
 
 def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privateer-minimised.pdb" ) :
     # encapsulate imports here so they don't show up when importing the module
@@ -41,7 +42,7 @@ def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privat
     print ("Lowest energy: %f" % lowest_energy)
 
 
-def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
+def get_bond_params_from_monlib ( three_letter_code="", first_atom="", second_atom="" ):
     if three_letter_code != "" and first_atom != "" and second_atom != "" :
         path_to_monlib = check_monlib_access ( )
         if len(path_to_monlib) > 5 :
@@ -52,11 +53,24 @@ def get_bond_params ( three_letter_code="", first_atom="", second_atom="" ):
         else :
             return 0.0, 0.0
 
+
+def get_bond_params_from_file ( filename="", first_atom="", second_atom="" ):
+    if filename != "" and first_atom != "" and second_atom != "" :
+        if os.path.isfile(filename) :
+            dictionary = CarbohydrateDictionary()
+            dictionary.read_from_file(filename)
+            bond_params = dictionary.get_bond(first_atom, second_atom)
+            return bond_params["length"], bond_params["esd"]
+        else :
+            return 0.0, 0.0
+
+
 def unimodalise_file ( filename = "", also_1c4 = False ) :
     dictionary = CarbohydrateDictionary(filename)
     dictionary.restrain_rings_unimodal()
     if also_1c4 : dictionary.add_inverted_torsions()
     dictionary.write_to_file(filename + "_unimodal.cif")
+
 
 def unimodalise_from_monlib ( code = "", also_1c4 = False ) :
     dictionary = CarbohydrateDictionary()
