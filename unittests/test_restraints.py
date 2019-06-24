@@ -53,7 +53,7 @@ def test_restraints ( ):
 
 
 def test_chemistry ( ):
-    bond_length, bond_esd = privateer.restraints.get_bond_params("GLC", "C1", "C2")
+    bond_length, bond_esd = privateer.restraints.get_bond_params_from_monlib("GLC", "C1", "C2")
     assert (bond_length == 1.524)
     # to do: test esd's
 

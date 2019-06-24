@@ -431,25 +431,6 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     if (!myfile.is_open())
         std::cout << "Cannot open library file - this is a bug, please report (jon.agirre@york.ac.uk)" << std::endl;
 
-    //std::string header = "global_\n_lib_name       Privateer\n_lib_version    " + program_version + "\n_lib_update        7.0\n";
-
-    //myfile.sputn ( header.c_str(), header.length() + 4);
-    //myfile.close();
-
-    //mmdb::mmcif::Struct header;
-    //header.PutString ( "global_\n_lib_name","Privateer" );
-    //header.WriteMMCIF ( f );
-    //header.PutDataName ( "_lib_name\tPrivateer" );
-     //header.WriteMMCIF ( f );
-     //header.PutDataName ( "_lib_version\tMKIII" );
-     //header.WriteMMCIF ( f );
-     //header.PutDataName ( "_lib_update\t7.0" );
-     //header.WriteMMCIF ( f );
-
-
-
-    // kill used resources //
-
     if ( Monomer )
         delete Monomer;
 

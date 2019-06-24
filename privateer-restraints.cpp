@@ -102,6 +102,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
 void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
   for (gemmi::cif::Block& block : cif_document.blocks)
     if (!block.name.empty() && block.name != "comp_list") {
+
       gemmi::cif::Table chem_comp_tor = block.find_or_add("_chem_comp_tor.",{"comp_id", "id", "atom_id_1",
                                                           "atom_id_2", "atom_id_3", "atom_id_4", "value_angle",
                                                           "value_angle_esd", "period"});
@@ -110,7 +111,6 @@ void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
         gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
         auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
         if (!ring.empty()) {
-          std::cout << "Adding another row..." << std::endl;
           chem_comp_tor.append_row({ this->chemical_component.name, "1C4_"+tor.label,
                                      tor.id1.atom, tor.id2.atom, tor.id3.atom, tor.id4.atom, std::to_string(-tor.value),
                                      std::to_string(tor.esd), std::to_string(tor.period) } );
