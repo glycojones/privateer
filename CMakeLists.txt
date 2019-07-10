@@ -147,7 +147,7 @@ endif()
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-lib.h
+install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h
           DESTINATION include/privateer)
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
