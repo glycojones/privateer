@@ -133,8 +133,8 @@ set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
 target_compile_options( privateer_module PRIVATE "-Wno-shadow")
 target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
 
-# set rpaths on GNU/Linux 
-if (DEVKIT) 
+# set rpaths on GNU/Linux
+if (DEVKIT)
   if (NOT APPLE)
     set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
     set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
@@ -148,7 +148,7 @@ set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
 install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h
-          DESTINATION include/privateer)
+          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 install ( TARGETS privateer_exec DESTINATION bin)
