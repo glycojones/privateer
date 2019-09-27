@@ -25,7 +25,7 @@ if (DEVKIT)
         find_program(PYTHON NAMES $ENV{PYTHON} python3.7
                             HINTS ${CMAKE_INSTALL_PREFIX}/bin)
     else()
-        find_program(PYTHON NAMES $ENV{PYTHON} python3.6m python3.6 python3
+        find_program(PYTHON NAMES $ENV{PYTHON} python3.7
                             HINTS ${CMAKE_INSTALL_PREFIX}/bin
                             HINTS /usr/local/bin
                             HINTS /usr/bin )
@@ -54,8 +54,8 @@ else()
     message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
 endif()
 # Get Python libraries
-find_library(PYTHON_LIBRARY NAMES python3.7 python3.6m python
-             HINTS ${_PY_PREFIX}/lib ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/libs
+find_library(PYTHON_LIBRARY NAMES $ENV{PYTHON} python3.7m python3.7 python
+             HINTS ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/lib ${_PY_PREFIX}/libs
              NO_DEFAULT_PATH)
 if (NOT PYTHON_LIBRARY)
     message(FATAL_ERROR "Python library not found.")
@@ -72,9 +72,9 @@ if(DEVKIT)
               NO_DEFAULT_PATH )
   else()
     find_path(PYTHON_INCLUDE_DIR NAMES Python.h
-              HINTS ${_PY_PREFIX}/include
-                    ${_PY_PREFIX}/include/python3.7
-                    ${_PY_PREFIX}/include/python3.6m
+              HINTS ${_PY_PREFIX}/include/python3.7
+                    ${_PY_PREFIX}/include/python3.7m
+                    ${_PY_PREFIX}/include/python
               NO_DEFAULT_PATH)
   endif()
 else()
