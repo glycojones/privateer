@@ -81,6 +81,8 @@ else()
   find_path(PYTHON_INCLUDE_DIR NAMES Python.h
             HINTS ${_PY_PREFIX}/include
                   ${_PY_PREFIX}/include/python2.7
+                  ${_PY_PREFIX}/include/python3.7
+                  ${_PY_PREFIX}/include/python3.7m
             NO_DEFAULT_PATH)
 endif()
 
