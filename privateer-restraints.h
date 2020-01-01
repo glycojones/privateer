@@ -15,6 +15,7 @@
 #include <pybind11/pybind11.h>
 #include <string>
 #include <locale>
+#include <fstream>
 #include "clipper-glyco.h"
 
 #ifndef PRIVATEER_RESTRAINTS_H_INCLUDED
