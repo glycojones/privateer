@@ -48,6 +48,7 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
+//#define DUMP 1
 
 clipper::String program_version = "MKIV";
 using clipper::data32::F_sigF;

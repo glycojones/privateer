@@ -46,6 +46,7 @@
 //L  Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 //L  MA 02111-1307 USA
 
+//#define DUMP 1
 
 #include <fstream>
 #include <algorithm>
@@ -57,7 +58,7 @@
 #include "clipper-glyco.h"
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
-//#define DUMP 1
+
 
 using namespace clipper;
 
@@ -109,7 +110,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     #ifdef DUMP
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
-        alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+        // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     #endif
 
     this->sugar_found_db = lookup_database(this->type().trim());
@@ -379,7 +380,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     #ifdef DUMP
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
-        alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+        // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     #endif
 
     this->sugar_found_db = true;
