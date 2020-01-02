@@ -59,6 +59,8 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
+//#define DUMP 1
+
 
 using namespace clipper;
 

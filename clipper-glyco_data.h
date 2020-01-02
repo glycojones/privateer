@@ -83,6 +83,7 @@ namespace clipper
         bool found_in_database ( clipper::String name );
         bool found_in_database ( std::string name );
         std::string carbname_of ( std::string name );
+        std::string convert_to_wurcs_residue_code( std::string name );
 
     } // namespace data
 
