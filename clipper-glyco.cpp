@@ -2575,6 +2575,183 @@ void MGlycan::set_annotations ( std::string expression_system )
     }
 }
 
+std::vector < std::string > MGlycan::obtain_unsorted_unique_WURCS_residues()
+{
+    std::vector < std::string > uniqueResidues;
+    clipper::MSugar msug;
+    for(int i = 0; i < node_list.size(); i++)
+    {
+        msug = node_list[i].get_sugar();
+        uniqueResidues.push_back(clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() ) );
+    }
+    std::sort(uniqueResidues.begin(), uniqueResidues.end());
+    uniqueResidues.erase(std::unique(uniqueResidues.begin(), uniqueResidues.end() ), uniqueResidues.end() );
+
+
+    return uniqueResidues;
+}
+
+clipper::String MGlycan::print_wurcs()
+{
+    
+    
+    int glycanLength = sugars.size();
+    int uniqueResidueCount = obtain_unsorted_unique_WURCS_residues().size();
+
+    clipper::String wurcs_string = "WURCS=";
+
+
+    // WURCS version
+    wurcs_string += "2.0"; 
+    wurcs_string += "/"; 
+
+    // Unit Count
+
+    wurcs_string += std::to_string(uniqueResidueCount) + "," + std::to_string(glycanLength) + ",/";
+    // for(int i = 0; i < uniqueResidueList.size(); i++)
+    // {
+    //     wurcs_string += "[" + uniqueResidueList[i] + "]";
+    // }
+    wurcs_string += "/"; 
+
+    // #ifdef DUMP
+    //     DBG << "Glycan length: " << sugars.size() << std::endl;
+    // #endif
+
+    // if ( html_format ) buffer.insert ( 0, "</sub>" );
+    // buffer.insert ( 0, root.first.id().trim() );
+    // if ( html_format ) buffer.insert ( 0, "<sub>" );
+
+    // #ifdef DUMP
+    //     DBG << "Accessed the root, which contains this sugar: " << root.second.type() <<  std::endl;
+    // #endif
+
+    // buffer.insert( 0, root.first.type().c_str() );
+
+    // html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
+
+    // clipper::String anomer;
+
+    // if ( html_format ) root.second.anomer() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+    // else root.second.anomer() == "alpha" ? anomer = "a" : anomer = "b";
+
+    // html_format ? buffer.insert ( 0, anomer ) : buffer.insert ( 0, anomer );
+    // html_format ? buffer.insert ( 0, " &#8592; " ) : buffer.insert( 0, "-" );
+
+    // clipper::MSugar msug = node_list.front().get_sugar();
+
+    //     #ifdef DUMP
+    //         DBG << "Node list size: " << node_list.size() << std::endl;
+    //         DBG << "Accessed the first sugar!" << std::endl;
+    //     #endif
+
+    // if ( print_info )
+    // {
+    //     if ( html_format ) buffer.insert ( 0, "</sub>" );
+    //     buffer.insert ( 0, msug.id().trim() );
+    //     if ( html_format ) buffer.insert ( 0, "<sub>" );
+    // }
+    // if ( html_format ) buffer.insert ( 0, "</span>" );
+    // translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() );
+    // if ( html_format )
+    // {
+    //     buffer.insert ( 0, "\">" );
+    //     buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
+    //     buffer.insert ( 0, "<span title=\"" );
+    // }
+
+    //     #ifdef DUMP
+    //         DBG << "Node list size: " << node_list.size() << std::endl;
+    //     #endif
+
+    // if ( node_list.size() < 2 ) return buffer;
+    // else
+    // {
+    //     if ( html_format )
+    //         node_list[0].get_connection(0).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+    //     else
+    //         node_list[0].get_connection(0).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
+
+    //     std::ostringstream s;
+    //     s << node_list[0].get_connection(0).get_order();
+
+    //     html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
+    //     buffer.insert( 0, s.str() );
+    //     buffer.insert( 0, anomer );
+    //     html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
+    // }
+
+    // bool branching = false;
+    // Node branched_from;
+
+    // for ( int i = 1 ; i < node_list.size() ; i++ ) // loop over all sugars except the first one (already processed)
+    // {
+    //     msug = node_list[i].get_sugar();
+
+    //     if ( print_info )
+    //     {
+    //         if ( html_format )
+    //             buffer.insert ( 0, "</sub>" );
+
+    //         buffer.insert ( 0, msug.id().trim() );
+
+    //         if ( html_format )
+    //             buffer.insert ( 0, "<sub>" );
+    //     }
+
+    //     if ( html_format ) buffer.insert ( 0, "</span>" );
+    //     translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() );
+    //     if ( html_format )
+    //     {
+    //         buffer.insert ( 0, "\">" );
+    //         buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
+    //         buffer.insert ( 0, "<span title=\"" );
+    //     }
+
+    //     if (( node_list[i].number_of_connections() == 0 ) && branching ) // close branch
+    //     {
+    //         if ( html_format )
+    //             branched_from.get_connection(1).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+    //         else
+    //             branched_from.get_connection(1).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
+
+    //         std::ostringstream s;
+    //         s << branched_from.get_connection(1).get_order();
+
+    //         branching = false;
+    //         buffer.insert ( 0, "(" );
+    //         html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert ( 0, "-" );
+    //         buffer.insert( 0, s.str() );
+    //         buffer.insert( 0, anomer );
+    //         html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
+    //     }
+    //     else if ( node_list[i].number_of_connections() > 1 ) // open branch
+    //     {
+    //         branching = true;
+    //         buffer.insert ( 0, ")" );
+    //         branched_from = node_list[i];
+    //     }
+
+    //     if ( node_list[i].number_of_connections() > 0 ) // draw the actual connection
+    //     {
+    //         if ( html_format )
+    //             node_list[i].get_connection(0).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
+    //         else
+    //             node_list[i].get_connection(0).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
+
+    //         std::ostringstream s;
+    //         s << node_list[i].get_connection(0).get_order();
+
+    //         html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
+    //         buffer.insert( 0, s.str() );
+    //         buffer.insert( 0, anomer );
+    //         html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
+    //     }
+
+    // }
+    return wurcs_string;
+}
+
 
 
 

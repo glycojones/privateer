@@ -580,9 +580,16 @@ namespace clipper
             std::string get_root_for_filename () { return "[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
-           // clipper::String print_wurcs ( const bool print_info, const bool html_format, const bool translate );
-           // data structure - tree - computer science.  
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
+            
+            
+            
+            // WURCS FUNCTIONS //
+            std::vector < std::string > obtain_unsorted_unique_WURCS_residues();
+            clipper::String print_wurcs ();
+
+            // WURCS FUNCTIONS END // 
+
 
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 
@@ -646,6 +653,12 @@ namespace clipper
             std::vector < clipper::MSugar > sugars;         // vector of sugars
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
+
+            // WURCS VARIABLES BEGIN //
+
+
+
+            // WURCS VARIABLES END // 
 
     }; // class MGlycan
 

@@ -536,49 +536,49 @@ const sugar_database_entry sugar_database[] =
 
         // codes for hexoses
 
-        if      ( name == "GLC" ) wurcs_residue_code = "[a2122h-1a_1-5]"   ; // alpha
-        else if ( name == "BGC" ) wurcs_residue_code = "[a2122h-1b_1-5]"   ; // beta
-        else if ( name == "MAN" ) wurcs_residue_code = "[a1122h-1a_1-5]"   ; // alpha
-        else if ( name == "BMA" ) wurcs_residue_code = "[a1122h-1b_1-5]"   ; // beta
-        else if ( name == "GLA" ) wurcs_residue_code = "[a2112h-1a_1-5]"   ; // alpha
-        else if ( name == "GAL" ) wurcs_residue_code = "[a2112h-1b_1-5]"   ; // beta
-        else if ( name == "FUC" ) wurcs_residue_code = "[a1221m-1a_1-5]"   ; // alpha - l - fucose
-        else if ( name == "FCB" ) wurcs_residue_code = "[a2112m-1b_1-5]"   ; // beta - d - fucose
-        else if ( name == "FUL" ) wurcs_residue_code = "[a1221m-1b_1-5]"   ; // beta - l - fucose
-        else if ( name == "XYS" ) wurcs_residue_code = "[a212h-1a_1-5]"   ; // alpha
-        else if ( name == "XYP" ) wurcs_residue_code = "[a212h-1b_1-5]"   ; // beta
+        if      ( name == "GLC" ) wurcs_residue_code = "a2122h-1a_1-5"   ; // alpha
+        else if ( name == "BGC" ) wurcs_residue_code = "a2122h-1b_1-5"   ; // beta
+        else if ( name == "MAN" ) wurcs_residue_code = "a1122h-1a_1-5"   ; // alpha
+        else if ( name == "BMA" ) wurcs_residue_code = "a1122h-1b_1-5"   ; // beta
+        else if ( name == "GLA" ) wurcs_residue_code = "a2112h-1a_1-5"   ; // alpha
+        else if ( name == "GAL" ) wurcs_residue_code = "a2112h-1b_1-5"   ; // beta
+        else if ( name == "FUC" ) wurcs_residue_code = "a1221m-1a_1-5"   ; // alpha - l - fucose
+        else if ( name == "FCB" ) wurcs_residue_code = "a2112m-1b_1-5"   ; // beta - d - fucose
+        else if ( name == "FUL" ) wurcs_residue_code = "a1221m-1b_1-5"   ; // beta - l - fucose
+        else if ( name == "XYS" ) wurcs_residue_code = "a212h-1a_1-5"   ; // alpha
+        else if ( name == "XYP" ) wurcs_residue_code = "a212h-1b_1-5"   ; // beta
 
         // codes for hexosamines
         // couldn't find codes for: ManN (either), GalN (either)
 
-        else if ( name == "GCS" ) wurcs_residue_code = "[a2122h-1b_1-5_2*N]"  ; // beta
-        else if ( name == "PA1" ) wurcs_residue_code = "[a2122h-1a_1-5_2*N]"  ; // alpha
+        else if ( name == "GCS" ) wurcs_residue_code = "a2122h-1b_1-5_2*N"  ; // beta
+        else if ( name == "PA1" ) wurcs_residue_code = "a2122h-1a_1-5_2*N"  ; // alpha
 
         // codes for N-acetyl hexosamines
         // couldn't find codes for: ManNAc (beta)
 
-        else if ( name == "NAG" ) wurcs_residue_code = "[a2122h-1b_1-5_2*NCC/3=O]"; // beta
-        else if ( name == "NDG" ) wurcs_residue_code = "[a2122h-1a_1-5_2*NCC/3=O]"; // alpha
-        else if ( name == "NGA" ) wurcs_residue_code = "[a2112h-1b_1-5_2*NCC/3=O]"; // beta
-        else if ( name == "A2G" ) wurcs_residue_code = "[a2112h-1a_1-5_2*NCC/3=O]"; // alpha
-        else if ( name == "BM3" ) wurcs_residue_code = "[a1122h-1a_1-5_2*NCC/3=O]"; // alpha
+        else if ( name == "NAG" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O"; // beta
+        else if ( name == "NDG" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O"; // alpha
+        else if ( name == "NGA" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O"; // beta
+        else if ( name == "A2G" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O"; // alpha
+        else if ( name == "BM3" ) wurcs_residue_code = "a1122h-1a_1-5_2*NCC/3=O"; // alpha
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
 
-        else if ( name == "SIA" ) wurcs_residue_code = "[Aad21122h-2a_2-6_5*NCC/3=O]" ; // alpha
-        else if ( name == "SLB" ) wurcs_residue_code = "[Aad21122h-2b_2-6_5*NCC/3=O]" ; // beta
-        else if ( name == "IDR" ) wurcs_residue_code = "[a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O]"   ; // alpha
-        else if ( name == "KDM" ) wurcs_residue_code = "[Aad21122h-2a_2-6]"    ; // alpha
-        else if ( name == "KDN" ) wurcs_residue_code = "[Aad21122h-2b_2-6]"    ; // beta
-        else if ( name == "BDP" ) wurcs_residue_code = "[a2122A-1b_1-5]"   ; // beta
-        else if ( name == "GCU" ) wurcs_residue_code = "[a2122A-1a_1-5]"   ; // alpha
-        else if ( name == "MAV" ) wurcs_residue_code = "[a1122A-1a_1-5]"   ; // alpha
-        else if ( name == "BEM" ) wurcs_residue_code = "[a1122A-1b_1-5]"   ; // beta
-        else if ( name == "GTR" ) wurcs_residue_code = "[a2112A-1b_1-5]"   ; // beta
-        else if ( name == "ADA" ) wurcs_residue_code = "[a2112A-1a_1-5]"   ; // alpha
+        else if ( name == "SIA" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O" ; // alpha
+        else if ( name == "SLB" ) wurcs_residue_code = "Aad21122h-2b_2-6_5*NCC/3=O" ; // beta
+        else if ( name == "IDR" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O"   ; // alpha
+        else if ( name == "KDM" ) wurcs_residue_code = "Aad21122h-2a_2-6"    ; // alpha
+        else if ( name == "KDN" ) wurcs_residue_code = "Aad21122h-2b_2-6"    ; // beta
+        else if ( name == "BDP" ) wurcs_residue_code = "a2122A-1b_1-5"   ; // beta
+        else if ( name == "GCU" ) wurcs_residue_code = "a2122A-1a_1-5"   ; // alpha
+        else if ( name == "MAV" ) wurcs_residue_code = "a1122A-1a_1-5"   ; // alpha
+        else if ( name == "BEM" ) wurcs_residue_code = "a1122A-1b_1-5"   ; // beta
+        else if ( name == "GTR" ) wurcs_residue_code = "a2112A-1b_1-5"   ; // beta
+        else if ( name == "ADA" ) wurcs_residue_code = "a2112A-1a_1-5"   ; // alpha
 
-        else if ( name == "DAN" ) wurcs_residue_code = "[Aad21122h-2x_2-6_5*N]" ; // Undetermined. 
+        else if ( name == "DAN" ) wurcs_residue_code = "Aad21122h-2x_2-6_5*N" ; // Undetermined. 
         else wurcs_residue_code = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
 
         return wurcs_residue_code;
