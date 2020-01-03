@@ -2575,180 +2575,201 @@ void MGlycan::set_annotations ( std::string expression_system )
     }
 }
 
-std::vector < std::string > MGlycan::obtain_unsorted_unique_WURCS_residues()
+/*
+Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
+Function used to convert an int number to a char letter. Needed for generation of WURCS strings, specifically to conver residue IDs to letters and leave numbers
+for linkage information.
+
+!!! TO DO: Need to relocate this function somewhere else, doesn't really belong under ::MGlycan.
+
+Last modified on: 03/01/2020
+*/
+char MGlycan::convertNumberToLetter(int number)
+{
+    std::string alphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    return alphabet.at(number % alphabet.size());
+}
+
+/*
+Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
+Function used to obtain a std::vector populated with WURCS residue descriptions of unique carbohydrate monomers in the glycan chain
+
+Performance considerations: uses a non ideal implementation of making sure that only unique strings are added to std::vector
+                            via std::find function. This gives O(N*N) complexity. However, this method is used regardless for the
+                            following reasons: 
+                            1.) This std::vector is unlikely to ever be significantly huge, thus unlikely to cause a huge performance penalty.
+                            2.) WURCS requires that the sequence of items pushed into vector are maintained - we don't want
+                            to rearrange the order of individual items within the std::vector. 
+
+Last modified on: 03/01/2020
+*/
+std::vector < std::string > MGlycan::obtain_unique_WURCS_residues()
 {
     std::vector < std::string > uniqueResidues;
-    clipper::MSugar msug;
+    
     for(int i = 0; i < node_list.size(); i++)
-    {
+    {   
+        clipper::MSugar msug;
+        std::string msug_wurcs_string;
+
         msug = node_list[i].get_sugar();
-        uniqueResidues.push_back(clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() ) );
+        msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() ); 
+
+        if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_wurcs_string) == uniqueResidues.end()) {
+            uniqueResidues.push_back(msug_wurcs_string);
+        }
     }
-    std::sort(uniqueResidues.begin(), uniqueResidues.end());
-    uniqueResidues.erase(std::unique(uniqueResidues.begin(), uniqueResidues.end() ), uniqueResidues.end() );
-
-
     return uniqueResidues;
 }
 
+/*
+Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
+Function used to obtain a total number of glycosidic bonds within the chain. Needed for generation of WURCS strings.
+
+Last modified on: 03/01/2020
+*/
+const int MGlycan::obtain_total_number_of_glycosidic_bonds()
+{
+    int totalConnections = 0;
+    
+    for(int i = 0; i < node_list.size(); i++)
+    {   
+        int numOfConnectionsPerResidue = node_list[i].number_of_connections();
+        totalConnections += numOfConnectionsPerResidue;
+    }
+    return totalConnections;
+}
+
+/*
+
+Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 02/01/2020
+Function that produces a WURCS string describing a glycan chain.
+
+WURCS=Version/Unique Residue Count, Chain Length Count, Number of linkages between monomers/[Unique Monomer Description 1][Unique Monomer Description 2]/Unique Monomer 1 at position A-Unique Monomer 1 at position B/Glycosidic bond between Monomer A from position 4 connecting to Monomer B at position 1.
+WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
+
+Current issue: It appears that only 1-3, 1-4 and 1-6 currently exist in Privateer. 
+
+TO DO: If 2-6 or 1-2 linkages do not exist in Privateer, either add support for them, or try getting around that via 
+       specific rulesets relating to two monomers being linked to each other. 
+
+TO DO: Currently, privateer assumes that all linkages are in the form of 1-x, where x is derived linkage from pdb file. 
+       Modify Node and Linkage classes, to derive linkages of form y-x, which both would be accessible by internal functions. 
+
+Last modified on: 03/01/2020
+*/
 clipper::String MGlycan::print_wurcs()
 {
-    
-    
     int glycanLength = sugars.size();
-    int uniqueResidueCount = obtain_unsorted_unique_WURCS_residues().size();
+    const int numberOfConnections = obtain_total_number_of_glycosidic_bonds();
+    std::vector < std::string > uniqueResidueList = obtain_unique_WURCS_residues();
 
     clipper::String wurcs_string = "WURCS=";
-
 
     // WURCS version
     wurcs_string += "2.0"; 
     wurcs_string += "/"; 
 
-    // Unit Count
+    // Unit Count(Unique Residue Count, Chain Length Count, Number of linkages between monomers)
 
-    wurcs_string += std::to_string(uniqueResidueCount) + "," + std::to_string(glycanLength) + ",/";
-    // for(int i = 0; i < uniqueResidueList.size(); i++)
-    // {
-    //     wurcs_string += "[" + uniqueResidueList[i] + "]";
-    // }
+    wurcs_string += std::to_string(uniqueResidueList.size()) + "," + std::to_string(glycanLength) + "," + std::to_string(numberOfConnections) + "/";
+    
+    // Unique Monomer description loop. 
+    for(int i = 0; i < uniqueResidueList.size(); i++)
+    {
+        wurcs_string += "[" + uniqueResidueList[i] + "]";
+    }
     wurcs_string += "/"; 
 
-    // #ifdef DUMP
-    //     DBG << "Glycan length: " << sugars.size() << std::endl;
-    // #endif
+    // Add first monomer ID. 
 
-    // if ( html_format ) buffer.insert ( 0, "</sub>" );
-    // buffer.insert ( 0, root.first.id().trim() );
-    // if ( html_format ) buffer.insert ( 0, "<sub>" );
+    wurcs_string += "1";
 
-    // #ifdef DUMP
-    //     DBG << "Accessed the root, which contains this sugar: " << root.second.type() <<  std::endl;
-    // #endif
+    if(node_list.size() < 2) return wurcs_string; // if only a single monomer, linkage information does not exist. 
+    // If the glycan chain has more than 1 monomer, add other monomers and include linkage information between monomers. 
+    else
+    {
+        int connectedToNodeID;
+        std::ostringstream linkagePositionInitial;
 
-    // buffer.insert( 0, root.first.type().c_str() );
+        wurcs_string += "-";
 
-    // html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
+        // Add sequence information, by relating to monomer descriptions contained within std::vector < std::string > uniqueResidueList. 
+        for(int i = 1; i < node_list.size(); i++)
+        {   
+            clipper::MSugar msug;
+            std::string msug_wurcs_string;
 
-    // clipper::String anomer;
+            msug = node_list[i].get_sugar();
+            msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() );
 
-    // if ( html_format ) root.second.anomer() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
-    // else root.second.anomer() == "alpha" ? anomer = "a" : anomer = "b";
+            std::vector < std::string >::iterator residueAssigner = std::find(uniqueResidueList.begin(), uniqueResidueList.end(), msug_wurcs_string);
 
-    // html_format ? buffer.insert ( 0, anomer ) : buffer.insert ( 0, anomer );
-    // html_format ? buffer.insert ( 0, " &#8592; " ) : buffer.insert( 0, "-" );
+            int residueID = std::distance(uniqueResidueList.begin(), residueAssigner);
 
-    // clipper::MSugar msug = node_list.front().get_sugar();
+            wurcs_string += std::to_string(residueID + 1);
+            if( i < (node_list.size() - 1) ) wurcs_string += "-";
+        }
 
-    //     #ifdef DUMP
-    //         DBG << "Node list size: " << node_list.size() << std::endl;
-    //         DBG << "Accessed the first sugar!" << std::endl;
-    //     #endif
+        // Add linkage information
 
-    // if ( print_info )
-    // {
-    //     if ( html_format ) buffer.insert ( 0, "</sub>" );
-    //     buffer.insert ( 0, msug.id().trim() );
-    //     if ( html_format ) buffer.insert ( 0, "<sub>" );
-    // }
-    // if ( html_format ) buffer.insert ( 0, "</span>" );
-    // translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() );
-    // if ( html_format )
-    // {
-    //     buffer.insert ( 0, "\">" );
-    //     buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
-    //     buffer.insert ( 0, "<span title=\"" );
-    // }
+        // Prepare first linkage between 1st and 2nd monomers
+        wurcs_string += "/";
 
-    //     #ifdef DUMP
-    //         DBG << "Node list size: " << node_list.size() << std::endl;
-    //     #endif
+        connectedToNodeID = node_list[0].get_connection(0).get_linked_node_id();
+        linkagePositionInitial << node_list[0].get_connection(0).get_order();
 
-    // if ( node_list.size() < 2 ) return buffer;
-    // else
-    // {
-    //     if ( html_format )
-    //         node_list[0].get_connection(0).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
-    //     else
-    //         node_list[0].get_connection(0).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
+        wurcs_string += convertNumberToLetter(0);
+        wurcs_string += linkagePositionInitial.str();
+        
+        wurcs_string += "-";
 
-    //     std::ostringstream s;
-    //     s << node_list[0].get_connection(0).get_order();
+        wurcs_string += convertNumberToLetter(connectedToNodeID);
+        wurcs_string += "1";
 
-    //     html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
-    //     buffer.insert( 0, s.str() );
-    //     buffer.insert( 0, anomer );
-    //     html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
-    // }
+        wurcs_string += "_";
 
-    // bool branching = false;
-    // Node branched_from;
+        bool branching = false;
+        Node branched_from;
 
-    // for ( int i = 1 ; i < node_list.size() ; i++ ) // loop over all sugars except the first one (already processed)
-    // {
-    //     msug = node_list[i].get_sugar();
+        // Describe the rest of the linkages. 
+        for(int i = 1; i < node_list.size(); i++)
+        {  
+            if ( node_list[i].number_of_connections() > 0 )
+            {
+                std::ostringstream linkagePosition;
+                connectedToNodeID = node_list[i].get_connection(0).get_linked_node_id();
+                linkagePosition << node_list[i].get_connection(0).get_order();
 
-    //     if ( print_info )
-    //     {
-    //         if ( html_format )
-    //             buffer.insert ( 0, "</sub>" );
+                wurcs_string += convertNumberToLetter(i);
+                wurcs_string += linkagePosition.str();
 
-    //         buffer.insert ( 0, msug.id().trim() );
+                wurcs_string += "-";
 
-    //         if ( html_format )
-    //             buffer.insert ( 0, "<sub>" );
-    //     }
+                wurcs_string += convertNumberToLetter(connectedToNodeID);
+                wurcs_string += "1";
 
-    //     if ( html_format ) buffer.insert ( 0, "</span>" );
-    //     translate ? buffer.insert ( 0, clipper::data::carbname_of ( msug.type().trim() ).c_str() ) : buffer.insert( 0, msug.type().c_str() );
-    //     if ( html_format )
-    //     {
-    //         buffer.insert ( 0, "\">" );
-    //         buffer.insert ( 0, msug.type() + " " + msug.id().trim() + " in " + msug.conformation_name() );
-    //         buffer.insert ( 0, "<span title=\"" );
-    //     }
+                if( i < (node_list.size() - 2) ) wurcs_string += "_";
+            }
+            if ( node_list[i].number_of_connections() > 1 )
+            {
+                std::ostringstream linkagePosition;
+                connectedToNodeID = node_list[i].get_connection(1).get_linked_node_id();
+                linkagePosition << node_list[i].get_connection(1).get_order();
 
-    //     if (( node_list[i].number_of_connections() == 0 ) && branching ) // close branch
-    //     {
-    //         if ( html_format )
-    //             branched_from.get_connection(1).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
-    //         else
-    //             branched_from.get_connection(1).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
+                wurcs_string += convertNumberToLetter(i);
+                wurcs_string += linkagePosition.str();
 
-    //         std::ostringstream s;
-    //         s << branched_from.get_connection(1).get_order();
+                wurcs_string += "-";
 
-    //         branching = false;
-    //         buffer.insert ( 0, "(" );
-    //         html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert ( 0, "-" );
-    //         buffer.insert( 0, s.str() );
-    //         buffer.insert( 0, anomer );
-    //         html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
-    //     }
-    //     else if ( node_list[i].number_of_connections() > 1 ) // open branch
-    //     {
-    //         branching = true;
-    //         buffer.insert ( 0, ")" );
-    //         branched_from = node_list[i];
-    //     }
+                wurcs_string += convertNumberToLetter(connectedToNodeID);
+                wurcs_string += "1";
 
-    //     if ( node_list[i].number_of_connections() > 0 ) // draw the actual connection
-    //     {
-    //         if ( html_format )
-    //             node_list[i].get_connection(0).get_anomericity() == "alpha" ? anomer = "&#945;" : anomer = "&#946;";
-    //         else
-    //             node_list[i].get_connection(0).get_anomericity() == "alpha" ? anomer = "a" : anomer = "b";
-
-    //         std::ostringstream s;
-    //         s << node_list[i].get_connection(0).get_order();
-
-    //         html_format ? buffer.insert ( 0, "&#8722;" ) : buffer.insert( 0, "-" );
-    //         buffer.insert( 0, s.str() );
-    //         buffer.insert( 0, anomer );
-    //         html_format ? buffer.insert ( 0, "&#8592;" ) : buffer.insert( 0, "-" );
-    //     }
-
-    // }
+                if( i < (node_list.size() - 2) ) wurcs_string += "_";
+            }
+        }
+        
+    }
     return wurcs_string;
 }
 
