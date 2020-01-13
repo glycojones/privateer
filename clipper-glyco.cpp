@@ -59,7 +59,7 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-//#define DUMP 1
+// #define DUMP 1
 
 
 using namespace clipper;
@@ -2643,20 +2643,26 @@ const int MGlycan::obtain_total_number_of_glycosidic_bonds()
 /*
 
 Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 02/01/2020
-Function that produces a WURCS string describing a glycan chain.
+Function that produces a WURCS string describing a Glycan sequence in the Glycoprotein Chain.
 
 WURCS=Version/Unique Residue Count, Chain Length Count, Number of linkages between monomers/[Unique Monomer Description 1][Unique Monomer Description 2]/Unique Monomer 1 at position A-Unique Monomer 1 at position B/Glycosidic bond between Monomer A from position 4 connecting to Monomer B at position 1.
 WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
-Current issue: It appears that only 1-3, 1-4 and 1-6 currently exist in Privateer. 
+// No known issues at the moment, supports linkages both to ketoses and aldoses (as of 13/01/2019).
+// TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
 
-TO DO: If 2-6 or 1-2 linkages do not exist in Privateer, either add support for them, or try getting around that via 
-       specific rulesets relating to two monomers being linked to each other. 
+TEST CASE: 
+PDB ID:                                 3v8x
+GlyTouCan ID for glycan on Chain A:     G98736SM
+GlyTouCan ID for glycan on Chain B:     G74608QW
 
-TO DO: Currently, privateer assumes that all linkages are in the form of 1-x, where x is derived linkage from pdb file. 
-       Modify Node and Linkage classes, to derive linkages of form y-x, which both would be accessible by internal functions. 
+WURCS2GTC DEMO: 
+Glycan on Chain A: 
+https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,10,9/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-4-5-3-1-4/a4-b1_b4-c1_c3-d1_c6-h1_d4-e1_e4-f1_f6-g2_h4-i1_i4-j1
+Chain on Chain B: 
+https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
-Last modified on: 03/01/2020
+Last modified on: 13/01/2020
 */
 clipper::String MGlycan::print_wurcs()
 {
@@ -2689,6 +2695,7 @@ clipper::String MGlycan::print_wurcs()
     // If the glycan chain has more than 1 monomer, add other monomers and include linkage information between monomers. 
     else
     {
+        clipper::MSugar msug;
         int connectedToNodeID;
         std::ostringstream linkagePositionInitial;
 
@@ -2697,7 +2704,6 @@ clipper::String MGlycan::print_wurcs()
         // Add sequence information, by relating to monomer descriptions contained within std::vector < std::string > uniqueResidueList. 
         for(int i = 1; i < node_list.size(); i++)
         {   
-            clipper::MSugar msug;
             std::string msug_wurcs_string;
 
             msug = node_list[i].get_sugar();
@@ -2711,13 +2717,18 @@ clipper::String MGlycan::print_wurcs()
             if( i < (node_list.size() - 1) ) wurcs_string += "-";
         }
 
+        msug = node_list[0].get_sugar();
+
         // Add linkage information
 
         // Prepare first linkage between 1st and 2nd monomers
         wurcs_string += "/";
 
         connectedToNodeID = node_list[0].get_connection(0).get_linked_node_id();
+        msug = node_list[connectedToNodeID].get_sugar();
         linkagePositionInitial << node_list[0].get_connection(0).get_order();
+
+
 
         wurcs_string += convertNumberToLetter(0);
         wurcs_string += linkagePositionInitial.str();
@@ -2725,7 +2736,14 @@ clipper::String MGlycan::print_wurcs()
         wurcs_string += "-";
 
         wurcs_string += convertNumberToLetter(connectedToNodeID);
-        wurcs_string += "1";
+
+        #ifdef DUMP
+            DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
+            DBG << "Number of connections for msug/node_list[0]: " << node_list[0].number_of_connections() << std::endl << std::endl;
+        #endif
+
+        if (msug.full_type() == "aldose") wurcs_string += "1";
+        else                              wurcs_string += "2";
 
         wurcs_string += "_";
 
@@ -2735,10 +2753,18 @@ clipper::String MGlycan::print_wurcs()
         // Describe the rest of the linkages. 
         for(int i = 1; i < node_list.size(); i++)
         {  
+            msug = node_list[i].get_sugar();
+
+            #ifdef DUMP
+                DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
+                DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl << std::endl;
+            #endif
+
             if ( node_list[i].number_of_connections() > 0 )
             {
                 std::ostringstream linkagePosition;
                 connectedToNodeID = node_list[i].get_connection(0).get_linked_node_id();
+                msug = node_list[connectedToNodeID].get_sugar();
                 linkagePosition << node_list[i].get_connection(0).get_order();
 
                 wurcs_string += convertNumberToLetter(i);
@@ -2747,15 +2773,20 @@ clipper::String MGlycan::print_wurcs()
                 wurcs_string += "-";
 
                 wurcs_string += convertNumberToLetter(connectedToNodeID);
-                wurcs_string += "1";
+                
+                if ( msug.full_type() == "aldose" ) wurcs_string += "1";
+                else                                wurcs_string += "2";
 
-                if( i < (node_list.size() - 2) ) wurcs_string += "_";
+                if  ( i < (node_list.size() - 2) )  wurcs_string += "_";
             }
+
             if ( node_list[i].number_of_connections() > 1 )
             {
                 std::ostringstream linkagePosition;
                 connectedToNodeID = node_list[i].get_connection(1).get_linked_node_id();
+                msug = node_list[connectedToNodeID].get_sugar();
                 linkagePosition << node_list[i].get_connection(1).get_order();
+
 
                 wurcs_string += convertNumberToLetter(i);
                 wurcs_string += linkagePosition.str();
@@ -2763,7 +2794,9 @@ clipper::String MGlycan::print_wurcs()
                 wurcs_string += "-";
 
                 wurcs_string += convertNumberToLetter(connectedToNodeID);
-                wurcs_string += "1";
+                
+                if (msug.full_type() == "aldose") wurcs_string += "1";
+                else                              wurcs_string += "2";
 
                 if( i < (node_list.size() - 2) ) wurcs_string += "_";
             }
