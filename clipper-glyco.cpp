@@ -2742,8 +2742,8 @@ clipper::String MGlycan::print_wurcs()
             DBG << "Number of connections for msug/node_list[0]: " << node_list[0].number_of_connections() << std::endl << std::endl;
         #endif
 
-        if (msug.full_type() == "aldose") wurcs_string += "1";
-        else                              wurcs_string += "2";
+        if (msug.full_type() == "ketose") wurcs_string += "2";
+        else                              wurcs_string += "1";
 
         wurcs_string += "_";
 
@@ -2774,8 +2774,8 @@ clipper::String MGlycan::print_wurcs()
 
                 wurcs_string += convertNumberToLetter(connectedToNodeID);
                 
-                if ( msug.full_type() == "aldose" ) wurcs_string += "1";
-                else                                wurcs_string += "2";
+                if ( msug.full_type() == "ketose" ) wurcs_string += "2";
+                else                                wurcs_string += "1";
 
                 if  ( i < (node_list.size() - 2) )  wurcs_string += "_";
             }
@@ -2795,8 +2795,8 @@ clipper::String MGlycan::print_wurcs()
 
                 wurcs_string += convertNumberToLetter(connectedToNodeID);
                 
-                if (msug.full_type() == "aldose") wurcs_string += "1";
-                else                              wurcs_string += "2";
+                if (msug.full_type() == "ketose") wurcs_string += "2";
+                else                              wurcs_string += "1";
 
                 if( i < (node_list.size() - 2) ) wurcs_string += "_";
             }
