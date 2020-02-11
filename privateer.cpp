@@ -330,7 +330,7 @@ int main(int argc, char** argv)
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
-                std::cout << std::endl << list_of_glycans[i].print_wurcs() << std::endl;
+                std::cout << std::endl << list_of_glycans[i].generate_wurcs() << std::endl;
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
@@ -1087,7 +1087,7 @@ int main(int argc, char** argv)
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
-                std::cout << std::endl << list_of_glycans[i].print_wurcs() << std::endl;
+                std::cout << std::endl << list_of_glycans[i].generate_wurcs() << std::endl;
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;

@@ -2241,6 +2241,57 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
 }
 
 
+std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::string expression_system )
+{
+    clipper::MMDBfile mfile;
+    clipper::MiniMol mmol;
+ 
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum |
+                          mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks |
+                          mmdb::MMDBF_EnforceUniqueChainID;
+ 
+    mfile.SetFlag(mmdbflags);
+ 
+    mfile.read_file(pdb_filename);
+    mfile.import_minimol(mmol);
+ 
+    if (mmol.cell().is_null()) // fixme: crystal-less NMR models were causing trouble
+        mmol.init(clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr(300, 300, 300, 90, 90, 90)));
+ 
+    const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
+ 
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+ 
+    std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+ 
+    if (!list_of_glycans.empty())
+    {
+        std::string summaryString;
+        summaryString = "Total Glycans Found: ";
+        summaryString.append(std::to_string(list_of_glycans.size()));
+        summaryString.append("\n");
+        for (int i = 0; i < list_of_glycans.size(); i++)
+        {
+            std::string glycanRoot;
+            clipper::String wurcsDescription;
+            clipper::String temporaryString;
+
+            glycanRoot = list_of_glycans[i].get_root_by_name();
+            wurcsDescription = list_of_glycans[i].generate_wurcs();
+ 
+            temporaryString = temporaryString + glycanRoot + "\n" + wurcsDescription + "\n";
+            summaryString.append(temporaryString);
+        }
+            return summaryString;
+    }
+    else
+    {
+       std::string error = "ERROR: No Glycans found in the model!";
+       return error;
+    }
+}
+
+
 std::string privateer::scripting::print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection )
 {
     std::ostringstream of_xml;

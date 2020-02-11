@@ -586,7 +586,7 @@ namespace clipper
             char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
             std::vector < std::string > obtain_unique_WURCS_residues();
             const int obtain_total_number_of_glycosidic_bonds();
-            clipper::String print_wurcs ();
+            clipper::String generate_wurcs ();
             // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END // 
 
 

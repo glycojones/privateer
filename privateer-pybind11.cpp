@@ -164,6 +164,11 @@ PYBIND11_MODULE(privateer_core, m)
         "Returns RGB colour values in two keys (SNFG or Privateer)",
         "colour"_a,
         "original_style"_a,
-        "inverted"_a );
+        "inverted"_a);
 
+  m.def("print_wurcs",
+        &privateer::scripting::print_wurcs,
+        "Returns a WURCS string of all glycans in the glycoprotein model",
+        "pdb_filename"_a,
+        "expression_system"_a = "undefined");
 }

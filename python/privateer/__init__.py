@@ -4,4 +4,5 @@ from .privateer_core import get_annotated_glycans
 from .privateer_core import get_annotated_glycans_hierarchical
 from .privateer_core import svg_graphics_demo
 from .privateer_core import get_colour
+from .privateer_core import print_wurcs
 from .privateer_core import Colour
