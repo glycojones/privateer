@@ -46,7 +46,7 @@
 //L  Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 //L  MA 02111-1307 USA
 
-#define DUMP 1
+// #define DUMP 1
 
 #include <fstream>
 #include <algorithm>
@@ -2659,19 +2659,9 @@ https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,10,9/[
 Chain on Chain B: 
 https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
+12/02/2020: All previously noted issues have been addressed. The current version of the code should be much more robust and not have any significant bugs.
 
-11/02/2020: There was an issue with 4BYH where branching on first sugar was ignored. Current fix is likely to break, need to check whether more than 3 connestions first glycan can exist. 
-            There was also an issue with _ added for no reason at the end. Not an ideal fix either, doesn't address the root of the problem.
-
-12/02/2020: Found a minor bug, where a / wouldn't be added in the cases of single monosaccharide glycosylations at the very end. 
 Last modified on: 12/02/2020
-
-
-BUG: not all chain linkages are described in 3sgk, I presume it's that single monomer sticking out at one point. 
-     GTC id = G59471TH
-WURCS=2.0/3,8,7/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-1-2-3-1-1-3-1/a4-b1_b4-c1_c3-d1_c4-f1_d2-e1_g2-h1
-WURCS=2.0/3,8,7/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-1-2-3-1-1-3-1/a4-b1_b4-c1_c3-d1_c4-f1_c6-g1_d2-e1_g2-h1
-WURCS=2.0/3,8,7/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-1-2-3-1-1-3-1/a4-b1_b4-c1_c3-d1_c3-d1_c4-f1_c6-g1_d2-e1_g2-h1
 
 // TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
 // TO DO: Find out whether a carbohydrate can form three covalent connections to other residues.
@@ -2743,32 +2733,9 @@ clipper::String MGlycan::generate_wurcs()
 
         // Add linkage information
 
-        // Prepare first linkage between 1st and 2nd monomers
         if (node_list[0].number_of_connections() > 0)
         {
-            std::ostringstream linkagePosition;
-            connectedToNodeID = node_list[0].get_connection(0).get_linked_node_id();
-            msug = node_list[connectedToNodeID].get_sugar();
-            linkagePosition << node_list[0].get_connection(0).get_order();
-
-            wurcs_string += convertNumberToLetter(0);
-            wurcs_string += linkagePosition.str();
-
-            wurcs_string += "-";
-
-            wurcs_string += convertNumberToLetter(connectedToNodeID);
-
-            if (msug.full_type() == "ketose")
-                wurcs_string += "2";
-            else
-                wurcs_string += "1";
-
-            wurcs_string += "_";
-        }
-
-        if (node_list[0].number_of_connections() > 1)
-        {
-            for (int j = 1; j < node_list[0].number_of_connections(); j++ )
+            for (int j = 0; j < node_list[0].number_of_connections(); j++ )
             {
             std::ostringstream linkagePosition;
             connectedToNodeID = node_list[0].get_connection(j).get_linked_node_id();
@@ -2804,30 +2771,7 @@ clipper::String MGlycan::generate_wurcs()
 
             if (node_list[i].number_of_connections() > 0)
             {
-                std::ostringstream linkagePosition;
-                connectedToNodeID = node_list[i].get_connection(0).get_linked_node_id();
-                msug = node_list[connectedToNodeID].get_sugar();
-                linkagePosition << node_list[i].get_connection(0).get_order();
-
-                wurcs_string += convertNumberToLetter(i);
-                wurcs_string += linkagePosition.str();
-
-                wurcs_string += "-";
-
-                wurcs_string += convertNumberToLetter(connectedToNodeID);
-
-                if (msug.full_type() == "ketose")
-                    wurcs_string += "2";
-                else
-                    wurcs_string += "1";
-
-                if (i < (node_list.size() - 2))
-                    wurcs_string += "_";
-            }
-
-            if (node_list[i].number_of_connections() > 1)
-            {
-                for (int j = 1; j < node_list[i].number_of_connections(); j++)
+                for (int j = 0; j < node_list[i].number_of_connections(); j++)
                 {
                     std::ostringstream linkagePosition;
                     connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
