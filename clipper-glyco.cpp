@@ -2647,8 +2647,6 @@ Function that produces a WURCS string describing a Glycan sequence in the Glycop
 WURCS=Version/Unique Residue Count, Chain Length Count, Number of linkages between monomers/[Unique Monomer Description 1][Unique Monomer Description 2]/Unique Monomer 1 at position A-Unique Monomer 1 at position B/Glycosidic bond between Monomer A from position 4 connecting to Monomer B at position 1.
 WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
-// No known issues at the moment, supports linkages both to ketoses and aldoses (as of 13/01/2019).
-// TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
 
 TEST CASE: 
 PDB ID:                                 3v8x
@@ -2662,12 +2660,18 @@ Chain on Chain B:
 https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
 
-11/02/2020: There was an issue with 4BYH where branching on first sugar was ignored. Current fix is likely to break, need to check whether multiple branching points from first glycan can exist. 
+11/02/2020: There was an issue with 4BYH where branching on first sugar was ignored. Current fix is likely to break, need to check whether more than 3 connestions first glycan can exist. 
             There was also an issue with _ added for no reason at the end. Not an ideal fix either, doesn't address the root of the problem.
 
-Last modified on: 11/02/2020
+12/02/2020: Found a minor bug, where a / wouldn't be added in the cases of single monosaccharide glycosylations at the very end. 
+Last modified on: 12/02/2020
 
 
+BUG: not all chain linkages are described in 3sgk, I presume it's that single monomer sticking out at one point. 
+     GTC id = G59471TH
+
+// TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
+// TO DO: Find out whether a carbohydrate can form three covalent connections to other residues.
 */
 clipper::String MGlycan::generate_wurcs()
 {
@@ -2697,8 +2701,10 @@ clipper::String MGlycan::generate_wurcs()
     wurcs_string += "1";
 
     if (node_list.size() < 2)
+    {
+        wurcs_string += "/";
         return wurcs_string; // if only a single monomer, linkage information does not exist.
-    // If the glycan chain has more than 1 monomer, add other monomers and include linkage information between monomers.
+    } // If the glycan chain has more than 1 monomer, add other monomers and include linkage information between monomers.
     else
     {
         clipper::MSugar msug;

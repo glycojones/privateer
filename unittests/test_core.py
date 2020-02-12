@@ -4,6 +4,7 @@ import shutil
 import sys
 import privateer
 import test_data
+import requests
 from xml.etree import ElementTree as etree
 from datetime import datetime
 
@@ -334,6 +335,66 @@ class Test(unittest.TestCase):
             xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_o_glycans.xml")) )
+
+    def test_wurcs (self, verbose=False):
+
+        '''
+        Test correctness of WURCS outputs of all test glycans
+        '''
+
+        print ("Testing WURCS output string correctness for all test cases(requires internet connection)")
+        tock = datetime.now()
+        numModels = 0
+        totalGlycansInDataset = 0
+        totalCarbohydrateLigandsInDataset = 0
+        for model_input in os.listdir(self.test_data_path):
+            if model_input.endswith(".pdb") or model_input.endswith(".cif") or model_input.endswith(".mmcif"):
+                
+                # print(model_input)
+                
+                
+                file_input = os.path.join(self.test_data_path, model_input)
+                assert os.path.exists(self.test_data_path)
+                
+                
+                numModels+=1
+
+                totalWURCS = privateer.print_wurcs(file_input)
+                # print(totalWURCS)
+                temporaryString = totalWURCS.split('\n', 1)[0]
+                if temporaryString[0:21] == 'Total Glycans Found: ':
+                    totalGlycansInModel = int(temporaryString[21:])
+                else:
+                    totalGlycansInModel = 0
+                    totalCarbohydrateLigandsInDataset+=1
+
+                
+                temporaryString = totalWURCS.splitlines()
+
+
+                confirmNumGlycansInModel=0
+                for line in temporaryString:
+                    if line[:6] == 'WURCS=':
+                        confirmNumGlycansInModel+=1
+                        totalGlycansInDataset+=1
+                        queryLink = 'https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=' + line
+                        # print(queryLink)
+                        serverResponse = requests.get(queryLink).json()
+                        # print(serverResponse)
+                        for item in serverResponse:
+                            assert (item['id']) and item['WURCS'] == line
+
+                        
+
+                assert(totalGlycansInModel == confirmNumGlycansInModel)
+        tick = datetime.now()
+        diff = tick - tock
+
+        print("Test duration: %f seconds" % diff.total_seconds())
+        print("Total number of glycoprotein models tested: " + str(numModels))
+        print("Total number of glycans in the dataset: " + str(totalGlycansInDataset))
+        print("Total number of carbohydrates as ligands in the dataset: " + str(totalCarbohydrateLigandsInDataset))
+        print("Total number of proteins containing glycosylation: " + str(numModels - totalCarbohydrateLigandsInDataset) + " out of " + str(numModels) + " models.")
 
 
 if __name__ == '__main__':
