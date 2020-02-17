@@ -50,7 +50,7 @@
 
 //#define DUMP 1
 
-clipper::String program_version = "MKIV";
+clipper::String program_version = "MKIV_WURCS";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
@@ -61,7 +61,7 @@ typedef clipper::HKL_data_base::HKL_reference_index HRI;
 int main(int argc, char** argv)
 {
 
-    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2019/04/14" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2020/02/17" );
 
     prog.set_termination_message( "Failed" );
 
