@@ -5,6 +5,7 @@ import sys
 import privateer
 import test_data
 import requests
+import json
 from xml.etree import ElementTree as etree
 from datetime import datetime
 
@@ -336,21 +337,79 @@ class Test(unittest.TestCase):
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_o_glycans.xml")) )
 
-    def test_wurcs (self, verbose=False):
+    def test_wurcs_online (self, verbose=False):
 
         '''
         Test correctness of WURCS outputs of all test glycans
         '''
 
-        print ("Testing WURCS output string correctness for all test cases(requires internet connection)")
+        print ("Testing WURCS output string correctness for a single model")
+        tock = datetime.now()
+        totalGlycansInDataset = 0
+        model_input = os.path.join(self.test_data_path, "3sgk-nglycans_antibodies.pdb")
+        assert os.path.exists(self.test_data_path)
+        
+
+        totalWURCS = privateer.print_wurcs(model_input)
+        temporaryString = totalWURCS.split('\n', 1)[0]
+        if temporaryString[0:21] == 'Total Glycans Found: ':
+            totalGlycansInModel = int(temporaryString[21:])
+        else:
+            totalGlycansInModel = 0
+
+        
+        temporaryString = totalWURCS.splitlines()
+
+
+        confirmNumGlycansInModel=0
+        for line in temporaryString:
+            if line[:6] == 'WURCS=':
+                confirmNumGlycansInModel+=1
+                totalGlycansInDataset+=1
+                queryLink = 'https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=' + line
+                serverResponse = requests.get(queryLink).json()
+                for item in serverResponse:
+                    assert (item['id']) and item['WURCS'] == line
+
+                
+
+        assert(totalGlycansInModel == confirmNumGlycansInModel)
+        tick = datetime.now()
+        diff = tick - tock
+
+        print("Test duration: %f seconds" % diff.total_seconds())
+    
+    def test_wurcs_offline (self, verbose=False):
+
+        '''
+        Test correctness of WURCS outputs of all test glycans
+        '''
+
+        print ("Testing WURCS output string correctness for all test cases")
+
+        def GetJSON(path):
+            if path.endswith(".json"):
+                with open(path) as json_file:
+                    data = json.load(json_file)
+                    return data
+
+        def Find(list, key, value):
+            for i, dic in enumerate(list):
+                if dic[key] == value:
+                    return i
+            return "Not Found"
+
+
         tock = datetime.now()
         numModels = 0
         totalGlycansInDataset = 0
         totalCarbohydrateLigandsInDataset = 0
+        glycosmosDir = os.path.join(self.test_data_path, "glycosmos")
+        jsonFile = os.path.join(glycosmosDir, "glycosmos_data_2020-02-20.json")
+        glycosmosData = GetJSON(jsonFile)
+
         for model_input in os.listdir(self.test_data_path):
             if model_input.endswith(".pdb") or model_input.endswith(".cif") or model_input.endswith(".mmcif"):
-                
-                # print(model_input)
                 
                 
                 file_input = os.path.join(self.test_data_path, model_input)
@@ -369,24 +428,25 @@ class Test(unittest.TestCase):
                     totalCarbohydrateLigandsInDataset+=1
 
                 
-                temporaryString = totalWURCS.splitlines()
+                temporaryListOfStrings = totalWURCS.splitlines()
+                temporaryListOfStrings = temporaryListOfStrings[1:]
 
 
                 confirmNumGlycansInModel=0
-                for line in temporaryString:
-                    if line[:6] == 'WURCS=':
+                for i in range(totalGlycansInModel):
+                    privateerWURCS = temporaryListOfStrings[1]
+                    indexMatch = Find(glycosmosData, "Sequence", privateerWURCS)
+                    if(indexMatch != "Not Found"):
                         confirmNumGlycansInModel+=1
                         totalGlycansInDataset+=1
-                        queryLink = 'https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=' + line
-                        # print(queryLink)
-                        serverResponse = requests.get(queryLink).json()
-                        # print(serverResponse)
-                        for item in serverResponse:
-                            assert (item['id']) and item['WURCS'] == line
+                        glycosmosWURCS = glycosmosData[indexMatch]["Sequence"]
+                    else: 
+                        glycosmosWURCS = "Not Found"
+                    assert(privateerWURCS == glycosmosWURCS)
 
                         
-
-                assert(totalGlycansInModel == confirmNumGlycansInModel)
+                    temporaryListOfStrings = temporaryListOfStrings[2:]
+                assert(confirmNumGlycansInModel == totalGlycansInModel)
         tick = datetime.now()
         diff = tick - tock
 
@@ -395,6 +455,11 @@ class Test(unittest.TestCase):
         print("Total number of glycans in the dataset: " + str(totalGlycansInDataset))
         print("Total number of carbohydrates as ligands in the dataset: " + str(totalCarbohydrateLigandsInDataset))
         print("Total number of proteins containing glycosylation: " + str(numModels - totalCarbohydrateLigandsInDataset) + " out of " + str(numModels) + " models.")
+
+
+if __name__ == '__main__':
+    unittest.main()
+
 
 
 if __name__ == '__main__':
