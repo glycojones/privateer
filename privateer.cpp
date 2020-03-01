@@ -47,6 +47,7 @@
 #include <clipper/clipper-minimol.h>
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
+#include "nlohmann/json.hpp"
 
 //#define DUMP 1
 
@@ -55,6 +56,7 @@ using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
 using clipper::data32::Flag;
+using json = nlohmann::json;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 

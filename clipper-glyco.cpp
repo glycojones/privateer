@@ -56,12 +56,14 @@
 #include <sstream>
 #include <clipper/minimol/minimol_utils.h>
 #include "clipper-glyco.h"
+#include "nlohmann/json.hpp"
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
 
 using namespace clipper;
+using json = nlohmann::json;
 
 
 ///////////////////////// MSugar ///////////////////////////////
