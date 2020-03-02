@@ -23,6 +23,7 @@
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
+#include "nlohmann/json.hpp"
 
 inline const std::string b2s ( bool b )
 {
@@ -63,6 +64,8 @@ namespace privateer
                          clipper::String pdbname );
         bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
+        nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
+        int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
 
     }
 

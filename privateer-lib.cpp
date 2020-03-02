@@ -563,6 +563,30 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
     return map_data;
 }
 
+nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
+{
+    std::ifstream input(path);
+
+    input >> jsonContainer;
+
+    return jsonContainer;
+}
+
+int privateer::util::find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value )
+{
+    clipper::String jsonValue;
+    for (nlohmann::json::iterator it = jsonContainer.begin(); it != jsonContainer.end(); it++)
+    {
+        jsonValue = it.value()[key];
+        if(jsonValue == value)
+        {
+            int index = it - jsonContainer.begin();
+            return index;
+        }
+    }
+    return -1;
+}
+
 char privateer::util::get_altconformation(clipper::MAtom ma)
 {
     clipper::String identifier = ma.id();
