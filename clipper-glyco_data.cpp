@@ -542,8 +542,9 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "BMA" ) wurcs_residue_code = "a1122h-1b_1-5"   ; // beta
         else if ( name == "GLA" ) wurcs_residue_code = "a2112h-1a_1-5"   ; // alpha
         else if ( name == "GAL" ) wurcs_residue_code = "a2112h-1b_1-5"   ; // beta
-        else if ( name == "FUC" ) wurcs_residue_code = "a1221m-1a_1-5"   ; // alpha - l - fucose
+        else if ( name == "FCA" ) wurcs_residue_code = "a2112m-1a_1-5"   ; // alpha - d - fucose
         else if ( name == "FCB" ) wurcs_residue_code = "a2112m-1b_1-5"   ; // beta - d - fucose
+        else if ( name == "FUC" ) wurcs_residue_code = "a1221m-1a_1-5"   ; // alpha - l - fucose
         else if ( name == "FUL" ) wurcs_residue_code = "a1221m-1b_1-5"   ; // beta - l - fucose
         else if ( name == "XYS" ) wurcs_residue_code = "a212h-1a_1-5"   ; // alpha
         else if ( name == "XYP" ) wurcs_residue_code = "a212h-1b_1-5"   ; // beta
@@ -577,8 +578,16 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "BEM" ) wurcs_residue_code = "a1122A-1b_1-5"   ; // beta
         else if ( name == "GTR" ) wurcs_residue_code = "a2112A-1b_1-5"   ; // beta
         else if ( name == "ADA" ) wurcs_residue_code = "a2112A-1a_1-5"   ; // alpha
-
+        else if ( name == "LGU" ) wurcs_residue_code = "a1121A-1a_1-5" ; // alpha-L-Gulopyranuronic acid
+        else if ( name == "GUP" ) wurcs_residue_code = "a1121h-1a_1-5" ; // alpha-l-Gulopyranoside
         else if ( name == "DAN" ) wurcs_residue_code = "Aad21122h-2x_2-6_5*N" ; // Undetermined. 
+
+        // More unique residues
+        else if ( name == "M6D" ) wurcs_residue_code = "a1122h-1b_1-5_6*OPO/3O/3=O" ; // beta-D-Mannose 6-phosphate 
+        else if ( name == "NAA" ) wurcs_residue_code = "a2222h-1b_1-5_2*NCC/3=O" ; // 2-acetamido-2-deoxy-beta-D-Allopyranose
+        else if ( name == "NGK" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O_4*OSO/3=O/3=O" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
+        
+
         else wurcs_residue_code = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
 
         return wurcs_residue_code;
