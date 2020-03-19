@@ -39,7 +39,7 @@
 #include <iostream>
 #include "privateer-lib.h"
 #include "clipper-glyco.h"
-#include "blobs.h"
+#include "privateer-blobs.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -50,49 +50,47 @@
 #include <clipper/minimol/minimol_utils.h>
 
 
+//#define DUMP 1
 
-
-clipper::String program_version = "MKIV_a";
+clipper::String program_version = "MKV_a";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
 using clipper::data32::Flag;
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
-using namespace std;
 
 
 int main(int argc, char** argv)
 {
 
-    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2015/07/10" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2020/03/02" );
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nCopyright 2013-2016 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
-    std::cout << "\nWith contributions from Haroldas Bagdonas, Marcin Wojdyr and Jacob Sorensen." << std::endl  ;
+    std::cout << "\nCopyright 2013-2019 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
     std::cout << "\n\nPlease reference these articles: "<< std::endl ;
     std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
     std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;
     std::cout << "\n  'Carbohydrate anomalies in the PDB'";
     std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
 
-    std::size_t found = program_version.find("_"); // if found, this indicates that we are running a test version
-
-    if ( found != std::string::npos )
-        std::cout << "   \nWARNING: TEST VERSION - DO NOT USE IN A PRODUCTION ENVIRONMENT.\n" << std::endl;
+    #ifdef DUMP
+        std::cout << "   WARNING: THIS IS A DEBUG VERSION - NOT INTENDED FOR PUBLIC DISTRIBUTION" << std::endl ;
+    #endif
 
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
-    clipper::String ippdb    = "NONE";
-    clipper::String ipcol_fo = "NONE";
-    clipper::String ipsfcif  = "NONE";
-    clipper::String ipmmcif  = "NONE";
-    clipper::String ipcode   = "XXX";
-    clipper::String opfile   = "privateer-hklout.mtz";
-    clipper::String title    = "generic title";
-    clipper::String ipmtz    = "NONE";
-    clipper::String expsys   = "undefined";
+    clipper::String ippdb       = "NONE";
+    clipper::String ipcol_fo    = "NONE";
+    clipper::String ipsfcif     = "NONE";
+    clipper::String ipmmcif     = "NONE";
+    clipper::String ipcode      = "XXX";
+    clipper::String ipwurcsjson = "NONE";
+    clipper::String opfile      = "privateer-hklout.mtz";
+    clipper::String title       = "generic title";
+    clipper::String ipmtz       = "NONE";
+    clipper::String expsys      = "undefined";
     clipper::String validation_string = "";
     std::vector<clipper::String> validation_options;
     clipper::data::sugar_database_entry external_validation;
@@ -107,6 +105,7 @@ int main(int argc, char** argv)
     bool showGeom = false;
     bool check_unmodelled = false;
     bool ignore_set_null = false;
+    bool useWURCSDataBase = false;
     float ipradius = 2.5;    // default value, punishing enough!
     FILE *output;
     bool output_mtz = false;
@@ -115,6 +114,7 @@ int main(int argc, char** argv)
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
     clipper::MGlycology mgl;
+    nlohmann::json jsonObject; 
 
     // command input
     CCP4CommandInput args( argc, argv, true );
@@ -198,6 +198,24 @@ int main(int argc, char** argv)
                 }
             }
         }
+        else if ( args[arg] == "-glytoucan" )
+        {
+            if ( ++arg < args.size() )
+            {
+                ipwurcsjson = args[arg];
+                useWURCSDataBase = true;
+                std::string fileName = ipwurcsjson.tail();
+                std::string fileExtension = fileName.substr( fileName.length() - 5 );
+
+                if (fileExtension != ".json")
+                {
+                    std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                    << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
+                }
+            }
+        }
         else if ( args[arg] == "-mode" )
         {
             if ( ++arg < args.size() )
@@ -252,9 +270,9 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-check-unmodelled" )
             check_unmodelled = true;
 
+
         else if ( args[arg] == "-ignore_missing" )
             ignore_set_null = true;
-
 
         else
         {
@@ -304,6 +322,7 @@ int main(int argc, char** argv)
     privateer::util::read_coordinate_file ( mfile, mmol, ippdb, batch);
     int pos_slash = ippdb.rfind("/");
 
+    if(useWURCSDataBase) privateer::util::read_json_file (ipwurcsjson, jsonObject);
 
 
     // Fast mode, no maps nor correlation calculations
@@ -313,7 +332,7 @@ int main(int argc, char** argv)
         clipper::Atom_list mainAtoms;
         clipper::Atom_list ligandAtoms;
         clipper::Atom_list allAtoms;
-        std:vector< std::string > enable_torsions_for;
+        std::vector< std::string > enable_torsions_for;
 
         if (!batch)
         {
@@ -337,13 +356,39 @@ int main(int argc, char** argv)
             clipper::String current_chain = "" ;
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
-            {
+            {  
+                clipper::String wurcs_string;
                 if ( current_chain != list_of_glycans[i].get_chain() )
                 {
                     current_chain = list_of_glycans[i].get_chain();
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
+
+                wurcs_string = list_of_glycans[i].generate_wurcs();
+                std::cout << std::endl << wurcs_string << std::endl;
+
+                if(useWURCSDataBase)
+                {
+                    std::string glytoucanID; 
+                    int valueLocation;
+                    valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", wurcs_string);
+                    if(valueLocation != -1)
+                    {
+                        glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                        if(glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                        {
+                            glytoucanID.erase(0, 1);
+                            glytoucanID.pop_back();
+                        }
+                        std::cout << "Managed to find a matching GlyTouCan ID for WURCS sequence for this Glycan sequence!" << std::endl;
+                        std::cout << "GlyTouCan Accession ID: " << glytoucanID << std::endl;
+                    }
+                    else 
+                    {
+                        std::cout << "ERROR: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
+                    }
+                }
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
@@ -876,6 +921,8 @@ int main(int argc, char** argv)
     }
 
 
+
+
     // Full analysis, slower but much more complete //
 
     std::vector< std::string > enable_torsions_for;
@@ -1062,7 +1109,6 @@ int main(int argc, char** argv)
     }
 
     fobs_scaled = fobs;
-
 
     if (!batch)
     {
@@ -1365,10 +1411,9 @@ int main(int argc, char** argv)
                 }
 
 
-            }
         }
-
-
+    }
+    
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
@@ -1393,13 +1438,39 @@ int main(int argc, char** argv)
             clipper::String current_chain = "" ;
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
-            {
+            {  
+                clipper::String wurcs_string;
                 if ( current_chain != list_of_glycans[i].get_chain() )
                 {
                     current_chain = list_of_glycans[i].get_chain();
                     std::cout << std::endl << std::endl << "Chain " << current_chain[0] << std::endl << "-------" << std::endl ;
                 }
                 std::cout << std::endl << list_of_glycans[i].print_linear ( true, false, true ) << std::endl;
+
+                wurcs_string = list_of_glycans[i].generate_wurcs();
+                std::cout << std::endl << wurcs_string << std::endl;
+
+                if(useWURCSDataBase)
+                {
+                    std::string glytoucanID; 
+                    int valueLocation;
+                    valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", wurcs_string);
+                    if(valueLocation != -1)
+                    {
+                        glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                        if(glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                        {
+                            glytoucanID.erase(0, 1);
+                            glytoucanID.pop_back();
+                        }
+                        std::cout << "Managed to find a matching GlyTouCan ID for WURCS sequence for this Glycan sequence!" << std::endl;
+                        std::cout << "GlyTouCan Accession ID: " << glytoucanID << std::endl;
+                    }
+                    else 
+                    {
+                        std::cout << "ERROR: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
+                    }
+                }
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
@@ -1411,7 +1482,6 @@ int main(int argc, char** argv)
         std::cout << std::endl << "Analysing carbohydrates... ";
         fflush(0);
     }
-
     else
     {
         for (int i = 0; i < list_of_glycans.size() ; i++ )
@@ -1557,7 +1627,6 @@ int main(int argc, char** argv)
             }
         }
     }
-
 
     if (!batch) std::cout << "done.\nCalculating structure factors with bulk solvent correction... "; fflush(0);
 

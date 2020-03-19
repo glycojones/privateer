@@ -1,10 +1,23 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+### Above combination will ignore all files without extension ###
+
 # do not track compilation byproducts
 *.cxx
 *.so
 *.dylib
-privateer
+*.vscode
+.pytest_cache
 privateer.exe
 privateer.py
+__pycache__
 
 # do not track make and cmake stuff
 Makefile
@@ -12,22 +25,16 @@ CMakeFiles
 CMakeCache.txt
 cmake_install.cmake
 
-# do not track test files
-1bgs.pdb
-1bgs.cif
-5fjj.pdb
-5fjj.cif
-5fjj.mtz
-
 # do not track test results
 unittests/test_output
 unittests/test_output/*
 unittests/annotated_glycans_hierarchical.xml
 
-# and for goodness sake, do not track docs
-Doxyfile.bak
-doc/*
-
 # here you go, neat and tidy
 # until next time
 # cheerio
+.DS_Store
+CTestTestfile.cmake
+install_manifest.txt
+.directory
+

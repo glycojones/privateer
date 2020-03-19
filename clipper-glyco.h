@@ -56,8 +56,6 @@
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
 
-std::string carbname_of ( std::string name );
-
 inline bool altconf_compatible ( char m1, char m2 )
 {
     if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))
@@ -582,8 +580,15 @@ namespace clipper
             std::string get_root_for_filename () { return "[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
-
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
+            
+            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION BEGIN //
+            char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
+            std::vector < std::string > obtain_unique_WURCS_residues();
+            const int obtain_total_number_of_glycosidic_bonds();
+            clipper::String generate_wurcs ();
+            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END // 
+
 
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 

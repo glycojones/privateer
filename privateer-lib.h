@@ -23,6 +23,8 @@
 #include <clipper/clipper-minimol.h>
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
+#include "privateer-restraints.h"
+#include "nlohmann/json.hpp"
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
@@ -72,6 +74,8 @@ namespace privateer
                          clipper::String pdbname );
         bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
+        nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
+        int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
 
     }
 
@@ -645,12 +649,17 @@ namespace privateer
         };
     }
 
-    namespace scripting // These are functions explicitly designed for a higher-level operation
-    {                   // Please be aware that selected functions in other namespaces will be exposed as well
+    namespace scripting
+    {
+        inline std::string carbname_of ( std::string name ) { return clipper::data::carbname_of ( name ); }
+        inline bool found_in_database ( std::string name ) { return clipper::data::found_in_database ( name ); }
         std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
         std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );
+        std::string print_wurcs ( std::string pdb_filename, std::string expression_system = "undefined");
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
+        inline void write_refmac_keywords ( std::vector < std::string > code_list ) { return privateer::util::write_refmac_keywords(code_list); }
+        inline bool write_libraries ( std::vector < std::string > code_list, float esd ) { return privateer::util::write_libraries(code_list, esd); }
     }
 
     namespace util

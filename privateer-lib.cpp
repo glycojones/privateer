@@ -170,6 +170,7 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
 
 ///////// Privateer - utilities /////////
 
+
 bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                              const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
                                              clipper::Xmap<float>& best_map,
@@ -630,6 +631,30 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
     return map_data;
 }
 
+nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
+{
+    std::ifstream input(path);
+
+    input >> jsonContainer;
+
+    return jsonContainer;
+}
+
+int privateer::util::find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value )
+{
+    clipper::String jsonValue;
+    for (nlohmann::json::iterator it = jsonContainer.begin(); it != jsonContainer.end(); it++)
+    {
+        jsonValue = it.value()[key];
+        if(jsonValue == value)
+        {
+            int index = it - jsonContainer.begin();
+            return index;
+        }
+    }
+    return -1;
+}
+
 char privateer::util::get_altconformation(clipper::MAtom ma)
 {
     clipper::String identifier = ma.id();
@@ -744,7 +769,6 @@ void privateer::util::print_usage ( )
               << "\t-list\t\t\t\tProduces a list of space-separated supported 3-letter codes and stops\n"
               << "\t-mode <normal|ccp4i2>\t\tOptional: mode of operation. Defaults to normal\n"
               << "\t\t\t\t\tccp4i2 mode produces XML and tabbed-value files\n\n"
-              << "\t-check-unmodelled\t\tPrivateer will scan a waterless difference map for unmodelled N-, C- and O-glycosylation\n"
               << "\t-expression\t\t\tSpecify which expression system the input glycoprotein was produced in\n"
               << "\t\t\t\t\tSupported systems: undefined, fungal, yeast, plant, insect, mammalian, human\n"
               << "\t-vertical\t\t\tGenerate vertical glycan plots\n"
@@ -1347,7 +1371,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
     const clipper::MSugar& sugar = node.get_sugar();
 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
-    std::string sugname = carbname_of ( sugar.type() );
+    std::string sugname = clipper::data::carbname_of ( sugar.type() );
 
     if ( sugname == "Glc" )
     {
@@ -1572,7 +1596,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
 
             // first deal with a couple of special cases: Fucose and Xylose
 
-            if ( carbname_of(linked_node.get_sugar().type()) == "Fuc" )
+            if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
             {
                 up_down++;
 
@@ -1605,7 +1629,7 @@ void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper:
                     recursive_paint ( mg, linked_node, x, y + 110 );
                 }
             }
-            else if ( carbname_of(linked_node.get_sugar().type()) == "Xyl" )
+            else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
             {
                 up_down++;
 
@@ -2306,6 +2330,57 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
     of_xml << "</privateer>\n";
 
     return of_xml.str();
+}
+
+
+std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::string expression_system )
+{
+    clipper::MMDBfile mfile;
+    clipper::MiniMol mmol;
+ 
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum |
+                          mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks |
+                          mmdb::MMDBF_EnforceUniqueChainID;
+ 
+    mfile.SetFlag(mmdbflags);
+ 
+    mfile.read_file(pdb_filename);
+    mfile.import_minimol(mmol);
+ 
+    if (mmol.cell().is_null()) // fixme: crystal-less NMR models were causing trouble
+        mmol.init(clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr(300, 300, 300, 90, 90, 90)));
+ 
+    const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
+ 
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+ 
+    std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+ 
+    if (!list_of_glycans.empty())
+    {
+        std::string summaryString;
+        summaryString = "Total Glycans Found: ";
+        summaryString.append(std::to_string(list_of_glycans.size()));
+        summaryString.append("\n");
+        for (int i = 0; i < list_of_glycans.size(); i++)
+        {
+            std::string glycanRoot;
+            clipper::String wurcsDescription;
+            clipper::String temporaryString;
+
+            glycanRoot = list_of_glycans[i].get_root_by_name();
+            wurcsDescription = list_of_glycans[i].generate_wurcs();
+ 
+            temporaryString = temporaryString + glycanRoot + "\n" + wurcsDescription + "\n";
+            summaryString.append(temporaryString);
+        }
+            return summaryString;
+    }
+    else
+    {
+       std::string error = "ERROR: No Glycans found in the model!";
+       return error;
+    }
 }
 
 
