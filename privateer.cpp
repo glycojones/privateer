@@ -82,6 +82,7 @@ int main(int argc, char** argv)
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
     clipper::String ippdb       = "NONE";
+    clipper::String oppdb       = "NONE";
     clipper::String ipcol_fo    = "NONE";
     clipper::String ipsfcif     = "NONE";
     clipper::String ipmmcif     = "NONE";
@@ -109,6 +110,7 @@ int main(int argc, char** argv)
     float ipradius = 2.5;    // default value, punishing enough!
     FILE *output;
     bool output_mtz = false;
+    bool output_pdb = false; 
     std::vector < clipper::MGlycan > list_of_glycans;
     clipper::CCP4MTZfile opmtz_best, opmtz_omit;
     clipper::MTZcrystal opxtal;
@@ -273,6 +275,15 @@ int main(int argc, char** argv)
 
         else if ( args[arg] == "-ignore_missing" )
             ignore_set_null = true;
+
+        else if ( args[arg] == "-pdbout" )
+        {
+            if ( ++arg < args.size() )
+            {
+                oppdb = args[arg];
+                output_pdb = true;
+            }
+        }
 
         else
         {
@@ -1121,6 +1132,8 @@ int main(int argc, char** argv)
 
       std::cout << "Scanning a waterless difference map for unmodelled glycosylation..." << std::endl;
 
+      std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
+
       clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
 
       clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
@@ -1141,276 +1154,22 @@ int main(int argc, char** argv)
     std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
 
 
+    // potential glycosolation sites vector, vector index, model, sigmaa_dif_map, clipper::Grid_sampling mygrid, clipper::HKL_info
+    // return <std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > >
     if (no_errors)
         {
-            std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
-            if (!PotentialMonomers[0].empty()) // N-glycosylation information vector
+            for(int i = 0; i < 4; i++)
+            {
+                std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
+                results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, i, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo);
+
+                switch(i)
                 {
-                for (int c = 0; c < PotentialMonomers[0].size(); ++c)
-                    {
-                    for (int r = PotentialMonomers[0][c].FirstMMonomer; r <= PotentialMonomers[0][c].LastMMonomer; ++r)
-                        {
-                            if (mmol[PotentialMonomers[0][c].PolymerID][r].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
-                            {
-                                clipper::Coord_orth ND2Coordinate; // A glycan is attached to ASN residue via ND2 atom
-                                clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
-
-                                // looping through atoms of ASN residue to find ND2 and CB atoms.
-                                for (int natom = 0; natom < mmol[PotentialMonomers[0][c].PolymerID][r].size(); natom++)
-                                    {
-                                        if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].id() == " ND2")
-                                        ND2Coordinate = mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth();
-
-                                        if(mmol[PotentialMonomers[0][c].PolymerID][r][natom].id() == " CB ")
-                                        CBCoordinate = mmol[PotentialMonomers[0][c].PolymerID][r][natom].coord_orth();
-                                    }
-
-
-
-                                // Create a vector between ND2 and CB
-                                clipper::Vec3<clipper::ftype> baseVector((ND2Coordinate.x()-CBCoordinate.x()),(ND2Coordinate.y()-CBCoordinate.y()), (ND2Coordinate.z()-CBCoordinate.z()));
-                                // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-
-                                // Obtain coordinates in the middle of suspected glycan density via 5A vector shift. This is the nearest glycan bonded via ND2 atom to ASN residue.
-                                clipper::Coord_orth target( (CBCoordinate.x()+(unitVector[0]*5)), (CBCoordinate.y()+(unitVector[1]*5)), (CBCoordinate.z()+(unitVector[2]*5)) );
-
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
-
-                                for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-                                                meanDensityExp = meanDensityExp / n_points;
-
-                                                std::cout << std::endl << "N-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
-                                                << mmol[PotentialMonomers[0][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[0][c].PolymerID][r].type()
-                                                << " residue in polymer " << mmol[PotentialMonomers[0][c].PolymerID].id() << ": " << meanDensityExp
-                                                << std::endl;
-                            }
-
-                        }
-                    }
-                }
-            else
-                {
-                std::cout << std::endl << "No potential missed N-Glycosylations were detected according to consensus sequence" << std::endl;
+                    case 0: 
+                        std::cout << "Need to change the design of std::vector, so that there would only be 4 containers and then use length of a specific container to get suspect glycosylations per type etc." << std::endl;
                 }
 
-            if (!PotentialMonomers[1].empty()) // C-glycosylation information vector
-                {
-                for (int c = 0; c < PotentialMonomers[1].size(); ++c)
-                    {
-                    for (int r = PotentialMonomers[1][c].FirstMMonomer; r <= PotentialMonomers[1][c].LastMMonomer; ++r)
-                        {
-                            if (mmol[PotentialMonomers[1][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
-                            {
-                                clipper::Coord_orth CD1Coordinate; // A glycan is attached to ASN residue via ND2 atom
-                                clipper::Coord_orth CZ3Coordinate;
-
-                                for (int natom = 0; natom < mmol[PotentialMonomers[1][c].PolymerID][r].size(); natom++)
-                                    {
-                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CD1")
-                                        CD1Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
-
-                                        if(mmol[PotentialMonomers[1][c].PolymerID][r][natom].id() == " CZ3")
-                                        CZ3Coordinate = mmol[PotentialMonomers[1][c].PolymerID][r][natom].coord_orth();
-                                    }
-
-                                    // Create a vector between ND2 and CB
-                                clipper::Vec3<clipper::ftype> baseVector((CD1Coordinate.x()-CZ3Coordinate.x()),(CD1Coordinate.y()-CZ3Coordinate.y()), (CD1Coordinate.z()-CZ3Coordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-
-                                    // Create a target coordinate by applying 7A shift via unitVector, specific to Trp only.
-                                clipper::Coord_orth target( (CZ3Coordinate.x()+(unitVector[0]*7)), (CZ3Coordinate.y()+(unitVector[1]*7)), (CZ3Coordinate.z()+(unitVector[2]*7)) );
-
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                    // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
-
-                                for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-                                                meanDensityExp = meanDensityExp / n_points;
-
-                                                std::cout << std::endl << "C-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
-                                                << mmol[PotentialMonomers[1][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[1][c].PolymerID][r].type()
-                                                << " residue in polymer " << mmol[PotentialMonomers[1][c].PolymerID].id() << ": " << meanDensityExp
-                                                << std::endl;
-                            }
-
-                        }
-                    }
-                }
-            else
-                {
-                std::cout << std::endl << "No potential missed C-Glycosylations were detected according to consensus sequence" << std::endl;
-                }
-
-            if (!PotentialMonomers[2].empty()) // O-glycosylation information vector
-                {
-                for (int c = 0; c < PotentialMonomers[2].size(); ++c)
-                    {
-                    for (int r = PotentialMonomers[2][c].FirstMMonomer; r <= PotentialMonomers[2][c].LastMMonomer; ++r)
-                        {
-                            if (mmol[PotentialMonomers[2][c].PolymerID][r].type() == "SER" || mmol[PotentialMonomers[2][c].PolymerID][r].type() == "THR") // in O-Glycosylation a glycan is attached through Thr or Ser residue
-                            {
-                                clipper::Coord_orth OGCoordinate; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
-                                clipper::Coord_orth CACoordinate; // CA coordinate used in both Ser and Thr to establish a proper direction for the vector.
-
-                                for (int natom = 0; natom < mmol[PotentialMonomers[2][c].PolymerID][r].size(); natom++)
-                                    {
-                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG " || mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " OG1")
-                                        OGCoordinate = mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth();
-
-                                        if(mmol[PotentialMonomers[2][c].PolymerID][r][natom].id() == " CA ")
-                                        CACoordinate = mmol[PotentialMonomers[2][c].PolymerID][r][natom].coord_orth();
-                                    }
-
-                                    // Create a vector between OG/OG1 and CA for either Ser or Thr
-                                clipper::Vec3<clipper::ftype> baseVector((OGCoordinate.x()-CACoordinate.x()),(OGCoordinate.y()-CACoordinate.y()), (OGCoordinate.z()-CACoordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-
-                                    // Create a target coordinate by applying 5A shift via unitVector
-                                clipper::Coord_orth target( (CACoordinate.x()+(unitVector[0]*5)), (CACoordinate.y()+(unitVector[1]*5)), (CACoordinate.z()+(unitVector[2]*5)) );
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-
-                                // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_all_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
-
-                                for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-                                                meanDensityExp = meanDensityExp / n_points;
-
-                                                std::cout << std::endl << "O-Glycosylation: Value of experimental mean electron density in detected consensus sequence for"
-                                                << mmol[PotentialMonomers[2][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[2][c].PolymerID][r].type()
-                                                << " residue in polymer " << mmol[PotentialMonomers[2][c].PolymerID].id() << ": " << meanDensityExp
-                                                << std::endl;
-                            }
-
-                        }
-                    }
-                }
-            else
-                {
-                std::cout << std::endl << "No potential missed O-Glycosylations were detected according to consensus sequence" << std::endl;
-                }
-
-            if (!PotentialMonomers[3].empty()) // O-glycosylation information vector
-                {
-                for (int c = 0; c < PotentialMonomers[3].size(); ++c)
-                    {
-                    for (int r = PotentialMonomers[3][c].FirstMMonomer; r <= PotentialMonomers[3][c].LastMMonomer; ++r)
-                        {
-                            if (mmol[PotentialMonomers[3][c].PolymerID][r].type() == "ALA" || mmol[PotentialMonomers[3][c].PolymerID][r].type() == "GLN")
-                                {
-                                clipper::Coord_orth CBorNE2Coordinate; // CA to CB for Ala, CG to NE2 for GLN
-                                clipper::Coord_orth CAorCGCoordinate;
-
-                                for (int natom = 0; natom < mmol[PotentialMonomers[3][c].PolymerID][r].size(); natom++)
-                                    {
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CB " || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " NE2")
-                                        CBorNE2Coordinate = mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth();
-
-                                    if(mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CA " || mmol[PotentialMonomers[3][c].PolymerID][r][natom].id() == " CG ")
-                                        CAorCGCoordinate = mmol[PotentialMonomers[3][c].PolymerID][r][natom].coord_orth();
-                                    }
-
-                                    // Create a vector between CA to CB for Ala and CG to NE2 for GLN
-                                clipper::Vec3<clipper::ftype> baseVector((CBorNE2Coordinate.x()-CAorCGCoordinate.x()),(CBorNE2Coordinate.y()-CAorCGCoordinate.y()), (CBorNE2Coordinate.z()-CAorCGCoordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-                                    // Create a target coordinate by applying 5A shift via unitVector. Values may need adjusting as haven't found a proper pdb file to test with. Significant differences between Ala and Gln
-                                clipper::Coord_orth target( (CAorCGCoordinate.x()+(unitVector[0]*5)), (CAorCGCoordinate.y()+(unitVector[1]*5)), (CAorCGCoordinate.z()+(unitVector[2]*5)) );
-
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-
-                                // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
-
-                                for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-                                                meanDensityExp = meanDensityExp / n_points;
-
-                                                std::cout << std::endl << "N-Glycosylation-REMOVED: Value of experimental mean electron density in detected consensus sequence for"
-                                                << mmol[PotentialMonomers[3][c].PolymerID][r].id() << "-" << mmol[PotentialMonomers[3][c].PolymerID][r].type()
-                                                << " residue in polymer " << mmol[PotentialMonomers[3][c].PolymerID].id() << ": " << meanDensityExp
-                                                << std::endl;
-                                }
-
-                        }
-                    }
-                }
-            else
-                {
-                std::cout << std::endl << "No potential mutations to remove N-Glycosylation were detected according to consensus sequence" << std::endl;
-                }
-
-
+            } 
         }
     }
     
