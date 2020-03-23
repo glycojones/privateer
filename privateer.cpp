@@ -1206,11 +1206,37 @@ int main(int argc, char** argv)
 
             if(output_pdb && oppdb != "NONE")
             {
+                std::vector<clipper::String> labels;
+                labels.push_back( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" );
+                labels.push_back( "0123456789" );
+                int label = 0;
+                std::vector<int> nresc( labels[1].length(), 0 );
+                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
+                {
+                    if ( label < labels[0].length() ) // the workhorse.
+                    {
+                        if ( modelRemovedWaters[chn].id() == "" ) 
+                        {
+                            modelRemovedWaters[chn].set_id( labels[0].substr( label, 1 ) );
+                            label++;
+                        }
+                    } 
+                    else // If the model has so many chains that you run out of letters. 
+                    {
+                    int c = label - labels[0].length();
+                    int c1 = c % labels[1].length();
+                    modelRemovedWaters[chn].set_id( labels[1].substr( c1, 1 ) );
+                    for ( int res = 0; res < modelRemovedWaters[chn].size(); res++ )
+                        modelRemovedWaters[chn][res].set_seqnum( res + nresc[c1] + 1 );
+                    nresc[c1] += modelRemovedWaters[chn].size()+5;
+                    label++;
+                    }
+                }
+                clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
                 pdbfile.write_file( oppdb );
             }
-
         }
     }
     

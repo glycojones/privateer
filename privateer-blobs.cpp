@@ -478,6 +478,15 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
                                             {
                                                 meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
                                                 n_points++;
+												if(pdbexport)
+												{
+													clipper::Coord_orth targetuvw = iw.coord_orth();
+													clipper::Atom dummyAtom;
+													dummyAtom.set_coord_orth(targetuvw);
+													dummyAtom.set_element("P");
+													clipper::MAtom dummyAtomExport(dummyAtom);
+													inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
+												}
                                             }
 
                                 meanDensityExp = meanDensityExp / n_points;
