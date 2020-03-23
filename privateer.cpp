@@ -1154,22 +1154,63 @@ int main(int argc, char** argv)
     std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
 
 
-    // potential glycosolation sites vector, vector index, model, sigmaa_dif_map, clipper::Grid_sampling mygrid, clipper::HKL_info
-    // return <std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > >
+    // TO DO: start placing dummy atoms to see where the probe lands. 
+    // most likely thing to happen: you will be missing glycan density
+    // solution: place multiple probe points with different orientations along z axis. 
+
     if (no_errors)
         {
-            for(int i = 0; i < 4; i++)
+            std::cout << std::endl;
+            for(int type = 0; type < 4; type++)
             {
                 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, i, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo);
+                results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, output_pdb);
 
-                switch(i)
+                if(type == 0)
                 {
-                    case 0: 
-                        std::cout << "Need to change the design of std::vector, so that there would only be 4 containers and then use length of a specific container to get suspect glycosylations per type etc." << std::endl;
+                    for (int i = 0; i < results.size(); i++)
+                    {
+                        std::cout << "N-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                    }
                 }
+                if(type == 1)
+                {
+                    for (int i = 0; i < results.size(); i++)
+                    {
+                        std::cout << "C-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                    }
+                }
+                if(type == 2)
+                {
+                    for (int i = 0; i < results.size(); i++)
+                    {
+                        std::cout << "O-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                    }
+                }
+                if(type == 3)
+                {
+                    for (int i = 0; i < results.size(); i++)
+                    {
+                        std::cout << "Possibly processed by PNGase F: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                    }
+                }
+            }
 
-            } 
+            if(output_pdb && oppdb != "NONE")
+            {
+                clipper::MMDBfile pdbfile;
+                pdbfile.export_minimol( modelRemovedWaters );
+                pdbfile.write_file( oppdb );
+            }
+
         }
     }
     
