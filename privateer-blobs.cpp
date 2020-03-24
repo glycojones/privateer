@@ -3,7 +3,7 @@
 // Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
 //
 // 2013-2018 Haroldas Bagdonas & Kevin Cowtan & Jon Agirre
-// York Structural Biology Laboratory
+// York Structural Bioexpy Laboratory
 // The University of York
 // mailto: hb1115@york.ac.uk
 // mailto: jon.agirre@york.ac.uk
@@ -412,7 +412,70 @@ clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
 	return molwrk_new;
 }
 
+clipper::Coord_orth getTargetPoint(clipper::Coord_orth& coord1, clipper::Coord_orth& coord2, int vectorShiftDistance)
+{
+	clipper::Coord_orth coord; 
 
+	clipper::Vec3<clipper::ftype> baseVector((coord1.x()-coord2.x()),(coord1.y()-coord2.y()), (coord1.z()-coord2.z()));
+	// Create a 1A unit vector out of baseVector, to be used later in vector shifting
+	clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+
+	// Obtain coordinates in the middle of suspected glycan density via 5A vector shift. This is the nearest glycan bonded via ND2 atom to ASN residue.
+	coord = clipper::Coord_orth( (coord2.x()+(unitVector[0]*vectorShiftDistance)), (coord2.y()+(unitVector[1]*vectorShiftDistance)), (coord2.z()+(unitVector[2]*vectorShiftDistance)) );
+
+	return coord;
+}
+
+void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID)
+{
+		clipper::Atom dummyAtom;
+		dummyAtom.set_coord_orth(target);
+		dummyAtom.set_element("B");
+		clipper::MAtom dummyAtomExport(dummyAtom);
+		inputModel[chainID][monomerID].insert(dummyAtomExport);
+}
+
+void fillSearchArea(clipper::MiniMol& inputModel, clipper::Xmap_base::Map_reference_coord iw, int chainID, int monomerID)
+{
+	clipper::Coord_orth targetuvw = iw.coord_orth();
+	clipper::Atom dummyAtom;
+	dummyAtom.set_coord_orth(targetuvw);
+	dummyAtom.set_element("P");
+	clipper::MAtom dummyAtomExport(dummyAtom);
+	inputModel[chainID][monomerID].insert(dummyAtomExport);
+}
+
+double calculateMeanElectronDensityInArea(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int chainID, int monomerID, clipper::Coord_orth& targetPos, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport)
+{
+	double meanElectronDensity = 0.0;
+	int n_points = 0;
+
+	// Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
+	clipper::Coord_orth origin(targetPos.x()-1, targetPos.y()-1, targetPos.z()-1);
+	clipper::Coord_orth destination(targetPos.x()+1, targetPos.y()+1, targetPos.z()+1);
+
+	clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
+
+
+	i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
+
+	for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
+		for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
+			for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
+				{
+					meanElectronDensity = meanElectronDensity + sigmaa_dif_map[iw];
+					n_points++;
+					
+					if(pdbexport) fillSearchArea(inputModel, iw, chainID, monomerID);
+				}
+
+	meanElectronDensity = meanElectronDensity / n_points;
+
+	return meanElectronDensity;
+}
+
+
+// Draw 2 vectors, one from CB to CA, another from CB to ND2. Return the max afterwards. 
 
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport) 
 {
@@ -440,60 +503,24 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
                                         CBCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
                                     }
 
+								// get target coordinate
+
+								clipper::Coord_orth target = getTargetPoint(ND2Coordinate, CBCoordinate, 5);
+								target.format();
 
 
-                                // Create a vector between ND2 and CB
-                                clipper::Vec3<clipper::ftype> baseVector((ND2Coordinate.x()-CBCoordinate.x()),(ND2Coordinate.y()-CBCoordinate.y()), (ND2Coordinate.z()-CBCoordinate.z()));
-                                // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+								if(pdbexport) drawOriginPoint(inputModel, target, informationVector[vectorIndex][c].PolymerID, r);
 
-                                // Obtain coordinates in the middle of suspected glycan density via 5A vector shift. This is the nearest glycan bonded via ND2 atom to ASN residue.
-                                clipper::Coord_orth target( (CBCoordinate.x()+(unitVector[0]*5)), (CBCoordinate.y()+(unitVector[1]*5)), (CBCoordinate.z()+(unitVector[2]*5)) );
 
-								if(pdbexport)
+								double meanDensityValue = calculateMeanElectronDensityInArea(informationVector, informationVector[vectorIndex][c].PolymerID, r, target, inputModel, sigmaa_dif_map, grid, hklinfo, pdbexport);
+                                
+
+								if(meanDensityValue > 0.045)
 								{
-									clipper::Atom dummyAtom;
-									dummyAtom.set_coord_orth(target);
-									dummyAtom.set_element("B");
-									clipper::MAtom dummyAtomExport(dummyAtom);
-									inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
-								}
-
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
-
-								for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-												if(pdbexport)
-												{
-													clipper::Coord_orth targetuvw = iw.coord_orth();
-													clipper::Atom dummyAtom;
-													dummyAtom.set_coord_orth(targetuvw);
-													dummyAtom.set_element("P");
-													clipper::MAtom dummyAtomExport(dummyAtom);
-													inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
-												}
-                                            }
-
-                                meanDensityExp = meanDensityExp / n_points;
-								
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityExp);
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
 
 								finalVectorForBlobValues.push_back(densityInfo);
+								}
 							}
 					}
 				}
@@ -521,48 +548,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
                                         CZ3Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                    // Create a vector between ND2 and CB
-                                clipper::Vec3<clipper::ftype> baseVector((CD1Coordinate.x()-CZ3Coordinate.x()),(CD1Coordinate.y()-CZ3Coordinate.y()), (CD1Coordinate.z()-CZ3Coordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+								clipper::Coord_orth target = getTargetPoint(CD1Coordinate, CZ3Coordinate, 7);
+								target.format();
+                            
+								if(pdbexport) drawOriginPoint(inputModel, target, informationVector[vectorIndex][c].PolymerID, r);
 
-                                    // Create a target coordinate by applying 7A shift via unitVector, specific to Trp only.
-                                clipper::Coord_orth target( (CZ3Coordinate.x()+(unitVector[0]*7)), (CZ3Coordinate.y()+(unitVector[1]*7)), (CZ3Coordinate.z()+(unitVector[2]*7)) );
+                                double meanDensityValue = calculateMeanElectronDensityInArea(informationVector, informationVector[vectorIndex][c].PolymerID, r, target, inputModel, sigmaa_dif_map, grid, hklinfo, pdbexport);
 
-								if(pdbexport)
+
+								if(meanDensityValue > 0.045)
 								{
-									clipper::Atom dummyAtom;
-									dummyAtom.set_coord_orth(target);
-									dummyAtom.set_element("B");
-									clipper::MAtom dummyAtomExport(dummyAtom);
-									inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
-								}
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
 
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
-
-								for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-                                meanDensityExp = meanDensityExp / n_points;
-
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityExp);
-								
 								finalVectorForBlobValues.push_back(densityInfo);
+								}
 							}
 					}
 				}
@@ -589,47 +588,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
                                     if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CA " || inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CG ")
                                         CAorCGCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
                                     }
-
-                                    // Create a vector between CA to CB for Ala and CG to NE2 for GLN
-                                clipper::Vec3<clipper::ftype> baseVector((CBorNE2Coordinate.x()-CAorCGCoordinate.x()),(CBorNE2Coordinate.y()-CAorCGCoordinate.y()), (CBorNE2Coordinate.z()-CAorCGCoordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-                                    // Create a target coordinate by applying 5A shift via unitVector. Values may need adjusting as haven't found a proper pdb file to test with. Significant differences between Ala and Gln
-                                clipper::Coord_orth target( (CAorCGCoordinate.x()+(unitVector[0]*5)), (CAorCGCoordinate.y()+(unitVector[1]*5)), (CAorCGCoordinate.z()+(unitVector[2]*5)) );
-
-								if(pdbexport)
-								{
-									clipper::Atom dummyAtom;
-									dummyAtom.set_coord_orth(target);
-									dummyAtom.set_element("B");
-									clipper::MAtom dummyAtomExport(dummyAtom);
-									inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
-								}
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
-
-								for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-								meanDensityExp = meanDensityExp / n_points;
-
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityExp);
 								
+								clipper::Coord_orth target = getTargetPoint(CBorNE2Coordinate, CAorCGCoordinate, 5);
+								target.format();
+
+								if(pdbexport) drawOriginPoint(inputModel, target, informationVector[vectorIndex][c].PolymerID, r);
+
+								double meanDensityValue = calculateMeanElectronDensityInArea(informationVector, informationVector[vectorIndex][c].PolymerID, r, target, inputModel, sigmaa_dif_map, grid, hklinfo, pdbexport);
+
+								if(meanDensityValue > 0.045)
+								{
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
+
 								finalVectorForBlobValues.push_back(densityInfo);
+								}
 							}
 					}
 				}
@@ -657,49 +629,19 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
                                         CACoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
                                     }
 
-                                    // Create a vector between OG/OG1 and CA for either Ser or Thr
-                                clipper::Vec3<clipper::ftype> baseVector((OGCoordinate.x()-CACoordinate.x()),(OGCoordinate.y()-CACoordinate.y()), (OGCoordinate.z()-CACoordinate.z()));
-                                    // Create a 1A unit vector out of baseVector, to be used later in vector shifting
-                                clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
+								clipper::Coord_orth target = getTargetPoint(OGCoordinate, CACoordinate, 5);
+								target.format();
+								
+								if(pdbexport) drawOriginPoint(inputModel, target, informationVector[vectorIndex][c].PolymerID, r);
 
-                                    // Create a target coordinate by applying 5A shift via unitVector
-                                clipper::Coord_orth target( (CACoordinate.x()+(unitVector[0]*5)), (CACoordinate.y()+(unitVector[1]*5)), (CACoordinate.z()+(unitVector[2]*5)) );
+								double meanDensityValue = calculateMeanElectronDensityInArea(informationVector, informationVector[vectorIndex][c].PolymerID, r, target, inputModel, sigmaa_dif_map, grid, hklinfo, pdbexport);
 
-
-								if(pdbexport)
+								if(meanDensityValue > 0.045)
 								{
-									clipper::Atom dummyAtom;
-									dummyAtom.set_coord_orth(target);
-									dummyAtom.set_element("B");
-									clipper::MAtom dummyAtomExport(dummyAtom);
-									inputModel[informationVector[vectorIndex][c].PolymerID][r].insert(dummyAtomExport);
-								}
-
-                                double meanDensityExp = 0.0;
-                                int n_points = 0;
-
-                                // Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-                                clipper::Coord_orth origin(target.x()-2, target.y()-2, target.z()-2);
-                                clipper::Coord_orth destination(target.x()+2, target.y()+2, target.z()+2);
-
-                                clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
-
-
-                                i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
-
-								for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-                                    for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-                                        for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
-                                            {
-                                                meanDensityExp = meanDensityExp + sigmaa_dif_map[iw];
-                                                n_points++;
-                                            }
-
-								meanDensityExp = meanDensityExp / n_points;
-
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityExp);
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
 
 								finalVectorForBlobValues.push_back(densityInfo);
+								}
 							}
 					}
 				}
