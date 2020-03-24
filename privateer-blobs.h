@@ -62,8 +62,5 @@ double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clippe
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& mmol, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport = false);
 
 
-bool compare(std::pair<clipper::Coord_orth, double> p1, std::pair<clipper::Coord_orth, double> p2) {
-    return p1.second<p2.second;
-}
 
 #endif
