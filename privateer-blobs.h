@@ -57,8 +57,13 @@ std::string get_HTML_output(const clipper::String& title, const clipper::String&
 clipper::MiniMol get_model_without_waters(const clipper::String& ippdb);
 clipper::Coord_orth getTargetPoint(clipper::Coord_orth& coord1, clipper::Coord_orth& coord2, int vectorShiftDistance);
 void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID);
-void fillSearchArea(clipper::MiniMol& inputModel, clipper::Xmap_base::Map_reference_coord iw, int chainID, int monomerID);
-double calculateMeanElectronDensityInArea(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int chainID, int monomerID, clipper::Coord_orth& targetPos, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport);
+void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, int chainID, int monomerID);
+double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo);
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& mmol, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport = false);
+
+
+bool compare(std::pair<clipper::Coord_orth, double> p1, std::pair<clipper::Coord_orth, double> p2) {
+    return p1.second<p2.second;
+}
 
 #endif
