@@ -496,62 +496,48 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 		{
 			if (!informationVector[vectorIndex].empty())
 			{
+				int vectorShiftLimit = 7;
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
 					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
 					{
 						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
                             {	
+                                clipper::MAtom CBAtom;
+								CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ");
+
 								clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
-                                
-								clipper::Coord_orth ND2Coordinate; // A glycan is attached to ASN residue via ND2 atom
-								clipper::Coord_orth CGCoordinate; // CG atom is used as a direction towards the glycan density
-								clipper::Coord_orth OD1Coordinate; // CG atom is used as a direction towards the glycan density
+								CBCoordinate = CBAtom.coord_orth();
 
-								// //add more vectors, along backbone, along sidechain etc. 
-
-                                // looping through atoms of ASN residue to find ND2 and CB atoms.
-                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
-                                    {
-
-                                        if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CB ")
-                                        CBCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-
-                                        if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " ND2")
-                                        ND2Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-
-										if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CG ")
-                                        CGCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-
-										if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " OD1")
-                                        OD1Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();										
-                                    }
-
-								// get target coordinate
-								
 								std::vector<std::pair<clipper::Coord_orth, double>> pairs;
-								
-								clipper::Coord_orth target1 = getTargetPoint(ND2Coordinate, CBCoordinate, 5);
-								clipper::Coord_orth target2 = getTargetPoint(CGCoordinate, CBCoordinate, 5);
-								clipper::Coord_orth target3 = getTargetPoint(OD1Coordinate, CBCoordinate, 5);
-								target1.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
-								target2.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
-								target3.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
 
-								double meanDensityValue_target1 = calculateMeanElectronDensityInArea(target1, sigmaa_dif_map, grid, hklinfo);
-								double meanDensityValue_target2 = calculateMeanElectronDensityInArea(target2, sigmaa_dif_map, grid, hklinfo);
-								double meanDensityValue_target3 = calculateMeanElectronDensityInArea(target3, sigmaa_dif_map, grid, hklinfo);
-								
-								
-								pairs = {{target1,meanDensityValue_target1}, {target2,meanDensityValue_target2}, {target3,meanDensityValue_target3}};
+                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+                                {
+									
+                                    if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " CB ")
+										{
+											clipper::Coord_orth vectorOrigin;
 
+											vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+											
+											for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+												{
+													clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CBCoordinate, vectorShift);
+													potentialTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
+
+													double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+													std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+													pairs.push_back(tempDensityInfo);
+												}
+										}
+                                }
 								const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
 								clipper::Coord_orth bestTarget = bestPair->first;
-								double meanDensityValue = bestPair->second;
+								double bestDensityValue = bestPair->second;
 
-								if(meanDensityValue > 0.045)
+								if(bestDensityValue > 0.045)
 								{
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 								finalVectorForBlobValues.push_back(densityInfo);
 								fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
 								}
@@ -566,50 +552,49 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 		{
 			if (!informationVector[vectorIndex].empty())
 			{
+				int vectorShiftLimit = 10;
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
 					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
 					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "TRP") // // in C-Glycosylation a glycan is attached through TRP residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
                             {	
-                                clipper::Coord_orth CD1Coordinate; // A glycan is attached to TRP residue via CD1 atom
                                 
-								clipper::Coord_orth CZ3Coordinate;
-								clipper::Coord_orth CH3Coordinate;
+								clipper::MAtom CD1Atom; // A glycan is attached to TRP residue via CD1 atom
+								CD1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CD1");
 
-								//add vectors {CG, NE1}, {CD2, CE2}, 
-
-                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
-                                    {
-                                        if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CD1")
-                                        CD1Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-
-                                        if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CZ3")
-                                        CZ3Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-
-                                        if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CH2")
-                                        CH3Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-                                    }
+								clipper::Coord_orth CD1Coordinate; // CD1 atom is used as a direction towards the glycan density
+								CD1Coordinate = CD1Atom.coord_orth();
 
 								std::vector<std::pair<clipper::Coord_orth, double>> pairs;
-								
-								clipper::Coord_orth target1 = getTargetPoint(CD1Coordinate, CZ3Coordinate, 7);
-								clipper::Coord_orth target2 = getTargetPoint(CD1Coordinate, CH3Coordinate, 7);
-								target1.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
-								target2.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
-								
-								double meanDensityValue_target1 = calculateMeanElectronDensityInArea(target1, sigmaa_dif_map, grid, hklinfo);
-								double meanDensityValue_target2 = calculateMeanElectronDensityInArea(target2, sigmaa_dif_map, grid, hklinfo);
-								
-								pairs = {{target1,meanDensityValue_target1}, {target2,meanDensityValue_target2}};
 
+                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+                                {
+                                    if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " CD1")
+										{
+											clipper::Coord_orth vectorOrigin;
+
+											vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+											
+											for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+												{
+													clipper::Coord_orth potentialTarget = getTargetPoint(CD1Coordinate, vectorOrigin, vectorShift);
+													potentialTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
+
+													double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+													std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+													pairs.push_back(tempDensityInfo);
+												}
+										}
+                                }
+								 
 								const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
 								clipper::Coord_orth bestTarget = bestPair->first;
-								double meanDensityValue = bestPair->second;
+								double bestDensityValue = bestPair->second;
 
-								if(meanDensityValue > 0.045)
+								if(bestDensityValue > 0.045)
 								{
-								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 								finalVectorForBlobValues.push_back(densityInfo);
 								fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
 								}
@@ -620,90 +605,170 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 				}
 			}
 		}
-		// if(vectorIndex == 2)
-		// {
-		// 	if (!informationVector[vectorIndex].empty())
-		// 	{
-		// 		for (int c = 0; c < informationVector[vectorIndex].size(); c++)
-		// 		{
-		// 			for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-		// 			{
-		// 				if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "SER" || inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "THR") // in O-Glycosylation a glycan is attached through Thr or Ser residue
-        //                     {	
-		// 						clipper::Coord_orth CBorNE2Coordinate; // CA to CB for Ala, CG to NE2 for GLN
-        //                         clipper::Coord_orth CAorCGCoordinate;
+		if(vectorIndex == 2)
+		{
+			if (!informationVector[vectorIndex].empty())
+			{
+				int vectorShiftLimit = 5;
+				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
+				{
+					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
+					{
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "SER" || inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "THR") // in O-Glycosylation a glycan is attached through Thr or Ser residue
+                            {	
 
-        //                         for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
-        //                             {
-        //                             if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CB " || inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " NE2")
-        //                                 CBorNE2Coordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+								clipper::MAtom OGAtom; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
+								if(inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "SER")
+								OGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG ");
+								else
+								OGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG1");
 
-        //                             if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CA " || inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CG ")
-        //                                 CAorCGCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-        //                             }
-								
-		// 						clipper::Coord_orth bestTarget = getTargetPoint(CBorNE2Coordinate, CAorCGCoordinate, 5);
-		// 						bestTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
+								clipper::Coord_orth OGCoordinate; // OG atom is used as a point of attachement of a glycan
+								OGCoordinate = OGAtom.coord_orth();
 
-		// 						if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+								std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-		// 						double meanDensityValue = calculateMeanElectronDensityInArea(bestTarget, sigmaa_dif_map, grid, hklinfo);
+                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+                                {
+                                    if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " OG1" || inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " OG ")
+										{
+											clipper::Coord_orth vectorOrigin;
 
-		// 						if(meanDensityValue > 0.045)
-		// 						{
-		// 						std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
+											vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+											
+											for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+												{
+													clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, OGCoordinate, vectorShift);
+													potentialTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
 
-		// 						finalVectorForBlobValues.push_back(densityInfo);
-		// 						}
-		// 					}
-		// 			}
-		// 		}
-		// 	}
-		// }
-		// if(vectorIndex == 3)
-		// {
-		// 	if (!informationVector[vectorIndex].empty())
-		// 	{
-		// 		for (int c = 0; c < informationVector[vectorIndex].size(); c++)
-		// 		{
-		// 			for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-		// 			{
-		// 				if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "ALA" || inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "GLN") // if N-Glycosylation removed via pngase F or pngase A, then residue gets replaced to GLN or ALA. 
-        //                     {	
-        //                         clipper::Coord_orth OGCoordinate; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
-        //                         clipper::Coord_orth CACoordinate; // CA coordinate used in both Ser and Thr to establish a proper direction for the vector.
+													double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+													std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+													pairs.push_back(tempDensityInfo);
+												}
+										}
+                                }
+								 
+								const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
+								clipper::Coord_orth bestTarget = bestPair->first;
+								double bestDensityValue = bestPair->second;
 
-        //                         for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
-        //                             {
-        //                                 if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " OG " || inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " OG1")
-        //                                 OGCoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+								if(bestDensityValue > 0.045)
+								{
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+								finalVectorForBlobValues.push_back(densityInfo);
+								fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+								}
 
-        //                                 if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() == " CA ")
-        //                                 CACoordinate = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
-        //                             }
+								if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+							}
+					}
+				}
+			}
+		}
+		if(vectorIndex == 3)
+		{
+			if (!informationVector[vectorIndex].empty())
+			{
+				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
+				{
+					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
+					{
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "ALA") 
+                            {	
+								int vectorShiftLimit = 5;
+                                clipper::MAtom CBAtom; // CA to CB for Ala, CG to NE2 for GLN
+								CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ");
 
-		// 						clipper::Coord_orth bestTarget = getTargetPoint(OGCoordinate, CACoordinate, 5);
-		// 						bestTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
+								clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
+								CBCoordinate = CBAtom.coord_orth();
 
-								
-		// 						if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+								std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-		// 						double meanDensityValue = calculateMeanElectronDensityInArea(bestTarget, sigmaa_dif_map, grid, hklinfo);
+                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+                                {
+									
+                                    if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " CB ")
+										{
+											clipper::Coord_orth vectorOrigin;
 
-		// 						if(meanDensityValue > 0.045)
-		// 						{
-		// 						std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, meanDensityValue);
+											vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+											
+											for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+												{
+													clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CBCoordinate, vectorShift);
+													potentialTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
 
-		// 						finalVectorForBlobValues.push_back(densityInfo);
-		// 						}
-		// 					}
-		// 			}
-		// 		}
-		// 	}
-		// }
+													double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+													std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+													pairs.push_back(tempDensityInfo);
+												}
+										}
+                                }
+								const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
+								clipper::Coord_orth bestTarget = bestPair->first;
+								double bestDensityValue = bestPair->second;
+
+								if(bestDensityValue > 0.045)
+								{
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+								finalVectorForBlobValues.push_back(densityInfo);
+								fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+								}
+
+								if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+							}
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "GLN") 
+                            {	
+								int vectorShiftLimit = 5;
+                                clipper::MAtom CGAtom; // CA to CB for Ala, CG to NE2 for GLN
+								CGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CG ");
+
+								clipper::Coord_orth CGCoordinate; // CB atom is used as a direction towards the glycan density
+								CGCoordinate = CGAtom.coord_orth();
+
+								std::vector<std::pair<clipper::Coord_orth, double>> pairs;
+
+                                for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+                                {
+									
+                                    if(inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id() != " CB ")
+										{
+											clipper::Coord_orth vectorOrigin;
+
+											vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+											
+											for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+												{
+													clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CGCoordinate, vectorShift);
+													potentialTarget.format(); // really stupid fix to an issue where clipper::Coord_orth sometimes returns NaN after calling function above
+
+													double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+													std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+													pairs.push_back(tempDensityInfo);
+												}
+										}
+                                }
+								const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
+								clipper::Coord_orth bestTarget = bestPair->first;
+								double bestDensityValue = bestPair->second;
+
+								if(bestDensityValue > 0.045)
+								{
+								std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+								finalVectorForBlobValues.push_back(densityInfo);
+								fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+								}
+
+								if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+							}
+					}
+				}
+			}
+		}
 	return finalVectorForBlobValues;
 }
 	
 
 
 //Compiler settings: -I/y/people/hb1115/devtools/install/include -L/y/people/hb1115/devtools/install/lib -lclipper-minimol -lclipper-core -lclipper-mmdb -lmmdb2 -lclipper-ccp4
+

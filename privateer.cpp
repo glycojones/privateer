@@ -82,7 +82,7 @@ int main(int argc, char** argv)
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
     clipper::String ippdb       = "NONE";
-    clipper::String oppdb       = "NONE";
+    clipper::String vsapdb       = "NONE";
     clipper::String ipcol_fo    = "NONE";
     clipper::String ipsfcif     = "NONE";
     clipper::String ipmmcif     = "NONE";
@@ -276,11 +276,11 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-ignore_missing" )
             ignore_set_null = true;
 
-        else if ( args[arg] == "-pdbout" )
+        else if ( args[arg] == "-visualize_search_area" )
         {
             if ( ++arg < args.size() )
             {
-                oppdb = args[arg];
+                vsapdb = args[arg];
                 output_pdb = true;
             }
         }
@@ -1204,7 +1204,7 @@ int main(int argc, char** argv)
                 }
             }
 
-            if(output_pdb && oppdb != "NONE")
+            if(output_pdb && vsapdb != "NONE")
             {
                 std::vector<clipper::String> labels;
                 labels.push_back( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" );
@@ -1235,7 +1235,7 @@ int main(int argc, char** argv)
                 clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
-                pdbfile.write_file( oppdb );
+                pdbfile.write_file( vsapdb );
             }
         }
     }
