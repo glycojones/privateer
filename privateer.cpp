@@ -1127,118 +1127,6 @@ int main(int argc, char** argv)
         std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
     }
 
-    if ( check_unmodelled )
-    {
-
-      std::cout << "Scanning a waterless difference map for unmodelled glycosylation..." << std::endl;
-
-      std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
-
-      clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
-
-      clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
-
-      clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
-
-      clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-      clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-      std::cout << "Imports were successful." << std::endl;
-
-      bool no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList,
-                                                                fobs,
-                                                                sigmaa_all_map,
-                                                                sigmaa_dif_map,
-                                                                ignore_set_null );
-
-    std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
-
-
-    // TO DO: start placing dummy atoms to see where the probe lands. 
-    // most likely thing to happen: you will be missing glycan density
-    // solution: place multiple probe points with different orientations along z axis. 
-
-    if (no_errors)
-        {
-            std::cout << std::endl;
-            for(int type = 0; type < 4; type++)
-            {
-                std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, output_pdb);
-
-                if(type == 0)
-                {
-                    for (int i = 0; i < results.size(); i++)
-                    {
-                        std::cout << "N-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
-                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
-                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
-                    }
-                }
-                if(type == 1)
-                {
-                    for (int i = 0; i < results.size(); i++)
-                    {
-                        std::cout << "C-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
-                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
-                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
-                    }
-                }
-                if(type == 2)
-                {
-                    for (int i = 0; i < results.size(); i++)
-                    {
-                        std::cout << "O-Glycosylation: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
-                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
-                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
-                    }
-                }
-                if(type == 3)
-                {
-                    for (int i = 0; i < results.size(); i++)
-                    {
-                        std::cout << "Possibly processed by PNGase F: Value of experimental mean electron density in detected consensus sequence for " << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
-                        "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
-                        << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
-                    }
-                }
-            }
-
-            if(output_pdb && vsapdb != "NONE")
-            {
-                std::vector<clipper::String> labels;
-                labels.push_back( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" );
-                labels.push_back( "0123456789" );
-                int label = 0;
-                std::vector<int> nresc( labels[1].length(), 0 );
-                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
-                {
-                    if ( label < labels[0].length() ) // the workhorse.
-                    {
-                        if ( modelRemovedWaters[chn].id() == "" ) 
-                        {
-                            modelRemovedWaters[chn].set_id( labels[0].substr( label, 1 ) );
-                            label++;
-                        }
-                    } 
-                    else // If the model has so many chains that you run out of letters. 
-                    {
-                    int c = label - labels[0].length();
-                    int c1 = c % labels[1].length();
-                    modelRemovedWaters[chn].set_id( labels[1].substr( c1, 1 ) );
-                    for ( int res = 0; res < modelRemovedWaters[chn].size(); res++ )
-                        modelRemovedWaters[chn][res].set_seqnum( res + nresc[c1] + 1 );
-                    nresc[c1] += modelRemovedWaters[chn].size()+5;
-                    label++;
-                    }
-                }
-                clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
-                clipper::MMDBfile pdbfile;
-                pdbfile.export_minimol( modelRemovedWaters );
-                pdbfile.write_file( vsapdb );
-            }
-        }
-    }
     
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
@@ -1319,6 +1207,153 @@ int main(int argc, char** argv)
             plot.write_to_file ( os.str() );
         }
 
+    }
+
+    if ( check_unmodelled )
+    {
+        std::cout << std::endl << "___________________________________________________________________" << std::endl;
+        std::cout << "Scanning a waterless difference map for unmodelled glycosylation sites on protein backbone..." << std::endl;
+
+        std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
+
+        clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
+
+        clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
+
+        clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
+
+        clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+        clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+        std::cout << "Imports were successful." << std::endl;
+
+        bool no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList,
+                                                                fobs,
+                                                                sigmaa_all_map,
+                                                                sigmaa_dif_map,
+                                                                ignore_set_null );
+
+
+        if (no_errors)
+            {
+                std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
+                std::cout << std::endl;
+                std::stringstream buffer;
+                for(int type = 0; type < 5; type++)
+                {
+                    std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
+                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, list_of_glycans, output_pdb);
+
+
+                    if(!results.empty())
+                    {
+                        if(type == 0)
+                        {
+                            for (int i = 0; i < results.size(); i++)
+                            {
+
+                                buffer << "\tN-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                                "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                                << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+
+                            }
+                        buffer << std::endl;
+                        }
+                        if(type == 1)
+                        {
+                            for (int i = 0; i < results.size(); i++)
+                            {
+                                buffer << "\tC-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                                "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                                << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                            }
+                        buffer << std::endl;
+                        }
+                        if(type == 2)
+                        {
+                            for (int i = 0; i < results.size(); i++)
+                            {
+                                buffer << "\tO-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                                "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                                << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+
+                            }
+                        buffer << std::endl;
+                        }
+
+                        if(type == 3)
+                        {
+                            for (int i = 0; i < results.size(); i++)
+                            {
+                                buffer << "\tS-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                                "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                                << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+
+                            }
+                        buffer << std::endl;
+                        }
+                        
+                        if(type == 4)
+                        {
+                            for (int i = 0; i < results.size(); i++)
+                            {
+                                buffer << "\tPossibly processed by PNGase F: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
+                                "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
+                                << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+
+                            }
+                        buffer << std::endl;
+                        }
+                    }
+                }
+
+                if (!buffer.str().empty())
+                {
+                    std::cout << "Detected possibly unmodelled Glycosylation sites on these protein backbones:" << std::endl;
+                    std::cout << buffer.str() << std::endl;
+                }
+                else
+                {
+                    std::cout << "Possibly unmodelled Glycosylation was not detected in this model." << std::endl;
+                }
+            }
+
+            std::cout << "Finished scanning waterless difference map for unmodelled glycosylation sites on protein backbone..." << std::endl;
+            std::cout << "___________________________________________________________________" << std::endl;
+
+            if(output_pdb && vsapdb != "NONE")
+            {
+                std::vector<clipper::String> labels;
+                labels.push_back( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" );
+                labels.push_back( "0123456789" );
+                int label = 0;
+                std::vector<int> nresc( labels[1].length(), 0 );
+                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
+                {
+                    if ( label < labels[0].length() ) // the workhorse.
+                    {
+                        if ( modelRemovedWaters[chn].id() == "" ) 
+                        {
+                            modelRemovedWaters[chn].set_id( labels[0].substr( label, 1 ) );
+                            label++;
+                        }
+                    } 
+                    else // If the model has so many chains that you run out of letters. 
+                    {
+                    int c = label - labels[0].length();
+                    int c1 = c % labels[1].length();
+                    modelRemovedWaters[chn].set_id( labels[1].substr( c1, 1 ) );
+                    for ( int res = 0; res < modelRemovedWaters[chn].size(); res++ )
+                        modelRemovedWaters[chn][res].set_seqnum( res + nresc[c1] + 1 );
+                    nresc[c1] += modelRemovedWaters[chn].size()+5;
+                    label++;
+                    }
+                }
+                clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
+                clipper::MMDBfile pdbfile;
+                pdbfile.export_minimol( modelRemovedWaters );
+                pdbfile.write_file( vsapdb );
+            }
     }
 
     // erase ligand atoms from the model and then calculate phases
@@ -1454,7 +1489,7 @@ int main(int argc, char** argv)
         }
     }
 
-    if (!batch) std::cout << "done.\nCalculating structure factors with bulk solvent correction... "; fflush(0);
+    if (!batch) std::cout << "Done analyzing modelled carbohydrates.\nCalculating structure factors with bulk solvent correction... "; fflush(0);
 
     // calculate structure factors
 
