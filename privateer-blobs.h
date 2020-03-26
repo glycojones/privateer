@@ -21,6 +21,8 @@
 #include <vector>
 #include <utility>
 #include <cmath>
+#include <algorithm>
+#include <list>
 #include "privateer-lib.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
