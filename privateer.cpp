@@ -1213,7 +1213,7 @@ int main(int argc, char** argv)
 
     }
 
-    std::vector<std::vector< std::pair <clipper::MMonomer, double> > > blobsSummaryForCoot;
+    std::vector<std::vector< std::pair <clipper::MMonomer, double> > > blobsSummaryForCoot(5);
     if ( check_unmodelled )
     {
         std::cout << std::endl << "___________________________________________________________________" << std::endl;
@@ -1262,14 +1262,11 @@ int main(int argc, char** argv)
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
-                                // clipper::MAtom DUMAtom;
-                                // DUMAtom = modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID].find(" DUM", clipper::MM::ANY);
-                                
                                 std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 N_SiteBlobs.push_back(blobInfo);
 
                             }
-                        blobsSummaryForCoot.push_back(N_SiteBlobs);
+                        blobsSummaryForCoot.at(type) = N_SiteBlobs;
                         buffer << std::endl;
                         }
                         if(type == 1)
@@ -1284,7 +1281,7 @@ int main(int argc, char** argv)
                                 std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 C_SiteBlobs.push_back(blobInfo);
                             }
-                        blobsSummaryForCoot.push_back(C_SiteBlobs);
+                        blobsSummaryForCoot.at(type) = C_SiteBlobs;
                         buffer << std::endl;
                         }
                         if(type == 2)
@@ -1299,7 +1296,7 @@ int main(int argc, char** argv)
                                 std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 O_SiteBlobs.push_back(blobInfo);                            
                             }
-                        blobsSummaryForCoot.push_back(O_SiteBlobs);
+                        blobsSummaryForCoot.at(type) = O_SiteBlobs;
                         buffer << std::endl;
                         }
 
@@ -1315,6 +1312,7 @@ int main(int argc, char** argv)
                                 std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 S_SiteBlobs.push_back(blobInfo);                          
                             }
+                        blobsSummaryForCoot.at(type) = S_SiteBlobs;
                         buffer << std::endl;
                         }
                         
@@ -1330,7 +1328,7 @@ int main(int argc, char** argv)
                                 std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 NRem_SiteBlobs.push_back(blobInfo);                            
                             }
-                        blobsSummaryForCoot.push_back(NRem_SiteBlobs);
+                        blobsSummaryForCoot.at(type) = NRem_SiteBlobs;
                         buffer << std::endl;
                         }
                     }
@@ -2264,7 +2262,7 @@ int main(int argc, char** argv)
     {
         for(int type = 0; type < blobsSummaryForCoot.size(); type++)
             {
-                if(type == 0)
+                if(type == 0 && !blobsSummaryForCoot.empty())
                 {
                     for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
                     {
@@ -2278,7 +2276,7 @@ int main(int argc, char** argv)
                     }
                 }
 
-                if(type == 1)
+                if(type == 1 && !blobsSummaryForCoot.empty())
                 {
                     for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
                     {
@@ -2292,7 +2290,7 @@ int main(int argc, char** argv)
                     }
                 }
 
-                if(type == 2)
+                if(type == 2 && !blobsSummaryForCoot.empty())
                 {
                     for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
                     {
@@ -2306,7 +2304,7 @@ int main(int argc, char** argv)
                     }
                 }
 
-                if(type == 3)
+                if(type == 3 && !blobsSummaryForCoot.empty())
                 {
                     for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
                     {
@@ -2320,7 +2318,7 @@ int main(int argc, char** argv)
                     }
                 }   
 
-                if(type == 4)
+                if(type == 4 && !blobsSummaryForCoot.empty())
                 {
                     for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
                     {
