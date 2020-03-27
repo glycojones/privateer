@@ -40,15 +40,17 @@ namespace privateer
         // Coot support, Scheme
         void insert_coot_prologue_scheme ( std::fstream& );
         void insert_coot_epilogue_scheme ( std::fstream& );
-        void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode, const clipper::String& pdbblobs, bool blobsoutput);
+        void insert_coot_go_to_blob_scheme ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic );
         void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
         void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
         void insert_coot_command ( std::fstream& output, std::string command );
 
         // Coot support, Python
-        void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode, const clipper::String& pdbblobs, bool blobsoutput);
         void insert_coot_prologue_python ( std::fstream& );
         void insert_coot_epilogue_python ( std::fstream& );
+        void insert_coot_go_to_blob_python ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic );
         void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
         void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
     }

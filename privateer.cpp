@@ -817,8 +817,12 @@ int main(int argc, char** argv)
         clipper::String all_MapName, dif_MapName, omit_dif_MapName;
         all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
 
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
-        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch );
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, vsapdb, output_pdb);
+        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, vsapdb, output_pdb);
+
+
+
+
 
         int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 
@@ -1209,6 +1213,7 @@ int main(int argc, char** argv)
 
     }
 
+    std::vector<std::vector< std::pair <clipper::MMonomer, double> > > blobsSummaryForCoot;
     if ( check_unmodelled )
     {
         std::cout << std::endl << "___________________________________________________________________" << std::endl;
@@ -1249,6 +1254,7 @@ int main(int argc, char** argv)
                     {
                         if(type == 0)
                         {
+                        std::vector< std::pair <clipper::MMonomer, double> > N_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
 
@@ -1256,52 +1262,75 @@ int main(int argc, char** argv)
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
+                                // clipper::MAtom DUMAtom;
+                                // DUMAtom = modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID].find(" DUM", clipper::MM::ANY);
+                                
+                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                N_SiteBlobs.push_back(blobInfo);
+
                             }
+                        blobsSummaryForCoot.push_back(N_SiteBlobs);
                         buffer << std::endl;
                         }
                         if(type == 1)
                         {
+                        std::vector< std::pair <clipper::MMonomer, double> > C_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tC-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
+                            
+                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                C_SiteBlobs.push_back(blobInfo);
                             }
+                        blobsSummaryForCoot.push_back(C_SiteBlobs);
                         buffer << std::endl;
                         }
                         if(type == 2)
                         {
+                        std::vector< std::pair <clipper::MMonomer, double> > O_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tO-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
+                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                O_SiteBlobs.push_back(blobInfo);                            
                             }
+                        blobsSummaryForCoot.push_back(O_SiteBlobs);
                         buffer << std::endl;
                         }
 
                         if(type == 3)
                         {
+                        std::vector< std::pair <clipper::MMonomer, double> > S_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tS-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
+                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                S_SiteBlobs.push_back(blobInfo);                          
                             }
                         buffer << std::endl;
                         }
                         
                         if(type == 4)
                         {
+                        std::vector< std::pair <clipper::MMonomer, double> > NRem_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tPossibly processed by PNGase F: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
+                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                NRem_SiteBlobs.push_back(blobInfo);                            
                             }
+                        blobsSummaryForCoot.push_back(NRem_SiteBlobs);
                         buffer << std::endl;
                         }
                     }
@@ -2104,8 +2133,8 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch );
-    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch );
+    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, vsapdb, output_pdb);
+    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, vsapdb, output_pdb);
 
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 
@@ -2230,6 +2259,85 @@ int main(int argc, char** argv)
 
     }
 
+
+    if(!blobsSummaryForCoot.empty() && check_unmodelled)
+    {
+        for(int type = 0; type < blobsSummaryForCoot.size(); type++)
+            {
+                if(type == 0)
+                {
+                    for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
+                    {
+                        clipper::String diagnostic = "N-linked blob: " + blobsSummaryForCoot[type][i].first.id() + "-" + blobsSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsSummaryForCoot[type][i].second);
+                        
+                        clipper::MAtom DUMAtom;
+                        DUMAtom = blobsSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
+                    }
+                }
+
+                if(type == 1)
+                {
+                    for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
+                    {
+                         clipper::String diagnostic = "C-linked blob: " + blobsSummaryForCoot[type][i].first.id() + "-" + blobsSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsSummaryForCoot[type][i].second);
+                        
+                        clipper::MAtom DUMAtom;
+                        DUMAtom = blobsSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                       
+                    }
+                }
+
+                if(type == 2)
+                {
+                    for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
+                    {
+                        clipper::String diagnostic = "O-linked blob: " + blobsSummaryForCoot[type][i].first.id() + "-" + blobsSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsSummaryForCoot[type][i].second);
+                        
+                        clipper::MAtom DUMAtom;
+                        DUMAtom = blobsSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                    }
+                }
+
+                if(type == 3)
+                {
+                    for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
+                    {
+                        clipper::String diagnostic = "S-linked blob: " + blobsSummaryForCoot[type][i].first.id() + "-" + blobsSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsSummaryForCoot[type][i].second);
+                        
+                        clipper::MAtom DUMAtom;
+                        DUMAtom = blobsSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                    }
+                }   
+
+                if(type == 4)
+                {
+                    for(int i = 0; i < blobsSummaryForCoot[type].size(); i++)
+                    {
+                        clipper::String diagnostic = "PNGase blob: " + blobsSummaryForCoot[type][i].first.id() + "-" + blobsSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsSummaryForCoot[type][i].second);
+                        
+                        clipper::MAtom DUMAtom;
+                        DUMAtom = blobsSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+
+                        privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                    }
+                }                                             
+
+            }
+    }
+
+    
     privateer::coot::insert_coot_epilogue_scheme ( of_scm );
     privateer::coot::insert_coot_epilogue_python ( of_py );
     of_scm.close();

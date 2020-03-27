@@ -46,8 +46,9 @@ void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
             << "(set-run-state-file-status 0)\n";
 }
 
-void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode, const clipper::String& pdbblobs, bool blobsoutput)
 {
+     if (blobsoutput && pdbblobs != "NONE") output << "(handle-read-draw-molecule \"" << pdbblobs << "\")\n";
     if (!mode) output << "(handle-read-draw-molecule \"" << pdb << "\")\n";
 
     if ( mapbest == "" ) // no map output
@@ -70,8 +71,9 @@ void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, co
     }
 }
 
-void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode, const clipper::String& pdbblobs, bool blobsoutput )
 {
+    if (blobsoutput && pdbblobs != "NONE") output  << "handle_read_draw_molecule (\"" << pdbblobs << "\")\n";
     if (!mode) output  << "handle_read_draw_molecule (\"" << pdb << "\")\n";
 
         if ( mapbest == "" ) // no map output
@@ -86,7 +88,7 @@ void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, co
 
             output << "set_last_map_colour  (1.00,  0.13,  0.89)\n"
            << "interesting_things_gui (\"Validation report from Privateer\",[\n";
-    }
+    }  
 }
 
 void privateer::coot::insert_coot_epilogue_scheme ( std::fstream& output )
@@ -144,6 +146,16 @@ void privateer::coot::insert_coot_epilogue_python ( std::fstream& output )
 void privateer::coot::insert_coot_command ( std::fstream& output, std::string command )
 {
     output << command << "\n" ;
+}
+
+void privateer::coot::insert_coot_go_to_blob_scheme ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic )
+{
+    output  << "\t(list\t\"" << diagnostic << "\"\t" << blob_centre.x() << "\t" << blob_centre.y() << "\t" << blob_centre.z() << ")\n";
+}
+
+void privateer::coot::insert_coot_go_to_blob_python ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic )
+{
+    output  << "\t[\"" << diagnostic << "\",\t" << blob_centre.x() << ",\t" << blob_centre.y() << ",\t" << blob_centre.z() << "],\n";
 }
 
 void privateer::coot::insert_coot_go_to_sugar_scheme ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )

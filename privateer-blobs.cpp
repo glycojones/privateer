@@ -478,17 +478,33 @@ void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos
 
 	i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
 
+	int iterationNumber = 0;
 	for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
 		for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
 			for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
 				{
+
+					if( (iterationNumber % 2) == 0 )
+					{
 						clipper::Coord_orth targetuvw = iw.coord_orth();
 						clipper::Atom dummyAtom;
 						dummyAtom.set_coord_orth(targetuvw);
 						dummyAtom.set_element("H");
 						clipper::MAtom dummyAtomExport(dummyAtom);
 						inputModel[chainID][monomerID].insert(dummyAtomExport);
+					}
+					iterationNumber++;
 				}
+}
+
+void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID)
+{
+		clipper::Atom dummyAtom;
+		dummyAtom.set_coord_orth(target);
+		dummyAtom.set_element("H");
+		clipper::MAtom dummyAtomExport(dummyAtom);
+		dummyAtomExport.set_id(" DUM");
+		inputModel[chainID][monomerID].insert(dummyAtomExport);
 }
 
 //Need to improve this function to improve calculation of electron density values within the sphere. 
@@ -579,7 +595,8 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -638,7 +655,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -698,7 +715,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -746,7 +763,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -806,7 +823,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -854,7 +871,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
@@ -913,7 +930,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}	
 							}
@@ -961,7 +978,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, grid, hklinfo, informationVector[vectorIndex][c].PolymerID, r);
+										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
 										}
 									}
 							}
