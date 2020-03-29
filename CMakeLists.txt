@@ -114,6 +114,7 @@ include_directories(${CCP4_INCLUDE_DIRS}
 ## Create libprivateer
 #
 add_library(privateer_lib
+            privateer-blobs.cpp
             clipper-glyco.cpp
             clipper-glyco_data.cpp
             privateer-restraints.cpp
@@ -149,7 +150,7 @@ endif()
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h
+install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h privateer-blobs.h
           DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})

@@ -46,8 +46,9 @@ void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
             << "(set-run-state-file-status 0)\n";
 }
 
-void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode, const clipper::String& pdbblobs, bool blobsoutput)
 {
+     if (blobsoutput && pdbblobs != "NONE") output << "(handle-read-draw-molecule \"" << pdbblobs << "\")\n";
     if (!mode) output << "(handle-read-draw-molecule \"" << pdb << "\")\n";
 
     if ( mapbest == "" ) // no map output
@@ -70,8 +71,9 @@ void privateer::coot::insert_coot_files_loadup_scheme ( std::fstream& output, co
     }
 }
 
-void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode )
+void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, const clipper::String& pdb, const clipper::String& mapbest, const clipper::String& mapdiff, const clipper::String& mapomit, bool mode, const clipper::String& pdbblobs, bool blobsoutput )
 {
+    if (blobsoutput && pdbblobs != "NONE") output  << "handle_read_draw_molecule (\"" << pdbblobs << "\")\n";
     if (!mode) output  << "handle_read_draw_molecule (\"" << pdb << "\")\n";
 
         if ( mapbest == "" ) // no map output
@@ -86,7 +88,7 @@ void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, co
 
             output << "set_last_map_colour  (1.00,  0.13,  0.89)\n"
            << "interesting_things_gui (\"Validation report from Privateer\",[\n";
-    }
+    }  
 }
 
 void privateer::coot::insert_coot_epilogue_scheme ( std::fstream& output )
@@ -146,6 +148,16 @@ void privateer::coot::insert_coot_command ( std::fstream& output, std::string co
     output << command << "\n" ;
 }
 
+void privateer::coot::insert_coot_go_to_blob_scheme ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic )
+{
+    output  << "\t(list\t\"" << diagnostic << "\"\t" << blob_centre.x() << "\t" << blob_centre.y() << "\t" << blob_centre.z() << ")\n";
+}
+
+void privateer::coot::insert_coot_go_to_blob_python ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic )
+{
+    output  << "\t[\"" << diagnostic << "\",\t" << blob_centre.x() << ",\t" << blob_centre.y() << ",\t" << blob_centre.z() << "],\n";
+}
+
 void privateer::coot::insert_coot_go_to_sugar_scheme ( std::fstream& output, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic )
 {
     output  << "\t(list\t\"" << diagnostic << "\"\t" << sugar_centre.x() << "\t" << sugar_centre.y() << "\t" << sugar_centre.z() << ")\n";
@@ -169,6 +181,74 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
 
 
 ///////// Privateer - utilities /////////
+
+
+bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
+                                             const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                             clipper::Xmap<float>& best_map,
+                                             clipper::Xmap<float>& difference_map,
+                                             bool ignore_set_null,
+                                             int n_refln,
+                                             int n_param )
+{
+
+  // need equal cell parameters...
+  if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
+       ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
+    return false;
+
+  clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
+  clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
+  clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
+
+  if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
+    return false;
+
+    if (!ignore_set_null)
+    {
+        if ( reflection_data.missing(0) )
+            model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+    }
+
+  clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
+  //reflection_data_scaled = reflection_data; // we can't touch the original data!
+
+  HRI ih;
+  clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
+  clipper::SFscale_aniso<float> scaler;
+
+  if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
+    return false;
+
+  for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+  {
+      if ( !reflection_data_scaled[ih].missing() )
+        flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+      else
+        flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
+  }
+
+  // intermediate data structures for the sigmaa calculation
+  // will output real-space maps later on
+  clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
+  clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
+  clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
+
+  clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
+
+  if ( ! sigmaa_weighting ( best_map_coefficients,
+                            difference_map_coefficients,
+                            phase_and_fom,
+                            reflection_data_scaled,
+                            model_structure_factors, flag) )
+    return false;
+
+  best_map.fft_from ( best_map_coefficients );
+  difference_map.fft_from ( difference_map_coefficients );
+
+  return true;
+}
+
 
 void privateer::util::print_supported_code_list ()
 {

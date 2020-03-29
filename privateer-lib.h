@@ -19,11 +19,14 @@
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-ccp4.h>
+#include <clipper/clipper-contrib.h>
 #include <clipper/clipper-minimol.h>
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
 #include "nlohmann/json.hpp"
+
+typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 inline const std::string b2s ( bool b )
 {
@@ -37,21 +40,30 @@ namespace privateer
         // Coot support, Scheme
         void insert_coot_prologue_scheme ( std::fstream& );
         void insert_coot_epilogue_scheme ( std::fstream& );
-        void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_files_loadup_scheme ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode, const clipper::String& pdbblobs, bool blobsoutput);
+        void insert_coot_go_to_blob_scheme ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic );
         void insert_coot_go_to_sugar_scheme ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
         void insert_coot_statusbar_text_scheme ( std::fstream&, clipper::String& );
         void insert_coot_command ( std::fstream& output, std::string command );
 
         // Coot support, Python
-        void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode );
+        void insert_coot_files_loadup_python ( std::fstream&, const clipper::String&, const clipper::String&, const clipper::String&, const clipper::String&, bool mode, const clipper::String& pdbblobs, bool blobsoutput);
         void insert_coot_prologue_python ( std::fstream& );
         void insert_coot_epilogue_python ( std::fstream& );
+        void insert_coot_go_to_blob_python ( std::fstream& output, const clipper::Coord_orth& blob_centre, const clipper::String& diagnostic );
         void insert_coot_go_to_sugar_python ( std::fstream&, const clipper::Coord_orth& sugar_centre, const clipper::String& diagnostic );
         void insert_coot_statusbar_text_python ( std::fstream&, clipper::String& );
     }
 
     namespace util
     {
+        bool calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
+                                    const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                    clipper::Xmap<float>& best_map,
+                                    clipper::Xmap<float>& difference_map,
+                                    bool ignore_set_null,
+                                    int n_refln = 1000,
+                                    int n_param = 20);
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);
