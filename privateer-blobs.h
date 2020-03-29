@@ -54,6 +54,14 @@ struct PotentialGlycosylationSiteInfo
 	int typeOfGlycosylation;
 };
 
+struct GlycanToMiniMolIDs
+{
+	int proteinMiniMolID;
+	int carbohydrateChainMiniMolID;
+	int carbohydrateID;
+};
+
+
 std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(const clipper::String& ippdb);
 std::string get_HTML_output(const clipper::String& title, const clipper::String& ippdb);
 clipper::MiniMol get_model_without_waters(const clipper::String& ippdb);
@@ -61,8 +69,12 @@ bool check_glycosylation_presence(int chainID, int residueID, std::vector < clip
 clipper::Coord_orth getTargetPoint(clipper::Coord_orth& coord1, clipper::Coord_orth& coord2, int vectorShiftDistance);
 void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, int chainID, int monomerID);
 void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID);
+void drawOriginPointCarbs(clipper::MiniMol& inputModel, int backboneID, int carbohydrateID, clipper::Coord_orth target);
+GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputModel, clipper::MSugar& carbohydrate, std::vector < clipper::MGlycan >& allSugars, int mglycanid, int sugaringlycanid);
 double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo);
+std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar& carbohydrate);
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& mmol, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, bool pdbexport = false);
+std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport = false);
 
 
 

@@ -507,6 +507,45 @@ void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, i
 		inputModel[chainID][monomerID].insert(dummyAtomExport);
 }
 
+void drawOriginPointCarbs(clipper::MiniMol& inputModel, int backboneID, int carbohydrateID, clipper::Coord_orth target)
+{
+	clipper::Atom dummyAtom;
+	dummyAtom.set_coord_orth(target);
+	dummyAtom.set_element("H");
+	clipper::MAtom dummyAtomExport(dummyAtom);
+	dummyAtomExport.set_id(" DUM");
+	inputModel[backboneID][carbohydrateID].insert(dummyAtomExport);	
+}
+
+GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputModel, clipper::MSugar& carbohydrate, std::vector < clipper::MGlycan >& allSugars, int mglycanid, int sugaringlycanid)
+{
+	clipper::String glycanAttachedTo = allSugars[mglycanid].get_chain();
+	int backboneID;
+	int carbohydrateID;
+	GlycanToMiniMolIDs output;
+
+	for(int c = 0; c < inputModel.size(); c++)
+	{
+		if(inputModel[c].id() == glycanAttachedTo) 
+		{
+			backboneID = c;
+			break;
+		}
+	}
+	
+	for(int r = 0; r < inputModel[backboneID].size(); r++)
+	{
+		if(inputModel[backboneID][r].id() == carbohydrate.id())
+		{
+			carbohydrateID = r;
+			break;
+		}
+	}
+
+	output = {backboneID, carbohydrateID, sugaringlycanid};
+	return output;
+}
+
 //Need to improve this function to improve calculation of electron density values within the sphere. 
 // refer to std::vector<clipper::Xmap_base::Map_reference_coord> in privateer.cpp
 double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo)
@@ -536,6 +575,28 @@ double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clippe
 	meanElectronDensity = meanElectronDensity / n_points;
 
 	return meanElectronDensity;
+}
+
+
+std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar& carbohydrate)
+{
+	std::vector<clipper::String> ignoreAtomList;
+	std::vector<clipper::MAtom> ringMembers = carbohydrate.ring_members();
+	
+
+	for(int i = 0; i < ringMembers.size(); i++)
+	{
+		clipper::String atomID = ringMembers[i].id();
+		ignoreAtomList.push_back(atomID);
+	}
+
+	for(int atom = 0; atom < carbohydrate.size(); atom++)
+	{
+		bool atomAlreadyIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), carbohydrate[atom].id()) != ignoreAtomList.end());
+		if(!atomAlreadyIgnored)
+			if(carbohydrate[atom].element() != " O") ignoreAtomList.push_back(carbohydrate[atom].id());
+	}
+	return ignoreAtomList;
 }
 
 
@@ -988,8 +1049,52 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 		}
 	return finalVectorForBlobValues;
 }
+
+std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport)
+{
+	std::vector<std::pair<GlycanToMiniMolIDs, double> > finalVectorForBlobValues;
+	int vectorShiftLimit = 5;
+	for (int monomer = 0; monomer < glycanChain.size(); monomer++)
+	{
+		std::vector<clipper::String> ignoreAtomList = create_list_of_ignored_sugar_atoms(glycanChain[monomer]);
+
+		for (int atom = 0; atom < glycanChain[monomer].size(); atom++)
+		{
+			std::vector<std::pair<clipper::Coord_orth, double>> pairs;
+			clipper::Coord_orth sugarCentre = glycanChain[monomer].ring_centre();
+			bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), glycanChain[monomer][atom].id()) != ignoreAtomList.end());
+			if (!atomIgnored) {
+				clipper::Coord_orth linkageAtomLocation = glycanChain[monomer][atom].coord_orth();
+
+
+				for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+					{
+						clipper::Coord_orth potentialTarget = getTargetPoint(linkageAtomLocation, sugarCentre, vectorShift);
+
+						double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+						std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
+						pairs.push_back(tempDensityInfo);
+					}
+			
+			const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
+			clipper::Coord_orth bestTarget = bestPair->first;
+			double bestDensityValue = bestPair->second;
+
+			if(bestDensityValue > 0.09)
+			{
+			GlycanToMiniMolIDs identification = getCarbohydrateRelationshipToMiniMol(inputModel, glycanChain[monomer], allSugars, id, monomer);
+			std::pair<GlycanToMiniMolIDs, double> densityInfo(GlycanToMiniMolIDs{identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, identification.carbohydrateID}, bestDensityValue);
+			finalVectorForBlobValues.push_back(densityInfo);
+			if(pdbexport) drawOriginPointCarbs(inputModel, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, bestTarget);
+			}
+
+			}
+		}
+	}
+return finalVectorForBlobValues;
+}
 	
 
 
-//Compiler settings: -I/y/people/hb1115/devtools/install/include -L/y/people/hb1115/devtools/install/lib -lclipper-minimol -lclipper-core -lclipper-mmdb -lmmdb2 -lclipper-ccp4
+
 
