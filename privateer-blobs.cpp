@@ -507,15 +507,6 @@ void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, i
 		inputModel[chainID][monomerID].insert(dummyAtomExport);
 }
 
-void drawOriginPointCarbs(clipper::MiniMol& inputModel, int backboneID, int carbohydrateID, clipper::Coord_orth target)
-{
-	clipper::Atom dummyAtom;
-	dummyAtom.set_coord_orth(target);
-	dummyAtom.set_element("H");
-	clipper::MAtom dummyAtomExport(dummyAtom);
-	dummyAtomExport.set_id(" DUM");
-	inputModel[backboneID][carbohydrateID].insert(dummyAtomExport);	
-}
 
 GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputModel, clipper::MSugar& carbohydrate, std::vector < clipper::MGlycan >& allSugars, int mglycanid, int sugaringlycanid)
 {
@@ -1085,7 +1076,7 @@ std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_pote
 			GlycanToMiniMolIDs identification = getCarbohydrateRelationshipToMiniMol(inputModel, glycanChain[monomer], allSugars, id, monomer);
 			std::pair<GlycanToMiniMolIDs, double> densityInfo(GlycanToMiniMolIDs{identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, identification.carbohydrateID}, bestDensityValue);
 			finalVectorForBlobValues.push_back(densityInfo);
-			if(pdbexport) drawOriginPointCarbs(inputModel, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, bestTarget);
+			if(pdbexport) drawOriginPoint(inputModel, bestTarget, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID);
 			}
 
 			}

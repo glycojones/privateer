@@ -69,7 +69,6 @@ bool check_glycosylation_presence(int chainID, int residueID, std::vector < clip
 clipper::Coord_orth getTargetPoint(clipper::Coord_orth& coord1, clipper::Coord_orth& coord2, int vectorShiftDistance);
 void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, int chainID, int monomerID);
 void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID);
-void drawOriginPointCarbs(clipper::MiniMol& inputModel, int backboneID, int carbohydrateID, clipper::Coord_orth target);
 GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputModel, clipper::MSugar& carbohydrate, std::vector < clipper::MGlycan >& allSugars, int mglycanid, int sugaringlycanid);
 double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo);
 std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar& carbohydrate);

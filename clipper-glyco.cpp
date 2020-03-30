@@ -48,15 +48,9 @@
 
 // #define DUMP 1
 
-#include <fstream>
-#include <algorithm>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <sstream>
-#include <clipper/minimol/minimol_utils.h>
+
 #include "clipper-glyco.h"
-#include "nlohmann/json.hpp"
+
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 

@@ -48,6 +48,12 @@
 #ifndef CLIPPER_GLYCO_H_INCLUDED
 #define CLIPPER_GLYCO_H_INCLUDED
 
+#include <fstream>
+#include <algorithm>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sstream>
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
@@ -55,6 +61,8 @@
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
+#include <clipper/minimol/minimol_utils.h>
+#include "nlohmann/json.hpp"
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
