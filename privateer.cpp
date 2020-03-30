@@ -52,7 +52,7 @@
 
 //#define DUMP 1
 
-clipper::String program_version = "MKV_a";
+clipper::String program_version = "MKIV_alpha";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
