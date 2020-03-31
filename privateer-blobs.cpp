@@ -591,7 +591,6 @@ std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar&
 }
 
 
-// Draw 2 vectors, one from CB to CA, another from CB to ND2. Return the max afterwards. 
 
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, bool pdbexport) 
 {
@@ -613,8 +612,13 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 								if(!siteAlreadyGlycosylated)
 									{
 										clipper::MAtom CBAtom;
+										
+										try {
 										CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ", clipper::MM::ANY);
-
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary CB atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+										
 										clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
 										CBCoordinate = CBAtom.coord_orth();
 
@@ -672,8 +676,13 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 								if(!siteAlreadyGlycosylated)
 									{                                
 										clipper::MAtom CD1Atom; // A glycan is attached to TRP residue via CD1 atom
+										
+										try {
 										CD1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CD1", clipper::MM::ANY);
-
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary CD1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+										
 										clipper::Coord_orth CD1Coordinate; // CD1 atom is used as a direction towards the glycan density
 										CD1Coordinate = CD1Atom.coord_orth();
 
@@ -728,11 +737,16 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 								int vectorShiftLimit = 5; 
 								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
-									{      								
+									{
 										std::list<clipper::String> ignoreAtomList = {" O  "};
 										clipper::MAtom OGAtom; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
-
+										
+										try {
 										OGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG ", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary OG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+										
 
 										clipper::Coord_orth OGCoordinate; // OG atom is used as a point of attachement of a glycan
 										OGCoordinate = OGAtom.coord_orth();
@@ -776,11 +790,15 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 								int vectorShiftLimit = 5;  
 								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
-									{     
-										               							
+									{   
 										std::list<clipper::String> ignoreAtomList = {" O  ", " N  ", " C  "};
 										clipper::MAtom OG1Atom; // On Thr glycan attaches to OG1
+
+										try {
 										OG1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG1", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary OG1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
 
 										clipper::Coord_orth OG1Coordinate; // OG atom is used as a point of attachement of a glycan
 										OG1Coordinate = OG1Atom.coord_orth();
@@ -840,7 +858,11 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										std::list<clipper::String> ignoreAtomList = {" O  "};
 										clipper::MAtom SGAtom; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
 
+										try {
 										SGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" SG ", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary SG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
 
 										clipper::Coord_orth SGCoordinate; // SG atom is used as a point of attachement of a glycan
 										SGCoordinate = SGAtom.coord_orth();
@@ -888,7 +910,12 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										               							
 										std::list<clipper::String> ignoreAtomList = {""};
 										clipper::MAtom SDAtom; // On Thr glycan attaches to OG1
+										
+										try {
 										SDAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" SD ", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary SD atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
 
 										clipper::Coord_orth SDCoordinate; // OG atom is used as a point of attachement of a glycan
 										SDCoordinate = SDAtom.coord_orth();
@@ -947,7 +974,12 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 									{                   								
 										std::list<clipper::String> ignoreAtomList = {""};
 										clipper::MAtom CBAtom; // CA to CB for Ala, CG to NE2 for GLN
+
+										try {
 										CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary CB atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
 
 										clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
 										CBCoordinate = CBAtom.coord_orth();
@@ -995,8 +1027,14 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										std::list<clipper::String> ignoreAtomList = {""};
 										
 										clipper::MAtom CGAtom; // CA to CB for Ala, CG to NE2 for GLN
-										CGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CG ", clipper::MM::ANY);
 
+										try {
+										CGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CG ", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary CG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+
+										
 										clipper::Coord_orth CGCoordinate; // CB atom is used as a direction towards the glycan density
 										CGCoordinate = CGAtom.coord_orth();
 
