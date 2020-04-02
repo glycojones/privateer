@@ -108,9 +108,10 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     float ipradius = 2.5;    // default value, punishing enough!
+    float thresholdElectronDensityValue = 0.090;
     FILE *output;
     bool output_mtz = false;
-    bool output_pdb = false; 
+    bool output_pdb = false;
     std::vector < clipper::MGlycan > list_of_glycans;
     clipper::CCP4MTZfile opmtz_best, opmtz_omit;
     clipper::MTZcrystal opxtal;
@@ -282,6 +283,14 @@ int main(int argc, char** argv)
             {
                 vsapdb = args[arg];
                 output_pdb = true;
+            }
+        }
+
+        else if ( args[arg] == "-blobs_threshold" )
+        {
+            if ( ++arg < args.size() )
+            {
+                thresholdElectronDensityValue = clipper::String(args[arg]).f();
             }
         }
 
@@ -1219,11 +1228,13 @@ int main(int argc, char** argv)
         std::cout << std::endl << "___________________________________________________________________" << std::endl;
         std::cout << "Scanning a waterless difference map for unmodelled glycosylation sites on protein backbone..." << std::endl;
 
-        std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(ippdb);
-
         clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
 
         clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
+        
+        std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(modelRemovedWaters);
+
+
 
         clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );
 
@@ -1250,7 +1261,7 @@ int main(int argc, char** argv)
                 for(int type = 0; type < 5; type++)
                 {
                     std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, list_of_glycans, ms, output_pdb);
+                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, list_of_glycans, ms, thresholdElectronDensityValue, output_pdb);
 
 
                     if(!results.empty())
@@ -1362,7 +1373,7 @@ int main(int argc, char** argv)
                     std::vector<std::pair<GlycanToMiniMolIDs, double> > densityInfo;
                     std::vector < clipper::MSugar > glycanChain;
                     glycanChain = list_of_glycans[id].get_sugars();
-                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, mygrid, hklinfo, ms, output_pdb);
+                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, ms, thresholdElectronDensityValue, output_pdb);
 
                     for(int i = 0; i < densityInfo.size(); i++)
                     {
@@ -1394,32 +1405,16 @@ int main(int argc, char** argv)
             // TO DO FIX: PROPERLY MATCH CHAIN NAMES BY ITERATING THROUGH ORIGINAL MINIMOL and SETTING THE SAME ID FOR THIS NEW MODEL.
             if(output_pdb && vsapdb != "NONE")
             {
-                std::vector<clipper::String> labels;
-                labels.push_back( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" );
-                labels.push_back( "0123456789" );
-                int label = 0;
-                std::vector<int> nresc( labels[1].length(), 0 );
-                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
+                
+                for ( int chn = 0; chn < mmol.size(); chn++ ) 
                 {
-                    if ( label < labels[0].length() ) // the workhorse.
+                    if ( modelRemovedWaters[chn].id() == "" ) 
                     {
-                        if ( modelRemovedWaters[chn].id() == "" ) 
-                        {
-                            modelRemovedWaters[chn].set_id( labels[0].substr( label, 1 ) );
-                            label++;
-                        }
-                    } 
-                    else // If the model has so many chains that you run out of letters. 
-                    {
-                    int c = label - labels[0].length();
-                    int c1 = c % labels[1].length();
-                    modelRemovedWaters[chn].set_id( labels[1].substr( c1, 1 ) );
-                    for ( int res = 0; res < modelRemovedWaters[chn].size(); res++ )
-                        modelRemovedWaters[chn][res].set_seqnum( res + nresc[c1] + 1 );
-                    nresc[c1] += modelRemovedWaters[chn].size()+5;
-                    label++;
+                        clipper::String label = mmol[chn].id();
+                        modelRemovedWaters[chn].set_id(label);
                     }
-                }
+                } 
+    
                 clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );

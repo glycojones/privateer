@@ -17,15 +17,8 @@ bool bestPointFinder(std::pair<clipper::Coord_orth, double> p1, std::pair<clippe
     return p1.second<p2.second;
 }
 
-std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(const clipper::String& ippdb)
+std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positions(clipper::MiniMol& inputModel)
 {
-	const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
-	clipper::MMDBfile mmdbwrk;
-	clipper::MiniMol molwrk;
-	mmdbwrk.SetFlag(mmdbflags);
-	mmdbwrk.read_file(ippdb);
-	mmdbwrk.import_minimol(molwrk);
-
 
 	std::vector<GlycosylationMonomerMatch> NMMonomers;
 	std::vector<GlycosylationMonomerMatch> CMMonomers;
@@ -35,159 +28,34 @@ std::vector<std::vector<GlycosylationMonomerMatch> > get_matching_monomer_positi
 	std::vector<std::vector<GlycosylationMonomerMatch> > MatchingMMonomers;
 
 
-	std::regex isProteinNGlc("[N][A-Z^P][ST]|[N][A-Z][C]"); // N-Glycosylation = Asn-X-/Ser/Thr(X=anything except Proline) || Asn-X-Cys(X=Anything)
-	std::regex isProteinCGlc("[W][A-Z][A-Z][W]|[W][ST][A-Z][C]"); // C-Glycosylation = Trp-X-X-Trp || Trp-Ser/Thr-X-Cys
-	std::regex isProteinOGlc("[S]|[T]"); // temporary fix to loop through all Serines and Threonines. In Long term will be redesigned
-	std::regex isProteinSGlc("[C]|[M]"); // temporary fix to loop through all Cysteines and Methionines. In Long term will be redesigned
-	std::regex isProteinNGlcRemoved("[A][A-Z^P][ST]|[A][A-Z][C]|[Q][A-Z^P][ST]|[Q][A-Z][C]");
-	std::smatch NMatch;
-	std::smatch CMatch;
-	std::smatch OMatch;
-	std::smatch SMatch;
-	std::smatch NRemMatch;
 
-const char rtype1[21] =
-  {  'A',  'R',  'N',  'D',  'C',  'Q',  'E',  'G',  'H',  'I',
-	 'L',  'K',  'M',  'F',  'P',  'S',  'T',  'W',  'Y',  'V',
-	 'M'};
-const char rtype3[21][4] =
-  {"ALA","ARG","ASN","ASP","CYS","GLN","GLU","GLY","HIS","ILE",
-   "LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR","VAL",
-   "MSE"};
-
-   const int ntype = sizeof( rtype1 ) / sizeof( rtype1[0] );
-   clipper::String seqfile = "";
-
-
-   for ( int c = 0; c < molwrk.size(); c++ ) {
-	 clipper::String id = molwrk[c].id();
-	 clipper::String seq;
-	 for ( int r = 0; r < molwrk[c].size(); r++ ) {
-	   char symbol = ' ';
-	   for ( int t = 0; t < ntype; t++ )
-	if ( molwrk[c][r].type() == rtype3[t] )
-	{
-	symbol = rtype1[t];
-	}
-	   if ( symbol != ' ' )
-	   {
-	   seq = seq + symbol;
-	   }
-	 }
-	 if ( seq.length() > 0 )
+   for ( int pol = 0; pol < inputModel.size(); pol++ ) 
+   {
+	 for ( int mon = 0; mon < inputModel[pol].size(); mon++ ) 
 	 {
-		 std::string TEMPseq = seq;
+		if (inputModel[pol][mon].type() == "ASN" || inputModel[pol][mon].type() == "ARG")
+		{
+			NMMonomers.push_back({pol, mon});
+		}
+		
+		if (inputModel[pol][mon].type() == "TRP")
+		{
+			CMMonomers.push_back({pol, mon});
+		}
 
-		 auto NGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinNGlc); // Establish sregex_iterator search range for isProteinNGlc
-		 auto NGlc_end = std::sregex_iterator();
-		 auto CGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinCGlc); // same as above, just for C-glycosylation
-		 auto CGlc_end = std::sregex_iterator();
-		 auto OGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinOGlc); // same as above, just for O-glycosylation
-		 auto OGlc_end = std::sregex_iterator();
-		 auto SGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinSGlc); // same as above, just for S-glycosylation
-		 auto SGlc_end = std::sregex_iterator();
-		 auto NRemGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinNGlcRemoved); // same as above, just for N-Removed-glycosylation
-		 auto NRemGlc_end = std::sregex_iterator();
+		if (inputModel[pol][mon].type() == "SER" || inputModel[pol][mon].type() == "THR")
+		{
+			OMMonomers.push_back({pol, mon});
+		}
 
-		if (std::regex_search(seq, isProteinNGlc))
+		if (inputModel[pol][mon].type() == "CYS" || inputModel[pol][mon].type() == "MET")
 		{
-			int it = 0;
-			for (std::sregex_iterator monomer = NGlc_begin; monomer != NGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-			{
-					NMatch = *monomer;
-					int it2 = NMatch.length();
-					for(; it < TEMPseq.length(); ++it)
-					{
-						if (it == NMatch.position())
-						{
-							NMMonomers.push_back({c, it, it + it2});
-						}
-						if (it == NMatch.position() + NMatch.length())
-						{
-							break;
-						}
-					}
-				}
+			SMMonomers.push_back({pol, mon});
 		}
-		if (std::regex_search(seq, isProteinCGlc))
+
+		if (inputModel[pol][mon].type() == "ALA" || inputModel[pol][mon].type() == "GLN")
 		{
-			int it = 0;
-			for (std::sregex_iterator monomer = CGlc_begin; monomer != CGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-				{
-				   CMatch = *monomer;
-				   int it2 = CMatch.length();
-				   for(; it < TEMPseq.length(); ++it)
-					{
-						if (it == CMatch.position())
-						{
-							CMMonomers.push_back({c, it, it + it2});
-						}
-						if (it == CMatch.position() + CMatch.length())
-						{
-							break;
-						}
-					}
-				}
-		}
-		if (std::regex_search(seq, isProteinOGlc))
-		{
-			int it = 0;
-			for (std::sregex_iterator monomer = OGlc_begin; monomer != OGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-			{
-				OMatch = *monomer;
-				int it2 = OMatch.length();
-				for(; it < TEMPseq.length(); ++it)
-				{
-					if (it == OMatch.position())
-					{
-						OMMonomers.push_back({c, it, it + it2});
-					}
-					if (it == OMatch.position() + OMatch.length())
-					{
-						break;
-					}
-				}
-			}
-		}
-		if (std::regex_search(seq, isProteinSGlc))
-		{
-			int it = 0;
-			for (std::sregex_iterator monomer = SGlc_begin; monomer != SGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-			{
-				SMatch = *monomer;
-				int it2 = SMatch.length();
-				for(; it < TEMPseq.length(); ++it)
-				{
-					if (it == SMatch.position())
-					{
-						SMMonomers.push_back({c, it, it + it2});
-					}
-					if (it == SMatch.position() + SMatch.length())
-					{
-						break;
-					}
-				}
-			}
-		}
-		if (std::regex_search(seq, isProteinNGlcRemoved))
-		{
-			int it = 0;
-			for (std::sregex_iterator monomer = NRemGlc_begin; monomer != NRemGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-			{
-				NRemMatch = *monomer;
-				int it2 = NRemMatch.length();
-				for(; it < TEMPseq.length(); ++it)
-				{
-					if (it == NRemMatch.position())
-					{
-						NRemMMonomers.push_back({c, it, it + it2});
-					}
-					if (it == NRemMatch.position() + NRemMatch.length())
-					{
-						break;
-					}
-				}
-			}
+			NRemMMonomers.push_back({pol, mon});
 		}
 	}
   }
@@ -201,211 +69,6 @@ MatchingMMonomers.push_back({NRemMMonomers});
 return MatchingMMonomers;
 }
 
-
-
-std::string get_HTML_output(const clipper::String& title, const clipper::String& ippdb)
-{
-
-		const int mmdbflags = ::mmdb::MMDBF_IgnoreBlankLines | ::mmdb::MMDBF_IgnoreDuplSeqNum | ::mmdb::MMDBF_IgnoreNonCoorPDBErrors | ::mmdb::MMDBF_IgnoreRemarks;
-		clipper::MMDBfile mmdbwrk;
-		clipper::MiniMol molwrk;
-		mmdbwrk.SetFlag(mmdbflags);
-		mmdbwrk.read_file(ippdb);
-		mmdbwrk.import_minimol(molwrk);
-
-		std::regex isProteinNGlc("[N][A-Z^P][ST]|[N][A-Z][C]"); // N-Glycosylation = Asn-X-/Ser/Thr(X=anything except Proline) || Asn-X-Cys(X=Anything)
-		std::regex isProteinNGlcRemoved("[A][A-Z^P][ST]|[A][A-Z][C]|[Q][A-Z^P][ST]|[Q][A-Z][C]");
-		std::regex isProteinCGlc("[W][A-Z][A-Z][W]|[W][ST][A-Z][C]"); // C-Glycosylation = Trp-X-X-Trp || Trp-Ser/Thr/X-Cys
-		std::regex isProteinOGlc("[N][A-Z][T]|[N][A-Z][S]|[S][A-Z][A-Z][P]|[P][A-Z][T]|[T][A-Z][A-Z][A-Z][A-Z][A-Z][A-Z][P]|[T][A-Z][A-Z][P]");
-
-		std::smatch NMatch;
-		std::smatch CMatch;
-		std::smatch OMatch;
-		std::smatch NRemMatch;
-
-
-		std::string HTMLhighlight = "<span style=\"background-color: #ffff00; color: #ff0000;\"><strong>";
-		std::string HTMLhighlightEnd = "</strong></span>";
-
-
-	const char rtype1[21] =
-	  {  'A',  'R',  'N',  'D',  'C',  'Q',  'E',  'G',  'H',  'I',
-		 'L',  'K',  'M',  'F',  'P',  'S',  'T',  'W',  'Y',  'V',
-		 'M'};
-	const char rtype3[21][4] =
-	  {"ALA","ARG","ASN","ASP","CYS","GLN","GLU","GLY","HIS","ILE",
-	   "LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR","VAL",
-	   "MSE"};
-
-	   const int ntype = sizeof( rtype1 ) / sizeof( rtype1[0] );
-	   clipper::String seqfile = "";
-	   clipper::String HTMLfile;
-
-
-	   for ( int c = 0; c < molwrk.size(); c++ ) {
-		 clipper::String id = molwrk[c].id();
-		 clipper::String seq;
-		 for ( int r = 0; r < molwrk[c].size(); r++ ) {
-		   char symbol = ' ';
-		   for ( int t = 0; t < ntype; t++ )
-		if ( molwrk[c][r].type() == rtype3[t] )
-		{
-		symbol = rtype1[t];
-		}
-		   if ( symbol != ' ' )
-		   {
-		   seq = seq + symbol;
-		   }
-		 }
-		 if ( seq.length() > 0 )
-		 {
-			 std::string HTMLseq;
-			 std::string TEMPseq = seq;
-			 int NGlcounter = 0; //Reset the N-Glycosylation counter at the beginning of the loop
-			 int CGlcounter = 0; //Reset the C-Glycosylation counter at the beginning of the loop
-			 int OGlcounter = 0;
-			 int NGlRemovedCounter = 0;
-			 auto NGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinNGlc); // Establish sregex_iterator search range for isProteinNGlc
-			 auto NGlc_end = std::sregex_iterator();
-			 auto CGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinCGlc); // same as above, just for C-glycosylation
-			 auto CGlc_end = std::sregex_iterator();
-			 auto OGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinOGlc); // same as above, just for C-glycosylation
-			 auto OGlc_end = std::sregex_iterator();
-			 auto NRemGlc_begin = std::sregex_iterator(seq.begin(), seq.end(), isProteinNGlcRemoved); // same as above, just for C-glycosylation
-			 auto NRemGlc_end = std::sregex_iterator();
-
-
-			if ((std::regex_search(seq, isProteinNGlc) == false) &&
-				(std::regex_search(seq, isProteinCGlc) == false) &&
-				(std::regex_search(seq, isProteinOGlc) == false) &&
-				(std::regex_search(seq, isProteinNGlcRemoved) == false))
-				{
-				HTMLseq = HTMLseq + "<br" + "/>" + "No possible glycosylation sequence motiffs were detected." + "</p>";
-				}
-			else
-			{
-			if (std::regex_search(seq, isProteinNGlc))
-			{
-				int it = 0;
-				for (std::sregex_iterator monomer = NGlc_begin; monomer != NGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-				{
-						NMatch = *monomer;
-						int it2 = NMatch.length();
-						++NGlcounter;
-						for(; it < TEMPseq.length(); ++it)
-						{
-							if (it == NMatch.position())
-							{
-								HTMLseq.append(HTMLhighlight);
-							}
-							if (it == NMatch.position() + NMatch.length())
-							{
-								HTMLseq.append(HTMLhighlightEnd);
-								break;
-							}
-						HTMLseq.push_back(seq[it]);
-						}
-					}
-					for (; it < TEMPseq.length(); ++it)
-					{
-					HTMLseq.push_back(seq[it]);
-					}
-			HTMLseq = HTMLseq + "<br" + "/>" + "Detected N-linked glycosylation (s): " + std::to_string(NGlcounter) + "</p>";
-			}
-			if (std::regex_search(seq, isProteinCGlc))
-			{
-				int it = 0;
-				for (std::sregex_iterator monomer = CGlc_begin; monomer != CGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-					{
-					   CMatch = *monomer;
-					   int it2 = CMatch.length();
-					   ++CGlcounter;
-					   for(; it < TEMPseq.length(); ++it)
-						{
-							if (it == CMatch.position())
-							{
-								HTMLseq.append(HTMLhighlight);
-							}
-							if (it == CMatch.position() + CMatch.length())
-							{
-								HTMLseq.append(HTMLhighlightEnd);
-								break;
-							}
-						HTMLseq.push_back(seq[it]);
-						}
-					}
-					for (; it < TEMPseq.length(); ++it)
-					{
-					HTMLseq.push_back(seq[it]);
-					}
-			HTMLseq = HTMLseq + "<br" + "/>" + "Detected C-linked glycosylation (s): " + std::to_string(CGlcounter) + "</p>";
-			}
-			if (std::regex_search(seq, isProteinOGlc))
-			{
-				int it = 0;
-				for (std::sregex_iterator monomer = OGlc_begin; monomer != OGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-				{
-					OMatch = *monomer;
-					int it2 = OMatch.length();
-					++OGlcounter;
-					for(; it < TEMPseq.length(); ++it)
-					{
-						if (it == OMatch.position())
-						{
-							HTMLseq.append(HTMLhighlight);
-						}
-						if (it == OMatch.position() + OMatch.length())
-						{
-							HTMLseq.append(HTMLhighlightEnd);
-							break;
-						}
-					HTMLseq.push_back(seq[it]);
-					}
-				}
-				for (; it < TEMPseq.length(); ++it)
-				{
-				HTMLseq.push_back(seq[it]);
-				}
-			HTMLseq = HTMLseq + "<br" + "/>" + "Detected O-linked glycosylation (s): " + std::to_string(OGlcounter) + "</p>";
-			}
-			if (std::regex_search(seq, isProteinNGlcRemoved))
-			{
-				int it = 0;
-				for (std::sregex_iterator monomer = NRemGlc_begin; monomer != NRemGlc_end; ++monomer) // a loop to iterate through sregex_iterator to make sure that all matches of N-Glycosylation are found
-				{
-					NRemMatch = *monomer;
-					int it2 = NRemMatch.length();
-					++NGlRemovedCounter;
-					for(; it < TEMPseq.length(); ++it)
-					{
-						if (it == NRemMatch.position())
-						{
-							HTMLseq.append(HTMLhighlight);
-						}
-						if (it == NRemMatch.position() + NRemMatch.length())
-						{
-							HTMLseq.append(HTMLhighlightEnd);
-							break;
-						}
-					HTMLseq.push_back(seq[it]);
-					}
-				}
-				for (; it < TEMPseq.length(); ++it)
-				{
-				HTMLseq.push_back(seq[it]);
-				}
-			HTMLseq = HTMLseq + "<br" + "/>" + "Detected possible N-Glycosylation motiffs that could have been modified(mutation of ASN to ALA or GLN) to remove N-Glycosylation: "
-			+ std::to_string(NGlRemovedCounter) + "</p>";
-			}
-		}
-		HTMLfile = HTMLfile + "<p>&gt;" + title + "_" + id + "<br" + "/>" + HTMLseq + "</p>";
-	   }
-
-
-	}
-	std::string HTMLoutput(HTMLfile.c_str());
-	return HTMLoutput;
-}
 
 
 clipper::MiniMol get_model_without_waters(const clipper::String& ippdb)
@@ -469,32 +132,66 @@ clipper::Coord_orth getTargetPoint(clipper::Coord_orth& coord1, clipper::Coord_o
 }
 
 
-void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, int chainID, int monomerID)
+void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Map_stats& mapstats, int chainID, int monomerID)
 {
-	clipper::Coord_orth origin(targetPos.x()-1, targetPos.y()-1, targetPos.z()-1);
-	clipper::Coord_orth destination(targetPos.x()+1, targetPos.y()+1, targetPos.z()+1);
 
-	clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
+	float map_sigma = mapstats.std_dev();
+	float box_radius = 5.00 * map_sigma;
 
-	i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
+	int isample_step = 1;
 
-	int iterationNumber = 0;
-	for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-		for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-			for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
-				{
+		// Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
+	clipper::Coord_orth origin(targetPos.x()-0.8, targetPos.y()-0.8, targetPos.z()-0.8);
+	clipper::Coord_orth destination(targetPos.x()+0.8, targetPos.y()+0.8, targetPos.z()+0.8);
 
-					if( (iterationNumber % 2) == 0 )
+	clipper::Coord_frac originref = origin.coord_frac(sigmaa_dif_map.cell());
+	clipper::Coord_frac destinationref = destination.coord_frac(sigmaa_dif_map.cell());
+	
+	clipper::Coord_frac origin0(
+			    originref.u() - box_radius/sigmaa_dif_map.cell().descr().a(),
+			    originref.v() - box_radius/sigmaa_dif_map.cell().descr().b(),
+			    originref.w() - box_radius/sigmaa_dif_map.cell().descr().c() );
+   	clipper::Coord_frac origin1(
+			    originref.u() + box_radius/sigmaa_dif_map.cell().descr().a(),
+			    originref.v() + box_radius/sigmaa_dif_map.cell().descr().b(),
+			    originref.w() + box_radius/sigmaa_dif_map.cell().descr().c() );
+
+	clipper::Coord_frac destination0(
+			    destinationref.u() - box_radius/sigmaa_dif_map.cell().descr().a(),
+			    destinationref.v() - box_radius/sigmaa_dif_map.cell().descr().b(),
+			    destinationref.w() - box_radius/sigmaa_dif_map.cell().descr().c() );
+   	clipper::Coord_frac destination1(
+			    destinationref.u() + box_radius/sigmaa_dif_map.cell().descr().a(),
+			    destinationref.v() + box_radius/sigmaa_dif_map.cell().descr().b(),
+			    destinationref.w() + box_radius/sigmaa_dif_map.cell().descr().c() );
+
+	clipper::Grid_range gridorigin(origin0.coord_grid(sigmaa_dif_map.grid_sampling()),
+			origin1.coord_grid(sigmaa_dif_map.grid_sampling()));
+
+	clipper::Grid_range griddestination(destination0.coord_grid(sigmaa_dif_map.grid_sampling()),
+			destination1.coord_grid(sigmaa_dif_map.grid_sampling()));
+	
+
+	if(!originref.is_null() && !destinationref.is_null())
+	{
+		clipper::Xmap_base::Map_reference_coord ix( sigmaa_dif_map );
+		int u, v, w, ii;
+		for (w = gridorigin.min().w(); w <= griddestination.max().w(); w+=isample_step ) {
+			for (v = gridorigin.min().v(); v <= griddestination.max().v(); v+=isample_step) {
+				ix.set_coord(clipper::Coord_grid( gridorigin.min().u(), v, w ));
+				for (u = gridorigin.min().u(); u <= griddestination.max().u(); u+=isample_step) 
 					{
-						clipper::Coord_orth targetuvw = iw.coord_orth();
+						clipper::Coord_orth targetuvw = ix.coord_orth();
 						clipper::Atom dummyAtom;
 						dummyAtom.set_coord_orth(targetuvw);
 						dummyAtom.set_element("H");
 						clipper::MAtom dummyAtomExport(dummyAtom);
 						inputModel[chainID][monomerID].insert(dummyAtomExport);
-					}
-					iterationNumber++;
-				}
+						for(ii=0; ii<isample_step; ii++) ix.next_u(); 
+					} 
+			}
+		}
+	}
 }
 
 void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID)
@@ -520,20 +217,20 @@ GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputM
 	int carbohydrateID;
 	GlycanToMiniMolIDs output;
 
-	for(int c = 0; c < inputModel.size(); c++)
+	for(int chain = 0; chain < inputModel.size(); chain++)
 	{
-		if(inputModel[c].id() == glycanAttachedTo) 
+		if(inputModel[chain].id() == glycanAttachedTo) 
 		{
-			backboneID = c;
+			backboneID = chain;
 			break;
 		}
 	}
 	
-	for(int r = 0; r < inputModel[backboneID].size(); r++)
+	for(int residue = 0; residue < inputModel[backboneID].size(); residue++)
 	{
-		if(inputModel[backboneID][r].id() == carbohydrate.id())
+		if(inputModel[backboneID][residue].id() == carbohydrate.id())
 		{
-			carbohydrateID = r;
+			carbohydrateID = residue;
 			break;
 		}
 	}
@@ -544,19 +241,19 @@ GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputM
 
 //Need to improve this function to improve calculation of electron density values within the sphere. 
 // refer to std::vector<clipper::Xmap_base::Map_reference_coord> in privateer.cpp
-double calculateMeanElectronDensityInArea(clipper::Coord_orth targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, clipper::Map_stats& mapstats)
+double calculateMeanElectronDensityInArea(clipper::Coord_orth targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Map_stats& mapstats)
 {
 	double meanElectronDensity = 0.0;
 	int n_points = 0;
 
 	float map_sigma = mapstats.std_dev();
-	float box_radius = 3.00 * map_sigma;
+	float box_radius = 5.00 * map_sigma;
 
 	int isample_step = 1;
 
 		// Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
-	clipper::Coord_orth origin(targetPos.x()-1, targetPos.y()-1, targetPos.z()-1);
-	clipper::Coord_orth destination(targetPos.x()+1, targetPos.y()+1, targetPos.z()+1);
+	clipper::Coord_orth origin(targetPos.x()-0.8, targetPos.y()-0.8, targetPos.z()-0.8);
+	clipper::Coord_orth destination(targetPos.x()+0.8, targetPos.y()+0.8, targetPos.z()+0.8);
 
 	clipper::Coord_frac originref = origin.coord_frac(sigmaa_dif_map.cell());
 	clipper::Coord_frac destinationref = destination.coord_frac(sigmaa_dif_map.cell());
@@ -646,8 +343,8 @@ std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar&
 }
 
 
-
-std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, clipper::Map_stats& mapstats, bool pdbexport) 
+// TO DO after: possible improvements, after determining best point, expand the cube at that point to get all electron density and see whether there would be discernible difference between false positives and true positives. 
+std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, std::vector < clipper::MGlycan >& glycanList, clipper::Map_stats& mapstats, float thresholdED, bool pdbexport) 
 {
 
 	std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > finalVectorForBlobValues;
@@ -655,23 +352,21 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 		{
 			if (!informationVector[vectorIndex].empty())
 			{
-				std::list<clipper::String> ignoreAtomList = {""};
+				std::list<clipper::String> ignoreAtomList = {" ND2"};
 				int vectorShiftLimit = 5;
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
-					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "ASN") // in N-Glycosylation a glycan is attached through ASN residue
                             {	
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{
 										clipper::MAtom ND2Atom;
 										
 										try {
-										ND2Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" ND2", clipper::MM::ANY);
+										ND2Atom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" ND2", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary ND2 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary ND2 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 										
 										clipper::Coord_orth ND2Coordinate; // ND2 atom is used as a direction towards the glycan density
@@ -679,20 +374,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(ND2Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -702,40 +397,117 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
 
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-					}
 				}
 			}
+			if (!informationVector[vectorIndex].empty())
+			{
+				std::list<clipper::String> ignoreAtomList = {" NH2", " NH1"};
+				int vectorShiftLimit = 5;
+				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
+				{
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "ARG") // in N-Glycosylation a glycan is attached through ARG residue
+                            {	
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
+								if(!siteAlreadyGlycosylated)
+									{
+										clipper::MAtom NH1Atom;
+										clipper::MAtom NH2Atom;
+										
+										try {
+										NH1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" NH1", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary NH1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+
+										try {
+										NH2Atom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" NH2", clipper::MM::ANY);
+										} catch (const clipper::Message_fatal& error) {
+										std::cerr << "Unable to find necessary NH2 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										}
+										
+										clipper::Coord_orth NH1Coordinate; // NH1 atom is used as a direction towards the glycan density
+										NH1Coordinate = NH1Atom.coord_orth();
+
+										clipper::Coord_orth NH2Coordinate; // NH1 atom is used as a direction towards the glycan density
+										NH2Coordinate = NH2Atom.coord_orth();
+
+										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
+
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
+										{
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
+											if(!atomIgnored)
+												{
+													clipper::Coord_orth vectorOrigin;
+
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
+													
+													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
+														{
+															clipper::Coord_orth potentialTargetNH1 = getTargetPoint(NH1Coordinate, vectorOrigin, vectorShift);
+															clipper::Coord_orth potentialTargetNH2 = getTargetPoint(NH1Coordinate, vectorOrigin, vectorShift);
+
+															double meanDensityValueNH1 = calculateMeanElectronDensityInArea(potentialTargetNH1, sigmaa_dif_map, mapstats);
+															double meanDensityValueNH2 = calculateMeanElectronDensityInArea(potentialTargetNH1, sigmaa_dif_map, mapstats);
+															std::pair<clipper::Coord_orth, double> tempDensityInfoNH1(potentialTargetNH1, meanDensityValueNH1);
+															std::pair<clipper::Coord_orth, double> tempDensityInfoNH2(potentialTargetNH2, meanDensityValueNH2);
+															pairs.push_back(tempDensityInfoNH1);
+															pairs.push_back(tempDensityInfoNH2);
+														}
+												}
+										}
+										const auto bestPair = max_element(pairs.begin(), pairs.end(), bestPointFinder);
+										clipper::Coord_orth bestTarget = bestPair->first;
+										double bestDensityValue = bestPair->second;
+
+										if(bestDensityValue > thresholdED)
+										{
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
+										finalVectorForBlobValues.push_back(densityInfo);
+
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
+										}
+									}
+							}
+				}
+			}			
 		}
 		if(vectorIndex == 1)
 		{
 			if (!informationVector[vectorIndex].empty())
 			{
-				std::list<clipper::String> ignoreAtomList = {" O  ", " N  ", " C  "};
+				std::list<clipper::String> ignoreAtomList = {" O  ", " N  ", " C  ", " CD1"};
 				int vectorShiftLimit = 10;
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
-					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "TRP") // in C-Glycosylation a glycan is attached through TRP residue
                             {	
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{                                
 										clipper::MAtom CD1Atom; // A glycan is attached to TRP residue via CD1 atom
 										
 										try {
-										CD1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CD1", clipper::MM::ANY);
+										CD1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" CD1", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary CD1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary CD1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 										
 										clipper::Coord_orth CD1Coordinate; // CD1 atom is used as a direction towards the glycan density
@@ -743,20 +515,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(CD1Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -767,15 +539,18 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-					}
 				}
 			}
 		}
@@ -785,21 +560,19 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 			{
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
-					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "SER") // in O-Glycosylation a glycan is attached through Thr or Ser residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "SER") // in O-Glycosylation a glycan is attached through Thr or Ser residue
                             {	
 								int vectorShiftLimit = 5; 
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{
-										std::list<clipper::String> ignoreAtomList = {" O  "};
+										std::list<clipper::String> ignoreAtomList = {" O  ", " OG "};
 										clipper::MAtom OGAtom; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
 										
 										try {
-										OGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG ", clipper::MM::ANY);
+										OGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" OG ", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary OG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary OG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 										
 
@@ -808,20 +581,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(OGCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -832,27 +605,31 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "THR")
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "THR")
 							{
 								int vectorShiftLimit = 5;  
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{   
-										std::list<clipper::String> ignoreAtomList = {" O  ", " N  ", " C  "};
+										std::list<clipper::String> ignoreAtomList = {" O  ", " N  ", " C  ", " OG1"};
 										clipper::MAtom OG1Atom; // On Thr glycan attaches to OG1
 
 										try {
-										OG1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" OG1", clipper::MM::ANY);
+										OG1Atom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" OG1", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary OG1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary OG1 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 
 										clipper::Coord_orth OG1Coordinate; // OG atom is used as a point of attachement of a glycan
@@ -860,20 +637,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-												bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+												bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 												if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(OG1Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -884,15 +661,18 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-					}
 				}
 			}
 		}
@@ -902,21 +682,19 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 			{
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
-					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "CYS") // in S-Glycosylation a glycan is attached through CYS or MET residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "CYS") // in S-Glycosylation a glycan is attached through CYS or MET residue
                             {	
 								int vectorShiftLimit = 3;  
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{                								
-										std::list<clipper::String> ignoreAtomList = {" O  "};
+										std::list<clipper::String> ignoreAtomList = {" O  ", " SG "};
 										clipper::MAtom SGAtom; // On Ser glycan attaches to OG, on Thr glycan attaches to OG1
 
 										try {
-										SGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" SG ", clipper::MM::ANY);
+										SGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" SG ", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary SG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary SG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 
 										clipper::Coord_orth SGCoordinate; // SG atom is used as a point of attachement of a glycan
@@ -924,20 +702,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(SGCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -948,28 +726,32 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "MET") // in S-Glycosylation a glycan is attached through CYS or MET residue
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "MET") // in S-Glycosylation a glycan is attached through CYS or MET residue
 							{
 								int vectorShiftLimit = 3;
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{   
 										               							
-										std::list<clipper::String> ignoreAtomList = {""};
+										std::list<clipper::String> ignoreAtomList = {" SD "};
 										clipper::MAtom SDAtom; // On Thr glycan attaches to OG1
 										
 										try {
-										SDAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" SD ", clipper::MM::ANY);
+										SDAtom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" SD ", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary SD atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary SD atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 
 										clipper::Coord_orth SDCoordinate; // OG atom is used as a point of attachement of a glycan
@@ -977,20 +759,20 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
-												bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+												bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 												if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(SDCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -1001,15 +783,18 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-					}
 				}
 			}
 		}
@@ -1019,21 +804,19 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 			{
 				for (int c = 0; c < informationVector[vectorIndex].size(); c++)
 				{
-					for(int r = informationVector[vectorIndex][c].FirstMMonomer; r < informationVector[vectorIndex][c].LastMMonomer; r++)
-					{
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "ALA") 
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "ALA") 
                             {
 								int vectorShiftLimit = 5;
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{                   								
-										std::list<clipper::String> ignoreAtomList = {""};
+										std::list<clipper::String> ignoreAtomList = {" CB "};
 										clipper::MAtom CBAtom; // CA to CB for Ala, CG to NE2 for GLN
 
 										try {
-										CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ", clipper::MM::ANY);
+										CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" CB ", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary CB atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary CB atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 
 										clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
@@ -1041,21 +824,21 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
 											
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(CBCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -1065,28 +848,32 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}	
 							}
-						if (inputModel[informationVector[vectorIndex][c].PolymerID][r].type() == "GLN") 
+						if (inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() == "GLN") 
                             {	
 								int vectorShiftLimit = 5;
-								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
+								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{                   								
-										std::list<clipper::String> ignoreAtomList = {""};
+										std::list<clipper::String> ignoreAtomList = {" CG "};
 										
 										clipper::MAtom CGAtom; // CA to CB for Ala, CG to NE2 for GLN
 
 										try {
-										CGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CG ", clipper::MM::ANY);
+										CGAtom = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].find(" CG ", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary CG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary CG atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 
 										
@@ -1095,21 +882,21 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
-										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][r].size(); natom++)
+										for (int natom = 0; natom < inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID].size(); natom++)
 										{
 											
-											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].id()) != ignoreAtomList.end());
+											bool atomIgnored = (std::find(ignoreAtomList.begin(), ignoreAtomList.end(), inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].id()) != ignoreAtomList.end());
 											if(!atomIgnored)
 												{
 													clipper::Coord_orth vectorOrigin;
 
-													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][r][natom].coord_orth();
+													vectorOrigin = inputModel[informationVector[vectorIndex][c].PolymerID][informationVector[vectorIndex][c].ResidueID][natom].coord_orth();
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CGCoordinate, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -1119,22 +906,25 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.090)
+										if(bestDensityValue > thresholdED)
 										{
-										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
+										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
-										if(pdbexport) drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, r);
+											if(pdbexport)
+											{
+												drawOriginPoint(inputModel, bestTarget, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+												// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, informationVector[vectorIndex][c].PolymerID, informationVector[vectorIndex][c].ResidueID);
+											}
 										}
 									}
 							}
-					}
 				}
 			}
 		}
 	return finalVectorForBlobValues;
 }
 
-std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, clipper::Map_stats& mapstats, bool pdbexport)
+std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Map_stats& mapstats, float thresholdED, bool pdbexport)
 {
 	std::vector<std::pair<GlycanToMiniMolIDs, double> > finalVectorForBlobValues;
 	int vectorShiftLimit = 5;
@@ -1155,7 +945,7 @@ std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_pote
 					{
 						clipper::Coord_orth potentialTarget = getTargetPoint(linkageAtomLocation, sugarCentre, vectorShift);
 
-						double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
+						double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, mapstats);
 						std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 						pairs.push_back(tempDensityInfo);
 					}
@@ -1164,18 +954,22 @@ std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_pote
 			clipper::Coord_orth bestTarget = bestPair->first;
 			double bestDensityValue = bestPair->second;
 
-			if(bestDensityValue > 0.090)
+			if(bestDensityValue > thresholdED)
 			{
 			GlycanToMiniMolIDs identification = getCarbohydrateRelationshipToMiniMol(inputModel, glycanChain[monomer], allSugars, id, monomer);
 			std::pair<GlycanToMiniMolIDs, double> densityInfo(GlycanToMiniMolIDs{identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, identification.carbohydrateID}, bestDensityValue);
 			finalVectorForBlobValues.push_back(densityInfo);
-			if(pdbexport) drawOriginPoint(inputModel, bestTarget, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID);
-			}
+				if(pdbexport) 
+				{
+					drawOriginPoint(inputModel, bestTarget, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID);
+					// fillSearchArea(inputModel, bestTarget, sigmaa_dif_map, mapstats, identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID);
+				}
 
+			}
 			}
 		}
 	}
-return finalVectorForBlobValues;
+	return finalVectorForBlobValues;
 }
 	
 
