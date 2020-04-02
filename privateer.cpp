@@ -1238,16 +1238,19 @@ int main(int argc, char** argv)
                                                                 sigmaa_dif_map,
                                                                 ignore_set_null );
 
-
+        clipper::Map_stats ms(sigmaa_dif_map);
+	    float map_sigma = ms.std_dev();
+        
         if (no_errors)
             {
                 std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;
                 std::cout << std::endl;
                 std::stringstream buffer;
+
                 for(int type = 0; type < 5; type++)
                 {
                     std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, list_of_glycans, output_pdb);
+                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, mygrid, hklinfo, list_of_glycans, ms, output_pdb);
 
 
                     if(!results.empty())
@@ -1359,7 +1362,7 @@ int main(int argc, char** argv)
                     std::vector<std::pair<GlycanToMiniMolIDs, double> > densityInfo;
                     std::vector < clipper::MSugar > glycanChain;
                     glycanChain = list_of_glycans[id].get_sugars();
-                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, mygrid, hklinfo, output_pdb);
+                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, mygrid, hklinfo, ms, output_pdb);
 
                     for(int i = 0; i < densityInfo.size(); i++)
                     {
@@ -1388,6 +1391,7 @@ int main(int argc, char** argv)
 
             std::cout << "___________________________________________________________________" << std::endl;
 
+            // TO DO FIX: PROPERLY MATCH CHAIN NAMES BY ITERATING THROUGH ORIGINAL MINIMOL and SETTING THE SAME ID FOR THIS NEW MODEL.
             if(output_pdb && vsapdb != "NONE")
             {
                 std::vector<clipper::String> labels;

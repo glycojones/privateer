@@ -499,9 +499,14 @@ void fillSearchArea(clipper::MiniMol& inputModel, clipper::Coord_orth& targetPos
 
 void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, int chainID, int monomerID)
 {
+		clipper::U_aniso_orth null(0);
+
 		clipper::Atom dummyAtom;
 		dummyAtom.set_coord_orth(target);
 		dummyAtom.set_element("H");
+		dummyAtom.set_occupancy(0);
+		dummyAtom.set_u_aniso_orth(null);
+		dummyAtom.set_u_iso(0);
 		clipper::MAtom dummyAtomExport(dummyAtom);
 		dummyAtomExport.set_id(" DUM");
 		inputModel[chainID][monomerID].insert(dummyAtomExport);
@@ -539,30 +544,80 @@ GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputM
 
 //Need to improve this function to improve calculation of electron density values within the sphere. 
 // refer to std::vector<clipper::Xmap_base::Map_reference_coord> in privateer.cpp
-double calculateMeanElectronDensityInArea(clipper::Coord_orth& targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo)
+double calculateMeanElectronDensityInArea(clipper::Coord_orth targetPos, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, clipper::Map_stats& mapstats)
 {
 	double meanElectronDensity = 0.0;
 	int n_points = 0;
 
-	// Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
+	float map_sigma = mapstats.std_dev();
+	float box_radius = 3.00 * map_sigma;
+
+	int isample_step = 1;
+
+		// Define origin and destination for drawing the sphere. Electron density data obtained from within the sphere later on.
 	clipper::Coord_orth origin(targetPos.x()-1, targetPos.y()-1, targetPos.z()-1);
 	clipper::Coord_orth destination(targetPos.x()+1, targetPos.y()+1, targetPos.z()+1);
 
-	clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
+	clipper::Coord_frac originref = origin.coord_frac(sigmaa_dif_map.cell());
+	clipper::Coord_frac destinationref = destination.coord_frac(sigmaa_dif_map.cell());
+	
+	clipper::Coord_frac origin0(
+			    originref.u() - box_radius/sigmaa_dif_map.cell().descr().a(),
+			    originref.v() - box_radius/sigmaa_dif_map.cell().descr().b(),
+			    originref.w() - box_radius/sigmaa_dif_map.cell().descr().c() );
+   	clipper::Coord_frac origin1(
+			    originref.u() + box_radius/sigmaa_dif_map.cell().descr().a(),
+			    originref.v() + box_radius/sigmaa_dif_map.cell().descr().b(),
+			    originref.w() + box_radius/sigmaa_dif_map.cell().descr().c() );
 
-	if(!origin.is_null() && !destination.is_null())
+	clipper::Coord_frac destination0(
+			    destinationref.u() - box_radius/sigmaa_dif_map.cell().descr().a(),
+			    destinationref.v() - box_radius/sigmaa_dif_map.cell().descr().b(),
+			    destinationref.w() - box_radius/sigmaa_dif_map.cell().descr().c() );
+   	clipper::Coord_frac destination1(
+			    destinationref.u() + box_radius/sigmaa_dif_map.cell().descr().a(),
+			    destinationref.v() + box_radius/sigmaa_dif_map.cell().descr().b(),
+			    destinationref.w() + box_radius/sigmaa_dif_map.cell().descr().c() );
+
+	clipper::Grid_range gridorigin(origin0.coord_grid(sigmaa_dif_map.grid_sampling()),
+			origin1.coord_grid(sigmaa_dif_map.grid_sampling()));
+
+	clipper::Grid_range griddestination(destination0.coord_grid(sigmaa_dif_map.grid_sampling()),
+			destination1.coord_grid(sigmaa_dif_map.grid_sampling()));
+	
+
+    //  std::cout << "    box_radius " << box_radius << std::endl;
+    //  std::cout << "    centre_point: " << targetPos.format() << std::endl;
+    //  std::cout << "    origin0: " << origin0.format() << std::endl;
+    //  std::cout << "    origin1: " << origin1.format() << std::endl;
+    //  std::cout << "    destination0: " << destination0.format() << std::endl;
+    //  std::cout << "    destination1: " << destination1.format() << std::endl;
+    //  std::cout << "    origin0.coord_orth(): " << origin0.coord_orth(sigmaa_dif_map.cell()).format() << std::endl;
+    //  std::cout << "    origin1.coord_orth(): " << origin1.coord_orth(sigmaa_dif_map.cell()).format() << std::endl;
+    //  std::cout << "    destination0.coord_orth(): " << destination0.coord_orth(sigmaa_dif_map.cell()).format() << std::endl;
+    //  std::cout << "    destination1.coord_orth(): " << destination1.coord_orth(sigmaa_dif_map.cell()).format() << std::endl;
+    //  std::cout << "    grid: " << grid.format() << std::endl;
+	//  std::cout << "    gridorigin: " << gridorigin.format() << std::endl;
+	//  std::cout << "    griddestination: " << griddestination.format() << std::endl;
+	if(!originref.is_null() && !destinationref.is_null())
 	{
-		i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_dif_map, origin.coord_frac(hklinfo.cell()).coord_grid(grid) );
-
-		for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).u(); iu.next_u() )
-			for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).v(); iv.next_v() )
-				for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(grid).w(); iw.next_w() )
+		clipper::Xmap_base::Map_reference_coord ix( sigmaa_dif_map );
+		int u, v, w, ii;
+		for (w = gridorigin.min().w(); w <= griddestination.max().w(); w+=isample_step ) {
+			for (v = gridorigin.min().v(); v <= griddestination.max().v(); v+=isample_step) {
+				ix.set_coord(clipper::Coord_grid( gridorigin.min().u(), v, w ));
+				for (u = gridorigin.min().u(); u <= griddestination.max().u(); u+=isample_step) 
 					{
-						meanElectronDensity = meanElectronDensity + sigmaa_dif_map[iw];
+						// std::cout << "    ix: " << ix.coord_orth().format() << std::endl;
+						meanElectronDensity = meanElectronDensity + sigmaa_dif_map[ix];
 						n_points++;
-					}
+						for(ii=0; ii<isample_step; ii++) ix.next_u(); 
+					} 
+			}
+		}
 	}
- 
+
+
 	meanElectronDensity = meanElectronDensity / n_points;
 
 	return meanElectronDensity;
@@ -592,7 +647,7 @@ std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar&
 
 
 
-std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, bool pdbexport) 
+std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, clipper::Map_stats& mapstats, bool pdbexport) 
 {
 
 	std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > finalVectorForBlobValues;
@@ -611,16 +666,16 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 								bool siteAlreadyGlycosylated = check_glycosylation_presence(inputModel[informationVector[vectorIndex][c].PolymerID].id(), inputModel[informationVector[vectorIndex][c].PolymerID][r].id().trim(), glycanList);
 								if(!siteAlreadyGlycosylated)
 									{
-										clipper::MAtom CBAtom;
+										clipper::MAtom ND2Atom;
 										
 										try {
-										CBAtom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" CB ", clipper::MM::ANY);
+										ND2Atom = inputModel[informationVector[vectorIndex][c].PolymerID][r].find(" ND2", clipper::MM::ANY);
 										} catch (const clipper::Message_fatal& error) {
-										std::cerr << "Unable to find necessary CB atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
+										std::cerr << "Unable to find necessary ND2 atom for residue" << inputModel[informationVector[vectorIndex][c].PolymerID][r].id() << "-" << inputModel[informationVector[vectorIndex][c].PolymerID][r].type() << " in Chain " << inputModel[informationVector[vectorIndex][c].PolymerID].id() << "\n" << "\n";
 										}
 										
-										clipper::Coord_orth CBCoordinate; // CB atom is used as a direction towards the glycan density
-										CBCoordinate = CBAtom.coord_orth();
+										clipper::Coord_orth ND2Coordinate; // ND2 atom is used as a direction towards the glycan density
+										ND2Coordinate = ND2Atom.coord_orth();
 
 										std::vector<std::pair<clipper::Coord_orth, double>> pairs;
 
@@ -635,9 +690,9 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 													
 													for(int vectorShift = 1; vectorShift <= vectorShiftLimit; vectorShift++)
 														{
-															clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CBCoordinate, vectorShift);
+															clipper::Coord_orth potentialTarget = getTargetPoint(ND2Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -647,7 +702,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.08)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -701,7 +756,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(CD1Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -712,7 +767,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.08)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -766,7 +821,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(OGCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -777,7 +832,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -818,7 +873,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(OG1Coordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -829,7 +884,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -882,7 +937,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(SGCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -893,7 +948,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -935,7 +990,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(SDCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -946,7 +1001,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -1000,7 +1055,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(CBCoordinate, vectorOrigin, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -1010,7 +1065,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -1054,7 +1109,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 														{
 															clipper::Coord_orth potentialTarget = getTargetPoint(vectorOrigin, CGCoordinate, vectorShift);
 
-															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+															double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 															std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 															pairs.push_back(tempDensityInfo);
 														}
@@ -1064,7 +1119,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 										clipper::Coord_orth bestTarget = bestPair->first;
 										double bestDensityValue = bestPair->second;
 
-										if(bestDensityValue > 0.09)
+										if(bestDensityValue > 0.090)
 										{
 										std::pair<PotentialGlycosylationSiteInfo, double> densityInfo(PotentialGlycosylationSiteInfo{informationVector[vectorIndex][c].PolymerID, r, vectorIndex}, bestDensityValue);
 										finalVectorForBlobValues.push_back(densityInfo);
@@ -1079,7 +1134,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 	return finalVectorForBlobValues;
 }
 
-std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, bool pdbexport)
+std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::Grid_sampling& grid, clipper::HKL_info& hklinfo, clipper::Map_stats& mapstats, bool pdbexport)
 {
 	std::vector<std::pair<GlycanToMiniMolIDs, double> > finalVectorForBlobValues;
 	int vectorShiftLimit = 5;
@@ -1100,7 +1155,7 @@ std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_pote
 					{
 						clipper::Coord_orth potentialTarget = getTargetPoint(linkageAtomLocation, sugarCentre, vectorShift);
 
-						double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo);
+						double meanDensityValue = calculateMeanElectronDensityInArea(potentialTarget, sigmaa_dif_map, grid, hklinfo, mapstats);
 						std::pair<clipper::Coord_orth, double> tempDensityInfo(potentialTarget, meanDensityValue);
 						pairs.push_back(tempDensityInfo);
 					}
@@ -1109,7 +1164,7 @@ std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_pote
 			clipper::Coord_orth bestTarget = bestPair->first;
 			double bestDensityValue = bestPair->second;
 
-			if(bestDensityValue > 0.09)
+			if(bestDensityValue > 0.090)
 			{
 			GlycanToMiniMolIDs identification = getCarbohydrateRelationshipToMiniMol(inputModel, glycanChain[monomer], allSugars, id, monomer);
 			std::pair<GlycanToMiniMolIDs, double> densityInfo(GlycanToMiniMolIDs{identification.proteinMiniMolID, identification.carbohydrateChainMiniMolID, identification.carbohydrateID}, bestDensityValue);
