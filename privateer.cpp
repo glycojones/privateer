@@ -1261,7 +1261,7 @@ int main(int argc, char** argv)
                 for(int type = 0; type < 5; type++)
                 {
                     std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, list_of_glycans, ms, thresholdElectronDensityValue, output_pdb);
+                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, hklinfo, list_of_glycans, ms, thresholdElectronDensityValue, output_pdb);
 
 
                     if(!results.empty())
@@ -1373,7 +1373,7 @@ int main(int argc, char** argv)
                     std::vector<std::pair<GlycanToMiniMolIDs, double> > densityInfo;
                     std::vector < clipper::MSugar > glycanChain;
                     glycanChain = list_of_glycans[id].get_sugars();
-                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, ms, thresholdElectronDensityValue, output_pdb);
+                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, hklinfo, ms, thresholdElectronDensityValue, output_pdb);
 
                     for(int i = 0; i < densityInfo.size(); i++)
                     {
@@ -1402,7 +1402,6 @@ int main(int argc, char** argv)
 
             std::cout << "___________________________________________________________________" << std::endl;
 
-            // TO DO FIX: PROPERLY MATCH CHAIN NAMES BY ITERATING THROUGH ORIGINAL MINIMOL and SETTING THE SAME ID FOR THIS NEW MODEL.
             if(output_pdb && vsapdb != "NONE")
             {
                 
