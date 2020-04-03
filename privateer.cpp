@@ -36,6 +36,7 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <tuple>
 #include <iostream>
 #include "privateer-lib.h"
 #include "clipper-glyco.h"
@@ -108,7 +109,7 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     float ipradius = 2.5;    // default value, punishing enough!
-    float thresholdElectronDensityValue = 0.090;
+    float thresholdElectronDensityValue = 0.01;
     FILE *output;
     bool output_mtz = false;
     bool output_pdb = false;
@@ -1222,7 +1223,7 @@ int main(int argc, char** argv)
 
     }
 
-    std::vector<std::vector< std::pair <clipper::MMonomer, double> > > blobsProteinBackboneSummaryForCoot(6);
+    std::vector<std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > > blobsProteinBackboneSummaryForCoot(6);
     if ( check_unmodelled )
     {
         std::cout << std::endl << "___________________________________________________________________" << std::endl;
@@ -1268,7 +1269,7 @@ int main(int argc, char** argv)
                     {
                         if(type == 0)
                         {
-                        std::vector< std::pair <clipper::MMonomer, double> > N_SiteBlobs;
+                        std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > N_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
 
@@ -1276,7 +1277,7 @@ int main(int argc, char** argv)
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
-                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 N_SiteBlobs.push_back(blobInfo);
 
                             }
@@ -1285,14 +1286,14 @@ int main(int argc, char** argv)
                         }
                         if(type == 1)
                         {
-                        std::vector< std::pair <clipper::MMonomer, double> > C_SiteBlobs;
+                        std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > C_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tC-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
                             
-                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 C_SiteBlobs.push_back(blobInfo);
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = C_SiteBlobs;
@@ -1300,14 +1301,14 @@ int main(int argc, char** argv)
                         }
                         if(type == 2)
                         {
-                        std::vector< std::pair <clipper::MMonomer, double> > O_SiteBlobs;
+                        std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > O_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tO-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
-                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 O_SiteBlobs.push_back(blobInfo);                            
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = O_SiteBlobs;
@@ -1316,14 +1317,14 @@ int main(int argc, char** argv)
 
                         if(type == 3)
                         {
-                        std::vector< std::pair <clipper::MMonomer, double> > S_SiteBlobs;
+                        std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > S_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tS-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
-                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 S_SiteBlobs.push_back(blobInfo);                          
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = S_SiteBlobs;
@@ -1332,14 +1333,14 @@ int main(int argc, char** argv)
                         
                         if(type == 4)
                         {
-                        std::vector< std::pair <clipper::MMonomer, double> > NRem_SiteBlobs;
+                        std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > NRem_SiteBlobs;
                             for (int i = 0; i < results.size(); i++)
                             {
                                 buffer << "\tPossibly processed by PNGase F: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
-                                std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
+                                std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 NRem_SiteBlobs.push_back(blobInfo);                            
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = NRem_SiteBlobs;
@@ -1365,7 +1366,7 @@ int main(int argc, char** argv)
             if(!list_of_glycans.empty())
             {
             int type = 5;
-            std::vector< std::pair <clipper::MMonomer, double> > MIA_CarbsBlobs;
+            std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > MIA_CarbsBlobs;
             std::stringstream buffer;
             buffer << std::endl << "Scanning for unmodelled glycan monomers at modelled glycan chains. " << std::endl;
             for (int id = 0; id < list_of_glycans.size() ; id++ )
@@ -1381,7 +1382,7 @@ int main(int argc, char** argv)
                         double meanElectronDensity = densityInfo[i].second;
                         buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain() << " of" << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
                     
-                        std::pair <clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
+                        std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID].id(), modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
                         MIA_CarbsBlobs.push_back(blobInfo);
                     }
                     buffer << std::endl;
@@ -1418,6 +1419,11 @@ int main(int argc, char** argv)
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
                 pdbfile.write_file( vsapdb );
+
+                clipper::CCP4MAPfile sigmaa_dif_nowater;
+                sigmaa_dif_nowater.open_write( "sigmaa_diff_nowater.map" );
+                sigmaa_dif_nowater.export_xmap( sigmaa_dif_map );
+                sigmaa_dif_nowater.close_write();
             }
     }
 
@@ -2304,10 +2310,11 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                        clipper::String diagnostic = "N-linked blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled glycosylation site";
+                            // Printing vector tuples 
+                        clipper::String diagnostic = "N-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
@@ -2318,10 +2325,10 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                         clipper::String diagnostic = "C-linked blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled glycosylation site";
+                        clipper::String diagnostic = "C-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                       
@@ -2332,10 +2339,10 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                        clipper::String diagnostic = "O-linked blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled glycosylation site";
+                        clipper::String diagnostic = "O-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
@@ -2346,10 +2353,10 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                        clipper::String diagnostic = "S-linked blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled glycosylation site";
+                        clipper::String diagnostic = "S-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
@@ -2360,10 +2367,10 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                        clipper::String diagnostic = "PNGase blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled glycosylation site";
+                        clipper::String diagnostic = "PNGase blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
@@ -2373,10 +2380,10 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                        clipper::String diagnostic = "Glycan chain blob: " + blobsProteinBackboneSummaryForCoot[type][i].first.id() + "-" + blobsProteinBackboneSummaryForCoot[type][i].first.type() + " = " + clipper::String(blobsProteinBackboneSummaryForCoot[type][i].second) + " - might be in proximity of unmodelled carbohydrate residue";
+                        clipper::String diagnostic = "Glycan chain blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
                         
                         clipper::MAtom DUMAtom;
-                        DUMAtom = blobsProteinBackboneSummaryForCoot[type][i].first.find(" DUM", clipper::MM::ANY);
+                        DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
                         privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
