@@ -2988,18 +2988,18 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
-                    clipper::MAtom nd2= sugar.anomeric_substituent();         // CD1 
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom og1= sugar.anomeric_substituent();         // OG/OG1 SER/THR
+                    clipper::MAtom cg = potential_o_roots[i].find("CB");      // CB
+                    clipper::MAtom cb = potential_o_roots[i].find("CA");      // CA
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                             c1.coord_orth(),
-                                                           nd2.coord_orth(),
+                                                           og1.coord_orth(),
                                                             cg.coord_orth() );
 
                     psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                           nd2.coord_orth(),
+                                                           og1.coord_orth(),
                                                             cg.coord_orth(),
                                                             cb.coord_orth() );
 
