@@ -83,7 +83,6 @@ int main(int argc, char** argv)
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
     clipper::String ippdb       = "NONE";
-    clipper::String vsapdb       = "NONE";
     clipper::String ipcol_fo    = "NONE";
     clipper::String ipsfcif     = "NONE";
     clipper::String ipmmcif     = "NONE";
@@ -112,7 +111,6 @@ int main(int argc, char** argv)
     float thresholdElectronDensityValue = 0.01;
     FILE *output;
     bool output_mtz = false;
-    bool output_pdb = false;
     std::vector < clipper::MGlycan > list_of_glycans;
     clipper::CCP4MTZfile opmtz_best, opmtz_omit;
     clipper::MTZcrystal opxtal;
@@ -278,14 +276,6 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-ignore_missing" )
             ignore_set_null = true;
 
-        else if ( args[arg] == "-visualize_search_area" )
-        {
-            if ( ++arg < args.size() )
-            {
-                vsapdb = args[arg];
-                output_pdb = true;
-            }
-        }
 
         else if ( args[arg] == "-blobs_threshold" )
         {
@@ -617,6 +607,11 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "n-glycan" );
                                 fprintf ( output, "\t(n) " );
                             }
+                            if ( list_of_glycans[i].get_type() == "c-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "c-glycan" );
+                                fprintf ( output, "\t(c) " );
+                            }
                             else
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
@@ -731,6 +726,11 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "n-glycan" );
                                 std::cout << "\t(n) ";
                             }
+                            if ( list_of_glycans[i].get_type() == "c-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "c-glycan" );
+                                std::cout << "\t(c) ";
+                            }
                             else
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
@@ -827,8 +827,8 @@ int main(int argc, char** argv)
         clipper::String all_MapName, dif_MapName, omit_dif_MapName;
         all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
 
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, vsapdb, output_pdb);
-        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, vsapdb, output_pdb);
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
 
 
 
@@ -1262,7 +1262,7 @@ int main(int argc, char** argv)
                 for(int type = 0; type < 5; type++)
                 {
                     std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > results;
-                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, hklinfo, list_of_glycans, ms, thresholdElectronDensityValue, output_pdb);
+                    results = get_electron_density_of_potential_glycosylation_sites(PotentialMonomers, type, modelRemovedWaters, sigmaa_dif_map, hklinfo, list_of_glycans, ms, thresholdElectronDensityValue, check_unmodelled);
 
 
                     if(!results.empty())
@@ -1368,44 +1368,45 @@ int main(int argc, char** argv)
             int type = 5;
             std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > MIA_CarbsBlobs;
             std::stringstream buffer;
-            buffer << std::endl << "Scanning for unmodelled glycan monomers at modelled glycan chains. " << std::endl;
+            std::cout << std::endl << "Scanning for unmodelled glycan monomers at modelled glycan chains. " << std::endl;
             for (int id = 0; id < list_of_glycans.size() ; id++ )
                 {
                     std::vector<std::pair<GlycanToMiniMolIDs, double> > densityInfo;
                     std::vector < clipper::MSugar > glycanChain;
                     glycanChain = list_of_glycans[id].get_sugars();
-                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, hklinfo, ms, thresholdElectronDensityValue, output_pdb);
-
-                    for(int i = 0; i < densityInfo.size(); i++)
+                    densityInfo = get_electron_density_of_potential_unmodelled_carbohydrate_monomers(glycanChain, modelRemovedWaters, list_of_glycans, id, sigmaa_dif_map, hklinfo, ms, thresholdElectronDensityValue, check_unmodelled);
+                    if (!densityInfo.empty())
                     {
-                        int sugarID = densityInfo[i].first.carbohydrateID;
-                        double meanElectronDensity = densityInfo[i].second;
-                        buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain() << " of" << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
-                    
-                        std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID].id(), modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
-                        MIA_CarbsBlobs.push_back(blobInfo);
+                        for(int i = 0; i < densityInfo.size(); i++)
+                        {
+                            int sugarID = densityInfo[i].first.carbohydrateID;
+                            double meanElectronDensity = densityInfo[i].second;
+                            buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain() << " of" << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
+                        
+                            std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID].id(), modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
+                            MIA_CarbsBlobs.push_back(blobInfo);
+                        }
+                        buffer << std::endl;
                     }
-                    buffer << std::endl;
                 }
                 blobsProteinBackboneSummaryForCoot.at(type) = MIA_CarbsBlobs;
 
             if (!buffer.str().empty())
                 {
-                    std::cout << "Detected possibly unmodelled Carbohydrate monomers in these Glycans:" << std::endl;
-                    std::cout << buffer.str() << std::endl;
+                    std::cout << std::endl << "Detected possibly unmodelled Carbohydrate monomers in these Glycans:" << std::endl;
+                    std::cout << std::endl << buffer.str() << std::endl;
                 }
                 else
                 {
-                    std::cout << "Possibly unmodelled Carbohydrate monomers were not detected in this model." << std::endl;
+                    std::cout << std::endl << "\tPossibly unmodelled Carbohydrate monomers were not detected in this model." << std::endl;
                 }    
             }
 
 
             std::cout << "___________________________________________________________________" << std::endl;
 
-            if(output_pdb && vsapdb != "NONE")
+            if(check_unmodelled)
             {
-                
                 for ( int chn = 0; chn < mmol.size(); chn++ ) 
                 {
                     if ( modelRemovedWaters[chn].id() == "" ) 
@@ -1414,11 +1415,10 @@ int main(int argc, char** argv)
                         modelRemovedWaters[chn].set_id(label);
                     }
                 } 
-    
-                clipper::MiniMol modelRemovedWatersExport( mmol.spacegroup(), mmol.cell() );
+                 
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
-                pdbfile.write_file( vsapdb );
+                pdbfile.write_file( "input_model_nowater.pdb" );
 
                 clipper::CCP4MAPfile sigmaa_dif_nowater;
                 sigmaa_dif_nowater.open_write( "sigmaa_diff_nowater.map" );
@@ -1971,6 +1971,11 @@ int main(int argc, char** argv)
                             ligandList[index].second.set_context ( "n-glycan" );
                             fprintf ( output, "\t(n)");
                         }
+                        if ( list_of_glycans[i].get_type() == "c-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "c-glycan" );
+                            fprintf ( output, "\t(c) " );
+                        }
                         else
                         {
                             ligandList[index].second.set_context ( "o-glycan" );
@@ -2086,6 +2091,11 @@ int main(int argc, char** argv)
                             ligandList[index].second.set_context ( "n-glycan" );
                             std::cout << "\t(n) ";
                         }
+                        else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "c-glycan" );
+                            std::cout << "\t(c) ";
+                        }
                         else
                         {
                             std::cout << "\t(o) ";
@@ -2175,8 +2185,8 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, vsapdb, output_pdb);
-    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, vsapdb, output_pdb);
+    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
 
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 

@@ -1349,6 +1349,8 @@ bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan, bool oxf
         root = new privateer::glycoplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. "+ glycan.get_root_description(), mmdbsel );
     else if ( type == "s-glycan" )
         root = new privateer::glycoplot::GlycanRoot(2768, 990, "S",glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. "+ glycan.get_root_description(), mmdbsel );
+    else if ( type == "c-glycan" )
+        root = new privateer::glycoplot::GlycanRoot(2768, 990, "C",glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. "+ glycan.get_root_description(), mmdbsel );
     else return true;
 
     add_block ( root );

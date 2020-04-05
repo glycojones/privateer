@@ -530,6 +530,8 @@ const sugar_database_entry sugar_database[] =
         return new_name;
     }
 
+
+    // Long term task: expand this list after running on entire pdb database. 
     std::string convert_to_wurcs_residue_code( std::string name )
     {
         clipper::String wurcs_residue_code;

@@ -351,7 +351,7 @@ std::vector<clipper::String> create_list_of_ignored_sugar_atoms(clipper::MSugar&
 // TO DO after: possible improvements, after determining best point, expand the cube at that point to get all electron density and see whether there would be discernible difference between false positives and true positives. 
 std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_density_of_potential_glycosylation_sites(const std::vector<std::vector<GlycosylationMonomerMatch>>& informationVector, int vectorIndex, clipper::MiniMol& inputModel, clipper::Xmap<float>& sigmaa_dif_map, clipper::HKL_info& hklinfo, std::vector < clipper::MGlycan >& glycanList, clipper::Map_stats& mapstats, float thresholdED, bool pdbexport) 
 {
-	float thresholdEDBestBlob = 0.090;
+	float thresholdEDBestBlob = 0.070;
 	std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > finalVectorForBlobValues;
 		if(vectorIndex == 0)
 		{
@@ -967,7 +967,7 @@ std::vector<std::pair<PotentialGlycosylationSiteInfo, double> > get_electron_den
 
 std::vector<std::pair<GlycanToMiniMolIDs, double> > get_electron_density_of_potential_unmodelled_carbohydrate_monomers(std::vector < clipper::MSugar > glycanChain, clipper::MiniMol&inputModel, std::vector < clipper::MGlycan >& allSugars, int id, clipper::Xmap<float>& sigmaa_dif_map, clipper::HKL_info& hklinfo, clipper::Map_stats& mapstats, float thresholdED, bool pdbexport)
 {
-	float thresholdEDBestBlob = 0.090;
+	float thresholdEDBestBlob = 0.070;
 	std::vector<std::pair<GlycanToMiniMolIDs, double> > finalVectorForBlobValues;
 	int vectorShiftLimit = 5;
 	for (int monomer = 0; monomer < glycanChain.size(); monomer++)

@@ -51,7 +51,7 @@
 
 #include "clipper-glyco.h"
 
-
+// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -186,6 +186,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 	{
 		this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
+
+        #ifdef DUMP
+			DBG << "After checking the conformation..." << std::endl;
+		#endif
 	}
 	else
 	{
@@ -1509,7 +1513,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
         if ( ring_atoms[1].element().trim() == "C" )        // the atom in position 1 is the anomeric carbon, let's identify it's substituent:
         {
             anomeric_carbon = ring_atoms[1]; // we're always getting the anomeric carbon here, given the way we detect/order the ring
-            const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(ring_atoms[1].coord_orth(), 1.2);
+            const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(ring_atoms[1].coord_orth(), 1.2); // 1.2
 
             for ( int i = 0 ; i < neighbourhood.size() ; i++ )
             {
@@ -1522,8 +1526,13 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
                         {
                             if ( altconf_compatible(get_altconf ( mmol.atom(neighbourhood[i]) ), get_altconf ( ring_atoms[1] ) ))
                             {
+                                int polymerID = neighbourhood[i].polymer(); // needed for ugly fix down below.
+                                int monomerID = neighbourhood[i].monomer();
                                 if (mmol.atom(neighbourhood[i]).element().trim() != "C" ) // O6 is part of the ring if only checking by name!!!
                                     anomeric_substituent = mmol.atom(neighbourhood[i]);
+                                else if (mmol[polymerID][monomerID].type().trim() == "TRP") // really ugly fix for C/TRP-mannosylation...
+                                    if(mmol.atom(neighbourhood[i]).element().trim() == "C")
+                                        anomeric_substituent = mmol.atom(neighbourhood[i]);
                             }
                             /*else if ( get_altconf ( mmol.atom(neighbourhood[i]) ) == 'A' && get_altconf ( ring_atoms[1] ) != 'B')
                             {
@@ -2823,6 +2832,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
     std::vector < clipper::MMonomer > potential_n_roots;
     std::vector < clipper::MMonomer > potential_o_roots;
     std::vector < clipper::MMonomer > potential_s_roots;
+    std::vector < clipper::MMonomer > potential_c_roots;
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
@@ -2836,6 +2846,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             else if ( mmol[pol][mon].type() == "LYS" ) potential_o_roots.push_back ( mmol[pol][mon] );
             else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( mmol[pol][mon] );
             else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( mmol[pol][mon] ); // s-linked stuff ?
+            else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( mmol[pol][mon] ); // C-linked stuff for C/TRP-mannosylation
         }
 
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
@@ -2977,22 +2988,23 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
-                    clipper::MAtom og1= sugar.anomeric_substituent();         // OG/OG1 SER/THR
-                    clipper::MAtom cg = potential_o_roots[i].find("CB");      // CB
-                    clipper::MAtom cb = potential_o_roots[i].find("CA");      // CA
+                    clipper::MAtom nd2= sugar.anomeric_substituent();         // CD1 
+                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
+                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                             c1.coord_orth(),
-                                                           og1.coord_orth(),
+                                                           nd2.coord_orth(),
                                                             cg.coord_orth() );
 
                     psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                           og1.coord_orth(),
+                                                           nd2.coord_orth(),
                                                             cg.coord_orth(),
                                                             cb.coord_orth() );
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+
 
                     list_of_glycans.push_back ( mg );
                     break;
@@ -3026,6 +3038,67 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             }
         }
     }
+
+    for ( int i = 0 ; i < potential_c_roots.size() ; i++ )  // create c-glycan roots with first sugar
+    {
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_c_roots[i] ) ;
+
+        for ( int j = 0 ; j < linked.size() ; j++ )
+        {
+            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
+
+            if (( tmpmon.type().trim() == "MAN") || (tmpmon.type().trim() == "BMA") || (tmpmon.type().trim() == "7D1") || (tmpmon.type().trim() == "M1P") || (tmpmon.type().trim() == "M6P") || (tmpmon.type().trim() == "MBF") || (tmpmon.type().trim() == "MMA") || (tmpmon.type().trim() == "OPM") || (tmpmon.type().trim() == "M6D"))
+            {
+                if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+                {
+                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    list_of_sugars.push_back ( sugar );
+                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
+                                                             potential_c_roots[i], sugar, this->expression_system );
+                    mg.set_kind_of_glycan ( "c-glycan" );
+
+                    clipper::MAtom o5 = sugar.ring_members()[0];              // O5
+                    clipper::MAtom c1 = sugar.ring_members()[1];              // C1
+                    clipper::MAtom cd1= sugar.anomeric_substituent();         // CD1 TRP
+                    clipper::MAtom cg = potential_c_roots[i].find("CG");      // CB
+                    clipper::MAtom cb = potential_c_roots[i].find("CB");      // CG
+                    clipper::ftype phi, psi;
+
+                    phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
+                                                            c1.coord_orth(),
+                                                           cd1.coord_orth(),
+                                                            cg.coord_orth() );
+
+                    psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
+                                                           cd1.coord_orth(),
+                                                            cg.coord_orth(),
+                                                            cb.coord_orth() );
+
+                    mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+
+                    if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
+                    {
+                        // Consensus sequence Trp-X-X-Trp || Trp-Ser/Thr-X-Cys according to https://www.uniprot.org/help/carbohyd
+                        bool firstConsensus = false;
+                        bool secondConsensus = false;
+                        if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "TRP" ||
+                             mmol[linked[j].second.polymer()][linked[j].second.monomer()-3].type().trim() == "TRP" )
+                                firstConsensus = true;
+                        if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "SER" || 
+                             mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "THR" &&
+                             mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "CYS" )
+                                secondConsensus = true;
+                            
+                        if (!firstConsensus && !secondConsensus) mg.add_root_annotation ( " Warning: this glycosylation point does not follow the Trp-X-X-Trp or Trp-Ser/Thr-X-Cys consensus sequence. ");
+                    }
+
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
+            }
+        }
+    }
+
 
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
@@ -3113,6 +3186,15 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
     else if ( mm.type().trim() == "THR" )
     {
         int id = mm.lookup ( "OG1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "TRP" )
+    {
+        int id = mm.lookup ( "CD1", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
