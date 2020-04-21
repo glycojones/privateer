@@ -16,7 +16,7 @@
 #include <string>
 #include <locale>
 #include <fstream>
-#include "clipper-glyco.h"
+#include "include/clipper-glyco.h"
 
 #ifndef PRIVATEER_RESTRAINTS_H_INCLUDED
 #define PRIVATEER_RESTRAINTS_H_INCLUDED

@@ -38,9 +38,9 @@
 #include <vector>
 #include <tuple>
 #include <iostream>
-#include "privateer-lib.h"
-#include "clipper-glyco.h"
-#include "privateer-blobs.h"
+#include "include/privateer-lib.h"
+#include "include/clipper-glyco.h"
+#include "include/privateer-blobs.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>

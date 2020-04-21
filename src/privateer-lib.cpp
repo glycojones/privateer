@@ -9,7 +9,7 @@
 // mailto: kevin.cowtan@york.ac.uk
 //
 
-#include "privateer-lib.h"
+#include "include/privateer-lib.h"
 
 void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
 {

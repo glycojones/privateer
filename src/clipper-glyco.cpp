@@ -49,7 +49,7 @@
 // #define DUMP 1
 
 
-#include "clipper-glyco.h"
+#include "include/clipper-glyco.h"
 
 // #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "

@@ -11,7 +11,7 @@
 
 
 
-#include "privateer-blobs.h"
+#include "include/privateer-blobs.h"
 
 bool bestPointFinder(std::pair<clipper::Coord_orth, double> p1, std::pair<clipper::Coord_orth, double> p2) {
     return p1.second<p2.second;

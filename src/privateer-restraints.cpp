@@ -9,7 +9,7 @@
 // mailto: jon.agirre@york.ac.uk
 //
 
-#include "privateer-restraints.h"
+#include "include/privateer-restraints.h"
 using namespace pybind11::literals;
 
 std::string privateer::restraints::check_monlib_access ( ) {
