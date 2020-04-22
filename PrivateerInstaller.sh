@@ -2,7 +2,7 @@
 #SBATCH --time=04:00:00                # Time limit hrs:min:sec
 #SBATCH --mem=4000                     # Total memory limit
 #SBATCH --mail-type=END,FAIL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=emra500@york.ac.uk   # Where to send mail
+#SBATCH --mail-user=hb1115@york.ac.uk   # Where to send mail
 #SBATCH --account=CS-MPMSEDM-2018
 # module load compiler/GCC/8.2.0-2.31.1
 # module load devel/CMake/3.13.3-GCCcore-8.2.0
@@ -53,7 +53,7 @@ cd fftw
 wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
 tar -zxvf fftw-2.1.5.tar.gz
 cd fftw-2.1.5
-CC=$GCC CXX=$GPLUSPLUS ./configure --prefix=$dependencyDir --enable-single --enable-float   F77=gfortran
+CC=$GCC CXX=$GPLUSPLUS ./configure --prefix=$dependencyDir --enable-single --enable-float   F77=gfortran --enable-shared
 make
 make install
 fi
@@ -64,37 +64,6 @@ echo "fftw installation ... falied. We can not continue the rest of the installa
 exit 3
 fi
 
-if [ ! -d include/ccp4 ]; then
-cd $dependencyDir
-if [  -d libccp4 ]; then
-rm -rf libccp4
-fi
-mkdir libccp4
-cd libccp4
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/libccp4/trunk
-cd trunk
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11  --prefix=$dependencyDir
-make
-make install
-fi
-cd $dependencyDir
-if [ ! -d include/ccp4 ]; then
-echo "CCP4 (libccp4) installation ... falied. We can not continue the rest of the installation steps."
-exit 3
-fi
-
-if [ ! -d share/ccp4srs ]; then
-cd $dependencyDir/share
-if [  -d ccp4srs ]; then
-rm -rf ccp4srs
-fi
-mkdir ccp4srs
-cd ccp4srs
-tar -zxvf $dependencyDir/ccp4srs-data-20180406.tar.gz --directory $dependencyDir/share/ccp4srs
-fi
-cd $dependencyDir
-
-
 if [ ! -d include/mmdb2 ]; then
 cd $dependencyDir
 if [  -d mmdb2 ]; then
@@ -104,7 +73,7 @@ mkdir mmdb2
 cd mmdb2
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/mmdb2/trunk
 cd trunk
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir
+CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
 fi
@@ -134,6 +103,36 @@ echo "mmdb installation ... falied. We can not continue the rest of the installa
 exit 3
 fi
 
+if [ ! -d include/ccp4 ]; then
+cd $dependencyDir
+if [  -d libccp4 ]; then
+rm -rf libccp4
+fi
+mkdir libccp4
+cd libccp4
+bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/libccp4/trunk
+cd trunk
+CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11  --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
+make
+make install
+fi
+cd $dependencyDir
+if [ ! -d include/ccp4 ]; then
+echo "CCP4 (libccp4) installation ... falied. We can not continue the rest of the installation steps."
+exit 3
+fi
+
+if [ ! -d share/ccp4srs ]; then
+cd $dependencyDir/share
+if [  -d ccp4srs ]; then
+rm -rf ccp4srs
+fi
+mkdir ccp4srs
+cd ccp4srs
+tar -zxvf $dependencyDir/ccp4srs-data-20180406.tar.gz --directory $dependencyDir/share/ccp4srs
+fi
+cd $dependencyDir
+
 if [ ! -d include/ccp4srs ]; then
 cd $dependencyDir
 if [  -d ccp4srs ]; then
@@ -143,7 +142,7 @@ mkdir ccp4srs
 cd ccp4srs
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/ccp4srs/trunk
 cd trunk
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir
+ CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
 fi
@@ -176,9 +175,12 @@ rm -rf clipper
 fi
 mkdir clipper
 cd clipper
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk
-cd trunk
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11  --enable-mmdb     --enable-minimol  --enable-cif      --enable-fortran --enable-ccp4 F77=gfortran --prefix=$dependencyDir
+wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-2.1.20180802.tar.gz
+tar -zxvf clipper-2.1.20180802.tar.gz
+cd clipper-2.1
+wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-configure-2.patch
+patch -p0 < clipper-configure-2.patch
+ CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --enable-mmdb --enable-minimol  --enable-cif --enable-fortran --enable-ccp4 F77=gfortran --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static --with-fftw2-prefix=${dependencyDir}
 make
 make install
 fi
@@ -246,27 +248,38 @@ cd $dependencyDir/lib/data
 rm -rf trunk
 cd $dependencyDir
 
-if [ ! -d include/clipper ]; then
-cd $dependencyDir
-if [  -d clipper ]; then
-rm -rf clipper
+if [ -f $dependencyDir/lib/libfftw.so ]; then 
+FFTW2LIB=$dependencyDir/lib/librfftw.so
 fi
-mkdir clipper
-cd clipper
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk
-cd trunk
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11  --enable-mmdb     --enable-minimol  --enable-cif      --enable-fortran --enable-ccp4 F77=gfortran --prefix=$dependencyDir
-make
-make install
+if [ -f $dependencyDir/lib/libmmdb2.so ]; then 
+MMDB2LIB=$dependencyDir/lib/libmmdb2.so
 fi
-cd $dependencyDir
-if [ ! -d include/clipper ]; then
-echo "clipper installation ... falied. We can not continue the rest of the installation steps."
-exit 3
+if [ -f $dependencyDir/lib/libccp4c.so ]; then 
+CCP4CLIB=$dependencyDir/lib/libccp4c.so
 fi
-
-if [ -f $dependencyDir/lib/libmmdb2.a ]; then 
-MMDB2LIB=$dependencyDir/lib/libmmdb2.a
+if [ -f $dependencyDir/lib/libccp4srs.so ]; then 
+CCP4SRSLIB=$dependencyDir/lib/libccp4srs.so
+fi
+if [ -f $dependencyDir/lib/libccp4srs.so ]; then 
+CLIPPERLIB=$dependencyDir/lib/libclipper.so
+fi
+if [ -f $dependencyDir/lib/libclipper-core.so ]; then 
+CLIPPERCORELIB=$dependencyDir/lib/libclipper-core.so
+fi
+if [ -f $dependencyDir/lib/libclipper-mmdb.so ]; then 
+CLIPPERMMDBLIB=$dependencyDir/lib/libclipper-mmdb.so
+fi
+if [ -f $dependencyDir/lib/libclipper-minimol.so ]; then 
+CLIPPERMINIMOLLIB=$dependencyDir/lib/libclipper-minimol.so
+fi
+if [ -f $dependencyDir/lib/libclipper-contrib.so ]; then 
+CLIPPERCONTRIBLIB=$dependencyDir/lib/libclipper-contrib.so
+fi
+if [ -f $dependencyDir/lib/libclipper-ccp4.so ]; then 
+CLIPPERCCP4LIB=$dependencyDir/lib/libclipper-ccp4.so
+fi
+if [ -f $dependencyDir/lib/libclipper-cif.so ]; then 
+CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
 
 cd $mainDir
@@ -276,7 +289,18 @@ fi
 if [ ! -d build ]; then
 mkdir build
 cd build
-cmake .. -DMMDB2_INCLUDE_DIR=$dependencyDir/include -DMMDB2_LIBRARY=$MMDB2LIB -DCMAKE_C_COMPILER=$GCC -DCMAKE_INSTALL_PREFIX:PATH=$mainDir
+cmake .. -DMMDB2_INCLUDE_DIR=$dependencyDir/include -DMMDB2_LIBRARY=$MMDB2LIB \
+ -DFFTW2_INCLUDE_DIR=$dependencyDir/include -DFFTW2_LIBRARY=$FFTW2LIB \
+ -DCCP4C_INCLUDE_DIR=$dependencyDir/include -DCCP4C_LIBRARY=$CCP4CLIB \
+ -DCCP4SRS_INCLUDE_DIR=$dependencyDir/include -DCCP4SRS_LIBRARY=$CCP4SRSLIB \
+ -DCLIPPER_INCLUDE_DIR=$dependencyDir/include -DCLIPPER_LIBRARY=$CLIPPERLIB \
+ -DCLIPPER-CORE_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CORE_LIBRARY=$CLIPPERCORELIB \
+ -DCLIPPER-MMDB_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-MMDB_LIBRARY=$CLIPPERMMDBLIB \
+ -DCLIPPER-MINIMOL_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-MINIMOL_LIBRARY=$CLIPPERMINIMOLLIB \
+ -DCLIPPER-CONTRIB_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CONTRIB_LIBRARY=$CLIPPERCONTRIBLIB \
+ -DCLIPPER-CCP4_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CCP4_LIBRARY=$CLIPPERCCP4LIB \
+ -DCLIPPER-CIF_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CIF_LIBRARY=$CLIPPERCIFLIB \
+ -DCMAKE_C_COMPILER=$GCC -DCMAKE_INSTALL_PREFIX:PATH=$mainDir -DCMAKE_PREFIX_PATH:PATH=$dependencyDir
 make
 make install
 cd $mainDir
