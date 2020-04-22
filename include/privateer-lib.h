@@ -15,7 +15,7 @@
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
-#include "include/clipper-glyco.h"
+#include "clipper-glyco.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-ccp4.h>
@@ -23,7 +23,7 @@
 #include <clipper/clipper-minimol.h>
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
-#include "include/privateer-restraints.h"
+#include "privateer-restraints.h"
 #include "dependencies/nlohmann/json.hpp"
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;

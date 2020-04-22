@@ -9,14 +9,14 @@
 // mailto: jon.agirre@york.ac.uk
 //
 
-#include <gemmi/chemcomp.hpp>
-#include <gemmi/cif.hpp>
-#include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include "../dependencies/gemmi/chemcomp.hpp"
+#include "../dependencies/gemmi/cif.hpp"
+#include "../dependencies/gemmi/to_cif.hpp"  // for write_cif_to_stream
 #include <pybind11/pybind11.h>
 #include <string>
 #include <locale>
 #include <fstream>
-#include "include/clipper-glyco.h"
+#include "clipper-glyco.h"
 
 #ifndef PRIVATEER_RESTRAINTS_H_INCLUDED
 #define PRIVATEER_RESTRAINTS_H_INCLUDED

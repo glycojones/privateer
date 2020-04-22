@@ -190,7 +190,6 @@ echo "clipper installation ... falied. We can not continue the rest of the insta
 exit 3
 fi
 
-
 if [ -f include/fftw.h ]; then
 echo "fftw is installed. Remove include/fftw.h and fftw folder if you want to re-install"
 fi

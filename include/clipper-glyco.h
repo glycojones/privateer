@@ -60,9 +60,9 @@
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
-#include "include/clipper-glyco_data.h"
+#include "clipper-glyco_data.h"
 #include <clipper/minimol/minimol_utils.h>
-#include "thirdparty/nlohmann/json.hpp"
+#include "../dependencies/nlohmann/json.hpp"
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
