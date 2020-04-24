@@ -22,8 +22,8 @@ find_library(CLIPPERCONTRIBDEP clipper-contrib)
 find_library(CLIPPERCCP4DEP clipper-ccp4)
 find_library(CLIPPERCIFDEP clipper-cif)
 
-# find_path(DEPENDENCYHEADERS ${CMAKE_SOURCE_DIR}/dependencies/include)
-
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 enable_testing()
 add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
@@ -31,8 +31,8 @@ add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
 include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${CMAKE_SOURCE_DIR}/include}
                     ${PYBIND11_INCLUDE_DIR}
-                    ${PYTHON_LIBRARIES})
-
+                    ${PYTHON_INCLUDE_DIRS}
+                    ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include)
 add_library(privateer_lib
             ${CMAKE_SOURCE_DIR}/src/privateer-blobs.cpp
             ${CMAKE_SOURCE_DIR}/src/clipper-glyco.cpp
@@ -49,7 +49,8 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
 add_executable(privateer_exec
@@ -65,7 +66,8 @@ target_link_libraries ( privateer_exec
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 pybind11_add_module(privateer_module ${CMAKE_SOURCE_DIR}/src/privateer-pybind11.cpp ${CMAKE_SOURCE_DIR}/src/privateer-restraints.cpp)
@@ -82,14 +84,14 @@ target_link_libraries ( privateer_module PRIVATE
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
-message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h privateer-blobs.h
-            DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
+# install ( FILES include/clipper-glyco.h include/clipper-glyco_data.h include/privateer-restraints.h include/privateer-lib.h include/privateer-blobs.h
+#             DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
             LIBRARY DESTINATION ${LIB_INSTALL_DIR})
-install ( TARGETS privateer_exec DESTINATION bin)
+install ( TARGETS privateer_exec DESTINATION ${CMAKE_SOURCE_DIR})
 install ( TARGETS privateer_module DESTINATION ${PYTHON_MODULE_PATH}/privateer )

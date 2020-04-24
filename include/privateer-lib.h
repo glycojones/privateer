@@ -24,7 +24,7 @@
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
-#include "dependencies/nlohmann/json.hpp"
+// #include <nlohmann/json.hpp>
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 

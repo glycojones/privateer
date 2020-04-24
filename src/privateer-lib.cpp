@@ -654,7 +654,7 @@ nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann
 
 int privateer::util::find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value )
 {
-    clipper::String jsonValue;
+    std::string jsonValue;
     for (nlohmann::json::iterator it = jsonContainer.begin(); it != jsonContainer.end(); it++)
     {
         jsonValue = it.value()[key];

@@ -9,9 +9,9 @@
 // mailto: jon.agirre@york.ac.uk
 //
 
-#include "../dependencies/gemmi/chemcomp.hpp"
-#include "../dependencies/gemmi/cif.hpp"
-#include "../dependencies/gemmi/to_cif.hpp"  // for write_cif_to_stream
+#include <gemmi/chemcomp.hpp>
+#include <gemmi/cif.hpp>
+#include <gemmi/to_cif.hpp>  // for write_cif_to_stream
 #include <pybind11/pybind11.h>
 #include <string>
 #include <locale>

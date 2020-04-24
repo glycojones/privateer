@@ -71,8 +71,9 @@ rm -rf mmdb2
 fi
 mkdir mmdb2
 cd mmdb2
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/mmdb2/trunk
-cd trunk
+wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/mmdb2-2.0.19.tar.gz
+tar -zxvf mmdb2-2.0.19.tar.gz
+cd mmdb2-2.0.19
 CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
@@ -80,26 +81,6 @@ fi
 cd $dependencyDir
 if [ ! -d include/mmdb2 ]; then
 echo "mmdb2 installation ... falied. We can not continue the rest of the installation steps."
-exit 3
-fi
-
-
-if [ ! -d include/mmdb ]; then
-cd $dependencyDir
-if [  -d mmdb ]; then
-rm -rf mmdb
-fi
-mkdir mmdb
-cd mmdb
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/mmdb/trunk
-cd trunk
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir
-make
-make install
-fi
-cd $dependencyDir
-if [ ! -d include/mmdb ]; then
-echo "mmdb installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
@@ -158,6 +139,7 @@ if [  -d data ]; then
 rm -rf data
 fi
 mkdir data
+cp $dependencyDir/syminfo.lib $dependencyDir/symop.lib $dependencyDir/symop_old.lib data/
 cd data
 mkdir monomers
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/monomers/trunk/
@@ -175,12 +157,21 @@ rm -rf clipper
 fi
 mkdir clipper
 cd clipper
-wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-2.1.20180802.tar.gz
-tar -zxvf clipper-2.1.20180802.tar.gz
-cd clipper-2.1
-wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-configure-2.patch
-patch -p0 < clipper-configure-2.patch
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --enable-mmdb --enable-minimol  --enable-cif --enable-fortran --enable-ccp4 F77=gfortran --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static --with-fftw2-prefix=${dependencyDir}
+bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk/
+cd trunk
+patch -p0 < $dependencyDir/localfftw2_clipper.patch
+ CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 \
+ --enable-mmdb=$dependencyDir \
+ --enable-mmdb \
+ --enable-minimol \
+ --enable-cif \
+ --enable-ccp4=$dependencyDir \
+ --enable-ccp4 \
+ --prefix=$dependencyDir \
+ --disable-Werror \
+ --enable-shared \
+ --enable-cns \
+ --with-fftw2-prefix=$dependencyDir
 make
 make install
 fi
@@ -209,25 +200,25 @@ fi
 
 if [ "$OSTYPE" == "linux-gnu" ]; then
 echo "GCC used in compiling: (Please note that using different GCC versions might cause segmentation fault error or a compiler error)"
-if [ -f lib/libfftw.a ]; then
+if [ -f lib/libfftw.so ]; then
 echo "fftw "
-readelf -p .comment lib/libfftw.a | grep  "GCC" | sort --unique
+readelf -p .comment lib/libfftw.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libccp4c.a ]; then
+if [ -f lib/libccp4c.so ]; then
 echo "libccp4c "
-readelf -p .comment lib/libccp4c.a | grep  "GCC" | sort --unique
+readelf -p .comment lib/libccp4c.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libmmdb.a ]; then
+if [ -f lib/libmmdb.so ]; then
 echo "mmdb "
-readelf -p .comment lib/libmmdb.a | grep  "GCC" | sort --unique
+readelf -p .comment lib/libmmdb.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libmmdb2.a ]; then
+if [ -f lib/libmmdb2.so ]; then
 echo "mmdb2 "
-readelf -p .comment lib/libmmdb2.a | grep  "GCC" | sort --unique
+readelf -p .comment lib/libmmdb2.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libclipper-core.a  ]; then
+if [ -f lib/libclipper-core.so  ]; then
 echo "clipper "
-readelf -p .comment lib/libclipper-core.a | grep  "GCC" | sort --unique
+readelf -p .comment lib/libclipper-core.so | grep  "GCC" | sort --unique
 fi
 fi
 
@@ -236,6 +227,7 @@ cd $dependencyDir/lib
 if [  -d data ]; then
 rm -rf data
 fi
+
 mkdir data
 cd data
 mkdir monomers
