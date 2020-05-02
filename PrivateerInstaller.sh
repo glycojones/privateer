@@ -273,15 +273,3 @@ if [ -f $dependencyDir/lib/libclipper-cif.so ]; then
 CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
 
-# cd $mainDir
-# if [ -d build ]; then
-# rm -rf build
-# fi 
-# if [ ! -d build ]; then
-# mkdir build
-# cd build
-# # cmake .. -DCMAKE_C_COMPILER=$GCC -DCMAKE_INSTALL_PREFIX:PATH=$mainDir -DCMAKE_PREFIX_PATH:PATH=$dependencyDir
-# # make
-# # make install
-# # cd $mainDir
-# fi 

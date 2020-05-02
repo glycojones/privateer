@@ -60,12 +60,13 @@ class CMakeBuild(build_ext):
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(
             env.get('CXXFLAGS', ''),
             self.distribution.get_version())
-        if not os.path.exists(self.build_temp):
-            os.makedirs(self.build_temp)
+        exedir = 'build/executable'
+        if not os.path.exists(exedir):
+            os.makedirs(exedir)
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args,
-                              cwd=self.build_temp, env=env)
+                              cwd=exedir, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args,
-                              cwd=self.build_temp)
+                              cwd=exedir)
         print()  # Add an empty line for cleaner output
 
 
@@ -77,7 +78,7 @@ def run_privateer_install_script():
         sys.exit("Failed to build Privateer's dependencies")
 
 # I make a new command that will build the shared-library
-class build_privateer(Command):
+class build_privateerdeps(Command):
     user_options = []
     def initialize_options(self):
         pass
@@ -89,19 +90,19 @@ class build_privateer(Command):
 # I subclass install so that it will call my new command
 class install(setuptools.command.install.install):
     def run(self):
-        self.run_command('build_privateer')
+        self.run_command('build_privateerdeps')
         setuptools.command.install.install.run(self)
 
 # I do the same for build...
 class build(distutils.command.build.build):
     sub_commands = [
-        ('build_privateer', lambda self: True),
+        ('build_privateerdeps', lambda self: True),
         ] + distutils.command.build.build.sub_commands
 
 # ...and the same for develop
 class develop(setuptools.command.develop.develop):
     def run(self):
-        self.run_command('build_privateer')
+        self.run_command('build_privateerdeps')
         setuptools.command.develop.develop.run(self)
 
 
@@ -117,7 +118,7 @@ setup(
     ext_modules=[CMakeExtension('privateer/privateer')],
     cmdclass={
         'install': install,
-        'build_privateer': build_privateer, 'build': build,
+        'build_privateerdeps': build_privateerdeps, 'build': build,
         'develop': develop,
         'build_ext': CMakeBuild,
     },
