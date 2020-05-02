@@ -273,26 +273,15 @@ if [ -f $dependencyDir/lib/libclipper-cif.so ]; then
 CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
 
-cd $mainDir
-if [ -d build ]; then
-rm -rf build
-fi 
-if [ ! -d build ]; then
-mkdir build
-cd build
-cmake .. -DMMDB2_INCLUDE_DIR=$dependencyDir/include -DMMDB2_LIBRARY=$MMDB2LIB \
- -DFFTW2_INCLUDE_DIR=$dependencyDir/include -DFFTW2_LIBRARY=$FFTW2LIB \
- -DCCP4C_INCLUDE_DIR=$dependencyDir/include -DCCP4C_LIBRARY=$CCP4CLIB \
- -DCCP4SRS_INCLUDE_DIR=$dependencyDir/include -DCCP4SRS_LIBRARY=$CCP4SRSLIB \
- -DCLIPPER_INCLUDE_DIR=$dependencyDir/include -DCLIPPER_LIBRARY=$CLIPPERLIB \
- -DCLIPPER-CORE_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CORE_LIBRARY=$CLIPPERCORELIB \
- -DCLIPPER-MMDB_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-MMDB_LIBRARY=$CLIPPERMMDBLIB \
- -DCLIPPER-MINIMOL_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-MINIMOL_LIBRARY=$CLIPPERMINIMOLLIB \
- -DCLIPPER-CONTRIB_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CONTRIB_LIBRARY=$CLIPPERCONTRIBLIB \
- -DCLIPPER-CCP4_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CCP4_LIBRARY=$CLIPPERCCP4LIB \
- -DCLIPPER-CIF_INCLUDE_DIR=$dependencyDir/include/clipper -DCLIPPER-CIF_LIBRARY=$CLIPPERCIFLIB \
- -DCMAKE_C_COMPILER=$GCC -DCMAKE_INSTALL_PREFIX:PATH=$mainDir -DCMAKE_PREFIX_PATH:PATH=$dependencyDir
-make
-make install
-cd $mainDir
-fi 
+# cd $mainDir
+# if [ -d build ]; then
+# rm -rf build
+# fi 
+# if [ ! -d build ]; then
+# mkdir build
+# cd build
+# # cmake .. -DCMAKE_C_COMPILER=$GCC -DCMAKE_INSTALL_PREFIX:PATH=$mainDir -DCMAKE_PREFIX_PATH:PATH=$dependencyDir
+# # make
+# # make install
+# # cd $mainDir
+# fi 

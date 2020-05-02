@@ -38,9 +38,9 @@
 #include <vector>
 #include <tuple>
 #include <iostream>
-#include "include/privateer-lib.h"
-#include "include/clipper-glyco.h"
-#include "include/privateer-blobs.h"
+#include "privateer-lib.h"
+#include "clipper-glyco.h"
+#include "privateer-blobs.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -87,7 +87,7 @@ int main(int argc, char** argv)
     clipper::String ipsfcif     = "NONE";
     clipper::String ipmmcif     = "NONE";
     clipper::String ipcode      = "XXX";
-    clipper::String ipwurcsjson = "NONE";
+    clipper::String ipwurcsjson = "glycosmos_data_2020-02-20.json";
     clipper::String opfile      = "privateer-hklout.mtz";
     clipper::String title       = "generic title";
     clipper::String ipmtz       = "NONE";

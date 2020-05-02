@@ -11,7 +11,7 @@
 
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include "../include/privateer-lib.h"
+#include "privateer-lib.h"
 
 using namespace pybind11::literals;
 namespace pr = privateer::restraints;

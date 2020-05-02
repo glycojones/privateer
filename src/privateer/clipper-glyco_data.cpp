@@ -42,7 +42,7 @@ Implementation file for the sugar database */
 //L  MA 02111-1307 USA
 
 
-#include "../include/clipper-glyco_data.h"
+#include "clipper-glyco_data.h"
 
 namespace clipper
 {
