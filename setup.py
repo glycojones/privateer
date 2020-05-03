@@ -73,7 +73,7 @@ class CMakeBuild(build_ext):
 
 # This function downloads and builds the shared-library
 def run_privateer_install_script():
-    build_privateer_cmd = ['bash', 'PrivateerInstaller.sh']
+    build_privateer_cmd = ['bash', 'DependencyInstaller.sh']
     if subprocess.call(build_privateer_cmd) != 0:
         sys.exit("Failed to build Privateer's dependencies")
 

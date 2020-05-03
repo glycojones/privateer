@@ -108,5 +108,5 @@ target_link_libraries ( privateer_core PRIVATE
 
 install ( TARGETS privateer_lib
             LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS privateer_exec DESTINATION ${CMAKE_SOURCE_DIR})
+install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
