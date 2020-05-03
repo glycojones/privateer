@@ -24,7 +24,7 @@ export FC=$GFORTRAN
 
 mainDir=$PWD
 dependencyDir=$mainDir/dependencies
-# if [ ! -d $mainDir/bzr ]; then
+# if [[ ! -d $mainDir/bzr ]]; then
 # mkdir bzr
 # cd bzr
 # wget https://launchpad.net/bzr/2.7/2.7.0/+download/bzr-2.7.0.tar.gz
@@ -33,7 +33,7 @@ dependencyDir=$mainDir/dependencies
 # python setup.py install --home ~ 
 # fi
 
-# if [ ! -f bzr ]; then
+# if [[ ! -f bzr ]]; then
 # echo "Bazaar installation ... falied. We can not continue the rest of the installation steps."
 # exit 3
 # fi
@@ -43,9 +43,9 @@ export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
 
 # Clipper only works with fftw2
-if [ ! -f include/fftw.h ]; then
+if [[ ! -f include/fftw.h ]]; then
 cd $dependencyDir
-if [  -d fftw ]; then
+if [[  -d fftw ]]; then
 rm -rf fftw
 fi
 mkdir fftw
@@ -59,14 +59,14 @@ make install
 fi
 
 cd $dependencyDir
-if [ ! -f include/fftw.h ]; then
+if [[ ! -f include/fftw.h ]]; then
 echo "fftw installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
-if [ ! -d include/mmdb2 ]; then
+if [[ ! -d include/mmdb2 ]]; then
 cd $dependencyDir
-if [  -d mmdb2 ]; then
+if [[  -d mmdb2 ]]; then
 rm -rf mmdb2
 fi
 mkdir mmdb2
@@ -79,14 +79,14 @@ make
 make install
 fi
 cd $dependencyDir
-if [ ! -d include/mmdb2 ]; then
+if [[ ! -d include/mmdb2 ]]; then
 echo "mmdb2 installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
-if [ ! -d include/ccp4 ]; then
+if [[ ! -d include/ccp4 ]]; then
 cd $dependencyDir
-if [  -d libccp4 ]; then
+if [[  -d libccp4 ]]; then
 rm -rf libccp4
 fi
 mkdir libccp4
@@ -98,14 +98,14 @@ make
 make install
 fi
 cd $dependencyDir
-if [ ! -d include/ccp4 ]; then
+if [[ ! -d include/ccp4 ]]; then
 echo "CCP4 (libccp4) installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
-if [ ! -d share/ccp4srs ]; then
+if [[ ! -d share/ccp4srs ]]; then
 cd $dependencyDir/share
-if [  -d ccp4srs ]; then
+if [[  -d ccp4srs ]]; then
 rm -rf ccp4srs
 fi
 mkdir ccp4srs
@@ -114,9 +114,9 @@ tar -zxvf $dependencyDir/ccp4srs-data-20180406.tar.gz --directory $dependencyDir
 fi
 cd $dependencyDir
 
-if [ ! -d include/ccp4srs ]; then
+if [[ ! -d include/ccp4srs ]]; then
 cd $dependencyDir
-if [  -d ccp4srs ]; then
+if [[  -d ccp4srs ]]; then
 rm -rf ccp4srs
 fi
 mkdir ccp4srs
@@ -128,14 +128,14 @@ make
 make install
 fi
 cd $dependencyDir
-if [ ! -d include/ccp4srs ]; then
+if [[ ! -d include/ccp4srs ]]; then
 echo "ccp4srs installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
-if [ ! -d lib/data ]; then
+if [[ ! -d lib/data ]]; then
 cd $dependencyDir/lib
-if [  -d data ]; then
+if [[  -d data ]]; then
 rm -rf data
 fi
 mkdir data
@@ -150,9 +150,9 @@ cd $dependencyDir/lib/data
 rm -rf trunk
 cd $dependencyDir
 
-if [ ! -d include/clipper ]; then
+if [[ ! -d include/clipper ]]; then
 cd $dependencyDir
-if [  -d clipper ]; then
+if [[  -d clipper ]]; then
 rm -rf clipper
 fi
 mkdir clipper
@@ -176,55 +176,55 @@ make
 make install
 fi
 cd $dependencyDir
-if [ ! -d include/clipper ]; then
+if [[ ! -d include/clipper ]]; then
 echo "clipper installation ... falied. We can not continue the rest of the installation steps."
 exit 3
 fi
 
-if [ -f include/fftw.h ]; then
+if [[ -f include/fftw.h ]]; then
 echo "fftw is installed. Remove include/fftw.h and fftw folder if you want to re-install"
 fi
-if [  -d include/ccp4srs ]; then
+if [[  -d include/ccp4srs ]]; then
 echo "ccp4srs is installed. Remove include/ccp4srs and ccp4srs folder  if you want to re-install"
 fi
-if [  -d include/mmdb2 ]; then
+if [[  -d include/mmdb2 ]]; then
 echo "mmdb2 is installed. Remove include/mmdb2 and mmdb2 folder if you want to re-install"
 fi
-if [  -d include/mmdb ]; then
+if [[  -d include/mmdb ]]; then
 echo "mmdb is installed. Remove include/mmdb and mmdb folder if you want to re-install"
 fi
-if [  -d include/clipper ]; then
+if [[  -d include/clipper ]]; then
 echo "clipper is installed. Remove include/clipper and clipper folder  if you want to re-install"
 fi
 
 
-if [ "$OSTYPE" == "linux-gnu" ]; then
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
 echo "GCC used in compiling: (Please note that using different GCC versions might cause segmentation fault error or a compiler error)"
-if [ -f lib/libfftw.so ]; then
+if [[ -f lib/libfftw.so ]]; then
 echo "fftw "
 readelf -p .comment lib/libfftw.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libccp4c.so ]; then
+if [[ -f lib/libccp4c.so ]]; then
 echo "libccp4c "
 readelf -p .comment lib/libccp4c.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libmmdb.so ]; then
+if [[ -f lib/libmmdb.so ]]; then
 echo "mmdb "
 readelf -p .comment lib/libmmdb.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libmmdb2.so ]; then
+if [[ -f lib/libmmdb2.so ]]; then
 echo "mmdb2 "
 readelf -p .comment lib/libmmdb2.so | grep  "GCC" | sort --unique
 fi
-if [ -f lib/libclipper-core.so  ]; then
+if [[ -f lib/libclipper-core.so  ]]; then
 echo "clipper "
 readelf -p .comment lib/libclipper-core.so | grep  "GCC" | sort --unique
 fi
 fi
 
-if [ ! -d lib/data ]; then
+if [[ ! -d lib/data ]]; then
 cd $dependencyDir/lib
-if [  -d data ]; then
+if [[  -d data ]]; then
 rm -rf data
 fi
 
@@ -239,37 +239,37 @@ cd $dependencyDir/lib/data
 rm -rf trunk
 cd $dependencyDir
 
-if [ -f $dependencyDir/lib/libfftw.so ]; then 
+if [[ -f $dependencyDir/lib/libfftw.so ]]; then 
 FFTW2LIB=$dependencyDir/lib/librfftw.so
 fi
-if [ -f $dependencyDir/lib/libmmdb2.so ]; then 
+if [[ -f $dependencyDir/lib/libmmdb2.so ]]; then 
 MMDB2LIB=$dependencyDir/lib/libmmdb2.so
 fi
-if [ -f $dependencyDir/lib/libccp4c.so ]; then 
+if [[ -f $dependencyDir/lib/libccp4c.so ]]; then 
 CCP4CLIB=$dependencyDir/lib/libccp4c.so
 fi
-if [ -f $dependencyDir/lib/libccp4srs.so ]; then 
+if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then 
 CCP4SRSLIB=$dependencyDir/lib/libccp4srs.so
 fi
-if [ -f $dependencyDir/lib/libccp4srs.so ]; then 
+if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then 
 CLIPPERLIB=$dependencyDir/lib/libclipper.so
 fi
-if [ -f $dependencyDir/lib/libclipper-core.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-core.so ]]; then 
 CLIPPERCORELIB=$dependencyDir/lib/libclipper-core.so
 fi
-if [ -f $dependencyDir/lib/libclipper-mmdb.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-mmdb.so ]]; then 
 CLIPPERMMDBLIB=$dependencyDir/lib/libclipper-mmdb.so
 fi
-if [ -f $dependencyDir/lib/libclipper-minimol.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-minimol.so ]]; then 
 CLIPPERMINIMOLLIB=$dependencyDir/lib/libclipper-minimol.so
 fi
-if [ -f $dependencyDir/lib/libclipper-contrib.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-contrib.so ]]; then 
 CLIPPERCONTRIBLIB=$dependencyDir/lib/libclipper-contrib.so
 fi
-if [ -f $dependencyDir/lib/libclipper-ccp4.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-ccp4.so ]]; then 
 CLIPPERCCP4LIB=$dependencyDir/lib/libclipper-ccp4.so
 fi
-if [ -f $dependencyDir/lib/libclipper-cif.so ]; then 
+if [[ -f $dependencyDir/lib/libclipper-cif.so ]]; then 
 CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
 
