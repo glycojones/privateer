@@ -1,4 +1,7 @@
-export CCP4_MASTER=${PWD}
+#!/bin/bash
+
+
+export CCP4_MASTER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 export CCP4=$CCP4_MASTER/dependencies
 
 export CLIB=$CCP4/lib
