@@ -1,7 +1,8 @@
 #!/bin/bash
 
-
-export CCP4_MASTER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$(dirname "${BASH_SOURCE[0]}")"  # get the directory name
+DIR="$(realpath "${DIR}")"    # resolve its full path if need be
+export CCP4_MASTER=$DIR
 export CCP4=$CCP4_MASTER/dependencies
 
 export CLIB=$CCP4/lib
