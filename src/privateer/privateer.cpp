@@ -51,7 +51,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 
-//#define DUMP 1
+// #define DUMP 1
 
 clipper::String program_version = "MKIV_alpha";
 using clipper::data32::F_sigF;
@@ -593,7 +593,7 @@ int main(int argc, char** argv)
 
                 std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
                 bool found_in_tree = false;
-
+                
                 for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
                 {
                     std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
@@ -607,15 +607,20 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "n-glycan" );
                                 fprintf ( output, "\t(n) " );
                             }
-                            if ( list_of_glycans[i].get_type() == "c-glycan" )
+                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
                                 fprintf ( output, "\t(c) " );
                             }
-                            else
+                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
                                 fprintf ( output, "\t(o) " );
+                            }
+                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "s-glycan" );
+                                fprintf ( output, "\t(s) " );
                             }
                             found_in_tree = true;
                             break;
@@ -716,7 +721,6 @@ int main(int argc, char** argv)
                 for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
                 {
                     std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
-
                     for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
@@ -726,21 +730,25 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "n-glycan" );
                                 std::cout << "\t(n) ";
                             }
-                            if ( list_of_glycans[i].get_type() == "c-glycan" )
+                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
                                 std::cout << "\t(c) ";
                             }
-                            else
+                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
                                 std::cout << "\t(o) ";
+                            }
+                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "s-glycan" );
+                                std::cout << "\t(s) ";
                             }
                             found_in_tree = true;
                             break;
                         }
                     }
-
                     if ( found_in_tree ) break;
                 }
 
@@ -778,7 +786,7 @@ int main(int argc, char** argv)
 
                 if ( ! ligandList[index].second.ok_with_conformation () )
                     enable_torsions_for.push_back (ligandList[index].second.type().trim());
-
+                    
                 bool occupancy_check = false;
                 std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
 
@@ -1969,17 +1977,22 @@ int main(int argc, char** argv)
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
                         {
                             ligandList[index].second.set_context ( "n-glycan" );
-                            fprintf ( output, "\t(n)");
+                            fprintf ( output, "\t(n) " );
                         }
-                        if ( list_of_glycans[i].get_type() == "c-glycan" )
+                        else if ( list_of_glycans[i].get_type() == "c-glycan" )
                         {
                             ligandList[index].second.set_context ( "c-glycan" );
                             fprintf ( output, "\t(c) " );
                         }
-                        else
+                        else if ( list_of_glycans[i].get_type() == "o-glycan" )
                         {
                             ligandList[index].second.set_context ( "o-glycan" );
-                            fprintf ( output, "\t(o)");
+                            fprintf ( output, "\t(o) " );
+                        }
+                        else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "s-glycan" );
+                            fprintf ( output, "\t(s) " );
                         }
                         found_in_tree = true;
                         break;
@@ -2096,10 +2109,15 @@ int main(int argc, char** argv)
                             ligandList[index].second.set_context ( "c-glycan" );
                             std::cout << "\t(c) ";
                         }
-                        else
+                        else if ( list_of_glycans[i].get_type() == "o-glycan" )
                         {
-                            std::cout << "\t(o) ";
                             ligandList[index].second.set_context ( "o-glycan" );
+                            std::cout << "\t(o) ";
+                        }
+                        else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "s-glycan" );
+                            std::cout << "\t(s) ";
                         }
                         found_in_tree = true;
                         break;

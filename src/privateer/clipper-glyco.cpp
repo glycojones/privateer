@@ -2848,7 +2848,6 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( mmol[pol][mon] ); // s-linked stuff ?
             else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( mmol[pol][mon] ); // C-linked stuff for C/TRP-mannosylation
         }
-
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i] ) ;
@@ -3076,14 +3075,16 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
 
-                    if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
+                    if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size())
+                    // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults. 
                     {
                         // Consensus sequence Trp-X-X-Trp || Trp-Ser/Thr-X-Cys according to https://www.uniprot.org/help/carbohyd
                         bool firstConsensus = false;
                         bool secondConsensus = false;
-                        if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "TRP" ||
-                             mmol[linked[j].second.polymer()][linked[j].second.monomer()-3].type().trim() == "TRP" )
-                                firstConsensus = true;
+                        if ( linked[j].second.monomer()-3 > 0 ) 
+                            if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "TRP" ||
+                                mmol[linked[j].second.polymer()][linked[j].second.monomer()-3].type().trim() == "TRP" )
+                                    firstConsensus = true;
                         if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "SER" || 
                              mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "THR" &&
                              mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "CYS" )
