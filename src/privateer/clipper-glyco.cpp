@@ -3075,7 +3075,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
 
-                    if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size())
+                    if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
                     // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults. 
                     {
                         // Consensus sequence Trp-X-X-Trp || Trp-Ser/Thr-X-Cys according to https://www.uniprot.org/help/carbohyd

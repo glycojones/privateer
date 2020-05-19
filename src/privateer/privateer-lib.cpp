@@ -645,7 +645,16 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
 
 nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
 {
-    std::ifstream input(path);
+    std::string path_copy = path;
+    if(path_copy == "database.json" || path_copy.empty()) 
+        {
+            std::string env(std::getenv ( "PRIVATEERSRC" ));
+
+            path_copy = env + "/" + "database.json";
+        }
+    std::cout << "Reading " << path_copy << "... done." << std::endl;
+
+    std::ifstream input(path_copy);
 
     input >> jsonContainer;
 
