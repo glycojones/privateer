@@ -1,11 +1,44 @@
-Privateer
----------
+
+
+# Privateer
 
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
 Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
 
 Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
+
+## **Installation instructions:**
+**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04)
+**Requirements:** 
+
+**bzr** 
+**cmake** (minimum version required 3.12)
+**python3 virtualenv** 
+
+1.) git clone https://github.com/glycojones/privateer.git privateer_standalone
+2.) cd privateer_standalone
+3.) git checkout privateerMKIV_noccp4
+4.) git submodule update --init --recursive
+5.) virtualenv privateerpython
+6.) source privateerpython/bin/activate
+7.) python setup.py install
+8.) source ccp4.envsetup-sh
+
+
+## An example of validating a model:
+
+**C++** executable can be accessed in: **build/executable/./privateer** directory
+Before executing Privateer it is important to have ccp4.envsetup-sh properly sourced!
+
+1.) cd build/executable
+2.) mkdir tmp
+3.) cd tmp
+4.) .././privateer -pdbin ../../../tests/test_data/2h6o.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan
+
+
+*If there are any issues with the installation process or running Privateer, please get in touch with: hb1115@york.ac.uk*
+_____
 
 Features: Automatic assignment of ring conformation (IUPAC nomenclature), anomeric form, absolute configuration and comparison to reference values for validation. It computes omit mFo-DFc maps and calculates a correlation coefficient between model and electron density. For structure refinement, it is able to generate chemical dictionaries with unimodal torsion restraints which will help keep the lowest energy conformation. In terms of graphical analysis, it will produce vector diagrams in SNFG nomenclature (SVG format), which are annotated using the validation information (ring conformation, anomeric form, etc).
 
