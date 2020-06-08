@@ -1470,7 +1470,7 @@ int main(int argc, char** argv)
                 }
                 else
                 {
-                    std::cout << "Possibly unmodelled Glycosylation was not detected in this model." << std::endl;
+                    std::cout << "\tPossibly unmodelled Glycosylation was not detected in this model." << std::endl;
                 }
             }
 
@@ -1483,7 +1483,7 @@ int main(int argc, char** argv)
             std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > MIA_CarbsBlobs;
             std::stringstream buffer;
             std::cout << std::endl << "Scanning for unmodelled glycan monomers at modelled glycan chains. " << std::endl;
-            for (int id = 0; id < list_of_glycans.size() ; id++ )
+            for (int id = 0; id < list_of_glycans.size(); id++ )
                 {
                     std::vector<std::pair<GlycanToMiniMolIDs, double> > densityInfo;
                     std::vector < clipper::MSugar > glycanChain;
@@ -1495,8 +1495,7 @@ int main(int argc, char** argv)
                         {
                             int sugarID = densityInfo[i].first.carbohydrateID;
                             double meanElectronDensity = densityInfo[i].second;
-                            buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain() << " of" << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
-                        
+                            buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain()[0] << " of " << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
                             std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID].id(), modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
                             MIA_CarbsBlobs.push_back(blobInfo);
                         }

@@ -179,7 +179,9 @@ void drawOriginPoint(clipper::MiniMol& inputModel, clipper::Coord_orth target, i
 
 GlycanToMiniMolIDs getCarbohydrateRelationshipToMiniMol(clipper::MiniMol& inputModel, clipper::MSugar& carbohydrate, std::vector < clipper::MGlycan >& allSugars, int mglycanid, int sugaringlycanid)
 {
-	clipper::String glycanAttachedTo = allSugars[mglycanid].get_chain();
+	std::string tempString = allSugars[mglycanid].get_chain();
+	tempString = tempString[0];
+	clipper::String glycanAttachedTo(tempString);
 	int backboneID;
 	int carbohydrateID;
 	GlycanToMiniMolIDs output;
