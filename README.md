@@ -13,11 +13,8 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 **Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04)
 
 **Requirements:** 
-
 **bzr** 
-
 **cmake** (minimum version required 3.12)
-
 **python3 virtualenv** 
 
 1.) git clone https://github.com/glycojones/privateer.git privateer_standalone
@@ -40,7 +37,6 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 ## An example of validating a model:
 
 **C++** executable can be accessed in: **build/executable/./privateer** directory
-
 Before executing Privateer it is important to have ccp4.envsetup-sh properly sourced!
 
 1.) cd build/executable
