@@ -8,14 +8,21 @@ Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts 
 
 Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
 
+
+
 ## **Installation instructions:**
 
 **Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04)
 
 **Requirements:** 
+
 **bzr** 
+
 **cmake** (minimum version required 3.12)
+
 **python3 virtualenv** 
+
+
 
 1.) git clone https://github.com/glycojones/privateer.git privateer_standalone
 
@@ -34,9 +41,11 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 8.) source ccp4.envsetup-sh
 
 
+
 ## An example of validating a model:
 
 **C++** executable can be accessed in: **build/executable/./privateer** directory
+
 Before executing Privateer it is important to have ccp4.envsetup-sh properly sourced!
 
 1.) cd build/executable
@@ -46,6 +55,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 3.) cd tmp
 
 4.) .././privateer -pdbin ../../../tests/test_data/2h6o.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan
+
 
 
 *If there are any issues with the installation process or running Privateer, please get in touch with: hb1115@york.ac.uk*
