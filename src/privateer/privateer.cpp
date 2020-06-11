@@ -1495,7 +1495,7 @@ int main(int argc, char** argv)
                         {
                             int sugarID = densityInfo[i].first.carbohydrateID;
                             double meanElectronDensity = densityInfo[i].second;
-                            buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain()[0] << " of " << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
+                            buffer << "\tPossibly unmodelled carbohydrate in Chain " << list_of_glycans[id].get_chain()[0] << " of" << glycanChain[sugarID].id() << "-" << glycanChain[sugarID].type() << " - mean ED Value: " << meanElectronDensity << std::endl;
                             std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[densityInfo[i].first.proteinMiniMolID].id(), modelRemovedWaters[densityInfo[i].first.proteinMiniMolID][densityInfo[i].first.carbohydrateChainMiniMolID], meanElectronDensity);
                             MIA_CarbsBlobs.push_back(blobInfo);
                         }
@@ -1520,14 +1520,14 @@ int main(int argc, char** argv)
 
             if(check_unmodelled)
             {
-                for ( int chn = 0; chn < mmol.size(); chn++ ) 
+                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
                 {
                     if ( modelRemovedWaters[chn].id() == "" ) 
                     {
                         clipper::String label = mmol[chn].id();
                         modelRemovedWaters[chn].set_id(label);
                     }
-                } 
+                }
                  
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
