@@ -442,6 +442,7 @@ namespace clipper
                     void set_order ( int order ) { index = order; }
 
                     int get_linked_node_id ( ) const { return node_id; }
+                    void modify_linked_node_id ( int modified_connect_to_id ) { node_id = modified_connect_to_id; }
 
                     std::string get_anomericity ( ) const { return type; }
                     //!< alpha or beta
@@ -548,6 +549,15 @@ namespace clipper
 
                     const int number_of_connections ( ) const { return connections.size(); }
 
+                    void remove_connection ( const int vectorIndex )
+                    {
+                        if ( vectorIndex > connections.size() - 1 )
+                            connections.pop_back();
+                        else
+                            connections.erase(connections.begin() + vectorIndex);
+                    }
+
+
                     Linkage& get_connection ( const int index )
                     {
                         if ( index > connections.size() -1 )
@@ -604,6 +614,11 @@ namespace clipper
 
             const clipper::String& get_chain () const { return chain; }
             int number_of_nodes ( ) const { return node_list.size(); }
+
+            void remove_node_at_index ( int index );
+            void replace_sugar_at_index ( int index, clipper::MSugar& donor );
+
+            int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 
             void set_kind_of_glycan ( clipper::String input ) { kind_of_glycan = input; }
 

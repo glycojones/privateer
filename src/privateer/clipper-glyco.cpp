@@ -46,7 +46,7 @@
 //L  Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 //L  MA 02111-1307 USA
 
-// #define DUMP 1
+
 
 
 #include "clipper-glyco.h"
@@ -96,6 +96,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
     this->sugar_parent_molecule_nonbond = &nb; // store pointers
@@ -108,6 +109,14 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+    #endif
+
+    #ifdef DUMP
+        std::cout << "Size of (*this).size() " << (*this).size() << std::endl;
+        for(int i = 0; i < (*this).size(); i++)
+        {
+            std::cout << "Atom ID: (*this)[" << i << "].id " << (*this)[i].id() << std::endl;
+        }
     #endif
 
     this->sugar_found_db = lookup_database(this->type().trim());
@@ -131,6 +140,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
         std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
 
+
         for (int i=0 ; i < buffer.size() ; i++)
         {
             int index_atom = 0;
@@ -140,6 +150,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 alt_conf == 'A' ? sugar_alternate_confcode = " :A" : sugar_alternate_confcode = " :B";
 
                 index_atom = this->lookup(buffer[i].trim()+sugar_alternate_confcode,clipper::MM::UNIQUE);
+
+                #ifdef DUMP
+                    DBG << "index_atom in line 146" << index_atom << std::endl;
+                #endif
 
                 if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now
                 {
@@ -153,7 +167,14 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
             }
             else
             {
+
                 index_atom = this->lookup(buffer[i],clipper::MM::ANY);
+
+
+                #ifdef DUMP
+                    DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << "test" << std::endl;
+                #endif
+
                 if (index_atom == -1)
                 {
                     this->sugar_supported = false;
@@ -161,9 +182,14 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                     this->sugar_denomination = "    unsupported    ";
                     this->sugar_anomer = "X";
                     this->sugar_handedness = "X";
+
+
                     return;
                 }
             }
+            #ifdef DUMP
+                DBG << "trying to push (*this)[index_atom] in line 181" << (*this)[index_atom].id() << std::endl;
+            #endif
             sugar_ring_elements.push_back((*this)[index_atom]);
         }
     }
@@ -2772,16 +2798,26 @@ clipper::String MGlycan::generate_wurcs()
             DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
             DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl
                 << std::endl;
+            DBG << "Residue code via ::MSugar.type().trim() = " << msug.type().trim() << std::endl;
 #endif
 
             if (node_list[i].number_of_connections() > 0)
             {
                 for (int j = 0; j < node_list[i].number_of_connections(); j++)
                 {
+#ifdef DUMP
+            DBG << "Connection: " << j+1 << " out of " << node_list[i].number_of_connections() << std::endl;
+#endif
                     std::ostringstream linkagePosition;
                     connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
+#ifdef DUMP
+            DBG << "connectedToNodeID: " << connectedToNodeID << std::endl;
+#endif
                     msug = node_list[connectedToNodeID].get_sugar();
                     linkagePosition << node_list[i].get_connection(j).get_order();
+#ifdef DUMP
+            DBG << "linkagePosition: " << linkagePosition.str() << std::endl;
+#endif
 
                     wurcs_string += convertNumberToLetter(i);
                     wurcs_string += linkagePosition.str();
@@ -2807,6 +2843,64 @@ clipper::String MGlycan::generate_wurcs()
         wurcs_string.pop_back();
     }
     return wurcs_string;
+}
+
+void MGlycan::remove_node_at_index ( int index )
+{
+    if (index>node_list.size()-1)
+    {
+        int lastElementID = node_list.size() - 1;
+        
+
+        for (int i = 0; i < node_list.size(); i++)
+        {
+            if (node_list[i].number_of_connections() > 0)
+            {
+                int lastNodeToDelete = -1;
+                for (int j = 0; j < node_list[i].number_of_connections(); j++ )
+                {
+                    int connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
+                    if(connectedToNodeID > index) 
+                        {
+                            node_list[i].get_connection(j).modify_linked_node_id(connectedToNodeID - 1);
+                            continue;
+                        }
+                    if(connectedToNodeID == index) lastNodeToDelete = connectedToNodeID;
+                }
+                if (lastNodeToDelete != -1) node_list[i].remove_connection(lastNodeToDelete);
+            }
+        }
+        node_list.pop_back();
+        sugars.pop_back();
+    }
+    else
+    {
+        for (int i = 0; i < node_list.size(); i++)
+        {
+            if (node_list[i].number_of_connections() > 0)
+            {
+                int lastNodeToDelete = -1;
+                for (int j = 0; j < node_list[i].number_of_connections(); j++ )
+                {
+                    int connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
+                    if(connectedToNodeID > index) 
+                        {
+                            node_list[i].get_connection(j).modify_linked_node_id(connectedToNodeID - 1);
+                            continue;
+                        }
+                    if(connectedToNodeID == index) lastNodeToDelete = connectedToNodeID;
+                }
+                if (lastNodeToDelete != -1) node_list[i].remove_connection(lastNodeToDelete);
+            }
+        }
+        node_list.erase(node_list.begin() + index);
+        sugars.erase(sugars.begin() + index);
+    }
+}
+
+void MGlycan::replace_sugar_at_index ( int index, clipper::MSugar& donor )
+{
+    node_list[index].set_sugar(donor);
 }
 
 ///////////////////////// MGlycology ///////////////////////////////

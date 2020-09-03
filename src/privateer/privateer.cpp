@@ -41,6 +41,8 @@
 #include "privateer-lib.h"
 #include "clipper-glyco.h"
 #include "privateer-blobs.h"
+#include "privateer-composition.h"
+#include "privateer-dbquery.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -381,78 +383,27 @@ int main(int argc, char** argv)
 
                 if(useWURCSDataBase)
                 {
-                    std::string glytoucanID;
-                    int valueLocation;
-                    valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", wurcs_string);
-                    if(valueLocation != -1)
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], alternativeGlycans);
+
+                    if(!alternativeGlycans.empty())
                     {
-                        glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
-                        if(glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                        for (int i = 0; i < alternativeGlycans.size(); i++)
                         {
-                            glytoucanID.erase(0, 1);
-                            glytoucanID.pop_back();
-                        }
-                        std::cout << "\tManaged to find a matching GlyTouCan ID for WURCS sequence for this Glycan sequence!" << std::endl;
-                        std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
-                        std::cout << "\tGlyTouCan link: " << "https://glytoucan.org/Structures/Glycans/" << glytoucanID << std::endl;
+                            clipper::String temporaryWURCS = alternativeGlycans[i].first.generate_wurcs();
+                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[i].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[i].second[1] << "\tResidue Deletions = " << alternativeGlycans[i].second[2] << std::endl;
+                            std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
 
-                        if (jsonObject[valueLocation]["glyconnect"] != "NotFound")
-                        {
-                            if (!jsonObject[valueLocation]["glyconnect"]["comment"].is_null())
-                            {
-                                std::cout << "\t\tFound a GlyConnect entry for this GlyTouCan ID!" << std::endl;
-                                std::cout << "\t\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-                                std::cout << "\t\tGlycan Type: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                                std::cout << "\t\tGlycan Core: " << jsonObject[valueLocation]["glyconnect"]["core"] << std::endl;
-                                std::cout << "\t\t" << jsonObject[valueLocation]["glyconnect"]["comment"] << std::endl;
-
-                                std::cout << std::endl << "\t\tPrivateer checks: " << std::endl;
-                                std::cout << "\t\tGlycosylation type detected in the model: " << list_of_glycans[i].get_type() << "\tGlycosylation type deposited on GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                            }
-                            else 
-                            {
-                                bool typeMatch = false;
-
-                                auto sourcesArray = jsonObject[valueLocation]["glyconnect"]["sources"];
-
-                                std::cout << "\t\tFound a GlyConnect entry for this GlyTouCan ID!" << std::endl;
-                                std::cout << "\t\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-                                std::cout << "\t\tGlycan Type: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                                std::cout << "\t\tGlycan Core: " << jsonObject[valueLocation]["glyconnect"]["core"] << std::endl;
-                                std::cout << "\t\tGlycomics composition: " << jsonObject[valueLocation]["glyconnect"]["composition_string"] << std::endl;
-                                std::cout << "\t\tExpression system(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["species"] << std::endl;
-                                    }
-                                std::cout << "\t\tTissue(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["system"] << std::endl;
-                                    }
-                                std::cout << "\t\tProtein(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["protein"]["name"] << std::endl;
-                                    }
-                                std::cout << "\t\tReviewed by GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["reviewed"] << std::endl;
-                                std::cout << "\t\tGlyConnect link: " << "https://glyconnect.expasy.org/browser/structures/" << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-
-                                std::cout << std::endl << "\t\tPrivateer checks: " << std::endl;
-                                std::cout << "\t\tGlycosylation type detected in the model: " << list_of_glycans[i].get_type() << "\tGlycosylation type deposited on GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-
-                            }
-                        }
-                        else
-                        {
-                            std::cout << "\t\tThis GlyTouCan ID is not deposited on GlyConnect" << std::endl;
+                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[i].first.get_root_by_name(), invert, true);
+                            plot.plot_glycan ( alternativeGlycans[i].first );
+                            std::ostringstream os;
+                            os << alternativeGlycans[i].first.get_root_for_filename() << "-" << i << "-PERMUTATION.svg";
+                            plot.write_to_file ( os.str() );
                         }
                     }
-                    else 
-                    {
-                        std::cout << "ERROR: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
-                    }
+                    else std::cout << "ERROR: Unable to find a match and unable to generate a permutation that would return GlyTouCanID for WURCS sequence for this Glycan!" << std::endl;
                 }
+
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
@@ -1241,78 +1192,28 @@ int main(int argc, char** argv)
 
                 if(useWURCSDataBase)
                 {
-                    std::string glytoucanID;
-                    int valueLocation;
-                    valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", wurcs_string);
-                    if(valueLocation != -1)
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], alternativeGlycans);
+
+                    if(!alternativeGlycans.empty())
                     {
-                        glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
-                        if(glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                        for (int i = 0; i < alternativeGlycans.size(); i++)
                         {
-                            glytoucanID.erase(0, 1);
-                            glytoucanID.pop_back();
-                        }
-                        std::cout << "\tManaged to find a matching GlyTouCan ID for WURCS sequence for this Glycan sequence!" << std::endl;
-                        std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
-                        std::cout << "\tGlyTouCan link: " << "https://glytoucan.org/Structures/Glycans/" << glytoucanID << std::endl;
+                            clipper::String temporaryWURCS = alternativeGlycans[i].first.generate_wurcs();
+                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[i].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[i].second[1] << "\tResidue Deletions = " << alternativeGlycans[i].second[2] << std::endl;
+                            std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
 
-                        if (jsonObject[valueLocation]["glyconnect"] != "NotFound")
-                        {
-                            if (!jsonObject[valueLocation]["glyconnect"]["comment"].is_null())
-                            {
-                                std::cout << "\t\tFound a GlyConnect entry for this GlyTouCan ID!" << std::endl;
-                                std::cout << "\t\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-                                std::cout << "\t\tGlycan Type: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                                std::cout << "\t\tGlycan Core: " << jsonObject[valueLocation]["glyconnect"]["core"] << std::endl;
-                                std::cout << "\t\t" << jsonObject[valueLocation]["glyconnect"]["comment"] << std::endl;
 
-                                std::cout << std::endl << "\t\tPrivateer checks: " << std::endl;
-                                std::cout << "\t\tGlycosylation type detected in the model: " << list_of_glycans[i].get_type() << "\tGlycosylation type deposited on GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                            }
-                            else 
-                            {
-                                bool typeMatch = false;
-
-                                auto sourcesArray = jsonObject[valueLocation]["glyconnect"]["sources"];
-
-                                std::cout << "\t\tFound a GlyConnect entry for this GlyTouCan ID!" << std::endl;
-                                std::cout << "\t\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-                                std::cout << "\t\tGlycan Type: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-                                std::cout << "\t\tGlycan Core: " << jsonObject[valueLocation]["glyconnect"]["core"] << std::endl;
-                                std::cout << "\t\tGlycomics composition: " << jsonObject[valueLocation]["glyconnect"]["composition_string"] << std::endl;
-                                std::cout << "\t\tExpression system(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["species"] << std::endl;
-                                    }
-                                std::cout << "\t\tTissue(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["system"] << std::endl;
-                                    }
-                                std::cout << "\t\tProtein(s): " << std::endl;
-                                    for (auto& element : sourcesArray) 
-                                    {
-                                    std::cout << "\t\t\t\t\t" << element["protein"]["name"] << std::endl;
-                                    }
-                                std::cout << "\t\tReviewed by GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["reviewed"] << std::endl;
-                                std::cout << "\t\tGlyConnect link: " << "https://glyconnect.expasy.org/browser/structures/" << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-
-                                std::cout << std::endl << "\t\tPrivateer checks: " << std::endl;
-                                std::cout << "\t\tGlycosylation type detected in the model: " << list_of_glycans[i].get_type() << "\tGlycosylation type deposited on GlyConnect: " << jsonObject[valueLocation]["glyconnect"]["type"] << std::endl;
-
-                            }
-                        }
-                        else
-                        {
-                            std::cout << "\t\tThis GlyTouCan ID is not deposited on GlyConnect" << std::endl;
+                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[i].first.get_root_by_name(), invert, true);
+                            plot.plot_glycan ( alternativeGlycans[i].first );
+                            std::ostringstream os;
+                            os << alternativeGlycans[i].first.get_root_for_filename() << "-" << i << "-PERMUTATION.svg";
+                            plot.write_to_file ( os.str() );
                         }
                     }
-                    else 
-                    {
-                        std::cout << "ERROR: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
-                    }
+                    else std::cout << "\tUnable to find a match and unable to generate a permutation that would return GlyTouCanID for WURCS sequence for this Glycan!" << std::endl;
                 }
+
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;

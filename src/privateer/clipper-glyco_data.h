@@ -46,6 +46,8 @@
 #define CLIPPER_GLYCO_DATA
 
 #include <clipper/clipper.h>
+#include <unordered_set>
+#include <set>
 
 namespace clipper
 {
@@ -83,6 +85,10 @@ namespace clipper
         bool found_in_database ( clipper::String name );
         bool found_in_database ( std::string name );
         std::string carbname_of ( std::string name );
+        std::string alternative_anomer ( std::string name );
+        std::vector<std::string> alternative_monomer( std::string name );
+        bool residue_has_alternate_anomer( std::string name );
+        bool residue_has_alternate_monomer( std::string name );
         std::string convert_to_wurcs_residue_code( std::string name );
 
     } // namespace data

@@ -9,6 +9,7 @@
 // mailto: kevin.cowtan@york.ac.uk
 //
 
+// #define DUMP 1
 #include "privateer-lib.h"
 
 void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
@@ -1390,7 +1391,6 @@ bool privateer::glycoplot::Plot::plot_glycan ( clipper::MGlycan glycan, bool oxf
 
 void privateer::glycoplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles )
 {
-
     const clipper::MSugar& sugar = node.get_sugar();
 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();

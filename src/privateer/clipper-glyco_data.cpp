@@ -122,7 +122,8 @@ const int disaccharide_database_size = sizeof( disaccharide_database ) / sizeof(
 const sugar_database_entry sugar_database[] =
 {
     // PDB ID                    FULL NAME                                   
-    // To be replaced by updated ccp4 monomer dictionaries.        
+    // To be replaced by updated ccp4 monomer dictionaries.
+    // Need to add BM7 ligand here        
     { "13A" ,    "B",    "L",    "7-(3,4-DIHYDROXY-5R-HYDROXYMETHYLTETRAHYDROFU" ,  "O1 C2 C3 C4 C5",    0.380, "4ev", 0.017, 5.882 },
     { "145" ,	 "B", 	 "D", 	 "1-O-[O-NITROPHENYL]-BETA-D-GALACTOPYRANOSE" ,     "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "147" ,	 "B", 	 "D", 	 "1-O-[P-NITROPHENYL]-BETA-D-GALACTOSE" ,           "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
@@ -374,7 +375,7 @@ const sugar_database_entry sugar_database[] =
     { "NAA" ,	 "B", 	 "D", 	 "N-ACETYL-D-ALLOSAMINE" ,                          "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.014 },
     { "NAG" ,	 "B", 	 "D", 	 "N-ACETYL-D-GLUCOSAMINE" ,                         "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.391 },
     { "NBG" ,	 "B", 	 "D", 	 "1-N-ACETYL-BETA-D-GLUCOSAMINE" ,                  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.004, 1.995 },
-    { "NDG" ,	 "A", 	 "D", 	 "2-(ACETYLAMINO)-2-DEOXY-A-D-GLUCOPYRANOSE" ,      "O C1 C2 C3 C4 C5" , 0.593, "4c1", 0.001, 1.378 },
+    { "NDG" ,	 "A", 	 "D", 	 "2-(ACETYLAMINO)-2-DEOXY-A-D-GLUCOPYRANOSE" ,      "O5 C1 C2 C3 C4 C5" , 0.593, "4c1", 0.001, 1.378 },
     { "NG1" ,	 "A", 	 "D", 	 "N-ACETYL-ALPHA-D-GALACTOSAMINE1-PHOSPHATE" ,      "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.010 },
     { "NG6" ,	 "B", 	 "D", 	 "N-ACETYL-D-GALACTOSAMINE 6-SULFATE" ,             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.010 },
     { "NGA" ,	 "B", 	 "D", 	 "N-ACETYL-D-GALACTOSAMINE" , 	 		    "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.347 },
@@ -444,7 +445,7 @@ const sugar_database_entry sugar_database[] =
     { "X1P" ,	 "A", 	 "D", 	 "1-O-PHOSPHONO-ALPHA-D-XYLOPYRANOSE" ,             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.039 },
     { "X2F" ,	 "A", 	 "D", 	 "2-DEOXY-2-FLUOROXYLOPYRANOSE" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.070 },
     { "XYF" ,	 "B", 	 "D", 	 "5(R)-5-FLUORO-BETA-D-XYLOPYRANOSYL-ENZYMEINT" ,   "O5 C1 C2 C3 C4 C5", 0.557, "4c1", 0.012, 1.634 },
-    { "XYP" ,	 "B",	 "D",	 "BETA-D-XYLOPYRANOSE" ,                      "O5B C1B C2B C3B C4B C5B", 0.619, "4c1", 0.003, 2.003 },
+    { "XYP" ,	 "B",	 "D",	 "BETA-D-XYLOPYRANOSE" ,                            "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 2.003 },
     { "XYS" ,	 "A", 	 "D", 	 "XYLOPYRANOSE" ,                                   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 },
     { "YX0" ,	 "A", 	 "L", 	 "[(3E)-3-(1-HYDROXYETHYLIDENE)-2,3-DIHYDROISOX" ,  "O5 C1 C2 C3 C4 C5", 0.594, "1c4", 0.002, 1.379 },
     { "YX1" ,	 "B", 	 "D", 	 "2-DEOXY-2-{[(2-HYDROXY-1-METHYLHYDRAZINO)CARB" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.385 },
@@ -508,6 +509,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "NGA" ) new_name = "GalNAc"; // beta
         else if ( name == "A2G" ) new_name = "GalNAc"; // alpha
         else if ( name == "BM3" ) new_name = "ManNAc"; // alpha
+        else if ( name == "BM7" ) new_name = "ManNAc"; // beta
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
@@ -529,6 +531,139 @@ const sugar_database_entry sugar_database[] =
 
         return new_name;
     }
+
+
+    bool residue_has_alternate_monomer( std::string name )
+    {
+        std::unordered_set<std::string> residues_with_alternate_monomer = {
+            "GLC", "BGC", // Glc
+            // "MAN", "BMA", // Man
+            // "GLA", "GAL", // Gal
+            // "NDG", "NAG", // GlcNAc
+            // "BM3", "BM7", // ManNAc
+            // "A2G", "NGA", // GalNAc
+            // "GCU", "BDP", // GlcA
+            // "MAV", "BEM", // ManA
+            // "ADA", "GTR" // GalA
+        };
+
+        if (residues_with_alternate_monomer.find(name) != residues_with_alternate_monomer.end())
+		    return true;
+        else
+            return false; 
+    }
+
+    bool residue_has_alternate_anomer( std::string name )
+    {
+        std::unordered_set<std::string> residues_with_alternate_anomer = {
+            "GLC", "BGC",
+            "MAN", "BMA",
+            "GLA", "GAL",
+            "FUC", "FUL",
+            "FCB", "FCA",
+            "XYS", "XYP",
+            "GCS", "PA1",
+            "NDG", "NAG",
+            "A2G", "NGA",
+            "BM3", "BM7",
+            "SIA", "SLB",
+            "IDR", "NGK",
+            "KDM", "KDN",
+            "GCU", "BDP",
+            "MAV", "BEM",
+            "ADA", "GTR"
+        };
+
+        if (residues_with_alternate_anomer.find(name) != residues_with_alternate_anomer.end())
+		    return true;
+        else
+            return false; 
+    }
+
+
+    std::string alternative_anomer( std::string name )
+    {
+        clipper::String new_name;
+
+        if      ( name == "GLC" ) new_name = "BGC"   ; 
+        else if ( name == "BGC" ) new_name = "GLC"   ; 
+        else if ( name == "MAN" ) new_name = "BMA"   ; 
+        else if ( name == "BMA" ) new_name = "MAN"   ; 
+        else if ( name == "GLA" ) new_name = "GAL"   ; 
+        else if ( name == "GAL" ) new_name = "GLA"   ; 
+        else if ( name == "FUC" ) new_name = "FUL"   ;    
+        else if ( name == "FUL" ) new_name = "FUC"   ;
+        else if ( name == "FCB" ) new_name = "FCA"   ;
+        else if ( name == "FCA" ) new_name = "FCB"   ;  
+        else if ( name == "XYS" ) new_name = "XYP"   ; 
+        else if ( name == "XYP" ) new_name = "XYS"   ; 
+
+        // codes for hexosamines
+        // couldn't find codes for: ManN (either), GalN (either)
+
+        else if ( name == "GCS" ) new_name = "PA1"  ; 
+        else if ( name == "PA1" ) new_name = "GCS"  ; 
+
+        // codes for N-acetyl hexosamines
+        // couldn't find codes for: ManNAc (beta)
+
+        else if ( name == "NAG" ) new_name = "NDG"; 
+        else if ( name == "NDG" ) new_name = "NAG"; 
+        else if ( name == "NGA" ) new_name = "A2G"; 
+        else if ( name == "A2G" ) new_name = "NGA"; 
+        else if ( name == "BM3" ) new_name = "BM7";
+        else if ( name == "BM7" ) new_name = "BM3"; 
+
+        // codes for acidic sugars
+        // couldn't find codes for: Neu5Gc (either)
+
+        else if ( name == "SIA" ) new_name = "SLB" ; 
+        else if ( name == "SLB" ) new_name = "SIA" ; 
+        else if ( name == "IDR" ) new_name = "NGK" ; 
+        else if ( name == "NGK" ) new_name = "IDR" ; 
+        else if ( name == "KDM" ) new_name = "KDN"    ; 
+        else if ( name == "KDN" ) new_name = "KDM"    ; 
+        else if ( name == "BDP" ) new_name = "GCU"   ; 
+        else if ( name == "GCU" ) new_name = "BDP"   ; 
+        else if ( name == "MAV" ) new_name = "BEM"   ; 
+        else if ( name == "BEM" ) new_name = "MVA"   ; 
+        else if ( name == "GTR" ) new_name = "ADA"   ; 
+        else if ( name == "ADA" ) new_name = "GTR"   ;
+
+        else new_name = "Error";
+
+        return new_name;
+    }
+
+    
+    std::vector<std::string> alternative_monomer( std::string name )
+    {
+        std::set<std::string> monomer_bin;
+
+        std::vector<std::set<std::string>> bins_alternate_monomers = {
+            { std::set<std::string>( { "GLC", "MAN", "GLA" } ) }, // alpha ucoses.
+            { std::set<std::string>( { "BGC", "BMA", "GAL" } ) }, // beta ucoses. 
+            // { std::set<std::string>( { "NDG", "BM3", "A2G" } ) }, // alpha NAcs
+            // { std::set<std::string>( { "NAG", "BM7", "NGA" } ) }, // beta NAcs
+            // { std::set<std::string>( { "GCU", "MAV", "ADA" } ) }, // alpha As
+            // { std::set<std::string>( { "BDP", "BEM", "GTR" } ) }, // beta As
+        };
+
+        for(int i = 0; i < bins_alternate_monomers.size(); i++)
+        {  
+            if (bins_alternate_monomers[i].find(name) != bins_alternate_monomers[i].end())
+                monomer_bin = bins_alternate_monomers[i];
+        }
+
+        std::vector<std::string> alternative_monomers;
+        for (auto element : monomer_bin)
+        {
+            if(element != name) alternative_monomers.push_back(element);
+        }
+
+        return alternative_monomers;
+    }
+
 
 
     // Long term task: expand this list after running on entire pdb database. 
@@ -565,6 +700,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "NGA" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O"; // beta
         else if ( name == "A2G" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O"; // alpha
         else if ( name == "BM3" ) wurcs_residue_code = "a1122h-1a_1-5_2*NCC/3=O"; // alpha
+        else if ( name == "BM7" ) wurcs_residue_code = "a1122h-1b_1-5_2*NCC/3=O"; // beta
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
