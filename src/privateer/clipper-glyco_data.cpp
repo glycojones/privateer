@@ -112,8 +112,8 @@ const disaccharide disaccharide_database[] =
     },
 
     { "BXP" ,  "Xylobiose",
-        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5A C1A C2A C3A C4A C5A", 0.621, "4c1", 0.003, 2.036 },
-        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                     "O5B C1B C2B C3B C4B C5B", 0.621, "4c1", 0.003, 2.036 }
+        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                       "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 },
+        { "XYP" ,        "B",    "D",   "Beta-D-xylopyranose" ,                       "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.036 }
     }
 };
 
@@ -121,9 +121,7 @@ const int disaccharide_database_size = sizeof( disaccharide_database ) / sizeof(
 
 const sugar_database_entry sugar_database[] =
 {
-    // PDB ID                    FULL NAME                                   
-    // To be replaced by updated ccp4 monomer dictionaries.
-    // Need to add BM7 ligand here        
+    // TO DO: ADD BM7, currently does not exist in CCP4 monomer library
     { "13A" ,    "B",    "L",    "7-(3,4-DIHYDROXY-5R-HYDROXYMETHYLTETRAHYDROFU" ,  "O1 C2 C3 C4 C5",    0.380, "4ev", 0.017, 5.882 },
     { "145" ,	 "B", 	 "D", 	 "1-O-[O-NITROPHENYL]-BETA-D-GALACTOPYRANOSE" ,     "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "147" ,	 "B", 	 "D", 	 "1-O-[P-NITROPHENYL]-BETA-D-GALACTOSE" ,           "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
@@ -160,7 +158,7 @@ const sugar_database_entry sugar_database[] =
     { "7JZ" ,	 "B", 	 "D", 	 "2-DEOXY-2,2-DIFLUORO-BETA-D-LYXO-HEXOPYRANOSE" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.342 },
     { "8GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)-N'-CYCLOPROPYLOXAL" ,   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.006 },
     { "9AM" ,	 "A", 	 "D", 	 "9-AMINO-2-DEOXY-2,3-DEHYDRO-N-ACETYL-NEURAMIN" ,  "O6 C2 C3 C4 C5 C6", 0.541, "5h4", 0.087, 9.084 },
-    { "A2G" ,    "A",    "D",    "N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE",              "O C1 C2 C3 C4 C5" , 0.593, "4c1", 0.002, 1.350 },
+    { "A2G" ,    "A",    "D",    "N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE",              "O5 C1 C2 C3 C4 C5" , 0.593, "4c1", 0.002, 1.350 },
     { "A6P" ,	 "A", 	 "D", 	 "6-O-PHOSPHONO-ALPHA-D-ALLOPYRANOSE" ,             "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.002, 1.380 },
     { "AAL" ,	 "A", 	 "L", 	 "3,6-ANHYDRO-L-GALACTOSE" ,                        "O5 C1 C2 C3 C4 C5", 0.695, "4c1", 0.016, 4.879 },
     { "ABE" ,	 "A", 	 "D", 	 "ABEQUOSE" ,                                       "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.023 },
@@ -292,7 +290,7 @@ const sugar_database_entry sugar_database[] =
     { "GMB" ,	 "B", 	 "D", 	 "1,7-DI-O-PHOSPHONO-L-GLYCERO-BETA-D-MANNO-HEP" ,  "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.002, 1.365 },
     { "GMH" ,	 "A", 	 "D", 	 "L-GLYCERO-D-MANNO-HEPTOPYRANOSE" ,                "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.016 },
     { "GNA" ,	 "B", 	 "L", 	 "2,4-DEOXY-4-GUANIDINO-5-N-ACETYL-NEURAMINICA" ,   "O6 C2 C3 C4 C5 C6", 0.620, "1c4", 0.003, 2.009 },
-    { "GP4" ,	 "A", 	 "D", 	 "GLUCOSAMINE4-PHOSPHATE" ,                   "O6A C1A C2A C3A C4A C5A", 0.620, "4c1", 0.003, 2.028 },
+    { "GP4" ,	 "A", 	 "D", 	 "GLUCOSAMINE4-PHOSPHATE" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.028 },
     { "GS1" ,	 "B", 	 "D", 	 "1-THIO-BETA-D-GLUCOPYRANOSE" ,                    "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.029 },
     { "GTM" ,	 "B", 	 "D", 	 "O1-METHYL-4-DEOXY-4-THIO-BETA-D-GLUCOSE" ,        "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 1.992 },
     { "GTR" ,	 "B", 	 "D", 	 "GALACTURONIC ACID",                               "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.026 },

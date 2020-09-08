@@ -38,6 +38,7 @@
 #include <vector>
 #include <tuple>
 #include <iostream>
+#include <iomanip>
 #include "privateer-lib.h"
 #include "clipper-glyco.h"
 #include "privateer-blobs.h"
@@ -388,20 +389,48 @@ int main(int argc, char** argv)
 
                     if(!alternativeGlycans.empty())
                     {
-                        for (int i = 0; i < alternativeGlycans.size(); i++)
+                        for (int j = 0; j < alternativeGlycans.size(); j++)
                         {
-                            clipper::String temporaryWURCS = alternativeGlycans[i].first.generate_wurcs();
-                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[i].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[i].second[1] << "\tResidue Deletions = " << alternativeGlycans[i].second[2] << std::endl;
-                            std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
+                            int originalGlycanLength = list_of_glycans[i].number_of_nodes(),
+                                currentGlycanLength = alternativeGlycans[j].first.number_of_nodes();
 
-                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[i].first.get_root_by_name(), invert, true);
-                            plot.plot_glycan ( alternativeGlycans[i].first );
+                            int anomerPermutations = alternativeGlycans[j].second[0],
+                                residuePermutations = alternativeGlycans[j].second[1],
+                                residueDeletions = alternativeGlycans[j].second[2];
+                            
+                            float finalScore, maxPermutationScore, currentPermutationScore;
+
+                            maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
+                            currentPermutationScore = ( ( (anomerPermutations * 5) + (residuePermutations * 25) + (residueDeletions * 100) ) / originalGlycanLength );
+                            finalScore = (currentPermutationScore / maxPermutationScore) * 100;
+
+                            clipper::String temporaryWURCS = alternativeGlycans[j].first.generate_wurcs();
+                            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                            std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
+                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[j].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[j].second[1] << "\tResidue Deletions = " << alternativeGlycans[j].second[2] << std::endl; 
+                            std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalScore << std::endl;
+
+                            std::string glytoucanID;
+                            glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                            if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                            {
+                                glytoucanID.erase(0, 1);
+                                glytoucanID.pop_back();
+                            }
+                            std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
+                            std::cout << "\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
+
+                            std::cout << std::endl;
+
+                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[j].first.get_root_by_name(), invert, true);
+                            plot.plot_glycan ( alternativeGlycans[j].first );
                             std::ostringstream os;
-                            os << alternativeGlycans[i].first.get_root_for_filename() << "-" << i << "-PERMUTATION.svg";
+                            os << alternativeGlycans[j].first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
                             plot.write_to_file ( os.str() );
                         }
                     }
-                    else std::cout << "ERROR: Unable to find a match and unable to generate a permutation that would return GlyTouCanID for WURCS sequence for this Glycan!" << std::endl;
+                    else std::cout << "\tUnable to find a match and unable to generate a permutation that would return GlyTouCanID for WURCS sequence for this Glycan!" << std::endl;
                 }
 
                 privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
@@ -1167,8 +1196,9 @@ int main(int argc, char** argv)
 
     list_of_glycans = mgl.get_list_of_glycans();
 
-
-
+    // expand the alternativeGlycans big vector here to list of glycans and match indices. so like original glycan -> all of its permutations + scores and so on.
+    //                                                                                             original glycan -> all of its permutations 
+    // std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> originalGlycansAndPermutations(list_of_glycans.size());
     if ( !batch )
     {
         std::cout << std::endl << "Number of detected glycosylations: " << list_of_glycans.size();
@@ -1197,17 +1227,44 @@ int main(int argc, char** argv)
 
                     if(!alternativeGlycans.empty())
                     {
-                        for (int i = 0; i < alternativeGlycans.size(); i++)
+                        for (int j = 0; j < alternativeGlycans.size(); j++)
                         {
-                            clipper::String temporaryWURCS = alternativeGlycans[i].first.generate_wurcs();
-                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[i].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[i].second[1] << "\tResidue Deletions = " << alternativeGlycans[i].second[2] << std::endl;
+                            int originalGlycanLength = list_of_glycans[i].number_of_nodes(),
+                                currentGlycanLength = alternativeGlycans[j].first.number_of_nodes();
+
+                            int anomerPermutations = alternativeGlycans[j].second[0],
+                                residuePermutations = alternativeGlycans[j].second[1],
+                                residueDeletions = alternativeGlycans[j].second[2];
+                            
+                            float finalScore, maxPermutationScore, currentPermutationScore;
+
+                            maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
+                            currentPermutationScore = ( ( (anomerPermutations * 5) + (residuePermutations * 25) + (residueDeletions * 100) ) / originalGlycanLength );
+                            finalScore = (currentPermutationScore / maxPermutationScore) * 100;
+
+                            clipper::String temporaryWURCS = alternativeGlycans[j].first.generate_wurcs();
+                            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
                             std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
+                            std::cout << "\tAnomer Permutations = " << alternativeGlycans[j].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[j].second[1] << "\tResidue Deletions = " << alternativeGlycans[j].second[2] << std::endl; 
+                            std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalScore << std::endl;
 
+                            std::string glytoucanID;
+                            glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                            if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                            {
+                                glytoucanID.erase(0, 1);
+                                glytoucanID.pop_back();
+                            }
+                            std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
+                            std::cout << "\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
 
-                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[i].first.get_root_by_name(), invert, true);
-                            plot.plot_glycan ( alternativeGlycans[i].first );
+                            std::cout << std::endl;
+
+                            privateer::glycoplot::Plot plot(vertical, original, alternativeGlycans[j].first.get_root_by_name(), invert, true);
+                            plot.plot_glycan ( alternativeGlycans[j].first );
                             std::ostringstream os;
-                            os << alternativeGlycans[i].first.get_root_for_filename() << "-" << i << "-PERMUTATION.svg";
+                            os << alternativeGlycans[j].first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
                             plot.write_to_file ( os.str() );
                         }
                     }

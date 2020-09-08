@@ -66,6 +66,8 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
         }
     }
 
+    // do the score calculations here, return the final vector already containing those float values. 
+
     return result;
 }
 
