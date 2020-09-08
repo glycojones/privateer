@@ -2,6 +2,9 @@
 
 # Privateer
 
+
+**wwPDB has recently released an update to the database that affects deposited glycoprotein structures. These updates affect privateer too. Recent github commits to privateerMKIV_noccp4 branch have addressed issues caused by the update that would cause the program to crash via a segmentation fault error, however we can't give a guarantee that we have managed to find all the bugs and therefore fix them. We are updating privateer as soon as we discover new issues caused by the update, we also appreciate if we are made aware of the issues discovered by the users.**
+
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
 Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
@@ -54,7 +57,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 3.) cd tmp
 
-4.) .././privateer -pdbin ../../../tests/test_data/2h6o.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan
+4.) .././privateer -pdbin ../../../tests/test_data/2h6o_carbremediation.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan
 
 
 
