@@ -34,7 +34,7 @@
 
 
 
-void output_dbquery(nlohmann::json& jsonObject, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans);
+void output_dbquery(nlohmann::json& jsonObject, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer);
 void print_output_from_database(nlohmann::json& jsonObject, int valueLocation, clipper::MGlycan &currentGlycan);
 
 

@@ -73,7 +73,9 @@ namespace privateer
                                                      clipper::data::sugar_database_entry& external_validation );
         void print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList,
                          std::vector < clipper::MGlycan > list_of_glycans,
-                         clipper::String pdbname );
+                         std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations,
+                         clipper::String pdbname,
+                         nlohmann::json& jsonObject );
         bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
         nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );

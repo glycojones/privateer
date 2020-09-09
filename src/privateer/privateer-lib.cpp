@@ -521,9 +521,8 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     return false;
 }
 
-void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, clipper::String pdbname )
+void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, nlohmann::json &jsonObject )
 {
-
     std::fstream of_xml;
 
     of_xml.open("program.xml", std::fstream::out);
@@ -585,6 +584,26 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         std::ostringstream os;
         os << list_of_glycans[i].get_root_for_filename() << ".svg";
 
+        clipper::String glycanWURCS = list_of_glycans[i].generate_wurcs();
+        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+        
+        std::string glyTouCanID, glyConnectID;
+        if (valueLocation != -1)
+            {
+                glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
+                {
+                    glyTouCanID.erase(0, 1);
+                    glyTouCanID.pop_back();
+                }
+
+                if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                else     glyConnectID = "NotFound";
+            }
+        else glyTouCanID, glyConnectID = "NotFound";
+        
+
+
         of_xml << "    <Glycan>\n" ;
         of_xml << "     <GlycanPDB>"        << pdbname                                           << "</GlycanPDB>\n"                                         ;
         of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
@@ -592,6 +611,81 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
         of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
+        of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;
+        
+        if(valueLocation == -1)
+        of_xml << "     <GlycanGTCID>"      << "Unable to find GlyTouCan ID"                     << "</GlycanGTCID>\n"                                      ;
+        else
+        of_xml << "     <GlycanGTCID>"      << glyTouCanID                                       << "</GlycanGTCID>\n"                                      ; 
+        
+        if(glyConnectID == "NotFound")
+        of_xml << "     <GlycanGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</GlycanGlyConnectID>\n"                               ;
+        else
+        of_xml << "     <GlycanGlyConnectID>" << glyConnectID                                    << "</GlycanGlyConnectID>\n"                               ;                                  
+        
+        // std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>
+        
+        if(!list_of_glycans_associated_to_permutations[i].empty())
+            {
+                of_xml << "     <GlycanPermutations>\n" ;
+                for(int j = 0; j < list_of_glycans_associated_to_permutations[i].size(); j++)
+                    {
+                        std::ostringstream os_permutation;
+
+                        of_xml << "       <GlycanPermutation>\n" ;
+                        float permutationScore = list_of_glycans_associated_to_permutations[i][j].second;
+
+                        int anomerPermutations = list_of_glycans_associated_to_permutations[i][j].first.second[0],
+                            residuePermutations = list_of_glycans_associated_to_permutations[i][j].first.second[1],
+                            residueDeletions = list_of_glycans_associated_to_permutations[i][j].first.second[2];
+
+                        clipper::String glycanWURCS = list_of_glycans_associated_to_permutations[i][j].first.first.generate_wurcs();
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+
+                        os_permutation << list_of_glycans_associated_to_permutations[i][j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
+                        
+                        std::string glyTouCanID, glyConnectID;
+                        if (valueLocation != -1)
+                            {
+                                glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                                if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
+                                {
+                                    glyTouCanID.erase(0, 1);
+                                    glyTouCanID.pop_back();
+                                }
+
+                                if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                                else     glyConnectID = "NotFound";
+                            }
+                        else glyTouCanID, glyConnectID = "NotFound";
+                        
+                        of_xml << "        <PermutationWURCS>"      << glycanWURCS                                       << "</PermutationWURCS>\n"                                      ;
+        
+                        of_xml << "        <PermutationScore>"      << permutationScore                                  << "</PermutationScore>\n"                                      ;
+                        
+                        of_xml << "        <anomerPermutations>"    << anomerPermutations                                << "</anomerPermutations>\n"                                    ;
+
+                        of_xml << "        <residuePermutations>"   << residuePermutations                               << "</residuePermutations>\n"                                   ;
+
+                        of_xml << "        <residueDeletions>"      << residueDeletions                                  << "</residuePermutations>\n"                                   ;
+                        
+                        if(valueLocation == -1)
+                        of_xml << "        <PermutationGTCID>"      << "Unable to find GlyTouCan ID"                     << "</PermutationGTCID>\n"                                      ;
+                        else
+                        of_xml << "        <PermutationGTCID>"      << glyTouCanID                                       << "</PermutationGTCID>\n"                                      ; 
+                        
+                        if(glyConnectID == "NotFound")
+                        of_xml << "        <PermutationGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</PermutationGlyConnectID>\n"                               ;
+                        else
+                        of_xml << "        <PermutationGlyConnectID>" << glyConnectID                                    << "</PermutationGlyConnectID>\n"                               ;
+
+                        of_xml << "        <PermutationSVG>"        << os_permutation.str()                                          << "</GlycanSVG>\n"                                 ;
+
+                        of_xml << "       </GlycanPermutation>\n" ;
+                    }
+                of_xml << "     </GlycanPermutations>\n" ;
+            }
+        
         of_xml << "    </Glycan>\n" ;
     }
 
