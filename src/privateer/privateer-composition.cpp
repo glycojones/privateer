@@ -239,7 +239,8 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
     std::vector<int> temp;
 
     int totalEditableNodes = editable_node_list.size();
-    bool checkedEditableNode[totalEditableNodes] = {false};
+    bool checkedEditableNode[totalEditableNodes];
+    memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
 
     
     for(int i = 1; i <= totalEditableNodes; i++)

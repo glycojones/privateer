@@ -600,7 +600,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
                 if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
                 else     glyConnectID = "NotFound";
             }
-        else glyTouCanID, glyConnectID = "NotFound";
+        else glyTouCanID = "NotFound", glyConnectID = "NotFound";
         
 
 
@@ -657,7 +657,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
                                 if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
                                 else     glyConnectID = "NotFound";
                             }
-                        else glyTouCanID, glyConnectID = "NotFound";
+                        else glyTouCanID = "NotFound", glyConnectID = "NotFound";
                         
                         of_xml << "        <PermutationWURCS>"      << glycanWURCS                                       << "</PermutationWURCS>\n"                                      ;
         
