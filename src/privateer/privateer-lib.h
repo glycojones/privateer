@@ -831,7 +831,7 @@ namespace privateer
 
                 void set_title ( std::string title ) { this->title = title; }
                 std::string get_title () { return this->title; }
-                bool plot_glycan ( clipper::MGlycan glycan, bool oxford_angles = false );
+                bool plot_glycan ( clipper::MGlycan glycan );
                 bool plot_demo ( ); //!< creates a demo plot with all the blocks, links and roots Privateer can generate
                 bool write_to_file  ( std::string file_path ); //!< returns true if there have been any problems
                 std::string write_to_string ( );

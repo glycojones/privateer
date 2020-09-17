@@ -2590,7 +2590,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
 
 
        << "    <!--  bond  --> "
-       << "<line x1=\"0\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
 
        // a generic hexagon shape for unsupported sugars
 
@@ -2853,7 +2853,7 @@ std::string privateer::glycanbuilderplot::Plot::get_XML  ( )
 }
 
 
-bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, bool oxford_angles )
+bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 {
 
     this->set_size(3000,3000);
@@ -3008,43 +3008,34 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     //////////////////////////////////////
     // need to change x and y values in the recursive function for both bonds and shapes.
 
-    if ( oxford_angles )
+
+    for ( int j = 0; j < node.number_of_connections(); j++)
     {
-        for ( int j = 0; j < node.number_of_connections(); j++)
+        clipper::MGlycan::Linkage link = node.get_connection(j);
+        const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+        // first deal with a couple of special cases: Fucose and Xylose
+
+        if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
         {
-            clipper::MGlycan::Linkage link = node.get_connection(j);
-            const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
-
-            Link_type orientation;
-
-            if ( link.get_order() >= 7 ) // up. should be == 8, but just to prevent unforeseen circumstances
+            up_down++;
+            if ( link.get_order() == 3 ) // it goes down
             {
-                orientation = up;
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
-
+                
                 std::string anomerSymbol;
-
                 if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
                 else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
                 else                                                                                 anomerSymbol = "&#63;";
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x + 25, y + 35, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
 
-                recursive_paint ( mg, linked_node, x, y - 80 );
+                recursive_paint ( mg, linked_node, x, y + 110 );
             }
-            if ( link.get_order() == 6 ) // up-left
+            else // up it goes, then
             {
-                orientation = up_side;
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
 
                 std::string anomerSymbol;
                 if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
@@ -3053,175 +3044,84 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x + 25, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
-
-                recursive_paint ( mg, linked_node, x - 80, y - 80 );
-            }
-            if ( link.get_order() == 4 ) // left
-            {
-                orientation = side;
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
-
-                std::string anomerSymbol;
-                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                else                                                                                 anomerSymbol = "&#63;";
-
-                std::string linkagePosition = std::to_string(link.get_order());
-
-                Bond * new_bond = new Bond( x + 35, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
-                add_link ( new_bond );
-
-                recursive_paint ( mg, linked_node, x - 80, y );
-            }
-            if ( link.get_order() == 3 ) // left-down
-            {
-                orientation = down_side;
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
-
-                std::string anomerSymbol;
-                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                else                                                                                 anomerSymbol = "&#63;";
-
-                std::string linkagePosition = std::to_string(link.get_order());
-
-                Bond * new_bond = new Bond( x + 25, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
-                add_link ( new_bond );
-
-                recursive_paint ( mg, linked_node, x - 80, y + 80 );
-            }
-            if ( link.get_order() == 2 ) // down
-            {
-                orientation = down;
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
-
-                std::string anomerSymbol;
-                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                else                                                                                 anomerSymbol = "&#63;";
-
-                std::string linkagePosition = std::to_string(link.get_order());
-
-                Bond * new_bond = new Bond( x + 25, y + 15, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
-                add_link ( new_bond );
-
-                recursive_paint ( mg, linked_node, x, y + 80 );
+                // }
+                recursive_paint ( mg, linked_node, x, y - 110 );
             }
         }
-    }       /// end oxford notation
-            //////////////////////////
-    else
-    {
-        for ( int j = 0; j < node.number_of_connections(); j++)
+        else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
         {
-            clipper::MGlycan::Linkage link = node.get_connection(j);
-            const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
-
-            // first deal with a couple of special cases: Fucose and Xylose
-
-            if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
+            up_down++;
+            if ( link.get_order() == 3 ) // it goes down
             {
-                up_down++;
-                if ( link.get_order() == 3 ) // it goes down
-                {
-                    
-                    std::string anomerSymbol;
-                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                    else                                                                                 anomerSymbol = "&#63;";
 
-                    std::string linkagePosition = std::to_string(link.get_order());
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
 
-                    Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
-                    add_link ( new_bond );
+                std::string linkagePosition = std::to_string(link.get_order());
 
-                    recursive_paint ( mg, linked_node, x, y + 110 );
-                }
-                else // up it goes, then
-                {
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                add_link ( new_bond );
 
-                    std::string anomerSymbol;
-                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                    else                                                                                 anomerSymbol = "&#63;";
-
-                    std::string linkagePosition = std::to_string(link.get_order());
-
-                    Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
-                    add_link ( new_bond );
-                    // }
-                    recursive_paint ( mg, linked_node, x, y - 110 );
-                }
+                recursive_paint ( mg, linked_node, x, y + 110 );
             }
-            else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
+            else // up it goes, then
             {
-                up_down++;
-                if ( link.get_order() == 3 ) // it goes down
-                {
 
-                    std::string anomerSymbol;
-                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                    else                                                                                 anomerSymbol = "&#63;";
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
 
-                    std::string linkagePosition = std::to_string(link.get_order());
+                std::string linkagePosition = std::to_string(link.get_order());
 
-                    Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
-                    add_link ( new_bond );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                add_link ( new_bond );
 
-                    recursive_paint ( mg, linked_node, x, y + 110 );
-                }
-                else // up it goes, then
-                {
-
-                    std::string anomerSymbol;
-                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                    else                                                                                 anomerSymbol = "&#63;";
-
-                    std::string linkagePosition = std::to_string(link.get_order());
-
-                    Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
-                    add_link ( new_bond );
-
-                    recursive_paint ( mg, linked_node, x, y - 110 );
-                }
+                recursive_paint ( mg, linked_node, x, y - 110 );
             }
-            else // pseudo-general case
-            {
-                Link_type orientation;
-                int sign = 0;
-                bool nodeHasSpecialCase = false; 
+        }
+        else // pseudo-general case
+        {
+            Link_type orientation;
+            int sign = 0;
+            bool nodeHasSpecialCase = false; 
 
-                for ( int j = 0; j < node.number_of_connections(); j++)
+            for ( int j = 0; j < node.number_of_connections(); j++)
+                {
+                    clipper::MGlycan::Linkage link = node.get_connection(j);
+                    const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+                    if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
+                    nodeHasSpecialCase = true;
+
+                    if(nodeHasSpecialCase) break;
+                }
+            
+            switch (branches - j - up_down)
+            {
+                case 3:
+                    orientation = up_side; // up_side
+                    sign = 1; // -1
+                    break;
+                case 2:
+                    if (nodeHasSpecialCase)
                     {
-                        clipper::MGlycan::Linkage link = node.get_connection(j);
-                        const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
-
-                        if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
-                        nodeHasSpecialCase = true;
-
-                        if(nodeHasSpecialCase) break;
+                        sign = 0; // 1 not here before
+                        orientation = side;
                     }
-                
-                switch (branches - j - up_down)
-                {
-                    case 3:
-                        orientation = up_side; // up_side
-                        sign = 1; // -1
-                        break;
-                    case 2:
+                    else
+                    {
+                        sign = 1;
+                        orientation = branch_side;
+                    }      
+                    break;
+                case 1:
+                    if ( branches != 1 )
+                    {
                         if (nodeHasSpecialCase)
                         {
                             sign = 0; // 1 not here before
@@ -3229,53 +3129,38 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         }
                         else
                         {
-                            sign = 1;
-                            orientation = branch_side;
+                            sign = -1;
+                            orientation = down_side;
                         }      
-                        break;
-                    case 1:
-                        if ( branches != 1 )
-                        {
-                            if (nodeHasSpecialCase)
-                            {
-                                sign = 0; // 1 not here before
-                                orientation = side;
-                            }
-                            else
-                            {
-                                sign = -1;
-                                orientation = down_side;
-                            }      
-                        }
-                        else
-                        {
-                            orientation = side;
-                            sign = 0;
-                        }
-                        break;
-                    default:
+                    }
+                    else
+                    {
                         orientation = side;
-                        sign = 0; // not here before
-                        break;
-                }
-
-                bool is_ketose = false;
-
-                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
-                    is_ketose = true;
-
-                std::string anomerSymbol;
-                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
-                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
-                else                                                                                 anomerSymbol = "&#63;";
-
-                std::string linkagePosition = std::to_string(link.get_order());
-
-                Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
-                add_link ( new_bond );
-
-                recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
+                        sign = 0;
+                    }
+                    break;
+                default:
+                    orientation = side;
+                    sign = 0; // not here before
+                    break;
             }
+
+            bool is_ketose = false;
+
+            if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                is_ketose = true;
+
+            std::string anomerSymbol;
+            if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+            else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+            else                                                                                 anomerSymbol = "&#63;";
+
+            std::string linkagePosition = std::to_string(link.get_order());
+
+            Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+            add_link ( new_bond );
+
+            recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
         }
     }
 }

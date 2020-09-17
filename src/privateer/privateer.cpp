@@ -212,7 +212,7 @@ int main(int argc, char** argv)
                 ipwurcsjson = args[arg];
 
                 // DONT FORGET!!!
-                ipwurcsjson = "/home/harold/Dev/privateer_standalone/src/privateer/database.json";
+                // ipwurcsjson = "/home/harold/Dev/privateer_standalone/src/privateer/database.json";
                 std::string fileName = ipwurcsjson.tail();
                 std::string fileExtension = fileName.substr( fileName.length() - 5 );
 
