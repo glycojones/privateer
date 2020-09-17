@@ -23,6 +23,8 @@ KEYWDS   2 RESPONSE, INFLAMMATORY RESPONSE, INNATE IMMUNITY, LEUCINE-RICH
 KEYWDS   3 REPEAT, MEMBRANE, TRANSMEMBRANE, IMMUNE SYSTEM                       
 EXPDTA    X-RAY DIFFRACTION                                                     
 AUTHOR    J.-O.LEE,H.M.KIM,B.S.PARK                                             
+REVDAT   6   29-JUL-20 2Z62    1       COMPND REMARK HETNAM LINK                
+REVDAT   6 2                   1       SITE   ATOM                              
 REVDAT   5   09-AUG-17 2Z62    1       SOURCE REMARK                            
 REVDAT   4   13-JUL-11 2Z62    1       VERSN                                    
 REVDAT   3   21-JUL-10 2Z62    1       REMARK                                   
@@ -41,7 +43,8 @@ REMARK   2 RESOLUTION.    1.70 ANGSTROMS.
 REMARK   3                                                                      
 REMARK   3 REFINEMENT.                                                          
 REMARK   3   PROGRAM     : REFMAC 5.0                                           
-REMARK   3   AUTHORS     : MURSHUDOV,VAGIN,DODSON                               
+REMARK   3   AUTHORS     : MURSHUDOV,SKUBAK,LEBEDEV,PANNU,STEINER,              
+REMARK   3               : NICHOLLS,WINN,LONG,VAGIN                             
 REMARK   3                                                                      
 REMARK   3    REFINEMENT TARGET : ENGH & HUBER                                  
 REMARK   3                                                                      
@@ -285,7 +288,7 @@ REMARK 350
 REMARK 350 BIOMOLECULE: 1                                                       
 REMARK 350 SOFTWARE DETERMINED QUATERNARY STRUCTURE: MONOMERIC                  
 REMARK 350 SOFTWARE USED: PISA                                                  
-REMARK 350 APPLY THE FOLLOWING TO CHAINS: A                                     
+REMARK 350 APPLY THE FOLLOWING TO CHAINS: A, B, C, D                            
 REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            
 REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            
 REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            
@@ -317,7 +320,7 @@ REMARK 500 1.6 ANGSTROMS FOR CONTACTS INVOLVING HYDROGEN ATOMS
 REMARK 500                                                                      
 REMARK 500  ATM1  RES C  SSEQI   ATM2  RES C  SSEQI  SSYMOP   DISTANCE          
 REMARK 500   O    HOH A   369     O    HOH A   536     4555     1.81            
-REMARK 500   O2   FUL A   802     O    HOH A   503     1455     1.90            
+REMARK 500   O2   FUL B     4     O    HOH A   503     1455     1.90            
 REMARK 500                                                                      
 REMARK 500 REMARK: NULL                                                         
 REMARK 500                                                                      
@@ -350,43 +353,6 @@ REMARK 600 HETEROGEN
 REMARK 600                                                                      
 REMARK 600 POLYSACCHARIDES WERE ORIGINALLY ASSIGNED TO CHAINS M(701-703),       
 REMARK 600 N(801-804), AND L(901-902), RESPECTIVELY.                            
-REMARK 800                                                                      
-REMARK 800 SITE                                                                 
-REMARK 800 SITE_IDENTIFIER: AC1                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 801                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC2                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE FUL A 802                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC3                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 803                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC4                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE BMA A 804                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC5                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 701                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC6                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE FUL A 702                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC7                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 703                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC8                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 901                 
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC9                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE NAG A 903                 
 REMARK 900                                                                      
 REMARK 900 RELATED ENTRIES                                                      
 REMARK 900 RELATED ID: 2Z63   RELATED DB: PDB                                   
@@ -430,22 +396,22 @@ SEQRES  22 A  276  ILE CYS PRO
 MODRES 2Z62 ASN A   35  ASN  GLYCOSYLATION SITE                                 
 MODRES 2Z62 ASN A  173  ASN  GLYCOSYLATION SITE                                 
 MODRES 2Z62 ASN A  205  ASN  GLYCOSYLATION SITE                                 
-HET    NAG  A 801      14                                                       
-HET    FUL  A 802      10                                                       
-HET    NAG  A 803      14                                                       
-HET    BMA  A 804      11                                                       
-HET    NAG  A 701      14                                                       
-HET    FUL  A 702      10                                                       
-HET    NAG  A 703      14                                                       
-HET    NAG  A 901      14                                                       
-HET    NAG  A 903      14                                                       
-HETNAM     NAG N-ACETYL-D-GLUCOSAMINE                                           
-HETNAM     FUL BETA-L-FUCOSE                                                    
-HETNAM     BMA BETA-D-MANNOSE                                                   
+HET    NAG  B   1      14                                                       
+HET    NAG  B   2      14                                                       
+HET    BMA  B   3      11                                                       
+HET    FUL  B   4      10                                                       
+HET    NAG  C   1      14                                                       
+HET    NAG  C   2      14                                                       
+HET    FUL  C   3      10                                                       
+HET    NAG  D   1      14                                                       
+HET    NAG  D   2      14                                                       
+HETNAM     NAG 2-ACETAMIDO-2-DEOXY-BETA-D-GLUCOPYRANOSE                         
+HETNAM     BMA BETA-D-MANNOPYRANOSE                                             
+HETNAM     FUL BETA-L-FUCOPYRANOSE                                              
 HETSYN     FUL 6-DEOXY-BETA-L-GALACTOSE                                         
 FORMUL   2  NAG    6(C8 H15 N O6)                                               
-FORMUL   2  FUL    2(C6 H12 O5)                                                 
 FORMUL   2  BMA    C6 H12 O6                                                    
+FORMUL   2  FUL    2(C6 H12 O5)                                                 
 FORMUL   5  HOH   *242(H2 O)                                                    
 HELIX    1   1 PRO A  168  LEU A  174  5                                   7    
 HELIX    2   2 TYR A  191  ASP A  194  5                                   4    
@@ -472,29 +438,16 @@ SHEET    2   C 2 PHE A 217  ILE A 218  1  O  PHE A 217   N  ILE A 190
 SSBOND   1 CYS A   29    CYS A   40                          1555   1555  2.05  
 SSBOND   2 CYS A  264    CYS A  289                          1555   1555  2.02  
 SSBOND   3 CYS A  266    CYS A  301                          1555   1555  2.04  
-LINK         O4  NAG A 701                 C1  NAG A 703     1555   1555  1.44  
-LINK         ND2 ASN A  35                 C1  NAG A 701     1555   1555  1.44  
-LINK         O6  NAG A 801                 C1  FUL A 802     1555   1555  1.44  
-LINK         O4  NAG A 901                 C1  NAG A 903     1555   1555  1.44  
-LINK         O4  NAG A 803                 C1  BMA A 804     1555   1555  1.45  
-LINK         O6  NAG A 701                 C1  FUL A 702     1555   1555  1.45  
-LINK         O4  NAG A 801                 C1  NAG A 803     1555   1555  1.45  
-LINK         ND2 ASN A 173                 C1  NAG A 801     1555   1555  1.45  
-LINK         ND2 ASN A 205                 C1  NAG A 901     1555   1555  1.45  
+LINK         ND2 ASN A  35                 C1  NAG C   1     1555   1555  1.44  
+LINK         ND2 ASN A 173                 C1  NAG B   1     1555   1555  1.45  
+LINK         ND2 ASN A 205                 C1  NAG D   1     1555   1555  1.45  
+LINK         O4  NAG B   1                 C1  NAG B   2     1555   1555  1.45  
+LINK         O6  NAG B   1                 C1  FUL B   4     1555   1555  1.44  
+LINK         O4  NAG B   2                 C1  BMA B   3     1555   1555  1.45  
+LINK         O4  NAG C   1                 C1  NAG C   2     1555   1555  1.44  
+LINK         O6  NAG C   1                 C1  FUL C   3     1555   1555  1.45  
+LINK         O4  NAG D   1                 C1  NAG D   2     1555   1555  1.44  
 CISPEP   1 CYS A  266    PRO A  267          0         5.07                     
-SITE     1 AC1  7 GLY A 147  HIS A 148  TYR A 170  ASN A 173                    
-SITE     2 AC1  7 HOH A 539  FUL A 802  NAG A 803                               
-SITE     1 AC2  4 HIS A 148  LYS A 150  HOH A 503  NAG A 801                    
-SITE     1 AC3  4 TYR A  46  HIS A 148  NAG A 801  BMA A 804                    
-SITE     1 AC4  2 HOH A 499  NAG A 803                                          
-SITE     1 AC5  7 ASN A  35  PRO A  53  SER A  55  HOH A 491                    
-SITE     2 AC5  7 HOH A 496  FUL A 702  NAG A 703                               
-SITE     1 AC6  5 GLU A  31  TYR A  38  PRO A  53  HOH A 537                    
-SITE     2 AC6  5 NAG A 701                                                     
-SITE     1 AC7  3 ASP A 243  HOH A 543  NAG A 701                               
-SITE     1 AC8  5 ASN A 205  LYS A 229  HOH A 541  HOH A 542                    
-SITE     2 AC8  5 NAG A 903                                                     
-SITE     1 AC9  3 GLY A 291  HOH A 521  NAG A 901                               
 CRYST1   43.945   54.214  116.637  90.00  90.00  90.00 P 21 21 21    4          
 ORIGX1      1.000000  0.000000  0.000000        0.00000                         
 ORIGX2      0.000000  1.000000  0.000000        0.00000                         
@@ -2692,121 +2645,121 @@ ATOM   2187  CG  PRO A 302      -1.148  20.826 -23.193  1.00 25.23           C
 ATOM   2188  CD  PRO A 302      -1.035  20.011 -21.943  1.00 24.96           C  
 ATOM   2189  OXT PRO A 302      -4.537  19.687 -21.292  1.00 28.06           O  
 TER    2190      PRO A 302                                                      
-HETATM 2191  C1  NAG A 801       2.135 -12.658  16.450  1.00 27.29           C  
-HETATM 2192  C2  NAG A 801       3.066 -13.866  16.255  1.00 28.95           C  
-HETATM 2193  C3  NAG A 801       2.367 -15.160  16.686  1.00 31.61           C  
-HETATM 2194  C4  NAG A 801       1.747 -15.049  18.080  1.00 33.32           C  
-HETATM 2195  C5  NAG A 801       0.938 -13.751  18.247  1.00 34.76           C  
-HETATM 2196  C6  NAG A 801       0.558 -13.536  19.716  1.00 40.69           C  
-HETATM 2197  C7  NAG A 801       4.820 -14.268  14.612  1.00 27.91           C  
-HETATM 2198  C8  NAG A 801       5.125 -14.906  13.290  1.00 28.83           C  
-HETATM 2199  N2  NAG A 801       3.543 -13.992  14.883  1.00 28.91           N  
-HETATM 2200  O3  NAG A 801       3.291 -16.229  16.680  1.00 33.17           O  
-HETATM 2201  O4  NAG A 801       0.931 -16.198  18.255  1.00 33.49           O  
-HETATM 2202  O5  NAG A 801       1.667 -12.618  17.788  1.00 29.46           O  
-HETATM 2203  O6  NAG A 801       1.034 -12.292  20.186  1.00 53.74           O  
-HETATM 2204  O7  NAG A 801       5.732 -14.025  15.404  1.00 27.35           O  
-HETATM 2205  C1  FUL A 802       1.524 -12.393  21.536  1.00 57.81           C  
-HETATM 2206  C2  FUL A 802       0.986 -11.193  22.333  1.00 60.93           C  
-HETATM 2207  O2  FUL A 802      -0.402 -11.356  22.539  1.00 63.79           O  
-HETATM 2208  C3  FUL A 802       1.673 -11.004  23.692  1.00 61.57           C  
-HETATM 2209  O3  FUL A 802       1.382  -9.725  24.213  1.00 60.06           O  
-HETATM 2210  C4  FUL A 802       3.187 -11.220  23.610  1.00 63.03           C  
-HETATM 2211  O4  FUL A 802       3.803 -10.157  22.909  1.00 63.61           O  
-HETATM 2212  C5  FUL A 802       3.458 -12.544  22.899  1.00 62.54           C  
-HETATM 2213  C6  FUL A 802       4.943 -12.889  22.888  1.00 64.15           C  
-HETATM 2214  O5  FUL A 802       2.944 -12.464  21.581  1.00 60.78           O  
-HETATM 2215  C1  NAG A 803       1.097 -16.822  19.549  1.00 37.03           C  
-HETATM 2216  C2  NAG A 803      -0.099 -17.739  19.817  1.00 37.14           C  
-HETATM 2217  C3  NAG A 803       0.005 -18.423  21.178  1.00 38.76           C  
-HETATM 2218  C4  NAG A 803       1.390 -19.022  21.429  1.00 39.98           C  
-HETATM 2219  C5  NAG A 803       2.506 -18.059  20.995  1.00 40.14           C  
-HETATM 2220  C6  NAG A 803       3.875 -18.730  21.034  1.00 42.42           C  
-HETATM 2221  C7  NAG A 803      -2.176 -17.169  18.713  1.00 38.65           C  
-HETATM 2222  C8  NAG A 803      -3.606 -16.788  18.948  1.00 38.55           C  
-HETATM 2223  N2  NAG A 803      -1.344 -16.997  19.739  1.00 35.53           N  
-HETATM 2224  O3  NAG A 803      -0.975 -19.437  21.258  1.00 38.79           O  
-HETATM 2225  O4  NAG A 803       1.487 -19.282  22.813  1.00 43.75           O  
-HETATM 2226  O5  NAG A 803       2.290 -17.573  19.677  1.00 36.32           O  
-HETATM 2227  O6  NAG A 803       4.853 -17.759  21.328  1.00 47.16           O  
-HETATM 2228  O7  NAG A 803      -1.822 -17.615  17.621  1.00 38.21           O  
-HETATM 2229  C1  BMA A 804       1.549 -20.697  23.099  1.00 46.26           C  
-HETATM 2230  C2  BMA A 804       2.343 -20.895  24.386  1.00 47.74           C  
-HETATM 2231  C3  BMA A 804       2.474 -22.384  24.692  1.00 48.79           C  
-HETATM 2232  C4  BMA A 804       1.096 -23.046  24.731  1.00 50.23           C  
-HETATM 2233  C5  BMA A 804       0.282 -22.702  23.474  1.00 49.88           C  
-HETATM 2234  C6  BMA A 804      -1.157 -23.201  23.607  1.00 51.04           C  
-HETATM 2235  O2  BMA A 804       1.668 -20.240  25.441  1.00 46.41           O  
-HETATM 2236  O3  BMA A 804       3.133 -22.583  25.926  1.00 49.32           O  
-HETATM 2237  O4  BMA A 804       1.268 -24.440  24.875  1.00 49.95           O  
-HETATM 2238  O5  BMA A 804       0.271 -21.298  23.239  1.00 47.52           O  
-HETATM 2239  O6  BMA A 804      -1.994 -22.537  22.685  1.00 52.30           O  
-HETATM 2240  C1  NAG A 701      29.176   0.163  40.202  1.00 26.60           C  
-HETATM 2241  C2  NAG A 701      28.167  -0.595  41.070  1.00 30.85           C  
-HETATM 2242  C3  NAG A 701      28.843  -1.504  42.102  1.00 28.41           C  
-HETATM 2243  C4  NAG A 701      30.011  -2.306  41.510  1.00 30.59           C  
-HETATM 2244  C5  NAG A 701      30.885  -1.407  40.633  1.00 30.64           C  
-HETATM 2245  C6  NAG A 701      32.022  -2.167  39.941  1.00 32.52           C  
-HETATM 2246  C7  NAG A 701      26.043   0.609  41.354  1.00 34.11           C  
-HETATM 2247  C8  NAG A 701      25.395   1.795  42.006  1.00 33.79           C  
-HETATM 2248  N2  NAG A 701      27.284   0.335  41.762  1.00 31.68           N  
-HETATM 2249  O3  NAG A 701      27.878  -2.391  42.640  1.00 29.75           O  
-HETATM 2250  O4  NAG A 701      30.775  -2.828  42.583  1.00 34.21           O  
-HETATM 2251  O5  NAG A 701      30.107  -0.750  39.646  1.00 28.30           O  
-HETATM 2252  O6  NAG A 701      32.777  -1.291  39.129  1.00 36.57           O  
-HETATM 2253  O7  NAG A 701      25.436  -0.047  40.504  1.00 32.23           O  
-HETATM 2254  C1  FUL A 702      33.639  -0.449  39.928  1.00 44.84           C  
-HETATM 2255  C2  FUL A 702      33.297   1.027  39.703  1.00 48.29           C  
-HETATM 2256  O2  FUL A 702      33.798   1.816  40.759  1.00 53.48           O  
-HETATM 2257  C3  FUL A 702      33.827   1.533  38.363  1.00 49.67           C  
-HETATM 2258  O3  FUL A 702      33.003   1.046  37.326  1.00 55.67           O  
-HETATM 2259  C4  FUL A 702      35.273   1.117  38.084  1.00 49.73           C  
-HETATM 2260  O4  FUL A 702      35.559   1.342  36.721  1.00 44.77           O  
-HETATM 2261  C5  FUL A 702      35.608  -0.335  38.479  1.00 47.70           C  
-HETATM 2262  C6  FUL A 702      35.314  -1.377  37.393  1.00 45.48           C  
-HETATM 2263  O5  FUL A 702      35.020  -0.712  39.722  1.00 49.59           O  
-HETATM 2264  C1  NAG A 703      31.033  -4.237  42.454  1.00 36.31           C  
-HETATM 2265  C2  NAG A 703      32.139  -4.593  43.457  1.00 40.76           C  
-HETATM 2266  C3  NAG A 703      32.354  -6.104  43.587  1.00 41.07           C  
-HETATM 2267  C4  NAG A 703      31.034  -6.861  43.646  1.00 39.87           C  
-HETATM 2268  C5  NAG A 703      30.128  -6.421  42.496  1.00 39.56           C  
-HETATM 2269  C6  NAG A 703      28.804  -7.176  42.478  1.00 40.20           C  
-HETATM 2270  C7  NAG A 703      34.360  -4.351  42.332  1.00 49.91           C  
-HETATM 2271  C8  NAG A 703      35.733  -4.391  42.939  1.00 50.48           C  
-HETATM 2272  N2  NAG A 703      33.377  -3.888  43.124  1.00 45.48           N  
-HETATM 2273  O3  NAG A 703      33.087  -6.375  44.760  1.00 42.80           O  
-HETATM 2274  O4  NAG A 703      31.314  -8.241  43.574  1.00 38.76           O  
-HETATM 2275  O5  NAG A 703      29.873  -5.038  42.628  1.00 37.43           O  
-HETATM 2276  O6  NAG A 703      28.072  -6.837  41.316  1.00 46.04           O  
-HETATM 2277  O7  NAG A 703      34.203  -4.719  41.163  1.00 49.28           O  
-HETATM 2278  C1  NAG A 901       0.958  10.125  14.467  1.00 28.29           C  
-HETATM 2279  C2  NAG A 901       2.087  10.542  15.413  1.00 33.28           C  
-HETATM 2280  C3  NAG A 901       1.542  10.631  16.838  1.00 36.62           C  
-HETATM 2281  C4  NAG A 901       0.285  11.504  16.916  1.00 37.09           C  
-HETATM 2282  C5  NAG A 901      -0.697  11.178  15.778  1.00 34.87           C  
-HETATM 2283  C6  NAG A 901      -1.871  12.152  15.687  1.00 33.53           C  
-HETATM 2284  C7  NAG A 901       4.430   9.921  14.964  1.00 36.44           C  
-HETATM 2285  C8  NAG A 901       5.369   8.760  14.825  1.00 36.47           C  
-HETATM 2286  N2  NAG A 901       3.198   9.607  15.365  1.00 34.55           N  
-HETATM 2287  O3  NAG A 901       2.533  11.144  17.704  1.00 33.71           O  
-HETATM 2288  O4  NAG A 901      -0.333  11.277  18.167  1.00 43.60           O  
-HETATM 2289  O5  NAG A 901      -0.020  11.154  14.532  1.00 29.42           O  
-HETATM 2290  O6  NAG A 901      -1.429  13.486  15.770  1.00 33.71           O  
-HETATM 2291  O7  NAG A 901       4.817  11.066  14.714  1.00 35.27           O  
-HETATM 2292  C1  NAG A 903      -0.401  12.482  18.955  1.00 50.45           C  
-HETATM 2293  C2  NAG A 903      -1.277  12.221  20.178  1.00 53.97           C  
-HETATM 2294  C3  NAG A 903      -1.463  13.525  20.948  1.00 55.97           C  
-HETATM 2295  C4  NAG A 903      -0.097  14.110  21.317  1.00 56.20           C  
-HETATM 2296  C5  NAG A 903       0.825  14.192  20.091  1.00 56.40           C  
-HETATM 2297  C6  NAG A 903       2.249  14.574  20.488  1.00 57.55           C  
-HETATM 2298  C7  NAG A 903      -2.824  10.353  20.081  1.00 58.47           C  
-HETATM 2299  C8  NAG A 903      -3.027   9.424  18.920  1.00 58.99           C  
-HETATM 2300  N2  NAG A 903      -2.549  11.628  19.799  1.00 55.51           N  
-HETATM 2301  O3  NAG A 903      -2.233  13.295  22.107  1.00 56.67           O  
-HETATM 2302  O4  NAG A 903      -0.268  15.394  21.878  1.00 57.84           O  
-HETATM 2303  O5  NAG A 903       0.863  12.962  19.377  1.00 53.46           O  
-HETATM 2304  O6  NAG A 903       2.920  13.453  21.028  1.00 59.85           O  
-HETATM 2305  O7  NAG A 903      -2.916   9.922  21.230  1.00 61.07           O  
+HETATM 2191  C1  NAG B   1       2.135 -12.658  16.450  1.00 27.29           C  
+HETATM 2192  C2  NAG B   1       3.066 -13.866  16.255  1.00 28.95           C  
+HETATM 2193  C3  NAG B   1       2.367 -15.160  16.686  1.00 31.61           C  
+HETATM 2194  C4  NAG B   1       1.747 -15.049  18.080  1.00 33.32           C  
+HETATM 2195  C5  NAG B   1       0.938 -13.751  18.247  1.00 34.76           C  
+HETATM 2196  C6  NAG B   1       0.558 -13.536  19.716  1.00 40.69           C  
+HETATM 2197  C7  NAG B   1       4.820 -14.268  14.612  1.00 27.91           C  
+HETATM 2198  C8  NAG B   1       5.125 -14.906  13.290  1.00 28.83           C  
+HETATM 2199  N2  NAG B   1       3.543 -13.992  14.883  1.00 28.91           N  
+HETATM 2200  O3  NAG B   1       3.291 -16.229  16.680  1.00 33.17           O  
+HETATM 2201  O4  NAG B   1       0.931 -16.198  18.255  1.00 33.49           O  
+HETATM 2202  O5  NAG B   1       1.667 -12.618  17.788  1.00 29.46           O  
+HETATM 2203  O6  NAG B   1       1.034 -12.292  20.186  1.00 53.74           O  
+HETATM 2204  O7  NAG B   1       5.732 -14.025  15.404  1.00 27.35           O  
+HETATM 2205  C1  NAG B   2       1.097 -16.822  19.549  1.00 37.03           C  
+HETATM 2206  C2  NAG B   2      -0.099 -17.739  19.817  1.00 37.14           C  
+HETATM 2207  C3  NAG B   2       0.005 -18.423  21.178  1.00 38.76           C  
+HETATM 2208  C4  NAG B   2       1.390 -19.022  21.429  1.00 39.98           C  
+HETATM 2209  C5  NAG B   2       2.506 -18.059  20.995  1.00 40.14           C  
+HETATM 2210  C6  NAG B   2       3.875 -18.730  21.034  1.00 42.42           C  
+HETATM 2211  C7  NAG B   2      -2.176 -17.169  18.713  1.00 38.65           C  
+HETATM 2212  C8  NAG B   2      -3.606 -16.788  18.948  1.00 38.55           C  
+HETATM 2213  N2  NAG B   2      -1.344 -16.997  19.739  1.00 35.53           N  
+HETATM 2214  O3  NAG B   2      -0.975 -19.437  21.258  1.00 38.79           O  
+HETATM 2215  O4  NAG B   2       1.487 -19.282  22.813  1.00 43.75           O  
+HETATM 2216  O5  NAG B   2       2.290 -17.573  19.677  1.00 36.32           O  
+HETATM 2217  O6  NAG B   2       4.853 -17.759  21.328  1.00 47.16           O  
+HETATM 2218  O7  NAG B   2      -1.822 -17.615  17.621  1.00 38.21           O  
+HETATM 2219  C1  BMA B   3       1.549 -20.697  23.099  1.00 46.26           C  
+HETATM 2220  C2  BMA B   3       2.343 -20.895  24.386  1.00 47.74           C  
+HETATM 2221  C3  BMA B   3       2.474 -22.384  24.692  1.00 48.79           C  
+HETATM 2222  C4  BMA B   3       1.096 -23.046  24.731  1.00 50.23           C  
+HETATM 2223  C5  BMA B   3       0.282 -22.702  23.474  1.00 49.88           C  
+HETATM 2224  C6  BMA B   3      -1.157 -23.201  23.607  1.00 51.04           C  
+HETATM 2225  O2  BMA B   3       1.668 -20.240  25.441  1.00 46.41           O  
+HETATM 2226  O3  BMA B   3       3.133 -22.583  25.926  1.00 49.32           O  
+HETATM 2227  O4  BMA B   3       1.268 -24.440  24.875  1.00 49.95           O  
+HETATM 2228  O5  BMA B   3       0.271 -21.298  23.239  1.00 47.52           O  
+HETATM 2229  O6  BMA B   3      -1.994 -22.537  22.685  1.00 52.30           O  
+HETATM 2230  C1  FUL B   4       1.524 -12.393  21.536  1.00 57.81           C  
+HETATM 2231  C2  FUL B   4       0.986 -11.193  22.333  1.00 60.93           C  
+HETATM 2232  O2  FUL B   4      -0.402 -11.356  22.539  1.00 63.79           O  
+HETATM 2233  C3  FUL B   4       1.673 -11.004  23.692  1.00 61.57           C  
+HETATM 2234  O3  FUL B   4       1.382  -9.725  24.213  1.00 60.06           O  
+HETATM 2235  C4  FUL B   4       3.187 -11.220  23.610  1.00 63.03           C  
+HETATM 2236  O4  FUL B   4       3.803 -10.157  22.909  1.00 63.61           O  
+HETATM 2237  C5  FUL B   4       3.458 -12.544  22.899  1.00 62.54           C  
+HETATM 2238  C6  FUL B   4       4.943 -12.889  22.888  1.00 64.15           C  
+HETATM 2239  O5  FUL B   4       2.944 -12.464  21.581  1.00 60.78           O  
+HETATM 2240  C1  NAG C   1      29.176   0.163  40.202  1.00 26.60           C  
+HETATM 2241  C2  NAG C   1      28.167  -0.595  41.070  1.00 30.85           C  
+HETATM 2242  C3  NAG C   1      28.843  -1.504  42.102  1.00 28.41           C  
+HETATM 2243  C4  NAG C   1      30.011  -2.306  41.510  1.00 30.59           C  
+HETATM 2244  C5  NAG C   1      30.885  -1.407  40.633  1.00 30.64           C  
+HETATM 2245  C6  NAG C   1      32.022  -2.167  39.941  1.00 32.52           C  
+HETATM 2246  C7  NAG C   1      26.043   0.609  41.354  1.00 34.11           C  
+HETATM 2247  C8  NAG C   1      25.395   1.795  42.006  1.00 33.79           C  
+HETATM 2248  N2  NAG C   1      27.284   0.335  41.762  1.00 31.68           N  
+HETATM 2249  O3  NAG C   1      27.878  -2.391  42.640  1.00 29.75           O  
+HETATM 2250  O4  NAG C   1      30.775  -2.828  42.583  1.00 34.21           O  
+HETATM 2251  O5  NAG C   1      30.107  -0.750  39.646  1.00 28.30           O  
+HETATM 2252  O6  NAG C   1      32.777  -1.291  39.129  1.00 36.57           O  
+HETATM 2253  O7  NAG C   1      25.436  -0.047  40.504  1.00 32.23           O  
+HETATM 2254  C1  NAG C   2      31.033  -4.237  42.454  1.00 36.31           C  
+HETATM 2255  C2  NAG C   2      32.139  -4.593  43.457  1.00 40.76           C  
+HETATM 2256  C3  NAG C   2      32.354  -6.104  43.587  1.00 41.07           C  
+HETATM 2257  C4  NAG C   2      31.034  -6.861  43.646  1.00 39.87           C  
+HETATM 2258  C5  NAG C   2      30.128  -6.421  42.496  1.00 39.56           C  
+HETATM 2259  C6  NAG C   2      28.804  -7.176  42.478  1.00 40.20           C  
+HETATM 2260  C7  NAG C   2      34.360  -4.351  42.332  1.00 49.91           C  
+HETATM 2261  C8  NAG C   2      35.733  -4.391  42.939  1.00 50.48           C  
+HETATM 2262  N2  NAG C   2      33.377  -3.888  43.124  1.00 45.48           N  
+HETATM 2263  O3  NAG C   2      33.087  -6.375  44.760  1.00 42.80           O  
+HETATM 2264  O4  NAG C   2      31.314  -8.241  43.574  1.00 38.76           O  
+HETATM 2265  O5  NAG C   2      29.873  -5.038  42.628  1.00 37.43           O  
+HETATM 2266  O6  NAG C   2      28.072  -6.837  41.316  1.00 46.04           O  
+HETATM 2267  O7  NAG C   2      34.203  -4.719  41.163  1.00 49.28           O  
+HETATM 2268  C1  FUL C   3      33.639  -0.449  39.928  1.00 44.84           C  
+HETATM 2269  C2  FUL C   3      33.297   1.027  39.703  1.00 48.29           C  
+HETATM 2270  O2  FUL C   3      33.798   1.816  40.759  1.00 53.48           O  
+HETATM 2271  C3  FUL C   3      33.827   1.533  38.363  1.00 49.67           C  
+HETATM 2272  O3  FUL C   3      33.003   1.046  37.326  1.00 55.67           O  
+HETATM 2273  C4  FUL C   3      35.273   1.117  38.084  1.00 49.73           C  
+HETATM 2274  O4  FUL C   3      35.559   1.342  36.721  1.00 44.77           O  
+HETATM 2275  C5  FUL C   3      35.608  -0.335  38.479  1.00 47.70           C  
+HETATM 2276  C6  FUL C   3      35.314  -1.377  37.393  1.00 45.48           C  
+HETATM 2277  O5  FUL C   3      35.020  -0.712  39.722  1.00 49.59           O  
+HETATM 2278  C1  NAG D   1       0.958  10.125  14.467  1.00 28.29           C  
+HETATM 2279  C2  NAG D   1       2.087  10.542  15.413  1.00 33.28           C  
+HETATM 2280  C3  NAG D   1       1.542  10.631  16.838  1.00 36.62           C  
+HETATM 2281  C4  NAG D   1       0.285  11.504  16.916  1.00 37.09           C  
+HETATM 2282  C5  NAG D   1      -0.697  11.178  15.778  1.00 34.87           C  
+HETATM 2283  C6  NAG D   1      -1.871  12.152  15.687  1.00 33.53           C  
+HETATM 2284  C7  NAG D   1       4.430   9.921  14.964  1.00 36.44           C  
+HETATM 2285  C8  NAG D   1       5.369   8.760  14.825  1.00 36.47           C  
+HETATM 2286  N2  NAG D   1       3.198   9.607  15.365  1.00 34.55           N  
+HETATM 2287  O3  NAG D   1       2.533  11.144  17.704  1.00 33.71           O  
+HETATM 2288  O4  NAG D   1      -0.333  11.277  18.167  1.00 43.60           O  
+HETATM 2289  O5  NAG D   1      -0.020  11.154  14.532  1.00 29.42           O  
+HETATM 2290  O6  NAG D   1      -1.429  13.486  15.770  1.00 33.71           O  
+HETATM 2291  O7  NAG D   1       4.817  11.066  14.714  1.00 35.27           O  
+HETATM 2292  C1  NAG D   2      -0.401  12.482  18.955  1.00 50.45           C  
+HETATM 2293  C2  NAG D   2      -1.277  12.221  20.178  1.00 53.97           C  
+HETATM 2294  C3  NAG D   2      -1.463  13.525  20.948  1.00 55.97           C  
+HETATM 2295  C4  NAG D   2      -0.097  14.110  21.317  1.00 56.20           C  
+HETATM 2296  C5  NAG D   2       0.825  14.192  20.091  1.00 56.40           C  
+HETATM 2297  C6  NAG D   2       2.249  14.574  20.488  1.00 57.55           C  
+HETATM 2298  C7  NAG D   2      -2.824  10.353  20.081  1.00 58.47           C  
+HETATM 2299  C8  NAG D   2      -3.027   9.424  18.920  1.00 58.99           C  
+HETATM 2300  N2  NAG D   2      -2.549  11.628  19.799  1.00 55.51           N  
+HETATM 2301  O3  NAG D   2      -2.233  13.295  22.107  1.00 56.67           O  
+HETATM 2302  O4  NAG D   2      -0.268  15.394  21.878  1.00 57.84           O  
+HETATM 2303  O5  NAG D   2       0.863  12.962  19.377  1.00 53.46           O  
+HETATM 2304  O6  NAG D   2       2.920  13.453  21.028  1.00 59.85           O  
+HETATM 2305  O7  NAG D   2      -2.916   9.922  21.230  1.00 61.07           O  
 HETATM 2306  O   HOH A 303      21.626 -12.699  27.610  1.00  3.79           O  
 HETATM 2307  O   HOH A 304      14.350  -5.648  25.648  1.00 12.45           O  
 HETATM 2308  O   HOH A 305      19.986   3.314   2.135  1.00 14.25           O  
@@ -3068,45 +3021,45 @@ CONECT 2197 2198 2199 2204
 CONECT 2198 2197                                                                
 CONECT 2199 2192 2197                                                           
 CONECT 2200 2193                                                                
-CONECT 2201 2194 2215                                                           
+CONECT 2201 2194 2205                                                           
 CONECT 2202 2191 2195                                                           
-CONECT 2203 2196 2205                                                           
+CONECT 2203 2196 2230                                                           
 CONECT 2204 2197                                                                
-CONECT 2205 2203 2206 2214                                                      
-CONECT 2206 2205 2207 2208                                                      
-CONECT 2207 2206                                                                
-CONECT 2208 2206 2209 2210                                                      
-CONECT 2209 2208                                                                
-CONECT 2210 2208 2211 2212                                                      
-CONECT 2211 2210                                                                
-CONECT 2212 2210 2213 2214                                                      
-CONECT 2213 2212                                                                
-CONECT 2214 2205 2212                                                           
-CONECT 2215 2201 2216 2226                                                      
-CONECT 2216 2215 2217 2223                                                      
-CONECT 2217 2216 2218 2224                                                      
-CONECT 2218 2217 2219 2225                                                      
-CONECT 2219 2218 2220 2226                                                      
-CONECT 2220 2219 2227                                                           
-CONECT 2221 2222 2223 2228                                                      
-CONECT 2222 2221                                                                
-CONECT 2223 2216 2221                                                           
-CONECT 2224 2217                                                                
-CONECT 2225 2218 2229                                                           
-CONECT 2226 2215 2219                                                           
-CONECT 2227 2220                                                                
-CONECT 2228 2221                                                                
-CONECT 2229 2225 2230 2238                                                      
-CONECT 2230 2229 2231 2235                                                      
-CONECT 2231 2230 2232 2236                                                      
-CONECT 2232 2231 2233 2237                                                      
-CONECT 2233 2232 2234 2238                                                      
-CONECT 2234 2233 2239                                                           
-CONECT 2235 2230                                                                
-CONECT 2236 2231                                                                
-CONECT 2237 2232                                                                
-CONECT 2238 2229 2233                                                           
-CONECT 2239 2234                                                                
+CONECT 2205 2201 2206 2216                                                      
+CONECT 2206 2205 2207 2213                                                      
+CONECT 2207 2206 2208 2214                                                      
+CONECT 2208 2207 2209 2215                                                      
+CONECT 2209 2208 2210 2216                                                      
+CONECT 2210 2209 2217                                                           
+CONECT 2211 2212 2213 2218                                                      
+CONECT 2212 2211                                                                
+CONECT 2213 2206 2211                                                           
+CONECT 2214 2207                                                                
+CONECT 2215 2208 2219                                                           
+CONECT 2216 2205 2209                                                           
+CONECT 2217 2210                                                                
+CONECT 2218 2211                                                                
+CONECT 2219 2215 2220 2228                                                      
+CONECT 2220 2219 2221 2225                                                      
+CONECT 2221 2220 2222 2226                                                      
+CONECT 2222 2221 2223 2227                                                      
+CONECT 2223 2222 2224 2228                                                      
+CONECT 2224 2223 2229                                                           
+CONECT 2225 2220                                                                
+CONECT 2226 2221                                                                
+CONECT 2227 2222                                                                
+CONECT 2228 2219 2223                                                           
+CONECT 2229 2224                                                                
+CONECT 2230 2203 2231 2239                                                      
+CONECT 2231 2230 2232 2233                                                      
+CONECT 2232 2231                                                                
+CONECT 2233 2231 2234 2235                                                      
+CONECT 2234 2233                                                                
+CONECT 2235 2233 2236 2237                                                      
+CONECT 2236 2235                                                                
+CONECT 2237 2235 2238 2239                                                      
+CONECT 2238 2237                                                                
+CONECT 2239 2230 2237                                                           
 CONECT 2240   67 2241 2251                                                      
 CONECT 2241 2240 2242 2248                                                      
 CONECT 2242 2241 2243 2249                                                      
@@ -3117,34 +3070,34 @@ CONECT 2246 2247 2248 2253
 CONECT 2247 2246                                                                
 CONECT 2248 2241 2246                                                           
 CONECT 2249 2242                                                                
-CONECT 2250 2243 2264                                                           
+CONECT 2250 2243 2254                                                           
 CONECT 2251 2240 2244                                                           
-CONECT 2252 2245 2254                                                           
+CONECT 2252 2245 2268                                                           
 CONECT 2253 2246                                                                
-CONECT 2254 2252 2255 2263                                                      
-CONECT 2255 2254 2256 2257                                                      
-CONECT 2256 2255                                                                
-CONECT 2257 2255 2258 2259                                                      
-CONECT 2258 2257                                                                
-CONECT 2259 2257 2260 2261                                                      
-CONECT 2260 2259                                                                
-CONECT 2261 2259 2262 2263                                                      
-CONECT 2262 2261                                                                
-CONECT 2263 2254 2261                                                           
-CONECT 2264 2250 2265 2275                                                      
-CONECT 2265 2264 2266 2272                                                      
-CONECT 2266 2265 2267 2273                                                      
-CONECT 2267 2266 2268 2274                                                      
-CONECT 2268 2267 2269 2275                                                      
-CONECT 2269 2268 2276                                                           
-CONECT 2270 2271 2272 2277                                                      
-CONECT 2271 2270                                                                
-CONECT 2272 2265 2270                                                           
-CONECT 2273 2266                                                                
-CONECT 2274 2267                                                                
-CONECT 2275 2264 2268                                                           
-CONECT 2276 2269                                                                
-CONECT 2277 2270                                                                
+CONECT 2254 2250 2255 2265                                                      
+CONECT 2255 2254 2256 2262                                                      
+CONECT 2256 2255 2257 2263                                                      
+CONECT 2257 2256 2258 2264                                                      
+CONECT 2258 2257 2259 2265                                                      
+CONECT 2259 2258 2266                                                           
+CONECT 2260 2261 2262 2267                                                      
+CONECT 2261 2260                                                                
+CONECT 2262 2255 2260                                                           
+CONECT 2263 2256                                                                
+CONECT 2264 2257                                                                
+CONECT 2265 2254 2258                                                           
+CONECT 2266 2259                                                                
+CONECT 2267 2260                                                                
+CONECT 2268 2252 2269 2277                                                      
+CONECT 2269 2268 2270 2271                                                      
+CONECT 2270 2269                                                                
+CONECT 2271 2269 2272 2273                                                      
+CONECT 2272 2271                                                                
+CONECT 2273 2271 2274 2275                                                      
+CONECT 2274 2273                                                                
+CONECT 2275 2273 2276 2277                                                      
+CONECT 2276 2275                                                                
+CONECT 2277 2268 2275                                                           
 CONECT 2278 1419 2279 2289                                                      
 CONECT 2279 2278 2280 2286                                                      
 CONECT 2280 2279 2281 2287                                                      
@@ -3173,5 +3126,5 @@ CONECT 2302 2295
 CONECT 2303 2292 2296                                                           
 CONECT 2304 2297                                                                
 CONECT 2305 2298                                                                
-MASTER      365    0    9    6   16    0   13    6 2546    1  124   22          
+MASTER      329    0    9    6   16    0    0    6 2546    1  124   22          
 END                                                                             

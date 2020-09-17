@@ -727,7 +727,71 @@ const sugar_database_entry sugar_database[] =
         else wurcs_residue_code = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
 
         return wurcs_residue_code;
-    }    
+    } 
+
+    std::string get_anomer( std::string name )
+    {
+        clipper::String anomer;
+
+        // codes for hexoses
+
+        if      ( name == "GLC" ) anomer = "alpha"   ; // alpha
+        else if ( name == "BGC" ) anomer = "beta"   ; // beta
+        else if ( name == "MAN" ) anomer = "alpha"   ; // alpha
+        else if ( name == "BMA" ) anomer = "beta"   ; // beta
+        else if ( name == "GLA" ) anomer = "alpha"   ; // alpha
+        else if ( name == "GAL" ) anomer = "beta"   ; // beta
+        else if ( name == "FCA" ) anomer = "alpha"   ; // alpha - d - fucose
+        else if ( name == "FCB" ) anomer = "beta"   ; // beta - d - fucose
+        else if ( name == "FUC" ) anomer = "alpha"   ; // alpha - l - fucose
+        else if ( name == "FUL" ) anomer = "beta"   ; // beta - l - fucose
+        else if ( name == "XYS" ) anomer = "alpha"   ; // alpha
+        else if ( name == "XYP" ) anomer = "beta"   ; // beta
+
+        // codes for hexosamines
+        // couldn't find codes for: ManN (either), GalN (either)
+
+        else if ( name == "GCS" ) anomer = "beta"  ; // beta
+        else if ( name == "PA1" ) anomer = "alpha"  ; // alpha
+
+        // codes for N-acetyl hexosamines
+        // couldn't find codes for: ManNAc (beta)
+
+        else if ( name == "NAG" ) anomer = "beta"; // beta
+        else if ( name == "NDG" ) anomer = "alpha"; // alpha
+        else if ( name == "NGA" ) anomer = "beta"; // beta
+        else if ( name == "A2G" ) anomer = "alpha"; // alpha
+        else if ( name == "BM3" ) anomer = "alpha"; // alpha
+        else if ( name == "BM7" ) anomer = "beta"; // beta
+
+        // codes for acidic sugars
+        // couldn't find codes for: Neu5Gc (either)
+
+        else if ( name == "SIA" ) anomer = "alpha" ; // alpha
+        else if ( name == "SLB" ) anomer = "beta" ; // beta
+        else if ( name == "IDR" ) anomer = "beta"   ; // beta
+        else if ( name == "KDM" ) anomer = "alpha"    ; // alpha
+        else if ( name == "KDN" ) anomer = "beta"    ; // beta
+        else if ( name == "BDP" ) anomer = "beta"   ; // beta
+        else if ( name == "GCU" ) anomer = "alpha"   ; // alpha
+        else if ( name == "MAV" ) anomer = "alpha"   ; // alpha
+        else if ( name == "BEM" ) anomer = "beta"   ; // beta
+        else if ( name == "GTR" ) anomer = "beta"   ; // beta
+        else if ( name == "ADA" ) anomer = "alpha"   ; // alpha
+        else if ( name == "LGU" ) anomer = "alpha" ; // alpha-L-Gulopyranuronic acid
+        else if ( name == "GUP" ) anomer = "alpha" ; // alpha-l-Gulopyranoside
+        else if ( name == "DAN" ) anomer = "undetermined" ; // Undetermined. 
+
+        // More unique residues
+        else if ( name == "M6D" ) anomer = "beta" ; // beta-D-Mannose 6-phosphate 
+        else if ( name == "NAA" ) anomer = "beta" ; // 2-acetamido-2-deoxy-beta-D-Allopyranose
+        else if ( name == "NGK" ) anomer = "alpha" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
+        
+
+        else anomer = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
+
+        return anomer;
+    }
 
 
 } // namespace data

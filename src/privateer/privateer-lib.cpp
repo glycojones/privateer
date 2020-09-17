@@ -585,22 +585,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         os << list_of_glycans[i].get_root_for_filename() << ".svg";
 
         clipper::String glycanWURCS = list_of_glycans[i].generate_wurcs();
-        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
-        
-        std::string glyTouCanID, glyConnectID;
-        if (valueLocation != -1)
-            {
-                glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
-                if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
-                {
-                    glyTouCanID.erase(0, 1);
-                    glyTouCanID.pop_back();
-                }
 
-                if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
-                else     glyConnectID = "NotFound";
-            }
-        else glyTouCanID = "NotFound", glyConnectID = "NotFound";
         
 
 
@@ -613,79 +598,99 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
         of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;
         
-        if(valueLocation == -1)
-        of_xml << "     <GlycanGTCID>"      << "Unable to find GlyTouCan ID"                     << "</GlycanGTCID>\n"                                      ;
-        else
-        of_xml << "     <GlycanGTCID>"      << glyTouCanID                                       << "</GlycanGTCID>\n"                                      ; 
-        
-        if(glyConnectID == "NotFound")
-        of_xml << "     <GlycanGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</GlycanGlyConnectID>\n"                               ;
-        else
-        of_xml << "     <GlycanGlyConnectID>" << glyConnectID                                    << "</GlycanGlyConnectID>\n"                               ;                                  
-        
-        // std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>
-        
-        if(!list_of_glycans_associated_to_permutations[i].empty())
-            {
-                of_xml << "     <GlycanPermutations>\n" ;
-                for(int j = 0; j < list_of_glycans_associated_to_permutations[i].size(); j++)
+        if(!jsonObject.empty())
+        {
+            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+            
+            std::string glyTouCanID, glyConnectID;
+            if (valueLocation != -1)
+                {
+                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                    if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
                     {
-                        std::ostringstream os_permutation;
-
-                        of_xml << "       <GlycanPermutation>\n" ;
-                        float permutationScore = list_of_glycans_associated_to_permutations[i][j].second;
-
-                        int anomerPermutations = list_of_glycans_associated_to_permutations[i][j].first.second[0],
-                            residuePermutations = list_of_glycans_associated_to_permutations[i][j].first.second[1],
-                            residueDeletions = list_of_glycans_associated_to_permutations[i][j].first.second[2];
-
-                        clipper::String glycanWURCS = list_of_glycans_associated_to_permutations[i][j].first.first.generate_wurcs();
-                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
-
-                        os_permutation << list_of_glycans_associated_to_permutations[i][j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                        
-                        std::string glyTouCanID, glyConnectID;
-                        if (valueLocation != -1)
-                            {
-                                glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
-                                if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
-                                {
-                                    glyTouCanID.erase(0, 1);
-                                    glyTouCanID.pop_back();
-                                }
-
-                                if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
-                                else     glyConnectID = "NotFound";
-                            }
-                        else glyTouCanID = "NotFound", glyConnectID = "NotFound";
-                        
-                        of_xml << "        <PermutationWURCS>"      << glycanWURCS                                       << "</PermutationWURCS>\n"                                      ;
-        
-                        of_xml << "        <PermutationScore>"      << permutationScore                                  << "</PermutationScore>\n"                                      ;
-                        
-                        of_xml << "        <anomerPermutations>"    << anomerPermutations                                << "</anomerPermutations>\n"                                    ;
-
-                        of_xml << "        <residuePermutations>"   << residuePermutations                               << "</residuePermutations>\n"                                   ;
-
-                        of_xml << "        <residueDeletions>"      << residueDeletions                                  << "</residuePermutations>\n"                                   ;
-                        
-                        if(valueLocation == -1)
-                        of_xml << "        <PermutationGTCID>"      << "Unable to find GlyTouCan ID"                     << "</PermutationGTCID>\n"                                      ;
-                        else
-                        of_xml << "        <PermutationGTCID>"      << glyTouCanID                                       << "</PermutationGTCID>\n"                                      ; 
-                        
-                        if(glyConnectID == "NotFound")
-                        of_xml << "        <PermutationGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</PermutationGlyConnectID>\n"                               ;
-                        else
-                        of_xml << "        <PermutationGlyConnectID>" << glyConnectID                                    << "</PermutationGlyConnectID>\n"                               ;
-
-                        of_xml << "        <PermutationSVG>"        << os_permutation.str()                                          << "</GlycanSVG>\n"                                 ;
-
-                        of_xml << "       </GlycanPermutation>\n" ;
+                        glyTouCanID.erase(0, 1);
+                        glyTouCanID.pop_back();
                     }
-                of_xml << "     </GlycanPermutations>\n" ;
-            }
-        
+
+                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                    else     glyConnectID = "NotFound";
+                }
+            else glyTouCanID = "NotFound", glyConnectID = "NotFound";
+
+
+            if(valueLocation == -1)
+            of_xml << "     <GlycanGTCID>"      << "Unable to find GlyTouCan ID"                     << "</GlycanGTCID>\n"                                      ;
+            else
+            of_xml << "     <GlycanGTCID>"      << glyTouCanID                                       << "</GlycanGTCID>\n"                                      ; 
+            
+            if(glyConnectID == "NotFound")
+            of_xml << "     <GlycanGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</GlycanGlyConnectID>\n"                               ;
+            else
+            of_xml << "     <GlycanGlyConnectID>" << glyConnectID                                    << "</GlycanGlyConnectID>\n"                               ;                                  
+            
+            // std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>
+            
+            if(!list_of_glycans_associated_to_permutations[i].empty())
+                {
+                    of_xml << "     <GlycanPermutations>\n" ;
+                    for(int j = 0; j < list_of_glycans_associated_to_permutations[i].size(); j++)
+                        {
+                            std::ostringstream os_permutation;
+
+                            of_xml << "       <GlycanPermutation>\n" ;
+                            float permutationScore = list_of_glycans_associated_to_permutations[i][j].second;
+
+                            int anomerPermutations = list_of_glycans_associated_to_permutations[i][j].first.second[0],
+                                residuePermutations = list_of_glycans_associated_to_permutations[i][j].first.second[1],
+                                residueDeletions = list_of_glycans_associated_to_permutations[i][j].first.second[2];
+
+                            clipper::String glycanWURCS = list_of_glycans_associated_to_permutations[i][j].first.first.generate_wurcs();
+                            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+
+                            os_permutation << list_of_glycans_associated_to_permutations[i][j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
+                            
+                            std::string glyTouCanID, glyConnectID;
+                            if (valueLocation != -1)
+                                {
+                                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                                    if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
+                                    {
+                                        glyTouCanID.erase(0, 1);
+                                        glyTouCanID.pop_back();
+                                    }
+
+                                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                                    else     glyConnectID = "NotFound";
+                                }
+                            else glyTouCanID = "NotFound", glyConnectID = "NotFound";
+                            
+                            of_xml << "        <PermutationWURCS>"      << glycanWURCS                                       << "</PermutationWURCS>\n"                                      ;
+            
+                            of_xml << "        <PermutationScore>"      << permutationScore                                  << "</PermutationScore>\n"                                      ;
+                            
+                            of_xml << "        <anomerPermutations>"    << anomerPermutations                                << "</anomerPermutations>\n"                                    ;
+
+                            of_xml << "        <residuePermutations>"   << residuePermutations                               << "</residuePermutations>\n"                                   ;
+
+                            of_xml << "        <residueDeletions>"      << residueDeletions                                  << "</residueDeletions>\n"                                   ;
+                            
+                            if(valueLocation == -1)
+                            of_xml << "        <PermutationGTCID>"      << "Unable to find GlyTouCan ID"                     << "</PermutationGTCID>\n"                                      ;
+                            else
+                            of_xml << "        <PermutationGTCID>"      << glyTouCanID                                       << "</PermutationGTCID>\n"                                      ; 
+                            
+                            if(glyConnectID == "NotFound")
+                            of_xml << "        <PermutationGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</PermutationGlyConnectID>\n"                               ;
+                            else
+                            of_xml << "        <PermutationGlyConnectID>" << glyConnectID                                    << "</PermutationGlyConnectID>\n"                               ;
+
+                            of_xml << "        <PermutationSVG>"        << os_permutation.str()                                          << "</PermutationSVG>\n"                                 ;
+
+                            of_xml << "       </GlycanPermutation>\n" ;
+                        }
+                    of_xml << "     </GlycanPermutations>\n" ;
+                }
+        }
         of_xml << "    </Glycan>\n" ;
     }
 
@@ -747,6 +752,7 @@ nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann
 
             path_copy = env + "/" + "database.json";
         }
+
     std::cout << "Reading " << path_copy << "... done." << std::endl;
 
     std::ifstream input(path_copy);
@@ -914,23 +920,23 @@ std::string privateer::glycoplot::get_colour ( Colour colour, bool original_styl
         switch (colour)
         {
             case blue:
-                return "#0000fa;";
+                return "#0090bc;";
             case green:
-                return "#00c832;";
+                return "#00a651;";
             case black:
                 return "#000000;";
             case orange:
-                return "#fa6400;";
+                return "#ff7f00;";
             case yellow:
-                return "#ffff00;";
+                return "#ffd400;";
             case tan:
                 return "#966432;";
             case purple:
-                return "#7d007d;";
+                return "#a54399;";
             case red:
-                return "#fa0000;";
+                return "#ed1c24;";
             case cyan:
-                return "#c8fafa;";
+                return "#8fcce9;";
             case white:
                 return "#ffffff;";
         }
@@ -990,6 +996,7 @@ void privateer::glycoplot::Plot::write_svg_header   ( std::fstream& of )
        << "  </style>\n";
 
 }
+
 
 void privateer::glycoplot::Plot::write_svg_definitions( std::fstream& of )
 {
@@ -2292,7 +2299,1456 @@ std::string privateer::glycoplot::BetaBond::get_XML ()
           <<  "</use>\n";
 
     return tmp.str();
+} ///////// End of Glycoplot /////////
+
+///////// Privateer's glycanbuilderplot /////////
+
+std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool original_style, bool inverted )
+{
+    if ( inverted ) // ask for the opposite colour if we're swapping blacks and whites
+    {
+        if ( colour == white ) colour = black;
+        else if ( colour == black ) colour = white;
+    }
+
+    if ( original_style )    // Essentials of glycobiology, 3rd edition //
+    {
+        switch (colour)
+        {
+            case blue:
+                return "#0090bc;";
+            case rootblue:
+                return "#014f87;";
+            case green:
+                return "#00a651;";
+            case black:
+                return "#000000;";
+            case brown:
+                return "#a17a4d;";
+            case orange:
+                return "#ff7f00;";
+            case yellow:
+                return "#ffd400;";
+            case rootyellow:
+                return "#fabc1d;";
+            case tan:
+                return "#966432;";
+            case purple:
+                return "#a54399;";
+            case pink:
+                return "#ff87c2;";
+            case red:
+                return "#ed1c24;";
+            case rootred:
+                return "#b70017;";
+            case cyan:
+                return "#8fcce9;";
+            case white:
+                return "#ffffff;";
+        }
+        return "#ffffff;";
+    }
+    else        // Use Privateer's washed-out colours, less disruptive in a publication //
+    {
+        switch (colour)
+        {
+            case blue:
+                return "#014f87;";
+            case rootblue:
+                return "#014f87;";
+            case green:
+                return "#3b994f;";
+            case black:
+                return "#000000;";
+            case brown:
+                return "#a17a4d;";
+            case orange:
+                return "#f98400;";
+            case yellow:
+                return "#fabc1d;";
+            case rootyellow:
+                return "#fabc1d;";
+            case tan:
+                return "#a68442;";
+            case purple:
+                return "#a5197d;";
+            case pink:
+                return "#a54399;";
+            case red:
+                return "#b70017;";
+            case rootred:
+                return "#b70017;";
+            case cyan:
+                return "#c8fafa;";
+            case white:
+                return "#ffffff;";
+        }
+
+        return "#ffffff;";
+    }
 }
+
+void privateer::glycanbuilderplot::Plot::write_svg_header   ( std::fstream& of )
+{
+
+    of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
+       << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
+       << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
+       << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
+       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
+       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
+       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
+       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
+       << "     version=\"1.1\"\n"
+       << "     width=\"" << get_width() << "\" \n"
+       << "     height=\"" << get_height() << "\" \n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "  <style>\n"
+       << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
+       << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
+       << "    .my_yellow { fill:" << get_colour ( rootyellow, original_colour_scheme  ) << " }\n"
+       << "  </style>\n";
+
+}
+
+
+void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of )
+{
+    of << "  <defs>\n"
+
+       // colour patterns for two-colour shapes
+
+       << "    <filter id=\"displace\">\n"
+       << "      <feTurbulence  baseFrequency=\".05\" numOctaves=\"3\" result=\"myturbulence\" />\n"
+       << "      <feDisplacementMap in=\"SourceGraphic\" in2=\"myturbulence\" scale=\"10\" />\n"
+       << "    </filter>\n\n"
+
+       // use with filter="url(#displace)"
+
+       << "    <!-- Half-yellow pattern --> \n"
+       << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- Half-blue pattern --> \n"
+       << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- Half-green pattern --> \n"
+       << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- yellow_left pattern --> \n"
+       << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- blue_up pattern --> \n"
+       << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- green_right pattern --> \n"
+       << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- tan_down pattern --> \n"
+       << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       // hexoses, circles
+
+       << "    <!--  Glc   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Gal   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"gal\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Man   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"man\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Fuc   --> "
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Xyl   --> "
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // n-acetyl hexosamines, squares
+
+       << "    <!-- GlcNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"galnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"mannac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // hexosamines, squares in two colours
+
+       << "    <!-- GlcN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_blue);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"galn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_yellow);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"mann\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_green);"
+       << "stroke-width:2.8;\" />\n"
+
+       // acidic sugars, diamond shapes in one or two colours
+
+       << "    <!-- Neu5Ac --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- Neu5Gc --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- KDN --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GlcA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- IdoA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
+       << "stroke-width:2.8;\" />\n"
+
+
+       << "    <!--  bond  --> "
+       << "<line x1=\"0\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+
+       // a generic hexagon shape for unsupported sugars
+
+       << "    <!-- Other  --> "
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
+       << "stroke-width:4.0; \" />\n"
+
+       << "  </defs>\n\n" ;
+
+}
+
+void privateer::glycanbuilderplot::Plot::write_svg_contents ( std::fstream& of )
+{
+    of << "<title>" << get_title() << "</title>\n";
+
+    for (int i = 0; i < list_of_shapes.size() ; i ++)
+    {
+        of << list_of_shapes[i]->get_XML();
+    }
+} //!< doesn't add html anchors, as SVG files are supposed to be standalone and not linked to any other CCP4 application
+
+
+void privateer::glycanbuilderplot::Plot::write_svg_footer ( std::fstream& of )
+{
+    of << "\n</svg>" ;
+}
+
+
+std::string privateer::glycanbuilderplot::Plot::get_svg_string_header   ( )
+{
+    std::ostringstream of;
+
+    of << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
+       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
+       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
+       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
+       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
+       << "     version=\"1.1\"\n"
+       << "     width=\"" << get_width() << "\" \n"
+       << "     height=\"" << get_height() << "\" \n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "  <style>\n"
+       << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
+       << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
+       << "    .my_yellow { fill:" << get_colour ( rootyellow, original_colour_scheme  ) << " }\n"
+       << "  </style>\n";
+
+    return of.str();
+}
+
+
+std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
+{
+    std::ostringstream of;
+
+        of << "  <defs>\n"
+
+       // lightweight representation for string streams
+
+       << "      <filter id=\"displace\">\n"
+       << "        <feTurbulence  baseFrequency=\".05\" numOctaves=\"3\" result=\"myturbulence\" />\n"
+       << "        <feDisplacementMap in=\"SourceGraphic\" in2=\"myturbulence\" scale=\"10\" />\n"
+       << "      </filter>\n\n"
+
+       // use with filter="url(#displace)"
+
+       << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       // hexoses, circles
+
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"gal\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"man\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // n-acetyl hexosamines, squares
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"galnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"mannac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // hexosamines, squares in two colours
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_blue);"
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"galn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_yellow);"
+       << "stroke-width:2.8;\" />\n"
+
+       <<  "<rect width =\"50\" height=\"50\" id=\"mann\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_green);"
+       << "stroke-width:2.8;\" />\n"
+
+       // acidic sugars, diamond shapes in one or two colours
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
+       << "stroke-width:2.8;\" />\n"
+
+       // bond types, continuous and dashed lines
+
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+
+       // a generic hexagon shape for unsupported sugars
+
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
+       << "stroke-width:4.0; \" />\n"
+
+       << "  </defs>\n\n" ;
+
+    for (int i = 0; i < list_of_shapes.size() ; i ++)
+    {
+        of << "<a xmlns=\"http://www.w3.org/2000/svg\" id=\"anchor\" xlink:href=\""
+           << list_of_shapes[i]->get_mmdbsel() << "\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" target=\"_top\">";
+        of << list_of_shapes[i]->get_XML();
+        of << "</a>\n";
+    }
+
+    return of.str();
+}
+
+
+std::string privateer::glycanbuilderplot::Plot::get_svg_string_footer ( )
+{
+    std::ostringstream of;
+
+    of << "</svg>" ;
+
+    return of.str();
+}
+
+
+bool privateer::glycanbuilderplot::Plot::write_to_file  ( std::string file_path )
+{
+    std::fstream out;
+
+    out.open( file_path.c_str(), std::fstream::out);
+
+    write_svg_header      ( out );
+    write_svg_definitions ( out );
+    write_svg_contents    ( out );
+    write_svg_footer      ( out );
+
+    out.close();
+
+    return false;
+}
+
+
+std::string privateer::glycanbuilderplot::Plot::get_XML  ( )
+{
+    return get_svg_string_header() + get_svg_string_contents() + get_svg_string_footer();
+}
+
+
+bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, bool oxford_angles )
+{
+
+    this->set_size(3000,3000);
+
+    const clipper::String type = glycan.get_type();
+    privateer::glycanbuilderplot::GlycanRoot *root;
+    std::string mmdbsel = "mmdb:///" + glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim();
+
+    // first, let us draw the root
+
+    if ( type == "n-glycan" )
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), mmdbsel );
+    else if ( type == "o-glycan" )
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. "+ glycan.get_root_description(), mmdbsel );
+    else if ( type == "s-glycan" )
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S",glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. "+ glycan.get_root_description(), mmdbsel );
+    else if ( type == "c-glycan" )
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C",glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. "+ glycan.get_root_description(), mmdbsel );
+    else return true;
+
+    add_block ( root );
+
+    // then a linkage, sounds easy
+    // clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha"
+    std::string anomerSymbol;
+    if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "alpha")     anomerSymbol = "&#945;";
+    else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
+    else                                                                                  anomerSymbol = "&#63;";
+
+
+    Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
+    add_link ( first_bond );
+
+    // let the fun begin: paint the tree with yet another recursive function
+
+    const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
+
+    recursive_paint ( glycan, node, 2685, 990 ); // and initiate House Party protocol
+
+    this->tighten_viewbox();
+
+    return false;
+}
+
+void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles )
+{
+    const clipper::MSugar& sugar = node.get_sugar();
+
+    std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
+    std::string sugname = clipper::data::carbname_of ( sugar.type() );
+
+    if ( sugname == "Glc" )
+    {
+        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        add_block ( glc );
+    }
+    else if ( sugname == "Gal" )
+    {
+        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( gal );
+    }
+    else if ( sugname == "Man" )
+    {
+        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( man );
+    }
+    else if ( sugname == "Fuc" )
+    {
+        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( fuc );
+    }
+    else if ( sugname == "Xyl" )
+    {
+        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( xyl );
+    }
+    else if ( sugname == "GlcN" )
+    {
+        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( glcn );
+    }
+    else if ( sugname == "GalN" )
+    {
+        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( galn );
+    }
+    else if ( sugname == "ManN" )
+    {
+        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        add_block ( mann );
+    }
+    else if ( sugname == "GlcNAc" )
+    {
+        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( glcnac );
+    }
+    else if ( sugname == "GalNAc" )
+    {
+        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        add_block ( galnac );
+    }
+    else if ( sugname == "ManNAc" )
+    {
+        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        add_block ( mannac );
+    }
+    else if ( sugname == "GlcA" )
+    {
+        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( glca );
+    }
+    else if ( sugname == "GalA" )
+    {
+        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( gala );
+    }
+    else if ( sugname ==  "ManA" )
+    {
+        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( mana );
+    }
+    else if ( sugname ==  "Neu5Gc" )
+    {
+        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( neu5gc );
+    }
+    else if ( sugname ==  "Neu5Ac" )
+    {
+        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( neu5ac );
+    }
+    else if ( sugname ==  "IdoA" )
+    {
+        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( idoa );
+    }
+    else if ( sugname ==  "KDN" )
+    {
+        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( kdn );
+    }
+    else
+    {
+        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        add_block ( unk );
+    }
+
+    int up_down = 0; // number of special cases with perpendicular link
+    int branches = node.number_of_connections();
+
+    // decide here based on 2D notation
+    //////////////////////////////////////
+    // need to change x and y values in the recursive function for both bonds and shapes.
+
+    if ( oxford_angles )
+    {
+        for ( int j = 0; j < node.number_of_connections(); j++)
+        {
+            clipper::MGlycan::Linkage link = node.get_connection(j);
+            const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+            Link_type orientation;
+
+            if ( link.get_order() >= 7 ) // up. should be == 8, but just to prevent unforeseen circumstances
+            {
+                orientation = up;
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x + 25, y + 35, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x, y - 80 );
+            }
+            if ( link.get_order() == 6 ) // up-left
+            {
+                orientation = up_side;
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x + 25, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x - 80, y - 80 );
+            }
+            if ( link.get_order() == 4 ) // left
+            {
+                orientation = side;
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x + 35, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x - 80, y );
+            }
+            if ( link.get_order() == 3 ) // left-down
+            {
+                orientation = down_side;
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x + 25, y + 25, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x - 80, y + 80 );
+            }
+            if ( link.get_order() == 2 ) // down
+            {
+                orientation = down;
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x + 25, y + 15, orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x, y + 80 );
+            }
+        }
+    }       /// end oxford notation
+            //////////////////////////
+    else
+    {
+        for ( int j = 0; j < node.number_of_connections(); j++)
+        {
+            clipper::MGlycan::Linkage link = node.get_connection(j);
+            const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+            // first deal with a couple of special cases: Fucose and Xylose
+
+            if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
+            {
+                up_down++;
+                if ( link.get_order() == 3 ) // it goes down
+                {
+                    
+                    std::string anomerSymbol;
+                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                    else                                                                                 anomerSymbol = "&#63;";
+
+                    std::string linkagePosition = std::to_string(link.get_order());
+
+                    Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                    add_link ( new_bond );
+
+                    recursive_paint ( mg, linked_node, x, y + 110 );
+                }
+                else // up it goes, then
+                {
+
+                    std::string anomerSymbol;
+                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                    else                                                                                 anomerSymbol = "&#63;";
+
+                    std::string linkagePosition = std::to_string(link.get_order());
+
+                    Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                    add_link ( new_bond );
+                    // }
+                    recursive_paint ( mg, linked_node, x, y - 110 );
+                }
+            }
+            else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
+            {
+                up_down++;
+                if ( link.get_order() == 3 ) // it goes down
+                {
+
+                    std::string anomerSymbol;
+                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                    else                                                                                 anomerSymbol = "&#63;";
+
+                    std::string linkagePosition = std::to_string(link.get_order());
+
+                    Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                    add_link ( new_bond );
+
+                    recursive_paint ( mg, linked_node, x, y + 110 );
+                }
+                else // up it goes, then
+                {
+
+                    std::string anomerSymbol;
+                    if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                    else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                    else                                                                                 anomerSymbol = "&#63;";
+
+                    std::string linkagePosition = std::to_string(link.get_order());
+
+                    Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                    add_link ( new_bond );
+
+                    recursive_paint ( mg, linked_node, x, y - 110 );
+                }
+            }
+            else // pseudo-general case
+            {
+                Link_type orientation;
+                int sign = 0;
+                bool nodeHasSpecialCase = false; 
+
+                for ( int j = 0; j < node.number_of_connections(); j++)
+                    {
+                        clipper::MGlycan::Linkage link = node.get_connection(j);
+                        const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+                        if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
+                        nodeHasSpecialCase = true;
+
+                        if(nodeHasSpecialCase) break;
+                    }
+                
+                switch (branches - j - up_down)
+                {
+                    case 3:
+                        orientation = up_side; // up_side
+                        sign = 1; // -1
+                        break;
+                    case 2:
+                        if (nodeHasSpecialCase)
+                        {
+                            sign = 0; // 1 not here before
+                            orientation = side;
+                        }
+                        else
+                        {
+                            sign = 1;
+                            orientation = branch_side;
+                        }      
+                        break;
+                    case 1:
+                        if ( branches != 1 )
+                        {
+                            if (nodeHasSpecialCase)
+                            {
+                                sign = 0; // 1 not here before
+                                orientation = side;
+                            }
+                            else
+                            {
+                                sign = -1;
+                                orientation = down_side;
+                            }      
+                        }
+                        else
+                        {
+                            orientation = side;
+                            sign = 0;
+                        }
+                        break;
+                    default:
+                        orientation = side;
+                        sign = 0; // not here before
+                        break;
+                }
+
+                bool is_ketose = false;
+
+                if ( linked_node.get_sugar().full_type() == "ketose" ) // ketoses
+                    is_ketose = true;
+
+                std::string anomerSymbol;
+                if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
+                else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
+                else                                                                                 anomerSymbol = "&#63;";
+
+                std::string linkagePosition = std::to_string(link.get_order());
+
+                Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+                add_link ( new_bond );
+
+                recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
+            }
+        }
+    }
+}
+
+
+/*! Remodel the SVG viewport to the contents
+ * 	\return A std::vector<int> containing the new viewport coordinates, in this order: ( x0, y0, x1, y1 )
+ */
+
+void privateer::glycanbuilderplot::Plot::tighten_viewbox ()
+{
+
+    int min_x, min_y, max_x, max_y;
+    min_x = 99999; max_x = this->width-60;
+    min_y = 99999; max_y = 0;
+
+    for ( int i = 0; i < list_of_shapes.size() ; i++ )
+    {
+        if ( list_of_shapes[i]->get_x() < min_x )
+            min_x = list_of_shapes[i]->get_x();
+
+        if ( list_of_shapes[i]->get_y() < min_y )
+            min_y = list_of_shapes[i]->get_y();
+        if ( list_of_shapes[i]->get_y() > max_y )
+            max_y = list_of_shapes[i]->get_y();
+    }
+
+    std::vector<int> new_viewbox;
+    new_viewbox.push_back ( min_x -10 );
+    new_viewbox.push_back ( min_y -10 );
+    new_viewbox.push_back ( max_x -min_x );
+    new_viewbox.push_back ( max_y -min_y +70 );
+    this->set_viewbox ( new_viewbox );
+    smaller ? this->set_size((max_x-min_x)*0.7, (max_y-min_y+70)*0.7) : this->set_size(max_x-min_x, max_y-min_y+70);
+
+}
+
+
+bool privateer::glycanbuilderplot::Plot::plot_demo ( )
+{
+    // add positioning, etc
+
+    this->set_size_and_viewbox(1000, 500);
+
+    privateer::glycanbuilderplot::Glc *glc = new privateer::glycanbuilderplot::Glc (60,  60, "Glucose" );
+    privateer::glycanbuilderplot::Gal *gal = new privateer::glycanbuilderplot::Gal (170, 60, "Galactose" );
+    privateer::glycanbuilderplot::Man *man = new privateer::glycanbuilderplot::Man (280, 60, "Mannose" );
+    privateer::glycanbuilderplot::Fuc *fuc = new privateer::glycanbuilderplot::Fuc (390, 60, "Fucose" );
+    privateer::glycanbuilderplot::Xyl *xyl = new privateer::glycanbuilderplot::Xyl (500, 60, "Xylose");
+
+    privateer::glycanbuilderplot::GlcN *glcn = new privateer::glycanbuilderplot::GlcN (60,  170, "Glucosamine" );
+    privateer::glycanbuilderplot::GalN *galn = new privateer::glycanbuilderplot::GalN (170, 170, "Galactosamine" );
+    privateer::glycanbuilderplot::ManN *mann = new privateer::glycanbuilderplot::ManN (280, 170, "Mannosamine" );
+
+    privateer::glycanbuilderplot::GlcA *glca = new privateer::glycanbuilderplot::GlcA (390, 170, "Glucuronic acid" );
+    privateer::glycanbuilderplot::GalA *gala = new privateer::glycanbuilderplot::GalA (500, 170, "Galacturonic acid" );
+    privateer::glycanbuilderplot::ManA *mana = new privateer::glycanbuilderplot::ManA (610, 170, "Mannuronic acid" );
+    privateer::glycanbuilderplot::IdoA *idoa = new privateer::glycanbuilderplot::IdoA (720, 170, "Iduronic acid" );
+    privateer::glycanbuilderplot::Neu5Ac *neu5ac = new privateer::glycanbuilderplot::Neu5Ac (830, 170, "N-acetyl Neuraminic acid" );
+    privateer::glycanbuilderplot::Neu5Gc *neu5gc = new privateer::glycanbuilderplot::Neu5Gc (940, 170, "N-glycolyl Neuraminic acid" );
+    privateer::glycanbuilderplot::KDN *kdn = new privateer::glycanbuilderplot::KDN (390, 280, "KDN" );
+    privateer::glycanbuilderplot::Unk *unk = new privateer::glycanbuilderplot::Unk (500, 280, 'U', "Unknown" );
+
+
+    privateer::glycanbuilderplot::GlcNAc *glcnac = new privateer::glycanbuilderplot::GlcNAc (60,  280, "N-acetyl D-Glucosamine" );
+    privateer::glycanbuilderplot::GalNAc *galnac = new privateer::glycanbuilderplot::GalNAc (170, 280, "N-acetyl D-Galactosamine" );
+    privateer::glycanbuilderplot::ManNAc *mannac = new privateer::glycanbuilderplot::ManNAc (280, 280, "N-acetyl D-Mannosamine" );
+
+    privateer::glycanbuilderplot::GlycanRoot *gn = new privateer::glycanbuilderplot::GlycanRoot(160, 400, "n", "ASN", "A/62", "n-glycosylation");
+    privateer::glycanbuilderplot::GlycanRoot *go = new privateer::glycanbuilderplot::GlycanRoot(460, 400, "o", "THR", "T/1000", "o-glycosylation");
+    privateer::glycanbuilderplot::GlycanRoot *gs = new privateer::glycanbuilderplot::GlycanRoot(760, 400, "s", "CYS", "C/4", "s-glycosylation");
+
+    // privateer::glycanbuilderplot::AlphaBond *ab  = new privateer::glycanbuilderplot::AlphaBond ( 750, 305, side, "Alpha bond" );
+    privateer::glycanbuilderplot::Bond *bb   = new privateer::glycanbuilderplot::Bond ( 900, 305, side, "unk", "Bond" );
+
+    add_block(glc);  add_block(gal);  add_block(man);    add_block(fuc);    add_block(xyl);    add_block(glcn);   add_block(galn);
+    add_block(mann); add_block(glca); add_block(gala);   add_block(mana);   add_block(idoa);   add_block(neu5ac); add_block(neu5gc);
+    add_block(kdn);  add_block(unk);  add_block(glcnac); add_block(galnac); add_block(mannac); add_block(gn);     add_block(go);
+    add_block(gs);   add_link(bb);    
+
+    return false;
+}
+
+// get XML from hexoses
+
+std::string privateer::glycanbuilderplot::Glc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::Man::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::Gal::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::Fuc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::Xyl::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+
+// get XML from hexosamines
+
+std::string privateer::glycanbuilderplot::GalN::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::GlcN::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::ManN::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+
+// get XML from N-acetyl hexosamines
+
+std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+    return tmp.str();
+}
+
+
+// get XML from acidic sugars
+
+std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::KDN::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::GlcA::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::ManA::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::GalA::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+std::string privateer::glycanbuilderplot::IdoA::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n";
+
+
+    return tmp.str();
+}
+
+
+std::string privateer::glycanbuilderplot::Unk::get_XML ()
+{
+    std::ostringstream tmp;
+
+    tmp   <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
+          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+          <<  "<title>" << get_tooltip() << "</title>"
+          <<  "</use>\n"
+          <<  "<text x=\"" << get_x() + 25 << "\""
+          <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n";
+
+
+    return tmp.str();
+}
+
+// plus, get XML from the glycan root (protein part)
+
+std::string privateer::glycanbuilderplot::GlycanRoot::get_XML ()
+{
+    std::ostringstream tmp;
+    std::string link_name = get_link_atom();
+    std::string link_colour = "my_blue";
+
+    if ( link_name == "o" ) link_colour = "my_red";
+    else if ( link_name == "s" ) link_colour = "my_yellow";
+
+    tmp << "  <g id=\"glycan_root\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
+        << "    <rect width=\"160\" height=\"50\" rx=\"10\" ry=\"10\" style=\"stroke:#000000;"
+        << " fill:#ffffff; stroke-width:2.0;\" />\n"
+        << "    <line x1=\"30\" y1=\"0\" x2=\"30\" y2=\"50\" style=\"stroke:#000000;"
+        << " fill:#ffffff; stroke-width:2.0;\" />\n"
+        << "    <text x=\"7\" y=\"32\" class=\"" << link_colour << "\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
+        << link_name << "</text>\n"
+        << "    <text x=\"92\" y=\"32\" fill=\"black\" text-anchor=\"middle\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
+        << get_root_name() << "<tspan baseline-shift=\"sub\" font-weight=\"normal\" font-size=\"20\">" << get_root_id() << "</tspan></text>\n"
+        << "</g>\n";
+
+    return tmp.str();
+}
+
+
+
+std::string privateer::glycanbuilderplot::Bond::get_XML ()
+{
+    std::ostringstream tmp;
+
+    std::string transformation = "";
+    int anomerSymbolPosX, anomerSymbolPosY;
+    int linkageSymbolPosX, linkageSymbolPosY;
+
+    switch ( this->bond_type )
+    {
+        case down:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(90 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() + 5;
+            anomerSymbolPosY = get_y() + 80;
+            linkageSymbolPosX = get_x() + 5;
+            linkageSymbolPosY = get_y() + 50;
+
+            break;
+
+        }
+        case down_side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-135 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() - 65;
+            anomerSymbolPosY = get_y() - 33;
+            linkageSymbolPosX = get_x() - 15;
+            linkageSymbolPosY = get_y() + 20;
+
+            break;
+        }
+        case up_side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() - 60;
+            anomerSymbolPosY = get_y() + 20;
+            linkageSymbolPosX = get_x() - 15;
+            linkageSymbolPosY = get_y() + 20;
+
+            break;
+        }
+        case branch_side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(135 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() - 59;
+            anomerSymbolPosY = get_y() + 76;
+            linkageSymbolPosX = get_x() - 6;
+            linkageSymbolPosY = get_y() + 25;
+
+            break;
+        }
+        case up:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+            
+            anomerSymbolPosX = get_x() - 20;
+            anomerSymbolPosY = get_y() - 65;
+            linkageSymbolPosX = get_x() - 20;
+            linkageSymbolPosY = get_y() - 30;
+
+            break;
+        }
+        default:
+            std::stringstream stream;
+            stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+            
+            anomerSymbolPosX = get_x() - 59;
+            anomerSymbolPosY = get_y() + 20;
+            linkageSymbolPosX = get_x() - 15;
+            linkageSymbolPosY = get_y() + 20;
+    }
+
+
+    if(linkagePosition.empty())
+        {
+            anomerSymbolPosX = get_x() - 65;
+            anomerSymbolPosY = get_y() + 20;
+
+            tmp << "  <g id=\"bondas\">\n"
+            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+            <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+            << "</g>\n";
+        }
+    else
+        {
+            tmp << "  <g id=\"bondas\">\n"
+            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+            <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+            <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
+            << "</g>\n";
+        }
+
+    return tmp.str();
+} ///////// End of glycanbuilderplot /////////
 
 std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme, std::string expression_system )
 {
@@ -2323,7 +3779,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
-        privateer::glycoplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true);
+        privateer::glycanbuilderplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true);
         plot.plot_glycan ( list_of_glycans[i] );
 
         of_xml << "  <glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""

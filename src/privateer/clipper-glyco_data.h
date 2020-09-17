@@ -90,6 +90,7 @@ namespace clipper
         bool residue_has_alternate_anomer( std::string name );
         bool residue_has_alternate_monomer( std::string name );
         std::string convert_to_wurcs_residue_code( std::string name );
+        std::string get_anomer( std::string name );
 
     } // namespace data
 
