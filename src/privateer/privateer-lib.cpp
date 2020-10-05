@@ -748,9 +748,9 @@ nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann
     std::string path_copy = path;
     if(path_copy == "database.json" || path_copy.empty()) 
         {
-            std::string env(std::getenv ( "PRIVATEERSRC" ));
+            std::string env(std::getenv ( "CINCL" ));
 
-            path_copy = env + "/" + "database.json";
+            path_copy = env + "/privateer/" + "database.json";
         }
 
     std::cout << "Reading " << path_copy << "... done." << std::endl;
@@ -3029,7 +3029,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y + 110 );
@@ -3044,7 +3044,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
                 // }
                 recursive_paint ( mg, linked_node, x, y - 110 );
@@ -3063,7 +3063,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y + 110 );
@@ -3078,7 +3078,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y - 110 );
@@ -3104,7 +3104,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
             switch (branches - j - up_down)
             {
                 case 3:
-                    orientation = up_side; // up_side
+                    orientation = down_side; // up_side
                     sign = 1; // -1
                     break;
                 case 2:
@@ -3130,7 +3130,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         else
                         {
                             sign = -1;
-                            orientation = down_side;
+                            orientation = up_side;
                         }      
                     }
                     else
@@ -3535,7 +3535,7 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
 
     switch ( this->bond_type )
     {
-        case down:
+        case up:
         {
             std::stringstream stream;
             stream << " transform=\"rotate(90 " << get_x() << " " << get_y() << ")\"";
@@ -3549,20 +3549,20 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             break;
 
         }
-        case down_side:
+        case up_side:
         {
             std::stringstream stream;
             stream << " transform=\"rotate(-135 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
 
-            anomerSymbolPosX = get_x() - 65;
-            anomerSymbolPosY = get_y() - 33;
-            linkageSymbolPosX = get_x() - 15;
+            anomerSymbolPosX = get_x() - 60;
+            anomerSymbolPosY = get_y() - 25;
+            linkageSymbolPosX = get_x() - 20;
             linkageSymbolPosY = get_y() + 20;
 
             break;
         }
-        case up_side:
+        case down_side:
         {
             std::stringstream stream;
             stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
@@ -3581,14 +3581,14 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             stream << " transform=\"rotate(135 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
 
-            anomerSymbolPosX = get_x() - 59;
-            anomerSymbolPosY = get_y() + 76;
+            anomerSymbolPosX = get_x() - 45;
+            anomerSymbolPosY = get_y() + 65;
             linkageSymbolPosX = get_x() - 6;
-            linkageSymbolPosY = get_y() + 25;
+            linkageSymbolPosY = get_y() + 35;
 
             break;
         }
-        case up:
+        case down:
         {
             std::stringstream stream;
             stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
@@ -3606,16 +3606,16 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
             
-            anomerSymbolPosX = get_x() - 59;
+            anomerSymbolPosX = get_x() - 55;
             anomerSymbolPosY = get_y() + 20;
-            linkageSymbolPosX = get_x() - 15;
+            linkageSymbolPosX = get_x() - 19;
             linkageSymbolPosY = get_y() + 20;
     }
 
 
     if(linkagePosition.empty())
         {
-            anomerSymbolPosX = get_x() - 65;
+            anomerSymbolPosX = get_x() - 60;
             anomerSymbolPosY = get_y() + 20;
 
             tmp << "  <g id=\"bondas\">\n"

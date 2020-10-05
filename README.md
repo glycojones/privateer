@@ -57,7 +57,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 3.) cd tmp
 
-4.) .././privateer -pdbin ../../../tests/test_data/2h6o_carbremediation.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan
+4.) .././privateer -pdbin ../../../tests/test_data/2h6o_carbremediation.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan ../../../src/privateer/database.json
 
 
 

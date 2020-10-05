@@ -210,21 +210,23 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
+            // ipwurcsjson = "/home/harold/Dev/privateer_standalone/src/privateer/database.json";
             if ( ++arg < args.size() )
             {
-                ipwurcsjson = args[arg];
-
-                // DONT FORGET!!!
-                // ipwurcsjson = "/home/harold/Dev/privateer_standalone/src/privateer/database.json";
-                std::string fileName = ipwurcsjson.tail();
-                std::string fileExtension = fileName.substr( fileName.length() - 5 );
-
-                if (fileExtension != ".json")
+                if(clipper::String(args[arg])[0] != '-')
                 {
-                    std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
-                    << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
+                    ipwurcsjson = args[arg];
+
+                    std::string fileName = ipwurcsjson.tail();
+                    std::string fileExtension = fileName.substr( fileName.length() - 5 );
+
+                    if (fileExtension != ".json")
+                    {
+                        std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                        << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                        prog.set_termination_message( "Failed" );
+                        return 1;
+                    }
                 }
             }
         }
