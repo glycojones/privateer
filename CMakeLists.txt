@@ -128,10 +128,10 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
 #
-pybind11_add_module(privateer_core ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
-
-target_link_libraries ( privateer_core PRIVATE 
-                        privateer_lib 
+pybind11_add_module(privateer_python ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
+target_link_libraries ( privateer_python PRIVATE 
+                        privateer_lib
+                        privateer_exec
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES} 
                         ${PYTHON_LIBRARY})
@@ -155,5 +155,5 @@ install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 install ( TARGETS privateer_exec DESTINATION bin)
-install ( TARGETS privateer_core DESTINATION ${PYTHON_MODULE_PATH}/privateer )
+install ( TARGETS privateer_python DESTINATION ${PYTHON_MODULE_PATH} )
 
