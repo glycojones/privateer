@@ -135,11 +135,6 @@ target_link_libraries ( privateer_python PRIVATE
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES})
 
-if (NOT APPLE)
-  set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-  set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-  set_target_properties ( privateer_python PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-endif()
 
 ## And finally, install everything in their reet places
 #
