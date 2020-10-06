@@ -46,12 +46,42 @@ else()
     message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
 endif()
 
+# Get Python libraries
+find_library(PYTHON_LIBRARY NAMES $ENV{PYTHON} python2.7m python2.7 python
+             HINTS ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/lib ${_PY_PREFIX}/libs
+             NO_DEFAULT_PATH)
+if (NOT PYTHON_LIBRARY)
+    message(FATAL_ERROR "Python library not found.")
+else ()
+    message(STATUS "Python library: ${PYTHON_LIBRARY}")
+    set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
+endif()
+
+# Get Python includes
+find_path(PYTHON_INCLUDE_DIR NAMES Python.h
+          HINTS ${_PY_PREFIX}/include
+                ${_PY_PREFIX}/include/python2.7
+                ${_PY_PREFIX}/include/python2.7m
+          NO_DEFAULT_PATH)
+
+
+if (NOT PYTHON_INCLUDE_DIR)
+    message(FATAL_ERROR "Python header not found.")
+else ()
+    message(STATUS "Python.h is in: ${PYTHON_INCLUDE_DIR}")
+endif()
+
+## Run pytest through 'make test'
+#
+enable_testing()
+add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
+
 ## Get Pybind11 through cmake
 #
-find_package(pybind11 CONFIG REQUIRED)
-MESSAGE( STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
-MESSAGE( STATUS "pybind11_INCLUDE_DIRS = ${pybind11_INCLUDE_DIRS}" )
-MESSAGE( STATUS "pybind11_LIBRARIES    = ${pybind11_LIBRARIES}" )
+find_package(PYBIND11 CONFIG REQUIRED)
+MESSAGE( STATUS "Found PYBIND11 v${PYBIND11_VERSION}: ${PYBIND11_INCLUDE_DIRS}")
+MESSAGE( STATUS "PYBIND11_INCLUDE_DIRS = ${PYBIND11_INCLUDE_DIRS}" )
+MESSAGE( STATUS "PYBIND11_LIBRARIES    = ${PYBIND11_LIBRARIES}" )
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
 
