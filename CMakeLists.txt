@@ -131,7 +131,6 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 pybind11_add_module(privateer_python ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
 target_link_libraries ( privateer_python PRIVATE 
                         privateer_lib
-                        privateer_exec
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES} 
                         ${PYTHON_LIBRARY})
