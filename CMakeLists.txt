@@ -6,49 +6,64 @@ option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 
-# if(NOT DEFINED LIB_INSTALL_DIR)
-#     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
-# endif()
-
-
-## Find Privateer's dependencies that have been compiled locally. 
-#
-find_library(MMDB2DEP NAMES mmdb2
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CCP4CDEP NAMES ccp4c
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CCP4SRSDEP NAMES ccp4srs
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCOREDEP NAMES clipper-core
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERMMDBDEP NAMES clipper-mmdb
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERMINIMOLDEP NAMES clipper-minimol
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCONTRIBDEP NAMES clipper-contrib
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCIFDEP NAMES clipper-cif
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 #Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
-add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 
-#Find Privateer's main.cpp file
+if(NOT DEFINED LIB_INSTALL_DIR)
+    set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+endif()
+
+## Required CCP4 CCP4_LIBRARIES
+#
+find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
+                           clipper-contrib clipper-ccp4 clipper-cif )
+
+## Required Python stuff - link against system Python3 for testing on YSBL machines
+#
+    # Link against CCP4-distributed Python
+if(APPLE)
+    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python
+                        HINTS ${CMAKE_INSTALL_PREFIX}/bin )
+else()
+    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python.exe
+                        HINTS ${CMAKE_INSTALL_PREFIX}/bin
+                        PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
+endif()
+
+## Configure Python
+#
+execute_process(COMMAND ${PYTHON} -c "import sys; sys.stdout.write(sys.prefix)"
+                OUTPUT_VARIABLE _PY_PREFIX
+                RESULT_VARIABLE failure)
+if (failure)
+    message(FATAL_ERROR "Failed to run ${PYTHON}: ${failure}")
+else()
+    message(STATUS "Python interpreter: ${PYTHON}")
+    message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
+endif()
+
+## Get Pybind11 through cmake
+#
+find_package(pybind11 CONFIG REQUIRED)
+MESSAGE( STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
+MESSAGE( STATUS "pybind11_INCLUDE_DIRS = ${pybind11_INCLUDE_DIRS}" )
+MESSAGE( STATUS "pybind11_LIBRARIES    = ${pybind11_LIBRARIES}" )
+
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
 
-#Location of include files to be linked
-include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
-                    ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
-                    ${PYBIND11_INCLUDE_DIR}
-                    ${PYTHON_INCLUDE_DIRS}
+## Add all the include directories
+#
+include_directories(${CCP4_INCLUDE_DIRS}
+                    ${PYBIND11_INCLUDE_DIRS}
+                    ${PYTHON_INCLUDE_DIR}
                     ${PRIVATEER_SOURCE_DIR})
 
+## Create libprivateer
+#
 add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-composition.cpp
@@ -57,58 +72,57 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-lib.cpp)
-
+  
 target_link_libraries ( privateer_lib 
-                        ${MMDB2DEP} 
-                        ${CCP4CDEP} 
-                        ${CCP4SRSDEP}
-                        ${CLIPPERCOREDEP}
-                        ${CLIPPERMMDBDEP}
-                        ${CLIPPERMINIMOLDEP}
-                        ${CLIPPERCONTRIBDEP}
-                        ${CLIPPERCCP4DEP}
-                        ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
+                        ${CCP4_LIBRARIES} 
+                        ${PYBIND11_LIBRARIES} 
+                        ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
-
+                        
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
+## Create Privateer executable
+#
 add_executable(privateer_exec
-               ${PRIVATEER_SOURCE})
+              ${PRIVATEER_SOURCE})
 
 target_link_libraries ( privateer_exec 
                         privateer_lib 
-                        ${MMDB2DEP} 
-                        ${CCP4CDEP} 
-                        ${CCP4SRSDEP}
-                        ${CLIPPERCOREDEP}
-                        ${CLIPPERMMDBDEP}
-                        ${CLIPPERMINIMOLDEP}
-                        ${CLIPPERCONTRIBDEP}
-                        ${CLIPPERCCP4DEP}
-                        ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
+                        ${CCP4_LIBRARIES} 
+                        ${PYBIND11_LIBRARIES} 
+                        ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
-
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
+## Make hybrid Python module
+#
 pybind11_add_module(privateer_core ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
+
 target_link_libraries ( privateer_core PRIVATE 
                         privateer_lib 
-                        ${MMDB2DEP} 
-                        ${CCP4CDEP} 
-                        ${CCP4SRSDEP}
-                        ${CLIPPERCOREDEP}
-                        ${CLIPPERMMDBDEP}
-                        ${CLIPPERMINIMOLDEP}
-                        ${CLIPPERCONTRIBDEP}
-                        ${CLIPPERCCP4DEP}
-                        ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
+                        ${CCP4_LIBRARIES} 
+                        ${PYBIND11_LIBRARIES} 
+                        ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
 
 
+## And finally, install everything in their reet places
+#
+
+set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
+message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
+install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
+install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
+                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
+                ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
+                ${PRIVATEER_SOURCE_DIR}/privateer-lib.h
+                ${PRIVATEER_SOURCE_DIR}/database.json
+          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
-            LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR})
+install ( TARGETS privateer_exec DESTINATION bin)
+install ( TARGETS privateer_core DESTINATION ${PYTHON_MODULE_PATH}/privateer )
+
