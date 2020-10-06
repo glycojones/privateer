@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 #Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
+# set(JSON_BuildTests OFF CACHE INTERNAL "")
+# add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 
 if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
