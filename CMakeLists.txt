@@ -46,6 +46,8 @@ else()
     message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
 endif()
 
+set(PYTHON_EXECUTABLE ${PYTHON})
+
 # Get Python libraries
 find_library(PYTHON_LIBRARY NAMES $ENV{PYTHON} python2.7m python2.7 python
              HINTS ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/lib ${_PY_PREFIX}/libs
@@ -78,6 +80,8 @@ add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
 
 ## Get pybind11 through cmake
 #
+set(PYBIND11_PYTHON_VERSION 2.7 CACHE STRING "")
+set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
 find_package(pybind11 CONFIG REQUIRED)
 MESSAGE( STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
 MESSAGE( STATUS "pybind11_INCLUDE_DIRS = ${pybind11_INCLUDE_DIRS}" )
