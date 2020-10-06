@@ -146,9 +146,9 @@ endif()
 
 if (NOT DEFINED PYTHON_INSTALL_DIR)
   set(PYTHON_INSTALL_DIR ${PYTHON_SITE_PACKAGES})
-endif
-message ( STATUS "Installing Python module to: ${PYTHON_INSTALL_DIR}")
-install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_INSTALL_DIR})
+endif()
+message ( STATUS "Installing Python module to: ${PYTHON_INSTALL_DIR}" )
+install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_INSTALL_DIR} )
 install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
