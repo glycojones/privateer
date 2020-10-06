@@ -129,11 +129,16 @@ set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 ## Make hybrid Python module
 #
 pybind11_add_module(privateer_python ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
+set_target_properties ( privateer_python PROPERTIES OUTPUT_NAME privateer )
+target_compile_options( privateer_python PRIVATE "-Wno-shadow")
 target_link_libraries ( privateer_python PRIVATE 
                         privateer_lib
                         ${CCP4_LIBRARIES} 
-                        ${pybind11_LIBRARIES} 
-                        ${PYTHON_LIBRARY})
+                        ${pybind11_LIBRARIES})
+
+set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
+set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
+set_target_properties ( privateer_python PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
 
 
 ## And finally, install everything in their reet places
