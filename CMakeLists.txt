@@ -122,8 +122,7 @@ add_executable(privateer_exec
 target_link_libraries ( privateer_exec 
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
-                        ${pybind11_LIBRARIES} 
-                        ${PYTHON_LIBRARY})
+                        ${pybind11_LIBRARIES})
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
@@ -136,17 +135,20 @@ target_link_libraries ( privateer_python PRIVATE
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES})
 
-set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-set_target_properties ( privateer_python PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-
+if (NOT APPLE)
+  set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
+  set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
+  set_target_properties ( privateer_python PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
+endif()
 
 ## And finally, install everything in their reet places
 #
 
-set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
-message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
-install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
+if (NOT DEFINED PYTHON_INSTALL_DIR)
+  set(PYTHON_INSTALL_DIR ${PYTHON_SITE_PACKAGES})
+endif
+message ( STATUS "Installing Python module to: ${PYTHON_INSTALL_DIR}")
+install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_INSTALL_DIR})
 install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
@@ -159,5 +161,5 @@ install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 install ( TARGETS privateer_exec DESTINATION bin)
-install ( TARGETS privateer_python DESTINATION ${PYTHON_MODULE_PATH} )
+install ( TARGETS privateer_python DESTINATION ${PYTHON_INSTALL_DIR} )
 
