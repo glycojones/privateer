@@ -20,7 +20,8 @@ endif()
 ## Required CCP4 CCP4_LIBRARIES
 #
 find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
-                           clipper-contrib clipper-ccp4 clipper-cif nlohmann-json)
+                           clipper-contrib clipper-ccp4 clipper-cif)
+find_package(nlohmann-json)
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
