@@ -76,19 +76,19 @@ endif()
 enable_testing()
 add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
 
-## Get Pybind11 through cmake
+## Get pybind11 through cmake
 #
-find_package(PYBIND11 CONFIG REQUIRED)
-MESSAGE( STATUS "Found PYBIND11 v${PYBIND11_VERSION}: ${PYBIND11_INCLUDE_DIRS}")
-MESSAGE( STATUS "PYBIND11_INCLUDE_DIRS = ${PYBIND11_INCLUDE_DIRS}" )
-MESSAGE( STATUS "PYBIND11_LIBRARIES    = ${PYBIND11_LIBRARIES}" )
+find_package(pybind11 CONFIG REQUIRED)
+MESSAGE( STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
+MESSAGE( STATUS "pybind11_INCLUDE_DIRS = ${pybind11_INCLUDE_DIRS}" )
+MESSAGE( STATUS "pybind11_LIBRARIES    = ${pybind11_LIBRARIES}" )
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
 
 ## Add all the include directories
 #
 include_directories(${CCP4_INCLUDE_DIRS}
-                    ${PYBIND11_INCLUDE_DIRS}
+                    ${pybind11_INCLUDE_DIRS}
                     ${PYTHON_INCLUDE_DIR}
                     ${PRIVATEER_SOURCE_DIR})
 
@@ -105,7 +105,7 @@ add_library(privateer_lib
   
 target_link_libraries ( privateer_lib 
                         ${CCP4_LIBRARIES} 
-                        ${PYBIND11_LIBRARIES} 
+                        ${pybind11_LIBRARIES} 
                         ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
                         
@@ -119,7 +119,7 @@ add_executable(privateer_exec
 target_link_libraries ( privateer_exec 
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
-                        ${PYBIND11_LIBRARIES} 
+                        ${pybind11_LIBRARIES} 
                         ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
@@ -131,7 +131,7 @@ pybind11_add_module(privateer_core ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/p
 target_link_libraries ( privateer_core PRIVATE 
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
-                        ${PYBIND11_LIBRARIES} 
+                        ${pybind11_LIBRARIES} 
                         ${PYTHON_LIBRARY} 
                         nlohmann_json::nlohmann_json)
 
