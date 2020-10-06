@@ -20,7 +20,7 @@ endif()
 ## Required CCP4 CCP4_LIBRARIES
 #
 find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
-                           clipper-contrib clipper-ccp4 clipper-cif )
+                           clipper-contrib clipper-ccp4 clipper-cif nlohmann-json)
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
@@ -110,8 +110,7 @@ add_library(privateer_lib
 target_link_libraries ( privateer_lib 
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES} 
-                        ${PYTHON_LIBRARY} 
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
                         
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
@@ -124,8 +123,7 @@ target_link_libraries ( privateer_exec
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES} 
-                        ${PYTHON_LIBRARY} 
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
@@ -136,8 +134,7 @@ target_link_libraries ( privateer_core PRIVATE
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
                         ${pybind11_LIBRARIES} 
-                        ${PYTHON_LIBRARY} 
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
 
 
 ## And finally, install everything in their reet places
