@@ -40,6 +40,7 @@
 #include <iostream>
 #include <iomanip>
 #include "privateer-lib.h"
+#include "privateer-cryo_em.h"
 #include "clipper-glyco.h"
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
@@ -87,18 +88,19 @@ int main(int argc, char** argv)
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
-    clipper::String ippdb       = "NONE";
-    clipper::String ipcol_fo    = "NONE";
-    clipper::String ipsfcif     = "NONE";
-    clipper::String ipmmcif     = "NONE";
-    clipper::String ipcode      = "XXX";
-    clipper::String ipwurcsjson = "database.json";
-    clipper::String opfile      = "privateer-hklout.mtz";
-    clipper::String title       = "generic title";
-    clipper::String ipmtz       = "NONE";
-    clipper::String expsys      = "undefined";
-    clipper::String validation_string = "";
-    std::vector<clipper::String> validation_options;
+    clipper::NXmap<float> cryo_em_map;
+    clipper::String input_model             = "NONE";
+    clipper::String input_cryoem_map        = "NONE";
+    clipper::String input_column_fobs       = "NONE";
+    clipper::String input_reflections_cif   = "NONE";
+    clipper::String input_ccd_code          = "XXX";
+    clipper::String ipwurcsjson             = "database.json";
+    clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
+    clipper::String title                   = "generic title";
+    clipper::String input_reflections_mtz   = "NONE";
+    clipper::String input_expression_system = "undefined";
+    clipper::String input_validation_string = "";
+    std::vector<clipper::String> input_validation_options;
     clipper::data::sugar_database_entry external_validation;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -138,33 +140,40 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-colin-fo" )
         {
             if  (++arg < args.size() )
-                ipcol_fo = args[arg];
+                input_column_fobs = args[arg];
         }
         else if ( args[arg] == "-mtzout" )
         {
             if ( ++arg < args.size() )
             {
-                opfile = args[arg];
+                output_mapcoeffs_mtz = args[arg];
                 output_mtz = true;
             }
         }
         else if ( args[arg] == "-pdbin" )
         {
             if ( ++arg < args.size() )
-                ippdb = args[arg];
+                input_model = args[arg];
         }
         else if ( args[arg] == "-mtzin" )
         {
             if ( ++arg < args.size() )
             {
                 useMTZ = true;
-                ipmtz = args[arg];
+                input_reflections_mtz = args[arg];
+            }
+        }
+        else if ( args[arg] == "-mapin" )
+        {
+            if ( ++arg < args.size() )
+            {
+                input_cryoem_map = args[arg];
             }
         }
         else if ( args[arg] == "-cifin" )
         {
             if ( ++arg < args.size() )
-                ipsfcif = args[arg];
+                input_reflections_cif = args[arg];
         }
         else if ( args[arg] == "-list" )
         {
@@ -175,16 +184,16 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-expression" )
         {
             if ( ++arg < args.size() )
-                expsys = args[arg];
-            if ( expsys.trim() != "undefined" &&
-                 expsys.trim() != "fungal" &&
-                 expsys.trim() != "yeast" &&
-                 expsys.trim() != "plant" &&
-                 expsys.trim() != "insect" &&
-                 expsys.trim() != "mammalian" &&
-                 expsys.trim() != "human" )
+                input_expression_system = args[arg];
+            if ( input_expression_system.trim() != "undefined" &&
+                 input_expression_system.trim() != "fungal" &&
+                 input_expression_system.trim() != "yeast" &&
+                 input_expression_system.trim() != "plant" &&
+                 input_expression_system.trim() != "insect" &&
+                 input_expression_system.trim() != "mammalian" &&
+                 input_expression_system.trim() != "human" )
             {
-                std::cout << std::endl << std::endl << "Error: " << expsys << " is not a supported expression system" << std::endl << std::endl;
+                std::cout << std::endl << std::endl << "Error: " << input_expression_system << " is not a supported expression system" << std::endl << std::endl;
                 privateer::util::print_usage();
                 prog.set_termination_message( "Failed" );
                 return 1;
@@ -194,10 +203,10 @@ int main(int argc, char** argv)
         {
             if ( ++arg < args.size() )
             {
-                ipcode = clipper::String(args[arg]);
+                input_ccd_code = clipper::String(args[arg]);
                 allSugars = false;
 
-                if (ipcode.trim().length() != 3)
+                if (input_ccd_code.trim().length() != 3)
                 {
                     std::cout << std::endl << std::endl << "Error: the sugar code must be three characters long, e.g. GLC."
                     << "\nPlease refer to the Chemical Component Dictionary (http://www.wwpdb.org/ccd.html).\n"
@@ -269,10 +278,10 @@ int main(int argc, char** argv)
         {
             if ( ++arg < args.size() )
             {
-                validation_string = args[arg];
+                input_validation_string = args[arg];
 
-                validation_options = validation_string.split(",");
-                if ( privateer::util::compute_and_print_external_validation ( validation_options, external_validation ) )
+                input_validation_options = input_validation_string.split(",");
+                if ( privateer::util::compute_and_print_external_validation ( input_validation_options, external_validation ) )
                 {
                     prog.set_termination_message ( "Failed" );
                     return -1;
@@ -308,11 +317,26 @@ int main(int argc, char** argv)
         }
     }
 
-    if ( ipcode != "XXX" )
+    if ( input_cryoem_map != "NONE" )
     {
-        if ((( !clipper::MSugar::search_database(ipcode.c_str())) && (clipper::MDisaccharide::search_disaccharides(ipcode.c_str())==-1)) && (validation_options.size() == 0) )
+        try
         {
-            std::cout << "\n\nError: no internal validation data found for " << ipcode << std::endl;
+            privateer::cryo_em::read_cryoem_map ( input_cryoem_map, cryo_em_map );
+        }
+        catch (...)
+        {
+            std::cout << "\nFATAL: the input map file does not exist or has unknown format." << std::endl << std::endl;
+            prog.set_termination_message("Failed");
+            return 1;
+        }
+    }
+
+
+    if ( input_ccd_code != "XXX" )
+    {
+        if ((( !clipper::MSugar::search_database(input_ccd_code.c_str())) && (clipper::MDisaccharide::search_disaccharides(input_ccd_code.c_str())==-1)) && (input_validation_options.size() == 0) )
+        {
+            std::cout << "\n\nError: no internal validation data found for " << input_ccd_code << std::endl;
             std::cout << "\nYou can provide external validation data with -valstring <data>" << std::endl;
             std::cout << "\n\tAccepted format: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n";
             std::cout << "\tThree-letter code, ring atoms separated by /, anomer, handedness, expected conformation.\n" << std::endl;
@@ -333,10 +357,10 @@ int main(int argc, char** argv)
         }
     }
 
-    if ( (ippdb != "NONE") && ((ipsfcif == "NONE") && (ipmtz == "NONE")) )
+    if ( (input_model != "NONE") && ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE")) )
         noMaps = true;
 
-    if ( (ippdb == "NONE") || ((ipsfcif == "NONE") && (ipmtz == "NONE") && (noMaps == false)) )
+    if ( (input_model == "NONE") || ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (noMaps == false)) )
     {
         privateer::util::print_usage();
         prog.set_termination_message( "Failed" );
@@ -346,8 +370,8 @@ int main(int argc, char** argv)
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
 
-    privateer::util::read_coordinate_file ( mfile, mmol, ippdb, batch);
-    int pos_slash = ippdb.rfind("/");
+    privateer::util::read_coordinate_file ( mfile, mmol, input_model, batch);
+    int pos_slash = input_model.rfind("/");
 
     if(useWURCSDataBase)
     {
@@ -374,7 +398,7 @@ int main(int argc, char** argv)
 
         const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-        mgl = clipper::MGlycology(mmol, manb, expsys);
+        mgl = clipper::MGlycology(mmol, manb, input_expression_system);
 
         list_of_glycans = mgl.get_list_of_glycans();
         list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
@@ -540,7 +564,7 @@ int main(int argc, char** argv)
 
                 else
                 {
-                    if ( strncmp( mmol[p][m].type().c_str(), ipcode.trim().c_str(), 3 )) // true if strings are different
+                    if ( strncmp( mmol[p][m].type().c_str(), input_ccd_code.trim().c_str(), 3 )) // true if strings are different
                     {
                         for (int id = 0; id < mmol[p][m].size(); id++ )
                         {
@@ -550,7 +574,7 @@ int main(int argc, char** argv)
                     }
                     else // it's the one sugar we're looking to omit
                     {
-                        if ( validation_options.size() > 0 )
+                        if ( input_validation_options.size() > 0 )
                         {
                             const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
 
@@ -604,12 +628,12 @@ int main(int argc, char** argv)
 
             if (batch)
             {
-                fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+                fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
                 fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
             }
             else
             {
-                printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+                printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
                 std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
             }
 
@@ -875,8 +899,8 @@ int main(int argc, char** argv)
         clipper::String all_MapName, dif_MapName, omit_dif_MapName;
         all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
 
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
-        privateer::coot::insert_coot_files_loadup_python (of_py , ippdb, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py , input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
 
 
 
@@ -1007,11 +1031,11 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-            std::cout << "Reading " << ipmtz.trim().c_str() << "... ";
+            std::cout << "Reading " << input_reflections_mtz.trim().c_str() << "... ";
             fflush(0);
         }
         mtzin.set_column_label_mode( clipper::CCP4MTZfile::Legacy );
-        mtzin.open_read( ipmtz.trim() );
+        mtzin.open_read( input_reflections_mtz.trim() );
 
         if (!batch)
             std::cout << "done." << std::endl;
@@ -1025,7 +1049,7 @@ int main(int argc, char** argv)
             if (!batch)
             {
                 std::cout << "\nReading cell and spacegroup parameters from the CRYST1 card in ";
-                std::cout << ippdb << ":\n Spacegroup (" << mmol.spacegroup().spacegroup_number() << ")\n" << mmol.cell().format() << "\n\n" ;
+                std::cout << input_model << ":\n Spacegroup (" << mmol.spacegroup().spacegroup_number() << ")\n" << mmol.cell().format() << "\n\n" ;
             }
 
             clipper::Resolution myRes(0.96);
@@ -1035,9 +1059,9 @@ int main(int argc, char** argv)
     else
     {   // assume CIF file format instead
         if (!batch)
-            std::cout << "Opening CIF file: " << ipsfcif.trim() << std::endl;
+            std::cout << "Opening CIF file: " << input_reflections_cif.trim() << std::endl;
 
-        cifin.open_read( ipsfcif.trim().c_str() );
+        cifin.open_read( input_reflections_cif.trim().c_str() );
 
         try // we could be in trouble should the CIF file not have cell parameters
         {
@@ -1045,7 +1069,7 @@ int main(int argc, char** argv)
         }
         catch (...)
         {
-            if (!batch) std::cout << "\nReading cell and spacegroup parameters from the CRYST1 card in " << ippdb;
+            if (!batch) std::cout << "\nReading cell and spacegroup parameters from the CRYST1 card in " << input_model;
             std::cout << ":\n Spacegroup (" << mmol.spacegroup().spacegroup_number() << ")\n" << mmol.cell().format() << "\n\n";
 
             clipper::Resolution myRes(0.96);
@@ -1068,12 +1092,12 @@ int main(int argc, char** argv)
         std::vector<clipper::String> mtzColumns;
         mtzColumns = mtzin.column_labels();
 
-        if (ipcol_fo != "NONE")
+        if (input_column_fobs != "NONE")
         {
-            if (!batch) std::cout << "MTZ file supplied. Using " << ipcol_fo << "...\n";
-            mtzin.import_hkl_data( fobs, "*/*/["+ ipcol_fo+"]" );
-            mtzin.import_crystal(opxtal, ipcol_fo);
-            mtzin.import_dataset(opdset, ipcol_fo);
+            if (!batch) std::cout << "MTZ file supplied. Using " << input_column_fobs << "...\n";
+            mtzin.import_hkl_data( fobs, "*/*/["+ input_column_fobs+"]" );
+            mtzin.import_crystal(opxtal, input_column_fobs);
+            mtzin.import_dataset(opdset, input_column_fobs);
             mtzin.close_read();
             notFound = false;
         }
@@ -1134,13 +1158,13 @@ int main(int argc, char** argv)
             if (!batch)
                 std::cout << "\nNo suitable amplitudes have been found in the MTZ file!\n\nSummoning ctruncate in case what we have are intensities...\n\n";
 
-            char cmd[80];
+            char cmd[100];
             int exitCodeCTruncate;
 
             if (!batch)
-                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]'", ipmtz.c_str());
+                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]'", input_reflections_mtz.c_str());
             else
-                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]' >/dev/null", ipmtz.c_str());
+                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]' >/dev/null", input_reflections_mtz.c_str());
 
             exitCodeCTruncate = system(cmd);
 
@@ -1199,7 +1223,7 @@ int main(int argc, char** argv)
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    mgl = clipper::MGlycology(mmol, manb, expsys);
+    mgl = clipper::MGlycology(mmol, manb, input_expression_system);
 
     list_of_glycans = mgl.get_list_of_glycans();
     list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
@@ -1350,7 +1374,7 @@ int main(int argc, char** argv)
         std::cout << std::endl << "___________________________________________________________________" << std::endl;
         std::cout << "Scanning a waterless difference map for unmodelled glycosylation sites on protein backbone..." << std::endl;
 
-        clipper::MiniMol modelRemovedWaters = get_model_without_waters(ippdb);
+        clipper::MiniMol modelRemovedWaters = get_model_without_waters(input_model);
 
         clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
         
@@ -1645,7 +1669,7 @@ int main(int argc, char** argv)
 
             else
             {
-                if ( strncmp( mmol[p][m].type().c_str(), ipcode.trim().c_str(), 3 )) // true if strings are different
+                if ( strncmp( mmol[p][m].type().c_str(), input_ccd_code.trim().c_str(), 3 )) // true if strings are different
                 {
                     for (int id = 0; id < mmol[p][m].size(); id++ )
                     {
@@ -1655,7 +1679,7 @@ int main(int argc, char** argv)
                 }
                 else // it's the one sugar we're looking to omit
                 {
-                    if ( validation_options.size() > 0 )
+                    if ( input_validation_options.size() > 0 )
                     {
                         const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
 
@@ -1819,13 +1843,13 @@ int main(int argc, char** argv)
     {
         if (!batch)
         {
-            std::cout << "Writing map coefficients to " << opfile << "... ";
+            std::cout << "Writing map coefficients to " << output_mapcoeffs_mtz << "... ";
             fflush(0);
         }
         if (useMTZ)
         {
             clipper::CCP4MTZfile mtzout;
-            mtzout.open_append(ipmtz, opfile );
+            mtzout.open_append(input_reflections_mtz, output_mapcoeffs_mtz );
             mtzout.export_hkl_data( fb_all, "*/*/BEST" );
             mtzout.export_hkl_data( fd_all, "*/*/DIFF" );
             mtzout.export_hkl_data( fd_omit,"*/*/OMIT");
@@ -1889,7 +1913,7 @@ int main(int argc, char** argv)
     clipper::CCP4MAPfile sigmaa_omit_fd_MapOut;
 
     if (allSugars)
-        ipcode = "all";
+        input_ccd_code = "all";
 
     clipper::Map_stats ms;
 
@@ -1961,12 +1985,12 @@ int main(int argc, char** argv)
 
         if (batch)
         {
-            fprintf(output, "%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().trim().c_str());
+            fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().trim().c_str());
             fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
         }
         else
         {
-            printf("%c%c%c%c\t%s-",ippdb[1+pos_slash],ippdb[2+pos_slash],ippdb[3+pos_slash],ippdb[4+pos_slash], ligandList[index].second.type().c_str());
+            printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
             std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
         }
 
@@ -2315,8 +2339,8 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    privateer::coot::insert_coot_files_loadup_scheme (of_scm, ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
-    privateer::coot::insert_coot_files_loadup_python (of_py,  ippdb, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
 
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 
@@ -2548,7 +2572,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer has identified " << n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
 
-    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, ippdb, jsonObject);
+    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, jsonObject);
 
     
 
