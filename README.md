@@ -67,7 +67,10 @@ Privateer's Python bindings(assuming that the virtualenv is not deactivated) can
 
 3.) print(dir(pvt))
 
-4.) wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
+4.) 
+
+    wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
+    
     print(wurcs)
 
 
