@@ -15,7 +15,7 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 ## **Installation instructions:**
 
-**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04)
+**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04). For **MacOS** "Catalina"(aka 10.15.X) there are additional pre-installation steps involved(scroll down), you masochist. 
 
 **Requirements:** 
 
@@ -59,6 +59,41 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 4.) .././privateer -pdbin ../../../tests/test_data/2h6o_carbremediation.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan ../../../src/privateer/database.json
 
+Privateer's Python bindings(assuming that the virtualenv is not deactivated) can also be accessed via: 
+1.) python
+2.) from privateer import privateer_core as pvt
+3.) print(dir(pvt))
+4.) wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
+    print(wurcs)
+
+
+## PRE-INSTALLATION INSTRUCTIONS FOR macOS CATALINA: 
+
+**Requirements:**
+
+**Homebrew** and write permissions given to it via sudo. 
+
+1.) Download and install Command_Line_Tools_for_Xcode_12.dmg from https://developer.apple.com/download/more/
+
+2.) brew install gcc@9 (Versions > gcc@9 don't seem to work, as gcc@10 gives compilation error for Fortran dependencies)
+
+3.) brew cask install gfortran
+
+4.) ln -sf /usr/local/bin/gcc-9 /usr/local/bin/gcc
+    ln -sf /usr/local/bin/gcc-9 /usr/local/bin/cc
+    ln -sf /usr/local/bin/g++-9 /usr/local/bin/g++
+    ln -sf /usr/local/bin/c++-9 /usr/local/bin/c++
+
+Ensure that Homebrew's /usr/local/bin comes before /usr/bin in **echo $PATH** command!
+For example: /Users/haroldas/anaconda3/condabin:/Users/haroldas/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Useful troubleshoot threads in case overkill methods become a necessity: 
+
+https://apple.stackexchange.com/questions/245891/installed-gcc-with-homebrew-now-how-to-use-that-gcc-instead-of-clang
+
+https://apple.stackexchange.com/questions/99077/how-to-set-gcc-4-8-as-default-gcc-compiler/99157#99157
+
+After pre-installation steps are complete, one can carry on as normal in terms of installation instructions. 
 
 
 *If there are any issues with the installation process or running Privateer, please get in touch with: hb1115@york.ac.uk*
