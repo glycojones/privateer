@@ -60,6 +60,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 4.) .././privateer -pdbin ../../../tests/test_data/2h6o_carbremediation.pdb -mtzin ../../../tests/test_data/2h6o_phases.mtz -glytoucan ../../../src/privateer/database.json
 
 Privateer's Python bindings(assuming that the virtualenv is not deactivated) can also be accessed via: 
+
 1.) python
 
 2.) from privateer import privateer_core as pvt
@@ -82,7 +83,9 @@ Privateer's Python bindings(assuming that the virtualenv is not deactivated) can
 
 3.) brew cask install gfortran
 
-4.) ln -sf /usr/local/bin/gcc-9 /usr/local/bin/gcc
+4.) 
+
+    ln -sf /usr/local/bin/gcc-9 /usr/local/bin/gcc
     
     ln -sf /usr/local/bin/gcc-9 /usr/local/bin/cc
     
