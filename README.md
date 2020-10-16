@@ -61,8 +61,11 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 Privateer's Python bindings(assuming that the virtualenv is not deactivated) can also be accessed via: 
 1.) python
+
 2.) from privateer import privateer_core as pvt
+
 3.) print(dir(pvt))
+
 4.) wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
     print(wurcs)
 
@@ -80,11 +83,15 @@ Privateer's Python bindings(assuming that the virtualenv is not deactivated) can
 3.) brew cask install gfortran
 
 4.) ln -sf /usr/local/bin/gcc-9 /usr/local/bin/gcc
+    
     ln -sf /usr/local/bin/gcc-9 /usr/local/bin/cc
+    
     ln -sf /usr/local/bin/g++-9 /usr/local/bin/g++
+    
     ln -sf /usr/local/bin/c++-9 /usr/local/bin/c++
 
 Ensure that Homebrew's /usr/local/bin comes before /usr/bin in **echo $PATH** command!
+
 For example: /Users/haroldas/anaconda3/condabin:/Users/haroldas/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Useful troubleshoot threads in case overkill methods become a necessity: 
