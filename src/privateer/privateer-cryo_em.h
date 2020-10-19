@@ -27,8 +27,7 @@ namespace privateer
 {
   namespace cryo_em
   {
-    void read_cryoem_map  ( clipper::String const pathname,
-                            clipper::NXmap<float>& output_map );
+    void read_cryoem_map  ( clipper::String const pathname, clipper::MiniMol& mmol, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
 
     void calculate_fc_map ( clipper::NXmap<float> const &reference_map,
                             clipper::NXmap<float> &output_map );

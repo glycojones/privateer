@@ -41,6 +41,7 @@
 #include <iomanip>
 #include "privateer-lib.h"
 #include "privateer-cryo_em.h"
+#include "privateer-xray.h"
 #include "clipper-glyco.h"
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
@@ -88,7 +89,8 @@ int main(int argc, char** argv)
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
-    clipper::NXmap<float> cryo_em_map;
+    clipper::CCP4MAPfile mrcin;
+    clipper::Xmap<double> cryo_em_map;
     clipper::String input_model             = "NONE";
     clipper::String input_cryoem_map        = "NONE";
     clipper::String input_column_fobs       = "NONE";
@@ -108,6 +110,7 @@ int main(int argc, char** argv)
     int n_refln = 1000;
     int n_param = 20;
     bool useMTZ = false;
+    bool useMRC = false;
     bool batch = false;
     bool noMaps = false;
     bool allSugars = true;
@@ -115,6 +118,7 @@ int main(int argc, char** argv)
     bool check_unmodelled = false;
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
+    float resolution = -1; 
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
     FILE *output;
@@ -167,7 +171,21 @@ int main(int argc, char** argv)
         {
             if ( ++arg < args.size() )
             {
+                useMRC = true;
                 input_cryoem_map = args[arg];
+            }
+        }
+        else if ( args[arg] == "-resolution" )
+        {
+            if ( ++arg < args.size() )
+            {
+                resolution = clipper::String(args[arg]).f();
+                if (resolution < 0.0)
+                {
+                    std::cout << "\n\nResolution value is negative! Expected a positive decimal." << std::endl << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
+                }
             }
         }
         else if ( args[arg] == "-cifin" )
@@ -317,18 +335,18 @@ int main(int argc, char** argv)
         }
     }
 
-    if ( input_cryoem_map != "NONE" )
+    if ( useMTZ && useMRC )
     {
-        try
-        {
-            privateer::cryo_em::read_cryoem_map ( input_cryoem_map, cryo_em_map );
-        }
-        catch (...)
-        {
-            std::cout << "\nFATAL: the input map file does not exist or has unknown format." << std::endl << std::endl;
-            prog.set_termination_message("Failed");
-            return 1;
-        }
+        std::cout << "\nFATAL: Both MTZ and MRC file formats were inputted. Expected only one of them, not both at the same time!" << std::endl << std::endl;
+        prog.set_termination_message("Failed");
+        return 1;
+    }
+
+    if ( useMRC && resolution == -1)
+    {
+        std::cout << "\nFATAL: An MRC file was inputted, but no resolution value was given. To import a Cryo-EM map please use -mapin and -resolution arguments!" << std::endl << std::endl;
+        prog.set_termination_message("Failed");
+        return 1;
     }
 
 
@@ -357,10 +375,10 @@ int main(int argc, char** argv)
         }
     }
 
-    if ( (input_model != "NONE") && ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE")) )
+    if ( (input_model != "NONE") && ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (input_cryoem_map == "NONE")) )
         noMaps = true;
 
-    if ( (input_model == "NONE") || ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (noMaps == false)) )
+    if ( (input_model == "NONE") || ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (input_cryoem_map == "NONE") && (noMaps == false)) )
     {
         privateer::util::print_usage();
         prog.set_termination_message( "Failed" );
@@ -1020,44 +1038,18 @@ int main(int argc, char** argv)
 
 
 
+
+
+
     // Full analysis, slower but much more complete //
 
     std::vector< std::string > enable_torsions_for;
 
-
-    if (useMTZ)
+    if      (useMTZ && !useMRC) privateer::xray::read_xray_map( input_reflections_mtz, input_model, mmol, hklinfo, mtzin );
+    else if (useMRC && !useMTZ) privateer::cryo_em::read_cryoem_map ( input_cryoem_map, mmol, hklinfo, cryo_em_map, mrcin, resolution);
+    else 
     {
-        // grab the structure factors from an MTZ file
-
-        if (!batch)
-        {
-            std::cout << "Reading " << input_reflections_mtz.trim().c_str() << "... ";
-            fflush(0);
-        }
-        mtzin.set_column_label_mode( clipper::CCP4MTZfile::Legacy );
-        mtzin.open_read( input_reflections_mtz.trim() );
-
-        if (!batch)
-            std::cout << "done." << std::endl;
-
-        try // we could be in trouble should the MTZ file have no cell parameters
-        {
-            mtzin.import_hkl_info( hklinfo );     // read spacegroup, cell, resolution, HKL's
-        }
-        catch (...)
-        {
-            if (!batch)
-            {
-                std::cout << "\nReading cell and spacegroup parameters from the CRYST1 card in ";
-                std::cout << input_model << ":\n Spacegroup (" << mmol.spacegroup().spacegroup_number() << ")\n" << mmol.cell().format() << "\n\n" ;
-            }
-
-            clipper::Resolution myRes(0.96);
-            hklinfo = clipper::HKL_info( mmol.spacegroup(), mmol.cell(), myRes, true);
-        }
-    }
-    else
-    {   // assume CIF file format instead
+        // assume CIF file format instead
         if (!batch)
             std::cout << "Opening CIF file: " << input_reflections_cif.trim() << std::endl;
 
@@ -1077,124 +1069,24 @@ int main(int argc, char** argv)
         }
     }
 
-    clipper::HKL_data<clipper::data32::F_sigF> fobs ( hklinfo );            // allocate space for F and sigF
-    clipper::HKL_data<clipper::data32::F_sigF> fobs_scaled ( hklinfo );     // allocate space for scaled F and sigF
-    clipper::HKL_data<clipper::data32::F_phi> fc_omit_bsc ( hklinfo );      // allocate space for the omit calc data with bsc
-    clipper::HKL_data<clipper::data32::F_phi> fc_all_bsc ( hklinfo );       // allocate space for the whole calculated data with bsc
-    clipper::HKL_data<clipper::data32::F_phi> fc_ligands_bsc( hklinfo );    // allocate space for the ligand calculated data
+    clipper::HKL_data<clipper::data32::F_sigF> fobs;            // allocate space for F and sigF
+    clipper::HKL_data<clipper::data32::F_sigF> fobs_scaled;     // allocate space for scaled F and sigF
+    clipper::HKL_data<clipper::data32::F_phi> fc_cryoem_obs;    // allocate space for cryoEM calculated structure factors.
+    clipper::HKL_data<clipper::data32::F_phi> fc_omit_bsc;      // allocate space for the omit calc data with bsc
+    clipper::HKL_data<clipper::data32::F_phi> fc_all_bsc;       // allocate space for the whole calculated data with bsc
+    clipper::HKL_data<clipper::data32::F_phi> fc_ligands_bsc;    // allocate space for the ligand calculated data
 
-    bool notFound = true;
 
-    // now scan for some of the most used column ID's
-
-    if (useMTZ)
-    {
-        std::vector<clipper::String> mtzColumns;
-        mtzColumns = mtzin.column_labels();
-
-        if (input_column_fobs != "NONE")
-        {
-            if (!batch) std::cout << "MTZ file supplied. Using " << input_column_fobs << "...\n";
-            mtzin.import_hkl_data( fobs, "*/*/["+ input_column_fobs+"]" );
-            mtzin.import_crystal(opxtal, input_column_fobs);
-            mtzin.import_dataset(opdset, input_column_fobs);
-            mtzin.close_read();
-            notFound = false;
-        }
-        else
-        {
-            for ( int i = 0 ; ((i < mtzColumns.size()) && notFound) ; i++ )
-            {
-                if (mtzColumns[i].find("/FOBS ") != -1)
-                {
-                    if (!batch) std::cout << "\nMTZ file supplied. Using FOBS & SIGFOBS...\n";
-                    mtzin.import_hkl_data( fobs, "*/*/[FOBS,SIGFOBS]" );
-                    mtzin.import_crystal(opxtal, "*/*/[FOBS,SIGFOBS]" );
-                    mtzin.import_dataset(opdset, "*/*/[FOBS,SIGFOBS]" );
-                    mtzin.close_read();
-                    notFound = false;
-                }
-                else if (mtzColumns[i].find("/FP ") != -1)
-                {
-                    if (!batch) std::cout << "\nMTZ file supplied. Using FP & SIGFP...\n";
-                    mtzin.import_hkl_data( fobs, "*/*/[FP,SIGFP]" );
-                    mtzin.import_crystal(opxtal, "*/*/[FP,SIGFP]" );
-                    mtzin.import_dataset(opdset, "*/*/[FP,SIGFP]" );
-                    mtzin.close_read();
-                    notFound = false;
-                }
-                else if (mtzColumns[i].find("/FOSC ") != -1)
-                {
-                    if (!batch) std::cout << "\nMTZ file supplied. Using FOSC & SIGFOSC...\n";
-                    mtzin.import_hkl_data( fobs, "*/*/[FOSC,SIGFOSC]" );
-                    mtzin.import_crystal(opxtal, "*/*/[FOSC,SIGFOSC]" );
-                    mtzin.import_dataset(opdset, "*/*/[FOSC,SIGFOSC]" );
-                    mtzin.close_read();
-                    notFound = false;
-                }
-                else if (mtzColumns[i].find("/F-obs ") != -1)
-                {
-                    if (!batch) std::cout << "\nMTZ file supplied. Using F-obs & SIGF-obs...\n";
-                    mtzin.import_hkl_data( fobs, "*/*/[F-obs,SIGF-obs]" );
-                    mtzin.import_crystal(opxtal, "*/*/[F-obs,SIGF-obs]" );
-                    mtzin.import_dataset(opdset, "*/*/[F-obs,SIGF-obs]" );
-                    mtzin.close_read();
-                    notFound = false;
-                }
-                else if (mtzColumns[i].find("/F ") != -1)
-                {
-                    if (!batch) std::cout << "\nMTZ file supplied. Using F & SIGF...\n";
-                    mtzin.import_hkl_data( fobs, "*/*/[F,SIGF]" );
-                    mtzin.import_crystal(opxtal, "*/*/[F,SIGF]" );
-                    mtzin.import_dataset(opdset, "*/*/[F,SIGF]" );
-                    mtzin.close_read();
-                    notFound = false;
-                }
-            }
-        }
-
-        if (notFound)
-        {
-            if (!batch)
-                std::cout << "\nNo suitable amplitudes have been found in the MTZ file!\n\nSummoning ctruncate in case what we have are intensities...\n\n";
-
-            char cmd[100];
-            int exitCodeCTruncate;
-
-            if (!batch)
-                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]'", input_reflections_mtz.c_str());
-            else
-                sprintf(cmd, "$CBIN/ctruncate -hklin %s -mtzout amplitudes.mtz -colin '/*/*/[I,SIGI]' >/dev/null", input_reflections_mtz.c_str());
-
-            exitCodeCTruncate = system(cmd);
-
-            if (exitCodeCTruncate != EXIT_SUCCESS)
-                return EXIT_FAILURE;
-
-            else
-            {
-                if (!batch)
-                {
-                    std::cout << "\nReading output from ctruncate...\n" << "Previous hklinfo: " << hklinfo.cell().format() << std::endl;
-                    std::cout << " " << hklinfo.spacegroup().spacegroup_number() << " " << hklinfo.num_reflections() << "\n";
-                }
-
-                ampmtzin.set_column_label_mode( clipper::CCP4MTZfile::Legacy );
-                ampmtzin.open_read( "amplitudes.mtz" );   // open file, no security checks
-                ampmtzin.import_hkl_data( fobs, "*/*/[F,SIGF]" );
-                ampmtzin.import_crystal(opxtal, "*/*/[F,SIGF]" );
-                ampmtzin.import_dataset(opdset, "*/*/[F,SIGF]" );
-                ampmtzin.close_read();
-
-                if (!batch) std::cout << "\nPresent hklinfo: " << hklinfo.cell().format() << " " << hklinfo.spacegroup().spacegroup_number() << " " << hklinfo.num_reflections() << "\n";
-            }
-        }
-    }
-
-    else
+    if (!useMTZ && !useMRC && !noMaps)
     {
         try
         {
+            fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+            fobs_scaled = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+            fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+
             cifin.import_hkl_data( fobs );
             cifin.close_read();
         }
@@ -1204,16 +1096,35 @@ int main(int argc, char** argv)
             return 1;
         }
     }
-
-    fobs_scaled = fobs;
-
-    if (!batch)
+    else
     {
-        std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
-        std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+        if (useMTZ)
+        {
+            fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+            fobs_scaled = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+            fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+
+            privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, input_reflections_mtz);
+            std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
+            std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+            fobs_scaled = fobs;
+        }
+        if (useMRC)
+        {
+            // calculate cryo em map structure factors;
+            fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
+            fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+            
+            cryo_em_map.fft_to(fc_cryoem_obs);
+        }
     }
 
-    
+
+   
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;

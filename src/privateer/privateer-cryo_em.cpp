@@ -17,20 +17,25 @@
 
 #include "privateer-cryo_em.h"
 
-void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::NXmap<float>& output_map )
+void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::MiniMol& mmol, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
-  clipper::CCP4MAPfile file;
-  try
-  {
-    file.open_read( pathname );
-    file.import_nxmap( output_map );
-    file.close_read();
-  }
-  catch (...)
-  {
-    throw; // hand control to the caller so we can abort
-  }
+    std::cout << "Reading " << pathname.trim().c_str() << "... ";
+    fflush(0);
+    try
+    {
+        mrcin.open_read( pathname.trim() );
+        mrcin.import_xmap( output_map );
+        mrcin.close_read();
 
+        std::cout << "done." << std::endl;
+
+        clipper::Resolution resolution(resolution_value);
+        hklinfo = clipper::HKL_info(output_map.spacegroup(), output_map.cell(), resolution, true);
+    }
+    catch (...)
+    {
+        throw; // hand control to the caller so we can abort
+    }
 }
 
 void privateer::cryo_em::mask_from_model  ( std::vector <clipper::MMonomer> &input_model,
