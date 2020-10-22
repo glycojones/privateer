@@ -1076,6 +1076,10 @@ int main(int argc, char** argv)
     clipper::HKL_data<clipper::data32::F_phi> fc_all_bsc;       // allocate space for the whole calculated data with bsc
     clipper::HKL_data<clipper::data32::F_phi> fc_ligands_bsc;    // allocate space for the ligand calculated data
 
+    
+    // DEBUGAS
+    // clipper::Resolution resolutioncopy(resolution);
+    // clipper::HKL_info hklinfo = clipper::HKL_info(hklinfo.spacegroup(), clipper::Cell(clipper::Cell_descr ( 1, 1, 1, 90, 90, 90 )), resolutioncopy, true);
 
     if (!useMTZ && !useMRC && !noMaps)
     {
@@ -1120,30 +1124,26 @@ int main(int argc, char** argv)
         }
         if (useMRC)
         {
-            // clipper::Resolution resolutioncopy(resolution);
-            // clipper::HKL_info hklinfo_copy = clipper::HKL_info(hklinfo.spacegroup(), clipper::Cell(clipper::Cell_descr ( 1, 1, 1, 90, 90, 90 )), resolutioncopy, true);
-            // // calculate cryo em map structure factors;
-            // fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo_copy );
-            // fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo_copy, cryo_em_map.cell() );
-            // fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo_copy );
-            // fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo_copy );
-            // fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo_copy );
-
-
             // calculate cryo em map structure factors;
+            // if you gonna play with hklinfo_copy again, make sure you check hklinfo initialization objects all the way down to blob algorithm in terms of carbs.
             std::cout << hklinfo.cell().descr().format() << std::endl;
             fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
             fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
+            // fc_cryoem_obs.update();
             fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
             fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
             fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
 
-            // std::cout << std::boolalpha << "MRC FILE: fobs.is_null() = " << fobs.is_null() << std::endl;
-            // std::cout << std::boolalpha << "MRC FILE: fobs.data_size() = " << fobs.data_size() << std::endl;
-            // std::cout << std::boolalpha << "MRC FILE: fobs.type() = " << fobs.type() << std::endl;
-            // std::cout << std::boolalpha << "MRC FILE: fobs.data_names() = " << fobs.data_names() << std::endl;
-            // std::cout << std::boolalpha << "MRC FILE: fobs.debug() = " << std::endl;
-            // fobs.debug();
+            
+            std::cout << fc_cryoem_obs.cell().descr().format() << std::endl;
+            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.is_null() = " << fc_cryoem_obs.is_null() << std::endl;
+            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.data_size() = " << fc_cryoem_obs.data_size() << std::endl;
+            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.type() = " << fc_cryoem_obs.type() << std::endl;
+            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.data_names() = " << fc_cryoem_obs.data_names() << std::endl;
+            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.debug() = " << std::endl;
+            fc_cryoem_obs.debug();
+
+            std::cout << "___________________________________________________________" << std::endl;
             
             cryo_em_map.fft_to(fc_cryoem_obs);
             privateer::cryo_em::initialize_dummy_fobs( fobs, fc_cryoem_obs );
@@ -1362,7 +1362,7 @@ int main(int argc, char** argv)
         }
         clipper::Map_stats ms(sigmaa_dif_map);
 	    float map_sigma = ms.std_dev();
-        
+        std::cout << "Status of no_errors " << std::boolalpha << no_errors << std::endl;
         if (no_errors)
             {
                 std::cout << std::endl << "Sigmaa difference map was successfully generated: " << std::boolalpha << no_errors << std::endl;

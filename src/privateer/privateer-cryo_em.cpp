@@ -49,8 +49,8 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
                 // fobs[ih].sigf() = fobs[ih].f();
                 fobs[ih].sigf() = 1;
                 iteration++;
-                // if(iteration == 420) std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
-                std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
+                if(ih.last()) std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
+                // std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
             }
         }
 }
