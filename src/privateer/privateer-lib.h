@@ -59,9 +59,11 @@ namespace privateer
     {
         bool calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                     const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                    const clipper::HKL_data<clipper::data32::F_phi>& simulated_cryoem_reflection_data,
                                     clipper::Xmap<float>& best_map,
                                     clipper::Xmap<float>& difference_map,
                                     bool ignore_set_null,
+                                    bool useMTZ, 
                                     int n_refln = 1000,
                                     int n_param = 20);
         void print_usage();

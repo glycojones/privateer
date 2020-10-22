@@ -38,6 +38,23 @@ void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clip
     }
 }
 
+void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs)
+{
+    int iteration = 0;
+    for (HRI ih = fc_cryoem_obs.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+        {
+            if(!fc_cryoem_obs[ih].missing())
+            {
+                fobs[ih].f() = fc_cryoem_obs[ih].f();
+                // fobs[ih].sigf() = fobs[ih].f();
+                fobs[ih].sigf() = 1;
+                iteration++;
+                // if(iteration == 420) std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
+                std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
+            }
+        }
+}
+
 void privateer::cryo_em::mask_from_model  ( std::vector <clipper::MMonomer> &input_model,
                                             clipper::NXmap<float> &output_mask,
                                             float radius )

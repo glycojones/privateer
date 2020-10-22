@@ -23,11 +23,15 @@
 #include <clipper/clipper-minimol.h>
 #include <clipper/clipper-contrib.h>
 
+typedef clipper::HKL_data_base::HKL_reference_index HRI;
+
 namespace privateer
 {
   namespace cryo_em
   {
     void read_cryoem_map  ( clipper::String const pathname, clipper::MiniMol& mmol, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
+
+    void initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs);
 
     void calculate_fc_map ( clipper::NXmap<float> const &reference_map,
                             clipper::NXmap<float> &output_map );
