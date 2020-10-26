@@ -240,34 +240,6 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
 
         clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
 
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.is_null() = " << reflection_data_scaled.is_null() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data_scaled.data_size() = " << reflection_data_scaled.data_size() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data_scaled.type() = " << reflection_data_scaled.type() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data_scaled.data_names() = " << reflection_data_scaled.data_names() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data_scaled.debug() = " << std::endl;
-        reflection_data_scaled.debug();
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: model_structure_factors.is_null() = " << model_structure_factors.is_null() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: model_structure_factors.data_size() = " << model_structure_factors.data_size() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: model_structure_factors.type() = " << model_structure_factors.type() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: model_structure_factors.data_names() = " << model_structure_factors.data_names() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: model_structure_factors.debug() = " << std::endl;
-        model_structure_factors.debug();
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "hkl_info DEBUG: " << std::endl;
-        hkl_info.debug();
-        std::cout << "hkl_info.cell().descr().format() = " << hkl_info.cell().descr().format() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().spacegroup_number() = " << hkl_info.spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().hash() = " << hkl_info.spacegroup().descr().hash() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().generator_ops().hash() = " << hkl_info.spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "hkl_info.hkl_sampling().hkl_limit().format() = " << hkl_info.hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "hkl_info.resolution().limit() = " << hkl_info.resolution().limit() << std::endl;
-
         if ( ! sigmaa_weighting ( best_map_coefficients,
                                     difference_map_coefficients,
                                     phase_and_fom,
@@ -275,54 +247,6 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                     model_structure_factors, flag) )
             return false;
 
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << std::boolalpha << "best_map_coefficients.is_null() = " << best_map_coefficients.is_null() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.data_size() = " << best_map_coefficients.data_size() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.type() = " << best_map_coefficients.type() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.data_names() = " << best_map_coefficients.data_names() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.debug() = " << std::endl;
-        best_map_coefficients.debug();
-
-        std::cout << "______________________________________________________________________" << std::endl;
-        
-        std::cout << std::boolalpha << "difference_map_coefficients.is_null() = " << difference_map_coefficients.is_null() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.data_size() = " << difference_map_coefficients.data_size() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.type() = " << difference_map_coefficients.type() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.data_names() = " << difference_map_coefficients.data_names() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.debug() = " << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-        
-        std::cout << std::boolalpha << "phase_and_fom.is_null() = " << phase_and_fom.is_null() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.data_size() = " << phase_and_fom.data_size() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.type() = " << phase_and_fom.type() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.data_names() = " << phase_and_fom.data_names() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.debug() = " << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "difference_map_coefficients.base_hkl_info() DEBUG: " << std::endl;
-        difference_map_coefficients.base_hkl_info().debug();
-        std::cout << "difference_map_coefficients.base_hkl_info().cell().descr().format() = " << difference_map_coefficients.base_hkl_info().cell().descr().format() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().spacegroup_number() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().hash() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().hash() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().generator_ops().hash() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().hkl_sampling().hkl_limit().format() = " << difference_map_coefficients.base_hkl_info().hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().resolution().limit() = " << difference_map_coefficients.base_hkl_info().resolution().limit() << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "phase_and_fom.base_hkl_info() DEBUG: " << std::endl;
-        phase_and_fom.base_hkl_info().debug();
-        std::cout << "phase_and_fom.base_hkl_info().cell().descr().format() = " << phase_and_fom.base_hkl_info().cell().descr().format() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().spacegroup_number() = " << phase_and_fom.base_hkl_info().spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().hash() = " << phase_and_fom.base_hkl_info().spacegroup().descr().hash() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().generator_ops().hash() = " << phase_and_fom.base_hkl_info().spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().hkl_sampling().hkl_limit().format() = " << phase_and_fom.base_hkl_info().hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().resolution().limit() = " << phase_and_fom.base_hkl_info().resolution().limit() << std::endl;
-
-        std::cout << "_____________________________FINISHED_________________________________" << std::endl;
         
 
         best_map.fft_from ( best_map_coefficients );
@@ -332,57 +256,11 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
     }
     else
     {
-        // if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
-        //     ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
-        //     return false;
-
-        // clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
-        // // hkl_info.debug();
-
-
-        // clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
-
-        // for (HRI ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
-        // {
-        //     if ( !reflection_data[ih].missing() )
-        //         flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
-        //     else
-        //         flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
-        // }
-
-        // // intermediate data structures for the sigmaa calculation
-        // // will output real-space maps later on
-        // clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
-        // clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
-        // clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
-
-        // clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
-
-        // std::cout << "Initiating sigmaa_weighting" << std::endl;
-
-        // if ( ! sigmaa_weighting ( best_map_coefficients,
-        //                             difference_map_coefficients,
-        //                             phase_and_fom,
-        //                             reflection_data,
-        //                             simulated_cryoem_reflection_data, flag) )
-        //     return false;
-
-        // std::cout << "Initiating fft transformations" << std::endl;
-
-        // best_map.fft_from ( best_map_coefficients );
-        // difference_map.fft_from ( difference_map_coefficients );
-
-        // std::cout << "After fft transformations" << std::endl;
-
-        // return true;
-
-
         if ( ( ! simulated_cryoem_reflection_data.base_cell().equals( best_map.cell() ) ||
             ( ! simulated_cryoem_reflection_data.base_cell().equals( difference_map.cell() ))))
             return false;
 
         clipper::HKL_info hkl_info = simulated_cryoem_reflection_data.base_hkl_info();
-        hkl_info.debug();
 
         clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
 
@@ -400,38 +278,10 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
         clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
 
-        clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
-
         std::cout << "Initiating sigmaa_weighting" << std::endl;
 
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.is_null() = " << reflection_data.is_null() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.data_size() = " << reflection_data.data_size() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.type() = " << reflection_data.type() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.data_names() = " << reflection_data.data_names() << std::endl;
-        std::cout << std::boolalpha << "DUMMY F_SIGF OBJECT: reflection_data.debug() = " << std::endl;
-        reflection_data.debug();
+        clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
 
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: simulated_cryoem_reflection_data.is_null() = " << simulated_cryoem_reflection_data.is_null() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: simulated_cryoem_reflection_data.data_size() = " << simulated_cryoem_reflection_data.data_size() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: simulated_cryoem_reflection_data.type() = " << simulated_cryoem_reflection_data.type() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: simulated_cryoem_reflection_data.data_names() = " << simulated_cryoem_reflection_data.data_names() << std::endl;
-        std::cout << std::boolalpha << "F_PHI INPUT OBJECT: simulated_cryoem_reflection_data.debug() = " << std::endl;
-        simulated_cryoem_reflection_data.debug();
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "hkl_info DEBUG: " << std::endl;
-        hkl_info.debug();
-        std::cout << "hkl_info.cell().descr().format() = " << hkl_info.cell().descr().format() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().spacegroup_number() = " << hkl_info.spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().hash() = " << hkl_info.spacegroup().descr().hash() << std::endl;
-        std::cout << "hkl_info.spacegroup().descr().generator_ops().hash() = " << hkl_info.spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "hkl_info.hkl_sampling().hkl_limit().format() = " << hkl_info.hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "hkl_info.resolution().limit() = " << hkl_info.resolution().limit() << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
         std::cout << "Launching sigmaa_weighting" << std::endl;
 
         // if ( ! sigmaa_weighting (   best_map_coefficients,
@@ -442,56 +292,8 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         //     return false;
 
         bool status = sigmaa_weighting(best_map_coefficients, difference_map_coefficients, phase_and_fom, reflection_data, simulated_cryoem_reflection_data, flag);
-        std::cout << "______________________________________________________________________" << std::endl;
 
-        std::cout << std::boolalpha << "best_map_coefficients.is_null() = " << best_map_coefficients.is_null() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.data_size() = " << best_map_coefficients.data_size() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.type() = " << best_map_coefficients.type() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.data_names() = " << best_map_coefficients.data_names() << std::endl;
-        std::cout << std::boolalpha << "best_map_coefficients.debug() = " << std::endl;
-        best_map_coefficients.debug();
-
-        std::cout << "______________________________________________________________________" << std::endl;
-        
-        std::cout << std::boolalpha << "difference_map_coefficients.is_null() = " << difference_map_coefficients.is_null() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.data_size() = " << difference_map_coefficients.data_size() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.type() = " << difference_map_coefficients.type() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.data_names() = " << difference_map_coefficients.data_names() << std::endl;
-        std::cout << std::boolalpha << "difference_map_coefficients.debug() = " << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-        
-        std::cout << std::boolalpha << "phase_and_fom.is_null() = " << phase_and_fom.is_null() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.data_size() = " << phase_and_fom.data_size() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.type() = " << phase_and_fom.type() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.data_names() = " << phase_and_fom.data_names() << std::endl;
-        std::cout << std::boolalpha << "phase_and_fom.debug() = " << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "difference_map_coefficients.base_hkl_info() DEBUG: " << std::endl;
-        difference_map_coefficients.base_hkl_info().debug();
-        std::cout << "difference_map_coefficients.base_hkl_info().cell().descr().format() = " << difference_map_coefficients.base_hkl_info().cell().descr().format() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().spacegroup_number() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().hash() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().hash() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().spacegroup().descr().generator_ops().hash() = " << difference_map_coefficients.base_hkl_info().spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().hkl_sampling().hkl_limit().format() = " << difference_map_coefficients.base_hkl_info().hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "difference_map_coefficients.base_hkl_info().resolution().limit() = " << difference_map_coefficients.base_hkl_info().resolution().limit() << std::endl;
-
-        std::cout << "______________________________________________________________________" << std::endl;
-
-        std::cout << "phase_and_fom.base_hkl_info() DEBUG: " << std::endl;
-        phase_and_fom.base_hkl_info().debug();
-        std::cout << "phase_and_fom.base_hkl_info().cell().descr().format() = " << phase_and_fom.base_hkl_info().cell().descr().format() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().spacegroup_number() = " << phase_and_fom.base_hkl_info().spacegroup().descr().spacegroup_number() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().hash() = " << phase_and_fom.base_hkl_info().spacegroup().descr().hash() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().spacegroup().descr().generator_ops().hash() = " << phase_and_fom.base_hkl_info().spacegroup().descr().generator_ops().hash() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().hkl_sampling().hkl_limit().format() = " << phase_and_fom.base_hkl_info().hkl_sampling().hkl_limit().format() << std::endl;
-        std::cout << "phase_and_fom.base_hkl_info().resolution().limit() = " << phase_and_fom.base_hkl_info().resolution().limit() << std::endl;
-
-        std::cout << "_____________________________FINISHED_________________________________" << std::endl;
-
-        if(!status) return false;
+        if(!status) std::cout << "clipper::SFweight_spline returned false!" << std::endl;
 
         best_map.fft_from ( best_map_coefficients );
         difference_map.fft_from ( difference_map_coefficients );
@@ -977,6 +779,7 @@ bool privateer::util::read_coordinate_file (clipper::MMDBfile& mfile, clipper::M
         std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
         std::cout << " Privateer will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl;
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
+        mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 408.32, 408.32, 408.32, 90, 90, 90 )) );
         return false;
     }
 

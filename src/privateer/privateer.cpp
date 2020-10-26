@@ -1114,18 +1114,10 @@ int main(int argc, char** argv)
             std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
             std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
             fobs_scaled = fobs;
-
-            // std::cout << std::boolalpha << "MTZ FILE: fobs.is_null() = " << fobs.is_null() << std::endl;
-            // std::cout << std::boolalpha << "MTZ FILE: fobs.data_size() = " << fobs.data_size() << std::endl;
-            // std::cout << std::boolalpha << "MTZ FILE: fobs.type() = " << fobs.type() << std::endl;
-            // std::cout << std::boolalpha << "MTZ FILE: fobs.data_names() = " << fobs.data_names() << std::endl;
-            // std::cout << std::boolalpha << "MTZ FILE: fobs.debug() = " << std::endl;
-            // fobs.debug();
         }
         if (useMRC)
         {
             // calculate cryo em map structure factors;
-            // if you gonna play with hklinfo_copy again, make sure you check hklinfo initialization objects all the way down to blob algorithm in terms of carbs.
             std::cout << hklinfo.cell().descr().format() << std::endl;
             fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
             fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
@@ -1133,18 +1125,7 @@ int main(int argc, char** argv)
             fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
             fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
             fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
-
-            
-            std::cout << fc_cryoem_obs.cell().descr().format() << std::endl;
-            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.is_null() = " << fc_cryoem_obs.is_null() << std::endl;
-            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.data_size() = " << fc_cryoem_obs.data_size() << std::endl;
-            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.type() = " << fc_cryoem_obs.type() << std::endl;
-            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.data_names() = " << fc_cryoem_obs.data_names() << std::endl;
-            std::cout << std::boolalpha << "MRC FILE: fc_cryoem_obs.debug() = " << std::endl;
-            fc_cryoem_obs.debug();
-
-            std::cout << "___________________________________________________________" << std::endl;
-            
+         
             cryo_em_map.fft_to(fc_cryoem_obs);
             privateer::cryo_em::initialize_dummy_fobs( fobs, fc_cryoem_obs );
         }
@@ -1533,6 +1514,8 @@ int main(int argc, char** argv)
                 sigmaa_dif_nowater.open_write( "sigmaa_diff_nowater.map" );
                 sigmaa_dif_nowater.export_xmap( sigmaa_dif_map );
                 sigmaa_dif_nowater.close_write();
+
+                std::cout << "Finished outputting sigmaa_diff_nowater.map!" << std::endl;
             }
     }
 
