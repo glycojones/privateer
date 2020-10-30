@@ -78,7 +78,8 @@ namespace privateer
                          std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations,
                          clipper::String pdbname,
                          nlohmann::json& jsonObject );
-        bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
+        bool read_coordinate_file_mtz (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
+        bool read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
         nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
         int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );

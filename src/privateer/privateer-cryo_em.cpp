@@ -17,7 +17,7 @@
 
 #include "privateer-cryo_em.h"
 
-void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::MiniMol& mmol, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
+void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
     std::cout << "Reading " << pathname.trim().c_str() << "... ";
     fflush(0);
@@ -46,7 +46,8 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
             if(!fc_cryoem_obs[ih].missing())
             {
                 fobs[ih].f() = fc_cryoem_obs[ih].f();
-                // fobs[ih].sigf() = fobs[ih].f();
+                // fobs[ih].sigf() = fc_cryoem_obs[ih].f();
+                // fobs[ih].sigf() = 0;
                 fobs[ih].sigf() = 1;
                 iteration++;
                 if(iteration == 420 || iteration == 6743) std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
@@ -56,9 +57,10 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
 }
 
 void privateer::cryo_em::mask_from_model  ( std::vector <clipper::MMonomer> &input_model,
-                                            clipper::NXmap<float> &output_mask,
+                                            clipper::Xmap<float> &output_mask,
                                             float radius )
 {
+    
 
 }
 

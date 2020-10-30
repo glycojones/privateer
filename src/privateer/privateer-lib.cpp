@@ -193,6 +193,8 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                              bool useMTZ, 
                                              int n_refln,
                                              int n_param)
+// what is n_refln and n_param? They seem kind of important in convergence mathematical functions of sfweight.cpp? How would they be different in cryoem?
+
 {
   // need equal cell parameters...
     if(useMTZ)
@@ -240,6 +242,9 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
 
         clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
 
+        // std::cout << "sigmaa_weighting.debug() before = " << std::endl;
+        // sigmaa_weighting.debug();
+
         if ( ! sigmaa_weighting ( best_map_coefficients,
                                     difference_map_coefficients,
                                     phase_and_fom,
@@ -247,6 +252,8 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                     model_structure_factors, flag) )
             return false;
 
+        // std::cout << "sigmaa_weighting.debug() after = " << std::endl;
+        // sigmaa_weighting.debug();
         
 
         best_map.fft_from ( best_map_coefficients );
@@ -256,22 +263,45 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
     }
     else
     {
-        if ( ( ! simulated_cryoem_reflection_data.base_cell().equals( best_map.cell() ) ||
-            ( ! simulated_cryoem_reflection_data.base_cell().equals( difference_map.cell() ))))
+        std::cout << std::endl << "Error: This function is currently unsupported for cryo em maps. Returning no results." << std::endl;
+        return false;
+        if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
+            ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
             return false;
 
-        clipper::HKL_info hkl_info = simulated_cryoem_reflection_data.base_hkl_info();
+        clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
+        // hkl_info.debug();
+        clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
+        clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
+
+        std::cout << "Calculating structure factors" << std::endl;
+        if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
+            return false;
+
+            // if (!ignore_set_null)
+            // {
+            //     if ( reflection_data.missing(0) )
+            //         model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+            // }
+
+        clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
+        //reflection_data_scaled = reflection_data; // we can't touch the original data!
 
         clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
+        clipper::SFscale_aniso<float> scaler;
 
+        std::cout << "Scaling reflection data" << std::endl;
+        if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
+            return false;
+
+        std::cout << "Flagging reflection data" << std::endl;
         for (HRI ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
         {
-            if ( !simulated_cryoem_reflection_data[ih].missing() )
+            if ( !reflection_data_scaled[ih].missing() )
                 flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
             else
                 flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
         }
-
         // intermediate data structures for the sigmaa calculation
         // will output real-space maps later on
         clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
@@ -282,18 +312,18 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
 
         clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
 
-        std::cout << "Launching sigmaa_weighting" << std::endl;
+        // std::cout << "sigmaa_weighting.debug() before = " << std::endl;
+        // sigmaa_weighting.debug();
 
-        // if ( ! sigmaa_weighting (   best_map_coefficients,
-        //                             difference_map_coefficients,
-        //                             phase_and_fom,
-        //                             reflection_data,
-        //                             simulated_cryoem_reflection_data, flag) )
-        //     return false;
+        if ( ! sigmaa_weighting ( best_map_coefficients,
+                                    difference_map_coefficients,
+                                    phase_and_fom,
+                                    reflection_data_scaled,
+                                    simulated_cryoem_reflection_data, flag) )
+            return false;
 
-        bool status = sigmaa_weighting(best_map_coefficients, difference_map_coefficients, phase_and_fom, reflection_data, simulated_cryoem_reflection_data, flag);
-
-        if(!status) std::cout << "clipper::SFweight_spline returned false!" << std::endl;
+        // std::cout << "sigmaa_weighting.debug() after = " << std::endl;
+        // sigmaa_weighting.debug();
 
         best_map.fft_from ( best_map_coefficients );
         difference_map.fft_from ( difference_map_coefficients );
@@ -301,6 +331,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         std::cout << "After doing fft transformations" << std::endl;
 
         return true;
+     
     }
 }
 
@@ -756,7 +787,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
 }
 
 
-bool privateer::util::read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch)
+bool privateer::util::read_coordinate_file_mtz (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch)
 {
     if (!batch)
     {
@@ -779,7 +810,36 @@ bool privateer::util::read_coordinate_file (clipper::MMDBfile& mfile, clipper::M
         std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
         std::cout << " Privateer will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl;
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
-        mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 408.32, 408.32, 408.32, 90, 90, 90 )) );
+        return false;
+    }
+
+    return true;
+
+}
+
+bool privateer::util::read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch)
+{
+    if (!batch)
+    {
+        std::cout << std::endl << "Reading " << ippdb.trim().c_str() << "... ";
+        fflush(0);
+    }
+
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
+    mfile.SetFlag( mmdbflags );
+
+    mfile.read_file( ippdb.trim() );
+    mfile.import_minimol( mmol );
+
+
+    if (!batch)
+        std::cout << "done." << std::endl;
+
+    if ( mmol.cell().is_null() )
+    {
+        std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
+        std::cout << " Privateer will import Spacegroup/cell information from input map." << std::endl << std::endl;
+        mmol.init ( input_map.spacegroup(), input_map.cell() );
         return false;
     }
 

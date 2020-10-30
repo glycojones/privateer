@@ -29,7 +29,7 @@ namespace privateer
 {
   namespace cryo_em
   {
-    void read_cryoem_map  ( clipper::String const pathname, clipper::MiniMol& mmol, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
+    void read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
 
     void initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs);
 
@@ -37,7 +37,7 @@ namespace privateer
                             clipper::NXmap<float> &output_map );
 
     void mask_from_model  ( std::vector <clipper::MMonomer> &input_model,
-                                            clipper::NXmap<float> &output_mask,
+                                            clipper::Xmap<float> &output_mask,
                                             float radius=2.5 );
 
     float calculate_rscc  ( clipper::NXmap<float> const &experimental_map,
