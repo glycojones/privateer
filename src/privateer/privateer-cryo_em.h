@@ -29,25 +29,25 @@ namespace privateer
 {
   namespace cryo_em
   {
-    void read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
+    void read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<float>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value );
 
     void initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs);
 
-    void calculate_fc_map ( clipper::NXmap<float> const &reference_map,
-                            clipper::NXmap<float> &output_map );
+    void calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms);
 
-    void mask_from_model  ( std::vector <clipper::MMonomer> &input_model,
-                                            clipper::Xmap<float> &output_mask,
-                                            float radius=2.5 );
+    bool generate_difference_map_sfc (clipper::HKL_data<clipper::data32::F_phi>& fd, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data);
+    
 
-    float calculate_rscc  ( clipper::NXmap<float> const &experimental_map,
-                                            clipper::NXmap<float> const &fc_map,
-                                            clipper::NXmap<float> const &mask,
-                                            clipper::Coord_orth origin,
-                                            clipper::Coord_orth destination );
+    float calculate_rscc  ( clipper::Xmap<float> &experimental_map,
+                                                clipper::Xmap<float> &fc_map, 
+                                                clipper::Xmap<float> &mask,
+                                                clipper::HKL_info& hklinfo,
+                                                clipper::Grid_sampling& mygrid,
+                                                clipper::Coord_orth& origin,
+                                                clipper::Coord_orth& destination );
 
     void write_cryoem_map ( clipper::String const pathname, 
-                            clipper::NXmap<float> const &input_map );
+                            clipper::Xmap<float> const &input_map );
   }
 }
 
