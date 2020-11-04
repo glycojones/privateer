@@ -90,7 +90,7 @@ int main(int argc, char** argv)
     clipper::CIFfile cifin;
     clipper::CCP4MTZfile mtzin, ampmtzin;
     clipper::CCP4MAPfile mrcin;
-    clipper::Xmap<float> cryo_em_map;
+    clipper::Xmap<double> cryo_em_map;
     clipper::String input_model             = "NONE";
     clipper::String input_cryoem_map        = "NONE";
     clipper::String input_column_fobs       = "NONE";
@@ -239,7 +239,7 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
-            // ipwurcsjson = "/home/harold/Dev/privateer_standalone/src/privateer/database.json";
+            ipwurcsjson = "/home/harold/Dev/privateer_dev_noccp4/src/privateer/database.json";
             if ( ++arg < args.size() )
             {
                 if(clipper::String(args[arg])[0] != '-')
@@ -1671,16 +1671,18 @@ int main(int argc, char** argv)
 
 
         clipper::Grid_sampling mygrid( cryo_em_map.grid_asu().nu(), cryo_em_map.grid_asu().nv(), cryo_em_map.grid_asu().nw() );
-        clipper::Xmap<float> cryo_em_dif_map_all( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
-        clipper::Xmap<float> ligandmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+        clipper::Xmap<double> cryo_em_dif_map_all( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+        clipper::Xmap<double> cryo_em_twotimes_obs_dif_map_all( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+        clipper::Xmap<double> ligandmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
         // scale data and flag R-free
 
         HRI ih;
 
-        clipper::HKL_data<F_phi> fd_all( hklinfo );
+        clipper::HKL_data<F_phi> difference_coefficients( hklinfo );
+        clipper::HKL_data<F_phi> twotimes_observed_difference_coefficients( hklinfo );
 
-        bool difference_map_sfc_generated = privateer::cryo_em::generate_difference_map_sfc(fd_all, fc_cryoem_obs, fc_all_cryoem_data);
+        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, twotimes_observed_difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
 
         if (!difference_map_sfc_generated)
             {
@@ -1688,11 +1690,17 @@ int main(int argc, char** argv)
                 prog.set_termination_message( "Failed" );
                 return 1;
             }
+    
+    clipper::Xmap<double> testmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); //remove later
 
     #pragma omp parallel sections
         {
     #pragma omp section
-            cryo_em_dif_map_all.fft_from( fd_all );
+            cryo_em_dif_map_all.fft_from( difference_coefficients );
+    #pragma omp section
+            cryo_em_twotimes_obs_dif_map_all.fft_from( twotimes_observed_difference_coefficients );
+    #pragma omp section
+            testmap.fft_from( fc_all_cryoem_data ); // remove later
     #pragma omp section
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
         }
@@ -1706,7 +1714,9 @@ int main(int argc, char** argv)
             std::cout << "\nWriting maps to disk... ";
             fflush(0);
         }
-        clipper::CCP4MAPfile sigmaa_dif_MapOut;
+        clipper::CCP4MAPfile diff_mapOut;
+        clipper::CCP4MAPfile twotimes_obs_diff_mapOut;
+        clipper::CCP4MAPfile testmapout; // remove later
 
         if (allSugars)
             input_ccd_code = "all";
@@ -1717,9 +1727,21 @@ int main(int argc, char** argv)
             {
     #pragma omp section
                 {
-                    sigmaa_dif_MapOut.open_write( "cryoem_diff.map" );
-                    sigmaa_dif_MapOut.export_xmap( cryo_em_dif_map_all );
-                    sigmaa_dif_MapOut.close_write();
+                    diff_mapOut.open_write( "cryoem_diff.map" );
+                    diff_mapOut.export_xmap( cryo_em_dif_map_all );
+                    diff_mapOut.close_write();
+                }
+    #pragma omp section
+                {
+                    twotimes_obs_diff_mapOut.open_write( "cryoem_twotimes_obs_diff.map" );
+                    twotimes_obs_diff_mapOut.export_xmap( cryo_em_twotimes_obs_dif_map_all );
+                    twotimes_obs_diff_mapOut.close_write();
+                }
+    #pragma omp section // remove later
+                {
+                    testmapout.open_write( "cryoem_test.map" );
+                    testmapout.export_xmap( testmap );
+                    testmapout.close_write();
                 }
             }
 
@@ -1779,9 +1801,9 @@ int main(int argc, char** argv)
             
             //////// mask calculation //////////
 
-            clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+            clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
-            clipper::EDcalc_mask<float> masker( ipradius );
+            clipper::EDcalc_mask<double> masker( ipradius );
             masker(mask, sugarList[index].atom_list());
 
             
@@ -1792,8 +1814,14 @@ int main(int argc, char** argv)
             clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
 
             double accum = 0.0;
+            double corr_coeff = 0.0;
 
-            double corr_coeff = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+            #pragma omp parallel sections
+                {
+            #pragma omp section
+                    corr_coeff = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+                }
+            
             
 
             ///////////// here we deal with the sugar /////////////

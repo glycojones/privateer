@@ -17,7 +17,7 @@
 
 #include "privateer-cryo_em.h"
 
-void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<float>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
+void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
     std::cout << "Reading " << pathname.trim().c_str() << "... ";
     fflush(0);
@@ -78,35 +78,50 @@ void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::
     }
 }
 
-bool privateer::cryo_em::generate_difference_map_sfc (clipper::HKL_data<clipper::data32::F_phi>& fd, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data)
+bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& twotimes_observed_difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo)
 {
-  clipper::data32::F_phi twofo, fo, dfc, fzero(0.0, 0.0);
-  
-  for ( HRI ih = fc_cryoem_obs.first(); !ih.last(); ih.next() )
-  {
-    fo = clipper::data32::F_phi( fc_cryoem_obs[ih].f(), fc_cryoem_obs[ih].phi() );
-    dfc = clipper::data32::F_phi( fc_all_cryoem_data[ih].f(), fc_all_cryoem_data[ih].phi() );
+  clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
 
-    if( !fc_all_cryoem_data[ih].missing() )
+  const int n_scl_param = 20;
+
+  // scale and difference data
+  std::vector<clipper::ftype> params( n_scl_param, 1.0 );
+  clipper::BasisFn_spline basis( hklinfo, n_scl_param, 2.0 );
+  clipper::TargetFn_scaleF1F2<clipper::data32::F_phi, clipper::data32::F_phi> scaling_target( fc_all_cryoem_data, fc_cryoem_obs );
+  clipper::ResolutionFn scalefn( hklinfo, basis, scaling_target, params );
+  
+  for (HRI ih = hklinfo.first(); !ih.last(); ih.next() )
+  {
+    clipper::data32::F_phi temp(fc_all_cryoem_data[ih].f(), fc_all_cryoem_data[ih].phi());
+    temp.scale( sqrt( scalefn.f(ih) ) ); // scale
+
+    fo = clipper::data32::F_phi( fc_cryoem_obs[ih].f(), fc_cryoem_obs[ih].phi() );
+    twofo = clipper::data32::F_phi( 2.0 * fo.f(), fo.phi() );
+    fc = clipper::data32::F_phi( temp.f(), temp.phi() );
+
+    if ( !fc_all_cryoem_data[ih].missing() ) 
     {
-      if( !fc_cryoem_obs[ih].missing() )
+      if ( !fc_cryoem_obs[ih].missing() )
       {
-        fd[ih] = fo - dfc;
+        twotimes_observed_difference_coefficients[ih] = twofo - fc;
+        difference_coefficients[ih] = fo - fc;
       }
-      else 
+      else
       {
-        fd[ih] = fzero;
+        twotimes_observed_difference_coefficients[ih] = fc;
+        difference_coefficients[ih] = fzero;
       }
     }
     else
     {
       if ( !fc_cryoem_obs[ih].missing() )
       {
-        fd[ih] = fzero;
+        twotimes_observed_difference_coefficients[ih] = fo;
+        difference_coefficients[ih] = fzero;
       }
       else 
       {
-        fd[ih] = fzero;
+        difference_coefficients[ih] = fzero;
       }
     }
   }
@@ -114,9 +129,9 @@ bool privateer::cryo_em::generate_difference_map_sfc (clipper::HKL_data<clipper:
   return true;
 }
 
-float privateer::cryo_em::calculate_rscc  ( clipper::Xmap<float>& experimental_map,
-                                            clipper::Xmap<float>& fc_map, // equivalent to lignadmap in xray implementation
-                                            clipper::Xmap<float>& mask,
+float privateer::cryo_em::calculate_rscc  ( clipper::Xmap<double>& experimental_map,
+                                            clipper::Xmap<double>& fc_map, // equivalent to lignadmap in xray implementation
+                                            clipper::Xmap<double>& mask,
                                             clipper::HKL_info& hklinfo,
                                             clipper::Grid_sampling& mygrid,
                                             clipper::Coord_orth& origin,
