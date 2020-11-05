@@ -1691,7 +1691,7 @@ int main(int argc, char** argv)
                 return 1;
             }
     
-    clipper::Xmap<double> testmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); //remove later
+    clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); //remove later
 
     #pragma omp parallel sections
         {
@@ -1700,7 +1700,7 @@ int main(int argc, char** argv)
     #pragma omp section
             cryo_em_twotimes_obs_dif_map_all.fft_from( twotimes_observed_difference_coefficients );
     #pragma omp section
-            testmap.fft_from( fc_all_cryoem_data ); // remove later
+            modelmap.fft_from( fc_all_cryoem_data ); // remove later
     #pragma omp section
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
         }
@@ -1716,7 +1716,7 @@ int main(int argc, char** argv)
         }
         clipper::CCP4MAPfile diff_mapOut;
         clipper::CCP4MAPfile twotimes_obs_diff_mapOut;
-        clipper::CCP4MAPfile testmapout; // remove later
+        clipper::CCP4MAPfile modelmapout; // remove later
 
         if (allSugars)
             input_ccd_code = "all";
@@ -1733,15 +1733,15 @@ int main(int argc, char** argv)
                 }
     #pragma omp section
                 {
-                    twotimes_obs_diff_mapOut.open_write( "cryoem_twotimes_obs_diff.map" );
+                    twotimes_obs_diff_mapOut.open_write( "cryoem_omit.map" );
                     twotimes_obs_diff_mapOut.export_xmap( cryo_em_twotimes_obs_dif_map_all );
                     twotimes_obs_diff_mapOut.close_write();
                 }
     #pragma omp section // remove later
                 {
-                    testmapout.open_write( "cryoem_test.map" );
-                    testmapout.export_xmap( testmap );
-                    testmapout.close_write();
+                    modelmapout.open_write( "cryoem_calcmodel.map" );
+                    modelmapout.export_xmap( modelmap );
+                    modelmapout.close_write();
                 }
             }
 
@@ -1815,13 +1815,18 @@ int main(int argc, char** argv)
 
             double accum = 0.0;
             double corr_coeff = 0.0;
+            std::pair<double, double> rscc_and_accum;
 
             #pragma omp parallel sections
                 {
             #pragma omp section
-                    corr_coeff = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+                    rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
                 }
             
+            corr_coeff = rscc_and_accum.first;
+            accum = rscc_and_accum.second;
+
+
             
 
             ///////////// here we deal with the sugar /////////////
@@ -2708,8 +2713,17 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
-    privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    if (useMRC && !useMTZ && !noMaps) 
+    {
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "cryoem_calcmodel.map", "cryoem_diff.map", "cryoem_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "cryoem_calcmodel.map", "cryoem_diff.map", "cryoem_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    }
+    else
+    {
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+    }
+    
 
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 

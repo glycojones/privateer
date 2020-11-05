@@ -129,7 +129,7 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
   return true;
 }
 
-float privateer::cryo_em::calculate_rscc  ( clipper::Xmap<double>& experimental_map,
+std::pair<double, double> privateer::cryo_em::calculate_rscc  ( clipper::Xmap<double>& experimental_map,
                                             clipper::Xmap<double>& fc_map, // equivalent to lignadmap in xray implementation
                                             clipper::Xmap<double>& mask,
                                             clipper::HKL_info& hklinfo,
@@ -192,7 +192,7 @@ float privateer::cryo_em::calculate_rscc  ( clipper::Xmap<double>& experimental_
   corr_coeff = num / (sqrt(den1) * sqrt(den2));
 
 
-  return corr_coeff;
+  return std::make_pair(corr_coeff, accum);
 }
 
   void privateer::cryo_em::write_cryoem_map ( clipper::String const pathname, clipper::Xmap<float> const &input_map )

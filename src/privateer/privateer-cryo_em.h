@@ -38,7 +38,7 @@ namespace privateer
     bool generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& twotimes_observed_difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo);
     
 
-    float calculate_rscc  ( clipper::Xmap<double> &experimental_map,
+    std::pair<double, double> calculate_rscc  ( clipper::Xmap<double> &experimental_map,
                                                 clipper::Xmap<double> &fc_map, 
                                                 clipper::Xmap<double> &mask,
                                                 clipper::HKL_info& hklinfo,

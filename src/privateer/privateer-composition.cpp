@@ -104,6 +104,8 @@ void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, st
         clipper::MGlycan tempGlycan = glycan;
         bool glyConnectTrue = false;
         int anomerPermutations = 0;
+        
+#pragma omp parallel for
         for(int j = 0; j < totalCombinations[i].size(); j++)
         {
             int nodeID = totalCombinations[i][j];
@@ -159,6 +161,7 @@ void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, s
         
         int anomerPermutationsAlpha = 0; 
         int anomerPermutationsBravo = 0;
+#pragma omp parallel for
         for(int j = 0; j < totalCombinations[i].size(); j++)
         {
             int nodeID = totalCombinations[i][j];
