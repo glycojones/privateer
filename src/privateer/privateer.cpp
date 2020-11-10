@@ -55,7 +55,6 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-
 // #define DUMP 1
 
 clipper::String program_version = "MKIV_alpha";
@@ -1680,9 +1679,8 @@ int main(int argc, char** argv)
         HRI ih;
 
         clipper::HKL_data<F_phi> difference_coefficients( hklinfo );
-        clipper::HKL_data<F_phi> twotimes_observed_difference_coefficients( hklinfo );
 
-        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, twotimes_observed_difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
+        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
 
         if (!difference_map_sfc_generated)
             {
@@ -1691,16 +1689,14 @@ int main(int argc, char** argv)
                 return 1;
             }
     
-    clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); //remove later
+    clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); 
 
     #pragma omp parallel sections
         {
     #pragma omp section
             cryo_em_dif_map_all.fft_from( difference_coefficients );
     #pragma omp section
-            cryo_em_twotimes_obs_dif_map_all.fft_from( twotimes_observed_difference_coefficients );
-    #pragma omp section
-            modelmap.fft_from( fc_all_cryoem_data ); // remove later
+            modelmap.fft_from( fc_all_cryoem_data ); 
     #pragma omp section
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
         }
@@ -1715,7 +1711,6 @@ int main(int argc, char** argv)
             fflush(0);
         }
         clipper::CCP4MAPfile diff_mapOut;
-        clipper::CCP4MAPfile twotimes_obs_diff_mapOut;
         clipper::CCP4MAPfile modelmapout; // remove later
 
         if (allSugars)
@@ -1730,12 +1725,6 @@ int main(int argc, char** argv)
                     diff_mapOut.open_write( "cryoem_diff.map" );
                     diff_mapOut.export_xmap( cryo_em_dif_map_all );
                     diff_mapOut.close_write();
-                }
-    #pragma omp section
-                {
-                    twotimes_obs_diff_mapOut.open_write( "cryoem_omit.map" );
-                    twotimes_obs_diff_mapOut.export_xmap( cryo_em_twotimes_obs_dif_map_all );
-                    twotimes_obs_diff_mapOut.close_write();
                 }
     #pragma omp section // remove later
                 {
@@ -1752,7 +1741,7 @@ int main(int argc, char** argv)
         
 
         if (!batch)
-            printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tCtx\t Ok?");
+            printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<Fo>\t<Bfac>\tCtx\t Ok?");
         if (!batch && showGeom)
             printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
         if (!batch)
@@ -1798,13 +1787,15 @@ int main(int argc, char** argv)
             // maps are scanned only inside a sphere containing the sugar for performance reasons,
             // although RSCC and <RMS> are restricted to a mask surrounding the model
 
-            
+
             //////// mask calculation //////////
 
             clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
             clipper::EDcalc_mask<double> masker( ipradius );
             masker(mask, sugarList[index].atom_list());
+
+
 
             
 
@@ -1817,7 +1808,7 @@ int main(int argc, char** argv)
             double corr_coeff = 0.0;
             std::pair<double, double> rscc_and_accum;
 
-            #pragma omp parallel sections
+            #pragma omp parallel sections // this is aint gonna do shit, need to read up more on openmp. 
                 {
             #pragma omp section
                     rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
@@ -1826,8 +1817,6 @@ int main(int argc, char** argv)
             corr_coeff = rscc_and_accum.first;
             accum = rscc_and_accum.second;
 
-
-            
 
             ///////////// here we deal with the sugar /////////////
 
@@ -2715,8 +2704,8 @@ int main(int argc, char** argv)
     privateer::coot::insert_coot_prologue_python ( of_py );
     if (useMRC && !useMTZ && !noMaps) 
     {
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "cryoem_calcmodel.map", "cryoem_diff.map", "cryoem_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
-        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "cryoem_calcmodel.map", "cryoem_diff.map", "cryoem_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
     }
     else
     {

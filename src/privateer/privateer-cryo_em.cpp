@@ -59,8 +59,8 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
 
 void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms) //calculated ligandmap here, lacks atom list of ligands. Replace reference_map with direct object of fc_ligands_bsc
 {
-  clipper::SFcalc_aniso_fft<float> sfcligands;
-  clipper::SFcalc_aniso_fft<float> sfcall;
+  clipper::SFcalc_iso_fft<float> sfcligands;
+  clipper::SFcalc_iso_fft<float> sfcall;
 
   try
     {
@@ -78,7 +78,7 @@ void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::
     }
 }
 
-bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& twotimes_observed_difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo)
+bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo)
 {
   clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
 
@@ -96,19 +96,16 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
     temp.scale( sqrt( scalefn.f(ih) ) ); // scale
 
     fo = clipper::data32::F_phi( fc_cryoem_obs[ih].f(), fc_cryoem_obs[ih].phi() );
-    twofo = clipper::data32::F_phi( 2.0 * fo.f(), fo.phi() );
     fc = clipper::data32::F_phi( temp.f(), temp.phi() );
 
     if ( !fc_all_cryoem_data[ih].missing() ) 
     {
       if ( !fc_cryoem_obs[ih].missing() )
       {
-        twotimes_observed_difference_coefficients[ih] = twofo - fc;
         difference_coefficients[ih] = fo - fc;
       }
       else
       {
-        twotimes_observed_difference_coefficients[ih] = fc;
         difference_coefficients[ih] = fzero;
       }
     }
@@ -116,7 +113,6 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
     {
       if ( !fc_cryoem_obs[ih].missing() )
       {
-        twotimes_observed_difference_coefficients[ih] = fo;
         difference_coefficients[ih] = fzero;
       }
       else 
