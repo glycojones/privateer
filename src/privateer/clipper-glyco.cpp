@@ -2903,6 +2903,13 @@ void MGlycan::replace_sugar_at_index ( int index, clipper::MSugar& donor )
     node_list[index].set_sugar(donor);
 }
 
+void MGlycan::update_msugar_in_root ( clipper::MSugar& newmsug )
+{
+    clipper::MMonomer cmonomer = root.first;
+
+    root = std::make_pair(cmonomer, newmsug);
+}
+
 ///////////////////////// MGlycology ///////////////////////////////
 
 

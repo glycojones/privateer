@@ -617,6 +617,7 @@ namespace clipper
 
             void remove_node_at_index ( int index );
             void replace_sugar_at_index ( int index, clipper::MSugar& donor );
+            void update_msugar_in_root ( clipper::MSugar& newmsug );
 
             int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 

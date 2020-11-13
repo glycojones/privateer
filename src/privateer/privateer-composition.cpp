@@ -114,6 +114,9 @@ void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, st
             msug.set_type(clipper::data::alternative_anomer(msug.type().trim()));
 
             tempGlycan.replace_sugar_at_index(nodeID, msug);
+
+            if(nodeID == 0) tempGlycan.update_msugar_in_root(msug);
+
         }     
         clipper::String temporaryWURCS = tempGlycan.generate_wurcs();
         int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
@@ -176,6 +179,12 @@ void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, s
 
             tempGlycanAlpha.replace_sugar_at_index(nodeID, msugAlpha);
             tempGlycanBravo.replace_sugar_at_index(nodeID, msugBravo);
+
+            if(nodeID == 0) 
+            {
+                tempGlycanAlpha.update_msugar_in_root(msugAlpha);
+                tempGlycanBravo.update_msugar_in_root(msugBravo);
+            }
         }
         clipper::String temporaryWURCSAlpha = tempGlycanAlpha.generate_wurcs();
         clipper::String temporaryWURCSBravo = tempGlycanBravo.generate_wurcs();
@@ -330,7 +339,7 @@ clipper::MGlycan shorten_fragment_by_removing_last_node(int totalNodes, clipper:
                 if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
             }
 
-            std::cout << "REMOVING_LAST_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+            // std::cout << "REMOVING_LAST_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
 
             // if (valueLocation != -1) return inputglycan;
             if (glyConnectTrue) return inputglycan;
@@ -361,7 +370,7 @@ clipper::MGlycan shorten_fragment_by_removing_first_leaf_node(clipper::MGlycan i
                         if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
                     }
 
-                    std::cout << "REMOVING_LEAF_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+                    // std::cout << "REMOVING_LEAF_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
                     
                     // if (valueLocation != -1) return inputglycan;
                     if (glyConnectTrue) return inputglycan;
