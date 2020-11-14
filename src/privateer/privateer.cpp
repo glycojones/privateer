@@ -103,6 +103,7 @@ int main(int argc, char** argv)
     clipper::String input_validation_string = "";
     std::vector<clipper::String> input_validation_options;
     clipper::data::sugar_database_entry external_validation;
+    bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
     bool vertical = false, original = true, invert = false;
@@ -234,6 +235,10 @@ int main(int argc, char** argv)
                     return 1;
                 }
             }
+        }
+        else if ( args[arg] == "-all_permutations" )
+        {
+            glucose_only = false;
         }
         else if ( args[arg] == "-glytoucan" )
         {
@@ -445,7 +450,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
                     
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -1037,11 +1042,6 @@ int main(int argc, char** argv)
     }
 
 
-
-
-
-
-
     // Full analysis, slower but much more complete //
 
     std::vector< std::string > enable_torsions_for;
@@ -1177,7 +1177,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
                     
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -1242,7 +1242,7 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer);
+                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
                 
                 if(!finalGlycanPermutationContainer.empty())
                     {
