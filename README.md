@@ -2,15 +2,11 @@
 
 # Privateer
 
-
-**wwPDB has recently released an update to the database that affects deposited glycoprotein structures. These updates affect privateer too. Recent github commits to privateerMKIV_noccp4 branch have addressed issues caused by the update that would cause the program to crash via a segmentation fault error, however we can't give a guarantee that we have managed to find all the bugs and therefore fix them. We are updating privateer as soon as we discover new issues caused by the update, we also appreciate if we are made aware of the issues discovered by the users.**
-
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
 Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
 
 Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
-
 
 
 ## **Installation instructions:**
@@ -119,6 +115,8 @@ Releases: with CCP4 (www.ccp4.ac.uk) and CCP-EM (coming soon).
 If you find Privateer useful, please cite:
 
 - Agirre, J., Iglesias-Fernández, J., Rovira, C., Davies, G.J., Wilson, K.S. and Cowtan, K.D., 2015. Privateer: software for the conformational validation of carbohydrate structures. Nature Structural and Molecular Biology, 22(11), p.833.
+
+- Bagdonas, H., Ungar, D. and Agirre, J., 2020. Leveraging glycomics data in glycoprotein 3D structure validation with Privateer. Beilstein Journal of Organic Chemistry, 16(1), 2523-2533.
 
 The following related articles might be of interest too:
 
