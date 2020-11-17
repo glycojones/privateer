@@ -27,11 +27,11 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 
 
-1.) git clone https://github.com/glycojones/privateer.git privateer_standalone
+1.) git clone https://github.com/glycojones/privateer.git privateer_master
 
-2.) cd privateer_standalone
+2.) cd privateer_master
 
-3.) git checkout privateerMKIV_noccp4
+3.) git checkout master 
 
 4.) git submodule update --init --recursive
 
