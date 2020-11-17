@@ -1,157 +1,123 @@
 ## Project settings
 #
-cmake_minimum_required(VERSION 3.1)
-project(privateer C CXX)
+cmake_minimum_required(VERSION 3.12)
+project(privateer VERSION 0.4 LANGUAGES C CXX)
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if(NOT DEFINED LIB_INSTALL_DIR)
-    set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+
+set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
+
+# if(NOT DEFINED LIB_INSTALL_DIR)
+#     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+# endif()
+
+find_package(OpenMP)
+if (OPENMP_FOUND)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+    set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 endif()
 
-if (DEVKIT)
-  message(STATUS "Building with system-wide Python3")
-endif()
 
-## Required CCP4 CCP4_LIBRARIES
+## Find Privateer's dependencies that have been compiled locally. 
 #
-find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
-                           clipper-contrib clipper-ccp4 clipper-cif )
+find_library(MMDB2DEP NAMES mmdb2
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CCP4CDEP NAMES ccp4c
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CCP4SRSDEP NAMES ccp4srs
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERCOREDEP NAMES clipper-core
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERMMDBDEP NAMES clipper-mmdb
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERMINIMOLDEP NAMES clipper-minimol
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERCONTRIBDEP NAMES clipper-contrib
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+find_library(CLIPPERCIFDEP NAMES clipper-cif
+            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
 
-## Required Python stuff - link against system Python3 for testing on YSBL machines
-#
-if (DEVKIT)
-    if(APPLE)
-        find_program(PYTHON NAMES $ENV{PYTHON} python3.7
-                            HINTS ${CMAKE_INSTALL_PREFIX}/bin)
-    else()
-        find_program(PYTHON NAMES $ENV{PYTHON} python3.7
-                            HINTS ${CMAKE_INSTALL_PREFIX}/bin
-                            HINTS /usr/local/bin
-                            HINTS /usr/bin )
-    endif()
-else()
-    # Link against CCP4-distributed Python
-    if(APPLE)
-        find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python
-                            HINTS ${CMAKE_INSTALL_PREFIX}/bin )
-    else()
-        find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python.exe
-                            HINTS ${CMAKE_INSTALL_PREFIX}/bin
-                            PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
-    endif()
-endif()
+#Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 
-## Configure Python
-#
-execute_process(COMMAND ${PYTHON} -c "import sys; sys.stdout.write(sys.prefix)"
-                OUTPUT_VARIABLE _PY_PREFIX
-                RESULT_VARIABLE failure)
-if (failure)
-    message(FATAL_ERROR "Failed to run ${PYTHON}: ${failure}")
-else()
-    message(STATUS "Python interpreter: ${PYTHON}")
-    message(STATUS "Python sys.prefix: ${_PY_PREFIX}")
-endif()
-# Get Python libraries
-find_library(PYTHON_LIBRARY NAMES $ENV{PYTHON} python3.7m python3.7 python
-             HINTS ${_PY_PREFIX}/lib64 ${_PY_PREFIX}/lib ${_PY_PREFIX}/libs
-             NO_DEFAULT_PATH)
-if (NOT PYTHON_LIBRARY)
-    message(FATAL_ERROR "Python library not found.")
-else ()
-    message(STATUS "Python library: ${PYTHON_LIBRARY}")
-    set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
-endif()
+#Find Privateer's main.cpp file
+set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
 
-# Get Python includes
-if(DEVKIT)
-  if (APPLE)
-    find_path(PYTHON_INCLUDE_DIR NAMES Python.h
-              HINTS /usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/include/python3.7m
-              NO_DEFAULT_PATH )
-  else()
-    find_path(PYTHON_INCLUDE_DIR NAMES Python.h
-              HINTS ${_PY_PREFIX}/include/python3.7
-                    ${_PY_PREFIX}/include/python3.7m
-                    ${_PY_PREFIX}/include/python
-              NO_DEFAULT_PATH)
-  endif()
-else()
-  find_path(PYTHON_INCLUDE_DIR NAMES Python.h
-            HINTS ${_PY_PREFIX}/include
-                  ${_PY_PREFIX}/include/python2.7
-                  ${_PY_PREFIX}/include/python3.7
-                  ${_PY_PREFIX}/include/python3.7m
-            NO_DEFAULT_PATH)
-endif()
+#Location of include files to be linked
+include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
+                    ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
+                    ${PYBIND11_INCLUDE_DIR}
+                    ${PYTHON_INCLUDE_DIRS}
+                    ${PRIVATEER_SOURCE_DIR})
 
-if (NOT PYTHON_INCLUDE_DIR)
-    message(FATAL_ERROR "Python header not found.")
-else ()
-    message(STATUS "Python.h is in: ${PYTHON_INCLUDE_DIR}")
-endif()
-
-## Run pytest through 'make test'
-#
-enable_testing()
-add_test(NAME privateer_tests COMMAND ${PYTHON} -m pytest )
-
-## Get Pybind11 through cmake
-#
-find_package(pybind11 CONFIG REQUIRED)
-MESSAGE( STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
-MESSAGE( STATUS "pybind11_INCLUDE_DIRS = ${pybind11_INCLUDE_DIRS}" )
-MESSAGE( STATUS "pybind11_LIBRARIES    = ${pybind11_LIBRARIES}" )
-
-## Add all the include directories
-#
-include_directories(${CCP4_INCLUDE_DIRS}
-                    ${CMAKE_CURRENT_SOURCE_DIR}
-                    ${pybind11_INCLUDE_DIRS}
-                    ${PYTHON_INCLUDE_DIR})
-
-## Create libprivateer
-#
 add_library(privateer_lib
-            clipper-glyco.cpp
-            clipper-glyco_data.cpp
-            privateer-restraints.cpp
-            privateer-lib.cpp)
-target_link_libraries ( privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} ${PYTHON_LIBRARY} )
+            ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-composition.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.cpp
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-xray.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-lib.cpp)
+
+target_link_libraries ( privateer_lib 
+                        ${MMDB2DEP} 
+                        ${CCP4CDEP} 
+                        ${CCP4SRSDEP}
+                        ${CLIPPERCOREDEP}
+                        ${CLIPPERMMDBDEP}
+                        ${CLIPPERMINIMOLDEP}
+                        ${CLIPPERCONTRIBDEP}
+                        ${CLIPPERCCP4DEP}
+                        ${CLIPPERCIFDEP}
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
+
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
-## Create Privateer executable
-#
 add_executable(privateer_exec
-               privateer.cpp)
-target_link_libraries ( privateer_exec privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
+               ${PRIVATEER_SOURCE})
+
+target_link_libraries ( privateer_exec 
+                        privateer_lib 
+                        ${MMDB2DEP} 
+                        ${CCP4CDEP} 
+                        ${CCP4SRSDEP}
+                        ${CLIPPERCOREDEP}
+                        ${CLIPPERMMDBDEP}
+                        ${CLIPPERMINIMOLDEP}
+                        ${CLIPPERCONTRIBDEP}
+                        ${CLIPPERCCP4DEP}
+                        ${CLIPPERCIFDEP}
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
+
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-## Make hybrid Python module
-#
-pybind11_add_module(privateer_module privateer-pybind11.cpp privateer-restraints.cpp)
-set_target_properties ( privateer_module PROPERTIES OUTPUT_NAME privateer_core )
-target_compile_options( privateer_module PRIVATE "-Wno-shadow")
-target_link_libraries ( privateer_module PRIVATE privateer_lib ${CCP4_LIBRARIES} ${pybind11_LIBRARIES} )
+pybind11_add_module(privateer_core ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
+target_link_libraries ( privateer_core PRIVATE 
+                        privateer_lib 
+                        ${MMDB2DEP} 
+                        ${CCP4CDEP} 
+                        ${CCP4SRSDEP}
+                        ${CLIPPERCOREDEP}
+                        ${CLIPPERMMDBDEP}
+                        ${CLIPPERMINIMOLDEP}
+                        ${CLIPPERCONTRIBDEP}
+                        ${CLIPPERCCP4DEP}
+                        ${CLIPPERCIFDEP}
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 
-# set rpaths on GNU/Linux
-if (DEVKIT)
-  if (NOT APPLE)
-    set_target_properties ( privateer_exec   PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-    set_target_properties ( privateer_lib    PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-    set_target_properties ( privateer_module PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib )
-  endif()
-endif()
 
-## And finally, install everything in their reet places
-#
-set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py3 )
-message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
-install ( DIRECTORY "python/privateer" DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES clipper-glyco.h clipper-glyco_data.h privateer-restraints.h privateer-lib.h
-          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
-          LIBRARY DESTINATION ${LIB_INSTALL_DIR})
-install ( TARGETS privateer_exec DESTINATION bin)
-install ( TARGETS privateer_module DESTINATION ${PYTHON_MODULE_PATH}/privateer )
+            LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
+install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
+install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
