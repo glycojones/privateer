@@ -15,7 +15,7 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 ## **Installation instructions:**
 
-**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04). For **MacOS** "Catalina"(aka 10.15.X) there are additional pre-installation steps involved(scroll down), you masochist. 
+**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04). For **MacOS** "Catalina"(aka 10.15.X) there are additional pre-installation steps involved(scroll down).
 
 **Requirements:** 
 

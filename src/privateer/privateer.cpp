@@ -1808,11 +1808,8 @@ int main(int argc, char** argv)
             double corr_coeff = 0.0;
             std::pair<double, double> rscc_and_accum;
 
-            #pragma omp parallel sections // this is aint gonna do shit, need to read up more on openmp. 
-                {
-            #pragma omp section
-                    rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-                }
+
+            rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
             
             corr_coeff = rscc_and_accum.first;
             accum = rscc_and_accum.second;
