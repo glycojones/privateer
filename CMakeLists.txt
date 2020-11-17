@@ -146,8 +146,10 @@ install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODUL
 install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
                 ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
                 ${PRIVATEER_SOURCE_DIR}/privateer-lib.h
                 ${PRIVATEER_SOURCE_DIR}/database.json
