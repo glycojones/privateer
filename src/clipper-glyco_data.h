@@ -88,7 +88,7 @@ namespace clipper
         std::string alternative_anomer ( std::string name );
         std::vector<std::string> alternative_monomer( std::string name );
         bool residue_has_alternate_anomer( std::string name );
-        bool residue_has_alternate_monomer( std::string name );
+        bool residue_has_alternate_monomer( std::string name, bool glucose_only );
         std::string convert_to_wurcs_residue_code( std::string name );
         std::string get_anomer( std::string name );
 

@@ -531,20 +531,32 @@ const sugar_database_entry sugar_database[] =
     }
 
 
-    bool residue_has_alternate_monomer( std::string name )
+    bool residue_has_alternate_monomer( std::string name, bool glucose_only )
     {
-        std::unordered_set<std::string> residues_with_alternate_monomer = {
+        std::unordered_set<std::string> residues_with_alternate_monomer;
+        if (glucose_only) 
+        {
+            residues_with_alternate_monomer = 
+            {
             "GLC", "BGC", // Glc
-            // "MAN", "BMA", // Man
-            // "GLA", "GAL", // Gal
-            // "NDG", "NAG", // GlcNAc
-            // "BM3", "BM7", // ManNAc
-            // "A2G", "NGA", // GalNAc
-            // "GCU", "BDP", // GlcA
-            // "MAV", "BEM", // ManA
-            // "ADA", "GTR" // GalA
-        };
-
+            };
+        }
+        else
+        {
+            residues_with_alternate_monomer = 
+            {
+            "GLC", "BGC", // Glc
+            "MAN", "BMA", // Man
+            "GLA", "GAL", // Gal
+            "NDG", "NAG", // GlcNAc
+            "BM3", "BM7", // ManNAc
+            "A2G", "NGA", // GalNAc
+            "GCU", "BDP", // GlcA
+            "MAV", "BEM", // ManA
+            "ADA", "GTR" // GalA
+            };
+        }
+        
         if (residues_with_alternate_monomer.find(name) != residues_with_alternate_monomer.end())
 		    return true;
         else
@@ -641,10 +653,10 @@ const sugar_database_entry sugar_database[] =
         std::vector<std::set<std::string>> bins_alternate_monomers = {
             { std::set<std::string>( { "GLC", "MAN", "GLA" } ) }, // alpha ucoses.
             { std::set<std::string>( { "BGC", "BMA", "GAL" } ) }, // beta ucoses. 
-            // { std::set<std::string>( { "NDG", "BM3", "A2G" } ) }, // alpha NAcs
-            // { std::set<std::string>( { "NAG", "BM7", "NGA" } ) }, // beta NAcs
-            // { std::set<std::string>( { "GCU", "MAV", "ADA" } ) }, // alpha As
-            // { std::set<std::string>( { "BDP", "BEM", "GTR" } ) }, // beta As
+            { std::set<std::string>( { "NDG", "BM3", "A2G" } ) }, // alpha NAcs
+            { std::set<std::string>( { "NAG", "BM7", "NGA" } ) }, // beta NAcs
+            { std::set<std::string>( { "GCU", "MAV", "ADA" } ) }, // alpha As
+            { std::set<std::string>( { "BDP", "BEM", "GTR" } ) }, // beta As
         };
 
         for(int i = 0; i < bins_alternate_monomers.size(); i++)

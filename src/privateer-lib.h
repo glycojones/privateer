@@ -59,9 +59,11 @@ namespace privateer
     {
         bool calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                     const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                    const clipper::HKL_data<clipper::data32::F_phi>& simulated_cryoem_reflection_data,
                                     clipper::Xmap<float>& best_map,
                                     clipper::Xmap<float>& difference_map,
                                     bool ignore_set_null,
+                                    bool useMTZ, 
                                     int n_refln = 1000,
                                     int n_param = 20);
         void print_usage();
@@ -76,7 +78,8 @@ namespace privateer
                          std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations,
                          clipper::String pdbname,
                          nlohmann::json& jsonObject );
-        bool read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
+        bool read_coordinate_file_mtz (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
+        bool read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
         nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
         int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );

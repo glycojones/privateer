@@ -15,7 +15,7 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 ## **Installation instructions:**
 
-Privateer is distributed through CCP4 bundles, therefore please refer to installation instructions in CCP4 environment. If you would like to build Privateer in a standalone fashion, please refer to "privateerMKIV_noccp4" branch of the repository. (https://github.com/glycojones/privateer/tree/privateerMKIV_noccp4)
+Privateer is distributed through CCP4 bundles, therefore please refer to installation instructions in CCP4 environment. If you would like to build Privateer in a standalone fashion, please refer to "master" branch of the repository. (https://github.com/glycojones/privateer/)
 
 
 

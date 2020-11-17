@@ -1,4 +1,4 @@
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
 // Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
 //
@@ -13,7 +13,7 @@
 // #define DUMP 1
 
 
-std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject)
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only)
 {
     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result;
 
@@ -31,14 +31,14 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
         generate_all_anomer_permutations(result, editable_nodes_for_anomer_permutations, tempGlycan, jsonObject, residuePermutations, residueDeletions);
 
-        std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars);
+        std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars, glucose_only);
 
         generate_all_monomer_permutations(result, editable_nodes_for_monomer_permutations, tempGlycan, jsonObject, residueDeletions);
 
         if(tempGlycan.number_of_nodes() > 1)
         {
             bool glyConnectTrue = false;
-
+            
             tempGlycan = remove_first_leaf_node(tempGlycan);
             residueDeletions++;
 
@@ -82,12 +82,12 @@ std::vector<int> get_editable_node_list_for_anomer_permutations(std::vector < cl
     return list; 
 }
 
-std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < clipper::MSugar >& sugar_list)
+std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < clipper::MSugar >& sugar_list, bool glucose_only)
 {
     std::vector<int> list;
     for(int i = 0; i < sugar_list.size(); i++)
         {
-            if(clipper::data::residue_has_alternate_monomer(sugar_list[i].type().trim())) 
+            if(clipper::data::residue_has_alternate_monomer(sugar_list[i].type().trim(), glucose_only)) 
                 list.push_back(i);
         }
     return list; 
@@ -99,11 +99,13 @@ void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, st
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
+    #pragma omp parallel for
     for(int i = 0; i < totalCombinations.size(); i++)
     {
         clipper::MGlycan tempGlycan = glycan;
         bool glyConnectTrue = false;
         int anomerPermutations = 0;
+        
         for(int j = 0; j < totalCombinations[i].size(); j++)
         {
             int nodeID = totalCombinations[i][j];
@@ -112,6 +114,9 @@ void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, st
             msug.set_type(clipper::data::alternative_anomer(msug.type().trim()));
 
             tempGlycan.replace_sugar_at_index(nodeID, msug);
+
+            if(nodeID == 0) tempGlycan.update_msugar_in_root(msug);
+
         }     
         clipper::String temporaryWURCS = tempGlycan.generate_wurcs();
         int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
@@ -159,6 +164,7 @@ void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, s
         
         int anomerPermutationsAlpha = 0; 
         int anomerPermutationsBravo = 0;
+
         for(int j = 0; j < totalCombinations[i].size(); j++)
         {
             int nodeID = totalCombinations[i][j];
@@ -232,6 +238,7 @@ void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, s
     }
 }
 
+
 std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list)
 {
 
@@ -274,101 +281,6 @@ void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, in
    CombinationGenerator(editable_node_list, reqLength, shifter + 1, currLength, checkedEditableNode, totalEditableNodes, result, temp);
 }
 
-clipper::MGlycan get_shorter_matching_fragment(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject)
-{
-    clipper::MGlycan tempGlycan = fullglycan;
-    int totalNodes = tempGlycan.number_of_nodes();
-
-    std::vector<clipper::MGlycan> truncatedGlycanFragments;
-
-    clipper::MGlycan deletedLastNodeGlycan = shorten_fragment_by_removing_last_node(totalNodes, tempGlycan, jsonObject);
-    truncatedGlycanFragments.push_back(deletedLastNodeGlycan);
-
-    clipper::MGlycan deletedLeafNodeGlycan = shorten_fragment_by_removing_first_leaf_node(tempGlycan, jsonObject);
-    truncatedGlycanFragments.push_back(deletedLeafNodeGlycan);
-
-    std::sort(truncatedGlycanFragments.begin(), truncatedGlycanFragments.end(), [](clipper::MGlycan & one, clipper::MGlycan & two) { return one.number_of_nodes() > two.number_of_nodes(); } ); 
-
-    if (truncatedGlycanFragments[0].number_of_nodes() > 0) 
-    {
-        for(int i = 0; i < truncatedGlycanFragments.size(); i++)
-        {
-            if(truncatedGlycanFragments[i].number_of_nodes() == truncatedGlycanFragments[0].number_of_nodes())
-            {
-                clipper::String temporaryWURCS = truncatedGlycanFragments[i].generate_wurcs();
-                int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-                std::cout << "Found a closest match after deleting some units:" << std::endl;
-                std::cout << temporaryWURCS << std::endl;
-                print_output_from_database(jsonObject, valueLocation, truncatedGlycanFragments[i]);
-            }
-        }
-    }
-    else std::cout << "ERROR: Still unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
-
-    return truncatedGlycanFragments[0];
-}
-
-clipper::MGlycan shorten_fragment_by_removing_last_node(int totalNodes, clipper::MGlycan inputglycan, nlohmann::json& jsonObject)
-{
-        clipper::MGlycan empty;
-        clipper::String temporaryWURCS;
-        int valueLocation = -1;
-        bool glyConnectTrue = false;
-
-        for(int i = (totalNodes - 1); i > 0; i--)
-        {
-            inputglycan.remove_node_at_index(i);
-            
-            temporaryWURCS = inputglycan.generate_wurcs();
-
-            valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-            if (valueLocation != -1)
-            {
-                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
-            }
-
-            std::cout << "REMOVING_LAST_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
-
-            // if (valueLocation != -1) return inputglycan;
-            if (glyConnectTrue) return inputglycan;
-        }
-        if (!glyConnectTrue) return empty;
-}
-
-clipper::MGlycan shorten_fragment_by_removing_first_leaf_node(clipper::MGlycan inputglycan, nlohmann::json& jsonObject)
-{
-        clipper::MGlycan empty;
-        clipper::String temporaryWURCS;
-        int valueLocation = -1;
-        bool glyConnectTrue = false;
-        int totalNodes = inputglycan.number_of_nodes();
-
-        for(int i = 0; i < totalNodes; i++)
-        {
-            inputglycan = remove_first_leaf_node(inputglycan);
-            if(inputglycan.number_of_nodes() > 1)
-            {
-
-                    temporaryWURCS = inputglycan.generate_wurcs();
-
-                    valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-
-                    if (valueLocation != -1)
-                    {
-                        if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
-                    }
-
-                    std::cout << "REMOVING_LEAF_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
-                    
-                    // if (valueLocation != -1) return inputglycan;
-                    if (glyConnectTrue) return inputglycan;
-            }
-            else return empty;
-        }
-        if (!glyConnectTrue) return empty;
-}
-
-
 clipper::MGlycan remove_first_leaf_node( clipper::MGlycan inputglycan )
 {
     for(int i = 0; i < inputglycan.number_of_nodes(); i++)
@@ -382,4 +294,109 @@ clipper::MGlycan remove_first_leaf_node( clipper::MGlycan inputglycan )
         }
         return inputglycan;
 }
+
+clipper::MGlycan remove_last_node( clipper::MGlycan inputglycan )
+{
+    int numberOfNodes = inputglycan.number_of_nodes();
+    int lastNode = numberOfNodes - 1;
+
+    inputglycan.remove_node_at_index(lastNode);
+
+    return inputglycan;
+}
+
+
+// clipper::MGlycan get_shorter_matching_fragment(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject)
+// {
+//     clipper::MGlycan tempGlycan = fullglycan;
+//     int totalNodes = tempGlycan.number_of_nodes();
+
+//     std::vector<clipper::MGlycan> truncatedGlycanFragments;
+
+//     clipper::MGlycan deletedLastNodeGlycan = shorten_fragment_by_removing_last_node(totalNodes, tempGlycan, jsonObject);
+//     truncatedGlycanFragments.push_back(deletedLastNodeGlycan);
+
+//     clipper::MGlycan deletedLeafNodeGlycan = shorten_fragment_by_removing_first_leaf_node(tempGlycan, jsonObject);
+//     truncatedGlycanFragments.push_back(deletedLeafNodeGlycan);
+
+//     std::sort(truncatedGlycanFragments.begin(), truncatedGlycanFragments.end(), [](clipper::MGlycan & one, clipper::MGlycan & two) { return one.number_of_nodes() > two.number_of_nodes(); } ); 
+
+//     if (truncatedGlycanFragments[0].number_of_nodes() > 0) 
+//     {
+//         for(int i = 0; i < truncatedGlycanFragments.size(); i++)
+//         {
+//             if(truncatedGlycanFragments[i].number_of_nodes() == truncatedGlycanFragments[0].number_of_nodes())
+//             {
+//                 clipper::String temporaryWURCS = truncatedGlycanFragments[i].generate_wurcs();
+//                 int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+//                 std::cout << "Found a closest match after deleting some units:" << std::endl;
+//                 std::cout << temporaryWURCS << std::endl;
+//                 print_output_from_database(jsonObject, valueLocation, truncatedGlycanFragments[i]);
+//             }
+//         }
+//     }
+//     else std::cout << "ERROR: Still unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence!" << std::endl;
+
+//     return truncatedGlycanFragments[0];
+// }
+
+// clipper::MGlycan shorten_fragment_by_removing_last_node(int totalNodes, clipper::MGlycan inputglycan, nlohmann::json& jsonObject)
+// {
+//         clipper::MGlycan empty;
+//         clipper::String temporaryWURCS;
+//         int valueLocation = -1;
+//         bool glyConnectTrue = false;
+
+//         for(int i = (totalNodes - 1); i > 0; i--)
+//         {
+//             inputglycan.remove_node_at_index(i);
+            
+//             temporaryWURCS = inputglycan.generate_wurcs();
+
+//             valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+//             if (valueLocation != -1)
+//             {
+//                 if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+//             }
+
+//             // std::cout << "REMOVING_LAST_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+//             // if (valueLocation != -1) return inputglycan;
+//             if (glyConnectTrue) return inputglycan;
+//         }
+//         if (!glyConnectTrue) return empty;
+// }
+
+// clipper::MGlycan shorten_fragment_by_removing_first_leaf_node(clipper::MGlycan inputglycan, nlohmann::json& jsonObject)
+// {
+//         clipper::MGlycan empty;
+//         clipper::String temporaryWURCS;
+//         int valueLocation = -1;
+//         bool glyConnectTrue = false;
+//         int totalNodes = inputglycan.number_of_nodes();
+
+//         for(int i = 0; i < totalNodes; i++)
+//         {
+//             inputglycan = remove_first_leaf_node(inputglycan);
+//             if(inputglycan.number_of_nodes() > 1)
+//             {
+
+//                     temporaryWURCS = inputglycan.generate_wurcs();
+
+//                     valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+//                     if (valueLocation != -1)
+//                     {
+//                         if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+//                     }
+
+//                     // std::cout << "REMOVING_LEAF_NODE: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+                    
+//                     // if (valueLocation != -1) return inputglycan;
+//                     if (glyConnectTrue) return inputglycan;
+//             }
+//             else return empty;
+//         }
+//         if (!glyConnectTrue) return empty;
+// }
 

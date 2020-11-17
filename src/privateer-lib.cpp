@@ -186,68 +186,148 @@ void privateer::coot::insert_coot_statusbar_text_python ( std::fstream& output, 
 
 bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_atoms,
                                              const clipper::HKL_data<clipper::data32::F_sigF>& reflection_data,
+                                             const clipper::HKL_data<clipper::data32::F_phi>& simulated_cryoem_reflection_data,
                                              clipper::Xmap<float>& best_map,
                                              clipper::Xmap<float>& difference_map,
                                              bool ignore_set_null,
+                                             bool useMTZ, 
                                              int n_refln,
-                                             int n_param )
+                                             int n_param)
+
+
 {
-
   // need equal cell parameters...
-  if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
-       ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
-    return false;
-
-  clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
-  clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
-  clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
-
-  if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
-    return false;
-
-    if (!ignore_set_null)
+    if(useMTZ)
     {
-        if ( reflection_data.missing(0) )
-            model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+        if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
+            ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
+            return false;
+
+        clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
+        // hkl_info.debug();
+        clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
+        clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
+
+        if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
+            return false;
+
+            if (!ignore_set_null)
+            {
+                if ( reflection_data.missing(0) )
+                    model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+            }
+
+        clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
+        //reflection_data_scaled = reflection_data; // we can't touch the original data!
+
+        clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
+        clipper::SFscale_aniso<float> scaler;
+
+        if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
+            return false;
+
+        for (HRI ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+        {
+            if ( !reflection_data_scaled[ih].missing() )
+                flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+            else
+                flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
+        }
+
+        // intermediate data structures for the sigmaa calculation
+        // will output real-space maps later on
+        clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
+        clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
+        clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
+
+        clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
+
+        // std::cout << "sigmaa_weighting.debug() before = " << std::endl;
+        // sigmaa_weighting.debug();
+
+        if ( ! sigmaa_weighting ( best_map_coefficients,
+                                    difference_map_coefficients,
+                                    phase_and_fom,
+                                    reflection_data_scaled,
+                                    model_structure_factors, flag) )
+            return false;
+
+        // std::cout << "sigmaa_weighting.debug() after = " << std::endl;
+        // sigmaa_weighting.debug();
+        
+
+        best_map.fft_from ( best_map_coefficients );
+        difference_map.fft_from ( difference_map_coefficients );
+
+        return true;
     }
+    else
+    {
+        std::cout << std::endl << "Error: This function is currently unsupported for cryo em maps. Returning no results." << std::endl;
+        return false;
+        if ( ( ! reflection_data.base_cell().equals( best_map.cell() ) ||
+            ( ! reflection_data.base_cell().equals( difference_map.cell() ))))
+            return false;
 
-  clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
-  //reflection_data_scaled = reflection_data; // we can't touch the original data!
+        clipper::HKL_info hkl_info = reflection_data.base_hkl_info();
+        // hkl_info.debug();
+        clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
+        clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
 
-  HRI ih;
-  clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
-  clipper::SFscale_aniso<float> scaler;
+        if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
+            return false;
 
-  if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
-    return false;
+            // if (!ignore_set_null)
+            // {
+            //     if ( reflection_data.missing(0) )
+            //         model_structure_factors[0].set_null(); // get rid of F(0,0,0), which we don't normally measure
+            // }
 
-  for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
-  {
-      if ( !reflection_data_scaled[ih].missing() )
-        flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
-      else
-        flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
-  }
+        clipper::HKL_data<clipper::data32::F_sigF> reflection_data_scaled ( reflection_data );
+        //reflection_data_scaled = reflection_data; // we can't touch the original data!
 
-  // intermediate data structures for the sigmaa calculation
-  // will output real-space maps later on
-  clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
-  clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
-  clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
+        clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
+        clipper::SFscale_aniso<float> scaler;
 
-  clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
+        if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
+            return false;
 
-  if ( ! sigmaa_weighting ( best_map_coefficients,
-                            difference_map_coefficients,
-                            phase_and_fom,
-                            reflection_data_scaled,
-                            model_structure_factors, flag) )
-    return false;
+        for (HRI ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+        {
+            if ( !reflection_data_scaled[ih].missing() )
+                flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+            else
+                flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
+        }
+        // intermediate data structures for the sigmaa calculation
+        // will output real-space maps later on
+        clipper::HKL_data<clipper::data32::F_phi> best_map_coefficients ( hkl_info );
+        clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
+        clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
 
-  best_map.fft_from ( best_map_coefficients );
-  difference_map.fft_from ( difference_map_coefficients );
 
-  return true;
+        clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
+
+        // std::cout << "sigmaa_weighting.debug() before = " << std::endl;
+        // sigmaa_weighting.debug();
+
+        if ( ! sigmaa_weighting ( best_map_coefficients,
+                                    difference_map_coefficients,
+                                    phase_and_fom,
+                                    reflection_data_scaled,
+                                    simulated_cryoem_reflection_data, flag) )
+            return false;
+
+        // std::cout << "sigmaa_weighting.debug() after = " << std::endl;
+        // sigmaa_weighting.debug();
+
+        best_map.fft_from ( best_map_coefficients );
+        difference_map.fft_from ( difference_map_coefficients );
+
+
+        return true;
+     
+    }
 }
 
 
@@ -702,7 +782,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
 }
 
 
-bool privateer::util::read_coordinate_file (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch)
+bool privateer::util::read_coordinate_file_mtz (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch)
 {
     if (!batch)
     {
@@ -725,6 +805,36 @@ bool privateer::util::read_coordinate_file (clipper::MMDBfile& mfile, clipper::M
         std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
         std::cout << " Privateer will still run, but may miss any important contacts described by crystallographic symmetry." << std::endl << std::endl;
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
+        return false;
+    }
+
+    return true;
+
+}
+
+bool privateer::util::read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch)
+{
+    if (!batch)
+    {
+        std::cout << std::endl << "Reading " << ippdb.trim().c_str() << "... ";
+        fflush(0);
+    }
+
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
+    mfile.SetFlag( mmdbflags );
+
+    mfile.read_file( ippdb.trim() );
+    mfile.import_minimol( mmol );
+
+
+    if (!batch)
+        std::cout << "done." << std::endl;
+
+    if ( mmol.cell().is_null() )
+    {
+        std::cout << std::endl << " Spacegroup/cell information is missing from the PDB file." << std::endl;
+        std::cout << " Privateer will import Spacegroup/cell information from input map." << std::endl << std::endl;
+        mmol.init ( input_map.spacegroup(), input_map.cell() );
         return false;
     }
 

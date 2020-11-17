@@ -104,6 +104,8 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.cpp
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-xray.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-lib.cpp)
   
