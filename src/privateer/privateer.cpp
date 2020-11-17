@@ -243,7 +243,7 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
-            ipwurcsjson = "/home/harold/Dev/privateer_dev_noccp4/src/privateer/database.json";
+            // ipwurcsjson = "/home/harold/Dev/privateer_dev_noccp4/src/privateer/database.json";
             if ( ++arg < args.size() )
             {
                 if(clipper::String(args[arg])[0] != '-')
