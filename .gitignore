@@ -1,7 +1,21 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+### Above combination will ignore all files without extension ###
+
 # do not track compilation byproducts
 *.cxx
 *.so
 *.dylib
+*.vscode
+*.pyc
+.pytest_cache
 privateer.exe
 privateer.py
 __pycache__
@@ -15,6 +29,7 @@ cmake_install.cmake
 # do not track test results
 unittests/test_output
 unittests/test_output/*
+unittests/test_data/test_truncatedglycans
 unittests/annotated_glycans_hierarchical.xml
 
 # here you go, neat and tidy
