@@ -3,6 +3,7 @@ import os
 import shutil
 import sys
 import privateer
+import privateer.analysis
 import test_data
 import requests
 import json
@@ -48,13 +49,13 @@ class Test(unittest.TestCase):
 
         print ("Testing nomenclature")
 
-        assert ( privateer.found_in_database ("GLC") == True )
-        assert ( privateer.found_in_database ("ALA") == False )
+        assert ( privateer.analysis.found_in_database ("GLC") == True )
+        assert ( privateer.analysis.found_in_database ("ALA") == False )
 
-        assert ( privateer.carbname_of ( "GLC" ) == "Glc" )
-        assert ( privateer.carbname_of ( "BGC" ) == "Glc" )
-        assert ( privateer.carbname_of ( "SIA" ) == "Neu5Ac" )
-        assert ( privateer.carbname_of ( "ALA" ) == "Unknown" )
+        assert ( privateer.analysis.carbname_of ( "GLC" ) == "Glc" )
+        assert ( privateer.analysis.carbname_of ( "BGC" ) == "Glc" )
+        assert ( privateer.analysis.carbname_of ( "SIA" ) == "Neu5Ac" )
+        assert ( privateer.analysis.carbname_of ( "ALA" ) == "Unknown" )
 
 
     def test_sequentially_annotated_output (self, verbose=False):
@@ -68,7 +69,7 @@ class Test(unittest.TestCase):
 
         print ("Testing sequential annotation    (heaviest glycosylation in PDB)")
         tick = datetime.now()
-        xml = privateer.get_annotated_glycans ( pdb_input, True, "fungal" )
+        xml = privateer.analysis.get_annotated_glycans ( pdb_input, True, "fungal" )
         tock = datetime.now()
 
         diff = tock - tick
@@ -109,7 +110,7 @@ class Test(unittest.TestCase):
         print ("Testing hierarchical annotation  (heaviest glycosylation in PDB)")
 
         tick = datetime.now()
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal" )
         tock = datetime.now()
 
         diff = tock - tick
@@ -155,7 +156,7 @@ class Test(unittest.TestCase):
         assert os.path.exists(pdb_input)
 
         tick = datetime.now()
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal"  )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "fungal"  )
         tock = datetime.now()
 
         diff = tock - tick
@@ -180,7 +181,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "5aog-plant_glycans.pdb")
         assert os.path.exists(pdb_input)
 
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "plant" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "plant" )
         xml_tree = etree.fromstring ( xml )
         # write the file before parsing it in case there are problems
 
@@ -203,7 +204,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "5ajm-mammalian_glycans.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "mammalian" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "mammalian" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -224,7 +225,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "3sgk-nglycans_antibodies.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -245,7 +246,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "4byh-antibodies_sialylated_fc.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -266,7 +267,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "1kwf-ligand_cellulose_boat.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -284,7 +285,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join ( self.test_data_path, "4a5t-o_glycans.pdb" )
 
         assert os.path.exists ( pdb_input )
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -306,7 +307,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "1gya-nmr_n-glycan.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "human" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -328,7 +329,7 @@ class Test(unittest.TestCase):
         pdb_input = os.path.join(self.test_data_path, "2lhx-nmr_o-glycans.pdb")
 
         assert os.path.exists(pdb_input)
-        xml = privateer.get_annotated_glycans_hierarchical ( pdb_input, True, "undefined" )
+        xml = privateer.analysis.get_annotated_glycans_hierarchical ( pdb_input, True, "undefined" )
 
         xml_tree = etree.fromstring ( xml )
 
@@ -336,6 +337,8 @@ class Test(unittest.TestCase):
             xml_file.write ( etree.tostring ( xml_tree ))
 
         assert ( os.path.exists (os.path.join(self.test_output, "test-nmr_o_glycans.xml")) )
+
+        
 
     def test_wurcs_online (self, verbose=False):
 
@@ -348,16 +351,16 @@ class Test(unittest.TestCase):
         totalGlycansInDataset = 0
         model_input = os.path.join(self.test_data_path, "3sgk-nglycans_antibodies.pdb")
         assert os.path.exists(self.test_data_path)
-        
 
-        totalWURCS = privateer.print_wurcs(model_input)
+
+        totalWURCS = privateer.analysis.print_wurcs(model_input)
         temporaryString = totalWURCS.split('\n', 1)[0]
         if temporaryString[0:21] == 'Total Glycans Found: ':
             totalGlycansInModel = int(temporaryString[21:])
         else:
             totalGlycansInModel = 0
 
-        
+
         temporaryString = totalWURCS.splitlines()
 
 
@@ -371,14 +374,14 @@ class Test(unittest.TestCase):
                 for item in serverResponse:
                     assert (item['id']) and item['WURCS'] == line
 
-                
+
 
         assert(totalGlycansInModel == confirmNumGlycansInModel)
         tick = datetime.now()
         diff = tick - tock
 
         print("Test duration: %f seconds" % diff.total_seconds())
-    
+
     def test_wurcs_offline (self, verbose=False):
 
         '''
@@ -410,12 +413,12 @@ class Test(unittest.TestCase):
 
         for model_input in os.listdir(self.test_data_path):
             if model_input.endswith(".pdb") or model_input.endswith(".cif") or model_input.endswith(".mmcif"):
-                
-                
+
+
                 file_input = os.path.join(self.test_data_path, model_input)
                 assert os.path.exists(self.test_data_path)
-                
-                
+
+
                 numModels+=1
 
                 totalWURCS = privateer.print_wurcs(file_input)
@@ -427,7 +430,7 @@ class Test(unittest.TestCase):
                     totalGlycansInModel = 0
                     totalCarbohydrateLigandsInDataset+=1
 
-                
+
                 temporaryListOfStrings = totalWURCS.splitlines()
                 temporaryListOfStrings = temporaryListOfStrings[1:]
 
@@ -440,11 +443,11 @@ class Test(unittest.TestCase):
                         confirmNumGlycansInModel+=1
                         totalGlycansInDataset+=1
                         glycosmosWURCS = glycosmosData[indexMatch]["Sequence"]
-                    else: 
+                    else:
                         glycosmosWURCS = "Not Found"
                     assert(privateerWURCS == glycosmosWURCS)
 
-                        
+
                     temporaryListOfStrings = temporaryListOfStrings[2:]
                 assert(confirmNumGlycansInModel == totalGlycansInModel)
         tick = datetime.now()

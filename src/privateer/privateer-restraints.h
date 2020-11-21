@@ -78,6 +78,7 @@ namespace privateer {
         void read_from_monlib ( std::string ccd_id );
         void write_to_file( std::string filename );
         void restrain_rings_unimodal ();
+        void restrain_rings_unimodal_from_conformer ();
         void add_inverted_torsions ();
         void print_torsion_restraints ();
         pybind11::dict get_bond (std::string atom_1, std::string atom_2);

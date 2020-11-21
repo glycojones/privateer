@@ -91,13 +91,35 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
         auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
         if (!ring.empty()) {
           auto row = chem_comp_tor[j];
-          row[0] = "4C1_"+tor.label;
+          row[0] = "Privateer_"+tor.label;
           row[2] = "3.0";
           row[3] = "1"; // unimodal
         }
       }
     }
 }
+
+void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer () {
+  for (gemmi::cif::Block& block : cif_document.blocks)
+    if (!block.name.empty() && block.name != "comp_list") {
+      gemmi::cif::Table chem_comp_tor = block.find("_chem_comp_tor.",
+                               {"id", "value_angle", "value_angle_esd", "period"});
+      assert(chemical_component.rt.torsions.size() == chem_comp_tor.length());
+      for (size_t j = 0; j != chemical_component.rt.torsions.size(); ++j) {
+        // need to find a way to access ideal cooords
+        gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
+        auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
+        if (!ring.empty()) {
+          auto row = chem_comp_tor[j];
+          row[0] = "Privateer_" + tor.label;
+          row[2] = "3.0";
+          row[3] = "1"; // unimodal
+        }
+      }
+    }
+}
+
+
 
 void privateer::restraints::CarbohydrateDictionary::add_inverted_torsions () {
   for (gemmi::cif::Block& block : cif_document.blocks)

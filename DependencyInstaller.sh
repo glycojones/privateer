@@ -30,7 +30,7 @@ dependencyDir=$mainDir/dependencies
 # wget https://launchpad.net/bzr/2.7/2.7.0/+download/bzr-2.7.0.tar.gz
 # tar -zxvf bzr-2.7.0.tar.gz
 # cd bzr-2.7.0
-# python setup.py install --home ~ 
+# python setup.py install --home ~
 # fi
 
 # if [[ ! -f bzr ]]; then
@@ -42,9 +42,9 @@ dependencyDir=$mainDir/dependencies
 export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
 
+cd $dependencyDir
 # Clipper only works with fftw2
 if [[ ! -f include/fftw.h ]]; then
-cd $dependencyDir
 if [[  -d fftw ]]; then
 rm -rf fftw
 fi
@@ -239,37 +239,36 @@ cd $dependencyDir/lib/data
 rm -rf trunk
 cd $dependencyDir
 
-if [[ -f $dependencyDir/lib/libfftw.so ]]; then 
+if [[ -f $dependencyDir/lib/libfftw.so ]]; then
 FFTW2LIB=$dependencyDir/lib/librfftw.so
 fi
-if [[ -f $dependencyDir/lib/libmmdb2.so ]]; then 
+if [[ -f $dependencyDir/lib/libmmdb2.so ]]; then
 MMDB2LIB=$dependencyDir/lib/libmmdb2.so
 fi
-if [[ -f $dependencyDir/lib/libccp4c.so ]]; then 
+if [[ -f $dependencyDir/lib/libccp4c.so ]]; then
 CCP4CLIB=$dependencyDir/lib/libccp4c.so
 fi
-if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then 
+if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then
 CCP4SRSLIB=$dependencyDir/lib/libccp4srs.so
 fi
-if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then 
+if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then
 CLIPPERLIB=$dependencyDir/lib/libclipper.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-core.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-core.so ]]; then
 CLIPPERCORELIB=$dependencyDir/lib/libclipper-core.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-mmdb.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-mmdb.so ]]; then
 CLIPPERMMDBLIB=$dependencyDir/lib/libclipper-mmdb.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-minimol.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-minimol.so ]]; then
 CLIPPERMINIMOLLIB=$dependencyDir/lib/libclipper-minimol.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-contrib.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-contrib.so ]]; then
 CLIPPERCONTRIBLIB=$dependencyDir/lib/libclipper-contrib.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-ccp4.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-ccp4.so ]]; then
 CLIPPERCCP4LIB=$dependencyDir/lib/libclipper-ccp4.so
 fi
-if [[ -f $dependencyDir/lib/libclipper-cif.so ]]; then 
+if [[ -f $dependencyDir/lib/libclipper-cif.so ]]; then
 CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
-
