@@ -99,21 +99,90 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
     }
 }
 
+
+float privateer::restraints::CarbohydrateDictionary::get_torsion_from_conformer (std::string& a1, std::string& a2, std::string& a3, std::string& a4) {
+  std::vector<size_t> atom_indices;
+
+  for (gemmi::cif::Block& block : cif_document.blocks) {
+    if (!block.name.empty() && block.name != "comp_list") {
+
+      gemmi::cif::Table chem_comp_atom = block.find("_chem_comp_atom.",
+                                                    {"comp_id", "atom_id", "x", "y", "z"});
+
+      for (size_t j = 0; j != chem_comp_atom.length(); j++ ) {
+        auto atom_in_conformer = chem_comp_atom[j];
+        if ( atom_in_conformer[1] != a1 )
+          if ( atom_in_conformer[1] != a2 )
+            if ( atom_in_conformer[1] != a3 )
+              if ( atom_in_conformer[1] != a4 )
+                continue;
+        atom_indices.push_back(j);
+      }
+
+      if ( atom_indices.size() != 4 )
+        return 361.0; // Return incorrect value to indicate that atoms were not found
+      else { // We've got our four atoms identified
+
+        auto atom1_row = chem_comp_atom[atom_indices[0]];
+        gemmi::Position pos_1 = gemmi::Position(std::stof(atom1_row[2]),
+                                                std::stof(atom1_row[3]),
+                                                std::stof(atom1_row[4]));
+
+        auto atom2_row = chem_comp_atom[atom_indices[1]];
+        gemmi::Position pos_2 = gemmi::Position(std::stof(atom2_row[2]),
+                                                std::stof(atom2_row[3]),
+                                                std::stof(atom2_row[4]));
+
+        auto atom3_row = chem_comp_atom[atom_indices[2]];
+        gemmi::Position pos_3 = gemmi::Position(std::stof(atom3_row[2]),
+                                                std::stof(atom3_row[3]),
+                                                std::stof(atom3_row[4]));
+
+        auto atom4_row = chem_comp_atom[atom_indices[3]];
+        gemmi::Position pos_4 = gemmi::Position(std::stof(atom4_row[2]),
+                                                std::stof(atom4_row[3]),
+                                                std::stof(atom4_row[4]));
+
+        return gemmi::calculate_dihedral(pos_1, pos_2, pos_3, pos_4);
+      }
+    }
+  }
+  return 361.0; // Error: CIF block not found
+}
+
+
 void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer () {
   for (gemmi::cif::Block& block : cif_document.blocks)
     if (!block.name.empty() && block.name != "comp_list") {
-      gemmi::cif::Table chem_comp_tor = block.find("_chem_comp_tor.",
-                               {"id", "value_angle", "value_angle_esd", "period"});
+      gemmi::cif::Table chem_comp_tor  = block.find("_chem_comp_tor.",
+                               {"id", "atom_id_1", "atom_id_2", "atom_id_3", "atom_id_4", "value_angle", "value_angle_esd", "period"});
+
       assert(chemical_component.rt.torsions.size() == chem_comp_tor.length());
-      for (size_t j = 0; j != chemical_component.rt.torsions.size(); ++j) {
-        // need to find a way to access ideal cooords
+      for (size_t j = 0; j != chemical_component.rt.torsions.size(); j++) {
+
         gemmi::Restraints::Torsion& tor = chemical_component.rt.torsions[j];
         auto ring = chemical_component.rt.find_shortest_path(tor.id4, tor.id1, {tor.id2, tor.id3});
         if (!ring.empty()) {
           auto row = chem_comp_tor[j];
           row[0] = "Privateer_" + tor.label;
-          row[2] = "3.0";
-          row[3] = "1"; // unimodal
+          row[6] = "3.0";
+          row[7] = "1"; // unimodal
+          float torsion_value = this->get_torsion_from_conformer(row[1], row[2], row[3], row[4]);
+          if ( torsion_value != 361.0 )
+          {
+            std::cout << "Ring torsion value: " << row[5] << " to be patched with " << torsion_value * (180.0/3.141592653589793238463) << " " << std::endl;
+            row[5] = std::to_string(torsion_value * (180.0/3.141592653589793238463));
+          }
+        }
+        else { // regular, non-ring torsion restraint
+          auto row = chem_comp_tor[j];
+          row[0] = "Privateer_" + tor.label;
+          float torsion_value = this->get_torsion_from_conformer(row[1], row[2], row[3], row[4]);
+          if ( torsion_value != 361.0 )
+          {
+            std::cout << "Non-ring torsion value: " << row[5] << " to be patched with " << torsion_value * (180.0/3.141592653589793238463) << " " << std::endl;
+            row[5] = std::to_string(torsion_value * (180.0/3.141592653589793238463));
+          }
         }
       }
     }
