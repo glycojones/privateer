@@ -42,6 +42,7 @@ dependencyDir=$mainDir/dependencies
 export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
 
+cd $dependencyDir
 # Clipper only works with fftw2
 if [[ ! -f include/fftw.h ]]; then
 cd $dependencyDir

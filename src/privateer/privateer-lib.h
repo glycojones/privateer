@@ -83,6 +83,7 @@ namespace privateer
         clipper::Xmap<float> read_map_file ( std::string path );
         nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
         int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
+        std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
 
     }
 
@@ -1243,11 +1244,6 @@ namespace privateer
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
         inline void write_refmac_keywords ( std::vector < std::string > code_list ) { return privateer::util::write_refmac_keywords(code_list); }
         inline bool write_libraries ( std::vector < std::string > code_list, float esd ) { return privateer::util::write_libraries(code_list, esd); }
-    }
-
-    namespace util
-    {
-         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
     }
 
 } // namespace privateer

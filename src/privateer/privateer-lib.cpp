@@ -1020,6 +1020,31 @@ void privateer::util::print_usage ( )
 
 }
 
+std::vector <char> privateer::util::number_of_conformers ( clipper::MMonomer& mmon )
+{
+    std::vector<char> alt_confs;
+
+    bool a = false;
+    bool b = false;
+
+    for ( int i = 0; i < mmon.size(); i++ )
+    {
+        clipper::String identifier = mmon[i].id();
+        if (identifier.size() > 5)
+        {
+            if ( identifier[5] == 'A' && !a )
+            {
+                alt_confs.push_back ('A'); a=true;
+            }
+            else if ( identifier[5] == 'B' && !b )
+            {
+                alt_confs.push_back ('B'); b=true;
+            }
+        }
+    }
+    return alt_confs;
+}
+
 ///////// Privateer's glycoplot /////////
 
 std::string privateer::glycoplot::get_colour ( Colour colour, bool original_style, bool inverted )
@@ -4032,27 +4057,4 @@ void privateer::scripting::svg_graphics_demo ( bool original_colour_scheme, bool
     plot.delete_shapes();
 }
 
-std::vector <char> privateer::util::number_of_conformers ( clipper::MMonomer& mmon )
-{
-    std::vector<char> alt_confs;
 
-    bool a = false;
-    bool b = false;
-
-    for ( int i = 0; i < mmon.size(); i++ )
-    {
-        clipper::String identifier = mmon[i].id();
-        if (identifier.size() > 5)
-        {
-            if ( identifier[5] == 'A' && !a )
-            {
-                alt_confs.push_back ('A'); a=true;
-            }
-            else if ( identifier[5] == 'B' && !b )
-            {
-                alt_confs.push_back ('B'); b=true;
-            }
-        }
-    }
-    return alt_confs;
-}
