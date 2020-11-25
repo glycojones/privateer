@@ -70,6 +70,7 @@ void privateer::restraints::CarbohydrateDictionary::read_from_monlib ( std::stri
   }
 }
 
+
 void privateer::restraints::CarbohydrateDictionary::write_to_file( std::string filename ) {
   std::ofstream of;
   of.open(filename);
@@ -79,6 +80,7 @@ void privateer::restraints::CarbohydrateDictionary::write_to_file( std::string f
   gemmi::cif::write_cif_to_stream(of, this->cif_document);
   of.close();
 }
+
 
 void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal () {
   for (gemmi::cif::Block& block : cif_document.blocks)
@@ -173,6 +175,9 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
             std::cout << "Ring torsion value: " << row[5] << " to be patched with " << torsion_value * (180.0/3.141592653589793238463) << " " << std::endl;
             row[5] = std::to_string(torsion_value * (180.0/3.141592653589793238463));
           }
+          else {
+            std::cout << "Warning: the atoms named in " << row[0] << " do not match the coordinates!" << std::endl;
+          }
         }
         else { // regular, non-ring torsion restraint
           auto row = chem_comp_tor[j];
@@ -182,6 +187,9 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
           {
             std::cout << "Non-ring torsion value: " << row[5] << " to be patched with " << torsion_value * (180.0/3.141592653589793238463) << " " << std::endl;
             row[5] = std::to_string(torsion_value * (180.0/3.141592653589793238463));
+          }
+          else {
+            std::cout << "Warning: the atoms named in " << row[0] << " do not match the coordinates!" << std::endl;
           }
         }
       }
