@@ -46,6 +46,7 @@
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
 #include "privateer-dbquery.h"
+#include "privateer-parallelism.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -56,6 +57,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 // #define DUMP 1
+// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 clipper::String program_version = "MKIV_alpha";
 using clipper::data32::F_sigF;
@@ -69,7 +71,6 @@ typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 int main(int argc, char** argv)
 {
-
     CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2020/03/02" );
 
     prog.set_termination_message( "Failed" );
@@ -109,6 +110,7 @@ int main(int argc, char** argv)
     bool vertical = false, original = true, invert = false;
     int n_refln = 1000;
     int n_param = 20;
+    unsigned int nThreads;
     bool useMTZ = false;
     bool useMRC = false;
     bool batch = false;
@@ -118,6 +120,7 @@ int main(int argc, char** argv)
     bool check_unmodelled = false;
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
+    bool useParallelism = true;
     float resolution = -1; 
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
@@ -129,7 +132,8 @@ int main(int argc, char** argv)
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
     clipper::MGlycology mgl;
-    nlohmann::json jsonObject; 
+    nlohmann::json jsonObject;
+    privateer::thread_pool pool(0);
 
 
 
@@ -240,6 +244,15 @@ int main(int argc, char** argv)
         {
             glucose_only = false;
         }
+        else if ( args[arg] == "-singlethreaded" )
+        {
+            useParallelism = false;
+            nThreads = 0;
+        }
+        // else if ( args[arg] == "-debug" ) // need to reimplement this. 
+        // {
+        //     #define DUMP 1
+        // }
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
@@ -391,8 +404,29 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    nThreads = (std::thread::hardware_concurrency() - 1); // deduct one system thread for performance reasons outside privateer executable. Debatable whether this is needed at all.
+    
+    if(nThreads < 2 && useParallelism)
+    {
+        useParallelism = false;
+        std::cout << std::endl << "Error: Less than two threads were detected in the system. Number of Threads detected on the system: " << nThreads << "\nPlease disable multithreaded execution via -singlethreaded keyword argument!" << std::endl;
+        prog.set_termination_message( "Failed" );
+        return 1;
+    }
+    else if(!useParallelism)
+        std::cout << std::endl << "Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl;
+    else
+    {
+        std::cout << std::endl << "Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
+        pool.resize(nThreads);
+        std::cout << "Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl;
+    }
+        
+
+
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
+
 
     if ( (useMTZ && !useMRC) || noMaps ) privateer::util::read_coordinate_file_mtz ( mfile, mmol, input_model, batch);
     int pos_slash = input_model.rfind("/");
@@ -534,9 +568,9 @@ int main(int argc, char** argv)
 
                         std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                        #ifdef DUMP
-                            std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                        #endif
+                        // #ifdef DUMP
+                        //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                        // #endif
 
                         int n_conf = conformers.size();
 
@@ -1573,9 +1607,9 @@ int main(int argc, char** argv)
 
                     std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                    #ifdef DUMP
-                        std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                    #endif
+                    // #ifdef DUMP
+                    //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                    // #endif
 
                     int n_conf = conformers.size();
 
@@ -1691,15 +1725,15 @@ int main(int argc, char** argv)
     
     clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); 
 
-    #pragma omp parallel sections
-        {
-    #pragma omp section
+    // #pragma omp parallel sections
+    //     {
+    // #pragma omp section
             cryo_em_dif_map_all.fft_from( difference_coefficients );
-    #pragma omp section
+    // #pragma omp section
             modelmap.fft_from( fc_all_cryoem_data ); 
-    #pragma omp section
+    // #pragma omp section
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
-        }
+        // }
 
         if (!batch)
             std::cout << "done." << std::endl;
@@ -1718,21 +1752,21 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-    #pragma omp parallel sections
-            {
-    #pragma omp section
-                {
+    // #pragma omp parallel sections
+    //         {
+    // #pragma omp section
+    //             {
                     diff_mapOut.open_write( "cryoem_diff.map" );
                     diff_mapOut.export_xmap( cryo_em_dif_map_all );
                     diff_mapOut.close_write();
-                }
-    #pragma omp section // remove later
-                {
+                // }
+    // #pragma omp section // remove later
+    //             {
                     modelmapout.open_write( "cryoem_calcmodel.map" );
                     modelmapout.export_xmap( modelmap );
                     modelmapout.close_write();
-                }
-            }
+            //     }
+            // }
 
             std::cout << "done." << std::endl;
             std::cout << "\n\nDetailed validation data" << std::endl;
@@ -2071,15 +2105,16 @@ int main(int argc, char** argv)
 
         try
         {   // calculate structure factors with bulk solvent correction
-    #pragma omp parallel sections
-            {
-    #pragma omp section
+    // #pragma omp parallel sections
+    //         {
+    // #pragma omp section
+            // pool.push(sfcbligands, fc_ligands_bsc, fobs, ligandAtoms);
                 sfcbligands( fc_ligands_bsc, fobs, ligandAtoms ); // was fobs_scaled
-    #pragma omp section
+    // #pragma omp section
                 sfcb( fc_omit_bsc, fobs, mainAtoms );  // calculation of omit SF with bulk solvent correction
-    #pragma omp section
+    // #pragma omp section
                 sfcball( fc_all_bsc, fobs, allAtoms ); // calculation of SF with bulk solvent correction
-            }
+            // }
         }
         catch ( ... )
         {
@@ -2108,21 +2143,21 @@ int main(int argc, char** argv)
         clipper::HKL_data<Flag> flag( hklinfo );     // same flag for both calculations, omit absent reflections
         clipper::SFscale_aniso<float> sfscale;
 
-    #pragma omp parallel sections
-        {
-    #pragma omp section
-            {
+    // #pragma omp parallel sections
+    //     {
+    // #pragma omp section
+    //         {
                 sfscale( fobs_scaled, fc_all_bsc );  // anisotropic scaling of Fobs. We scale Fobs to Fcalc instead of scaling our 3 Fcalcs to Fobs
-            }
-    #pragma omp section
-            {
+    //         }
+    // #pragma omp section
+    //         {
                 for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
                 {
                     if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
                     else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
                 }
-            }
-        }
+        //     }
+        // }
 
         double FobsFcalcSum = 0.0;
         double FobsFcalcAllSum = 0.0;
@@ -2136,20 +2171,20 @@ int main(int argc, char** argv)
         clipper::HKL_data<Phi_fom> phiw_all( hklinfo );
 
         // now do sigmaa calc
-    #pragma omp parallel sections
-        {
-    #pragma omp section
-            {
+    // #pragma omp parallel sections
+    //     {
+    // #pragma omp section
+    //         {
                 clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
                 sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag ); // sigmaa omit
-            }
+            // }
 
-    #pragma omp section
-            {
+    // #pragma omp section
+    //         {
                 clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
                 sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); // sigmaa all atoms
-            }
-        }
+        //     }
+        // }
 
         // fb:          output best map coefficients
         // fd:          output difference map coefficients
@@ -2168,31 +2203,97 @@ int main(int argc, char** argv)
 
         double Fo, Fc_all, Fc_omit;
 
-    #pragma omp parallel sections
+        if(useParallelism)
         {
-    #pragma omp section
-            sigmaa_all_map.fft_from( fb_all );  // calculate the maps
-    #pragma omp section
-            sigmaa_dif_map.fft_from( fd_all );
-    #pragma omp section
-            sigmaa_omit_fd.fft_from( fd_omit );
-    #pragma omp section
-            ligandmap.fft_from( fc_ligands_bsc );       // this is the map that will serve as Fc map for the RSCC calculation
-    #pragma omp section
-            for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
-            {
-                if ( !fobs_scaled[ih].missing() )
+            pool.push([&sigmaa_all_map, &fb_all](int id)
+            { 
+                sigmaa_all_map.fft_from(fb_all);
+                
+                #ifdef DUMP
+                        DBG << std::endl << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
+                #endif
+            });
+
+            pool.push([&sigmaa_dif_map, &fd_all](int id)
+            { 
+                #ifdef DUMP
+                    DBG << std::endl << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
+                sigmaa_dif_map.fft_from(fd_all);
+            });     
+
+            pool.push([&sigmaa_omit_fd, &fd_omit](int id)
+            { 
+                #ifdef DUMP
+                    DBG << std::endl << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
+                sigmaa_omit_fd.fft_from(fd_omit);
+            });  
+
+            pool.push([&ligandmap, &fc_ligands_bsc](int id)
+            { 
+                ligandmap.fft_from(fc_ligands_bsc);
+                
+                #ifdef DUMP
+                    DBG << std::endl << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
+                #endif
+            });
+
+            pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum](int id)
+            { 
+                #ifdef DUMP
+                    DBG << std::endl << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
+                #endif
+
+                for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
                 {
-                    Fo = fobs_scaled[ih].f();
-                    Fc_all = sqrt ( wrk_scale_all.f(ih) ) * fc_all_bsc[ih].f() ;
-                    Fc_omit = sqrt ( wrk_scale_omit.f(ih) ) * fc_omit_bsc[ih].f() ;
-                    FobsFcalcSum += fabs( Fo - Fc_omit); // R factor calculation
-                    FobsFcalcAllSum += fabs( Fo- Fc_all);
-                    FobsSum += Fo;
+                    if ( !fobs_scaled[ih].missing() )
+                    {
+                        Fo = fobs_scaled[ih].f();
+                        Fc_all = sqrt ( wrk_scale_all.f(ih) ) * fc_all_bsc[ih].f() ;
+                        Fc_omit = sqrt ( wrk_scale_omit.f(ih) ) * fc_omit_bsc[ih].f() ;
+                        FobsFcalcSum += fabs( Fo - Fc_omit); // R factor calculation
+                        FobsFcalcAllSum += fabs( Fo- Fc_all);
+                        FobsSum += Fo;
+                    }
                 }
-            }
+            });
+        }
+        else
+        {
+                sigmaa_all_map.fft_from( fb_all );  // calculate the maps
+
+                sigmaa_dif_map.fft_from( fd_all );
+
+                sigmaa_omit_fd.fft_from( fd_omit );
+
+                ligandmap.fft_from( fc_ligands_bsc );       // this is the map that will serve as Fc map for the RSCC calculation
+
+                for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
+                {
+                    if ( !fobs_scaled[ih].missing() )
+                    {
+                        Fo = fobs_scaled[ih].f();
+                        Fc_all = sqrt ( wrk_scale_all.f(ih) ) * fc_all_bsc[ih].f() ;
+                        Fc_omit = sqrt ( wrk_scale_omit.f(ih) ) * fc_omit_bsc[ih].f() ;
+                        FobsFcalcSum += fabs( Fo - Fc_omit); // R factor calculation
+                        FobsFcalcAllSum += fabs( Fo- Fc_all);
+                        FobsSum += Fo;
+                    }
+                }
         }
 
+        //Figure out a way how to access the size of job queue. 
+        if (useParallelism)
+        {
+            std::cout << std::endl << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            std::cout << std::endl << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+        }
+    
         if (!batch)
             std::cout << "done." << std::endl;
 
@@ -2240,8 +2341,7 @@ int main(int argc, char** argv)
             opmtz_omit.close_write ();
         }
 
-
-
+            
         if (!batch)
             printf("\n R-all = %1.3f  R-omit = %1.3f\n", (FobsFcalcAllSum / FobsSum), (FobsFcalcSum / FobsSum));
 
@@ -2281,27 +2381,27 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-    #pragma omp parallel sections
-            {
-    #pragma omp section
-                {
+    // #pragma omp parallel sections
+    //         {
+    // #pragma omp section
+    //             {
                     sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                     sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
                     sigmaa_all_MapOut.close_write();
-                }
-    #pragma omp section
-                {
+                // }
+    // #pragma omp section
+    //             {
                     sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
                     sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
                     sigmaa_dif_MapOut.close_write();
-                }
-    #pragma omp section
-                {
+    //             }
+    // #pragma omp section
+    //             {
                     sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                     sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
                     sigmaa_omit_fd_MapOut.close_write();
-                }
-            }
+            //     }
+            // }
 
             std::cout << "done." << std::endl;
             std::cout << "\n\nDetailed validation data" << std::endl;
