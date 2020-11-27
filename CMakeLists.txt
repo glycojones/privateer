@@ -5,6 +5,7 @@ project(privateer VERSION 0.4 LANGUAGES C CXX)
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 
@@ -18,6 +19,15 @@ set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 #     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 #     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 # endif()
+
+# set(CMAKE_THREAD_LIBS_INIT "-lpthread")
+# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+# set(CMAKE_HAVE_THREADS_LIBRARY 1)
+# set(CMAKE_USE_WIN32_THREADS_INIT 0)
+# set(CMAKE_USE_PTHREADS_INIT 1)
+# set(THREADS_PREFER_PTHREAD_FLAG ON)
+
+
 
 
 ## Find Privateer's dependencies that have been compiled locally. 
@@ -45,6 +55,9 @@ find_library(CLIPPERCIFDEP NAMES clipper-cif
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
+
+find_package(Threads REQUIRED)
+
 
 #Find Privateer's main.cpp file
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
@@ -79,7 +92,8 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
-                        nlohmann_json::nlohmann_json)
+                        nlohmann_json::nlohmann_json
+                        Threads::Threads)
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 

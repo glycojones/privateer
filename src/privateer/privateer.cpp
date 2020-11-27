@@ -56,8 +56,8 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-// #define DUMP 1
-// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+#define DUMP 1
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 clipper::String program_version = "MKIV_alpha";
 using clipper::data32::F_sigF;
@@ -82,7 +82,7 @@ int main(int argc, char** argv)
     std::cout << "\n  'Carbohydrate anomalies in the PDB'";
     std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
 
-    #ifdef DUMP
+    #if DUMP
         std::cout << "   WARNING: THIS IS A DEBUG VERSION - NOT INTENDED FOR PUBLIC DISTRIBUTION" << std::endl ;
     #endif
 
@@ -249,10 +249,6 @@ int main(int argc, char** argv)
             useParallelism = false;
             nThreads = 0;
         }
-        // else if ( args[arg] == "-debug" ) // need to reimplement this. 
-        // {
-        //     #define DUMP 1
-        // }
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
@@ -414,12 +410,12 @@ int main(int argc, char** argv)
         return 1;
     }
     else if(!useParallelism)
-        std::cout << std::endl << "Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl;
+        std::cout << std::endl << "THREADING: Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl;
     else
     {
-        std::cout << std::endl << "Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
+        std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
         pool.resize(nThreads);
-        std::cout << "Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl;
+        std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl;
     }
         
 
@@ -568,7 +564,7 @@ int main(int argc, char** argv)
 
                         std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                        // #ifdef DUMP
+                        // #if DUMP
                         //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
                         // #endif
 
@@ -594,7 +590,7 @@ int main(int argc, char** argv)
                         clipper::String id = mmol[p].id();
                         id.resize(1);
 
-                        #ifdef DUMP
+                        #if DUMP
                             std::cout << "Looking at chain " << id << std::endl;
                         #endif
 
@@ -1163,7 +1159,7 @@ int main(int argc, char** argv)
             fc_ligands_only_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
          
             cryo_em_map.fft_to(fc_cryoem_obs);
-            privateer::cryo_em::initialize_dummy_fobs( fobs, fc_cryoem_obs ); // might not be necessary at all.
+            // privateer::cryo_em::initialize_dummy_fobs( fobs, fc_cryoem_obs ); // might not be necessary at all.
         }
     }
 
@@ -1607,7 +1603,7 @@ int main(int argc, char** argv)
 
                     std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                    // #ifdef DUMP
+                    // #if DUMP
                     //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
                     // #endif
 
@@ -1697,7 +1693,7 @@ int main(int argc, char** argv)
     {
         if (!batch) std::cout << "Done analyzing modelled carbohydrates.\nCalculating simulated structure factors from model input... "; fflush(0);
 
-        privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms);
+        privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
 
         std::cout << "done." << std::endl << "Computing 2Fo-DFc and Fo-DFc maps... ";
         fflush(0);
@@ -1714,7 +1710,7 @@ int main(int argc, char** argv)
 
         clipper::HKL_data<F_phi> difference_coefficients( hklinfo );
 
-        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
+        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo, pool, useParallelism);
 
         if (!difference_map_sfc_generated)
             {
@@ -1723,17 +1719,63 @@ int main(int argc, char** argv)
                 return 1;
             }
     
-    clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid ); 
+        clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
-    // #pragma omp parallel sections
-    //     {
-    // #pragma omp section
+        if(useParallelism)
+        {
+            pool.push([&cryo_em_dif_map_all, &difference_coefficients](int id)
+            { 
+                #if DUMP
+                    std::cout << std::endl;
+                    DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
+                cryo_em_dif_map_all.fft_from(difference_coefficients);
+            });
+
+            pool.push([&modelmap, &fc_all_cryoem_data](int id)
+            { 
+                #if DUMP
+                    DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
+                modelmap.fft_from(fc_all_cryoem_data);
+            });
+
+            pool.push([&ligandmap, &fc_ligands_only_cryoem_data](int id)
+            { 
+                #if DUMP
+                    DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
+                ligandmap.fft_from(fc_ligands_only_cryoem_data);
+            });
+        }
+        else
+        {
             cryo_em_dif_map_all.fft_from( difference_coefficients );
-    // #pragma omp section
+
             modelmap.fft_from( fc_all_cryoem_data ); 
-    // #pragma omp section
+
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
-        // }
+        }
+        
+
+        if (useParallelism)
+        {
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
+        }
+
 
         if (!batch)
             std::cout << "done." << std::endl;
@@ -1752,23 +1794,49 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-    // #pragma omp parallel sections
-    //         {
-    // #pragma omp section
-    //             {
+
+            if(useParallelism)
+            {
+                pool.push([&diff_mapOut, &cryo_em_dif_map_all](int id)
+                { 
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Writing and outputting cryo_em_dif_map_all to \"cryoem_diff.map\" from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
                     diff_mapOut.open_write( "cryoem_diff.map" );
                     diff_mapOut.export_xmap( cryo_em_dif_map_all );
                     diff_mapOut.close_write();
-                // }
-    // #pragma omp section // remove later
-    //             {
+                });
+
+                pool.push([&modelmapout, &modelmap](int id)
+                { 
+                    #if DUMP
+                        DBG << "Writing and outputting modelmap to \"cryoem_calcmodel.map\" from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
                     modelmapout.open_write( "cryoem_calcmodel.map" );
                     modelmapout.export_xmap( modelmap );
                     modelmapout.close_write();
-            //     }
-            // }
+                });
+            }
+            else
+            {
+                diff_mapOut.open_write( "cryoem_diff.map" );
+                diff_mapOut.export_xmap( cryo_em_dif_map_all );
+                diff_mapOut.close_write();
 
-            std::cout << "done." << std::endl;
+                modelmapout.open_write( "cryoem_calcmodel.map" );
+                modelmapout.export_xmap( modelmap );
+                modelmapout.close_write();
+
+                std::cout << "done." << std::endl;
+            }
+            
+
+            // this one does not need syncing all the way till the end, can just keep running on the side, while the rest executes. 
+
+           
             std::cout << "\n\nDetailed validation data" << std::endl;
             std::cout << "------------------------" << std::endl;
         }
@@ -2105,16 +2173,44 @@ int main(int argc, char** argv)
 
         try
         {   // calculate structure factors with bulk solvent correction
-    // #pragma omp parallel sections
-    //         {
-    // #pragma omp section
-            // pool.push(sfcbligands, fc_ligands_bsc, fobs, ligandAtoms);
+            if(useParallelism)
+            {
+                pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms](int id)
+                { 
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Calculating sfcbligands from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
+                    sfcbligands( fc_ligands_bsc, fobs, ligandAtoms );
+                });
+        
+                pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms](int id)
+                { 
+                    #if DUMP
+                        DBG << "Calculating sfcb from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
+                    sfcb( fc_omit_bsc, fobs, mainAtoms );
+                });
+
+                pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms](int id)
+                { 
+                    #if DUMP
+                        DBG << "Calculating sfcball from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
+                    sfcball( fc_all_bsc, fobs, allAtoms );
+                });
+            }
+            else
+            {
                 sfcbligands( fc_ligands_bsc, fobs, ligandAtoms ); // was fobs_scaled
-    // #pragma omp section
+
                 sfcb( fc_omit_bsc, fobs, mainAtoms );  // calculation of omit SF with bulk solvent correction
-    // #pragma omp section
+
                 sfcball( fc_all_bsc, fobs, allAtoms ); // calculation of SF with bulk solvent correction
-            // }
+            }
         }
         catch ( ... )
         {
@@ -2124,6 +2220,21 @@ int main(int argc, char** argv)
         fc_ligands_bsc[0].set_null();
         fc_omit_bsc[0].set_null();
         fc_all_bsc[0].set_null();
+
+        if (useParallelism)
+        {
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
+        }
 
         if (!batch)
         {
@@ -2143,21 +2254,57 @@ int main(int argc, char** argv)
         clipper::HKL_data<Flag> flag( hklinfo );     // same flag for both calculations, omit absent reflections
         clipper::SFscale_aniso<float> sfscale;
 
-    // #pragma omp parallel sections
-    //     {
-    // #pragma omp section
-    //         {
+
+        if(useParallelism)
+            {
+                pool.push([&sfscale, &fobs_scaled, &fc_all_bsc](int id)
+                { 
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Calculating sfscale from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
+                    sfscale( fobs_scaled, fc_all_bsc );
+                });
+
+                pool.push([&fobs_scaled, &flag, &ih](int id)
+                { 
+                    #if DUMP
+                        DBG << "Calculating flag[ih].flag() from Thread ID: " << id << '.' << std::endl;
+                    #endif
+
+                    for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+                    {
+                        if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+                        else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
+                    }
+                });
+            }
+            else
+            {
                 sfscale( fobs_scaled, fc_all_bsc );  // anisotropic scaling of Fobs. We scale Fobs to Fcalc instead of scaling our 3 Fcalcs to Fobs
-    //         }
-    // #pragma omp section
-    //         {
+
                 for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
                 {
                     if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
                     else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
                 }
-        //     }
-        // }
+            }
+            
+        if (useParallelism)
+        {
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
+        }
 
         double FobsFcalcSum = 0.0;
         double FobsFcalcAllSum = 0.0;
@@ -2170,28 +2317,62 @@ int main(int argc, char** argv)
         clipper::HKL_data<F_phi> fd_all( hklinfo );
         clipper::HKL_data<Phi_fom> phiw_all( hklinfo );
 
-        // now do sigmaa calc
-    // #pragma omp parallel sections
-    //     {
-    // #pragma omp section
-    //         {
+
+
+        if(useParallelism)
+        {
+            pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param](int id)
+            { 
+                #if DUMP
+                    std::cout << std::endl;
+                    DBG << "Calculating sfw_omit from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
                 clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
-                sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag ); // sigmaa omit
-            // }
+                sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
+            });
 
-    // #pragma omp section
-    //         {
+            pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param](int id)
+            { 
+                #if DUMP
+                    DBG << "Calculating sfw_all from Thread ID: " << id << '.' << std::endl;
+                #endif
+                
                 clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-                sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); // sigmaa all atoms
-        //     }
-        // }
+                sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); 
+            });
+        }
+        else
+        {
+            clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
+            sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
 
+            clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
+            sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); 
+        }
+        
         // fb:          output best map coefficients
         // fd:          output difference map coefficients
         // phiw:        output phase and fom
         // fobs_scaled: input observed structure factors, previously scaled
         // fc_omit_bsc: input calculated omit data, with bulk solvent correction
         // fc_all_bsc:  input calculated data, with bsc
+
+
+        if (useParallelism)
+        {
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
+        }
 
         std::vector<double> params( n_param, 2.0 );
         clipper::BasisFn_spline wrk_basis( hklinfo, n_param, 2.0 );
@@ -2207,17 +2388,18 @@ int main(int argc, char** argv)
         {
             pool.push([&sigmaa_all_map, &fb_all](int id)
             { 
-                sigmaa_all_map.fft_from(fb_all);
-                
-                #ifdef DUMP
-                        DBG << std::endl << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
+                #if DUMP
+                    std::cout << std::endl;
+                    DBG << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
                 #endif
+                
+                sigmaa_all_map.fft_from(fb_all);
             });
 
             pool.push([&sigmaa_dif_map, &fd_all](int id)
             { 
-                #ifdef DUMP
-                    DBG << std::endl << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
+                #if DUMP
+                    DBG << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
                 #endif
                 
                 sigmaa_dif_map.fft_from(fd_all);
@@ -2225,8 +2407,8 @@ int main(int argc, char** argv)
 
             pool.push([&sigmaa_omit_fd, &fd_omit](int id)
             { 
-                #ifdef DUMP
-                    DBG << std::endl << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
+                #if DUMP
+                    DBG << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
                 #endif
                 
                 sigmaa_omit_fd.fft_from(fd_omit);
@@ -2236,15 +2418,15 @@ int main(int argc, char** argv)
             { 
                 ligandmap.fft_from(fc_ligands_bsc);
                 
-                #ifdef DUMP
-                    DBG << std::endl << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
+                #if DUMP
+                    DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
                 #endif
             });
 
             pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum](int id)
             { 
-                #ifdef DUMP
-                    DBG << std::endl << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
+                #if DUMP
+                    DBG << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
                 #endif
 
                 for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
@@ -2285,13 +2467,19 @@ int main(int argc, char** argv)
                 }
         }
 
-        //Figure out a way how to access the size of job queue. 
         if (useParallelism)
         {
-            std::cout << std::endl << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            std::cout << std::endl << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
         }
     
         if (!batch)
@@ -2381,29 +2569,63 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-    // #pragma omp parallel sections
-    //         {
-    // #pragma omp section
-    //             {
+            if(useParallelism)
+            {
+                pool.push([&sigmaa_all_MapOut, &sigmaa_all_map](int id)
+                { 
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Writing and outputting sigmaa_all_map to \"sigmaa_best.map\" from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
                     sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                     sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
                     sigmaa_all_MapOut.close_write();
-                // }
-    // #pragma omp section
-    //             {
+                });
+
+                pool.push([&sigmaa_dif_MapOut, &sigmaa_dif_map](int id)
+                { 
+                    #if DUMP
+                        DBG << "Writing and outputting sigmaa_dif_map to \"sigmaa_diff.map\" from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
                     sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
                     sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
                     sigmaa_dif_MapOut.close_write();
-    //             }
-    // #pragma omp section
-    //             {
+                });
+
+                pool.push([&sigmaa_omit_fd_MapOut, &sigmaa_omit_fd](int id)
+                { 
+                    #if DUMP
+                        DBG << "Writing and outputting sigmaa_omit_fd to \"sigmaa_omit.map\" from Thread ID: " << id << '.' << std::endl;
+                    #endif
+                    
                     sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                     sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
                     sigmaa_omit_fd_MapOut.close_write();
-            //     }
-            // }
+                });
+            }
+            else 
+            {
+                sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
+                sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
+                sigmaa_all_MapOut.close_write();
 
-            std::cout << "done." << std::endl;
+                sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
+                sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
+                sigmaa_dif_MapOut.close_write();
+
+                sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
+                sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
+                sigmaa_omit_fd_MapOut.close_write();
+                
+                std::cout << "done." << std::endl;
+            }
+
+
+
+
+            
             std::cout << "\n\nDetailed validation data" << std::endl;
             std::cout << "------------------------" << std::endl;
         }
@@ -3050,6 +3272,24 @@ int main(int argc, char** argv)
         privateer::util::write_refmac_keywords ( enable_torsions_for );
         privateer::util::write_libraries( enable_torsions_for );
     }
+
+
+    if (useParallelism)
+    {
+        
+        #if DUMP
+            std::cout << std::endl;
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+        #endif
+        
+        while(pool.n_remaining_jobs() > 0)
+            pool.sync();
+        
+        #if DUMP
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+        #endif
+    }
+
 
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
