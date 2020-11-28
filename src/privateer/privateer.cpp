@@ -56,7 +56,7 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-#define DUMP 1
+// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 clipper::String program_version = "MKIV_alpha";
@@ -1853,312 +1853,648 @@ int main(int argc, char** argv)
         if (!batch)
             printf("\n");
 
-        for (int index = 0; index < ligandList.size(); index++)
+        if(useParallelism)
         {
-            float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-            x=y=z=0.0;
-            maxX=maxY=maxZ=-999999.0;
-            minX=minY=minZ=999999.0;
-
-            for (int natom = 0; natom < sugarList[index].size(); natom++)
+            for (int index = 0; index < ligandList.size(); index++)
             {
-                if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
-                if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
-                if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
-                if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
-                if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
-                if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
-            }
+                if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                    pool.sync();
+                
+                pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch](int id)
+                { 
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
+                    #endif
+                    
+                    float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+                    x=y=z=0.0;
+                    maxX=maxY=maxZ=-999999.0;
+                    minX=minY=minZ=999999.0;
 
-            x = minX + ((maxX - minX)/2);
-            y = minY + ((maxY - minY)/2);
-            z = minZ + ((maxZ - minZ)/2);
-
-            if (batch)
-            {
-                fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().trim().c_str());
-                fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
-            }
-            else
-            {
-                printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
-                std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
-            }
-
-            // now calculate the correlation between the weighted experimental & calculated maps
-            // maps are scanned only inside a sphere containing the sugar for performance reasons,
-            // although RSCC and <RMS> are restricted to a mask surrounding the model
-
-
-            //////// mask calculation //////////
-
-            clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-            clipper::EDcalc_mask<double> masker( ipradius );
-            masker(mask, sugarList[index].atom_list());
-
-
-
-            
-
-            ////////////////////////////////////
-
-            clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-            clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
-
-            double accum = 0.0;
-            double corr_coeff = 0.0;
-            std::pair<double, double> rscc_and_accum;
-
-
-            rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-            
-            corr_coeff = rscc_and_accum.first;
-            accum = rscc_and_accum.second;
-
-
-            ///////////// here we deal with the sugar /////////////
-
-            if (batch)
-            {
-                std::vector<clipper::ftype> cpParams(10, 0);
-                cpParams = ligandList[index].second.cremer_pople_params();
-                fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] );    // output cremer-pople parameters
-                if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
-                fprintf(output,"%1.2f\t", corr_coeff);                                              // output RSCC and data resolution
-                fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str());           // output the type of sugar, e.g. alpha-D-aldopyranose
-                fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());       // output a 3 letter code for the conformation
-                fprintf(output,"%1.3f \t", accum);
-                ligandList[index].second.set_rscc ( corr_coeff );
-
-                float bfac = ligandList[index].second.get_bfactor ();
-
-                fprintf ( output, "%3.2f", bfac ); // output <bfactor>
-
-                std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
-                bool found_in_tree = false;
-
-                for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
-                {
-                    std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
-
-                    for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                    for (int natom = 0; natom < sugarList[index].size(); natom++)
                     {
-                        if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
-                        {
-                            if ( list_of_glycans[i].get_type() == "n-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "n-glycan" );
-                                fprintf ( output, "\t(n) " );
-                            }
-                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "c-glycan" );
-                                fprintf ( output, "\t(c) " );
-                            }
-                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "o-glycan" );
-                                fprintf ( output, "\t(o) " );
-                            }
-                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "s-glycan" );
-                                fprintf ( output, "\t(s) " );
-                            }
-                            found_in_tree = true;
-                            break;
-                        }
+                        if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                        if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                        if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                        if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
                     }
-                    if ( found_in_tree ) break;
-                }
 
-                if ( !found_in_tree )
-                {
-                    ligandList[index].second.set_context ( "ligand" );
-                    fprintf ( output, "\t(l)");
-                }
+                    x = minX + ((maxX - minX)/2);
+                    y = minY + ((maxY - minY)/2);
+                    z = minZ + ((maxZ - minZ)/2);
 
-                if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
-                {
-                    if ((ligandList[index].second.ring_members().size() == 6 ))
+                    if (batch)
                     {
-                        if (ligandList[index].second.is_sane())
-                        {
-                            if ( ! ligandList[index].second.ok_with_conformation () )
-                            {
-                                fprintf(output, "\tcheck");
-                            }
-                            else fprintf(output, "\tyes");
-                        }
-                        else
-                            fprintf (output, "\tno");
+                        fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().trim().c_str());
+                        fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
                     }
                     else
-                        if (ligandList[index].second.is_sane())
-                            fprintf(output, "\tyes");
-                        else
-                        {
-                            fprintf(output, "\tno");
-                        }
-                }
-                else
-                    fprintf(output, "\tunk");
-
-                if ( ! ligandList[index].second.ok_with_conformation () )
-                    enable_torsions_for.push_back (ligandList[index].second.type().trim());
-
-                bool occupancy_check = false;
-                std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
-
-                for ( int i = 0 ; i < ringcomponents.size() ; i++ )
-                    if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
-                        occupancy_check = true;
-
-
-                if (showGeom)
-                {
-                    std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
-                    std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
-                    std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        fprintf(output, "\t%1.2f", rbonds[i]);
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        fprintf(output, "\t%3.1f", rangles[i]);
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        fprintf(output, "\t%3.1f", rtorsions[i]);
-                }
-
-                if (occupancy_check)
-                    fprintf(output, " (*)");
-
-                fprintf(output, "\n");
-
-            }
-            else
-            {
-                std::vector<clipper::ftype> cpParams(10, 0);
-                cpParams = ligandList[index].second.cremer_pople_params();
-                printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]);             // output cremer-pople parameters
-                if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
-                printf("%1.2f\t", corr_coeff);                                                                                              // output RSCC and data resolution
-                printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
-                printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
-                printf("%1.3f \t", accum);                                                                                                  // output <mFo>
-                ligandList[index].second.set_rscc ( corr_coeff );
-
-                float bfac = 0.0;
-
-                for (int i=0; i < ligandList[index].second.size(); i++)
-                    bfac+=ligandList[index].second[i].u_iso();
-
-                bfac /= ligandList[index].second.size();
-                bfac  = clipper::Util::u2b(bfac);
-
-                printf ( "%3.2f", bfac );                 // output <Bfactor>
-
-                std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
-                bool found_in_tree = false;
-
-                for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
-                {
-                    std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
-
-                    for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                     {
-                        if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
-                        {
-                            if ( list_of_glycans[i].get_type() == "n-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "n-glycan" );
-                                std::cout << "\t(n) ";
-                            }
-                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "c-glycan" );
-                                std::cout << "\t(c) ";
-                            }
-                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "o-glycan" );
-                                std::cout << "\t(o) ";
-                            }
-                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "s-glycan" );
-                                std::cout << "\t(s) ";
-                            }
-                            found_in_tree = true;
-                            break;
-                        }
+                        printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
+                        std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
                     }
-                    if ( found_in_tree ) break;
-                }
 
-                if ( !found_in_tree )
-                {
-                    ligandList[index].second.set_context ( "ligand" );
-                    std::cout << "\t(l) ";
-                }
+                    // now calculate the correlation between the weighted experimental & calculated maps
+                    // maps are scanned only inside a sphere containing the sugar for performance reasons,
+                    // although RSCC and <RMS> are restricted to a mask surrounding the model
 
-                if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
-                {
-                    if ((ligandList[index].second.ring_members().size() == 6 ))
+
+                    //////// mask calculation //////////
+
+                    clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+                    clipper::EDcalc_mask<double> masker( ipradius );
+                    masker(mask, sugarList[index].atom_list());
+
+
+
+                    
+
+                    ////////////////////////////////////
+
+                    clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+                    clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+                    double accum = 0.0;
+                    double corr_coeff = 0.0;
+                    std::pair<double, double> rscc_and_accum;
+
+
+                    rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+                    
+                    corr_coeff = rscc_and_accum.first;
+                    accum = rscc_and_accum.second;
+
+
+                    ///////////// here we deal with the sugar /////////////
+
+                    if (batch)
                     {
-                        if (ligandList[index].second.is_sane())
+                        std::vector<clipper::ftype> cpParams(10, 0);
+                        cpParams = ligandList[index].second.cremer_pople_params();
+                        fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] );    // output cremer-pople parameters
+                        if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+                        fprintf(output,"%1.2f\t", corr_coeff);                                              // output RSCC and data resolution
+                        fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str());           // output the type of sugar, e.g. alpha-D-aldopyranose
+                        fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());       // output a 3 letter code for the conformation
+                        fprintf(output,"%1.3f \t", accum);
+                        ligandList[index].second.set_rscc ( corr_coeff );
+
+                        float bfac = ligandList[index].second.get_bfactor ();
+
+                        fprintf ( output, "%3.2f", bfac ); // output <bfactor>
+
+                        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                        bool found_in_tree = false;
+
+                        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
                         {
-                            if ( ! ligandList[index].second.ok_with_conformation () )
-                                printf("\tcheck");
+                            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                            {
+                                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                                {
+                                    if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "n-glycan" );
+                                        fprintf ( output, "\t(n) " );
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "c-glycan" );
+                                        fprintf ( output, "\t(c) " );
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "o-glycan" );
+                                        fprintf ( output, "\t(o) " );
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "s-glycan" );
+                                        fprintf ( output, "\t(s) " );
+                                    }
+                                    found_in_tree = true;
+                                    break;
+                                }
+                            }
+                            if ( found_in_tree ) break;
+                        }
+
+                        if ( !found_in_tree )
+                        {
+                            ligandList[index].second.set_context ( "ligand" );
+                            fprintf ( output, "\t(l)");
+                        }
+
+                        if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+                        {
+                            if ((ligandList[index].second.ring_members().size() == 6 ))
+                            {
+                                if (ligandList[index].second.is_sane())
+                                {
+                                    if ( ! ligandList[index].second.ok_with_conformation () )
+                                    {
+                                        fprintf(output, "\tcheck");
+                                    }
+                                    else fprintf(output, "\tyes");
+                                }
+                                else
+                                    fprintf (output, "\tno");
+                            }
                             else
-                                printf("\tyes");
+                                if (ligandList[index].second.is_sane())
+                                    fprintf(output, "\tyes");
+                                else
+                                {
+                                    fprintf(output, "\tno");
+                                }
                         }
                         else
-                            printf ("\tno");
+                            fprintf(output, "\tunk");
+
+                        if ( ! ligandList[index].second.ok_with_conformation () )
+                            enable_torsions_for.push_back (ligandList[index].second.type().trim());
+
+                        bool occupancy_check = false;
+                        std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                        for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                            if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                                occupancy_check = true;
+
+
+                        if (showGeom)
+                        {
+                            std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                            std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                            std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                fprintf(output, "\t%1.2f", rbonds[i]);
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                fprintf(output, "\t%3.1f", rangles[i]);
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                fprintf(output, "\t%3.1f", rtorsions[i]);
+                        }
+
+                        if (occupancy_check)
+                            fprintf(output, " (*)");
+
+                        fprintf(output, "\n");
+
                     }
                     else
-                        if (ligandList[index].second.is_sane())
-                            printf("\tyes");
-                        else printf("\tno");
+                    {
+                        std::vector<clipper::ftype> cpParams(10, 0);
+                        cpParams = ligandList[index].second.cremer_pople_params();
+                        printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]);             // output cremer-pople parameters
+                        if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
+                        printf("%1.2f\t", corr_coeff);                                                                                              // output RSCC and data resolution
+                        printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
+                        printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
+                        printf("%1.3f \t", accum);                                                                                                  // output <mFo>
+                        ligandList[index].second.set_rscc ( corr_coeff );
+
+                        float bfac = 0.0;
+
+                        for (int i=0; i < ligandList[index].second.size(); i++)
+                            bfac+=ligandList[index].second[i].u_iso();
+
+                        bfac /= ligandList[index].second.size();
+                        bfac  = clipper::Util::u2b(bfac);
+
+                        printf ( "%3.2f", bfac );                 // output <Bfactor>
+
+                        std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                        bool found_in_tree = false;
+
+                        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                        {
+                            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                            {
+                                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                                {
+                                    if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "n-glycan" );
+                                        std::cout << "\t(n) ";
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "c-glycan" );
+                                        std::cout << "\t(c) ";
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "o-glycan" );
+                                        std::cout << "\t(o) ";
+                                    }
+                                    else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                    {
+                                        ligandList[index].second.set_context ( "s-glycan" );
+                                        std::cout << "\t(s) ";
+                                    }
+                                    found_in_tree = true;
+                                    break;
+                                }
+                            }
+                            if ( found_in_tree ) break;
+                        }
+
+                        if ( !found_in_tree )
+                        {
+                            ligandList[index].second.set_context ( "ligand" );
+                            std::cout << "\t(l) ";
+                        }
+
+                        if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+                        {
+                            if ((ligandList[index].second.ring_members().size() == 6 ))
+                            {
+                                if (ligandList[index].second.is_sane())
+                                {
+                                    if ( ! ligandList[index].second.ok_with_conformation () )
+                                        printf("\tcheck");
+                                    else
+                                        printf("\tyes");
+                                }
+                                else
+                                    printf ("\tno");
+                            }
+                            else
+                                if (ligandList[index].second.is_sane())
+                                    printf("\tyes");
+                                else printf("\tno");
+                        }
+                        else
+                            printf("\tunk");
+
+                        if ( ! ligandList[index].second.ok_with_conformation () )
+                            enable_torsions_for.push_back (ligandList[index].second.type().trim());
+
+                        bool occupancy_check = false;
+                        std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                        for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                            if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                                occupancy_check = true;
+
+
+                        if (showGeom)
+                        {
+                            std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                            std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                            std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                printf("\t%1.2f", rbonds[i]);
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                printf("\t%3.1f", rangles[i]);
+
+                            for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                                printf("\t%3.1f", rtorsions[i]);
+                        }
+
+                        if (occupancy_check)
+                            std::cout << " (*)";
+
+                        std::cout << std::endl;
+                    }
+                });
+            }
+
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            #endif
+            
+            while(pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            #if DUMP
+                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+            #endif
+        
+        }
+        else
+        {
+            for (int index = 0; index < ligandList.size(); index++)
+            {
+                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+                x=y=z=0.0;
+                maxX=maxY=maxZ=-999999.0;
+                minX=minY=minZ=999999.0;
+
+                for (int natom = 0; natom < sugarList[index].size(); natom++)
+                {
+                    if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                    if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                    if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                    if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                    if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                    if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+                }
+
+                x = minX + ((maxX - minX)/2);
+                y = minY + ((maxY - minY)/2);
+                z = minZ + ((maxZ - minZ)/2);
+
+                if (batch)
+                {
+                    fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().trim().c_str());
+                    fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
                 }
                 else
-                    printf("\tunk");
-
-                if ( ! ligandList[index].second.ok_with_conformation () )
-                    enable_torsions_for.push_back (ligandList[index].second.type().trim());
-
-                bool occupancy_check = false;
-                std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
-
-                for ( int i = 0 ; i < ringcomponents.size() ; i++ )
-                    if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
-                        occupancy_check = true;
-
-
-                if (showGeom)
                 {
-                    std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
-                    std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
-                    std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        printf("\t%1.2f", rbonds[i]);
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        printf("\t%3.1f", rangles[i]);
-
-                    for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
-                        printf("\t%3.1f", rtorsions[i]);
+                    printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
+                    std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
                 }
 
-                if (occupancy_check)
-                    std::cout << " (*)";
+                // now calculate the correlation between the weighted experimental & calculated maps
+                // maps are scanned only inside a sphere containing the sugar for performance reasons,
+                // although RSCC and <RMS> are restricted to a mask surrounding the model
 
-                std::cout << std::endl;
+
+                //////// mask calculation //////////
+
+                clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+                clipper::EDcalc_mask<double> masker( ipradius );
+                masker(mask, sugarList[index].atom_list());
+
+
+
+                
+
+                ////////////////////////////////////
+
+                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+                double accum = 0.0;
+                double corr_coeff = 0.0;
+                std::pair<double, double> rscc_and_accum;
+
+
+                rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+                
+                corr_coeff = rscc_and_accum.first;
+                accum = rscc_and_accum.second;
+
+
+                ///////////// here we deal with the sugar /////////////
+
+                if (batch)
+                {
+                    std::vector<clipper::ftype> cpParams(10, 0);
+                    cpParams = ligandList[index].second.cremer_pople_params();
+                    fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] );    // output cremer-pople parameters
+                    if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+                    fprintf(output,"%1.2f\t", corr_coeff);                                              // output RSCC and data resolution
+                    fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str());           // output the type of sugar, e.g. alpha-D-aldopyranose
+                    fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());       // output a 3 letter code for the conformation
+                    fprintf(output,"%1.3f \t", accum);
+                    ligandList[index].second.set_rscc ( corr_coeff );
+
+                    float bfac = ligandList[index].second.get_bfactor ();
+
+                    fprintf ( output, "%3.2f", bfac ); // output <bfactor>
+
+                    std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                    bool found_in_tree = false;
+
+                    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                    {
+                        std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                        for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                        {
+                            if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                            {
+                                if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "n-glycan" );
+                                    fprintf ( output, "\t(n) " );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "c-glycan" );
+                                    fprintf ( output, "\t(c) " );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "o-glycan" );
+                                    fprintf ( output, "\t(o) " );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "s-glycan" );
+                                    fprintf ( output, "\t(s) " );
+                                }
+                                found_in_tree = true;
+                                break;
+                            }
+                        }
+                        if ( found_in_tree ) break;
+                    }
+
+                    if ( !found_in_tree )
+                    {
+                        ligandList[index].second.set_context ( "ligand" );
+                        fprintf ( output, "\t(l)");
+                    }
+
+                    if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+                    {
+                        if ((ligandList[index].second.ring_members().size() == 6 ))
+                        {
+                            if (ligandList[index].second.is_sane())
+                            {
+                                if ( ! ligandList[index].second.ok_with_conformation () )
+                                {
+                                    fprintf(output, "\tcheck");
+                                }
+                                else fprintf(output, "\tyes");
+                            }
+                            else
+                                fprintf (output, "\tno");
+                        }
+                        else
+                            if (ligandList[index].second.is_sane())
+                                fprintf(output, "\tyes");
+                            else
+                            {
+                                fprintf(output, "\tno");
+                            }
+                    }
+                    else
+                        fprintf(output, "\tunk");
+
+                    if ( ! ligandList[index].second.ok_with_conformation () )
+                        enable_torsions_for.push_back (ligandList[index].second.type().trim());
+
+                    bool occupancy_check = false;
+                    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                    for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                        if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                            occupancy_check = true;
+
+
+                    if (showGeom)
+                    {
+                        std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                        std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                        std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            fprintf(output, "\t%1.2f", rbonds[i]);
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            fprintf(output, "\t%3.1f", rangles[i]);
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            fprintf(output, "\t%3.1f", rtorsions[i]);
+                    }
+
+                    if (occupancy_check)
+                        fprintf(output, " (*)");
+
+                    fprintf(output, "\n");
+
+                }
+                else
+                {
+                    std::vector<clipper::ftype> cpParams(10, 0);
+                    cpParams = ligandList[index].second.cremer_pople_params();
+                    printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]);             // output cremer-pople parameters
+                    if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
+                    printf("%1.2f\t", corr_coeff);                                                                                              // output RSCC and data resolution
+                    printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
+                    printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
+                    printf("%1.3f \t", accum);                                                                                                  // output <mFo>
+                    ligandList[index].second.set_rscc ( corr_coeff );
+
+                    float bfac = 0.0;
+
+                    for (int i=0; i < ligandList[index].second.size(); i++)
+                        bfac+=ligandList[index].second[i].u_iso();
+
+                    bfac /= ligandList[index].second.size();
+                    bfac  = clipper::Util::u2b(bfac);
+
+                    printf ( "%3.2f", bfac );                 // output <Bfactor>
+
+                    std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                    bool found_in_tree = false;
+
+                    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                    {
+                        std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                        for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                        {
+                            if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                            {
+                                if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "n-glycan" );
+                                    std::cout << "\t(n) ";
+                                }
+                                else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "c-glycan" );
+                                    std::cout << "\t(c) ";
+                                }
+                                else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "o-glycan" );
+                                    std::cout << "\t(o) ";
+                                }
+                                else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "s-glycan" );
+                                    std::cout << "\t(s) ";
+                                }
+                                found_in_tree = true;
+                                break;
+                            }
+                        }
+                        if ( found_in_tree ) break;
+                    }
+
+                    if ( !found_in_tree )
+                    {
+                        ligandList[index].second.set_context ( "ligand" );
+                        std::cout << "\t(l) ";
+                    }
+
+                    if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+                    {
+                        if ((ligandList[index].second.ring_members().size() == 6 ))
+                        {
+                            if (ligandList[index].second.is_sane())
+                            {
+                                if ( ! ligandList[index].second.ok_with_conformation () )
+                                    printf("\tcheck");
+                                else
+                                    printf("\tyes");
+                            }
+                            else
+                                printf ("\tno");
+                        }
+                        else
+                            if (ligandList[index].second.is_sane())
+                                printf("\tyes");
+                            else printf("\tno");
+                    }
+                    else
+                        printf("\tunk");
+
+                    if ( ! ligandList[index].second.ok_with_conformation () )
+                        enable_torsions_for.push_back (ligandList[index].second.type().trim());
+
+                    bool occupancy_check = false;
+                    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                    for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                        if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                            occupancy_check = true;
+
+
+                    if (showGeom)
+                    {
+                        std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                        std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                        std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            printf("\t%1.2f", rbonds[i]);
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            printf("\t%3.1f", rangles[i]);
+
+                        for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                            printf("\t%3.1f", rtorsions[i]);
+                    }
+
+                    if (occupancy_check)
+                        std::cout << " (*)";
+
+                    std::cout << std::endl;
+                }
             }
-        }      
+        }
     }
 
 
@@ -3005,6 +3341,22 @@ int main(int argc, char** argv)
             }
         }
     }
+
+    if (useParallelism)
+    {
+        #if DUMP
+            std::cout << std::endl;
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+        #endif
+        
+        while(pool.n_remaining_jobs() > 0)
+            pool.sync();
+        
+        #if DUMP
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+        #endif
+    }
+
 
     if (!batch)
     {
