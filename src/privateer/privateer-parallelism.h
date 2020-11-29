@@ -99,16 +99,15 @@ namespace privateer
 
         void sync()
         {
-            if(ma_n_idle >= m_threads.size())
+            if(n_idle() >= m_threads.size())
                 return;
             else
             {
-                while(ma_n_idle < m_threads.size())
+                while(n_idle() < m_threads.size())
                 {
-                    if(ma_n_idle == m_threads.size()) return;
+                    if(n_idle() == m_threads.size()) return;
                 }
             }
-
         }
 
         // change the number of threads in the pool
