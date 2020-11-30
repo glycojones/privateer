@@ -481,7 +481,22 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+
+                    if (useParallelism)
+                    {
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                        #endif
+                        
+                        while(pool.n_remaining_jobs() > 0)
+                            pool.sync();
+                        
+                        #if DUMP
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+                        #endif
+                    }
                     
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -1208,7 +1223,22 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+
+                    if (useParallelism)
+                    {
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                        #endif
+                        
+                        while(pool.n_remaining_jobs() > 0)
+                            pool.sync();
+                        
+                        #if DUMP
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+                        #endif
+                    }
                     
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -1273,7 +1303,22 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only);
+                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+
+                if (useParallelism)
+                {
+                    #if DUMP
+                        std::cout << std::endl;
+                        DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                    #endif
+                    
+                    while(pool.n_remaining_jobs() > 0)
+                        pool.sync();
+                    
+                    #if DUMP
+                        DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+                    #endif
+                }
                 
                 if(!finalGlycanPermutationContainer.empty())
                     {

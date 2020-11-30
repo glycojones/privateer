@@ -29,12 +29,13 @@
 #include "clipper-glyco_data.h"
 #include "privateer-composition.h"
 #include "privateer-lib.h"
+#include "privateer-parallelism.h"
 #include <clipper/minimol/minimol_utils.h>
 #include <nlohmann/json.hpp>
 
 
 
-void output_dbquery(nlohmann::json& jsonObject, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only);
+void output_dbquery(nlohmann::json& jsonObject, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, privateer::thread_pool& pool, bool useParallelism);
 void push_data_to_final_permutation_container(nlohmann::json &jsonObject, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer);
 void print_output_from_database(nlohmann::json& jsonObject, int valueLocation, clipper::MGlycan &currentGlycan);
 
