@@ -97,15 +97,16 @@ namespace privateer
             this->resize(m_nThreads);
         }
 
-        void sync()
+        bool sync()
         {
+            bool synced = false;
             if(n_idle() >= m_threads.size())
-                return;
+                return synced = true;
             else
             {
                 while(n_idle() < m_threads.size())
                 {
-                    if(n_idle() == m_threads.size()) return;
+                    if(n_idle() == m_threads.size()) return synced = true;
                 }
             }
         }

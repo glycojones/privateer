@@ -87,42 +87,48 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
 void push_data_to_final_permutation_container(nlohmann::json &jsonObject, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer)
 {
     for (int j = 0; j < alternativeGlycans.size(); j++)
+    {
+        int originalGlycanLength = currentGlycan.number_of_nodes(),
+            currentGlycanLength = alternativeGlycans[j].first.number_of_nodes();
+
+        int anomerPermutations = alternativeGlycans[j].second[0],
+            residuePermutations = alternativeGlycans[j].second[1],
+            residueDeletions = alternativeGlycans[j].second[2];
+        
+        float finalScore, maxPermutationScore, currentPermutationScore;
+
+        maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
+        currentPermutationScore = ( ( (anomerPermutations * 5) + (residuePermutations * 25) + (residueDeletions * 100) ) / originalGlycanLength );
+        finalScore = (currentPermutationScore / maxPermutationScore) * 100;
+
+        auto tempObject = std::make_pair(alternativeGlycans[j], finalScore);
+        finalGlycanPermutationContainer.push_back(tempObject);
+
+        clipper::String temporaryWURCS = alternativeGlycans[j].first.generate_wurcs();
+        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+        std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
+        std::cout << "\tAnomer Permutations = " << alternativeGlycans[j].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[j].second[1] << "\tResidue Deletions = " << alternativeGlycans[j].second[2] << std::endl; 
+        std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalScore << std::endl;
+
+        std::string glytoucanID;
+        glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+        if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
         {
-            int originalGlycanLength = currentGlycan.number_of_nodes(),
-                currentGlycanLength = alternativeGlycans[j].first.number_of_nodes();
-
-            int anomerPermutations = alternativeGlycans[j].second[0],
-                residuePermutations = alternativeGlycans[j].second[1],
-                residueDeletions = alternativeGlycans[j].second[2];
-            
-            float finalScore, maxPermutationScore, currentPermutationScore;
-
-            maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
-            currentPermutationScore = ( ( (anomerPermutations * 5) + (residuePermutations * 25) + (residueDeletions * 100) ) / originalGlycanLength );
-            finalScore = (currentPermutationScore / maxPermutationScore) * 100;
-
-            auto tempObject = std::make_pair(alternativeGlycans[j], finalScore);
-            finalGlycanPermutationContainer.push_back(tempObject);
-
-            clipper::String temporaryWURCS = alternativeGlycans[j].first.generate_wurcs();
-            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-
-            std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
-            std::cout << "\tAnomer Permutations = " << alternativeGlycans[j].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[j].second[1] << "\tResidue Deletions = " << alternativeGlycans[j].second[2] << std::endl; 
-            std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalScore << std::endl;
-
-            std::string glytoucanID;
-            glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
-            if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
-            {
-                glytoucanID.erase(0, 1);
-                glytoucanID.pop_back();
-            }
-            std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
-            std::cout << "\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
-
-            std::cout << std::endl;
+            glytoucanID.erase(0, 1);
+            glytoucanID.pop_back();
         }
+        std::cout << "\tGlyTouCan Accession ID: " << glytoucanID << std::endl;
+        std::cout << "\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
+
+        std::cout << std::endl;
+    }
+    
+    // std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>&
+    std::sort(finalGlycanPermutationContainer.begin(), finalGlycanPermutationContainer.end(), [](std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> a, std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> b){
+        return a.second < b.second;
+    });
+
 }
 
 

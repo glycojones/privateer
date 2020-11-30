@@ -10,8 +10,8 @@
 // mailto: kevin.cowtan@york.ac.uk
 
 #include "privateer-composition.h"
-#define DUMP 1
-#define DBG std::cout << "[" << __FUNCTION__ << "] - "
+// #define DUMP 1
+// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only, privateer::thread_pool& pool, bool useParallelism)
@@ -26,14 +26,16 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     clipper::MGlycan tempGlycanAlpha = fullglycan;
     clipper::MGlycan tempGlycanBravo = fullglycan;
 
+    bool finishedAlpha = false, 
+         finishedBravo = false;
+
     // TO DO FIRST THING: Dedicate a minimum amount of threads, track the IDs of the launched threads and send additional threads in monomer and anomer permutation functions.
     //                    The tracking of thread IDs is required to prevent recursive spawning of threads. 
     //                    This implementation is gonna introduce a more stringent requirement of minimum threads required... and is not going to be scalable... 
     //                    Unless scalability could be achieved at the very last recursion, but that remains to be seen.
-    // TO DO SECOND THING: Final permutation vector in privateer.cpp should be sorted according to PermutationScore values, via std::sort().
     if(useParallelism)
     {
-        pool.push([&tempGlycanAlpha, &resultAlpha, &jsonObject, glucose_only, totalNodes](int id)
+        pool.push([&tempGlycanAlpha, &resultAlpha, &jsonObject, glucose_only, totalNodes, &finishedAlpha](int id)
         {
             #if DUMP
                 std::cout << std::endl;
@@ -85,8 +87,10 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
                         }
                 }
             }
+            finishedAlpha = true;
         });
-        pool.push([&tempGlycanBravo, &resultBravo, &jsonObject, glucose_only, totalNodes](int id)
+
+        pool.push([&tempGlycanBravo, &resultBravo, &jsonObject, glucose_only, totalNodes, &finishedBravo](int id)
         { 
             #if DUMP
                 std::cout << std::endl;
@@ -138,16 +142,29 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
                         }
                 }
             }
+            finishedBravo = true;
         });
+
     
         #if DUMP
-        std::cout << std::endl;
-        DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+            std::cout << std::endl;
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
         
-        while(pool.n_remaining_jobs() > 0)
+        while(!finishedAlpha && !finishedBravo)
+        {
+             #if DUMP
+                std::cout << std::endl;
+                DBG << "pool.n_idle() = " << pool.n_idle() << "\t pool.size() = " << pool.size() << std::boolalpha << "\tfinishedAlpha = " << finishedAlpha << "\tfinishedBravo = " << finishedBravo << std::endl;
+            #endif
             pool.sync();
-        
+        }
+
+        #if DUMP
+            std::cout << std::endl;
+            DBG << std::boolalpha << "finishedAlpha = " << finishedAlpha << "\tfinishedBravo = " << finishedBravo << std::endl;
+        #endif
+            
         #if DUMP
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
         #endif
