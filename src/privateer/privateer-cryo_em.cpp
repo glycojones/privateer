@@ -17,6 +17,9 @@
 
 #include "privateer-cryo_em.h"
 
+// #define DUMP 1
+// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
 void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
     std::cout << "Reading " << pathname.trim().c_str() << "... ";
@@ -111,9 +114,8 @@ void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::
       }
 }
 
-bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo,privateer::thread_pool& pool, bool useParallelism)
+bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo)
 {
-  clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
 
   const int n_scl_param = 20;
 
@@ -123,6 +125,8 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
   clipper::TargetFn_scaleF1F2<clipper::data32::F_phi, clipper::data32::F_phi> scaling_target( fc_all_cryoem_data, fc_cryoem_obs );
   clipper::ResolutionFn scalefn( hklinfo, basis, scaling_target, params );
 
+  clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
+  
   for (HRI ih = hklinfo.first(); !ih.last(); ih.next() )
   {
     clipper::data32::F_phi temp(fc_all_cryoem_data[ih].f(), fc_all_cryoem_data[ih].phi());
@@ -154,7 +158,7 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
       }
     }
   }
-
+  
   return true;
 }
 

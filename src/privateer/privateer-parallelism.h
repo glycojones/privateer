@@ -100,13 +100,13 @@ namespace privateer
         bool sync()
         {
             bool synced = false;
-            if(n_idle() >= m_threads.size())
+            if( (n_idle() >= m_threads.size()) && (n_remaining_jobs() == 0))
                 return synced = true;
             else
             {
-                while(n_idle() < m_threads.size())
+                while((n_idle() < m_threads.size()) || (n_remaining_jobs() > 0))
                 {
-                    if(n_idle() == m_threads.size()) return synced = true;
+                    if( (n_idle() == m_threads.size()) && (n_remaining_jobs() == 0) ) return synced = true;
                 }
             }
         }

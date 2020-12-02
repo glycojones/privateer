@@ -1739,10 +1739,9 @@ int main(int argc, char** argv)
     {
         if (!batch) std::cout << "Done analyzing modelled carbohydrates.\nCalculating simulated structure factors from model input... "; fflush(0);
         
-        // TO DO: Parallelize the main loop of this function.
         privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
 
-        std::cout << "done." << std::endl << "Computing 2Fo-DFc and Fo-DFc maps... ";
+        std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
         fflush(0);
 
 
@@ -1757,7 +1756,7 @@ int main(int argc, char** argv)
 
         clipper::HKL_data<F_phi> difference_coefficients( hklinfo );
 
-        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo, pool, useParallelism);
+        bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
 
         if (!difference_map_sfc_generated)
             {

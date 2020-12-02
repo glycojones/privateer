@@ -1749,8 +1749,6 @@ bool MSugar::is_part_of_ring(const clipper::MAtom& ma, const std::vector<clipper
 	\return A boolean value with the answer
 */
 
-// TO DO: adapt this function to return int instead of bool, reflecting too long or too short distances
-
 bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MAtom& ma_two) const
 {
     ////////////// CRITICAL: check symm mates ///////////////
@@ -2610,8 +2608,6 @@ Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
 Function used to convert an int number to a char letter. Needed for generation of WURCS strings, specifically to conver residue IDs to letters and leave numbers
 for linkage information.
 
-!!! TO DO: Need to relocate this function somewhere else, doesn't really belong under ::MGlycan.
-
 Last modified on: 03/01/2020
 */
 char MGlycan::convertNumberToLetter(int number)
@@ -2694,8 +2690,6 @@ https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a
 
 Last modified on: 12/02/2020
 
-// TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
-// TO DO: Find out whether a carbohydrate can form three covalent connections to other residues.
 */
 clipper::String MGlycan::generate_wurcs()
 {

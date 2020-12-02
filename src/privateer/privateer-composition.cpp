@@ -29,10 +29,8 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     bool finishedAlpha = false, 
          finishedBravo = false;
 
-    // TO DO FIRST THING: Dedicate a minimum amount of threads, track the IDs of the launched threads and send additional threads in monomer and anomer permutation functions.
-    //                    The tracking of thread IDs is required to prevent recursive spawning of threads. 
-    //                    This implementation is gonna introduce a more stringent requirement of minimum threads required... and is not going to be scalable... 
-    //                    Unless scalability could be achieved at the very last recursion, but that remains to be seen.
+    // TO DO: Need to design a seperate function specifically for multithreaded aspect.
+    //        In essence, have main thread collate all results from spawned threads. Current approach is not going to work at all.
     if(useParallelism)
     {
         pool.push([&tempGlycanAlpha, &resultAlpha, &jsonObject, glucose_only, totalNodes, &finishedAlpha](int id)
