@@ -121,16 +121,6 @@ namespace privateer {
     void create_library ();
     void sign_library_header();
 
-    void add_torsion_set (float phi);
-    void add_torsion_set (float phi, float theta);
-    void add_torsion_set ( gemmi::ChemComp &cc, privateer::Conformation id);
-    void restrain_conformation (privateer::Conformation);
-    privateer::Conformation get_conformation ( clipper::MMonomer sugar );
-    void replace_conformer ();
-    void read_conformer(clipper::MMonomer &sugar);
-    void calculate_conformer ();
-    void refine_conformer ();
-
   }
 }
 
