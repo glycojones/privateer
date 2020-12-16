@@ -113,39 +113,57 @@ float privateer::restraints::CarbohydrateDictionary::get_torsion_from_conformer 
 
       for (size_t j = 0; j != chem_comp_atom.length(); j++ ) {
         auto atom_in_conformer = chem_comp_atom[j];
-        if ( atom_in_conformer[1] != a1 )
-          if ( atom_in_conformer[1] != a2 )
-            if ( atom_in_conformer[1] != a3 )
-              if ( atom_in_conformer[1] != a4 )
-                continue;
-        atom_indices.push_back(j);
+        if ( atom_in_conformer[1] == a1 )
+          atom_indices.push_back(j);
+      }
+
+      for (size_t j = 0; j != chem_comp_atom.length(); j++ ) {
+        auto atom_in_conformer = chem_comp_atom[j];
+        if ( atom_in_conformer[1] == a2 )
+          atom_indices.push_back(j);
+      }
+
+      for (size_t j = 0; j != chem_comp_atom.length(); j++ ) {
+        auto atom_in_conformer = chem_comp_atom[j];
+        if ( atom_in_conformer[1] == a3 )
+          atom_indices.push_back(j);
+      }
+
+      for (size_t j = 0; j != chem_comp_atom.length(); j++ ) {
+        auto atom_in_conformer = chem_comp_atom[j];
+        if ( atom_in_conformer[1] == a4 )
+          atom_indices.push_back(j);
       }
 
       if ( atom_indices.size() != 4 )
-        return 361.0; // Return incorrect value to indicate that atoms were not found
+        return 361.0; // Return out-of-range value to indicate that atoms were not found
       else { // We've got our four atoms identified
-
         auto atom1_row = chem_comp_atom[atom_indices[0]];
-        gemmi::Position pos_1 = gemmi::Position(std::stof(atom1_row[2]),
-                                                std::stof(atom1_row[3]),
-                                                std::stof(atom1_row[4]));
+        clipper::Coord_orth atom1_coords ( std::stof(atom1_row[2]),
+                                           std::stof(atom1_row[3]),
+                                           std::stof(atom1_row[4]) );
 
         auto atom2_row = chem_comp_atom[atom_indices[1]];
-        gemmi::Position pos_2 = gemmi::Position(std::stof(atom2_row[2]),
-                                                std::stof(atom2_row[3]),
-                                                std::stof(atom2_row[4]));
+        clipper::Coord_orth atom2_coords ( std::stof(atom2_row[2]),
+                                           std::stof(atom2_row[3]),
+                                           std::stof(atom2_row[4]) );
 
         auto atom3_row = chem_comp_atom[atom_indices[2]];
-        gemmi::Position pos_3 = gemmi::Position(std::stof(atom3_row[2]),
-                                                std::stof(atom3_row[3]),
-                                                std::stof(atom3_row[4]));
+        clipper::Coord_orth atom3_coords ( std::stof(atom3_row[2]),
+                                           std::stof(atom3_row[3]),
+                                           std::stof(atom3_row[4]) );
 
         auto atom4_row = chem_comp_atom[atom_indices[3]];
-        gemmi::Position pos_4 = gemmi::Position(std::stof(atom4_row[2]),
-                                                std::stof(atom4_row[3]),
-                                                std::stof(atom4_row[4]));
+        clipper::Coord_orth atom4_coords ( std::stof(atom4_row[2]),
+                                           std::stof(atom4_row[3]),
+                                           std::stof(atom4_row[4]) );
 
-        return gemmi::calculate_dihedral(pos_1, pos_2, pos_3, pos_4); // value in radians
+        float torsion_value = clipper::Coord_orth::torsion ( atom1_coords,
+                                                             atom2_coords,
+                                                             atom3_coords,
+                                                             atom4_coords );
+
+        return clipper::Util::rad2d(torsion_value);
       }
     }
   }
@@ -177,8 +195,8 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
             std::cout << "Non-ring torsion ";
             for (int i = 2; i < 6; i++)
               std::cout << row[i] << " ";
-            std::cout << "of value "<< row[6] << " to be patched with " << torsion_value * (180.0/3.141592653589793238463) << " " << std::endl;
-            row[6] = std::to_string(torsion_value * (180.0/3.141592653589793238463));
+            std::cout << "of value "<< row[6] << " to be patched with " << torsion_value << " " << std::endl;
+            row[6] = std::to_string(torsion_value);
           }
           else {
             std::cout << "Warning: the atoms named in " << row[1] << " do not match the coordinates!" << std::endl;
@@ -191,7 +209,6 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
       gemmi::Restraints::AtomId a_1, a_2, a_3, a_4;
       a_1.comp = a_2.comp = a_3.comp = a_4.comp = 1;
 
-
       a_1.atom = "C5";
       a_2.atom = "O5";
       a_3.atom = "C1";
@@ -201,14 +218,13 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
       if (!ring.empty()) // general aldopyranose case
       {
         double torsion_value = this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom);
-        std::cout << std::to_string (torsion_value) << std::endl;
         chem_comp_tor.append_row({row[0],
                                   "Privateer_ring_" + std::to_string(restraint_index++),
                                   a_1.atom,
                                   a_2.atom,
                                   a_3.atom,
                                   a_4.atom,
-                                  std::to_string(torsion_value * (180.0/3.141592653589793238463)),
+                                  std::to_string(torsion_value),
                                   "3.0",
                                   "1"}); // unimodal
 
@@ -224,7 +240,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
                                     a_2.atom,
                                     a_3.atom,
                                     a_4.atom,
-                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)* (180.0/3.141592653589793238463)),
+                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
                                     "3.0",
                                     "1"}); // unimodal
         a_1.atom = "C1";
@@ -239,7 +255,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
                                     a_2.atom,
                                     a_3.atom,
                                     a_4.atom,
-                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)* (180.0/3.141592653589793238463)),
+                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
                                     "3.0",
                                     "1"}); // unimodal
         a_1.atom = "C2";
@@ -254,7 +270,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
                                     a_2.atom,
                                     a_3.atom,
                                     a_4.atom,
-                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)* (180.0/3.141592653589793238463)),
+                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
                                     "3.0",
                                     "1"}); // unimodal
 
@@ -270,7 +286,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
                                     a_2.atom,
                                     a_3.atom,
                                     a_4.atom,
-                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)* (180.0/3.141592653589793238463)),
+                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
                                     "3.0",
                                     "1"}); // unimodal
 
@@ -286,10 +302,110 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
                                     a_2.atom,
                                     a_3.atom,
                                     a_4.atom,
-                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)* (180.0/3.141592653589793238463)),
+                                    std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
                                     "3.0",
                                     "1"}); // unimodal
 
+      }
+      else {
+        a_1.atom = "C6";
+        a_2.atom = "O6";
+        a_3.atom = "C2";
+        a_4.atom = "C3";
+
+        auto ring = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+        if (!ring.empty()) // general ketopyranose case
+        {
+          double torsion_value = this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom);
+          chem_comp_tor.append_row({row[0],
+                                    "Privateer_ring_" + std::to_string(restraint_index++),
+                                    a_1.atom,
+                                    a_2.atom,
+                                    a_3.atom,
+                                    a_4.atom,
+                                    std::to_string(torsion_value),
+                                    "3.0",
+                                    "1"}); // unimodal
+
+          a_1.atom = "O6";
+          a_2.atom = "C2";
+          a_3.atom = "C3";
+          a_4.atom = "C4";
+          auto ring_1 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+          if (!ring_1.empty())
+            chem_comp_tor.append_row({row[0],
+                                      "Privateer_ring_" + std::to_string(restraint_index++),
+                                      a_1.atom,
+                                      a_2.atom,
+                                      a_3.atom,
+                                      a_4.atom,
+                                      std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
+                                      "3.0",
+                                      "1"}); // unimodal
+          a_1.atom = "C2";
+          a_2.atom = "C3";
+          a_3.atom = "C4";
+          a_4.atom = "C5";
+          auto ring_2 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+          if (!ring_2.empty())
+            chem_comp_tor.append_row({row[0],
+                                      "Privateer_ring_" + std::to_string(restraint_index++),
+                                      a_1.atom,
+                                      a_2.atom,
+                                      a_3.atom,
+                                      a_4.atom,
+                                      std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
+                                      "3.0",
+                                      "1"}); // unimodal
+          a_1.atom = "C3";
+          a_2.atom = "C4";
+          a_3.atom = "C5";
+          a_4.atom = "C6";
+          auto ring_3 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+          if (!ring_3.empty())
+            chem_comp_tor.append_row({row[0],
+                                      "Privateer_ring_" + std::to_string(restraint_index++),
+                                      a_1.atom,
+                                      a_2.atom,
+                                      a_3.atom,
+                                      a_4.atom,
+                                      std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
+                                      "3.0",
+                                      "1"}); // unimodal
+
+          a_1.atom = "C4";
+          a_2.atom = "C5";
+          a_3.atom = "C6";
+          a_4.atom = "O6";
+          auto ring_4 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+          if (!ring_4.empty())
+            chem_comp_tor.append_row({row[0],
+                                      "Privateer_ring_" + std::to_string(restraint_index++),
+                                      a_1.atom,
+                                      a_2.atom,
+                                      a_3.atom,
+                                      a_4.atom,
+                                      std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
+                                      "3.0",
+                                      "1"}); // unimodal
+
+          a_1.atom = "C5";
+          a_2.atom = "C6";
+          a_3.atom = "O6";
+          a_4.atom = "C2";
+          auto ring_5 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
+          if (!ring_5.empty())
+            chem_comp_tor.append_row({row[0],
+                                      "Privateer_ring_" + std::to_string(restraint_index++),
+                                      a_1.atom,
+                                      a_2.atom,
+                                      a_3.atom,
+                                      a_4.atom,
+                                      std::to_string(this->get_torsion_from_conformer(a_1.atom, a_2.atom, a_3.atom, a_4.atom)),
+                                      "3.0",
+                                      "1"}); // unimodal
+
+        }
       }
     }
 }
