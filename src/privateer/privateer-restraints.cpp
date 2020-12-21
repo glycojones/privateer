@@ -232,7 +232,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
         a_3.atom = "C2";
         a_4.atom = "C3";
         auto ring_1 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-        if (!ring_1.empty())
+        //if (!ring_1.empty())
           chem_comp_tor.append_row({row[0],
                                     "Privateer_ring_" + std::to_string(restraint_index++),
                                     a_1.atom,
@@ -247,7 +247,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
         a_3.atom = "C3";
         a_4.atom = "C4";
         auto ring_2 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-        if (!ring_2.empty())
+        //if (!ring_2.empty())
           chem_comp_tor.append_row({row[0],
                                     "Privateer_ring_" + std::to_string(restraint_index++),
                                     a_1.atom,
@@ -262,7 +262,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
         a_3.atom = "C4";
         a_4.atom = "C5";
         auto ring_3 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-        if (!ring_3.empty())
+        //if (!ring_3.empty())
           chem_comp_tor.append_row({row[0],
                                     "Privateer_ring_" + std::to_string(restraint_index++),
                                     a_1.atom,
@@ -278,7 +278,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
         a_3.atom = "C5";
         a_4.atom = "O5";
         auto ring_4 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-        if (!ring_4.empty())
+        //if (!ring_4.empty())
           chem_comp_tor.append_row({row[0],
                                     "Privateer_ring_" + std::to_string(restraint_index++),
                                     a_1.atom,
@@ -294,7 +294,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
         a_3.atom = "O5";
         a_4.atom = "C1";
         auto ring_5 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-        if (!ring_5.empty())
+        //if (!ring_5.empty())
           chem_comp_tor.append_row({row[0],
                                     "Privateer_ring_" + std::to_string(restraint_index++),
                                     a_1.atom,
@@ -330,7 +330,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
           a_3.atom = "C3";
           a_4.atom = "C4";
           auto ring_1 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-          if (!ring_1.empty())
+          //if (!ring_1.empty())
             chem_comp_tor.append_row({row[0],
                                       "Privateer_ring_" + std::to_string(restraint_index++),
                                       a_1.atom,
@@ -345,7 +345,7 @@ void privateer::restraints::CarbohydrateDictionary::restrain_rings_unimodal_from
           a_3.atom = "C4";
           a_4.atom = "C5";
           auto ring_2 = chemical_component.rt.find_shortest_path(a_1, a_4, {a_2, a_3});
-          if (!ring_2.empty())
+          //if (!ring_2.empty())
             chem_comp_tor.append_row({row[0],
                                       "Privateer_ring_" + std::to_string(restraint_index++),
                                       a_1.atom,
