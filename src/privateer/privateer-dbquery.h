@@ -30,6 +30,11 @@
 #include "privateer-composition.h"
 #include "privateer-lib.h"
 #include <clipper/minimol/minimol_utils.h>
+
+
+#ifdef _WIN32
+    #undef snprintf
+#endif
 #include <nlohmann/json.hpp>
 
 
