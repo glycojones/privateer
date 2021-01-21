@@ -100,13 +100,13 @@ namespace privateer
         bool sync()
         {
             bool synced = false;
-            if( (n_idle() >= m_threads.size()) && (n_remaining_jobs() == 0))
+            if( (n_idle() == size()) && (n_remaining_jobs() == 0))
                 return synced = true;
             else
             {
-                while((n_idle() < m_threads.size()) || (n_remaining_jobs() > 0))
+                while((n_idle() < size()) || (n_remaining_jobs() > 0))
                 {
-                    if( (n_idle() == m_threads.size()) && (n_remaining_jobs() == 0) ) return synced = true;
+                    if( (n_idle() == size()) && (n_remaining_jobs() == 0) ) return synced = true;
                 }
             }
         }
@@ -217,87 +217,6 @@ namespace privateer
             }
             else return std::future<decltype(f(0))>();
         }
-
-
-        void thread_par_for(unsigned start, unsigned end, std::function<void(unsigned i)> fn, bool par)
-        {
-            //internal loop
-            auto int_fn = [&fn](unsigned int_start, unsigned seg_size){
-                for (unsigned j = int_start; j < int_start+seg_size; j++){
-                    fn(j);
-                }
-            };
-
-            //sequenced for
-            if(!par){
-                return int_fn(start, end);
-            }
-
-            //get number of available threads from already spawned thread pool.
-            unsigned nb_threads_spawned = size();
-            unsigned nb_threads_idle = n_idle();
-
-            //calculate segments
-            unsigned total_length = end - start;
-            unsigned seg = total_length/nb_threads_idle;
-            unsigned last_seg = seg + total_length%nb_threads_idle;
-
-            //launch threads - parallel for
-            auto threads_idle_vec = std::vector<std::thread>();
-            auto movedindices = std::vector<unsigned>();
-            threads_idle_vec.reserve(nb_threads_idle);
-            for(int i = 0; i < nb_threads_spawned; i++)
-            {
-                unsigned current_fragment = 0;
-                if(current_fragment < nb_threads_idle)
-                {
-                    if (m_threads[i]->joinable())
-                    {
-                        unsigned current_start = seg*current_fragment;
-                        std::thread tempThread;
-                        tempThread = std::move(get_thread(i));
-                        tempThread = std::thread(int_fn, current_start, seg);
-                        threads_idle_vec.emplace_back(std::move(tempThread));
-                        
-                        movedindices.emplace_back(i);
-
-                        current_fragment++;
-                    }
-                }
-                else // sort out last fragment
-                {
-                    if (!m_threads[i]->joinable()) // if last fragment gets a thread that is actually busy, then try next ones until we get a free thread.
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        unsigned current_start = seg*(nb_threads_idle-1);
-                        std::thread tempThread;
-                        tempThread = std::move(get_thread(i));
-                        tempThread = std::thread(int_fn, current_start, last_seg);
-                        threads_idle_vec.emplace_back(std::move(tempThread));
-
-                        movedindices.emplace_back(i);
-
-                        break; // exit the loop when we are on the last segment. 
-                    }
-                }
-            }
-
-            for (auto& th : threads_idle_vec){
-                th.join();
-            }
-
-            for(auto& index : movedindices)
-            {
-                setup_thread(index);
-            }
-        }
-
-        // void async_par_for(unsigned start, unsigned end, std::function<void(unsigned i)> fn, bool par = true);
-
-
 
     private:
 

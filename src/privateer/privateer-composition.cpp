@@ -10,221 +10,9 @@
 // mailto: kevin.cowtan@york.ac.uk
 
 #include "privateer-composition.h"
-// #define DUMP 1
-// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+#define DUMP 1
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-
-std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only, privateer::thread_pool& pool, bool useParallelism)
-{
-    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> resultAlpha;
-    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> resultBravo;
-    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> resultFinal; // std::vector.push_back() is not thread safe, need to create temporary vectors.
-
-
-    int totalNodes = fullglycan.number_of_nodes();
-    
-    clipper::MGlycan tempGlycanAlpha = fullglycan;
-    clipper::MGlycan tempGlycanBravo = fullglycan;
-
-    bool finishedAlpha = false, 
-         finishedBravo = false;
-
-    // TO DO: Need to design a seperate function specifically for multithreaded aspect.
-    //        In essence, have main thread collate all results from spawned threads. Current approach is not going to work at all.
-    if(useParallelism)
-    {
-        pool.push([&tempGlycanAlpha, &resultAlpha, &jsonObject, glucose_only, totalNodes, &finishedAlpha](int id)
-        {
-            #if DUMP
-                std::cout << std::endl;
-                DBG << "Calculating tempGlycanAlpha from Thread ID: " << id << '.' << std::endl;
-            #endif
-
-            int residueDeletions = 0;
-            
-            for(int i = 0; i < totalNodes; i++)
-            {
-                int residuePermutations = 0;
-
-                std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
-                std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugars);
-
-                generate_all_anomer_permutations(resultAlpha, editable_nodes_for_anomer_permutations, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);
-
-                std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars, glucose_only);
-
-                generate_all_monomer_permutations(resultAlpha, editable_nodes_for_monomer_permutations, tempGlycanAlpha, jsonObject, residueDeletions);
-
-                if(tempGlycanAlpha.number_of_nodes() > 1)
-                {
-                    bool glyConnectTrue = false;
-                    
-                    tempGlycanAlpha = remove_first_leaf_node(tempGlycanAlpha);
-                    residueDeletions++;
-
-                    clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
-
-                    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-
-                    if (valueLocation != -1)
-                    {
-                        // std::cout << "PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
-                        if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
-                        // std::cout << "GlyConnect status " << std::boolalpha << glyConnectTrue << std::endl;
-                    }
-
-                    if (glyConnectTrue)
-                        {
-                            std::vector<int> mutations(3);
-                            mutations[0] = 0;
-                            mutations[1] = residuePermutations;
-                            mutations[2] = residueDeletions;
-                            std::pair <clipper::MGlycan,std::vector<int>> tempPair;
-                            tempPair = std::make_pair(tempGlycanAlpha, mutations);
-                            resultAlpha.push_back(tempPair);
-                        }
-                }
-            }
-            finishedAlpha = true;
-        });
-
-        pool.push([&tempGlycanBravo, &resultBravo, &jsonObject, glucose_only, totalNodes, &finishedBravo](int id)
-        { 
-            #if DUMP
-                std::cout << std::endl;
-                DBG << "Calculating tempGlycanBravo from Thread ID: " << id << '.' << std::endl;
-            #endif
-
-            int residueDeletions = 0;
-            
-            for(int i = 0; i < totalNodes; i++)
-            {
-                int residuePermutations = 0;
-
-                std::vector < clipper::MSugar > sugars = tempGlycanBravo.get_sugars();
-                std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugars);
-
-                generate_all_anomer_permutations(resultBravo, editable_nodes_for_anomer_permutations, tempGlycanBravo, jsonObject, residuePermutations, residueDeletions);
-
-                std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars, glucose_only);
-
-                generate_all_monomer_permutations(resultBravo, editable_nodes_for_monomer_permutations, tempGlycanBravo, jsonObject, residueDeletions);
-
-                if(tempGlycanBravo.number_of_nodes() > 1)
-                {
-                    bool glyConnectTrue = false;
-                    
-                    tempGlycanBravo = remove_last_node(tempGlycanBravo);
-                    residueDeletions++;
-
-                    clipper::String temporaryWURCS = tempGlycanBravo.generate_wurcs();
-
-                    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-
-                    if (valueLocation != -1)
-                    {
-                        // std::cout << "PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
-                        if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
-                        // std::cout << "GlyConnect status " << std::boolalpha << glyConnectTrue << std::endl;
-                    }
-
-                    if (glyConnectTrue)
-                        {
-                            std::vector<int> mutations(3);
-                            mutations[0] = 0;
-                            mutations[1] = residuePermutations;
-                            mutations[2] = residueDeletions;
-                            std::pair <clipper::MGlycan,std::vector<int>> tempPair;
-                            tempPair = std::make_pair(tempGlycanBravo, mutations);
-                            resultBravo.push_back(tempPair);
-                        }
-                }
-            }
-            finishedBravo = true;
-        });
-
-    
-        #if DUMP
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
-        
-        while(!finishedAlpha && !finishedBravo)
-        {
-             #if DUMP
-                std::cout << std::endl;
-                DBG << "pool.n_idle() = " << pool.n_idle() << "\t pool.size() = " << pool.size() << std::boolalpha << "\tfinishedAlpha = " << finishedAlpha << "\tfinishedBravo = " << finishedBravo << std::endl;
-            #endif
-            pool.sync();
-        }
-
-        #if DUMP
-            std::cout << std::endl;
-            DBG << std::boolalpha << "finishedAlpha = " << finishedAlpha << "\tfinishedBravo = " << finishedBravo << std::endl;
-        #endif
-            
-        #if DUMP
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
-    
-    
-        resultFinal.reserve( resultAlpha.size() + resultBravo.size() ); // preallocate memory
-        resultFinal.insert( resultFinal.end(), resultAlpha.begin(), resultAlpha.end() );
-        resultFinal.insert( resultFinal.end(), resultBravo.begin(), resultBravo.end() );
-    }
-    else
-    {
-        int residueDeletions = 0;
-
-        for(int i = 0; i < totalNodes; i++)
-        {
-            int residuePermutations = 0;
-
-            std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
-            std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugars);
-
-            generate_all_anomer_permutations(resultFinal, editable_nodes_for_anomer_permutations, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);
-
-            std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars, glucose_only);
-
-            generate_all_monomer_permutations(resultFinal, editable_nodes_for_monomer_permutations, tempGlycanAlpha, jsonObject, residueDeletions);
-
-            if(tempGlycanAlpha.number_of_nodes() > 1)
-            {
-                bool glyConnectTrue = false;
-                
-                tempGlycanAlpha = remove_first_leaf_node(tempGlycanAlpha);
-                residueDeletions++;
-
-                clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
-
-                int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
-
-                if (valueLocation != -1)
-                {
-                    // std::cout << "PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
-                    if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
-                    // std::cout << "GlyConnect status " << std::boolalpha << glyConnectTrue << std::endl;
-                }
-
-                if (glyConnectTrue)
-                {
-                    std::vector<int> mutations(3);
-                    mutations[0] = 0;
-                    mutations[1] = residuePermutations;
-                    mutations[2] = residueDeletions;
-                    std::pair <clipper::MGlycan,std::vector<int>> tempPair;
-                    tempPair = std::make_pair(tempGlycanAlpha, mutations);
-                    resultFinal.push_back(tempPair);
-                }
-            }
-        }
-    }
-        
-    // do the score calculations here, return the final vector already containing those float values. 
-
-    return resultFinal;
-}
 
 std::vector<int> get_editable_node_list_for_anomer_permutations(std::vector < clipper::MSugar >& sugar_list)
 {
@@ -248,62 +36,934 @@ std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < c
     return list; std::cout << std::endl;
 }
 
+std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list)
+{
 
+    std::vector<std::vector<int>> result;
+    std::vector<int> temp;
 
-void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residuePermuations, int residueDeletions)
+    int totalEditableNodes = editable_node_list.size();
+    bool checkedEditableNode[totalEditableNodes];
+    memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
+
+    
+    for(int i = 1; i <= totalEditableNodes; i++)
+    {
+        CombinationGenerator(editable_node_list, i, 0, 0, checkedEditableNode, totalEditableNodes, result, temp);
+    }
+    
+    return result;
+}
+
+void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
+{
+   if(currLength > reqLength)
+   return;
+   else if (currLength == reqLength) {
+      for (int i = 0; i < totalEditableNodes; i++) {
+         if (checkedEditableNode[i] == true) {
+         	temp.push_back(editable_node_list[i]);
+         }
+      }
+      result.push_back(temp);
+      temp.clear();
+      return;
+   }
+   if (shifter == totalEditableNodes) {
+      return;
+   }
+   checkedEditableNode[shifter] = true;
+   CombinationGenerator(editable_node_list, reqLength, shifter + 1, currLength + 1, checkedEditableNode, totalEditableNodes, result, temp);
+   checkedEditableNode[shifter] = false;
+   CombinationGenerator(editable_node_list, reqLength, shifter + 1, currLength, checkedEditableNode, totalEditableNodes, result, temp);
+}
+
+// TO DO: Need to redesign this function and its child functions. 
+// TO DO: Change the paradigm, so that first all the various glycan chains are generated, vectors populated with potential chains. In this stage, do not query the database for glycan matches.
+// TO DO: So, truncated glycans, monomer and anomer permutations done in first stage
+// TO DO: In second stage, after the above is done, take the resultant vector and check for entries within the vector itself in the database(in main thread) 
+// TO DO: Resize the vector to only contain matches of glycan chains that are found on databases and return that as the final result. 
+// TO DO: In essence, glycan mutations first, database checking(on single thread) afterwards.
+
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, nlohmann::json &jsonObject, bool glucose_only, privateer::thread_pool& pool, bool useParallelism)
+{
+    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result; // std::vector.push_back() is not thread safe, need to create temporary vectors.
+
+    int totalNodes = fullglycan.number_of_nodes();
+    clipper::MGlycan permutatedGlycanLeafNode = fullglycan,
+                     permutatedGlycanLastNode = fullglycan;
+
+    int residueDeletions = 0;
+
+    // Return to main thread all the time basically - figure this shit out. 
+    for(int i = totalNodes; i > 0; i--)
+    {
+        if(i == totalNodes)
+        {
+            int residuePermutations = 0;
+        
+            std::vector < clipper::MSugar > sugarsLeafNode = permutatedGlycanLeafNode.get_sugars();
+            
+            std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugarsLeafNode);
+
+            generate_all_anomer_permutations(result, editable_nodes_for_anomer_permutations, permutatedGlycanLeafNode, jsonObject, residuePermutations, residueDeletions);
+
+            std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLeafNode, glucose_only);
+
+            bool statusControl = false;
+            std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
+            generate_all_monomer_permutations_parallel_initial(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, pool, useParallelism, statusControl);
+
+            std::cout << "tempResultMonomerPermutations.size() " << tempResultMonomerPermutations.size() << std::endl;
+            std::cout << "Back in the else loop after initiating monomer permutations!" << "\tStatus of statusControl " << std::boolalpha << statusControl << "." << std::endl;
+            
+            while(!statusControl)
+            {
+                pool.sync();
+            }
+
+            std::cout << "Finished monomer permutations!" << "\tStatus of statusControl " << std::boolalpha << statusControl << "." << std::endl;
+
+            result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
+
+            remove_first_leaf_node_and_check_db(result, permutatedGlycanLeafNode, jsonObject, residueDeletions);
+            remove_last_node_and_check_db(result, permutatedGlycanLastNode, jsonObject, residueDeletions);
+
+            residueDeletions++;
+        }
+        else
+        {
+            int residuePermutations = 0;
+        
+            std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerAlpha, tempResultMonomerBravo, tempResultMonomerCharlie, tempResultMonomerDelta;
+            std::vector < clipper::MSugar > sugarsLeafNode = permutatedGlycanLeafNode.get_sugars();
+            std::vector < clipper::MSugar > sugarsLastNode = permutatedGlycanLastNode.get_sugars();
+            
+            std::vector<int> editable_leaf_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugarsLeafNode);
+            std::vector<int> editable_last_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugarsLastNode);
+
+            // Might even initiate pool launch here. 
+            generate_all_anomer_permutations(result, editable_leaf_nodes_for_anomer_permutations, permutatedGlycanLeafNode, jsonObject, residuePermutations, residueDeletions);
+            generate_all_anomer_permutations(result, editable_last_nodes_for_anomer_permutations, permutatedGlycanLastNode, jsonObject, residuePermutations, residueDeletions);
+
+            std::vector<int> editable_leaf_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLeafNode, glucose_only);
+            std::vector<int> editable_last_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLastNode, glucose_only);
+
+            bool statusControl = false;
+            std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
+            generate_all_monomer_permutations_parallel_subsequent(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, permutatedGlycanLastNode, jsonObject, residueDeletions, pool, useParallelism, statusControl);
+            // (std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, nlohmann::json& jsonObject, int residueDeletions, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
+            
+            std::cout << "Back in the else loop after initiating monomer permutations!" << "\tStatus of statusControl " << std::boolalpha << statusControl << "." << std::endl;
+            
+            while(!statusControl)
+            {
+                pool.sync();
+            }
+
+            std::cout << "Finished monomer permutations!" << "\tStatus of statusControl " << std::boolalpha << statusControl << "." << std::endl;
+
+            result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
+
+            std::cout << "Size of result = " << result.size() << std::endl;
+            
+            remove_first_leaf_node_and_check_db(result, permutatedGlycanLeafNode, jsonObject, residueDeletions);
+            remove_last_node_and_check_db(result, permutatedGlycanLastNode, jsonObject, residueDeletions);
+
+            residueDeletions++;
+            //functions to remove glycans here...And that's how I am going to be using 4 threads max...
+        }
+    }
+    std::cout << "Returning result vector!" << std::endl;
+    return result;
+}
+
+// push to local vector associated with monomers regarding their anomer permutations that is created in thread
+// recombine after loop is finished with main result vector
+void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
-    #pragma omp parallel for
-    for(int i = 0; i < totalCombinations.size(); i++)
+    int totalThreads = pool.size();
+    int threadsPerPool = std::floor(totalThreads/2);
+
+    if(useParallelism)
     {
-        clipper::MGlycan tempGlycan = glycan;
-        bool glyConnectTrue = false;
-        int anomerPermutations = 0;
-        
-        for(int j = 0; j < totalCombinations[i].size(); j++)
+        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> containerAlpha, containerBravo;
+        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerAlpha(totalCombinations.size()), threadSafeContainerBravo(totalCombinations.size());
+
+        int localIterator = threadsPerPool;
+
+        for(int globalOffset = 0; globalOffset < totalCombinations.size(); globalOffset+=localIterator)
         {
-            int nodeID = totalCombinations[i][j];
+            // if(pool.n_idle() != pool.size())
+            //     pool.sync();
 
-            clipper::MSugar msug = tempGlycan.get_node(nodeID).get_sugar();
-            msug.set_type(clipper::data::alternative_anomer(msug.type().trim()));
+            while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+                pool.sync();
 
-            tempGlycan.replace_sugar_at_index(nodeID, msug);
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinations.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerAlpha](int id)
+                    {
 
-            if(nodeID == 0) tempGlycan.update_msugar_in_root(msug);
+                        int index = job + globalOffset;
 
-        }     
-        clipper::String temporaryWURCS = tempGlycan.generate_wurcs();
-        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for tempGlycanBravo from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION tempGlycanAlpha combination: " << index << std::endl << "/" << totalCombinations.size() << "." << std::endl;
+                        #endif
 
-        // std::cout << "ANOMER PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
+                        
+                        clipper::MGlycan tempGlycanAlpha = glycan;
 
-        if (valueLocation != -1)
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                    
+                        for(int j = 0; j < totalCombinations[index].size(); j++)
+                        {
+                            int nodeID = totalCombinations[index][j];
+
+                            clipper::MSugar msug = tempGlycanAlpha.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[0]);
+
+                            tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                        }
+                        
+                        clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                        // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinations[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanAlpha, mutations);
+
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
+                    
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);      
+                        threadSafeContainerAlpha[index] = tempContainer;
+                    });
+                }
+            }
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinations.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerBravo](int id)
+                    {
+                        int index = job + globalOffset;
+
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for tempGlycanBravo from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION tempGlycanBravo combination: " << index << std::endl << "/" << totalCombinations.size() << "." << std::endl;
+                        #endif
+
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer;
+
+                        clipper::MGlycan tempGlycanBravo = glycan;
+
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                        for(int j = 0; j < totalCombinations[index].size(); j++)
+                        {
+                            int nodeID = totalCombinations[index][j];
+
+                            clipper::MSugar msug = tempGlycanBravo.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[1]);
+
+                            tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                        }
+                        clipper::String temporaryWURCS = tempGlycanBravo.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinations[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanBravo, mutations);
+                                
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanBravo.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Beta = get_editable_node_list_for_anomer_permutations(sugars);
+    
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Beta, tempGlycanBravo, jsonObject, residuePermutations, residueDeletions);
+                        threadSafeContainerBravo[index] = tempContainer;
+                    });
+                }
+            }
+            
+            // if(pool.n_idle() != pool.size())
+            //     pool.sync();
+
+            while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+                pool.sync();
+
+
+            if( (globalOffset + localIterator) >= totalCombinations.size() )
+            {
+                localIterator = totalCombinations.size() - globalOffset;
+
+                if(localIterator < 0)
+                {
+                    for(int i = 0; i < threadSafeContainerAlpha.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerAlpha[i];
+                        containerAlpha.insert(containerAlpha.end(), tempVector.begin(), tempVector.end());
+                    }
+                    for(int i = 0; i < threadSafeContainerBravo.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerBravo[i];
+                        containerBravo.insert(containerBravo.end(), tempVector.begin(), tempVector.end());
+                    }
+                    
+                    // containerAlpha.insert( containerAlpha.end(), threadSafeContainerAlpha.begin(), threadSafeContainerAlpha.end());
+                    // containerBravo.insert( containerBravo.end(), threadSafeContainerBravo.begin(), threadSafeContainerBravo.end());
+                    break;
+                } 
+            }
+                
+            if( (globalOffset + localIterator) >= totalCombinations.size() )
+            {
+                for(int i = 0; i < threadSafeContainerAlpha.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerAlpha[i];
+                    containerAlpha.insert(containerAlpha.end(), tempVector.begin(), tempVector.end());
+                }
+                for(int i = 0; i < threadSafeContainerBravo.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerBravo[i];
+                    containerBravo.insert(containerBravo.end(), tempVector.begin(), tempVector.end());
+                }
+                
+                // containerAlpha.insert( containerAlpha.end(), threadSafeContainerAlpha.begin(), threadSafeContainerAlpha.end());
+                // containerBravo.insert( containerBravo.end(), threadSafeContainerBravo.begin(), threadSafeContainerBravo.end());
+                break;
+            }
+                
+        }
+
+        // if(pool.n_idle() != pool.size())
+        // {
+        //     pool.sync();
+        // }
+
+        while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+            pool.sync();
+
+
+        result.insert( result.end(), containerAlpha.begin(), containerAlpha.end() );
+        result.insert( result.end(), containerBravo.begin(), containerBravo.end() );
+    }
+
+    // if(pool.n_idle() != pool.size())
+    // {
+    //     pool.sync();
+    //     statusControl = true;
+    // }
+    // else
+    //     statusControl = true;
+    while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+    {
+        pool.sync();
+        // statusControl = true;
+    }
+    statusControl = true;
+}
+
+void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, nlohmann::json& jsonObject, int residueDeletions, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
+{
+
+    std::vector<std::vector<int>> totalCombinationsNodeRemovedLeaf = generate_all_possible_index_combinations(editable_node_list_leaf);
+    std::vector<std::vector<int>> totalCombinationsNodeRemovedLast = generate_all_possible_index_combinations(editable_node_list_last);
+
+    int totalThreads = pool.size();
+    int threadsPerPool = std::floor(totalThreads/2);
+
+    if(useParallelism)
+    {
+        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> containerNodeRemovedLeafAlpha, 
+                                                                   containerNodeRemovedLeafBravo,
+                                                                   containerNodeRemovedLastAlpha,
+                                                                   containerNodeRemovedLastBravo;
+
+        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerNodeRemovedLeafAlpha(totalCombinationsNodeRemovedLeaf.size()), 
+                                                                                threadSafeContainerNodeRemovedLeafBravo(totalCombinationsNodeRemovedLeaf.size()),
+                                                                                threadSafeContainerNodeRemovedLastAlpha(totalCombinationsNodeRemovedLast.size()),
+                                                                                threadSafeContainerNodeRemovedLastBravo(totalCombinationsNodeRemovedLast.size());
+
+        
+        // replace this shit with totalThreads - totalCombinationsNodeRemovedLeaf.size() when number of jobs dip below totalThreads.
+
+        int localIterator = threadsPerPool;
+        for(int globalOffset = 0; globalOffset < totalCombinationsNodeRemovedLeaf.size(); globalOffset += localIterator)
+        {
+            // if(pool.n_idle() != pool.size())
+            //     pool.sync();
+            
+            while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+                pool.sync();
+            
+            if(threadsPerPool > totalCombinationsNodeRemovedLeaf.size())
+            {
+                threadsPerPool = totalCombinationsNodeRemovedLeaf.size();
+            }
+                
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerNodeRemovedLeafAlpha](int id)
+                    {
+                        
+                        int index = job + globalOffset;
+
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for glycan_node_removed_leaf ALPHA from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION glycan_node_removed_leaf ALPHA combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+                        #endif
+
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer;
+
+                        clipper::MGlycan tempGlycanNodeRemovedLeafAlpha = glycan_node_removed_leaf;
+            
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                        for(int j = 0; j < totalCombinationsNodeRemovedLeaf[index].size(); j++)
+                        {
+                            int nodeID = totalCombinationsNodeRemovedLeaf[index][j];
+
+                            clipper::MSugar msug = tempGlycanNodeRemovedLeafAlpha.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[0]);
+
+                            tempGlycanNodeRemovedLeafAlpha.replace_sugar_at_index(nodeID, msug);
+                        }
+                        
+                        clipper::String temporaryWURCS = tempGlycanNodeRemovedLeafAlpha.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                        // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinationsNodeRemovedLeaf[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanNodeRemovedLeafAlpha, mutations);
+                                
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanNodeRemovedLeafAlpha.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
+
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanNodeRemovedLeafAlpha, jsonObject, residuePermutations, residueDeletions);
+                        threadSafeContainerNodeRemovedLeafAlpha[index] = tempContainer;
+                    });
+                }
+            }
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerNodeRemovedLeafBravo](int id)
+                    {
+                        
+                        int index = job + globalOffset;
+
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for glycan_node_removed_leaf BRAVO from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION glycan_node_removed_leaf BRAVO combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+                        #endif
+                        
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer;
+
+                        clipper::MGlycan tempGlycanNodeRemovedLeafBravo = glycan_node_removed_leaf;
+
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                        for(int j = 0; j < totalCombinationsNodeRemovedLeaf[index].size(); j++)
+                        {
+                            int nodeID = totalCombinationsNodeRemovedLeaf[index][j];
+
+                            clipper::MSugar msug = tempGlycanNodeRemovedLeafBravo.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[1]);
+
+                            tempGlycanNodeRemovedLeafBravo.replace_sugar_at_index(nodeID, msug);
+                        }
+                        
+                        clipper::String temporaryWURCS = tempGlycanNodeRemovedLeafBravo.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                        // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinationsNodeRemovedLeaf[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanNodeRemovedLeafBravo, mutations);
+                                
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanNodeRemovedLeafBravo.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
+
+                    
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanNodeRemovedLeafBravo, jsonObject, residuePermutations, residueDeletions);
+                        threadSafeContainerNodeRemovedLeafBravo[index] = tempContainer;
+                    });
+                }
+            }
+            
+            // if(pool.n_idle() != pool.size())
+            //     pool.sync();
+
+            while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+            {
+                std::cout << "1st SYNC STATEMENT TRIGERRED" << std::endl;
+                pool.sync();
+            }
+                
+
+            if( (globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size() )
+            {
+                localIterator = totalCombinationsNodeRemovedLeaf.size() - globalOffset;
+
+                if(localIterator < 0)
+                {
+                    for(int i = 0; i < threadSafeContainerNodeRemovedLeafAlpha.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLeafAlpha[i];
+                        containerNodeRemovedLeafAlpha.insert(containerNodeRemovedLeafAlpha.end(), tempVector.begin(), tempVector.end());
+                    }
+                    for(int i = 0; i < threadSafeContainerNodeRemovedLeafBravo.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLeafBravo[i];
+                        containerNodeRemovedLeafBravo.insert(containerNodeRemovedLeafBravo.end(), tempVector.begin(), tempVector.end());
+                    }
+
+
+                    // containerNodeRemovedLeafAlpha.insert( containerNodeRemovedLeafAlpha.end(), threadSafeContainerNodeRemovedLeafAlpha.begin(), threadSafeContainerNodeRemovedLeafAlpha.end());
+                    // containerNodeRemovedLeafBravo.insert( containerNodeRemovedLeafBravo.end(), threadSafeContainerNodeRemovedLeafBravo.begin(), threadSafeContainerNodeRemovedLeafBravo.end());
+                    break;
+                } 
+            }
+                
+            if( (localIterator + globalOffset) >= totalCombinationsNodeRemovedLeaf.size() )
+            {
+                for(int i = 0; i < threadSafeContainerNodeRemovedLeafAlpha.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLeafAlpha[i];
+                    containerNodeRemovedLeafAlpha.insert(containerNodeRemovedLeafAlpha.end(), tempVector.begin(), tempVector.end());
+                }
+                for(int i = 0; i < threadSafeContainerNodeRemovedLeafBravo.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLeafBravo[i];
+                    containerNodeRemovedLeafBravo.insert(containerNodeRemovedLeafBravo.end(), tempVector.begin(), tempVector.end());
+                }
+
+
+                // containerNodeRemovedLeafAlpha.insert( containerNodeRemovedLeafAlpha.end(), threadSafeContainerNodeRemovedLeafAlpha.begin(), threadSafeContainerNodeRemovedLeafAlpha.end());
+                // containerNodeRemovedLeafBravo.insert( containerNodeRemovedLeafBravo.end(), threadSafeContainerNodeRemovedLeafBravo.begin(), threadSafeContainerNodeRemovedLeafBravo.end());
+                break;
+            }  
+        }
+    
+    
+        
+        // if(pool.n_idle() != pool.size())
+        //     pool.sync();
+
+        while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+        {
+            std::cout << "2nd SYNC STATEMENT TRIGERRED" << std::endl;
+            pool.sync();
+        }
+            
+
+        localIterator = threadsPerPool;
+
+        for(int globalOffset = 0; globalOffset < totalCombinationsNodeRemovedLast.size(); globalOffset += localIterator)
+        {
+            if(pool.n_idle() != pool.size())
+                pool.sync();
+
+            if(threadsPerPool > totalCombinationsNodeRemovedLast.size())
+                threadsPerPool = totalCombinationsNodeRemovedLast.size();
+
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerNodeRemovedLastAlpha](int id)
+                    {
+                        int index = job + globalOffset;
+
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for glycan_node_removed_last ALPHA from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION glycan_node_removed_last ALPHA combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLast.size() << "." << std::endl;
+                        #endif
+
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer;
+
+                        clipper::MGlycan tempGlycanNodeRemovedLastAlpha = glycan_node_removed_last;
+
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                        for(int j = 0; j < totalCombinationsNodeRemovedLast[index].size(); j++)
+                        {
+                            int nodeID = totalCombinationsNodeRemovedLast[index][j];
+
+                            clipper::MSugar msug = tempGlycanNodeRemovedLastAlpha.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[0]);
+
+                            tempGlycanNodeRemovedLastAlpha.replace_sugar_at_index(nodeID, msug);
+                        }
+                        
+                        clipper::String temporaryWURCS = tempGlycanNodeRemovedLastAlpha.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                        // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinationsNodeRemovedLast[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanNodeRemovedLastAlpha, mutations);
+                                
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanNodeRemovedLastAlpha.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
+
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanNodeRemovedLastAlpha, jsonObject, residuePermutations, residueDeletions);
+                        threadSafeContainerNodeRemovedLastAlpha[index] = tempContainer;
+                    });
+                }
+            }
+            for(int job = 0; job < threadsPerPool; job++)
+            {
+                if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
+                {
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerNodeRemovedLastBravo](int id)
+                    {
+                        int index = job + globalOffset;
+
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Calculating monomer permutations for glycan_node_removed_last BRAVO from Thread ID: " << id << '.' << std::endl;
+                            DBG << "MONOMER PERMUTATION glycan_node_removed_last BRAVO combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLast.size() << "." << std::endl;
+                        #endif
+
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer;
+
+                        clipper::MGlycan tempGlycanNodeRemovedLastBravo = glycan_node_removed_last;
+
+                        bool glyConnectTrue = false;
+
+                        int residuePermutations = 0;
+                        
+                        int anomerPermutations = 0;
+
+                        for(int j = 0; j < totalCombinationsNodeRemovedLast[index].size(); j++)
+                        {
+                            int nodeID = totalCombinationsNodeRemovedLast[index][j];
+
+                            clipper::MSugar msug = tempGlycanNodeRemovedLastBravo.get_node(nodeID).get_sugar();
+
+                            std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
+                            
+                            msug.set_type(alternative_monomers[1]);
+
+                            tempGlycanNodeRemovedLastBravo.replace_sugar_at_index(nodeID, msug);
+                        }
+                        
+                        clipper::String temporaryWURCS = tempGlycanNodeRemovedLastBravo.generate_wurcs();
+                        
+                        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                        // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+                        if (valueLocation != -1)
+                            {
+                                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                            }
+                        
+
+                        if (glyConnectTrue)
+                            {
+                                residuePermutations = totalCombinationsNodeRemovedLast[index].size();
+                                std::vector<int> mutations(3);
+                                mutations[0] = anomerPermutations;
+                                mutations[1] = residuePermutations;
+                                mutations[2] = residueDeletions;
+                                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                                tempPair = std::make_pair(tempGlycanNodeRemovedLastBravo, mutations);
+                                
+                                tempContainer.push_back(tempPair);
+                            } 
+
+                        std::vector < clipper::MSugar > sugars = tempGlycanNodeRemovedLastBravo.get_sugars();
+                        std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
+
+                        generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanNodeRemovedLastBravo, jsonObject, residuePermutations, residueDeletions);
+                        threadSafeContainerNodeRemovedLastBravo[index] = tempContainer;
+                    });
+                }
+            }
+
+            // if(pool.n_idle() != pool.size())
+            //     pool.sync();
+
+            while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+            {
+                std::cout << "3rd SYNC STATEMENT TRIGERRED" << std::endl;
+                pool.sync();
+            }
+                
+
+            if( (globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size() )
+            {
+                localIterator = totalCombinationsNodeRemovedLast.size() - globalOffset;
+
+                if(localIterator < 0)
+                {
+                    for(int i = 0; i < threadSafeContainerNodeRemovedLastAlpha.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLastAlpha[i];
+                        containerNodeRemovedLastAlpha.insert(containerNodeRemovedLastAlpha.end(), tempVector.begin(), tempVector.end());
+                    }
+                    for(int i = 0; i < threadSafeContainerNodeRemovedLastBravo.size(); i++)
+                    {
+                        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLastBravo[i];
+                        containerNodeRemovedLastBravo.insert(containerNodeRemovedLastBravo.end(), tempVector.begin(), tempVector.end());
+                    }
+
+                    // containerNodeRemovedLastAlpha.insert( containerNodeRemovedLastAlpha.end(), threadSafeContainerNodeRemovedLastAlpha.begin(), threadSafeContainerNodeRemovedLastAlpha.end());
+                    // containerNodeRemovedLastBravo.insert( containerNodeRemovedLastBravo.end(), threadSafeContainerNodeRemovedLastBravo.begin(), threadSafeContainerNodeRemovedLastBravo.end());
+                    break;
+                } 
+            }
+                
+            if( (localIterator + globalOffset) >= totalCombinationsNodeRemovedLast.size() )
+            {
+                for(int i = 0; i < threadSafeContainerNodeRemovedLastAlpha.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLastAlpha[i];
+                    containerNodeRemovedLastAlpha.insert(containerNodeRemovedLastAlpha.end(), tempVector.begin(), tempVector.end());
+                }
+                for(int i = 0; i < threadSafeContainerNodeRemovedLastBravo.size(); i++)
+                {
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerNodeRemovedLastBravo[i];
+                    containerNodeRemovedLastBravo.insert(containerNodeRemovedLastBravo.end(), tempVector.begin(), tempVector.end());
+                }
+
+                // containerNodeRemovedLastAlpha.insert( containerNodeRemovedLastAlpha.end(), threadSafeContainerNodeRemovedLastAlpha.begin(), threadSafeContainerNodeRemovedLastAlpha.end());
+                // containerNodeRemovedLastBravo.insert( containerNodeRemovedLastBravo.end(), threadSafeContainerNodeRemovedLastBravo.begin(), threadSafeContainerNodeRemovedLastBravo.end());
+                break;
+            }  
+        }
+
+        // if(pool.n_idle() != pool.size())
+        // {
+        //     pool.sync();
+        // }
+        while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+            pool.sync();
+
+        result.insert( result.end(), containerNodeRemovedLeafAlpha.begin(), containerNodeRemovedLeafAlpha.end() );
+        result.insert( result.end(), containerNodeRemovedLeafBravo.begin(), containerNodeRemovedLeafBravo.end() );
+        result.insert( result.end(), containerNodeRemovedLastAlpha.begin(), containerNodeRemovedLastAlpha.end() );
+        result.insert( result.end(), containerNodeRemovedLastBravo.begin(), containerNodeRemovedLastBravo.end() );
+
+        std::cout << "Pushing to last container!" << std::endl;
+    }
+
+    // if(pool.n_idle() != pool.size())
+    // {
+    //     pool.sync();
+    //     statusControl = true;
+    // }
+    // else
+    //     statusControl = true;
+
+    while(pool.n_idle() != pool.size() && pool.n_remaining_jobs() > 0)
+    {
+        pool.sync();
+        // statusControl = true;
+    }
+    statusControl = true;
+}
+
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_singlethreaded(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only)
+{
+    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result;
+
+
+    int totalNodes = fullglycan.number_of_nodes();
+    clipper::MGlycan tempGlycan = fullglycan;
+
+    int residueDeletions = 0;
+    for(int i = 0; i < totalNodes; i++)
+    {
+        int residuePermutations = 0;
+
+        std::vector < clipper::MSugar > sugars = tempGlycan.get_sugars();
+        std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugars);
+
+        generate_all_anomer_permutations(result, editable_nodes_for_anomer_permutations, tempGlycan, jsonObject, residuePermutations, residueDeletions);
+
+        std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugars, glucose_only);
+
+        generate_all_monomer_permutations_singlethreaded(result, editable_nodes_for_monomer_permutations, tempGlycan, jsonObject, residueDeletions);
+
+        if(tempGlycan.number_of_nodes() > 1)
+        {
+            bool glyConnectTrue = false;
+            
+            tempGlycan = remove_first_leaf_node(tempGlycan);
+            residueDeletions++;
+
+            clipper::String temporaryWURCS = tempGlycan.generate_wurcs();
+
+            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+            if (valueLocation != -1)
             {
                 // std::cout << "PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
                 if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
                 // std::cout << "GlyConnect status " << std::boolalpha << glyConnectTrue << std::endl;
             }
 
-        if (glyConnectTrue)
-            {
-                anomerPermutations = totalCombinations[i].size();
-                std::vector<int> mutations(3);
-                mutations[0] = anomerPermutations;
-                mutations[1] = residuePermuations;
-                mutations[2] = residueDeletions;
-                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
-                tempPair = std::make_pair(tempGlycan, mutations);
-                result.push_back(tempPair);
-            }
+            if (glyConnectTrue)
+                {
+                    std::vector<int> mutations(3);
+                    mutations[0] = 0;
+                    mutations[1] = residuePermutations;
+                    mutations[2] = residueDeletions;
+                    std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                    tempPair = std::make_pair(tempGlycan, mutations);
+                    result.push_back(tempPair);
+                }
+        }
     }
+
+    // do the score calculations here, return the final vector already containing those float values. 
+
+    return result;
 }
 
-// need to rework this.
-void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions)
+void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions)
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
-
 
     for(int i = 0; i < totalCombinations.size(); i++)
     {
@@ -394,47 +1054,57 @@ void generate_all_monomer_permutations(std::vector<std::pair<clipper::MGlycan, s
 }
 
 
-std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list)
+void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residuePermuations, int residueDeletions)
 {
+    std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
-    std::vector<std::vector<int>> result;
-    std::vector<int> temp;
-
-    int totalEditableNodes = editable_node_list.size();
-    bool checkedEditableNode[totalEditableNodes];
-    memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
-
-    
-    for(int i = 1; i <= totalEditableNodes; i++)
+    for(int i = 0; i < totalCombinations.size(); i++)
     {
-        CombinationGenerator(editable_node_list, i, 0, 0, checkedEditableNode, totalEditableNodes, result, temp);
+        clipper::MGlycan tempGlycan = glycan;
+        bool glyConnectTrue = false;
+        int anomerPermutations = 0;
+        
+        for(int j = 0; j < totalCombinations[i].size(); j++)
+        {
+            int nodeID = totalCombinations[i][j];
+
+            clipper::MSugar msug = tempGlycan.get_node(nodeID).get_sugar();
+            msug.set_type(clipper::data::alternative_anomer(msug.type().trim()));
+
+            tempGlycan.replace_sugar_at_index(nodeID, msug);
+
+            if(nodeID == 0) tempGlycan.update_msugar_in_root(msug);
+        }
+
+        clipper::String temporaryWURCS = tempGlycan.generate_wurcs();
+        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+        // std::cout << "ANOMER PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+        if (valueLocation != -1)
+            {
+                // std::cout << "PERMUTATION: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+                if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+                // std::cout << "GlyConnect status " << std::boolalpha << glyConnectTrue << std::endl;
+            }
+
+        if (glyConnectTrue)
+            {
+                anomerPermutations = totalCombinations[i].size();
+                std::vector<int> mutations(3);
+                mutations[0] = anomerPermutations;
+                mutations[1] = residuePermuations;
+                mutations[2] = residueDeletions;
+                std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+                tempPair = std::make_pair(tempGlycan, mutations);
+                result.push_back(tempPair);
+            }
     }
-    
-    return result;
 }
 
-void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
-{
-   if(currLength > reqLength)
-   return;
-   else if (currLength == reqLength) {
-      for (int i = 0; i < totalEditableNodes; i++) {
-         if (checkedEditableNode[i] == true) {
-         	temp.push_back(editable_node_list[i]);
-         }
-      }
-      result.push_back(temp);
-      temp.clear();
-      return;
-   }
-   if (shifter == totalEditableNodes) {
-      return;
-   }
-   checkedEditableNode[shifter] = true;
-   CombinationGenerator(editable_node_list, reqLength, shifter + 1, currLength + 1, checkedEditableNode, totalEditableNodes, result, temp);
-   checkedEditableNode[shifter] = false;
-   CombinationGenerator(editable_node_list, reqLength, shifter + 1, currLength, checkedEditableNode, totalEditableNodes, result, temp);
-}
+
+
+
 
 clipper::MGlycan remove_first_leaf_node( clipper::MGlycan inputglycan )
 {
@@ -460,6 +1130,63 @@ clipper::MGlycan remove_last_node( clipper::MGlycan inputglycan )
     return inputglycan;
 }
 
+void remove_first_leaf_node_and_check_db(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, clipper::MGlycan& inputglycan, nlohmann::json& jsonObject, int residueDeletions)
+{
+    bool glyConnectTrue = false;
+    inputglycan = remove_first_leaf_node(inputglycan);
+    
+    clipper::String temporaryWURCS = inputglycan.generate_wurcs();
+    
+    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+    // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+    if (valueLocation != -1)
+        {
+            if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+        }
+    
+
+    if (glyConnectTrue)
+        {
+            std::vector<int> mutations(3);
+            mutations[0] = 0;
+            mutations[1] = 0;
+            mutations[2] = residueDeletions;
+            std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+            tempPair = std::make_pair(inputglycan, mutations);
+            result.push_back(tempPair);
+        } 
+}
+
+void remove_last_node_and_check_db(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, clipper::MGlycan& inputglycan, nlohmann::json& jsonObject, int residueDeletions)
+{
+    bool glyConnectTrue = false;
+    inputglycan = remove_last_node(inputglycan);
+    
+    clipper::String temporaryWURCS = inputglycan.generate_wurcs();
+    
+    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+    // std::cout << "MONOMER PERMUTATION ALPHA: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+
+    if (valueLocation != -1)
+        {
+            if (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectTrue = true;
+        }
+    
+
+    if (glyConnectTrue)
+        {
+            std::vector<int> mutations(3);
+            mutations[0] = 0;
+            mutations[1] = 0;
+            mutations[2] = residueDeletions;
+            std::pair <clipper::MGlycan,std::vector<int>> tempPair;
+            tempPair = std::make_pair(inputglycan, mutations);
+            result.push_back(tempPair);
+        }
+}
 
 // clipper::MGlycan get_shorter_matching_fragment(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject)
 // {
