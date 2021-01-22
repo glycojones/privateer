@@ -188,6 +188,8 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
     int totalThreads = pool.size();
 
+    int sleepTimer = 1;
+
     if(useParallelism)
     {
         std::vector<std::pair<clipper::MGlycan, std::vector<int>>>  threadUnsafeContainerAlpha,
@@ -286,8 +288,12 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
             if((globalOffset + localIterator) >= totalCombinations.size() || localIterator < 0)
             {
+                if(totalCombinations.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+                
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
+                
                 for(int i = 0; i < threadSafeContainerAlpha.size(); i++)
                 {
                     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerAlpha[i];
@@ -398,6 +404,9 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
             if((globalOffset + localIterator) >= totalCombinations.size() || localIterator < 0)
             {
+                if(totalCombinations.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+                
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
                 for(int i = 0; i < threadSafeContainerBravo.size(); i++)
@@ -437,6 +446,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
     int totalThreads = pool.size();
 
+    int sleepTimer = 1;
     if(useParallelism)
     {
         std::vector<std::pair<clipper::MGlycan, std::vector<int>>>  threadUnsafeContainerLeafAlpha,
@@ -543,6 +553,9 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size() || localIterator < 0)
             {
+                if(totalCombinationsNodeRemovedLeaf.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+                
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
 
@@ -655,6 +668,9 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size() || localIterator < 0)
             {
+                if(totalCombinationsNodeRemovedLeaf.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+                
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
                 
@@ -772,8 +788,12 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size() || localIterator < 0)
             {
+                if(totalCombinationsNodeRemovedLast.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
+
                 for(int i = 0; i < threadSafeContainerLastAlpha.size(); i++)
                 {
                     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLastAlpha[i];
@@ -885,6 +905,9 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size() || localIterator < 0)
             {
+                if(totalCombinationsNodeRemovedLast.size() < 65)
+                    std::this_thread::sleep_for(std::chrono::seconds(sleepTimer));
+
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
                 
