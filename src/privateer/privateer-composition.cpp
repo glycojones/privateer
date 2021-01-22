@@ -178,8 +178,10 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     return result;
 }
 
-// push to local vector associated with monomers regarding their anomer permutations that is created in thread
-// recombine after loop is finished with main result vector
+//last idea: after initiating jobs, check whether indices that were supposed to have shit pushed through are empty or not. after they not empty, only then proceed.
+//another idea: revert to multiple containers. Somehow do a long pause after the very last one. 
+//Desperate idea: revert to singlethreaded mode when combination numbers become very low. 
+//Even more depsperate idea: std::this_thread::sleep_for(5 seconds), but might be best solution. Combine with multiple container idea at the very end. 
 void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
@@ -188,8 +190,11 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
     if(useParallelism)
     {
-        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> threadUnsafeContainer;
-        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainer(totalCombinations.size());
+        std::vector<std::pair<clipper::MGlycan, std::vector<int>>>  threadUnsafeContainerAlpha,
+                                                                    threadUnsafeContainerBravo;
+
+        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerAlpha(totalCombinations.size()),
+                                                                                threadSafeContainerBravo(totalCombinations.size());
 
         int localIterator = totalThreads;
 
@@ -202,7 +207,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             {
                 if( (job + globalOffset) < totalCombinations.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainer](int id)
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerAlpha](int id)
                     {
 
                         int index = job + globalOffset;
@@ -266,10 +271,13 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainer[index] = tempContainer;
+                        threadSafeContainerAlpha[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinations.size())
             {
@@ -278,10 +286,12 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
             if((globalOffset + localIterator) >= totalCombinations.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainer.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                for(int i = 0; i < threadSafeContainerAlpha.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainer[i];
-                    threadUnsafeContainer.insert(threadUnsafeContainer.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerAlpha[i];
+                    threadUnsafeContainerAlpha.insert(threadUnsafeContainerAlpha.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -291,10 +301,12 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
-        result.insert( result.end(), threadUnsafeContainer.begin(), threadUnsafeContainer.end() );
+        // while(threadSafeContainerAlpha[(totalCombinations.size() - 1)].empty())
+        //     if(!threadSafeContainerAlpha[(totalCombinations.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerAlpha.begin(), threadUnsafeContainerAlpha.end());
 
-        threadSafeContainer.clear();
-        threadUnsafeContainer.clear();
+        // result.insert( result.end(), threadUnsafeContainer.begin(), threadUnsafeContainer.end());
+
         localIterator = totalThreads;
 
 
@@ -307,7 +319,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             {
                 if( (job + globalOffset) < totalCombinations.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainer](int id)
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerBravo](int id)
                     {
 
                         int index = job + globalOffset;
@@ -371,10 +383,13 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainer[index] = tempContainer;
+                        threadSafeContainerBravo[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinations.size())
             {
@@ -383,10 +398,12 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
             if((globalOffset + localIterator) >= totalCombinations.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainer.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                for(int i = 0; i < threadSafeContainerBravo.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainer[i];
-                    threadUnsafeContainer.insert(threadUnsafeContainer.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerBravo[i];
+                    threadUnsafeContainerBravo.insert(threadUnsafeContainerBravo.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -395,10 +412,13 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
-        result.insert( result.end(), threadUnsafeContainer.begin(), threadUnsafeContainer.end() );
+        // while(threadSafeContainerBravo[(totalCombinations.size() - 1)].empty())
+        //     if(!threadSafeContainerBravo[(totalCombinations.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerBravo.begin(), threadUnsafeContainerBravo.end());
 
-        threadSafeContainer.clear();
-        threadUnsafeContainer.clear();
+        result.insert( result.end(), threadUnsafeContainerAlpha.begin(), threadUnsafeContainerAlpha.end());
+        result.insert( result.end(), threadUnsafeContainerBravo.begin(), threadUnsafeContainerBravo.end());
+
     }
     
     while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
@@ -419,11 +439,15 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
     if(useParallelism)
     {
-        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> threadUnsafeContainerLeaf;
-        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> threadUnsafeContainerLast;
+        std::vector<std::pair<clipper::MGlycan, std::vector<int>>>  threadUnsafeContainerLeafAlpha,
+                                                                    threadUnsafeContainerLeafBravo,
+                                                                    threadUnsafeContainerLastAlpha,
+                                                                    threadUnsafeContainerLastBravo;
         
-        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerLeaf(totalCombinationsNodeRemovedLeaf.size());
-        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerLast(totalCombinationsNodeRemovedLast.size());
+        std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> threadSafeContainerLeafAlpha(totalCombinationsNodeRemovedLeaf.size()),
+                                                                                threadSafeContainerLeafBravo(totalCombinationsNodeRemovedLeaf.size()),
+                                                                                threadSafeContainerLastAlpha(totalCombinationsNodeRemovedLast.size()),
+                                                                                threadSafeContainerLastBravo(totalCombinationsNodeRemovedLast.size());
 
         if(totalThreads > totalCombinationsNodeRemovedLeaf.size())
         {
@@ -440,7 +464,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeaf](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafAlpha](int id)
                     {
 
                         int index = job + globalOffset;
@@ -504,10 +528,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainerLeaf[index] = tempContainer;
+                        threadSafeContainerLeafAlpha[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size())
             {
@@ -516,10 +543,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainerLeaf.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+
+                for(int i = 0; i < threadSafeContainerLeafAlpha.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLeaf[i];
-                    threadUnsafeContainerLeaf.insert(threadUnsafeContainerLeaf.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLeafAlpha[i];
+                    threadUnsafeContainerLeafAlpha.insert(threadUnsafeContainerLeafAlpha.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -528,11 +558,12 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
+        
+        
+        // while(threadSafeContainerLeafAlpha[(totalCombinationsNodeRemovedLeaf.size() - 1)].empty())
+        //     if(!threadSafeContainerLeafAlpha[(totalCombinationsNodeRemovedLeaf.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerLeaf.begin(), threadUnsafeContainerLeaf.end());
 
-        result.insert( result.end(), threadUnsafeContainerLeaf.begin(), threadUnsafeContainerLeaf.end() );
-
-        threadSafeContainerLeaf.clear();
-        threadUnsafeContainerLeaf.clear();
         localIterator = totalThreads;
 
 
@@ -545,7 +576,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeaf](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafBravo](int id)
                     {
 
                         int index = job + globalOffset;
@@ -609,10 +640,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainerLeaf[index] = tempContainer;
+                        threadSafeContainerLeafBravo[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size())
             {
@@ -621,10 +655,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLeaf.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainerLeaf.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                
+                for(int i = 0; i < threadSafeContainerLeafBravo.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLeaf[i];
-                    threadUnsafeContainerLeaf.insert(threadUnsafeContainerLeaf.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLeafBravo[i];
+                    threadUnsafeContainerLeafBravo.insert(threadUnsafeContainerLeafBravo.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -633,11 +670,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
+        
+        // while(threadSafeContainerLeafBravo[(totalCombinationsNodeRemovedLeaf.size() - 1)].empty())
+        //     if(!threadSafeContainerLeafBravo[(totalCombinationsNodeRemovedLeaf.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerLeafBravo.begin(), threadUnsafeContainerLeafBravo.end());
+        
+        // result.insert( result.end(), threadUnsafeContainerLeaf.begin(), threadUnsafeContainerLeaf.end());
 
-        result.insert( result.end(), threadUnsafeContainerLeaf.begin(), threadUnsafeContainerLeaf.end() );
-
-        threadSafeContainerLeaf.clear();
-        threadUnsafeContainerLeaf.clear();
         localIterator = totalThreads;
 
         if(pool.size() > totalCombinationsNodeRemovedLeaf.size())
@@ -654,7 +693,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLast](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastAlpha](int id)
                     {
 
                         int index = job + globalOffset;
@@ -684,7 +723,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
+                            msug.set_type(alternative_monomers[1]);
 
                             tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
                         }
@@ -718,10 +757,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainerLast[index] = tempContainer;
+                        threadSafeContainerLastAlpha[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size())
             {
@@ -730,10 +772,12 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainerLast.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                for(int i = 0; i < threadSafeContainerLastAlpha.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLast[i];
-                    threadUnsafeContainerLast.insert(threadUnsafeContainerLast.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLastAlpha[i];
+                    threadUnsafeContainerLastAlpha.insert(threadUnsafeContainerLastAlpha.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -743,10 +787,12 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
-        result.insert( result.end(), threadUnsafeContainerLast.begin(), threadUnsafeContainerLast.end() );
+        // while(threadSafeContainerLastAlpha[(totalCombinationsNodeRemovedLast.size() - 1)].empty())
+        //     if(!threadSafeContainerLastAlpha[(totalCombinationsNodeRemovedLast.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerLastAlpha.begin(), threadUnsafeContainerLastAlpha.end());
 
-        threadSafeContainerLast.clear();
-        threadUnsafeContainerLast.clear();
+        // result.insert( result.end(), threadUnsafeContainerLast.begin(), threadUnsafeContainerLast.end());
+
         localIterator = totalThreads;
 
 
@@ -759,7 +805,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLast](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastBravo](int id)
                     {
 
                         int index = job + globalOffset;
@@ -789,7 +835,8 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[1]);
+                            msug.set_type(alternative_monomers[0]);
+                            // msug.set_type(alternative_monomers[1]);
 
                             tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
                         }
@@ -798,7 +845,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
                         
                         int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
 
-                        std::cout << "MONOMER PERMUTATION Bravo: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
+                        // std::cout << "MONOMER PERMUTATION Bravo: " << temporaryWURCS << std::endl << "valueLocation = " << valueLocation << std::endl;
 
                         if (valueLocation != -1)
                             {
@@ -823,10 +870,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
                     
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, jsonObject, residuePermutations, residueDeletions);      
-                        threadSafeContainerLast[index] = tempContainer;
+                        threadSafeContainerLastBravo[index] = tempContainer;
                     });
                 }
             }
+
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                pool.sync();
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size())
             {
@@ -835,10 +885,13 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
             if((globalOffset + localIterator) >= totalCombinationsNodeRemovedLast.size() || localIterator < 0)
             {
-                for(int i = 0; i < threadSafeContainerLast.size(); i++)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                
+                for(int i = 0; i < threadSafeContainerLastBravo.size(); i++)
                 {
-                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLast[i];
-                    threadUnsafeContainerLast.insert(threadUnsafeContainerLast.end(), tempVector.begin(), tempVector.end());
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempVector = threadSafeContainerLastBravo[i];
+                    threadUnsafeContainerLastBravo.insert(threadUnsafeContainerLastBravo.end(), tempVector.begin(), tempVector.end());
                 }
                 break;
             }
@@ -847,11 +900,15 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
+        
+        // while(threadSafeContainerLastBravo[(totalCombinationsNodeRemovedLast.size() - 1)].empty())
+        //     if(!threadSafeContainerLastBravo[(totalCombinationsNodeRemovedLast.size() - 1)].empty())
+        //         result.insert( result.end(), threadUnsafeContainerLastBravo.begin(), threadUnsafeContainerLastBravo.end());
 
-        result.insert( result.end(), threadUnsafeContainerLast.begin(), threadUnsafeContainerLast.end() );
-
-        threadSafeContainerLast.clear();
-        threadUnsafeContainerLast.clear();
+        result.insert( result.end(), threadUnsafeContainerLeafAlpha.begin(), threadUnsafeContainerLeafAlpha.end());
+        result.insert( result.end(), threadUnsafeContainerLeafBravo.begin(), threadUnsafeContainerLeafBravo.end());
+        result.insert( result.end(), threadUnsafeContainerLastAlpha.begin(), threadUnsafeContainerLastAlpha.end());
+        result.insert( result.end(), threadUnsafeContainerLastBravo.begin(), threadUnsafeContainerLastBravo.end());
     }
     
     while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
