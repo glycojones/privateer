@@ -739,7 +739,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[1]);
+                            msug.set_type(alternative_monomers[0]);
 
                             tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
                         }
@@ -855,8 +855,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-                            // msug.set_type(alternative_monomers[1]);
+                            msug.set_type(alternative_monomers[1]);
 
                             tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
                         }

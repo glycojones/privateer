@@ -400,8 +400,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    // TO DO: check whether max amount of available threads could be used. 
-    nThreads = (std::thread::hardware_concurrency() - 1); // deduct one system thread for performance reasons outside privateer executable. Debatable whether this is needed at all.
+    nThreads = std::thread::hardware_concurrency(); 
     
     if(nThreads < 2 && useParallelism)
     {

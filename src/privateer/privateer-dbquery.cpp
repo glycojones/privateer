@@ -31,22 +31,6 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
             else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only);   
             
 
-            if (useParallelism)
-            {
-                
-                #if DUMP
-                    std::cout << std::endl;
-                    DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                #endif
-                
-                while(pool.n_remaining_jobs() > 0)
-                    pool.sync();
-                
-                #if DUMP
-                    DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                #endif
-            }
-        
             if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
             else std::cout << "ERROR: Unable to generate permutations that would be found in GlyConnect database!" << std::endl;
         }
@@ -91,6 +75,9 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
 
 void push_data_to_final_permutation_container(nlohmann::json &jsonObject, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer)
 {
+
+    std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> tempGlycanPermutationContainer;
+
     for (int j = 0; j < alternativeGlycans.size(); j++)
     {
         int originalGlycanLength = currentGlycan.number_of_nodes(),
@@ -107,14 +94,49 @@ void push_data_to_final_permutation_container(nlohmann::json &jsonObject, clippe
         finalScore = (currentPermutationScore / maxPermutationScore) * 100;
 
         auto tempObject = std::make_pair(alternativeGlycans[j], finalScore);
-        finalGlycanPermutationContainer.push_back(tempObject);
+        tempGlycanPermutationContainer.push_back(tempObject);
+    }
+    
+    // sort by permutation score for sensical output to the user.
+    std::sort(tempGlycanPermutationContainer.begin(), tempGlycanPermutationContainer.end(), [](std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> a, std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> b){
+        return a.second < b.second;
+    });
 
-        clipper::String temporaryWURCS = alternativeGlycans[j].first.generate_wurcs();
+    //Make sure that only unique permutations are outputted to the user.
+    for(int i = 0; i < tempGlycanPermutationContainer.size(); i++)
+    {
+        auto tempObject = tempGlycanPermutationContainer[i];
+        clipper::MGlycan currentGlycan = tempGlycanPermutationContainer[i].first.first;
+        clipper::String currentGlycanWURCS = currentGlycan.generate_wurcs();
+        
+        if(finalGlycanPermutationContainer.empty())
+        {
+            finalGlycanPermutationContainer.push_back(tempObject);
+            continue;
+        }
+            
+        for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
+        {
+            clipper::MGlycan currentGlycanInFinalContainer = finalGlycanPermutationContainer[j].first.first;
+            clipper::String currentGlycanWURCSInFinalContainer = currentGlycanInFinalContainer.generate_wurcs();
+
+            if(currentGlycanWURCS == currentGlycanWURCSInFinalContainer)
+                break;
+
+            if(j == (finalGlycanPermutationContainer.size() - 1))
+                finalGlycanPermutationContainer.push_back(tempObject);
+        }
+    }
+    
+    // output the permutation summary to the console for the user.
+    for(int i = 0; i < finalGlycanPermutationContainer.size(); i++)
+    {
+        clipper::String temporaryWURCS = finalGlycanPermutationContainer[i].first.first.generate_wurcs();
         int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
 
         std::cout << "\tGenerated WURCS Sequence: " << temporaryWURCS << std::endl;
-        std::cout << "\tAnomer Permutations = " << alternativeGlycans[j].second[0] << "\t\tResidue Permutations = " << alternativeGlycans[j].second[1] << "\tResidue Deletions = " << alternativeGlycans[j].second[2] << std::endl; 
-        std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalScore << std::endl;
+        std::cout << "\tAnomer Permutations = " << finalGlycanPermutationContainer[i].first.second[0] << "\t\tResidue Permutations = " << finalGlycanPermutationContainer[i].first.second[1] << "\tResidue Deletions = " << finalGlycanPermutationContainer[i].first.second[2] << std::endl; 
+        std::cout << std::fixed << std::setprecision(2) << "\tPermutation Score(out of 100): " << finalGlycanPermutationContainer[i].second << std::endl;
 
         std::string glytoucanID;
         glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
@@ -127,13 +149,7 @@ void push_data_to_final_permutation_container(nlohmann::json &jsonObject, clippe
         std::cout << "\tGlyConnect ID: " << jsonObject[valueLocation]["glyconnect"]["id"] << std::endl;
 
         std::cout << std::endl;
-    }
-    
-    // std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>&
-    std::sort(finalGlycanPermutationContainer.begin(), finalGlycanPermutationContainer.end(), [](std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> a, std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> b){
-        return a.second < b.second;
-    });
-
+    }     
 }
 
 
