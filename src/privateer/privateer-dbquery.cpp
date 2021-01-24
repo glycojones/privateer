@@ -8,12 +8,10 @@
 // mailto: jon.agirre@york.ac.uk
 // mailto: kevin.cowtan@york.ac.uk
 
-// Most likely need to create a method in MGlycan that is responsible for eliminating leaf nodes in MGlycan class
-// After that is created, the rest should be straighforward.
 
 #include "privateer-dbquery.h"
 
-void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, privateer::thread_pool& pool, bool useParallelism)
+void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool clean_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
 {
     int valueLocation;
     valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
@@ -27,8 +25,8 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
             
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, pool, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only);   
+            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, clean_output, sleepTimer, pool, useParallelism);
+            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, clean_output, glucose_only);   
             
 
             if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
@@ -45,8 +43,8 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
             {
                 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
 
-                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, pool, useParallelism);
-                else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only); 
+                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, clean_output, sleepTimer, pool, useParallelism);
+                else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, clean_output, glucose_only); 
 
                 if (useParallelism)
                 {

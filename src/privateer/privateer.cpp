@@ -110,7 +110,9 @@ int main(int argc, char** argv)
     bool vertical = false, original = true, invert = false;
     int n_refln = 1000;
     int n_param = 20;
-    unsigned int nThreads;
+    int sleepTimer = 1;
+    bool clean_output = false;
+    unsigned int nThreads = 0;
     bool useMTZ = false;
     bool useMRC = false;
     bool batch = false;
@@ -244,10 +246,38 @@ int main(int argc, char** argv)
         {
             glucose_only = false;
         }
+        else if ( args[arg] == "-cores" )
+        {
+            if ( ++arg < args.size() )
+            {
+                int detectedThreads = std::thread::hardware_concurrency();
+                nThreads = clipper::String(args[arg]).i();
+                
+                if(nThreads < 2)
+                {
+                    std::cout << "Error: Less than 2 cores/threads were inputted as an argument." << "\nPlease disable multithreaded execution via -singlethreaded keyword argument or give more cores to Privateer!" << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
+                }
+                
+                if(nThreads > detectedThreads)
+                {
+                    std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
+                    << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+                    << "\n\tNumber of Cores/Threads requested via -cores argument: " << nThreads << "." << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
+                }
+            }
+        }
         else if ( args[arg] == "-singlethreaded" )
         {
             useParallelism = false;
             nThreads = 0;
+        }
+        else if ( args[arg] == "-clean_output" )
+        {
+            clean_output = true;
         }
         else if ( args[arg] == "-glytoucan" )
         {
@@ -269,6 +299,19 @@ int main(int argc, char** argv)
                         prog.set_termination_message( "Failed" );
                         return 1;
                     }
+                }
+            }
+        }
+        else if ( args[arg] == "-sleep_timer" )
+        {
+            if ( ++arg < args.size() )
+            {
+                sleepTimer = clipper::String(args[arg]).i();
+                if (sleepTimer < 1)
+                {
+                    std::cout << "Error: sleepTimer < 1." << "\nUnfortunately disabling sleepTimer is unadvisable due to some limitations in the parallelized code. Only use this argument to increase sleepTimer if you are getting segfaults in parallelized permutation algorithm!" << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
                 }
             }
         }
@@ -400,12 +443,14 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    nThreads = std::thread::hardware_concurrency(); 
+    unsigned int detectedCores;
+    
+    if(nThreads == 0 && useParallelism) nThreads = std::thread::hardware_concurrency(); 
     
     if(nThreads < 2 && useParallelism)
     {
         useParallelism = false;
-        std::cout << std::endl << "Error: Less than two threads were detected in the system. Number of Threads detected on the system: " << nThreads << "\nPlease disable multithreaded execution via -singlethreaded keyword argument!" << std::endl;
+        std::cout << std::endl << "Error: Less than two cores/threads were detected in the system. Number of Threads detected on the system: " << nThreads << "\nPlease disable multithreaded execution via -singlethreaded keyword argument!" << std::endl;
         prog.set_termination_message( "Failed" );
         return 1;
     }
@@ -480,7 +525,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1222,7 +1267,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1302,7 +1347,7 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, pool, useParallelism);
+                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
 
                 if (useParallelism)
                 {
@@ -2015,7 +2060,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
 
             #if DUMP
@@ -2148,7 +2193,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
