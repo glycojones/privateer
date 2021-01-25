@@ -882,7 +882,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_singlethreaded(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only, bool clean_output)
 {
-    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result; // std::vector.push_back() is not thread safe, need to create temporary vectors.
+    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result; 
 
     int totalNodes = fullglycan.number_of_nodes();
     clipper::MGlycan permutatedGlycanLeafNode = fullglycan,
@@ -893,6 +893,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     for(int i = totalNodes; i > 0; i--)
     {
         if(!clean_output) std::cout << "Generating glycan permutations for current length: " << i << "/" << totalNodes << "." << std::endl;
+        
         if(i == totalNodes)
         {
             int residuePermutations = 0;
@@ -950,8 +951,10 @@ void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clip
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
+
     for(int i = 0; i < totalCombinations.size(); i++)
     {
+        // if(!clean_output) std::cout << "Generating monomer permutations for combination: " << i << "/" << totalCombinations.size() << "." << std::endl;
         clipper::MGlycan tempGlycanAlpha = glycan, 
                          tempGlycanBravo = glycan;
 
@@ -1094,7 +1097,7 @@ void remove_first_leaf_node_and_check_db(std::vector<std::pair<clipper::MGlycan,
     if (glyConnectTrue)
         {
             std::vector<int> mutations(3);
-            mutations[0] = 0;std::cout << "Removing leaf node " << std::endl;
+            mutations[0] = 0;
             mutations[1] = 0;
             mutations[2] = residueDeletions;
             std::pair <clipper::MGlycan,std::vector<int>> tempPair;
