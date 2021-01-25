@@ -228,8 +228,8 @@ std::pair<double, double> privateer::cryo_em::calculate_rscc  ( clipper::Xmap<do
   return std::make_pair(corr_coeff, accum);
 }
 
-  void privateer::cryo_em::write_cryoem_map ( clipper::String const pathname, clipper::Xmap<float> const &input_map )
-  {
+void privateer::cryo_em::write_cryoem_map ( clipper::String const pathname, clipper::Xmap<float> const &input_map )
+{
     clipper::CCP4MAPfile file;
     try
     {
