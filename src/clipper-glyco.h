@@ -62,6 +62,10 @@
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
 #include <clipper/minimol/minimol_utils.h>
+
+#ifdef _WIN32
+    #undef snprintf
+#endif
 #include <nlohmann/json.hpp>
 
 inline bool altconf_compatible ( char m1, char m2 )
@@ -275,7 +279,15 @@ namespace clipper
 
             clipper::ftype get_rscc() const { return sugar_rscc; }
 
+            clipper::ftype get_accum() const { return sugar_accum; }
+
+            bool get_occupancy_check() const { return sugar_occupancy_check; }
+
             void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
+
+            void set_accum_score ( clipper::ftype accum_in ) { sugar_accum = accum_in; }
+
+            void set_occupancy_check ( bool occupancy_check_in ) { sugar_occupancy_check = occupancy_check_in; }
 
             clipper::String get_diagnostic() const { return sugar_diagnostic; }
 
@@ -346,8 +358,10 @@ namespace clipper
             bool                            sugar_diag_chirality;
             bool                            sugar_diag_conformation;
             bool                            sugar_diag_puckering;
+            bool                            sugar_occupancy_check;
             clipper::String                 sugar_diagnostic;               // full diagnostic to be used in Coot and ccp4i2
             clipper::ftype                  sugar_rscc;                     // RSCC to be used in Coot and ccp4i2
+            clipper::ftype                  sugar_accum;                     // accum score, <Fo> in Cryo-EM, <mFo> in Xray.
             clipper::ftype                  sugar_ring_bond_rmsd;
             clipper::ftype                  sugar_ring_angle_rmsd;
             clipper::ftype                  sugar_bfactor;

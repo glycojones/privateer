@@ -193,7 +193,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                              bool useMTZ, 
                                              int n_refln,
                                              int n_param)
-
+// what is n_refln and n_param? They seem kind of important in convergence mathematical functions of sfweight.cpp? How would they be different in cryoem?
 
 {
   // need equal cell parameters...
@@ -274,6 +274,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         clipper::HKL_data<clipper::data32::F_phi> model_structure_factors ( hkl_info );
         clipper::SFcalc_obs_bulk<float> structure_factor_calculation;
 
+        std::cout << "Calculating structure factors" << std::endl;
         if (! structure_factor_calculation( model_structure_factors, reflection_data, list_of_atoms ) )
             return false;
 
@@ -289,9 +290,11 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         clipper::HKL_data<clipper::data32::Flag> flag( hkl_info );
         clipper::SFscale_aniso<float> scaler;
 
+        std::cout << "Scaling reflection data" << std::endl;
         if ( ! scaler( reflection_data_scaled, model_structure_factors ) )
             return false;
 
+        std::cout << "Flagging reflection data" << std::endl;
         for (HRI ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
         {
             if ( !reflection_data_scaled[ih].missing() )
@@ -305,6 +308,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         clipper::HKL_data<clipper::data32::F_phi> difference_map_coefficients ( hkl_info );
         clipper::HKL_data<clipper::data32::Phi_fom> phase_and_fom ( hkl_info );
 
+        std::cout << "Initiating sigmaa_weighting" << std::endl;
 
         clipper::SFweight_spline<float> sigmaa_weighting ( n_refln, n_param );
 
@@ -324,6 +328,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         best_map.fft_from ( best_map_coefficients );
         difference_map.fft_from ( difference_map_coefficients );
 
+        std::cout << "After doing fft transformations" << std::endl;
 
         return true;
      
@@ -1013,6 +1018,234 @@ void privateer::util::print_usage ( )
 
     return;
 
+}
+
+std::vector <char> privateer::util::number_of_conformers ( clipper::MMonomer& mmon )
+{
+    std::vector<char> alt_confs;
+
+    bool a = false;
+    bool b = false;
+
+    for ( int i = 0; i < mmon.size(); i++ )
+    {
+        clipper::String identifier = mmon[i].id();
+        if (identifier.size() > 5)
+        {
+            if ( identifier[5] == 'A' && !a )
+            {
+                alt_confs.push_back ('A'); a=true;
+            }
+            else if ( identifier[5] == 'B' && !b )
+            {
+                alt_confs.push_back ('B'); b=true;
+            }
+        }
+    }
+    return alt_confs;
+}
+
+void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model)
+{
+    if (!batch && useMRC)
+        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<Fo>\t<Bfac>\tCtx\t Ok?");
+    if (!batch && !useMRC)
+        printf("\nPDB \t    Sugar   \tRsln\t  Q  \t Phi  \tTheta \tRSCC\t   Detected type   \tCnf\t<mFo>\t<Bfac>\tCtx\t Ok?");
+    if (!batch && showGeom)
+        printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
+    if (!batch)
+        printf("\n----\t------------\t----\t-----\t------\t------\t----\t-------------------\t---\t-----\t------\t---\t-----");
+    if (!batch && showGeom)
+        printf("\t------------------------------------------------------------------------------------------------------------");
+    if (!batch)
+        printf("\n");
+
+    for (int index = 0; index < ligandList.size(); index++)
+    {
+        if (batch)
+        {
+            fprintf(output, "%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().trim().c_str());
+            fprintf(output, "%s-%s   ", ligandList[index].first.c_str(), ligandList[index].second.id().trim().c_str());
+        }
+        else
+        {
+            printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
+            std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
+        }
+
+        if (batch)
+        {
+            std::vector<clipper::ftype> cpParams(10, 0);
+            cpParams = ligandList[index].second.cremer_pople_params();
+            fprintf(output,"\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1] );    // output cremer-pople parameters
+            if ( cpParams[2] == -1 ) fprintf ( output, " --  \t" ); else fprintf ( output, "%3.2f\t", cpParams[2] );
+            fprintf(output,"%1.2f\t", ligandList[index].second.get_rscc());                                              // output RSCC and data resolution
+            fprintf(output,"%s\t", ligandList[index].second.type_of_sugar().c_str());           // output the type of sugar, e.g. alpha-D-aldopyranose
+            fprintf(output,"%s\t", ligandList[index].second.conformation_name().c_str());       // output a 3 letter code for the conformation
+            fprintf(output,"%1.3f \t", ligandList[index].second.get_accum());
+
+            float bfac = ligandList[index].second.get_bfactor ();
+                        
+            fprintf ( output, "%3.2f", bfac ); // output <bfactor>
+
+            if ( ligandList[index].second.get_context() == "n-glycan" )
+            {
+                fprintf ( output, "\t(n) " );
+            }
+            else if ( ligandList[index].second.get_context() == "c-glycan" )
+            {
+                fprintf ( output, "\t(c) " );
+            }
+            else if ( ligandList[index].second.get_context() == "o-glycan" )
+            {
+                fprintf ( output, "\t(o) " );
+            }
+            else if ( ligandList[index].second.get_context() == "s-glycan" )
+            {
+                fprintf ( output, "\t(s) " );
+            }
+            else if ( ligandList[index].second.get_context() == "ligand" )
+            {
+                fprintf ( output, "\t(l)");
+            }
+
+            if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+            {
+                if ((ligandList[index].second.ring_members().size() == 6 ))
+                {
+                    if (ligandList[index].second.is_sane())
+                    {
+                        if ( ! ligandList[index].second.ok_with_conformation () )
+                        {
+                            fprintf(output, "\tcheck");
+                        }
+                        else fprintf(output, "\tyes");
+                    }
+                    else
+                        fprintf (output, "\tno");
+                }
+                else
+                    if (ligandList[index].second.is_sane())
+                        fprintf(output, "\tyes");
+                    else
+                    {
+                        fprintf(output, "\tno");
+                    }
+            }
+            else
+                fprintf(output, "\tunk");
+
+
+            if (showGeom)
+            {
+                std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    fprintf(output, "\t%1.2f", rbonds[i]);
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    fprintf(output, "\t%3.1f", rangles[i]);
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    fprintf(output, "\t%3.1f", rtorsions[i]);
+            }
+
+            if (ligandList[index].second.get_occupancy_check())
+                fprintf(output, " (*)");
+
+            fprintf(output, "\n");
+
+        }
+        else
+        {
+            std::vector<clipper::ftype> cpParams(10, 0);
+            cpParams = ligandList[index].second.cremer_pople_params();
+            printf("\t%1.2f\t%1.3f\t%3.2f\t",hklinfo.resolution().limit(),cpParams[0],cpParams[1]);    // output cremer-pople parameters
+            if ( cpParams[2] == -1 ) printf ( " --  \t" ); else printf ( "%3.2f\t", cpParams[2] );
+            printf("%1.2f\t", ligandList[index].second.get_rscc());                                                                                              // output RSCC and data resolution
+            printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
+            printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
+            printf("%1.3f \t", ligandList[index].second.get_accum());     
+
+            float bfac = 0.0;
+
+            for (int i=0; i < ligandList[index].second.size(); i++)
+                bfac+=ligandList[index].second[i].u_iso();
+
+            bfac /= ligandList[index].second.size();
+            bfac  = clipper::Util::u2b(bfac);
+
+            printf ( "%3.2f", bfac );                 // output <Bfactor>
+
+            if ( ligandList[index].second.get_context() == "n-glycan" )
+            {
+                std::cout << "\t(n) ";
+            }
+            else if ( ligandList[index].second.get_context() == "c-glycan" )
+            {
+                std::cout << "\t(c) ";
+            }
+            else if ( ligandList[index].second.get_context() == "o-glycan" )
+            {
+                std::cout << "\t(o) ";
+            }
+            else if ( ligandList[index].second.get_context() == "s-glycan" )
+            {
+                std::cout << "\t(s) ";
+            }
+            else if ( ligandList[index].second.get_context() == "ligand" )
+            {
+                std::cout << "\t(l) ";
+            }
+
+            if (ligandList[index].second.in_database(ligandList[index].second.type().trim()))
+            {
+                if ((ligandList[index].second.ring_members().size() == 6 ))
+                {
+                    if (ligandList[index].second.is_sane())
+                    {
+                        if ( ! ligandList[index].second.ok_with_conformation () )
+                            printf("\tcheck");
+                        else
+                            printf("\tyes");
+                    }
+                    else
+                        printf ("\tno");
+                }
+                else
+                    if (ligandList[index].second.is_sane())
+                        printf("\tyes");
+                    else printf("\tno");
+            }
+            else
+                printf("\tunk");
+
+
+            if (showGeom)
+            {
+                std::vector<clipper::ftype> rangles = ligandList[index].second.ring_angles();
+                std::vector<clipper::ftype> rbonds  = ligandList[index].second.ring_bonds();
+                std::vector<clipper::ftype> rtorsions = ligandList[index].second.ring_torsions();
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    printf("\t%1.2f", rbonds[i]);
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    printf("\t%3.1f", rangles[i]);
+
+                for (int i = 0 ; i < ligandList[index].second.ring_members().size(); i++ )
+                    printf("\t%3.1f", rtorsions[i]);
+            }
+
+            if (ligandList[index].second.get_occupancy_check())
+                std::cout << " (*)";
+
+            std::cout << std::endl;
+        }
+
+    }
 }
 
 ///////// Privateer's glycoplot /////////
@@ -4027,27 +4260,4 @@ void privateer::scripting::svg_graphics_demo ( bool original_colour_scheme, bool
     plot.delete_shapes();
 }
 
-std::vector <char> privateer::util::number_of_conformers ( clipper::MMonomer& mmon )
-{
-    std::vector<char> alt_confs;
 
-    bool a = false;
-    bool b = false;
-
-    for ( int i = 0; i < mmon.size(); i++ )
-    {
-        clipper::String identifier = mmon[i].id();
-        if (identifier.size() > 5)
-        {
-            if ( identifier[5] == 'A' && !a )
-            {
-                alt_confs.push_back ('A'); a=true;
-            }
-            else if ( identifier[5] == 'B' && !b )
-            {
-                alt_confs.push_back ('B'); b=true;
-            }
-        }
-    }
-    return alt_confs;
-}
