@@ -657,7 +657,11 @@ int main(int argc, char** argv)
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
                         // add both conformers if the current monomer contains more than one
                         if ( n_conf == 2 )
+                        {
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                            sugarList.push_back(mmol[p][m]);
+                        }
+                            
 
                         if ( msug.type_of_sugar() == "unsupported" )
                         {
@@ -1722,7 +1726,10 @@ int main(int argc, char** argv)
                     ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
                     // add both conformers if the current monomer contains more than one
                     if ( n_conf == 2 )
+                    {
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                        sugarList.push_back(mmol[p][m]);
+                    }
 
                     if ( msug.type_of_sugar() == "unsupported" )
                     {
@@ -1933,13 +1940,14 @@ int main(int argc, char** argv)
             std::cout << "------------------------" << std::endl;
         }
         
+        //Try to sync the thread pool, so that one another iteration is initiated when one thread frees up, instead of waiting for all to finish. 
         if(useParallelism)
         {
             int processedMonomers = 0;
             for (int index = 0; index < ligandList.size(); index++)
             {
-                if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                    pool.sync();
+                if(pool.n_idle() == 0)
+                    pool.greedy_sync();
                 
                 pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch](int id)
                 { 
@@ -1952,7 +1960,7 @@ int main(int argc, char** argv)
                     x=y=z=0.0;
                     maxX=maxY=maxZ=-999999.0;
                     minX=minY=minZ=999999.0;
-
+                    
                     for (int natom = 0; natom < sugarList[index].size(); natom++)
                     {
                         if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
@@ -2669,9 +2677,12 @@ int main(int argc, char** argv)
             int processedMonomers = 0;
             for (int index = 0; index < ligandList.size(); index++)
             {
-                if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                    pool.sync();
-                    
+                // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                //     pool.sync();
+
+                if(pool.n_idle() == 0)
+                    pool.greedy_sync();
+  
                 pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa](int id)
                 { 
                     #if DUMP
@@ -2703,9 +2714,7 @@ int main(int argc, char** argv)
                     // although RSCC and <RMS> are restricted to a mask surrounding the model
 
                     //////// mask calculation //////////
-
                     clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
                     clipper::EDcalc_mask<float> masker( ipradius );
                     masker(mask, sugarList[index].atom_list());
 
@@ -2714,12 +2723,12 @@ int main(int argc, char** argv)
                     clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
                     clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
 
+
                     double accum = 0.0;
                     double corr_coeff = 0.0;
                     std::pair<double, double> rscc_and_accum;
 
                     rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
-
                     corr_coeff = rscc_and_accum.first;
                     accum = rscc_and_accum.second;
 

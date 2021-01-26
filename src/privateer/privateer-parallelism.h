@@ -97,6 +97,8 @@ namespace privateer
             this->resize(m_nThreads);
         }
 
+        //Try to sync the thread pool, so that one another iteration is initiated when one thread frees up, instead of waiting for all to finish. 
+        // greedy_sync() and full_sync()
         bool sync()
         {
             bool synced = false;
@@ -108,6 +110,21 @@ namespace privateer
                 {
                     if( (n_idle() == size()) && (n_remaining_jobs() == 0) ) return synced = true;
                 }
+            }
+        }
+
+        bool greedy_sync()
+        {
+            bool synced = false;
+            if( (n_idle() == size()) && (n_remaining_jobs() == 0))
+                return synced = true;
+            else
+            {
+                while((n_idle() == 0))
+                {
+                    if( (n_idle() > 0) ) return synced = true;
+                }
+                synced = true;
             }
         }
 

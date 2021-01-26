@@ -152,7 +152,7 @@ std::pair<double, double> privateer::xray::calculate_rscc  ( clipper::Xmap<float
                                             clipper::Grid_sampling& mygrid,
                                             clipper::Coord_orth& origin,
                                             clipper::Coord_orth& destination,
-                                            bool useSigmaa )
+                                            bool useSigmaa)
 {
     clipper::Map_stats ms;
 
@@ -161,16 +161,15 @@ std::pair<double, double> privateer::xray::calculate_rscc  ( clipper::Xmap<float
     else
         ms = clipper::Map_stats(sigmaa_omit_fd);
 
-
     double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
     meanDensityCalc = meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
 
-  int n_points = 0;
-  clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
+    int n_points = 0;
+    clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
 
-  double accum = 0.0;
+    double accum = 0.0;
 
-  // calculation of the mean densities of the two input maps
+    // calculation of the mean densities of the two input maps
 
     if (useSigmaa)
         i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_all_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
@@ -184,8 +183,8 @@ std::pair<double, double> privateer::xray::calculate_rscc  ( clipper::Xmap<float
                 if ( mask[iw] == 1.0)
                 {
                     meanDensityCalc = meanDensityCalc + ligandmap[iw];
-
-                    if (useSigmaa)
+                
+                    if (useSigmaa) 
                         meanDensityExp = meanDensityExp + sigmaa_all_map[iw];
                     else
                         meanDensityExp = meanDensityExp + sigmaa_omit_fd[iw];

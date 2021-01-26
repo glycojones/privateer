@@ -38,7 +38,7 @@ namespace privateer
                                                 clipper::Grid_sampling& mygrid,
                                                 clipper::Coord_orth& origin,
                                                 clipper::Coord_orth& destination,
-                                                bool useSigmaa );
+                                                bool useSigmaa);
   }
 }
 
