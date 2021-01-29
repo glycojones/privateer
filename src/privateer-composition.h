@@ -30,6 +30,10 @@
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-dbquery.h"
 #include "privateer-lib.h"
+
+#ifdef _WIN32
+    #undef snprintf
+#endif
 #include <nlohmann/json.hpp>
 
 
