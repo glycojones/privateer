@@ -115,10 +115,9 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
 
+            residueDeletions++;
             remove_first_leaf_node_and_check_db(result, permutatedGlycanLeafNode, jsonObject, residueDeletions);
             remove_last_node_and_check_db(result, permutatedGlycanLastNode, jsonObject, residueDeletions);
-
-            residueDeletions++;
         }
         else
         {
@@ -150,10 +149,9 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
 
+            residueDeletions++;
             remove_first_leaf_node_and_check_db(result, permutatedGlycanLeafNode, jsonObject, residueDeletions);
             remove_last_node_and_check_db(result, permutatedGlycanLastNode, jsonObject, residueDeletions);
-
-            residueDeletions++;
         }
     }
     return result;

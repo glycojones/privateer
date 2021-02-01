@@ -1946,6 +1946,10 @@ int main(int argc, char** argv)
             int processedMonomers = 0;
             for (int index = 0; index < ligandList.size(); index++)
             {
+
+                // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                //     pool.sync();
+
                 if(pool.n_idle() == 0)
                     pool.greedy_sync();
                 
@@ -2663,7 +2667,20 @@ int main(int argc, char** argv)
             }
 
 
-
+            if (useParallelism)
+            {
+                #if DUMP
+                    std::cout << std::endl;
+                    DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                #endif
+                
+                while(pool.n_remaining_jobs() > 0)
+                    pool.sync();
+                
+                #if DUMP
+                    DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+                #endif
+            }
 
             
             std::cout << "\n\nDetailed validation data" << std::endl;

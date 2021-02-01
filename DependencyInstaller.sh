@@ -161,7 +161,8 @@ cd clipper
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk/
 cd trunk
 patch -p0 < $dependencyDir/localfftw2_clipper.patch
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 \
+ CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' \
+ CCFLAGS='-g -O2 -w' \
  --enable-mmdb=$dependencyDir \
  --enable-mmdb \
  --enable-minimol \
