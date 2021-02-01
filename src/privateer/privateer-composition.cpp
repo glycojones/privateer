@@ -79,7 +79,7 @@ std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < c
     return list;
 }
 
-std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, nlohmann::json &jsonObject, bool glucose_only, bool clean_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, nlohmann::json &jsonObject, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
 {
     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result; // std::vector.push_back() is not thread safe, need to create temporary vectors.
 
@@ -106,7 +106,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
             bool statusControl = false;
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
-            generate_all_monomer_permutations_parallel_initial(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, clean_output, sleepTimer, pool, useParallelism, statusControl);
+            generate_all_monomer_permutations_parallel_initial(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, debug_output, sleepTimer, pool, useParallelism, statusControl);
             
             while(!statusControl)
             {
@@ -139,7 +139,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
             bool statusControl = false;
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
-            generate_all_monomer_permutations_parallel_subsequent(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, permutatedGlycanLastNode, jsonObject, residueDeletions, clean_output, sleepTimer, pool, useParallelism, statusControl);
+            generate_all_monomer_permutations_parallel_subsequent(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, permutatedGlycanLastNode, jsonObject, residueDeletions, debug_output, sleepTimer, pool, useParallelism, statusControl);
             
             
             while(!statusControl)
@@ -157,7 +157,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     return result;
 }
 
-void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, bool clean_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
+void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
@@ -178,7 +178,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
+            if(debug_output) std::cout << "Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinations.size() )
@@ -288,7 +288,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
+            if(debug_output) std::cout << "Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinations.size() )
@@ -399,7 +399,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
     statusControl = true;
 }
 
-void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, nlohmann::json& jsonObject, int residueDeletions, bool clean_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
+void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, nlohmann::json& jsonObject, int residueDeletions, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl)
 {
 
     std::vector<std::vector<int>> totalCombinationsNodeRemovedLeaf = generate_all_possible_index_combinations(editable_node_list_leaf);
@@ -430,7 +430,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "[LEAF NODE REMOVED]Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+            if(debug_output) std::cout << "[LEAF NODE REMOVED]Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
@@ -539,7 +539,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "[LEAF NODE REMOVED]Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+            if(debug_output) std::cout << "[LEAF NODE REMOVED]Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
@@ -653,7 +653,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "[LAST NODE REMOVED]Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+            if(debug_output) std::cout << "[LAST NODE REMOVED]Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
 
             for(int job = 0; job < totalThreads; job++)
             {
@@ -763,7 +763,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(!clean_output) std::cout << "[LAST NODE REMOVED]Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
+            if(debug_output) std::cout << "[LAST NODE REMOVED]Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
 
             for(int job = 0; job < totalThreads; job++)
             {
@@ -878,7 +878,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 }
 
 
-std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_singlethreaded(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only, bool clean_output)
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_singlethreaded(clipper::MGlycan& fullglycan, nlohmann::json& jsonObject, bool glucose_only, bool debug_output)
 {
     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> result; 
 
@@ -890,7 +890,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
     for(int i = totalNodes; i > 0; i--)
     {
-        if(!clean_output) std::cout << "Generating glycan permutations for current length: " << i << "/" << totalNodes << "." << std::endl;
+        if(debug_output) std::cout << "Generating glycan permutations for current length: " << i << "/" << totalNodes << "." << std::endl;
         
         if(i == totalNodes)
         {
@@ -905,7 +905,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
             std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLeafNode, glucose_only);
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
-            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, clean_output);
+            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, debug_output);
             
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
             
@@ -931,8 +931,8 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
             std::vector<int> editable_last_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLastNode, glucose_only);
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
-            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, clean_output);
-            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, clean_output);
+            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, debug_output);
+            generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, jsonObject, residueDeletions, debug_output);
             
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
 
@@ -945,14 +945,14 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
     return result;
 }
 
-void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, bool clean_output)
+void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, nlohmann::json& jsonObject, int residueDeletions, bool debug_output)
 {
     std::vector<std::vector<int>> totalCombinations = generate_all_possible_index_combinations(editable_node_list);
 
 
     for(int i = 0; i < totalCombinations.size(); i++)
     {
-        // if(!clean_output) std::cout << "Generating monomer permutations for combination: " << i << "/" << totalCombinations.size() << "." << std::endl;
+        // if(debug_output) std::cout << "Generating monomer permutations for combination: " << i << "/" << totalCombinations.size() << "." << std::endl;
         clipper::MGlycan tempGlycanAlpha = glycan, 
                          tempGlycanBravo = glycan;
 

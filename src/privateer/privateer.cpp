@@ -111,7 +111,7 @@ int main(int argc, char** argv)
     int n_refln = 1000;
     int n_param = 20;
     int sleepTimer = 1;
-    bool clean_output = false;
+    bool debug_output = false;
     unsigned int nThreads = 0;
     bool useMTZ = false;
     bool useMRC = false;
@@ -275,9 +275,9 @@ int main(int argc, char** argv)
             useParallelism = false;
             nThreads = 0;
         }
-        else if ( args[arg] == "-clean_output" )
+        else if ( args[arg] == "-debug_output" )
         {
-            clean_output = true;
+            debug_output = true;
         }
         else if ( args[arg] == "-glytoucan" )
         {
@@ -525,7 +525,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1271,7 +1271,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1351,7 +1351,7 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, clean_output, sleepTimer, pool, useParallelism);
+                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                 if (useParallelism)
                 {
@@ -2072,7 +2072,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
 
             #if DUMP
@@ -2205,7 +2205,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -2814,7 +2814,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             #if DUMP
                 std::cout << std::endl;
@@ -2943,7 +2943,7 @@ int main(int argc, char** argv)
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
                 #endif
 
-                if(!clean_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }

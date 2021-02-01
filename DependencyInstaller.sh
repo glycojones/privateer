@@ -54,7 +54,7 @@ cd fftw
 wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
 tar -zxvf fftw-2.1.5.tar.gz
 cd fftw-2.1.5
-CC=$GCC CXX=$GPLUSPLUS ./configure --prefix=$dependencyDir --enable-single --enable-float   F77=gfortran --enable-shared
+CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
 make
 make install
 fi
@@ -75,7 +75,7 @@ cd mmdb2
 wget https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/mmdb2-2.0.19.tar.gz
 tar -zxvf mmdb2-2.0.19.tar.gz
 cd mmdb2-2.0.19
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
+CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CFLAGS='-g -O2 -w' --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
 fi
@@ -94,7 +94,7 @@ mkdir libccp4
 cd libccp4
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/libccp4/trunk
 cd trunk
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11  --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
+CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' \--prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
 fi
@@ -124,7 +124,7 @@ mkdir ccp4srs
 cd ccp4srs
 bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/ccp4srs/trunk
 cd trunk
- CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS=-std=c++11 --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
+ CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --disable-Werror --enable-silent-rules --enable-shared --disable-static
 make
 make install
 fi
