@@ -11,7 +11,7 @@
 
 #include "privateer-dbquery.h"
 
-void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
+void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
 {
     int valueLocation;
     valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
@@ -21,52 +21,58 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
         if (valueLocation != -1 && currentGlycan.number_of_nodes() > 1)
         {
             print_output_from_database(jsonObject, valueLocation, currentGlycan);
-            std::cout << "\nWARNING: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence! Attempting to find the closest matches by carrying out permutations" << std::endl;
+            if(closest_match_disable) std::cout << "\nWARNING: Unable to find a matching GlyConnectID for WURCS sequence from this Glycan sequence! If you would like to find the closest match on GlyConnect database please delete the -closest_match_disable option!" << std::endl;
+            else
+            {
+                std::cout << "\nWARNING: Unable to find a matching GlyConnectID for WURCS sequence from this Glycan sequence! Attempting to find the closest matches on GlyConnect database by carrying out permutations" << std::endl;
 
-            std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
-            
-            
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, debug_output, sleepTimer, pool, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only, debug_output);   
-            
-
-            if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
-            else std::cout << "ERROR: Unable to generate permutations that would be found in GlyConnect database!" << std::endl;
+                std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
+                
+                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only, debug_output);   
+                
+                if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
+                else std::cout << "ERROR: Unable to generate permutations that would be found in GlyConnect database!" << std::endl;
+            }
         }
         else if (valueLocation != -1 && currentGlycan.number_of_nodes() <= 1)
         {
             print_output_from_database(jsonObject, valueLocation, currentGlycan);
-            std::cout << "ERROR: Glycan is too short for permutations, therefore unable to find the closest match on GlyConnect." << std::endl;
+            if(!closest_match_disable) std::cout << "ERROR: Glycan is too short for permutations, therefore unable to find the closest match on GlyConnect." << std::endl;
         }
         else
         {
-            if ( currentGlycan.number_of_nodes() > 1)
+            if(closest_match_disable) std::cout << "\nWARNING: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence! If you would like to find the closest match on GlyConnect database please delete the -closest_match_disable option!" << std::endl;
+            else
             {
-                std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
-
-                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, debug_output, sleepTimer, pool, useParallelism);
-                else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only, debug_output); 
-
-                if (useParallelism)
+                if ( currentGlycan.number_of_nodes() > 1)
                 {
-                    
-                    #if DUMP
-                        std::cout << std::endl;
-                        DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                    #endif
-                    
-                    while(pool.n_remaining_jobs() > 0)
-                        pool.sync();
-                    
-                    #if DUMP
-                        DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                    #endif
+                    std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
+
+                    if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, glucose_only, debug_output); 
+
+                    if (useParallelism)
+                    {
+                        
+                        #if DUMP
+                            std::cout << std::endl;
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                        #endif
+                        
+                        while(pool.n_remaining_jobs() > 0)
+                            pool.sync();
+                        
+                        #if DUMP
+                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+                        #endif
+                    }
+                
+                    if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
+                    else std::cout << "ERROR: Unable to generate permutations that would be found on GlyConnect database!" << std::endl;
                 }
-            
-                if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
-                else std::cout << "ERROR: Unable to generate permutations that would be found in GlyConnect database!" << std::endl;
+                else std::cout << "ERROR: Glycan is too short for permutations, therefore unable to generate alternative GlyTouCan and GlyConnect IDs!" << std::endl;
             }
-            else std::cout << "ERROR: Glycan is too short for permutations, therefore unable to generate alternative GlyTouCan and GlyConnect IDs!" << std::endl;
          }
     }
 }

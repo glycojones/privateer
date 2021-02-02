@@ -861,7 +861,7 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
 nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
 {
     std::string path_copy = path;
-    if(path_copy == "database.json" || path_copy.empty()) 
+    if(path_copy == "nopath" || path_copy.empty()) 
         {
             std::string env(std::getenv ( "CINCL" ));
 

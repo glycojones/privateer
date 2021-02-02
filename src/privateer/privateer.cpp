@@ -96,7 +96,7 @@ int main(int argc, char** argv)
     clipper::String input_column_fobs       = "NONE";
     clipper::String input_reflections_cif   = "NONE";
     clipper::String input_ccd_code          = "XXX";
-    clipper::String ipwurcsjson             = "database.json";
+    clipper::String ipwurcsjson             = "nopath";
     clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
     clipper::String title                   = "generic title";
     clipper::String input_reflections_mtz   = "NONE";
@@ -123,6 +123,7 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     bool useParallelism = true;
+    bool closest_match_disable = false; 
     float resolution = -1; 
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
@@ -242,6 +243,10 @@ int main(int argc, char** argv)
                 }
             }
         }
+        else if ( args[arg] == "-closest_match_disable" )
+        {
+            closest_match_disable = true;
+        }
         else if ( args[arg] == "-all_permutations" )
         {
             glucose_only = false;
@@ -282,7 +287,9 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-glytoucan" )
         {
             useWURCSDataBase = true;
-            // ipwurcsjson = "/home/harold/Dev/privateer_dev_noccp4/src/privateer/database.json";
+        }
+        else if ( args[arg] == "-databasein" )
+        {
             if ( ++arg < args.size() )
             {
                 if(clipper::String(args[arg])[0] != '-')
@@ -292,7 +299,7 @@ int main(int argc, char** argv)
                     std::string fileName = ipwurcsjson.tail();
                     std::string fileExtension = fileName.substr( fileName.length() - 5 );
 
-                    if (fileExtension != ".json")
+                    if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
                     {
                         std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
                         << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
@@ -300,6 +307,18 @@ int main(int argc, char** argv)
                         return 1;
                     }
                 }
+                else
+                {
+                    std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+                    prog.set_termination_message( "Failed" );
+                    return 1;
+                }
+            }
+            else
+            {
+                std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+                prog.set_termination_message( "Failed" );
+                return 1;
             }
         }
         else if ( args[arg] == "-sleep_timer" )
@@ -525,7 +544,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1271,7 +1290,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1351,7 +1370,7 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                 if (useParallelism)
                 {
