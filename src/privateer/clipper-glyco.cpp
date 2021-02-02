@@ -105,13 +105,13 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
 
-    #ifdef DUMP
+    #if DUMP
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     #endif
 
-    #ifdef DUMP
+    #if DUMP
         std::cout << "Size of (*this).size() " << (*this).size() << std::endl;
         for(int i = 0; i < (*this).size(); i++)
         {
@@ -134,7 +134,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
     if ( this->sugar_found_db )
     {
-        #ifdef DUMP
+        #if DUMP
             DBG << "found it! " << std::endl;
         #endif
 
@@ -151,7 +151,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
                 index_atom = this->lookup(buffer[i].trim()+sugar_alternate_confcode,clipper::MM::UNIQUE);
 
-                #ifdef DUMP
+                #if DUMP
                     DBG << "index_atom in line 146" << index_atom << std::endl;
                 #endif
 
@@ -171,7 +171,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 index_atom = this->lookup(buffer[i],clipper::MM::ANY);
 
 
-                #ifdef DUMP
+                #if DUMP
                     DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << "test" << std::endl;
                 #endif
 
@@ -187,7 +187,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                     return;
                 }
             }
-            #ifdef DUMP
+            #if DUMP
                 DBG << "trying to push (*this)[index_atom] in line 181" << (*this)[index_atom].id() << std::endl;
             #endif
             sugar_ring_elements.push_back((*this)[index_atom]);
@@ -204,7 +204,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 		this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
 
-		#ifdef DUMP
+		#if DUMP
 			DBG << "After checking the conformation..." << std::endl;
 		#endif
 	}
@@ -213,7 +213,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 		this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
 
-        #ifdef DUMP
+        #if DUMP
 			DBG << "After checking the conformation..." << std::endl;
 		#endif
 	}
@@ -248,7 +248,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	this->sugar_sane = false;
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Just before examining the ring..." << std::endl;
 	#endif
 
@@ -376,7 +376,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	}
 
-	#ifdef DUMP
+	#if DUMP
 	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
 	#endif
 }
@@ -404,7 +404,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
 
-    #ifdef DUMP
+    #if DUMP
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
@@ -423,7 +423,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     sugar_bfactor /= this->size();
     sugar_bfactor = clipper::Util::u2b(sugar_bfactor);
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "found it! " << std::endl;
     #endif
 
@@ -467,7 +467,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
         this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
         this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
 
-        #ifdef DUMP
+        #if DUMP
             DBG << "After checking the conformation..." << std::endl;
         #endif
     }
@@ -506,7 +506,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     // sanity check:
     this->sugar_sane = false;
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "Just before examining the ring..." << std::endl;
     #endif
 
@@ -582,7 +582,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
         sugar_sane = true;
 
-    #ifdef DUMP
+    #if DUMP
 	DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
     #endif
 
@@ -636,13 +636,13 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     clipper::String nz5 = ring_atoms[4].name().trim();
     clipper::String nz6 = ring_atoms[5].name().trim(); // End of ring
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "getting the stereochemistry..." << std::endl;
 	#endif
 
 	stereochemistry_pairs stereo = get_stereochemistry(mmol);
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "done." << std::endl;
 	#endif
 
@@ -772,7 +772,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     nz6_substituent.transform(shift); // we still need to recentre the atom
     z6_substituent = clipper::Vec3<clipper::ftype>::dot(nz6_substituent.coord_orth(), n);
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "last in-ring carbon has occupancy " << ring_atoms[5].occupancy() << " and it's substituent is "
             << nz6_substituent.name().trim() << " with occupancy " << nz6_substituent.occupancy() << std::endl;
     #endif
@@ -905,7 +905,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 			}
 		}
 
-		#ifdef DUMP
+		#if DUMP
 			DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
 			DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " << configurational_substituent << "/" << z_configurational_substituent << std::endl;
 			DBG << "z6= " << z6 << " z6_subs= " << z6_substituent << std::endl;
@@ -913,7 +913,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 
     cpParams.push_back( z6 - z6_substituent );
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Finished Cremer-Pople analysis, returning to caller..." << std::endl;
 	#endif
 
@@ -956,7 +956,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 	this->sugar_configurational_carbon = stereo.second.first;
 	this->sugar_configurational_substituent = stereo.second.second;
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "After getting the stereochemistry" << std::endl;
 	#endif
 
@@ -994,7 +994,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         clipper::Coord_orth centre(centre_x,centre_y,centre_z);
 	this->sugar_centre = centre;
 
-        #ifdef DUMP
+        #if DUMP
 	    DBG << "Ring centre: " << centre.format() << std::endl;
 	#endif
 
@@ -1053,7 +1053,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 
         for ( int i = 0 ; i < neighbourhood.size() ; i++ )
         {
-            #ifdef DUMP
+            #if DUMP
                 DBG << "Neighbour found for " << ring_atoms[4].name()
                     << ": " << (mmol.atom(neighbourhood[i]).name())
                     << " at distance "
@@ -1076,7 +1076,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
             }
         }
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "substituent at last in-ring carbon: " << nz5_substituent.name().trim() << std::endl;
 	#endif
 
@@ -1190,7 +1190,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         }
     }
 
-	#ifdef DUMP
+	#if DUMP
         DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
         DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= "
             << configurational_substituent << "/" << z_configurational_substituent << std::endl;
@@ -1334,7 +1334,7 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 
 	std::vector<clipper::MAtom> result;
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Dumping ring contents... " << std::endl;
 		for (int runner = 0 ; runner < buffer.size() ; runner++ ) DBG << buffer[runner].name().trim() << " with occupancy = " << buffer[runner].occupancy() << std::endl;
 	#endif
@@ -1357,7 +1357,7 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 				int destination;
 				stream_2 >> destination;
 
-				//#ifdef DUMP
+				//#if DUMP
 				//	DBG << buffer[i].name().trim() << " with index " << origin << " VS " << result[1].name().trim() << " with index " << destination << std::endl;
 				//#endif
 
@@ -1366,7 +1366,7 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 				while ( ( origin > destination ) && (subindex < result.size() ) )
 				{
 
-				//#ifdef DUMP
+				//#if DUMP
 				//	DBG << "Subindex is " << subindex << " and result[subindex] is " << result[subindex].name() << std::endl;
 				//#endif
 
@@ -1377,7 +1377,7 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 					}
 				}
 
-				//#ifdef DUMP
+				//#if DUMP
 				//	DBG << "Inserting " << origin << " which is smaller than " << destination << " at position " << subindex << " and result.size() is " << result.size() << std::endl;
 				//#endif
 
@@ -1386,14 +1386,14 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 			else
 			{
 				result.push_back( buffer[i] );
-				//#ifdef DUMP
+				//#if DUMP
 				//	DBG << "Inserting " << buffer[i].name().trim() << " as first item after the oxygen..." << std::endl;
 				//#endif
 			}
 		}
 	}
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Successfully determined ring members!" << std::endl;
 	#endif
 
@@ -1577,7 +1577,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
         }
     }
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Anomeric carbon: " << anomeric_carbon.id() << "  Substituent: " << anomeric_substituent.id() << std::endl;
 	#endif
 
@@ -1612,7 +1612,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 			}
 
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "(in-ring) configurational carbon: " << configurational_carbon.id() << "  substituent: " << configurational_substituent.id() << std::endl;
 	#endif
 
@@ -1656,7 +1656,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 	result.second.first = configurational_carbon;
 	result.second.second = configurational_substituent;
 
-	#ifdef DUMP
+	#if DUMP
 		DBG << "Configurational carbon: " << configurational_carbon.id() << "  Substituent: " << configurational_substituent.id() << std::endl;
 	#endif
 
@@ -1701,7 +1701,7 @@ bool MSugar::is_stereocentre(const clipper::MAtom& ma, const clipper::MiniMol& m
 		if ( distance < 2.0 ) // check link
 			if (( mmol.atom(neighbourhood[k]).element().trim() != "H" ) && (mmol.atom(neighbourhood[k]).name().trim() != ma.name().trim() ) && altconf_compatible(get_altconf(mmol.atom(neighbourhood[k])), get_altconf(ma)) )
 			{
-				//#ifdef DUMP
+				//#if DUMP
 				//	DBG << "Counting " << mmol.atom(neighbourhood[k]).id() << " as substituent from a total of " << neighbourhood.size() << " atoms with symop " << neighbourhood[k].symmetry() << std::endl;
 				//#endif
 
@@ -1719,7 +1719,7 @@ bool MSugar::is_stereocentre(const clipper::MAtom& ma, const clipper::MiniMol& m
 			}
 	}
 
-	//#ifdef DUMP
+	//#if DUMP
 	//	DBG << "Number of substituents: " << substituent_list.size() << std::endl;
 	//#endif
 
@@ -1748,8 +1748,6 @@ bool MSugar::is_part_of_ring(const clipper::MAtom& ma, const std::vector<clipper
 	\param ma_two A clipper::MAtom object
 	\return A boolean value with the answer
 */
-
-// TO DO: adapt this function to return int instead of bool, reflecting too long or too short distances
 
 bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MAtom& ma_two) const
 {
@@ -2226,7 +2224,7 @@ MGlycan::MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::M
 
     this->chain = chain;
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "root.first: " << root.first.type() << "; root.second: " << root.second.type() << std::endl;
     #endif
 
@@ -2240,7 +2238,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 {
     clipper::String buffer = "";
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "Glycan length: " << sugars.size() << std::endl;
     #endif
 
@@ -2248,7 +2246,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
     buffer.insert ( 0, root.first.id().trim() );
     if ( html_format ) buffer.insert ( 0, "<sub>" );
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "Accessed the root, which contains this sugar: " << root.second.type() <<  std::endl;
     #endif
 
@@ -2266,7 +2264,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 
     clipper::MSugar msug = node_list.front().get_sugar();
 
-        #ifdef DUMP
+        #if DUMP
             DBG << "Node list size: " << node_list.size() << std::endl;
             DBG << "Accessed the first sugar!" << std::endl;
         #endif
@@ -2286,7 +2284,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         buffer.insert ( 0, "<span title=\"" );
     }
 
-        #ifdef DUMP
+        #if DUMP
             DBG << "Node list size: " << node_list.size() << std::endl;
         #endif
 
@@ -2384,7 +2382,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     int index = 0;
     bool found = false;
 
-    #ifdef DUMP
+    #if DUMP
         DBG << "Linking " << first_sugar.type() << " with " << next_sugar.type() << std::endl;
     #endif
 
@@ -2398,7 +2396,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
     if (!found)
     {
-        #ifdef DUMP
+        #if DUMP
             DBG << "We haven't found a match for the first sugar. This is bad news." << std::endl;
         #endif
 
@@ -2559,7 +2557,7 @@ void MGlycan::set_annotations ( std::string expression_system )
             {
                 if ( node_list[0].get_connection(i).get_order() != 6 || node_list[0].get_connection(i).get_anomericity() != "alpha" )
                 {
-                    #ifdef DUMP
+                    #if DUMP
                         DBG << std::endl << "Wrong core linkage" << std::endl;
                     #endif
                     node_list[0].get_connection(i).add_annotation ( " Warning: this GlcNAc-Fuc linkage should be alpha 1-6 " );
@@ -2609,8 +2607,6 @@ void MGlycan::set_annotations ( std::string expression_system )
 Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
 Function used to convert an int number to a char letter. Needed for generation of WURCS strings, specifically to conver residue IDs to letters and leave numbers
 for linkage information.
-
-!!! TO DO: Need to relocate this function somewhere else, doesn't really belong under ::MGlycan.
 
 Last modified on: 03/01/2020
 */
@@ -2694,8 +2690,6 @@ https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a
 
 Last modified on: 12/02/2020
 
-// TO DO: Determine whether 2-3 or 1-3 linkages are supported by privateer. 
-// TO DO: Find out whether a carbohydrate can form three covalent connections to other residues.
 */
 clipper::String MGlycan::generate_wurcs()
 {
@@ -2754,7 +2748,7 @@ clipper::String MGlycan::generate_wurcs()
                 wurcs_string += "-";
         }
 
-#ifdef DUMP
+#if DUMP
         DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
         DBG << "Number of connections for msug/node_list[0]: " << node_list[0].number_of_connections() << std::endl
             << std::endl;
@@ -2794,7 +2788,7 @@ clipper::String MGlycan::generate_wurcs()
         {
             msug = node_list[i].get_sugar();
 
-#ifdef DUMP
+#if DUMP
             DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
             DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl
                 << std::endl;
@@ -2805,17 +2799,17 @@ clipper::String MGlycan::generate_wurcs()
             {
                 for (int j = 0; j < node_list[i].number_of_connections(); j++)
                 {
-#ifdef DUMP
+#if DUMP
             DBG << "Connection: " << j+1 << " out of " << node_list[i].number_of_connections() << std::endl;
 #endif
                     std::ostringstream linkagePosition;
                     connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
-#ifdef DUMP
+#if DUMP
             DBG << "connectedToNodeID: " << connectedToNodeID << std::endl;
 #endif
                     msug = node_list[connectedToNodeID].get_sugar();
                     linkagePosition << node_list[i].get_connection(j).get_order();
-#ifdef DUMP
+#if DUMP
             DBG << "linkagePosition: " << linkagePosition.str() << std::endl;
 #endif
 
@@ -2964,11 +2958,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MSugar sugar = clipper::MSugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
 
-                    #ifdef DUMP
+                    #if DUMP
                         DBG << "Created the MSugar object" << std::endl;
                     #endif
 
-                    #ifdef DUMP
+                    #if DUMP
                         DBG << "potential n roots is " << potential_n_roots[i].type() << std::endl;
                         DBG << "sugar is " << sugar.type() << std::endl;
                         DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
@@ -2979,7 +2973,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                                              list_of_sugars.back(),
                                                              this->expression_system );
 
-                    #ifdef DUMP
+                    #if DUMP
                         DBG << "Exited the glycan constructor!" << std::endl;
                     #endif
 
