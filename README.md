@@ -35,9 +35,11 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 6.) source privateerpython/bin/activate
 
-7.) python setup.py install
+7.) pip install -r requirements.txt
 
-8.) source ccp4.envsetup-sh
+8.) python setup.py install
+
+9.) source ccp4.envsetup-sh
 
 
 
@@ -59,13 +61,11 @@ Privateer's Python bindings(assuming that the virtualenv is not deactivated) can
 
 1.) python
 
-2.) pip install -r requirements.txt
+2.) from privateer import privateer_core as pvt
 
-3.) from privateer import privateer_core as pvt
+3.) print(dir(pvt))
 
-4.) print(dir(pvt))
-
-5.) 
+4.) 
 
     wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
     
