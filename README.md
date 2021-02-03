@@ -59,11 +59,13 @@ Privateer's Python bindings(assuming that the virtualenv is not deactivated) can
 
 1.) python
 
-2.) from privateer import privateer_core as pvt
+2.) pip install -r requirements.txt
 
-3.) print(dir(pvt))
+3.) from privateer import privateer_core as pvt
 
-4.) 
+4.) print(dir(pvt))
+
+5.) 
 
     wurcs = pvt.print_wurcs("/Users/haroldas/Dev/privateer_dev_noccp4/tests/test_data/2h6o_carbremediation.pdb")
     
