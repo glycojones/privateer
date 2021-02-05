@@ -75,7 +75,8 @@ PYBIND11_MODULE(privateer_core, m)
             .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
             .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
             .def("print_torsion_restraints",    &pr::CarbohydrateDictionary::print_torsion_restraints)
-            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal);
+            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
+            .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
 
   pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
             .def(pybind11::init<>())
