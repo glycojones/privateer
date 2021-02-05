@@ -45,6 +45,7 @@ export CPPFLAGS="-I$mainDir/dependencies/include"
 cd $dependencyDir
 # Clipper only works with fftw2
 if [[ ! -f include/fftw.h ]]; then
+cd $dependencyDir
 if [[  -d fftw ]]; then
 rm -rf fftw
 fi
