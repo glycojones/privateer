@@ -35,9 +35,11 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 6.) source privateerpython/bin/activate
 
-7.) python setup.py install
+7.) pip install -r requirements.txt
 
-8.) source ccp4.envsetup-sh
+8.) python setup.py install
+
+9.) source ccp4.envsetup-sh
 
 
 
