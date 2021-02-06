@@ -306,7 +306,7 @@ glyconnectHTTP500Exceptions = { "G82348BZ": {"id": 3247,
                                 "G59784AY": {"id": 3309,
                                             "core": "Complex",
                                             "type": "N-Linked",
-                                            "comment": "Incomplete information in .json file, please visit: https://glyconnect.expasy.org/browser/structures/3309 for full details"},
+                                            "comment": "Incomplete information in .json file, please visit: https://glyconnect.expasy.org/browser/structures/3309 for full details"}
                                             }
 
 date = datetime.now()
