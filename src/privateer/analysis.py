@@ -1,5 +1,5 @@
-from __future__ import print_function
 import xml.etree.ElementTree as etree
+from privateer.privateer_core import get_annotated_glycans,get_annotated_glycans_hierarchical
 
 def print_glycosidic_torsions ( pdb_filename = "", first="ASN", second="NAG" ) :
 

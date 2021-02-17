@@ -1,18 +1,10 @@
-/*! \file privateer-cryo_em.h
-  Header file for handling cryo-EM maps and models */
-
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
-// Department of Chemistry
-// University of York
-// mailto: jon.agirre@york.ac.uk
-//
-// Work funded by The Royal Society
-// University Research Fellowship
-// award UF160039
+// The University of York
+
 
 #ifndef PRIVATEER_CRYO_EM_H_INCLUDED
 #define PRIVATEER_CRYO_EM_H_INCLUDED
@@ -22,6 +14,7 @@
 #include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-minimol.h>
 #include <clipper/clipper-contrib.h>
+#include "privateer-parallelism.h"
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
@@ -33,7 +26,7 @@ namespace privateer
 
     void initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs);
 
-    void calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms);
+    void calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism);
 
     bool generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo);
     

@@ -1,13 +1,10 @@
-
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2016 Jon Agirre & Kevin Cowtan
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: jon.agirre@york.ac.uk
-// mailto: kevin.cowtan@york.ac.uk
-//
+
 
 #ifndef PRIVATEER_LIB_H_INCLUDED
 #define PRIVATEER_LIB_H_INCLUDED
@@ -83,7 +80,8 @@ namespace privateer
         clipper::Xmap<float> read_map_file ( std::string path );
         nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
         int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
-
+        std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
+        void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
     }
 
     namespace glycoplot
@@ -1243,11 +1241,6 @@ namespace privateer
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
         inline void write_refmac_keywords ( std::vector < std::string > code_list ) { return privateer::util::write_refmac_keywords(code_list); }
         inline bool write_libraries ( std::vector < std::string > code_list, float esd ) { return privateer::util::write_libraries(code_list, esd); }
-    }
-
-    namespace util
-    {
-         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
     }
 
 } // namespace privateer

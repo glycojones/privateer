@@ -1,16 +1,14 @@
-
-// Restraint-handling code for Privateer
-// (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: jon.agirre@york.ac.uk
-//
+
 
 #include <gemmi/chemcomp.hpp>
 #include <gemmi/cif.hpp>
+#include <gemmi/calculate.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
 #include <pybind11/pybind11.h>
 #include <string>
@@ -78,6 +76,8 @@ namespace privateer {
         void read_from_monlib ( std::string ccd_id );
         void write_to_file( std::string filename );
         void restrain_rings_unimodal ();
+        void restrain_rings_unimodal_from_conformer ();
+        float get_torsion_from_conformer (std::string a1, std::string a2, std::string a3, std::string a4);
         void add_inverted_torsions ();
         void print_torsion_restraints ();
         pybind11::dict get_bond (std::string atom_1, std::string atom_2);
@@ -117,16 +117,6 @@ namespace privateer {
 
     void create_library ();
     void sign_library_header();
-
-    void add_torsion_set (float phi);
-    void add_torsion_set (float phi, float theta);
-    void add_torsion_set ( gemmi::ChemComp &cc, privateer::Conformation id);
-    void restrain_conformation (privateer::Conformation);
-    privateer::Conformation get_conformation ( clipper::MMonomer sugar );
-    void replace_conformer ();
-    void read_conformer(clipper::MMonomer &sugar);
-    void calculate_conformer ();
-    void refine_conformer ();
 
   }
 }

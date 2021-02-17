@@ -1,13 +1,10 @@
-
-// Pybind11 Python bindings for the YSBL program Privateer
-// (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: jon.agirre@york.ac.uk
-//
+
 
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -75,7 +72,8 @@ PYBIND11_MODULE(privateer_core, m)
             .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
             .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
             .def("print_torsion_restraints",    &pr::CarbohydrateDictionary::print_torsion_restraints)
-            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal);
+            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
+            .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
 
   pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
             .def(pybind11::init<>())

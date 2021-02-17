@@ -1,21 +1,16 @@
 
-/*! \file privateer-cryo_em.cpp
-  Contains code for handling cryo-EM maps and models */
-
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
-// Department of Chemistry
-// University of York
-// mailto: jon.agirre@york.ac.uk
-//
-// Work funded by The Royal Society
-// University Research Fellowship
-// award UF160039
+// The University of York
+
 
 #include "privateer-cryo_em.h"
+
+// #define DUMP 1
+// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
@@ -50,37 +45,69 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
                 // fobs[ih].sigf() = 0;
                 fobs[ih].sigf() = 1;
                 iteration++;
-                if(iteration == 420 || iteration == 6743) std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
-                // std::cout << "fobs[" << ih.index() << "].f() = " << fobs[ih].f() << "\tfobs[" << ih.index() << "].sigf() = " << fobs[ih].sigf() << std::endl;
             }
         }
 }
 
 
-void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms) //calculated ligandmap here, lacks atom list of ligands. Replace reference_map with direct object of fc_ligands_bsc
+void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism) //calculated ligandmap here, lacks atom list of ligands. Replace reference_map with direct object of fc_ligands_bsc
 {
   clipper::SFcalc_iso_fft<float> sfcligands;
   clipper::SFcalc_iso_fft<float> sfcall;
 
   try
     {
-    #pragma omp parallel sections
+      if(useParallelism)
       {
-      #pragma omp section
-                  sfcligands( fc_ligands_only_cryoem_data,  ligandAtoms );
-      #pragma omp section
-                  sfcall( fc_all_cryoem_data, allAtoms );
+        pool.push([&sfcligands, &fc_ligands_only_cryoem_data, &ligandAtoms](int id)
+        { 
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
+            #endif
+            
+            sfcligands( fc_ligands_only_cryoem_data,  ligandAtoms );
+        });
+
+        pool.push([&sfcall, &fc_all_cryoem_data, &allAtoms](int id)
+        { 
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
+            #endif
+            
+            sfcall( fc_all_cryoem_data, allAtoms );
+        });
+      }
+      else
+      {
+        sfcligands( fc_ligands_only_cryoem_data,  ligandAtoms );
+        sfcall( fc_all_cryoem_data, allAtoms );
       }
     }
     catch ( ... ) 
     {
       std::cout << "\nThe input file has unrecognised atoms. Might cause unexpected results...\n";  // this causes clipper to freak out, so better remove those unknowns
     }
+
+    if (useParallelism)
+      {
+          #if DUMP
+              std::cout << std::endl;
+              DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+          #endif
+          
+          while(pool.n_remaining_jobs() > 0)
+              pool.sync();
+          
+          #if DUMP
+              DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+          #endif
+      }
 }
 
 bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo)
 {
-  clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
 
   const int n_scl_param = 20;
 
@@ -89,6 +116,8 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
   clipper::BasisFn_spline basis( hklinfo, n_scl_param, 2.0 );
   clipper::TargetFn_scaleF1F2<clipper::data32::F_phi, clipper::data32::F_phi> scaling_target( fc_all_cryoem_data, fc_cryoem_obs );
   clipper::ResolutionFn scalefn( hklinfo, basis, scaling_target, params );
+
+  clipper::data32::F_phi fo, twofo, fc, fzero(0.0, 0.0);
   
   for (HRI ih = hklinfo.first(); !ih.last(); ih.next() )
   {
@@ -121,7 +150,7 @@ bool privateer::cryo_em::generate_output_map_coefficients (clipper::HKL_data<cli
       }
     }
   }
-
+  
   return true;
 }
 
@@ -191,8 +220,8 @@ std::pair<double, double> privateer::cryo_em::calculate_rscc  ( clipper::Xmap<do
   return std::make_pair(corr_coeff, accum);
 }
 
-  void privateer::cryo_em::write_cryoem_map ( clipper::String const pathname, clipper::Xmap<float> const &input_map )
-  {
+void privateer::cryo_em::write_cryoem_map ( clipper::String const pathname, clipper::Xmap<float> const &input_map )
+{
     clipper::CCP4MAPfile file;
     try
     {
