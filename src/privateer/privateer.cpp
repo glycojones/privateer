@@ -1,33 +1,12 @@
 
 // Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
 //    -> The name combines Mark Knopfler's 'Privateering' cracking album & Dr Cowtan's tradition of using maritime acronyms
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
 //
-// 2013-2017 Jon Agirre & Kevin Cowtan
+// Licence: LGPL - Please check Licence.txt for details.
+//
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: jon.agirre@york.ac.uk
-// mailto: kevin.cowtan@york.ac.uk
-//
-// Targets supported: structures containing known or pre-defined furanose and pyranose rings
-//
-// The program, initially conceived for simple conformational validation, has evolved into a sort of
-// Swiss-army knife, supporting re-refinement of sugars and graphical analysis of glycans through SVG graphics
-//
-// Some of it's features are:
-//
-//   - Cremer-pople puckering parameters for pyranose and furanose rings
-//   - Comparison between detected and minimal-energy conformation
-//   - Glycochemical validation: Privateer will detect wrong links and nomenclature
-//   - Linkage torsion calculation and annotation
-//   - Annotated SVG graphics files for N-, O- and S-glycans
-//   - Generation of dictionaries containing aperiodic torsions (for re-refinement)
-//   - Python interface for connecting to other programs (CCP4i2, CCP4mg and Coot)
-//   - Coot-friendly output through Python and Scheme scripts
-//   - SFcalc with bulk solvent correction from model (internal)
-//   - Fo-Fc sigmaa weighted omit maps (output as map file or map coeffs)
-//   - Real Space Correlation coefficient + score (console and XML)
-//   - Mean B-factors, <mFo> and other metrics
 
 #include <stdio.h>
 #include <string.h>
@@ -59,7 +38,7 @@
 // #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-clipper::String program_version = "MKIV_alpha";
+clipper::String program_version = "MKIV";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
@@ -71,7 +50,7 @@ typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 int main(int argc, char** argv)
 {
-    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2020/03/02" );
+    CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2021/02/06" );
 
     prog.set_termination_message( "Failed" );
 
