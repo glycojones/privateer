@@ -1,18 +1,10 @@
-/*! \file privateer-cryo_em.h
-  Header file for handling cryo-EM maps and models */
-
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
-// Department of Chemistry
-// University of York
-// mailto: jon.agirre@york.ac.uk
-//
-// Work funded by The Royal Society
-// University Research Fellowship
-// award UF160039
+// The University of York
+
 
 #ifndef PRIVATEER_CRYO_EM_H_INCLUDED
 #define PRIVATEER_CRYO_EM_H_INCLUDED

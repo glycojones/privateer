@@ -57,11 +57,11 @@ include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${PRIVATEER_SOURCE_DIR})
 
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-composition.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.cpp
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
             ${PRIVATEER_SOURCE_DIR}/privateer-xray.cpp

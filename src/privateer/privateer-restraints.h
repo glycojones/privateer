@@ -1,13 +1,10 @@
-
-// Restraint-handling code for Privateer
-// (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: jon.agirre@york.ac.uk
-//
+
 
 #include <gemmi/chemcomp.hpp>
 #include <gemmi/cif.hpp>

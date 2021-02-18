@@ -1,12 +1,10 @@
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2018 Haroldas Bagdonas & Kevin Cowtan & Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
 // The University of York
-// mailto: hb1115@york.ac.uk
-// mailto: jon.agirre@york.ac.uk
-// mailto: kevin.cowtan@york.ac.uk
+
 
 
 #include "privateer-dbquery.h"
