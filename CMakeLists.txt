@@ -2,9 +2,16 @@
 #
 cmake_minimum_required(VERSION 3.12)
 project(privateer VERSION 0.4 LANGUAGES C CXX)
+
+SET(PRIVATEER_CC_FLAGS "-g -O2 -w")
+SET(PRIVATEER_CXX_FLAGS "-g -O2 -w")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS}")
+
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
@@ -22,13 +29,8 @@ endif()
 find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper-minimol
                            clipper-contrib clipper-ccp4 clipper-cif)
 
-
-find_package(OpenMP)
-if (OPENMP_FOUND)
-    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-    set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
-endif()
+# Required for std::thread in C++11 standard. 
+find_package(Threads REQUIRED)                          
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
@@ -107,12 +109,13 @@ include_directories(${CCP4_INCLUDE_DIRS}
 ## Create libprivateer
 #
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-composition.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.cpp
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.cpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
             ${PRIVATEER_SOURCE_DIR}/privateer-xray.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-lib.cpp)
@@ -132,7 +135,8 @@ add_executable(privateer_exec
 target_link_libraries ( privateer_exec 
                         privateer_lib 
                         ${CCP4_LIBRARIES} 
-                        ${pybind11_LIBRARIES})
+                        ${pybind11_LIBRARIES}
+                        Threads::Threads)
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
 ## Make hybrid Python module
@@ -151,12 +155,13 @@ target_link_libraries ( privateer_core PRIVATE
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
+install ( FILES ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
                 ${PRIVATEER_SOURCE_DIR}/privateer-lib.h

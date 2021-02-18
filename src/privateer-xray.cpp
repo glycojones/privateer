@@ -1,19 +1,10 @@
-
-/*! \file privateer-xray.cpp
-  Contains code for handling cryo-EM maps and models */
-
 // Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL (https://www.gnu.org/licenses/lgpl.html)
+// Licence: LGPL - Please check Licence.txt for details.
 //
-// 2013-2019 Jon Agirre
+// 2013-
 // York Structural Biology Laboratory
-// Department of Chemistry
-// University of York
-// mailto: jon.agirre@york.ac.uk
-//
-// Work funded by The Royal Society
-// University Research Fellowship
-// award UF160039
+// The University of York
+
 
 #include "privateer-xray.h"
 
@@ -142,4 +133,93 @@ void privateer::xray::initialize_experimental_dataset(clipper::CCP4MTZfile& mtzi
             std::cout << "\nPresent hklinfo: " << hklinfo.cell().format() << " " << hklinfo.spacegroup().spacegroup_number() << " " << hklinfo.num_reflections() << "\n";
         }
     }
+}
+
+std::pair<double, double> privateer::xray::calculate_rscc  ( clipper::Xmap<float>& sigmaa_all_map,
+                                            clipper::Xmap<float>& sigmaa_omit_fd,
+                                            clipper::Xmap<float>& ligandmap, // equivalent to lignadmap in xray implementation
+                                            clipper::Xmap<float>& mask,
+                                            clipper::HKL_info& hklinfo,
+                                            clipper::Grid_sampling& mygrid,
+                                            clipper::Coord_orth& origin,
+                                            clipper::Coord_orth& destination,
+                                            bool useSigmaa)
+{
+    clipper::Map_stats ms;
+
+    if (useSigmaa)
+        ms = clipper::Map_stats(sigmaa_all_map);
+    else
+        ms = clipper::Map_stats(sigmaa_omit_fd);
+
+    double meanDensityExp, meanDensityCalc, num, den1, den2, corr_coeff;
+    meanDensityCalc = meanDensityExp = num = den1 = den2 = corr_coeff = 0.0;
+
+    int n_points = 0;
+    clipper::Xmap_base::Map_reference_coord i0, iu, iv, iw;
+
+    double accum = 0.0;
+
+    // calculation of the mean densities of the two input maps
+
+    if (useSigmaa)
+        i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_all_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
+    else
+        i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_omit_fd, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
+
+    for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
+        for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
+            for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
+            {
+                if ( mask[iw] == 1.0)
+                {
+                    meanDensityCalc = meanDensityCalc + ligandmap[iw];
+                
+                    if (useSigmaa) 
+                        meanDensityExp = meanDensityExp + sigmaa_all_map[iw];
+                    else
+                        meanDensityExp = meanDensityExp + sigmaa_omit_fd[iw];
+
+                    n_points++;
+                }
+            }
+
+    accum = meanDensityExp / ms.std_dev();
+    accum /= n_points;
+
+    meanDensityCalc = meanDensityCalc / n_points;
+    meanDensityExp = meanDensityExp / n_points;
+
+    // calculation of the correlation coefficient between calc (ligandmap) and weighted obs (sigmaamap) maps
+
+    if (useSigmaa)
+        i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_all_map, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
+    else
+        i0 = clipper::Xmap_base::Map_reference_coord( sigmaa_omit_fd, origin.coord_frac(hklinfo.cell()).coord_grid(mygrid) );
+
+    for ( iu = i0; iu.coord().u() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).u(); iu.next_u() )
+        for ( iv = iu; iv.coord().v() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).v(); iv.next_v() )
+            for ( iw = iv; iw.coord().w() <= destination.coord_frac(hklinfo.cell()).coord_grid(mygrid).w(); iw.next_w() )
+            {
+                if ( mask[iw] == 1.0)
+                {
+                    if (useSigmaa)
+                    {
+                        num = num + (sigmaa_all_map[iw] - meanDensityExp) * (ligandmap[iw] - meanDensityCalc);
+                        den1 = den1 + pow((sigmaa_all_map[iw] - meanDensityExp),2);
+                        den2 = den2 + pow((ligandmap[iw] - meanDensityCalc),2);
+                    }
+                    else
+                    {
+                        num = num + (sigmaa_omit_fd[iw] - meanDensityExp) * (ligandmap[iw] - meanDensityCalc);
+                        den1 = den1 + pow((sigmaa_omit_fd[iw] - meanDensityExp),2);
+                        den2 = den2 + pow((ligandmap[iw] - meanDensityCalc),2);
+                    }
+                }
+            }
+
+    corr_coeff = num / (sqrt(den1) * sqrt(den2));
+
+
+  return std::make_pair(corr_coeff, accum);
 }

@@ -1,4 +1,3 @@
-from __future__ import print_function
 from privateer.privateer_core import check_monlib_access
 from privateer.privateer_core import CarbohydrateDictionary
 from privateer.privateer_core import CarbohydrateLibrary
@@ -68,7 +67,7 @@ def get_bond_params_from_file ( filename="", first_atom="", second_atom="" ):
 
 def unimodalise_from_file ( filename = "", also_1c4 = False ) :
     dictionary = CarbohydrateDictionary(filename)
-    dictionary.restrain_rings_unimodal()
+    dictionary.restrain_rings_unimodal_from_conformer()
     if also_1c4 : dictionary.add_inverted_torsions()
     pathname, extension = os.path.splitext(filename)
     dictionary.write_to_file(pathname + "_unimodal.cif")
@@ -77,6 +76,6 @@ def unimodalise_from_file ( filename = "", also_1c4 = False ) :
 def unimodalise_from_monlib ( code = "", also_1c4 = False ) :
     dictionary = CarbohydrateDictionary()
     dictionary.read_from_monlib (code)
-    dictionary.restrain_rings_unimodal()
+    dictionary.restrain_rings_unimodal_from_conformer()
     if also_1c4 : dictionary.add_inverted_torsions()
     dictionary.write_to_file(code + "_unimodal.cif")
