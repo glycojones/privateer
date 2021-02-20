@@ -47,26 +47,29 @@ find_package(Threads REQUIRED)
 
 
 #Find Privateer's main.cpp file
-set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/privateer.cpp)
+set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
 #Location of include files to be linked
 include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
                     ${PYBIND11_INCLUDE_DIR}
                     ${PYTHON_INCLUDE_DIRS}
-                    ${PRIVATEER_SOURCE_DIR})
+                    ${PRIVATEER_SOURCE_DIR}/cpp
+                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
 add_library(privateer_lib
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
-            ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-composition.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
-            ${PRIVATEER_SOURCE_DIR}/privateer-xray.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp
-            ${PRIVATEER_SOURCE_DIR}/privateer-lib.cpp)
+            ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-dbquery.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
 
 target_link_libraries ( privateer_lib 
                         ${MMDB2DEP} 
@@ -103,8 +106,10 @@ target_link_libraries ( privateer_exec
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-pybind11_add_module(privateer_core ${PRIVATEER_SOURCE} ${PRIVATEER_SOURCE_DIR}/privateer-pybind11.cpp ${PRIVATEER_SOURCE_DIR}/privateer-restraints.cpp)
-target_link_libraries ( privateer_core PRIVATE 
+pybind11_add_module(pyprivateer     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
+                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp)
+target_link_libraries ( pyprivateer PRIVATE 
                         privateer_lib 
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 
@@ -119,7 +124,6 @@ target_link_libraries ( privateer_core PRIVATE
                         nlohmann_json::nlohmann_json)
 
 
-install ( TARGETS privateer_lib
-            LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
+install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
+install ( TARGETS pyprivateer DESTINATION ${PROJECT_SOURCE_DIR} )

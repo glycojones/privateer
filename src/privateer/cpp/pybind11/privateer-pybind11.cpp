@@ -1,0 +1,30 @@
+// Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
+// Licence: LGPL - Please check Licence.txt for details.
+//
+// 2013-
+// York Structural Biology Laboratory
+// The University of York
+
+
+#include <pybind11/pybind11.h>
+#include <exception>      
+
+namespace py=pybind11;
+void init_ccp4mg(py::module &m);
+void init_restraints(py::module &m);
+
+
+PYBIND11_MODULE(pyprivateer, m) {
+    m.doc() = "Python wrapper for the Privateer.";
+
+    py::register_exception_translator([](std::exception_ptr p) {
+        try {
+            if (p) std::rethrow_exception(p);
+        } catch (const std::exception& e) {
+            PyErr_SetString(PyExc_RuntimeError, e.what());
+        }
+    });
+
+    init_ccp4mg(m);
+    init_restraints(m);
+}

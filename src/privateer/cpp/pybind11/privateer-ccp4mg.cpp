@@ -11,13 +11,13 @@
 #include "privateer-lib.h"
 
 using namespace pybind11::literals;
-namespace pr = privateer::restraints;
+namespace py=pybind11;
 
 // pybind11 module definition
 //
-PYBIND11_MODULE(privateer_core, m)
+void init_ccp4mg(py::module& m)
 {
-  m.doc() = "Privateer's Python interface.\nVersion history:\n- 2016-2018 MKIII (SWIG)\n2019-present MKIV (pybind11)"; // docstring
+  m.doc() = "Privateer's Python interface for ccp4mg.\nVersion history:\n- 2016-2018 MKIII (SWIG)\n2019-present MKIV (pybind11)"; // docstring
 
   m.def("carbname_of",
         &privateer::scripting::carbname_of,
@@ -58,30 +58,6 @@ PYBIND11_MODULE(privateer_core, m)
         "code_list"_a,
         "esd"_a );
 
-  m.def("check_monlib_access",
-        &pr::check_monlib_access,
-        "Checks if the CCP4 monomer library is accessible via environment, returns either a valid pathname or an empty string" );
-
-  pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
-            .def(pybind11::init<>())
-            .def(pybind11::init<std::string&>())
-            .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
-            .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
-            .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
-            .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
-            .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
-            .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
-            .def("print_torsion_restraints",    &pr::CarbohydrateDictionary::print_torsion_restraints)
-            .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
-            .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
-
-  pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
-            .def(pybind11::init<>())
-            .def(pybind11::init<std::string&>())
-            .def("read_from_file",    &pr::CarbohydrateLibrary::read_from_file)
-            .def("write_to_file",     &pr::CarbohydrateLibrary::write_to_file)
-            .def("number_of_entries", &pr::CarbohydrateLibrary::number_of_entries)
-            .def("add_dictionary",    &pr::CarbohydrateLibrary::add_dictionary);
 
   pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
             .value("blue",    privateer::glycoplot::blue)

@@ -6,6 +6,8 @@
 // The University of York
 
 #include "privateer-restraints.h"
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 using namespace pybind11::literals;
 
 std::string privateer::restraints::check_monlib_access ( ) {
@@ -498,4 +500,37 @@ void privateer::restraints::create_library () {
 
 void privateer::restraints::sign_library_header() {
 
+}
+
+namespace py = pybind11;
+namespace pr = privateer::restraints;
+
+void init_restraints(py::module& m)
+{
+  m.doc() = "Python module for patching and modifying .cif files through Privateer's Python interface";
+
+  m.def("check_monlib_access",
+    &pr::check_monlib_access,
+    "Checks if the CCP4 monomer library is accessible via environment, returns either a valid pathname or an empty string" );
+  
+  pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
+          .def(pybind11::init<>())
+          .def(pybind11::init<std::string&>())
+          .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
+          .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
+          .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
+          .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
+          .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
+          .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
+          .def("print_torsion_restraints", &pr::CarbohydrateDictionary::print_torsion_restraints)
+          .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
+          .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
+
+pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
+          .def(pybind11::init<>())
+          .def(pybind11::init<std::string&>())
+          .def("read_from_file",    &pr::CarbohydrateLibrary::read_from_file)
+          .def("write_to_file",     &pr::CarbohydrateLibrary::write_to_file)
+          .def("number_of_entries", &pr::CarbohydrateLibrary::number_of_entries)
+          .def("add_dictionary",    &pr::CarbohydrateLibrary::add_dictionary);
 }
