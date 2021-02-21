@@ -106,10 +106,10 @@ target_link_libraries ( privateer_exec
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-pybind11_add_module(pyprivateer     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+pybind11_add_module(libprivateer     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
                                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
                                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp)
-target_link_libraries ( pyprivateer PRIVATE 
+target_link_libraries ( libprivateer PRIVATE 
                         privateer_lib 
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 
@@ -126,4 +126,4 @@ target_link_libraries ( pyprivateer PRIVATE
 
 install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS pyprivateer DESTINATION ${PROJECT_SOURCE_DIR} )
+install ( TARGETS libprivateer DESTINATION ${PROJECT_SOURCE_DIR} )

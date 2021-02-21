@@ -17,7 +17,7 @@ namespace py=pybind11;
 //
 void init_ccp4mg(py::module& m)
 {
-  m.doc() = "Privateer's Python interface for ccp4mg.\nVersion history:\n- 2016-2018 MKIII (SWIG)\n2019-present MKIV (pybind11)"; // docstring
+//   m.doc() = "Privateer's Python interface for ccp4mg.\nVersion history:\n- 2016-2018 MKIII (SWIG)\n2019-present MKIV (pybind11)"; // docstring
 
   m.def("carbname_of",
         &privateer::scripting::carbname_of,

@@ -507,7 +507,7 @@ namespace pr = privateer::restraints;
 
 void init_restraints(py::module& m)
 {
-  m.doc() = "Python module for patching and modifying .cif files through Privateer's Python interface";
+  // m.doc() = "Python module for patching and modifying .cif files through Privateer's Python interface";
 
   m.def("check_monlib_access",
     &pr::check_monlib_access,

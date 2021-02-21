@@ -14,8 +14,8 @@ void init_ccp4mg(py::module &m);
 void init_restraints(py::module &m);
 
 
-PYBIND11_MODULE(pyprivateer, m) {
-    m.doc() = "Python wrapper for the Privateer.";
+PYBIND11_MODULE(libprivateer, m) {
+    m.doc() = "Python wrapper for libPrivateer(C++) exposed via pybind11.";
 
     py::register_exception_translator([](std::exception_ptr p) {
         try {
