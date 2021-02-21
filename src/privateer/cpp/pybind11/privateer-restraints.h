@@ -10,6 +10,7 @@
 #include <gemmi/cif.hpp>
 #include <gemmi/calculate.hpp>
 #include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <string>
 #include <locale>

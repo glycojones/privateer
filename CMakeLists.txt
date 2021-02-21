@@ -69,6 +69,7 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
 
 target_link_libraries ( privateer_lib 
@@ -106,9 +107,10 @@ target_link_libraries ( privateer_exec
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-pybind11_add_module(libprivateer     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+pybind11_add_module(libprivateer    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
                                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp)
+                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp)
 target_link_libraries ( libprivateer PRIVATE 
                         privateer_lib 
                         ${MMDB2DEP} 
