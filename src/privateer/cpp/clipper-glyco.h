@@ -471,6 +471,7 @@ namespace clipper
 
                     } //!< [0]=phi, [1]=psi, { [2]=omega, if 1-6 linkage }
 
+
                     void set_torsions ( float phi, float psi, float omega=0.0 ) { torsion_phi = phi; torsion_psi = psi; torsion_omega=omega; }
 
                     std::string format() const
@@ -593,6 +594,7 @@ namespace clipper
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
 
             const clipper::String& get_chain () const { return chain; }
+            // const std::string get_wurcs() const { return wurcs; }
             int number_of_nodes ( ) const { return node_list.size(); }
 
             void remove_node_at_index ( int index );
@@ -610,6 +612,15 @@ namespace clipper
                 result.push_back ( torsion_psi );
                 return result;
             } //!< [0]=phi, [1]=psi
+
+            std::string print_torsions () const
+                {
+                    std::string output; 
+
+                    output = "Phi: " + std::to_string(torsion_phi) + " Psi: " + std::to_string(torsion_psi);
+
+                    return output;
+                }
 
             void set_glycosylation_torsions ( float phi, float psi ) { torsion_phi = phi; torsion_psi = psi; }
 
@@ -656,6 +667,7 @@ namespace clipper
             std::vector < clipper::MSugar > sugars;         // vector of sugars
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
+            // std::string wurcs;
 
     }; // class MGlycan
 
@@ -668,6 +680,7 @@ namespace clipper
             MGlycology ( const clipper::MiniMol&, std::string expression_system = "undefined" );
             MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system = "undefined" );
 
+            void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system );
             clipper::MGlycan get_glycan_by_id ( int id );
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {

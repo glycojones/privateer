@@ -811,7 +811,6 @@ bool privateer::util::read_coordinate_file_mtz (clipper::MMDBfile& mfile, clippe
     }
 
     return true;
-
 }
 
 bool privateer::util::read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch)

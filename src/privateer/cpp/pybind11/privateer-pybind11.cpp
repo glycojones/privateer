@@ -12,6 +12,7 @@
 namespace py=pybind11;
 void init_ccp4mg(py::module &m);
 void init_restraints(py::module &m);
+void init_pyanalysis(py::module &m);
 
 
 PYBIND11_MODULE(libprivateer, m) {
@@ -27,4 +28,5 @@ PYBIND11_MODULE(libprivateer, m) {
 
     init_ccp4mg(m);
     init_restraints(m);
+    init_pyanalysis(m);
 }
