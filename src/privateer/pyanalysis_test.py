@@ -13,8 +13,14 @@ for entry in listOfDetectedGlycans:
         print('{}: {}'.format(key, value))
     print("_______________________")
 
-glycan = glycosylation.get_glycan(36)
+glycan = glycosylation.get_glycan(31)
 
 print(glycan.get_glycan_summary())
 print(glycan.get_total_of_glycosidic_bonds())
 print(glycan.get_unique_monosaccharides())
+
+sugar = glycan.get_monosaccharide(2)
+print(sugar.get_sugar_id())
+print(sugar.get_glycan_id())
+print(sugar.get_type())
+print(sugar.get_anomer())

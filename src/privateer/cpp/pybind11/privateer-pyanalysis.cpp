@@ -76,16 +76,16 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// Class GlycanStructure ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& mgl, const int id )
+void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& mgl, const int glycanID)
 {
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
-    clipper::MGlycan inputGlycan = list_of_glycans[id];
+    clipper::MGlycan inputGlycan = list_of_glycans[glycanID];
 
     this->glycan = inputGlycan;
     this->sugars_in_glycan = inputGlycan.get_sugars();
     
-    this->id = id;
+    this->glycanID = glycanID;
     this->numberOfSugars = inputGlycan.number_of_nodes();
     this->glycanWURCS = inputGlycan.generate_wurcs();
 
@@ -115,7 +115,7 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
 
 void privateer::pyanalysis::GlycanStructure::initialize_summary_of_glycan( )
 {
-    auto dict = pybind11::dict ("GlycanID"_a=id, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+    auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
 
     this->glycanSummary = dict;
 }
@@ -127,7 +127,7 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
         throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of sugars detected in the glycan. \nInput: " + std::to_string(sugarID) + "\tPermitted Range: [0-" + std::to_string(numberOfSugars - 1) + "]");
     }
 
-    auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(glycan, sugarID);
+    auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(glycan, sugarID, glycanID);
     
     return sugarObject;
 }
@@ -135,24 +135,29 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
 
 
 ///////////////////////////////////////////////// Class CarbohydrateStructure  ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::CarbohydrateStructure::pyinit(clipper::MGlycan& mglycan, const int id )
+void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mglycan, const int sugarID, const int glycanID )
 {
     // std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     std::vector<clipper::MSugar> list_of_sugars = mglycan.get_sugars();
 
-    clipper::MSugar inputSugar = list_of_sugars[id];
-
+    clipper::MSugar inputSugar = list_of_sugars[sugarID];
+    
+    this->parentGlycan = mglycan;
+    this->sugar = inputSugar;
+    this->sugarID = sugarID;
+    this->glycanID = glycanID;
     this->sugar_type = inputSugar.full_type();
+    this->sugar_anomer = inputSugar.anomer();
 
     initialize_summary_of_sugar();
 }
 
 
-void privateer::pyanalysis::GlycanStructure::initialize_summary_of_glycan( )
+void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    auto dict = pybind11::dict ("GlycanID"_a=id, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+    // auto dict = pybind11::dict ("GlycanID"_a=id, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
 
-    this->glycanSummary = dict;
+    // this->sugar_type = ;
 }
 
 
@@ -187,7 +192,18 @@ void init_pyanalysis(py::module& m)
         .def("get_glycosylation_type", &pa::GlycanStructure::get_glycosylation_type)
         .def("get_root_info", &pa::GlycanStructure::get_root_info)
         .def("get_protein_glycan_linkage_torsions", &pa::GlycanStructure::get_protein_glycan_linkage_torsions)
-        .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary);
+        .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)
+        .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide);
+        // .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides);
+
+    py::class_<pa::CarbohydrateStructure>(m, "CarbohydrateStructure")
+        .def(py::init<>())
+        .def(py::init<clipper::MGlycan&, const int, const int>())
+        .def(py::self == py::self)
+        .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
+        .def("get_glycan_id", &pa::CarbohydrateStructure::get_glycan_id)
+        .def("get_type", &pa::CarbohydrateStructure::get_type)
+        .def("get_anomer", &pa::CarbohydrateStructure::get_anomer);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////
