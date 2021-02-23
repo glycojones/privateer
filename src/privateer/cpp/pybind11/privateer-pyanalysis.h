@@ -23,6 +23,7 @@ namespace privateer {
   namespace pyanalysis {
 
     class GlycanStructure;
+    class CarbohydrateStructure;
 
     class GlycosylationComposition 
     {
@@ -38,9 +39,10 @@ namespace privateer {
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
         std::string get_expression_system_used ( ) { return expression_system; };
         int get_number_of_glycan_chains_detected ( ) { return numberOfGlycanChains; };
+        
         pybind11::list get_summary_of_detected_glycans () { return glycosylationSummary; };
+        
         GlycanStructure get_glycan(const int id);
-
       private:
         clipper::MGlycology mgl;
         std::string path_to_model_file;
@@ -70,6 +72,9 @@ namespace privateer {
         pybind11::dict get_protein_glycan_linkage_torsions( ) { return protein_glycan_linkage_torsion; };
 
         pybind11::dict get_glycan_summary( ) { return glycanSummary; };
+
+        CarbohydrateStructure get_monosaccharide(const int id);
+        pybind11::list get_all_monosaccharides();
       private:
         clipper::MGlycan glycan;
         std::vector<clipper::MSugar> sugars_in_glycan;
@@ -89,7 +94,14 @@ namespace privateer {
     {
       public:
         CarbohydrateStructure() { };
+        CarbohydrateStructure(clipper::MGlycan& mglycan, const int id){
+          this->pyinit ( mglycan, id );
+        };
+        ~CarbohydrateStructure() { };
+        void pyinit (clipper::MGlycan& mglycan, const int id);
+        void initialize_summary_of_sugar();
       private:
+        std::string sugar_type;
     };
   }
 }
