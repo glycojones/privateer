@@ -2611,6 +2611,25 @@ std::vector < std::string > MGlycan::obtain_unique_WURCS_residues()
     return uniqueResidues;
 }
 
+std::vector < std::string > MGlycan::obtain_unique_residue_codes()
+{
+    std::vector < std::string > uniqueResidues;
+    
+    for(int i = 0; i < node_list.size(); i++)
+    {   
+        clipper::MSugar msug;
+        std::string msug_code_string;
+
+        msug = node_list[i].get_sugar();
+        msug_code_string =  msug.type().trim(); 
+
+        if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_code_string) == uniqueResidues.end()) {
+            uniqueResidues.push_back(msug_code_string);
+        }
+    }
+    return uniqueResidues;
+}
+
 /*
 Added by Haroldas Bagdonas (hb1115@york.ac.uk) on 03/01/2020
 Function used to obtain a total number of glycosidic bonds within the chain. Needed for generation of WURCS strings.

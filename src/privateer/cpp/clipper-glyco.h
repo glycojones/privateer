@@ -584,6 +584,7 @@ namespace clipper
             // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION BEGIN //
             char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
             std::vector < std::string > obtain_unique_WURCS_residues();
+            std::vector < std::string > obtain_unique_residue_codes();
             const int obtain_total_number_of_glycosidic_bonds();
             clipper::String generate_wurcs ();
             // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END // 
@@ -681,7 +682,7 @@ namespace clipper
             MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system = "undefined" );
 
             void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system );
-            clipper::MGlycan get_glycan_by_id ( int id );
+            clipper::MGlycan get_glycan_by_id ( int id ) { return list_of_glycans[id]; };
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {
                 for (int i=0;i<list_of_glycans.size();i++)

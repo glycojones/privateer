@@ -22,27 +22,74 @@ namespace privateer {
 
   namespace pyanalysis {
 
-    class GlycosylationStructure {
+    class GlycanStructure;
+
+    class GlycosylationComposition 
+    {
       public:
-        GlycosylationStructure() { };
-        GlycosylationStructure(std::string& path_to_model_file, std::string expression_system) {
+        GlycosylationComposition() { };
+        GlycosylationComposition(std::string& path_to_model_file, std::string expression_system) {
           this->read_from_file ( path_to_model_file, expression_system );
         };
-        ~GlycosylationStructure() { };
+        ~GlycosylationComposition() { };
         void read_from_file( std::string path_to_model_file, std::string expression_system );
-        void initialize_mglycan_summary( clipper::MGlycology& mglObject );
+        void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
         std::string get_expression_system_used ( ) { return expression_system; };
         int get_number_of_glycan_chains_detected ( ) { return numberOfGlycanChains; };
-        pybind11::list get_summary_of_detected_glycans () { return mglycanSummary; };
+        pybind11::list get_summary_of_detected_glycans () { return glycosylationSummary; };
+        GlycanStructure get_glycan(const int id);
 
       private:
+        clipper::MGlycology mgl;
         std::string path_to_model_file;
         std::string expression_system;
         int numberOfGlycanChains;
-        pybind11::list mglycanSummary;
-        clipper::MGlycology mgl;
+        pybind11::list glycosylationSummary;
+    };
+
+    class GlycanStructure 
+    {
+      public:
+        GlycanStructure() { };
+        GlycanStructure(const clipper::MGlycology& mgl, const int id){
+          this->pyinit ( mgl, id );
+        };
+        ~GlycanStructure() { };
+        void pyinit ( const clipper::MGlycology& mgl, const int id);
+        void initialize_summary_of_glycan();
+
+        int get_glycan_id( ) { return id; };
+        int get_total_number_of_sugars( ) { return numberOfSugars; };
+        std::string get_wurcs_notation( ) { return glycanWURCS; };
+        pybind11::list get_unique_monosaccharides( ) { return uniqueMonosaccharides; };
+        int get_total_of_glycosidic_bonds( ) { return numberOfGlycosidicBonds; };
+        std::string get_glycosylation_type( ) { return glycosylationType; };
+        pybind11::dict get_root_info( ) { return rootSummary; };
+        pybind11::dict get_protein_glycan_linkage_torsions( ) { return protein_glycan_linkage_torsion; };
+
+        pybind11::dict get_glycan_summary( ) { return glycanSummary; };
+      private:
+        clipper::MGlycan glycan;
+        std::vector<clipper::MSugar> sugars_in_glycan;
+        
+        int id;
+        int numberOfSugars;
+        std::string glycanWURCS;
+        pybind11::list uniqueMonosaccharides;
+        int numberOfGlycosidicBonds;
+        std::string glycosylationType;
+        pybind11::dict rootSummary;
+        pybind11::dict protein_glycan_linkage_torsion;
+        pybind11::dict glycanSummary;
+    };
+  
+    class CarbohydrateStructure 
+    {
+      public:
+        CarbohydrateStructure() { };
+      private:
     };
   }
 }
