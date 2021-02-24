@@ -30,7 +30,9 @@ find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper
                            clipper-contrib clipper-ccp4 clipper-cif)
 
 # Required for std::thread in C++11 standard. 
-find_package(Threads REQUIRED)                          
+find_package(Threads REQUIRED)
+
+set(CLIBDENV $ENV{CLIBD})
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
@@ -151,6 +153,8 @@ target_link_libraries ( privateer_core PRIVATE
 ## And finally, install everything in their reet places
 #
 
+file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
+     DESTINATION ${CLIBDENV})
 
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
