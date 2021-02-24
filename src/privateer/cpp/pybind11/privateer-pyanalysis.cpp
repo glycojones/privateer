@@ -146,8 +146,72 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugar = inputSugar;
     this->sugarID = sugarID;
     this->glycanID = glycanID;
-    this->sugar_type = inputSugar.full_type();
+    this->sugar_conformation_code = inputSugar.conformation_code();
+    this->sugar_conformation_name = clipper::data::conformational_landscape[sugar_conformation_code];
+    this->sugar_conformation_name_iupac = clipper::data::iupac_conformational_landscape[sugar_conformation_code];
+    this->sugar_puckering_amplitude = inputSugar.puckering_amplitude();
     this->sugar_anomer = inputSugar.anomer();
+    this->sugar_handedness = inputSugar.handedness();
+    this->sugar_denomination = inputSugar.type_of_sugar();
+    this->sugar_ring_cardinality = inputSugar.ring_cardinality();
+
+    std::vector<clipper::ftype> cremer_pople_params_vector = inputSugar.cremer_pople_params();
+    auto sugar_cremer_pople_params = pybind11::list();
+    for(int i = 0; i < cremer_pople_params_vector.size(); i++)
+    {
+        float currentParam = cremer_pople_params_vector[i];
+        sugar_cremer_pople_params.append(currentParam);
+    }
+    this->sugar_cremer_pople_params=sugar_cremer_pople_params;
+
+    this->sugar_sane = inputSugar.is_sane();
+    this->sugar_name_full = inputSugar.full_name();
+    this->sugar_name_short = inputSugar.short_name();
+    this->sugar_pdb_id = std::stoi(inputSugar.id());
+    this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
+    this->sugar_type = inputSugar.full_type();
+
+    std::vector<clipper::ftype> sugar_ring_angles_vector = inputSugar.ring_angles();
+    auto sugar_ring_angles = pybind11::list();
+    for(int i = 0; i < sugar_ring_angles_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_angles_vector[i];
+        sugar_ring_angles.append(currentParam);
+    }
+    this->sugar_ring_angles=sugar_ring_angles;
+
+    std::vector<clipper::ftype> sugar_ring_bonds_vector = inputSugar.ring_bonds();
+    auto sugar_ring_bonds = pybind11::list();
+    for(int i = 0; i < sugar_ring_bonds_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_bonds_vector[i];
+        sugar_ring_bonds.append(currentParam);
+    }
+    this->sugar_ring_bonds=sugar_ring_bonds;
+
+    std::vector<clipper::ftype> sugar_ring_torsions_vector = inputSugar.ring_torsions();
+    auto sugar_ring_torsion = pybind11::list();
+    for(int i = 0; i < sugar_ring_torsions_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_torsions_vector[i];
+        sugar_ring_torsion.append(currentParam);
+    }
+    this->sugar_ring_torsion=sugar_ring_torsion;
+
+    this->sugar_ring_bond_rmsd=inputSugar.ring_bond_rmsd();
+    this->sugar_ring_angle_rmsd=inputSugar.ring_angle_rmsd();
+    this->sugar_bfactor=inputSugar.get_bfactor();
+    this->sugar_supported=inputSugar.is_supported();
+    this->sugar_diag_ring=inputSugar.ok_with_ring();
+    this->sugar_diag_bonds_rmsd=inputSugar.ok_with_bonds_rmsd();
+    this->sugar_diag_angles_rmsd=inputSugar.ok_with_angles_rmsd();
+    this->sugar_diag_anomer=inputSugar.ok_with_anomer();
+    this->sugar_diag_chirality=inputSugar.ok_with_chirality();
+    this->sugar_diag_conformation=inputSugar.ok_with_conformation();
+    this->sugar_diag_puckering=inputSugar.ok_with_puckering();
+    this->sugar_context=mglycan.get_type();
+
+
 
     initialize_summary_of_sugar();
 }
@@ -202,8 +266,35 @@ void init_pyanalysis(py::module& m)
         .def(py::self == py::self)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
         .def("get_glycan_id", &pa::CarbohydrateStructure::get_glycan_id)
+        .def("get_sugar_pdb_id", &pa::CarbohydrateStructure::get_sugar_pdb_id)
+        .def("get_sugar_pdb_chain", &pa::CarbohydrateStructure::get_sugar_pdb_chain)
+        .def("get_conformation_name", &pa::CarbohydrateStructure::get_conformation_name)
+        .def("get_conformation_name_iupac", &pa::CarbohydrateStructure::get_conformation_name_iupac)
+        .def("get_puckering_amplitude", &pa::CarbohydrateStructure::get_puckering_amplitude)
+        .def("get_anomer", &pa::CarbohydrateStructure::get_anomer)
+        .def("get_handedness", &pa::CarbohydrateStructure::get_handedness)
+        .def("get_denomination", &pa::CarbohydrateStructure::get_denomination)
+        .def("get_ring_cardinality", &pa::CarbohydrateStructure::get_ring_cardinality)
+        .def("get_cremer_pople_params", &pa::CarbohydrateStructure::get_cremer_pople_params)
+        .def("is_sane", &pa::CarbohydrateStructure::is_sane)
+        .def("get_name_full", &pa::CarbohydrateStructure::get_name_full)
+        .def("get_name_short", &pa::CarbohydrateStructure::get_name_short)
         .def("get_type", &pa::CarbohydrateStructure::get_type)
-        .def("get_anomer", &pa::CarbohydrateStructure::get_anomer);
+        .def("get_ring_angles", &pa::CarbohydrateStructure::get_ring_angles)
+        .def("get_ring_bonds", &pa::CarbohydrateStructure::get_ring_bonds)
+        .def("get_ring_torsion", &pa::CarbohydrateStructure::get_ring_torsion)
+        .def("get_ring_bond_rmsd", &pa::CarbohydrateStructure::get_ring_bond_rmsd)
+        .def("get_ring_angle_rmsd", &pa::CarbohydrateStructure::get_ring_angle_rmsd)
+        .def("get_bfactor", &pa::CarbohydrateStructure::get_bfactor)
+        .def("is_supported", &pa::CarbohydrateStructure::is_supported)
+        .def("ok_with_ring", &pa::CarbohydrateStructure::ok_with_ring)
+        .def("ok_with_bonds_rmsd", &pa::CarbohydrateStructure::ok_with_bonds_rmsd)
+        .def("ok_with_angles_rmsd", &pa::CarbohydrateStructure::ok_with_angles_rmsd)
+        .def("ok_with_anomer", &pa::CarbohydrateStructure::ok_with_anomer)
+        .def("ok_with_chirality", &pa::CarbohydrateStructure::ok_with_chirality)
+        .def("ok_with_conformation", &pa::CarbohydrateStructure::ok_with_conformation)
+        .def("ok_with_puckering", &pa::CarbohydrateStructure::ok_with_puckering)
+        .def("get_glycosylation_context", &pa::CarbohydrateStructure::get_glycosylation_context);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

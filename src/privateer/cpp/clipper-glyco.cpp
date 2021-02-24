@@ -68,6 +68,8 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_index = 9999; // default value for "not found in database".
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
+    this->sugar_pdb_id = mm.id();
+    this->sugar_name_short = mm.type().trim();
 
     #if DUMP
         std::cout << std::endl ;
@@ -104,6 +106,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
         std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
 
+        this->sugar_name_full = clipper::data::sugar_database[sugar_index].name_long;
 
         for (int i=0 ; i < buffer.size() ; i++)
         {
@@ -367,6 +370,9 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_index = 9999; // default value for "not found in database".
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
+    this->sugar_pdb_id = mm.id();
+    this->sugar_name_short = mm.type().trim();
+    this->sugar_name_full = validation_data.name_long;
 
     #if DUMP
         std::cout << std::endl ;

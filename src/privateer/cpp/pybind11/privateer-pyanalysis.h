@@ -102,36 +102,64 @@ namespace privateer {
         void pyinit (clipper::MGlycan& mglycan, const int sugarID, const int glycanID);
         void initialize_summary_of_sugar();
 
-        bool operator==(const CarbohydrateStructure& inputSugar) const { return sugarID == inputSugar.get_sugar_id(); }
+        bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_pdb_chain == inputSugar.get_sugar_pdb_chain()); }
 
         int get_sugar_id( ) const { return sugarID; };
         int get_glycan_id( ) const { return glycanID; };
+        int get_sugar_pdb_id() const { return sugar_pdb_id; };
+        std::string get_sugar_pdb_chain() const { return sugar_pdb_chain; };
 
+        std::string get_conformation_name() { return sugar_conformation_name; };
+        std::string get_conformation_name_iupac() { return sugar_conformation_name_iupac; };
+        float get_puckering_amplitude() { return sugar_puckering_amplitude; };
         std::string get_anomer() { return sugar_anomer; };
+        std::string get_handedness() { return sugar_handedness; };
+        std::string get_denomination() { return sugar_denomination; };
+        int get_ring_cardinality() { return sugar_ring_cardinality; };
+        pybind11::list get_cremer_pople_params() { return sugar_cremer_pople_params; };
+        bool is_sane() { return sugar_sane; };
+        std::string get_name_full() { return sugar_name_full; };
+        std::string get_name_short() { return sugar_name_short; };
         std::string get_type() { return sugar_type; };
-
-        void set_context ( std::string context ) { this->sugar_context = context; }
-        
+        pybind11::list get_ring_angles() { return sugar_ring_angles; };
+        pybind11::list get_ring_bonds() { return sugar_ring_bonds; };
+        pybind11::list get_ring_torsion() { return sugar_ring_torsion; };
+        float get_ring_bond_rmsd() { return sugar_ring_bond_rmsd; };
+        float get_ring_angle_rmsd() { return sugar_ring_angle_rmsd; };
+        float get_bfactor() { return sugar_bfactor; };
+        bool is_supported() { return sugar_supported; };
+        bool ok_with_ring() { return sugar_diag_ring; };
+        bool ok_with_bonds_rmsd() { return sugar_diag_bonds_rmsd; };
+        bool ok_with_angles_rmsd() { return sugar_diag_angles_rmsd; };
+        bool ok_with_anomer() { return sugar_diag_anomer; };
+        bool ok_with_chirality() { return sugar_diag_chirality; };
+        bool ok_with_conformation() { return sugar_diag_conformation; };
+        bool ok_with_puckering() { return sugar_diag_puckering; };
+        std::string get_glycosylation_context() { return sugar_context; };
+      
       private:
         clipper::MSugar sugar;
         clipper::MGlycan parentGlycan;
 
         int sugarID;
         int glycanID;
+        int sugar_pdb_id;
+        std::string sugar_pdb_chain;
 
+        int sugar_conformation_code;
         std::string sugar_conformation_name;
         std::string sugar_conformation_name_iupac;
         float sugar_puckering_amplitude;
-        int sugar_conformation;
         std::string sugar_anomer;
         std::string sugar_handedness;
         std::string sugar_denomination;
         int         sugar_ring_cardinality;
-        // const clipper::Coord_orth& sugar_centre;
-        // const clipper::Vec3<ftype>& sugar_mean_plane;
+        // const clipper::Coord_orth& sugar_centre; // leave this for future implementation.
+        // const clipper::Vec3<ftype>& sugar_mean_plane; // leave this for future implementation.
         pybind11::list sugar_cremer_pople_params; // std::vector<ftype>
         bool sugar_sane;
-        std::string sugar_name;
+        std::string sugar_name_full;
+        std::string sugar_name_short;
         std::string sugar_type;
         pybind11::list sugar_ring_angles; // std::vector<ftype>
         pybind11::list sugar_ring_bonds; // std::vector<ftype>
@@ -139,7 +167,6 @@ namespace privateer {
         float sugar_ring_bond_rmsd;
         float sugar_ring_angle_rmsd;
         float sugar_bfactor;
-        bool sugar_found_db;
         bool sugar_supported;
         bool sugar_diag_ring;
         bool sugar_diag_bonds_rmsd;
@@ -148,9 +175,9 @@ namespace privateer {
         bool sugar_diag_chirality;
         bool sugar_diag_conformation;
         bool sugar_diag_puckering;
-        float sugar_rscc;
-        float sugar_accum;
-        bool sugar_occupancy_check;
+        float sugar_rscc; // need to develop setter method as in privateer.cpp
+        float sugar_accum; // need to develop setter method as in privateer.cpp
+        bool sugar_occupancy_check; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
     };
   }

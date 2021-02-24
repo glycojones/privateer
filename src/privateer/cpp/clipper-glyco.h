@@ -200,7 +200,11 @@ namespace clipper
             bool is_sane() const { return sugar_sane; }
             //!< checks it against the internal clipper::data sugar database for correct anomer, handedness and ring members
 
-            clipper::String full_name() const { return sugar_name; }
+            clipper::String full_name() const { return sugar_name_full; }
+
+            clipper::String short_name() const { return sugar_name_short; }
+
+            clipper::String pdb_id() const { return sugar_pdb_id; };
 
             clipper::String full_type() const { return sugar_type; }
 
@@ -316,7 +320,9 @@ namespace clipper
             String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
             String                          sugar_handedness;                   // "D", "L" or "undetermined"
             String                          sugar_type;                         // i.e. "aldose" or "ketose"
-            String                          sugar_name;
+            String                          sugar_name_full;
+            String                          sugar_name_short;
+            String                          sugar_pdb_id;
             bool                            sugar_diag_ring;
             bool                            sugar_diag_bonds_rmsd;
             bool                            sugar_diag_angles_rmsd;
