@@ -311,7 +311,7 @@ glyconnectHTTP500Exceptions = { "G82348BZ": {"id": 3247,
 
 date = datetime.now()
 date = date.strftime('%Y-%m-%d')
-fileName = "database.json"
+fileName = "privateer_database.json"
 
 rootDir = os.getcwd()
 outputFolder = os.path.join(rootDir, "src/privateer")
