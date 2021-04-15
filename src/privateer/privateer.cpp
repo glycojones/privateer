@@ -2978,15 +2978,19 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
+    
+    clipper::String all_MapName, dif_MapName, omit_dif_MapName;
+        all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
+
     if (useMRC && !useMTZ && !noMaps) 
     {
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
-        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
     }
     else
     {
-        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
-        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "sigmaa_best.map", "sigmaa_diff.map", "sigmaa_omit.map", batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
+        privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
     }
     
 
