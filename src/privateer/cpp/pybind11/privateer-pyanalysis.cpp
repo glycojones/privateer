@@ -110,6 +110,16 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     auto protein_glycan_linkage_torsion = pybind11::dict("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
     this->protein_glycan_linkage_torsion = protein_glycan_linkage_torsion;
 
+    std::vector<clipper::MSugar> list_of_sugars = inputGlycan.get_sugars();
+
+    auto list = pybind11::list();
+    for(int i = 0; i < list_of_sugars.size(); i++)
+    {
+        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(inputGlycan, i, glycanID);
+        list.append(sugarObject);
+    }
+    this->sugars = list;
+
     initialize_summary_of_glycan();
 }
 
@@ -251,14 +261,14 @@ void init_pyanalysis(py::module& m)
         .def("get_glycan_id", &pa::GlycanStructure::get_glycan_id)
         .def("get_total_number_of_sugars", &pa::GlycanStructure::get_total_number_of_sugars)
         .def("get_wurcs_notation", &pa::GlycanStructure::get_wurcs_notation)
-        .def("get_unique_monosaccharides", &pa::GlycanStructure::get_unique_monosaccharides)
+        .def("get_unique_monosaccharide_codes", &pa::GlycanStructure::get_unique_monosaccharide_codes)
         .def("get_total_of_glycosidic_bonds", &pa::GlycanStructure::get_total_of_glycosidic_bonds)
         .def("get_glycosylation_type", &pa::GlycanStructure::get_glycosylation_type)
         .def("get_root_info", &pa::GlycanStructure::get_root_info)
         .def("get_protein_glycan_linkage_torsions", &pa::GlycanStructure::get_protein_glycan_linkage_torsions)
         .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)
-        .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide);
-        // .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides);
+        .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide)
+        .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides);
 
     py::class_<pa::CarbohydrateStructure>(m, "CarbohydrateStructure")
         .def(py::init<>())

@@ -204,7 +204,7 @@ namespace clipper
 
             clipper::String short_name() const { return sugar_name_short; }
 
-            clipper::String pdb_id() const { return sugar_pdb_id; };
+            clipper::String pdb_id() const { return sugar_pdb_id; }
 
             clipper::String full_type() const { return sugar_type; }
 

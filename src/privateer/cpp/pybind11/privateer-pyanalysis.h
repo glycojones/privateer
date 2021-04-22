@@ -66,7 +66,7 @@ namespace privateer {
         int get_glycan_id( ) const { return glycanID; };
         int get_total_number_of_sugars( ) { return numberOfSugars; };
         std::string get_wurcs_notation( ) { return glycanWURCS; };
-        pybind11::list get_unique_monosaccharides( ) { return uniqueMonosaccharides; };
+        pybind11::list get_unique_monosaccharide_codes( ) { return uniqueMonosaccharides; };
         int get_total_of_glycosidic_bonds( ) { return numberOfGlycosidicBonds; };
         std::string get_glycosylation_type( ) { return glycosylationType; };
         pybind11::dict get_root_info( ) { return rootSummary; };
@@ -75,7 +75,7 @@ namespace privateer {
         pybind11::dict get_glycan_summary( ) { return glycanSummary; };
 
         CarbohydrateStructure get_monosaccharide(const int glycanID);
-        // pybind11::list get_all_monosaccharides();
+        pybind11::list get_all_monosaccharides( ) { return sugars; };
       private:
         clipper::MGlycan glycan;
         std::vector<clipper::MSugar> sugars_in_glycan;
@@ -89,6 +89,7 @@ namespace privateer {
         pybind11::dict rootSummary;
         pybind11::dict protein_glycan_linkage_torsion;
         pybind11::dict glycanSummary;
+        pybind11::list sugars;
     };
   
     class CarbohydrateStructure 

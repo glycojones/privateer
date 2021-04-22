@@ -30,3 +30,7 @@ PYBIND11_MODULE(libprivateer, m) {
     init_restraints(m);
     init_pyanalysis(m);
 }
+
+// Prepare a google doc describing the organisation of python cppmodule and how they would work in practice.
+// How would the user import module, submodules.
+// list cons and pros. 

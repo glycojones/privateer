@@ -1,24 +1,29 @@
 from privateer import libprivateer as pvt
 
-
+print("____________________GLYCOSYLATION LEVEL_______________")
 glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
-print(glycosylation.get_expression_system_used())
-print(glycosylation.get_path_of_model_file_used())
-print(glycosylation.get_number_of_glycan_chains_detected())
+print("Expression system defined: " + glycosylation.get_expression_system_used())
+print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
+print("Number of Glycan chains detected in the model: " + str(glycosylation.get_number_of_glycan_chains_detected()))
 
 listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 
+print("\n")
 for entry in listOfDetectedGlycans:
     for key, value in entry.items():
         print('{}: {}'.format(key, value))
     print("_______________________")
 
-glycan = glycosylation.get_glycan(0)
+glycan = glycosylation.get_glycan(2)
 
-print(glycan.get_glycan_summary())
-print(glycan.get_total_of_glycosidic_bonds())
-print(glycan.get_unique_monosaccharides())
+print("\n")
+print("____________________GLYCAN CHAIN LEVEL_______________")
+print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
+print("Number of glycosidic bonds in the glycan: " + str(glycan.get_total_of_glycosidic_bonds()))
+print("Unique monosaccharide codes in the glycan: " + str(glycan.get_unique_monosaccharide_codes()))
 
+print("\n")
+print("____________________INDIVIDUAL SUGAR LEVEL_______________")
 sugar = glycan.get_monosaccharide(1)
 print("get_sugar_id() = " + str(sugar.get_sugar_id()))
 print("get_glycan_id() = " + str(sugar.get_glycan_id()))
@@ -51,3 +56,7 @@ print("ok_with_chirality() = " + str(sugar.ok_with_chirality()))
 print("ok_with_conformation() = " + str(sugar.ok_with_conformation()))
 print("ok_with_puckering() = " + str(sugar.ok_with_puckering()))
 print("get_glycosylation_context() = " + sugar.get_glycosylation_context())
+
+sugars = glycan.get_all_monosaccharides()
+print("Sugars: " + str(sugars))
+print("len(sugars) = " + str(len(sugars)))
