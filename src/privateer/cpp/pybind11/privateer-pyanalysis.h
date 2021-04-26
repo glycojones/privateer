@@ -14,6 +14,7 @@
 #include <exception>
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
+#include "privateer-xray.h"
 
 
 #ifndef PRIVATEER_PYANALYSIS_H_INCLUDED
@@ -25,7 +26,7 @@ namespace privateer {
 
     class GlycanStructure;
     class CarbohydrateStructure;
-    class XrayData;
+    class XRayData;
     class CryoEMData;
 
     class GlycosylationComposition 
@@ -189,21 +190,27 @@ namespace privateer {
         std::string sugar_context;
     };
 
-    class XrayData 
+    class XRayData 
     {
       public:
-        XrayData() { };
-        XrayData(std::string& path_to_mtz_file, std::string& path_to_model_file) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file );
+        XRayData() { };
+        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs );
         };
-        ~XrayData() { };
-        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file );
+        ~XRayData() { };
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user);
         
       private:
         clipper::MiniMol mmol;
         clipper::HKL_info hklinfo;
         clipper::CCP4MTZfile mtzin;
-        clipper::String const input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user. 
+        clipper::String input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user. 
+        clipper::Xmap<float> sigmaa_omit_fd;
+        clipper::Xmap<float> ligandmap; // equivalent to lignadmap in xray implementation
+        clipper::Xmap<float> mask;
+        clipper::Grid_sampling mygrid;
+        clipper::Coord_orth origin;
+        clipper::Coord_orth destination;
     };
     
   }

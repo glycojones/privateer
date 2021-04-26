@@ -1,7 +1,8 @@
 from privateer import libprivateer as pvt
 
 print("____________________GLYCOSYLATION LEVEL_______________")
-glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
+# glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
+glycosylation = pvt.GlycosylationComposition("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb")
 print("Expression system defined: " + glycosylation.get_expression_system_used())
 print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
 print("Number of Glycan chains detected in the model: " + str(glycosylation.get_number_of_glycan_chains_detected()))
@@ -68,3 +69,5 @@ print("\n")
 for key, value in sugarSummary.items():
     print('{}: {}'.format(key, value))
 print("_______________________")
+
+XRayData = pvt.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj-sf.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb")

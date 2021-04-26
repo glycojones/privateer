@@ -236,10 +236,187 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class CarbohydrateStructure END ////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////// Class XrayData ////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::XrayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file) {
+void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user) {
+    
+    if(path_to_model_file == "undefined" || path_to_model_file == "")
+    {
+        throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
 
+    if(path_to_mtz_file == "undefined" || path_to_mtz_file == "")
+    {
+        throw std::invalid_argument( "No path was provided for .mtz file input! Aborting." );
+    }
+
+    clipper::String input_column_fobs_clipper = input_column_fobs_user;
+    this->input_column_fobs = input_column_fobs_clipper;
+    clipper::String path_to_model_file_clipper = path_to_model_file;
+    clipper::String path_to_mtz_file_clipper = path_to_mtz_file;
+    clipper::MMDBfile mfile;
+    clipper::CCP4MTZfile ampmtzin;
+    clipper::MTZcrystal opxtal;
+    clipper::MTZdataset opdset;
+
+    clipper::HKL_data<clipper::data32::F_sigF> fobs;            // allocate space for F and sigF
+    clipper::HKL_data<clipper::data32::F_sigF> fobs_scaled;     // allocate space for scaled F and sigF
+    clipper::HKL_data<clipper::data32::F_phi> fc_omit_bsc;      // allocate space for the omit calc data with bsc
+    clipper::HKL_data<clipper::data32::F_phi> fc_all_bsc;       // allocate space for the whole calculated data with bsc
+    clipper::HKL_data<clipper::data32::F_phi> fc_ligands_bsc;    // allocate space for the ligand calculated data
+
+    privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
+    privateer::xray::read_xray_map( path_to_mtz_file_clipper, path_to_model_file_clipper, mmol, hklinfo, mtzin );
+
+    fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+    fobs_scaled = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+    fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+    fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+    fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+
+    privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, path_to_mtz_file_clipper);
+
+    clipper::Atom_list mainAtoms;
+    clipper::Atom_list ligandAtoms;
+    clipper::Atom_list allAtoms;
+
+    std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
+    std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
+
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
+
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
+
+    for ( int p = 0; p < mmol.size(); p++ )
+    {
+        for ( int m = 0; m < mmol[p].size(); m++ )
+        {
+            // if (allSugars)
+            // {
+                if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+                {
+                    clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                    sugarList.push_back ( mmol[p][m] );
+                    sugarList.push_back ( mmol[p][m] );
+                    clipper::String id = mmol[p].id();
+                    id.resize(1);
+
+                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar()));
+                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
+
+                    if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
+                    {
+                        throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                    }
+
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+
+                }
+                else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+                {
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+                }
+                else // it's one of the sugars contained in the database
+                {
+                    clipper::MSugar msug, msug_b;
+
+                    std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
+
+                    // #if DUMP
+                    //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                    // #endif
+
+                    int n_conf = conformers.size();
+
+                    if ( n_conf > 0 )
+                    {
+                        if ( n_conf == 1 )
+                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        else
+                        {
+                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                            msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                        }
+
+                    }
+                    else
+                    {
+                        msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                    }
+
+                    sugarList.push_back(mmol[p][m]);
+                    clipper::String id = mmol[p].id();
+                    id.resize(1);
+
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
+                    // add both conformers if the current monomer contains more than one
+                    if ( n_conf == 2 )
+                    {
+                        ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                        sugarList.push_back(mmol[p][m]);
+                    }
+
+                    if ( msug.type_of_sugar() == "unsupported" )
+                    {
+                        throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                    }
+
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+                }
+
+            // }
+
+            // else
+            // {
+            //     if ( strncmp( mmol[p][m].type().c_str(), input_ccd_code.trim().c_str(), 3 )) // true if strings are different
+            //     {
+            //         for (int id = 0; id < mmol[p][m].size(); id++ )
+            //         {
+            //             mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+            //             allAtoms.push_back(mmol[p][m][id]);
+            //         }
+            //     }
+            //     else // it's the one sugar we're looking to omit
+            //     {
+            //         if ( input_validation_options.size() > 0 )
+            //         {
+            //             const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
+
+            //             sugarList.push_back(mmol[p][m]);
+            //             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
+            //         }
+            //         else
+            //         {
+            //             const clipper::MSugar msug(mmol, mmol[p][m], manb);
+
+            //             sugarList.push_back(mmol[p][m]);
+            //             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
+
+            //         }
+            //         for (int id = 0; id < mmol[p][m].size(); id++ )
+            //         {
+            //             ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+            //             allAtoms.push_back(mmol[p][m][id]);
+            //         }
+            //     }
+            // }
+        }
+    }
+
+    std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
+            std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
 }
 
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
@@ -311,6 +488,10 @@ void init_pyanalysis(py::module& m)
         .def("ok_with_conformation", &pa::CarbohydrateStructure::ok_with_conformation)
         .def("ok_with_puckering", &pa::CarbohydrateStructure::ok_with_puckering)
         .def("get_glycosylation_context", &pa::CarbohydrateStructure::get_glycosylation_context);
+
+    py::class_<pa::XRayData>(m, "XRayData")
+        .def(py::init<>())
+        .def(py::init<std::string&, std::string&, std::string&>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="undefined");
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////
