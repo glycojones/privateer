@@ -229,15 +229,20 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 
 void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    // auto dict = pybind11::dict ("GlycanID"_a=id, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane);
 
-    // this->sugar_type = ;
+    this->sugarSummary = dict;
 }
 
-
-
-
 ///////////////////////////////////////////////// Class CarbohydrateStructure END ////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////// Class XrayData ////////////////////////////////////////////////////////////////////
+
+void privateer::pyanalysis::XrayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file) {
+
+}
+
+///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
@@ -274,6 +279,7 @@ void init_pyanalysis(py::module& m)
         .def(py::init<>())
         .def(py::init<clipper::MGlycan&, const int, const int>())
         .def(py::self == py::self)
+        .def("get_sugar_summary", &pa::CarbohydrateStructure::get_sugar_summary)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
         .def("get_glycan_id", &pa::CarbohydrateStructure::get_glycan_id)
         .def("get_sugar_pdb_id", &pa::CarbohydrateStructure::get_sugar_pdb_id)

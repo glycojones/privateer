@@ -25,6 +25,8 @@ namespace privateer {
 
     class GlycanStructure;
     class CarbohydrateStructure;
+    class XrayData;
+    class CryoEMData;
 
     class GlycosylationComposition 
     {
@@ -33,6 +35,7 @@ namespace privateer {
         GlycosylationComposition(std::string& path_to_model_file, std::string expression_system) {
           this->read_from_file ( path_to_model_file, expression_system );
         };
+        // GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_model_file); // figure out how to differentiate between the over overloaded operator. 
         ~GlycosylationComposition() { };
         void read_from_file( std::string path_to_model_file, std::string expression_system );
         void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
@@ -105,6 +108,8 @@ namespace privateer {
 
         bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_pdb_chain == inputSugar.get_sugar_pdb_chain()); }
 
+        pybind11::dict get_sugar_summary( ) { return sugarSummary; };
+        
         int get_sugar_id( ) const { return sugarID; };
         int get_glycan_id( ) const { return glycanID; };
         int get_sugar_pdb_id() const { return sugar_pdb_id; };
@@ -141,6 +146,8 @@ namespace privateer {
       private:
         clipper::MSugar sugar;
         clipper::MGlycan parentGlycan;
+
+        pybind11::dict sugarSummary;
 
         int sugarID;
         int glycanID;
@@ -181,6 +188,24 @@ namespace privateer {
         bool sugar_occupancy_check; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
     };
+
+    class XrayData 
+    {
+      public:
+        XrayData() { };
+        XrayData(std::string& path_to_mtz_file, std::string& path_to_model_file) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file );
+        };
+        ~XrayData() { };
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file );
+        
+      private:
+        clipper::MiniMol mmol;
+        clipper::HKL_info hklinfo;
+        clipper::CCP4MTZfile mtzin;
+        clipper::String const input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user. 
+    };
+    
   }
 }
 

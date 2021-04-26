@@ -60,3 +60,11 @@ print("get_glycosylation_context() = " + sugar.get_glycosylation_context())
 sugars = glycan.get_all_monosaccharides()
 print("Sugars: " + str(sugars))
 print("len(sugars) = " + str(len(sugars)))
+
+sugarSummary = sugars[2].get_sugar_summary()
+
+print("\n")
+
+for key, value in sugarSummary.items():
+    print('{}: {}'.format(key, value))
+print("_______________________")
