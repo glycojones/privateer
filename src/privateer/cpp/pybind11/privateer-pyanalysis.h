@@ -195,7 +195,7 @@ namespace privateer {
       public:
         XRayData() { };
         XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs );
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user );
         };
         ~XRayData() { };
         void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user);

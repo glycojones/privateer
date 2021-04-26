@@ -274,6 +274,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
     fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
 
+    std::cout << "Value of input_column_fobs_user = " << input_column_fobs_user << std::endl;
+    std::cout << "Value of input_column_fobs = " << input_column_fobs << std::endl;
     privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, path_to_mtz_file_clipper);
 
     clipper::Atom_list mainAtoms;
@@ -491,7 +493,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, std::string&>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="undefined");
+        .def(py::init<std::string&, std::string&, std::string&>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE");
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////
