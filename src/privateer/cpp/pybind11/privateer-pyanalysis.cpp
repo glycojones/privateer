@@ -238,6 +238,8 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
+// Need to figure out how to implement thread pool, whether it can be implemented at all
+// privateer::pyanalysis::XRayData::read_from_file(pathmtz, pathpdb, input_column_fobs, nthreads)
 void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user) {
     
     if(path_to_model_file == "undefined" || path_to_model_file == "")
@@ -274,8 +276,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
     fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
 
-    std::cout << "Value of input_column_fobs_user = " << input_column_fobs_user << std::endl;
-    std::cout << "Value of input_column_fobs = " << input_column_fobs << std::endl;
     privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, path_to_mtz_file_clipper);
 
     clipper::Atom_list mainAtoms;
@@ -416,6 +416,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             // }
         }
     }
+
+
 
     std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
             std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;

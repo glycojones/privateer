@@ -6,7 +6,7 @@
 // The University of York
 
 
-
+#include <Python.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
@@ -21,6 +21,27 @@
 #define PRIVATEER_PYANALYSIS_H_INCLUDED
 
 namespace privateer {
+
+    // class GilManager
+    // {
+    //     public:
+    //         GilManager()
+    //         {
+    //             mThreadState = PyEval_SaveThread();
+    //         }
+
+    //         ~GilManager()
+    //         {
+    //             if (mThreadState)
+    //             PyEval_RestoreThread(mThreadState);
+    //         }
+
+    //         GilManager(const GilManager&) = delete;
+    //         GilManager& operator=(const GilManager&) = delete;
+    //     private:
+    //         PyThreadState* mThreadState;
+    // };
+
 
   namespace pyanalysis {
 
