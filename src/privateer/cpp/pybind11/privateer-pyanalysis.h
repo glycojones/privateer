@@ -15,6 +15,7 @@
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
 #include "privateer-xray.h"
+#include "privateer-parallelism.h"
 
 
 #ifndef PRIVATEER_PYANALYSIS_H_INCLUDED
@@ -215,23 +216,16 @@ namespace privateer {
     {
       public:
         XRayData() { };
-        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user );
+        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, int nThreads) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, nThreads);
         };
         ~XRayData() { };
-        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user);
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, int nThreads);
         
       private:
         clipper::MiniMol mmol;
-        clipper::HKL_info hklinfo;
-        clipper::CCP4MTZfile mtzin;
+        // clipper::HKL_info hklinfo;
         clipper::String input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user. 
-        clipper::Xmap<float> sigmaa_omit_fd;
-        clipper::Xmap<float> ligandmap; // equivalent to lignadmap in xray implementation
-        clipper::Xmap<float> mask;
-        clipper::Grid_sampling mygrid;
-        clipper::Coord_orth origin;
-        clipper::Coord_orth destination;
     };
     
   }

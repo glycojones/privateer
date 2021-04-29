@@ -82,6 +82,7 @@ namespace privateer
         int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
         void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
+        void print_monosaccharide_summary_python (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, clipper::HKL_info& hklinfo, clipper::String input_model);
     }
 
     namespace glycoplot

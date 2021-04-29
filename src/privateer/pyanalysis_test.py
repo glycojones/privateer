@@ -70,4 +70,4 @@ for key, value in sugarSummary.items():
     print('{}: {}'.format(key, value))
 print("_______________________")
 
-XRayData = pvt.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb")
+XRayData = pvt.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb", "NONE", -1)
