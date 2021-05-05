@@ -241,7 +241,7 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 // Need to figure out how to implement thread pool, whether it can be implemented at all
 // privateer::pyanalysis::XRayData::read_from_file(pathmtz, pathpdb, input_column_fobs, nthreads)
-void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, int nThreads) {
+void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads) {
 
     privateer::thread_pool pool(0);
 
@@ -249,9 +249,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     int detectedThreads = std::thread::hardware_concurrency();
     bool useParallelism = true;
     bool showGeom = false;
-    float ipradius = 2.5;
-
-    int pos_slash = path_to_model_file.rfind("/");
 
     
     if(nThreads < 0)
@@ -295,6 +292,11 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::CCP4MTZfile ampmtzin;
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
+    clipper::HKL_info hklinfo;
+
+    privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
+    int pos_slash = path_to_model_file.rfind("/");
+    privateer::xray::read_xray_map( path_to_mtz_file_clipper, path_to_model_file_clipper, mmol, hklinfo, mtzin );
 
     clipper::HKL_data<clipper::data32::F_sigF> fobs;            // allocate space for F and sigF
     clipper::HKL_data<clipper::data32::F_sigF> fobs_scaled;     // allocate space for scaled F and sigF
@@ -302,17 +304,16 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::HKL_data<clipper::data32::F_phi> fc_all_bsc;       // allocate space for the whole calculated data with bsc
     clipper::HKL_data<clipper::data32::F_phi> fc_ligands_bsc;    // allocate space for the ligand calculated data
 
-    clipper::HKL_info hklinfo;
-    privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
-    privateer::xray::read_xray_map( path_to_mtz_file_clipper, path_to_model_file_clipper, mmol, hklinfo, mtzin );
-
     fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
     fobs_scaled = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
     fc_omit_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
     fc_all_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
     fc_ligands_bsc = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
-
     privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, path_to_mtz_file_clipper);
+
+    std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
+    std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+    fobs_scaled = fobs;
 
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
@@ -329,127 +330,88 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     {
         for ( int m = 0; m < mmol[p].size(); m++ )
         {
-            // if (allSugars)
-            // {
-                if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+            if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+            {
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                clipper::String id = mmol[p].id();
+                id.resize(1);
+
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar()));
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
+
+                if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
                 {
-                    clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
-                    sugarList.push_back ( mmol[p][m] );
-                    sugarList.push_back ( mmol[p][m] );
-                    clipper::String id = mmol[p].id();
-                    id.resize(1);
-
-                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar()));
-                    ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
-
-                    if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
-                    {
-                        throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
-                    }
-
-                    for (int id = 0; id < mmol[p][m].size(); id++ )
-                    {
-                        ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
-                        allAtoms.push_back(mmol[p][m][id]);
-                    }
-
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
                 }
-                else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+
+                for (int id = 0; id < mmol[p][m].size(); id++ )
                 {
-                    for (int id = 0; id < mmol[p][m].size(); id++ )
-                    {
-                        mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
-                        allAtoms.push_back(mmol[p][m][id]);
-                    }
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
                 }
-                else // it's one of the sugars contained in the database
+
+            }
+            else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+            {
+                for (int id = 0; id < mmol[p][m].size(); id++ )
                 {
-                    clipper::MSugar msug, msug_b;
+                    mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
+            else // it's one of the sugars contained in the database
+            {
+                clipper::MSugar msug, msug_b;
 
-                    std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
+                std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                    // #if DUMP
-                    //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                    // #endif
+                // #if DUMP
+                //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                // #endif
 
-                    int n_conf = conformers.size();
+                int n_conf = conformers.size();
 
-                    if ( n_conf > 0 )
-                    {
-                        if ( n_conf == 1 )
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                        else
-                        {
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                            msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
-                        }
-
-                    }
+                if ( n_conf > 0 )
+                {
+                    if ( n_conf == 1 )
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
                     else
                     {
-                        msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
                     }
 
-                    sugarList.push_back(mmol[p][m]);
-                    clipper::String id = mmol[p].id();
-                    id.resize(1);
-
-                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
-                    // add both conformers if the current monomer contains more than one
-                    if ( n_conf == 2 )
-                    {
-                        ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
-                        sugarList.push_back(mmol[p][m]);
-                    }
-
-                    if ( msug.type_of_sugar() == "unsupported" )
-                    {
-                        throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
-                    }
-
-                    for (int id = 0; id < mmol[p][m].size(); id++ )
-                    {
-                        ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
-                        allAtoms.push_back(mmol[p][m][id]);
-                    }
+                }
+                else
+                {
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
                 }
 
-            // }
+                sugarList.push_back(mmol[p][m]);
+                clipper::String id = mmol[p].id();
+                id.resize(1);
 
-            // else
-            // {
-            //     if ( strncmp( mmol[p][m].type().c_str(), input_ccd_code.trim().c_str(), 3 )) // true if strings are different
-            //     {
-            //         for (int id = 0; id < mmol[p][m].size(); id++ )
-            //         {
-            //             mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
-            //             allAtoms.push_back(mmol[p][m][id]);
-            //         }
-            //     }
-            //     else // it's the one sugar we're looking to omit
-            //     {
-            //         if ( input_validation_options.size() > 0 )
-            //         {
-            //             const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
+                ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
+                // add both conformers if the current monomer contains more than one
+                if ( n_conf == 2 )
+                {
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                    sugarList.push_back(mmol[p][m]);
+                }
 
-            //             sugarList.push_back(mmol[p][m]);
-            //             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
-            //         }
-            //         else
-            //         {
-            //             const clipper::MSugar msug(mmol, mmol[p][m], manb);
+                if ( msug.type_of_sugar() == "unsupported" )
+                {
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                }
 
-            //             sugarList.push_back(mmol[p][m]);
-            //             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
-
-            //         }
-            //         for (int id = 0; id < mmol[p][m].size(); id++ )
-            //         {
-            //             ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
-            //             allAtoms.push_back(mmol[p][m][id]);
-            //         }
-            //     }
-            // }
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
         }
     }
 
@@ -636,11 +598,13 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     }
     else
     {
+        std::cout << "Before calculating sfw omit and sfw all" << std::endl;
         clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
         sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
 
         clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-        sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); 
+        sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
+        std::cout << "After calculating sfw omit and sfw all" << std::endl;
     }
     
     // fb:          output best map coefficients
@@ -1120,7 +1084,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, std::string&, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1);
+        .def(py::init<std::string&, std::string&, std::string&, float, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

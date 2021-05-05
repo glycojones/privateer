@@ -216,11 +216,11 @@ namespace privateer {
     {
       public:
         XRayData() { };
-        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, int nThreads) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, nThreads);
+        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads);
         };
         ~XRayData() { };
-        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, int nThreads);
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads);
         
       private:
         clipper::MiniMol mmol;
