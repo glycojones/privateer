@@ -23,27 +23,6 @@
 
 namespace privateer {
 
-    // class GilManager
-    // {
-    //     public:
-    //         GilManager()
-    //         {
-    //             mThreadState = PyEval_SaveThread();
-    //         }
-
-    //         ~GilManager()
-    //         {
-    //             if (mThreadState)
-    //             PyEval_RestoreThread(mThreadState);
-    //         }
-
-    //         GilManager(const GilManager&) = delete;
-    //         GilManager& operator=(const GilManager&) = delete;
-    //     private:
-    //         PyThreadState* mThreadState;
-    // };
-
-
   namespace pyanalysis {
 
     class GlycanStructure;
@@ -225,7 +204,10 @@ namespace privateer {
       private:
         clipper::MiniMol mmol;
         // clipper::HKL_info hklinfo;
-        clipper::String input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user. 
+        clipper::String input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user.
+        // pybind11::list of dicts - ccdCode, chainID, sugarID, pdbID, RSCC, accum
+        // Clipper functions to get descriptions of experimental data inputs that would help to judge quality.
+        // 
     };
     
   }

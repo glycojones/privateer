@@ -9,8 +9,9 @@
 
 using namespace pybind11::literals;
 
-#define DUMP 1
-#define DBG std::cout << "[" << __FUNCTION__ << "] - "
+// #define DUMP 1
+// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
 
 void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system ) {
@@ -239,8 +240,6 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
-// Need to figure out how to implement thread pool, whether it can be implemented at all
-// privateer::pyanalysis::XRayData::read_from_file(pathmtz, pathpdb, input_column_fobs, nthreads)
 void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads) {
 
     privateer::thread_pool pool(0);
@@ -312,7 +311,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     privateer::xray::initialize_experimental_dataset( mtzin, ampmtzin, input_column_fobs, fobs, hklinfo, opxtal, opdset, path_to_mtz_file_clipper);
 
     std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
-    std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+        std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
+
     fobs_scaled = fobs;
 
     clipper::Atom_list mainAtoms;
@@ -414,9 +414,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             }
         }
     }
-
-    std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
-            std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
 
     clipper::SFcalc_obs_bulk<float> sfcbligands;
     clipper::SFcalc_obs_bulk<float> sfcb;
@@ -582,7 +579,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             
             clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
             sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
-            std::cout << "Finished calculating sfw_omit!" << std::endl;
         });
 
         pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param](int id)
@@ -593,7 +589,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             
             clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
             sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
-            std::cout << "Finished calculating sfw_all!" << std::endl;
         });
     }
     else
@@ -626,7 +621,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
         {
-            std::cout << "syncing sfw_all and sfw_omit bits!" << std::endl;
             pool.sync();
         }
             
@@ -879,7 +873,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             #endif
 
-            std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         }
         #if DUMP
             std::cout << std::endl;
@@ -1006,9 +999,24 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             #endif
 
-            std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         }
         privateer::util::print_monosaccharide_summary_python (false, showGeom, pos_slash, false, ligandList, hklinfo, path_to_model_file_clipper);
+
+        //Needs to return a list of RSCC and accumm values. Maybe a pybind11::list of dicts - ccdCode, chainID, sugarID, pdbID, RSCC, accum - need a private method that acts like privateer::util::print_monosaccharide_summary_python, but creates this python object instead. 
+        // need to modify diagnostic function output for individual sugar
+        /*      if (ligandList[index].second.is_sane())
+                {
+                    if ( ! ligandList[index].second.ok_with_conformation () )
+                        printf("\tcheck");
+                    else
+                        printf("\tyes");
+                }
+                else
+                    printf ("\tno");
+        */
+       // Need to rethink how these classes are called, whether contain everything within GlycosylationComposition or make it spread out.
+       // If everything contained within GlycosylationComposition - Need to write update functions for GlycosylationComposition, GlycanStructure and CarbohydrateStructure class objects in terms of inputting XRayData or CryoEMData. That would update all classes that were called from the initial GlycosylationComposition.
+       //GlycanStructure.update_with_experimental_data(XRayData) etc. 
     }
 }
 
