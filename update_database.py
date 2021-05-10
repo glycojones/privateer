@@ -325,19 +325,21 @@ print(f"Finished downloading GlyTouCan data.")
 
 numFailedToMatch = 0
 
-jsonObjectNew = []
+jsonOutput = { "privateer_database": None}
+array_of_entries = []
 for count, line in enumerate(jsonObject):
     print(f'Currently processing: {line["AccessionNumber"]}\nProgress: {count} out of {len(jsonObject)}\t Progress - {int((count/len(jsonObject)*100))}%')
     glytoucanID = line['AccessionNumber']
     responseGlyConnect = return_response_from_glyconnect_api(glytoucanID)
     print("Current HTTP response: " + str(responseGlyConnect.status_code))
     if responseGlyConnect.status_code == 200:
-        line['glyconnect'] = responseGlyConnect.json()
+        tempjson = responseGlyConnect.json()
+        line['glyconnect'] = str(tempjson["id"])
     elif responseGlyConnect.status_code == 404: 
         line['glyconnect'] = "NotFound"
     elif responseGlyConnect.status_code == 500:
         if glytoucanID in glyconnectHTTP500Exceptions:
-            line['glyconnect'] = glyconnectHTTP500Exceptions[glytoucanID]
+            line['glyconnect'] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
         else:
             line['glyconnect'] = "Unable to match GlyTouCan ID in Glyconnect database as HTTP 500 error was returned, nor it is described in glyconnectHTTP500Exceptions dict. Please report this to hb1115@york.ac.uk"
             numFailedToMatch += 1
@@ -347,13 +349,15 @@ for count, line in enumerate(jsonObject):
         except requests.exceptions.HTTPError as e:
             line['glyconnect'] = "Error: " + str(e)
             numFailedToMatch += 1
-    jsonObjectNew.append(line)
+    array_of_entries.append(line)
 
 if os.path.exists(fullPath):
     os.remove(fullPath)
 
+jsonOutput["privateer_database"] = {"entries": array_of_entries}
+
 with open(fullPath, 'w', encoding='utf-8') as file:
-    json.dump(jsonObjectNew, file, ensure_ascii=False, indent=4)
+    json.dump(jsonOutput, file, ensure_ascii=False, indent=4)
 
 print(f"Finished downloading and appending GlyConnect data. \nAbsolute path of the output: {fullPath}")
 print(f"Failed to match {numFailedToMatch} GlyConnect IDs in GlyConnect database out of {len(jsonObject)}. Please CTRL + F for \"Unable\" in output file and modify the exception list if possible.")

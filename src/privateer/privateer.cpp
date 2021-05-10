@@ -18,6 +18,7 @@
 #include <tuple>
 #include <iostream>
 #include <iomanip>
+#include "privateer-json.h"
 #include "privateer-lib.h"
 #include "privateer-cryo_em.h"
 #include "privateer-xray.h"
@@ -83,6 +84,7 @@ int main(int argc, char** argv)
     clipper::String input_validation_string = "";
     std::vector<clipper::String> input_validation_options;
     clipper::data::sugar_database_entry external_validation;
+    std::vector<privateer::json::Database> glycomics_database;
     bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -114,7 +116,6 @@ int main(int argc, char** argv)
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
     clipper::MGlycology mgl;
-    nlohmann::json jsonObject;
     privateer::thread_pool pool(0);
 
 
@@ -472,7 +473,7 @@ int main(int argc, char** argv)
 
     if(useWURCSDataBase)
     {
-        privateer::util::read_json_file (ipwurcsjson, jsonObject);
+        glycomics_database = privateer::json::read_json_file(ipwurcsjson);
     }
 
     // Fast mode, no maps nor correlation calculations
@@ -523,7 +524,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1269,7 +1270,7 @@ int main(int argc, char** argv)
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                     if (useParallelism)
                     {
@@ -1349,7 +1350,7 @@ int main(int argc, char** argv)
             if(useWURCSDataBase)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, sleepTimer, pool, useParallelism);
 
                 if (useParallelism)
                 {
@@ -3224,7 +3225,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer has identified " << n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
 
-    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, jsonObject);
+    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, glycomics_database);
 
     
 
