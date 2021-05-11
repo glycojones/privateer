@@ -675,7 +675,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         of_xml << "     <GlycanPDB>"        << pdbname                                           << "</GlycanPDB>\n"                                         ;
         of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
         of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().first.type().trim() + list_of_glycans[i].get_root().first.id().trim() << "</GlycanRoot>\n" ;
-        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
+        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain().substr(0,1)         << "</GlycanChain>\n"                                      ;
         of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
         of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;

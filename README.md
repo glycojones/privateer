@@ -57,7 +57,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 3.) cd tmp
 
-4.) .././privateer -pdbin ../../../tests/test_data/5fjj.pdb -mtzin ../../../tests/test_data/5fjj.mtz -glytoucan -databasein ../../../src/privateer/database.json -debug_output -all_permutations
+4.) .././privateer -pdbin ../../../tests/test_data/5fjj.pdb -mtzin ../../../tests/test_data/5fjj.mtz -glytoucan -databasein ../../../src/privateer/privateer_database.json -debug_output -all_permutations
 
 Privateer's Python bindings(assuming that the virtualenv is not deactivated) can also be accessed via: 
 
