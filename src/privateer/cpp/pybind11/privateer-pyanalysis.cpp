@@ -33,6 +33,15 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
     this->mgl = clipper::MGlycology(mmol, expression_system);
 
     initialize_summary_of_detected_glycans(mgl);
+    
+    std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+    auto list = pybind11::list();
+    for(int i = 0; i < list_of_glycans.size(); i++)
+    {
+        auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this);
+        list.append(glycanObject);
+    }
+    this->glycans = list;
 }
 
 void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject )
@@ -71,15 +80,15 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
         throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of glycans detected in the model. \nInput: " + std::to_string(glycanID) + "\tPermitted Range: [0-" + std::to_string(numberOfGlycanChains - 1) + "]");
     }
 
-    auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, glycanID);
-    
+    auto glycanObject = glycans[glycanID].cast<privateer::pyanalysis::GlycanStructure>();
     return glycanObject;
 }
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// Class GlycanStructure ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& mgl, const int glycanID)
+void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition)
 {
+    this->parentGlycosylation = parentGlycosylationComposition;
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
     clipper::MGlycan inputGlycan = list_of_glycans[glycanID];
@@ -117,7 +126,7 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     auto list = pybind11::list();
     for(int i = 0; i < list_of_sugars.size(); i++)
     {
-        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(inputGlycan, i, glycanID);
+        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(inputGlycan, i, glycanID, parentGlycosylation, *this);
         list.append(sugarObject);
     }
     this->sugars = list;
@@ -139,16 +148,17 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
         throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of sugars detected in the glycan. \nInput: " + std::to_string(sugarID) + "\tPermitted Range: [0-" + std::to_string(numberOfSugars - 1) + "]");
     }
 
-    auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(glycan, sugarID, glycanID);
-    
+    auto sugarObject = sugars[sugarID].cast<privateer::pyanalysis::CarbohydrateStructure>();
     return sugarObject;
 }
 ///////////////////////////////////////////////// Class GlycanStructure END ////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////// Class CarbohydrateStructure  ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mglycan, const int sugarID, const int glycanID )
+void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure)
 {
+    this->parentGlycosylation = parentGlycosylationComposition;
+    this->parentGlycanStructure = parentGlycanStructure;
     // std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     std::vector<clipper::MSugar> list_of_sugars = mglycan.get_sugars();
 
@@ -177,6 +187,22 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugar_cremer_pople_params=sugar_cremer_pople_params;
 
     this->sugar_sane = inputSugar.is_sane();
+
+    std::string sugardiagnostic;
+    if(inputSugar.is_sane())
+    {
+        if(!inputSugar.ok_with_conformation())
+        {
+            sugardiagnostic = "check";
+        }
+        else
+            sugardiagnostic = "yes";
+    }
+    else
+        sugardiagnostic = "no";
+
+    this->privateer_diagnostic = sugardiagnostic;
+
     this->sugar_name_full = inputSugar.full_name();
     this->sugar_name_short = inputSugar.short_name();
     this->sugar_pdb_id = std::stoi(inputSugar.id());
@@ -285,6 +311,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::String input_column_fobs_clipper = input_column_fobs_user;
     this->input_column_fobs = input_column_fobs_clipper;
     clipper::String path_to_model_file_clipper = path_to_model_file;
+    this->path_to_model_file=path_to_model_file;
     clipper::String path_to_mtz_file_clipper = path_to_mtz_file;
     clipper::MMDBfile mfile;
     clipper::CCP4MTZfile mtzin;
@@ -313,6 +340,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
         std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
 
+    this->hklinfo = hklinfo;
     fobs_scaled = fobs;
 
     clipper::Atom_list mainAtoms;
@@ -887,8 +915,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         #if DUMP
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
         #endif
-        
-        privateer::util::print_monosaccharide_summary_python (false, showGeom, pos_slash, false, ligandList, hklinfo, path_to_model_file_clipper);
     }
     else
     {
@@ -1000,27 +1026,53 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             #endif
 
         }
-        privateer::util::print_monosaccharide_summary_python (false, showGeom, pos_slash, false, ligandList, hklinfo, path_to_model_file_clipper);
-
-        //Needs to return a list of RSCC and accumm values. Maybe a pybind11::list of dicts - ccdCode, chainID, sugarID, pdbID, RSCC, accum - need a private method that acts like privateer::util::print_monosaccharide_summary_python, but creates this python object instead. 
-        // need to modify diagnostic function output for individual sugar
-        /*      if (ligandList[index].second.is_sane())
-                {
-                    if ( ! ligandList[index].second.ok_with_conformation () )
-                        printf("\tcheck");
-                    else
-                        printf("\tyes");
-                }
-                else
-                    printf ("\tno");
-        */
-       // Need to rethink how these classes are called, whether contain everything within GlycosylationComposition or make it spread out.
-       // If everything contained within GlycosylationComposition - Need to write update functions for GlycosylationComposition, GlycanStructure and CarbohydrateStructure class objects in terms of inputting XRayData or CryoEMData. That would update all classes that were called from the initial GlycosylationComposition.
-       //GlycanStructure.update_with_experimental_data(XRayData) etc. 
     }
+
+        
+
+    this->finalLigandList = ligandList;
+    this->sugar_summary_of_experimental_data = generate_sugar_experimental_data_summary(finalLigandList);
 }
 
-///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
+// private methods //
+pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList)
+{
+    pybind11::list output; 
+
+    for(int index = 0; index < finalLigandList.size(); index++)
+    {
+        std::string ccdCode = finalLigandList[index].second.type().c_str();
+        std::string chainID = finalLigandList[index].first;
+        int sugarID = index;
+        int pdbID = std::stoi(finalLigandList[index].second.id().trim());
+        float RSCC = finalLigandList[index].second.get_rscc();
+        float accum = finalLigandList[index].second.get_accum();
+
+        std::string sugardiagnostic;
+        if(finalLigandList[index].second.is_sane())
+        {
+            if(!finalLigandList[index].second.ok_with_conformation())
+            {
+                sugardiagnostic = "check";
+            }
+            else
+                sugardiagnostic = "yes";
+        }
+        else
+            sugardiagnostic = "no";
+
+        auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic);
+        output.append(currentSugar);
+    }
+    return output;
+}
+// private methods end //
+
+//Needs to return a list of RSCC and accumm values. Maybe a pybind11::list of dicts - ccdCode, chainID, sugarID, pdbID, RSCC, accum. 
+//Need a private method that acts like privateer::util::print_monosaccharide_summary_python, but creates this python object instead. 
+
+
+///////////////////////////////////////////////// Class XrayData END ////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
@@ -1040,7 +1092,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
         .def(py::init<>())
-        .def(py::init<const clipper::MGlycology&, const int>())
+        .def(py::init<const clipper::MGlycology&, const int, privateer::pyanalysis::GlycosylationComposition&>())
         .def("get_glycan_id", &pa::GlycanStructure::get_glycan_id)
         .def("get_total_number_of_sugars", &pa::GlycanStructure::get_total_number_of_sugars)
         .def("get_wurcs_notation", &pa::GlycanStructure::get_wurcs_notation)
@@ -1055,7 +1107,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::CarbohydrateStructure>(m, "CarbohydrateStructure")
         .def(py::init<>())
-        .def(py::init<clipper::MGlycan&, const int, const int>())
+        .def(py::init<clipper::MGlycan&, const int, const int, privateer::pyanalysis::GlycosylationComposition&, privateer::pyanalysis::GlycanStructure&>())
         .def(py::self == py::self)
         .def("get_sugar_summary", &pa::CarbohydrateStructure::get_sugar_summary)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
@@ -1071,6 +1123,7 @@ void init_pyanalysis(py::module& m)
         .def("get_ring_cardinality", &pa::CarbohydrateStructure::get_ring_cardinality)
         .def("get_cremer_pople_params", &pa::CarbohydrateStructure::get_cremer_pople_params)
         .def("is_sane", &pa::CarbohydrateStructure::is_sane)
+        .def("get_privateer_diagnostic", &pa::CarbohydrateStructure::get_privateer_diagnostic)
         .def("get_name_full", &pa::CarbohydrateStructure::get_name_full)
         .def("get_name_short", &pa::CarbohydrateStructure::get_name_short)
         .def("get_type", &pa::CarbohydrateStructure::get_type)
@@ -1092,7 +1145,9 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, std::string&, float, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1);
+        .def(py::init<std::string&, std::string&, std::string&, float, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1)
+        .def("get_sugar_summary_with_experimental_data", &pa::XRayData::get_sugar_summary_with_experimental_data)
+        .def("print_cpp_console_output_summary", &pa::XRayData::print_cpp_console_output_summary);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

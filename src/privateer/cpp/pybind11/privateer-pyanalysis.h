@@ -55,17 +55,18 @@ namespace privateer {
         std::string expression_system;
         int numberOfGlycanChains;
         pybind11::list glycosylationSummary;
+        pybind11::list glycans;
     };
 
     class GlycanStructure 
     {
       public:
         GlycanStructure() { };
-        GlycanStructure(const clipper::MGlycology& mgl, const int glycanID){
-          this->pyinit ( mgl, glycanID );
+        GlycanStructure(const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition){
+          this->pyinit ( mgl, glycanID, parentGlycosylationComposition );
         };
         ~GlycanStructure() { };
-        void pyinit ( const clipper::MGlycology& mgl, const int glycanID);
+        void pyinit ( const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition);
         void initialize_summary_of_glycan();
 
         int get_glycan_id( ) const { return glycanID; };
@@ -82,6 +83,7 @@ namespace privateer {
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
       private:
+        privateer::pyanalysis::GlycosylationComposition parentGlycosylation;
         clipper::MGlycan glycan;
         std::vector<clipper::MSugar> sugars_in_glycan;
         
@@ -101,11 +103,11 @@ namespace privateer {
     {
       public:
         CarbohydrateStructure() { };
-        CarbohydrateStructure(clipper::MGlycan& mglycan, const int sugarID, const int glycanID){
-          this->pyinit ( mglycan, sugarID, glycanID );
+        CarbohydrateStructure(clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure){
+          this->pyinit ( mglycan, sugarID, glycanID, parentGlycosylationComposition, parentGlycanStructure );
         };
         ~CarbohydrateStructure() { };
-        void pyinit (clipper::MGlycan& mglycan, const int sugarID, const int glycanID);
+        void pyinit (clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure);
         void initialize_summary_of_sugar();
 
         bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_pdb_chain == inputSugar.get_sugar_pdb_chain()); }
@@ -126,6 +128,7 @@ namespace privateer {
         int get_ring_cardinality() { return sugar_ring_cardinality; };
         pybind11::list get_cremer_pople_params() { return sugar_cremer_pople_params; };
         bool is_sane() { return sugar_sane; };
+        std::string get_privateer_diagnostic() { return privateer_diagnostic; };
         std::string get_name_full() { return sugar_name_full; };
         std::string get_name_short() { return sugar_name_short; };
         std::string get_type() { return sugar_type; };
@@ -146,6 +149,8 @@ namespace privateer {
         std::string get_glycosylation_context() { return sugar_context; };
       
       private:
+        privateer::pyanalysis::GlycosylationComposition parentGlycosylation;
+        privateer::pyanalysis::GlycanStructure parentGlycanStructure;
         clipper::MSugar sugar;
         clipper::MGlycan parentGlycan;
 
@@ -168,6 +173,7 @@ namespace privateer {
         // const clipper::Vec3<ftype>& sugar_mean_plane; // leave this for future implementation.
         pybind11::list sugar_cremer_pople_params; // std::vector<ftype>
         bool sugar_sane;
+        std::string privateer_diagnostic;
         std::string sugar_name_full;
         std::string sugar_name_short;
         std::string sugar_type;
@@ -200,14 +206,30 @@ namespace privateer {
         };
         ~XRayData() { };
         void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads);
+        pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
+        void print_cpp_console_output_summary() 
+        { 
+          int pos_slash = path_to_model_file.rfind("/");
+          clipper::String path_to_model_file_clipper = path_to_model_file;
+          privateer::util::print_monosaccharide_summary_python (false, false, pos_slash, false, finalLigandList, hklinfo, path_to_model_file_clipper); 
+        };
         
       private:
+        std::string path_to_model_file;
         clipper::MiniMol mmol;
-        // clipper::HKL_info hklinfo;
-        clipper::String input_column_fobs; // need to convert user input std::string to clipper::string for internal functions not visible to user.
-        // pybind11::list of dicts - ccdCode, chainID, sugarID, pdbID, RSCC, accum
-        // Clipper functions to get descriptions of experimental data inputs that would help to judge quality.
-        // 
+        clipper::HKL_info hklinfo;
+        clipper::String input_column_fobs;
+        
+        std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList;
+        pybind11::list sugar_summary_of_experimental_data;
+
+        // private methods
+        pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
+
+        //Clipper functions to get descriptions of experimental data inputs that would help to judge quality.
+       // Need to rethink how these classes are called, whether contain everything within GlycosylationComposition or make it spread out.
+       // If everything contained within GlycosylationComposition - Need to write update functions for GlycosylationComposition, GlycanStructure and CarbohydrateStructure class objects in terms of inputting XRayData or CryoEMData. That would update all classes that were called from the initial GlycosylationComposition.
+       // GlycanStructure.update_with_experimental_data(XRayData) etc. 
     };
     
   }
