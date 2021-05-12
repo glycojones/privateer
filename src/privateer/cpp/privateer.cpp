@@ -782,6 +782,7 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
+                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
@@ -812,6 +813,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
+                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
                     fprintf ( output, "\t(l) ");
                 }
@@ -905,6 +907,7 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
+                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
@@ -934,6 +937,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
+                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
                     std::cout << "\t(l) ";
                 }
@@ -2020,6 +2024,7 @@ int main(int argc, char** argv)
                         {
                             if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                             {
+                                ligandList[index].second.set_glycan_index(i);
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "n-glycan" );
@@ -2045,6 +2050,7 @@ int main(int argc, char** argv)
 
                     if ( !found_in_tree )
                     {
+                        ligandList[index].second.set_glycan_index(-1);
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
@@ -2154,6 +2160,7 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
+                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
@@ -2179,6 +2186,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
+                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
@@ -2762,6 +2770,7 @@ int main(int argc, char** argv)
                         {
                             if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                             {
+                                ligandList[index].second.set_glycan_index(i);
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "n-glycan" );
@@ -2787,6 +2796,7 @@ int main(int argc, char** argv)
 
                     if ( !found_in_tree )
                     {
+                        ligandList[index].second.set_glycan_index(-1);
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
@@ -2892,6 +2902,7 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
+                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
@@ -2917,6 +2928,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
+                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
                 }
 

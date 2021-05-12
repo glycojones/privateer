@@ -56,7 +56,7 @@ print("ok_with_anomer() = " + str(sugar.ok_with_anomer()))
 print("ok_with_chirality() = " + str(sugar.ok_with_chirality()))
 print("ok_with_conformation() = " + str(sugar.ok_with_conformation()))
 print("ok_with_puckering() = " + str(sugar.ok_with_puckering()))
-print("get_glycosylation_context() = " + sugar.get_glycosylation_context())
+print("get_glycosylation_type() = " + sugar.get_glycosylation_type())
 
 sugars = glycan.get_all_monosaccharides()
 print("Sugars: " + str(sugars))
@@ -81,3 +81,13 @@ for entry in experimentaldata:
     print("_______________________")
 
 XRayData.print_cpp_console_output_summary()
+
+
+glycosylation.update_with_experimental_data(XRayData)
+status = glycosylation.check_if_updated_with_experimental_data()
+print(f'Glycosylation object updated with experimental data: {status}')
+glycanUpdated = glycosylation.get_glycan(2)
+sugarUpdated = glycanUpdated.get_monosaccharide(1)
+print("get_sugar_rscc() = " + str(sugarUpdated.get_sugar_rscc()))
+print("get_sugar_accum() = " + str(sugarUpdated.get_sugar_accum()))
+print("get_sugar_occupancy_check() = " + str(sugarUpdated.get_sugar_occupancy_check()))

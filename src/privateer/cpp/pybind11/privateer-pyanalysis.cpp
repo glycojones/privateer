@@ -32,7 +32,6 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     this->mgl = clipper::MGlycology(mmol, expression_system);
 
-    initialize_summary_of_detected_glycans(mgl);
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     auto list = pybind11::list();
@@ -42,31 +41,29 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
         list.append(glycanObject);
     }
     this->glycans = list;
+
+    this->updatedWithExperimentalData = false;
+    
+    initialize_summary_of_detected_glycans();
 }
 
-void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject )
+void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_detected_glycans()
 {
-    std::vector<clipper::MGlycan> list_of_glycans = mglObject.get_list_of_glycans();
 
-    this->numberOfGlycanChains = list_of_glycans.size();
+    this->numberOfGlycanChains = glycans.size();
 
     auto list = pybind11::list();
-    for(int i = 0; i < list_of_glycans.size(); i++)
+    for(int glycanID = 0; glycanID < glycans.size(); glycanID++)
     {
-        std::string wurcsNotation = list_of_glycans[i].generate_wurcs();
-        std::string kindOfGlycan = list_of_glycans[i].get_type();
+        auto glycanObject = glycans[glycanID].cast<privateer::pyanalysis::GlycanStructure>();
+        std::string wurcsNotation = glycanObject.get_wurcs_notation();
+        std::string kindOfGlycan = glycanObject.get_glycosylation_type();
         
-        list_of_glycans[i].get_root_by_name();
-        std::string proteinResidue = list_of_glycans[i].get_root().first.type().trim();
-        std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
-        std::string proteinChainID = list_of_glycans[i].get_chain().substr(0,1);
-
-        auto rootSummary = pybind11::dict ("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=std::stoi(proteinResidueID), "ProteinChainID"_a=proteinChainID);
+        auto rootSummary = glycanObject.get_root_info();
         
-        std::vector<float> torsions = list_of_glycans[i].get_glycosylation_torsions();
-        auto protein_glycan_linkage_torsion = pybind11::dict ("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
+        auto protein_glycan_linkage_torsion = glycanObject.get_protein_glycan_linkage_torsions();
         
-        auto dict = pybind11::dict ("GlycanID"_a=i, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+        auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
         list.append(dict);
     }
     this->glycosylationSummary = list;
@@ -82,6 +79,12 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
 
     auto glycanObject = glycans[glycanID].cast<privateer::pyanalysis::GlycanStructure>();
     return glycanObject;
+}
+
+void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data)
+{
+    // zodziu padaryk taip, kad vel callintum constructoriu nuo top down approach, kazkaip per visa tai passindamas std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList;
+    // kad ans pasiektu iki CarbohydrateStructure lygio ir taip uzupdeitintu viska. 
 }
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
@@ -855,6 +858,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
+                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
@@ -880,6 +884,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
                 if ( !found_in_tree )
                 {
+                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
@@ -980,6 +985,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 {
                     if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                     {
+                        ligandList[index].second.set_glycan_index(i);
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
                         {
                             ligandList[index].second.set_context ( "n-glycan" );
@@ -1005,6 +1011,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
             if ( !found_in_tree )
             {
+                ligandList[index].second.set_glycan_index(-1);
                 ligandList[index].second.set_context ( "ligand" );
             }
 
@@ -1047,6 +1054,7 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
         int pdbID = std::stoi(finalLigandList[index].second.id().trim());
         float RSCC = finalLigandList[index].second.get_rscc();
         float accum = finalLigandList[index].second.get_accum();
+        bool occupancy_check = finalLigandList[index].second.get_occupancy_check();
 
         std::string sugardiagnostic;
         if(finalLigandList[index].second.is_sane())
@@ -1061,7 +1069,7 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
         else
             sugardiagnostic = "no";
 
-        auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic);
+        auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic, "occupancy_check_required"_a=occupancy_check);
         output.append(currentSugar);
     }
     return output;
@@ -1088,7 +1096,9 @@ void init_pyanalysis(py::module& m)
         .def("get_expression_system_used",  &pa::GlycosylationComposition::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition::get_summary_of_detected_glycans)
-        .def("get_glycan",  &pa::GlycosylationComposition::get_glycan);
+        .def("get_glycan",  &pa::GlycosylationComposition::get_glycan)
+        .def("update_with_experimental_data",  &pa::GlycosylationComposition::update_with_experimental_data)
+        .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
         .def(py::init<>())
@@ -1141,7 +1151,10 @@ void init_pyanalysis(py::module& m)
         .def("ok_with_chirality", &pa::CarbohydrateStructure::ok_with_chirality)
         .def("ok_with_conformation", &pa::CarbohydrateStructure::ok_with_conformation)
         .def("ok_with_puckering", &pa::CarbohydrateStructure::ok_with_puckering)
-        .def("get_glycosylation_context", &pa::CarbohydrateStructure::get_glycosylation_context);
+        .def("get_sugar_rscc", &pa::CarbohydrateStructure::get_sugar_rscc)
+        .def("get_sugar_accum", &pa::CarbohydrateStructure::get_sugar_accum)
+        .def("get_sugar_occupancy_check", &pa::CarbohydrateStructure::get_sugar_occupancy_check)
+        .def("get_glycosylation_type", &pa::CarbohydrateStructure::get_glycosylation_context);
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())

@@ -267,6 +267,10 @@ namespace clipper
 
             void set_context ( clipper::String context ) { this->sugar_context = context; }
 
+            const int get_glycan_index () const { return glycan_index; }
+
+            void set_glycan_index ( int input_glycan_index ) { this->glycan_index = input_glycan_index ;}
+
         private:
 
             typedef std::vector< std::pair< clipper::MAtom, clipper::MAtom > > visited_arcs;
@@ -341,6 +345,7 @@ namespace clipper
             clipper::String                 sugar_alternate_confcode;
             std::vector < MSugar >          sugar_linked_to;                    // size: number of carbon atoms - 1
             clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
+            int                             glycan_index;
 
             // private methods
 
