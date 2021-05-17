@@ -52,15 +52,20 @@ namespace privateer {
         
         GlycanStructure get_glycan(const int id);
 
+        pybind11::list get_ligands() { return ligands; };
+
         void update_with_experimental_data (privateer::pyanalysis::XRayData& xray_data);
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
         clipper::MGlycology mgl;
+        std::vector<std::pair<clipper::String, clipper::MSugar>> ligandList;
+        std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
         std::string path_to_model_file;
         std::string expression_system;
         int numberOfGlycanChains;
         pybind11::list glycosylationSummary;
         pybind11::list glycans;
+        pybind11::list ligands;
 
         bool updatedWithExperimentalData;
     };
@@ -70,9 +75,11 @@ namespace privateer {
       public:
         GlycanStructure() { };
         GlycanStructure(const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition){
+          this->updatedWithExperimentalData = false;
           this->pyinit ( mgl, glycanID, parentGlycosylationComposition );
         };
         GlycanStructure(const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, std::vector<std::pair< clipper::String , clipper::MSugar> >& finalLigandList){
+          this->updatedWithExperimentalData = true;
           this->pyinitWithExperimentalData ( mgl, glycanID, parentGlycosylationComposition, finalLigandList );
         };
         ~GlycanStructure() { };
@@ -93,6 +100,8 @@ namespace privateer {
 
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
+
+        bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
         privateer::pyanalysis::GlycosylationComposition parentGlycosylation;
         clipper::MGlycan glycan;
@@ -108,6 +117,8 @@ namespace privateer {
         pybind11::dict protein_glycan_linkage_torsion;
         pybind11::dict glycanSummary;
         pybind11::list sugars;
+
+        bool updatedWithExperimentalData;
     };
   
     class CarbohydrateStructure 
@@ -115,14 +126,24 @@ namespace privateer {
       public:
         CarbohydrateStructure() { };
         CarbohydrateStructure(clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure){
+          this->updatedWithExperimentalData = false;
           this->pyinit ( mglycan, sugarID, glycanID, parentGlycosylationComposition, parentGlycanStructure );
         };
         CarbohydrateStructure(clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure, std::vector<clipper::MSugar>& list_of_sugars){
+          this->updatedWithExperimentalData = true;
           this->pyinitWithExperimentalData ( mglycan, sugarID, glycanID, parentGlycosylationComposition, parentGlycanStructure, list_of_sugars );
         };
+        // bool updatedWithExperimentalData
+        CarbohydrateStructure(const int sugarID, std::vector<std::pair<clipper::String, clipper::MSugar>>& inputSugarList, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, bool updatedWithExperimentalData){
+          this->updatedWithExperimentalData = updatedWithExperimentalData;
+          this->pyinitLigand( sugarID, inputSugarList, parentGlycosylationComposition );
+        };
         ~CarbohydrateStructure() { };
+        
         void pyinit (clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure);
+        void pyinitLigand ( const int sugarID, std::vector<std::pair<clipper::String, clipper::MSugar>>& inputSugarList, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition);
         void pyinitWithExperimentalData (clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure, std::vector<clipper::MSugar>& list_of_sugars);
+
         void initialize_summary_of_sugar();
 
         bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_pdb_chain == inputSugar.get_sugar_pdb_chain()); }
@@ -169,6 +190,8 @@ namespace privateer {
         void set_sugar_rscc(float input_sugar_rscc) { sugar_rscc = input_sugar_rscc; };
         void set_sugar_accum(float input_sugar_accum) { sugar_accum = input_sugar_accum; };
         void set_sugar_occupancy_check(bool input_sugar_occupancy_check) { sugar_occupancy_check = input_sugar_occupancy_check; };
+
+        bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
         privateer::pyanalysis::GlycosylationComposition parentGlycosylation;
         privateer::pyanalysis::GlycanStructure parentGlycanStructure;
@@ -212,10 +235,12 @@ namespace privateer {
         bool sugar_diag_chirality;
         bool sugar_diag_conformation;
         bool sugar_diag_puckering;
-        float sugar_rscc; // need to develop setter method as in privateer.cpp
-        float sugar_accum; // need to develop setter method as in privateer.cpp
-        bool sugar_occupancy_check; // need to develop setter method as in privateer.cpp
+        float sugar_rscc = -1; // need to develop setter method as in privateer.cpp
+        float sugar_accum = -1; // need to develop setter method as in privateer.cpp
+        bool sugar_occupancy_check = false; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
+
+        bool updatedWithExperimentalData;
     };
 
     class XRayData 
@@ -228,6 +253,7 @@ namespace privateer {
         ~XRayData() { };
         void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads);
         pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
+        pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
         void print_cpp_console_output_summary() 
         { 
           int pos_slash = path_to_model_file.rfind("/");
@@ -237,6 +263,7 @@ namespace privateer {
         
 
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandList() { return finalLigandList; } // only c++
+        std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandOnly() { return final_LigandsOnly; } // only c++
       private:
         std::string path_to_model_file;
         clipper::MiniMol mmol;
@@ -244,7 +271,9 @@ namespace privateer {
         clipper::String input_column_fobs;
         
         std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList;
+        std::vector<std::pair<clipper::String, clipper::MSugar>> final_LigandsOnly;
         pybind11::list sugar_summary_of_experimental_data;
+        pybind11::list ligand_summary_of_experimental_data;
 
         // private methods
         pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);

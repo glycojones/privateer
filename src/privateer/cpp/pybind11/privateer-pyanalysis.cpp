@@ -34,15 +34,223 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
-    auto list = pybind11::list();
+
+    clipper::Atom_list mainAtoms;
+    clipper::Atom_list ligandAtoms;
+    clipper::Atom_list allAtoms;
+
+    std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
+    std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
+
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
+
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
+
+    for ( int p = 0; p < mmol.size(); p++ )
+    {
+        for ( int m = 0; m < mmol[p].size(); m++ )
+        {
+            if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+            {
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                clipper::String id = mmol[p].id();
+                id.resize(1);
+
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar()));
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
+
+                if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
+                {
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                }
+
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+
+            }
+            else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+            {
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
+            else // it's one of the sugars contained in the database
+            {
+                clipper::MSugar msug, msug_b;
+
+                std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
+
+                // #if DUMP
+                //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                // #endif
+
+                int n_conf = conformers.size();
+
+                if ( n_conf > 0 )
+                {
+                    if ( n_conf == 1 )
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                    else
+                    {
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                    }
+
+                }
+                else
+                {
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                }
+
+                sugarList.push_back(mmol[p][m]);
+                clipper::String id = mmol[p].id();
+                id.resize(1);
+
+                ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
+                // add both conformers if the current monomer contains more than one
+                if ( n_conf == 2 )
+                {
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                    sugarList.push_back(mmol[p][m]);
+                }
+
+                if ( msug.type_of_sugar() == "unsupported" )
+                {
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                }
+
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
+        }
+    }
+
+    std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
+    int processedMonomers = 0;
+    for (int index = 0; index < ligandList.size(); index++)
+    {
+        float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+        x=y=z=0.0;
+        maxX=maxY=maxZ=-999999.0;
+        minX=minY=minZ=999999.0;
+
+        for (int natom = 0; natom < sugarList[index].size(); natom++)
+        {
+            if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+            if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+            if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+            if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+            if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+            if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+        }
+
+        x = minX + ((maxX - minX)/2);
+        y = minY + ((maxY - minY)/2);
+        z = minZ + ((maxZ - minZ)/2);
+
+        ligandList[index].second.set_rscc ( -1 );
+        ligandList[index].second.set_accum_score ( -1 );
+        // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
+
+        bool found_in_tree = false;
+        for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+        {
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+            for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+            {
+                if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                {
+                    if ( list_of_glycans[i].get_type() == "n-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "n-glycan" );
+                        
+                    }
+                    else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "c-glycan" );
+                        
+                    }
+                    else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "o-glycan" );
+                        
+                    }
+                    else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                    {
+                        ligandList[index].second.set_context ( "s-glycan" );
+                        
+                    }
+                    found_in_tree = true;
+                    break;
+                }
+            }
+            if ( found_in_tree ) break;
+        }
+
+        if ( !found_in_tree )
+        {
+            ligandList[index].second.set_context ( "ligand" );
+            ligandsOnly.push_back(ligandList[index]);
+        }
+
+    
+        bool occupancy_check = false;
+        std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+        for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+            if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                occupancy_check = true;
+
+        ligandList[index].second.set_occupancy_check ( occupancy_check );
+
+        processedMonomers++;
+
+        #if DUMP
+            std::cout << std::endl;
+            DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+        #endif
+    }
+
+    this->updatedWithExperimentalData = false;
+    this->ligandList = ligandList;
+    this->ligandsOnly = ligandsOnly;
+
+    if(!ligandsOnly.empty())
+    {
+        auto list = pybind11::list();
+    }
+
+    auto glycanList = pybind11::list();
     for(int i = 0; i < list_of_glycans.size(); i++)
     {
         auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this);
-        list.append(glycanObject);
+        glycanList.append(glycanObject);
     }
-    this->glycans = list;
+    this->glycans = glycanList;
 
-    this->updatedWithExperimentalData = false;
+    auto ligandPyList = pybind11::list();
+    if(!ligandsOnly.empty())
+    {
+        for(int i = 0; i < ligandsOnly.size(); i++)
+        {
+            // bool updatedWithExperimentalData
+            auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(i, ligandsOnly, *this, updatedWithExperimentalData);
+            ligandPyList.append(sugarObject);
+        }
+    }
+    this->glycans = glycanList;
+    this->ligands = ligandPyList;
     
     initialize_summary_of_detected_glycans();
 }
@@ -63,7 +271,7 @@ void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_dete
         
         auto protein_glycan_linkage_torsion = glycanObject.get_protein_glycan_linkage_torsions();
         
-        auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+        auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData);
         list.append(dict);
     }
     this->glycosylationSummary = list;
@@ -83,18 +291,29 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
 
 void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data)
 {
-    
+    this->updatedWithExperimentalData = true;
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList = xray_data.get_finalLigandList();
-    auto list = pybind11::list();
+    std::vector<std::pair< clipper::String , clipper::MSugar> > ligandsOnly = xray_data.get_finalLigandOnly();
+    auto glycanList = pybind11::list();
     for(int i = 0; i < list_of_glycans.size(); i++)
     {
         auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this, finalLigandList);
-        list.append(glycanObject);
+        glycanList.append(glycanObject);
     }
-    this->glycans = list;
+    this->glycans = glycanList;
 
-    this->updatedWithExperimentalData = true;
+    auto ligandPyList = pybind11::list();
+    if(!ligandsOnly.empty())
+    {
+        for(int i = 0; i < ligandsOnly.size(); i++)
+        {
+            auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(i, ligandsOnly, *this, updatedWithExperimentalData);
+            ligandPyList.append(sugarObject);
+        }
+    }
+    this->ligands = ligandPyList;
+
     
     initialize_summary_of_detected_glycans();
 }
@@ -190,57 +409,25 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     {
         for(int k = 0; k < finalLigandList.size(); k++)
         {
-            // if(inputGlycan.get_chain().substr(0,1) == "F" || finalLigandList[k].first == "F")
-            // {
-            //     std::cout << "finalLigandList[" << k << "].first = " << finalLigandList[k].first << "\tinputGlycan.get_chain().substr(0,1) = " << inputGlycan.get_chain().substr(0,1) << std::endl;
-            //     std::cout << "finalLigandList[" << k << "].second.get_glycan_index() = " << finalLigandList[k].second.get_glycan_index() << "\tglycanID = " << glycanID << std::endl;
-            //     std::cout << "finalLigandList[" << k << "].second.id() = " << finalLigandList[k].second.id() << "\tlist_of_sugars_original[" << i << "].id()" << list_of_sugars_original[i].id() << std::endl;
-            // }
-
-            // if(finalLigandList[k].first == inputGlycan.get_chain().substr(0,1) && finalLigandList[k].second.get_glycan_index() == glycanID && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim())
-            if(finalLigandList[k].first == inputGlycan.get_chain().substr(0,1) && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim())
-            {   
-                // std::cout << "TRUE: " << "finalLigandList[" << k << "].first = " << finalLigandList[k].first << "\tinputGlycan.get_chain().substr(0,1) = " << inputGlycan.get_chain().substr(0,1) << std::endl;
-                // std::cout << "TRUE: " << "finalLigandList[" << k << "].second.get_glycan_index() = " << finalLigandList[k].second.get_glycan_index() << "\tglycanID = " << glycanID << std::endl;
-                // std::cout << "TRUE: " << "finalLigandList[" << k << "].second.id() = " << finalLigandList[k].second.id() << "\tlist_of_sugars_original[" << i << "].id()" << list_of_sugars_original[i].id() << std::endl;
-                // std::cout << "True Statement activated!" << std::endl;
+            if(finalLigandList[k].first == inputGlycan.get_chain().substr(0,1) && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name())
                 list_of_sugars_modified.push_back(finalLigandList[k].second);
-            }
         }
     }
-    // for(int i = 0; i < finalLigandList.size(); i++)
-    // {
 
-    //     if(finalLigandList[i].first == inputGlycan.get_chain().substr(0,1) && finalLigandList[i].second.get_glycan_index() == glycanID)
-    //         list_of_sugars_modified.push_back(finalLigandList[i].second);
-    // }
-
-    if(list_of_sugars_modified.size() != list_of_sugars_original.size())
+    
+    while(list_of_sugars_modified.size() > list_of_sugars_original.size())
     {
-        std::cout << "list_of_sugars_modified.size() = " << list_of_sugars_modified.size() << "\tlist_of_sugars_original.size() = " << list_of_sugars_original.size() << std::endl;
-        std::cout << "There is a mismatch in size between the list of sugars that have been obtained via XRayData vs no XRayData... sugars could be missing." << std::endl;
-    }
-        
-    std::cout << "list_of_sugars_modified.size() " << list_of_sugars_modified.size() << "\tlist_of_sugars_original.size()" << list_of_sugars_original.size() << std::endl;
-    for(int i = 0; i < list_of_sugars_modified.size(); i++)
-    {
-        if(list_of_sugars_modified[i] == list_of_sugars_original[i])
+        for(int i = 0; i < list_of_sugars_modified.size(); i++)
         {
-            continue;
-        }
-        else
-        {
-            std::cout << "There is a mismatch in sugar vector indices!" << std::endl;
-            for(int k = 0; k < list_of_sugars_original.size(); k++)
+            clipper::String currentSugarPDBID = list_of_sugars_modified[i].id().trim();
+            for(int k = i+1; k < list_of_sugars_modified.size(); k++)
             {
-                if(list_of_sugars_original[k] == list_of_sugars_modified[i])
-                {
-                    std::swap(list_of_sugars_modified[i], list_of_sugars_modified[k]);
-                }
+                if(currentSugarPDBID == list_of_sugars_modified[k].id().trim())
+                    list_of_sugars_modified.erase(list_of_sugars_modified.begin() + k);
             }
         }
     }
-
+    
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
@@ -254,7 +441,7 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
 
 void privateer::pyanalysis::GlycanStructure::initialize_summary_of_glycan( )
 {
-    auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
+    auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=glycanWURCS, "UniqueMonosaccharides"_a=uniqueMonosaccharides, "TotalSugars"_a=numberOfSugars, "NumberOfGlycosidicBonds"_a=numberOfGlycosidicBonds, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData);
 
     this->glycanSummary = dict;
 }
@@ -370,6 +557,102 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     initialize_summary_of_sugar();
 }
 
+void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugarID, std::vector<std::pair<clipper::String, clipper::MSugar>>& inputSugarList, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition )
+{
+    this->parentGlycosylation = parentGlycosylationComposition;
+    
+    std::pair<clipper::String, clipper::MSugar> inputSugar = inputSugarList[sugarID];
+    this->parentGlycan = clipper::MGlycan();
+    this->sugar = inputSugar.second;
+    this->sugarID = sugarID;
+    this->glycanID = -1;
+    this->sugar_conformation_code = inputSugar.second.conformation_code();
+    this->sugar_conformation_name = clipper::data::conformational_landscape[sugar_conformation_code];
+    this->sugar_conformation_name_iupac = clipper::data::iupac_conformational_landscape[sugar_conformation_code];
+    this->sugar_puckering_amplitude = inputSugar.second.puckering_amplitude();
+    this->sugar_anomer = inputSugar.second.anomer();
+    this->sugar_handedness = inputSugar.second.handedness();
+    this->sugar_denomination = inputSugar.second.type_of_sugar();
+    this->sugar_ring_cardinality = inputSugar.second.ring_cardinality();
+
+    std::vector<clipper::ftype> cremer_pople_params_vector = inputSugar.second.cremer_pople_params();
+    auto sugar_cremer_pople_params = pybind11::list();
+    for(int i = 0; i < cremer_pople_params_vector.size(); i++)
+    {
+        float currentParam = cremer_pople_params_vector[i];
+        sugar_cremer_pople_params.append(currentParam);
+    }
+    this->sugar_cremer_pople_params=sugar_cremer_pople_params;
+
+    this->sugar_sane = inputSugar.second.is_sane();
+
+    std::string sugardiagnostic;
+    if(inputSugar.second.is_sane())
+    {
+        if(!inputSugar.second.ok_with_conformation())
+        {
+            sugardiagnostic = "check";
+        }
+        else
+            sugardiagnostic = "yes";
+    }
+    else
+        sugardiagnostic = "no";
+
+    this->privateer_diagnostic = sugardiagnostic;
+
+    this->sugar_name_full = inputSugar.second.full_name();
+    this->sugar_name_short = inputSugar.second.short_name();
+    this->sugar_pdb_id = std::stoi(inputSugar.second.id());
+    this->sugar_pdb_chain = inputSugar.first;
+    this->sugar_type = inputSugar.second.full_type();
+
+    std::vector<clipper::ftype> sugar_ring_angles_vector = inputSugar.second.ring_angles();
+    auto sugar_ring_angles = pybind11::list();
+    for(int i = 0; i < sugar_ring_angles_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_angles_vector[i];
+        sugar_ring_angles.append(currentParam);
+    }
+    this->sugar_ring_angles=sugar_ring_angles;
+
+    std::vector<clipper::ftype> sugar_ring_bonds_vector = inputSugar.second.ring_bonds();
+    auto sugar_ring_bonds = pybind11::list();
+    for(int i = 0; i < sugar_ring_bonds_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_bonds_vector[i];
+        sugar_ring_bonds.append(currentParam);
+    }
+    this->sugar_ring_bonds=sugar_ring_bonds;
+
+    std::vector<clipper::ftype> sugar_ring_torsions_vector = inputSugar.second.ring_torsions();
+    auto sugar_ring_torsion = pybind11::list();
+    for(int i = 0; i < sugar_ring_torsions_vector.size(); i++)
+    {
+        float currentParam = sugar_ring_torsions_vector[i];
+        sugar_ring_torsion.append(currentParam);
+    }
+    this->sugar_ring_torsion=sugar_ring_torsion;
+
+    this->sugar_ring_bond_rmsd=inputSugar.second.ring_bond_rmsd();
+    this->sugar_ring_angle_rmsd=inputSugar.second.ring_angle_rmsd();
+    this->sugar_bfactor=inputSugar.second.get_bfactor();
+    this->sugar_supported=inputSugar.second.is_supported();
+    this->sugar_diag_ring=inputSugar.second.ok_with_ring();
+    this->sugar_diag_bonds_rmsd=inputSugar.second.ok_with_bonds_rmsd();
+    this->sugar_diag_angles_rmsd=inputSugar.second.ok_with_angles_rmsd();
+    this->sugar_diag_anomer=inputSugar.second.ok_with_anomer();
+    this->sugar_diag_chirality=inputSugar.second.ok_with_chirality();
+    this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
+    this->sugar_diag_puckering=inputSugar.second.ok_with_puckering();
+    this->sugar_rscc=inputSugar.second.get_rscc();
+    this->sugar_accum=inputSugar.second.get_accum();
+    this->sugar_occupancy_check=inputSugar.second.get_occupancy_check();
+    this->sugar_context=inputSugar.second.get_context();
+
+    initialize_summary_of_sugar();
+}
+
 void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( clipper::MGlycan& mglycan, const int sugarID, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, privateer::pyanalysis::GlycanStructure& parentGlycanStructure, std::vector<clipper::MSugar>& list_of_sugars)
 {
     this->parentGlycosylation = parentGlycosylationComposition;
@@ -471,7 +754,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
 void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane);
+    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check);
 
     this->sugarSummary = dict;
 }
@@ -557,6 +840,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     this->hklinfo = hklinfo;
     fobs_scaled = fobs;
 
+    std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
@@ -835,13 +1119,11 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     }
     else
     {
-        std::cout << "Before calculating sfw omit and sfw all" << std::endl;
         clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
         sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
 
         clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
         sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
-        std::cout << "After calculating sfw omit and sfw all" << std::endl;
     }
     
     // fb:          output best map coefficients
@@ -1005,7 +1287,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             if(pool.n_idle() == 0)
                 pool.greedy_sync();
 
-            pool.push([&sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa](int id)
+            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa](int id)
             { 
                 #if DUMP
                     std::cout << std::endl;
@@ -1069,22 +1351,25 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
-                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
+                                
                             }
                             found_in_tree = true;
                             break;
@@ -1095,8 +1380,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
                 if ( !found_in_tree )
                 {
-                    ligandList[index].second.set_glycan_index(-1);
                     ligandList[index].second.set_context ( "ligand" );
+                    ligandsOnly.push_back(ligandList[index]);
                 }
 
 
@@ -1196,22 +1481,25 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 {
                     if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                     {
-                        ligandList[index].second.set_glycan_index(i);
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
                         {
                             ligandList[index].second.set_context ( "n-glycan" );
+                            
                         }
                         else if ( list_of_glycans[i].get_type() == "c-glycan" )
                         {
                             ligandList[index].second.set_context ( "c-glycan" );
+                            
                         }
                         else if ( list_of_glycans[i].get_type() == "o-glycan" )
                         {
                             ligandList[index].second.set_context ( "o-glycan" );
+                            
                         }
                         else if ( list_of_glycans[i].get_type() == "s-glycan" )
                         {
                             ligandList[index].second.set_context ( "s-glycan" );
+                            
                         }
                         found_in_tree = true;
                         break;
@@ -1222,8 +1510,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
             if ( !found_in_tree )
             {
-                ligandList[index].second.set_glycan_index(-1);
                 ligandList[index].second.set_context ( "ligand" );
+                ligandsOnly.push_back(ligandList[index]);
             }
 
         
@@ -1247,9 +1535,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     }
 
         
-
+    this->final_LigandsOnly = ligandsOnly;
     this->finalLigandList = ligandList;
     this->sugar_summary_of_experimental_data = generate_sugar_experimental_data_summary(finalLigandList);
+    this->ligand_summary_of_experimental_data = generate_sugar_experimental_data_summary(final_LigandsOnly);
 }
 
 // private methods //
@@ -1304,6 +1593,7 @@ void init_pyanalysis(py::module& m)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition::get_summary_of_detected_glycans)
         .def("get_glycan",  &pa::GlycosylationComposition::get_glycan)
+        .def("get_ligands",  &pa::GlycosylationComposition::get_ligands)
         .def("update_with_experimental_data",  &pa::GlycosylationComposition::update_with_experimental_data)
         .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
 
@@ -1321,12 +1611,14 @@ void init_pyanalysis(py::module& m)
         .def("get_protein_glycan_linkage_torsions", &pa::GlycanStructure::get_protein_glycan_linkage_torsions)
         .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)
         .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide)
-        .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides);
+        .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides)
+        .def("check_if_updated_with_experimental_data", &pa::GlycanStructure::check_if_updated_with_experimental_data);
 
     py::class_<pa::CarbohydrateStructure>(m, "CarbohydrateStructure")
         .def(py::init<>())
         .def(py::init<clipper::MGlycan&, const int, const int, privateer::pyanalysis::GlycosylationComposition&, privateer::pyanalysis::GlycanStructure&>())
         .def(py::init<clipper::MGlycan&, const int, const int, privateer::pyanalysis::GlycosylationComposition&, privateer::pyanalysis::GlycanStructure&, std::vector<clipper::MSugar>&>())
+        .def(py::init<const int, std::vector<std::pair<clipper::String, clipper::MSugar>>&, privateer::pyanalysis::GlycosylationComposition&, bool>())
         .def(py::self == py::self)
         .def("get_sugar_summary", &pa::CarbohydrateStructure::get_sugar_summary)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
@@ -1363,12 +1655,14 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_rscc", &pa::CarbohydrateStructure::get_sugar_rscc)
         .def("get_sugar_accum", &pa::CarbohydrateStructure::get_sugar_accum)
         .def("get_sugar_occupancy_check", &pa::CarbohydrateStructure::get_sugar_occupancy_check)
-        .def("get_glycosylation_type", &pa::CarbohydrateStructure::get_glycosylation_context);
+        .def("get_glycosylation_type", &pa::CarbohydrateStructure::get_glycosylation_context)
+        .def("check_if_updated_with_experimental_data", &pa::CarbohydrateStructure::check_if_updated_with_experimental_data);
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
         .def(py::init<std::string&, std::string&, std::string&, float, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1)
         .def("get_sugar_summary_with_experimental_data", &pa::XRayData::get_sugar_summary_with_experimental_data)
+        .def("get_ligand_summary_with_experimental_data", &pa::XRayData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::XRayData::print_cpp_console_output_summary);
 }
 

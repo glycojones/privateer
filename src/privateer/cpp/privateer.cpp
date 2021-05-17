@@ -782,25 +782,28 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
-                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
+                                
                                 fprintf ( output, "\t(n) " );
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
+                                
                                 fprintf ( output, "\t(c) " );
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
+                                
                                 fprintf ( output, "\t(o) " );
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
+                                
                                 fprintf ( output, "\t(s) " );
                             }
                             found_in_tree = true;
@@ -813,7 +816,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    ligandList[index].second.set_glycan_index(-1);
+                    
                     ligandList[index].second.set_context ( "ligand" );
                     fprintf ( output, "\t(l) ");
                 }
@@ -907,25 +910,28 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
-                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
+                                
                                 std::cout << "\t(n) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
+                                
                                 std::cout << "\t(c) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
+                                
                                 std::cout << "\t(o) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
+                                
                                 std::cout << "\t(s) ";
                             }
                             found_in_tree = true;
@@ -937,7 +943,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    ligandList[index].second.set_glycan_index(-1);
+                    
                     ligandList[index].second.set_context ( "ligand" );
                     std::cout << "\t(l) ";
                 }
@@ -2024,22 +2030,25 @@ int main(int argc, char** argv)
                         {
                             if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                             {
-                                ligandList[index].second.set_glycan_index(i);
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "n-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "c-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "c-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "o-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "o-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "s-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "s-glycan" );
+                                    
                                 }
                                 found_in_tree = true;
                                 break;
@@ -2050,7 +2059,7 @@ int main(int argc, char** argv)
 
                     if ( !found_in_tree )
                     {
-                        ligandList[index].second.set_glycan_index(-1);
+                        
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
@@ -2160,22 +2169,25 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
-                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
+                                
                             }
                             found_in_tree = true;
                             break;
@@ -2186,7 +2198,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    ligandList[index].second.set_glycan_index(-1);
+                    
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
@@ -2770,22 +2782,25 @@ int main(int argc, char** argv)
                         {
                             if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                             {
-                                ligandList[index].second.set_glycan_index(i);
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "n-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "c-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "c-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "o-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "o-glycan" );
+                                    
                                 }
                                 else if ( list_of_glycans[i].get_type() == "s-glycan" )
                                 {
                                     ligandList[index].second.set_context ( "s-glycan" );
+                                    
                                 }
                                 found_in_tree = true;
                                 break;
@@ -2796,7 +2811,7 @@ int main(int argc, char** argv)
 
                     if ( !found_in_tree )
                     {
-                        ligandList[index].second.set_glycan_index(-1);
+                        
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
@@ -2902,22 +2917,25 @@ int main(int argc, char** argv)
                     {
                         if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
                         {
-                            ligandList[index].second.set_glycan_index(i);
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
                                 ligandList[index].second.set_context ( "c-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
+                                
                             }
                             found_in_tree = true;
                             break;
@@ -2928,7 +2946,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    ligandList[index].second.set_glycan_index(-1);
+                    
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
