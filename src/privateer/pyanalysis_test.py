@@ -100,3 +100,12 @@ print(sugarUpdatedTwo.get_sugar_summary())
 
 ligands = glycosylation.get_ligands()
 print("Ligands.len() = " + str(len(ligands)))
+
+glycosylationMasterConstructor = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb", "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz", "NONE", -1, 2.5, "undefined")
+discoteque = glycosylationMasterConstructor.get_summary_of_detected_glycans()
+
+print("\n")
+for entry in discoteque:
+    for key, value in entry.items():
+        print('{}: {}'.format(key, value))
+    print("_______________________")

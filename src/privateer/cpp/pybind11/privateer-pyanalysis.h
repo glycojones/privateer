@@ -16,6 +16,8 @@
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
 #include "privateer-xray.h"
+#include "privateer-cryo_em.h"
+#include "privateer-dbquery.h"
 #include "privateer-parallelism.h"
 
 
@@ -36,10 +38,13 @@ namespace privateer {
     class GlycosylationComposition 
     {
       public:
+      // need to add constructor with both model and experimental data too. 
         GlycosylationComposition() { };
         GlycosylationComposition(std::string& path_to_model_file, std::string expression_system) {
           this->read_from_file ( path_to_model_file, expression_system );
         };
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system);
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system);
         ~GlycosylationComposition() { };
         void read_from_file( std::string path_to_model_file, std::string expression_system );
         void initialize_summary_of_detected_glycans();
@@ -54,7 +59,8 @@ namespace privateer {
 
         pybind11::list get_ligands() { return ligands; };
 
-        void update_with_experimental_data (privateer::pyanalysis::XRayData& xray_data);
+        void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
+        void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
         clipper::MGlycology mgl;
@@ -277,13 +283,43 @@ namespace privateer {
 
         // private methods
         pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
-
-        //Clipper functions to get descriptions of experimental data inputs that would help to judge quality.
-       // Need to rethink how these classes are called, whether contain everything within GlycosylationComposition or make it spread out.
-       // If everything contained within GlycosylationComposition - Need to write update functions for GlycosylationComposition, GlycanStructure and CarbohydrateStructure class objects in terms of inputting XRayData or CryoEMData. That would update all classes that were called from the initial GlycosylationComposition.
-       // GlycanStructure.update_with_experimental_data(XRayData) etc. 
     };
-    
+
+    class CryoEMData 
+    {
+      public:
+        CryoEMData() { };
+        CryoEMData(std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads) {
+          this->read_from_file ( path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads);
+        };
+        ~CryoEMData() { };
+        void read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads);
+        pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
+        pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
+        void print_cpp_console_output_summary() 
+        { 
+          int pos_slash = path_to_model_file.rfind("/");
+          clipper::String path_to_model_file_clipper = path_to_model_file;
+          privateer::util::print_monosaccharide_summary_python (false, false, pos_slash, true, finalLigandList, hklinfo, path_to_model_file_clipper); 
+        };
+        
+
+        std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandList() { return finalLigandList; } // only c++
+        std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandOnly() { return final_LigandsOnly; } // only c++
+      private:
+        std::string path_to_model_file;
+        float resolution;
+        clipper::MiniMol mmol;
+        clipper::HKL_info hklinfo;
+        
+        std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList;
+        std::vector<std::pair<clipper::String, clipper::MSugar>> final_LigandsOnly;
+        pybind11::list sugar_summary_of_experimental_data;
+        pybind11::list ligand_summary_of_experimental_data;
+
+        // private methods
+        pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
+    };
   }
 }
 

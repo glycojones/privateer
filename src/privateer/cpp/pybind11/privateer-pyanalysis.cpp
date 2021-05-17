@@ -13,6 +13,19 @@ using namespace pybind11::literals;
 // #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system) 
+{
+    this->read_from_file ( path_to_model_file, expression_system );
+    privateer::pyanalysis::XRayData experimental_data(path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads);
+    this->update_with_experimental_data(experimental_data);
+};
+
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system) 
+{
+    this->read_from_file ( path_to_model_file, expression_system );
+    privateer::pyanalysis::CryoEMData experimental_data(path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads);
+    this->update_with_experimental_data(experimental_data);
+};
 
 void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system ) {
 
@@ -295,6 +308,34 @@ void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_d
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList = xray_data.get_finalLigandList();
     std::vector<std::pair< clipper::String , clipper::MSugar> > ligandsOnly = xray_data.get_finalLigandOnly();
+    auto glycanList = pybind11::list();
+    for(int i = 0; i < list_of_glycans.size(); i++)
+    {
+        auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this, finalLigandList);
+        glycanList.append(glycanObject);
+    }
+    this->glycans = glycanList;
+
+    auto ligandPyList = pybind11::list();
+    if(!ligandsOnly.empty())
+    {
+        for(int i = 0; i < ligandsOnly.size(); i++)
+        {
+            auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(i, ligandsOnly, *this, updatedWithExperimentalData);
+            ligandPyList.append(sugarObject);
+        }
+    }
+    this->ligands = ligandPyList;
+
+    initialize_summary_of_detected_glycans();
+}
+
+void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data)
+{
+    this->updatedWithExperimentalData = true;
+    std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+    std::vector<std::pair< clipper::String , clipper::MSugar> > finalLigandList = cryoem_data.get_finalLigandList();
+    std::vector<std::pair< clipper::String , clipper::MSugar> > ligandsOnly = cryoem_data.get_finalLigandOnly();
     auto glycanList = pybind11::list();
     for(int i = 0; i < list_of_glycans.size(); i++)
     {
@@ -998,8 +1039,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
             
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
             
@@ -1578,6 +1617,574 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
 
 ///////////////////////////////////////////////// Class XrayData END ////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////// Class CryoEMData ////////////////////////////////////////////////////////////////////
+
+void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads) {
+
+    privateer::thread_pool pool(0);
+
+    bool useSigmaa = false;
+    int detectedThreads = std::thread::hardware_concurrency();
+    bool useParallelism = true;
+    bool showGeom = false;
+    
+    if ( resolution == -1)
+    {
+        throw std::invalid_argument( "\nFATAL: An MRC file was inputted, but no resolution value was given. To import a Cryo-EM map please use input resolution value as the third argument!" );
+    }
+    
+    if(nThreads < 0)
+        nThreads = detectedThreads;
+    else if(nThreads < 2 && nThreads > -1)
+    {
+        useParallelism = false;
+    }
+    else if(nThreads > detectedThreads)
+    {
+        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
+        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+        << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
+
+        throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
+    }
+
+    if(useParallelism)
+    {
+        std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
+        pool.resize(nThreads);
+        std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+    }
+
+    if(path_to_model_file == "undefined" || path_to_model_file == "")
+    {
+        throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
+
+    if(path_to_mrc_file == "undefined" || path_to_mrc_file == "")
+    {
+        throw std::invalid_argument( "No path was provided for .mtz file input! Aborting." );
+    }
+
+    int pos_slash = path_to_model_file.rfind("/");
+
+    clipper::String path_to_model_file_clipper = path_to_model_file;
+    this->path_to_model_file=path_to_model_file;
+    clipper::String path_to_mrc_file_clipper = path_to_mrc_file;
+    this->resolution = resolution;
+    clipper::Xmap<double> cryo_em_map;
+    clipper::MMDBfile mfile;
+    clipper::CCP4MAPfile mrcin;
+    clipper::HKL_info hklinfo;
+
+    privateer::cryo_em::read_cryoem_map ( path_to_mrc_file_clipper, hklinfo, cryo_em_map, mrcin, resolution);
+    privateer::util::read_coordinate_file_mrc (mfile, mmol, path_to_model_file_clipper, cryo_em_map, true);
+
+    clipper::HKL_data<clipper::data32::F_sigF> fobs;            // allocate space for F and sigF
+    clipper::HKL_data<clipper::data32::F_phi> fc_cryoem_obs;    // allocate space for cryoEM calculated structure factors, that acts as observed data.
+    clipper::HKL_data<clipper::data32::F_phi> fc_all_cryoem_data; // allocate space for entire cryoEM calculated model, that acts as calculated data.
+    clipper::HKL_data<clipper::data32::F_phi> fc_ligands_only_cryoem_data; // allocate space for calculated cryoEM model of ligands only, that acts as calculated data.
+
+    fobs = clipper::HKL_data<clipper::data32::F_sigF> ( hklinfo );
+    fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
+    fc_all_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+    fc_ligands_only_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
+    
+    cryo_em_map.fft_to(fc_cryoem_obs);
+
+    this->hklinfo = hklinfo;
+
+    std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
+    clipper::Atom_list mainAtoms;
+    clipper::Atom_list ligandAtoms;
+    clipper::Atom_list allAtoms;
+
+    std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
+    std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
+
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
+
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
+
+    for ( int p = 0; p < mmol.size(); p++ )
+    {
+        for ( int m = 0; m < mmol[p].size(); m++ )
+        {
+            if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
+            {
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                sugarList.push_back ( mmol[p][m] );
+                clipper::String id = mmol[p].id();
+                id.resize(1);
+
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_first_sugar()));
+                ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
+
+                if (( md.get_first_sugar().type_of_sugar() == "unsupported" ) || ( md.get_second_sugar().type_of_sugar() == "unsupported" ) )
+                {
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                }
+
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+
+            }
+            else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+            {
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
+            else // it's one of the sugars contained in the database
+            {
+                clipper::MSugar msug, msug_b;
+
+                std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
+
+                // #if DUMP
+                //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
+                // #endif
+
+                int n_conf = conformers.size();
+
+                if ( n_conf > 0 )
+                {
+                    if ( n_conf == 1 )
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                    else
+                    {
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                    }
+
+                }
+                else
+                {
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                }
+
+                sugarList.push_back(mmol[p][m]);
+                clipper::String id = mmol[p].id();
+                id.resize(1);
+
+                ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
+                // add both conformers if the current monomer contains more than one
+                if ( n_conf == 2 )
+                {
+                    ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
+                    sugarList.push_back(mmol[p][m]);
+                }
+
+                if ( msug.type_of_sugar() == "unsupported" )
+                {
+                    throw std::invalid_argument( "Error: strangely, at least one of the sugars in the supplied PDB file is missing required atoms. Stopping..." );
+                }
+
+                for (int id = 0; id < mmol[p][m].size(); id++ )
+                {
+                    ligandAtoms.push_back(mmol[p][m][id]);  // add the ligand atoms to a second array
+                    allAtoms.push_back(mmol[p][m][id]);
+                }
+            }
+        }
+    }
+
+    privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
+
+    std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
+    fflush(0);
+
+
+    clipper::Grid_sampling mygrid( cryo_em_map.grid_asu().nu(), cryo_em_map.grid_asu().nv(), cryo_em_map.grid_asu().nw() );
+    clipper::Xmap<double> cryo_em_dif_map_all( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+    clipper::Xmap<double> cryo_em_twotimes_obs_dif_map_all( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+    clipper::Xmap<double> ligandmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+    // scale data and flag R-free
+
+    HRI ih;
+
+    clipper::HKL_data<clipper::data32::F_phi> difference_coefficients( hklinfo );
+
+    bool difference_map_sfc_generated = privateer::cryo_em::generate_output_map_coefficients(difference_coefficients, fc_cryoem_obs, fc_all_cryoem_data, hklinfo);
+
+    if (!difference_map_sfc_generated)
+    {
+        std::cout << "\n\nUnable to calculate Fo-DFc structure factors for cryoEM map input. Exiting..." << std::endl << std::endl;
+    }
+
+    clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+    if(useParallelism)
+    {
+        pool.push([&cryo_em_dif_map_all, &difference_coefficients](int id)
+        { 
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
+            #endif
+            
+            cryo_em_dif_map_all.fft_from(difference_coefficients);
+        });
+
+        pool.push([&modelmap, &fc_all_cryoem_data](int id)
+        { 
+            #if DUMP
+                DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
+            #endif
+            
+            modelmap.fft_from(fc_all_cryoem_data);
+        });
+
+        pool.push([&ligandmap, &fc_ligands_only_cryoem_data](int id)
+        { 
+            #if DUMP
+                DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
+            #endif
+            
+            ligandmap.fft_from(fc_ligands_only_cryoem_data);
+        });
+    }
+    else
+    {
+        cryo_em_dif_map_all.fft_from( difference_coefficients );
+
+        modelmap.fft_from( fc_all_cryoem_data ); 
+
+        ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
+    }
+    
+
+    if (useParallelism)
+    {
+        #if DUMP
+            std::cout << std::endl;
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+        #endif
+        
+        while(pool.n_remaining_jobs() > 0)
+            pool.sync();
+        
+        #if DUMP
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+        #endif
+    }
+
+    if(useParallelism)
+    {
+        int processedMonomers = 0;
+        for (int index = 0; index < ligandList.size(); index++)
+        {
+
+            // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+            //     pool.sync();
+
+            if(pool.n_idle() == 0)
+                pool.greedy_sync();
+            
+            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index](int id)
+            { 
+                #if DUMP
+                    std::cout << std::endl;
+                    DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
+                #endif
+                
+                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+                x=y=z=0.0;
+                maxX=maxY=maxZ=-999999.0;
+                minX=minY=minZ=999999.0;
+                
+                for (int natom = 0; natom < sugarList[index].size(); natom++)
+                {
+                    if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                    if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                    if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                    if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                    if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                    if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+                }
+
+                x = minX + ((maxX - minX)/2);
+                y = minY + ((maxY - minY)/2);
+                z = minZ + ((maxZ - minZ)/2);
+
+
+                // now calculate the correlation between the weighted experimental & calculated maps
+                // maps are scanned only inside a sphere containing the sugar for performance reasons,
+                // although RSCC and <RMS> are restricted to a mask surrounding the model
+
+
+                //////// mask calculation //////////
+
+                clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+                clipper::EDcalc_mask<double> masker( ipradius );
+                masker(mask, sugarList[index].atom_list());
+
+                ////////////////////////////////////
+
+                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+                double accum = 0.0;
+                double corr_coeff = 0.0;
+                std::pair<double, double> rscc_and_accum;
+
+
+                rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+                
+                corr_coeff = rscc_and_accum.first;
+                accum = rscc_and_accum.second;
+
+                ligandList[index].second.set_rscc ( corr_coeff );
+                ligandList[index].second.set_accum_score ( accum );
+                ///////////// here we deal with the sugar /////////////
+
+                std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                bool found_in_tree = false;
+
+                for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                {
+                    std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                    for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                    {
+                        if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                        {
+                            if ( list_of_glycans[i].get_type() == "n-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "n-glycan" );
+                                
+                            }
+                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "c-glycan" );
+                                
+                            }
+                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "o-glycan" );
+                                
+                            }
+                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "s-glycan" );
+                                
+                            }
+                            found_in_tree = true;
+                            break;
+                        }
+                    }
+                    if ( found_in_tree ) break;
+                }
+
+                if ( !found_in_tree )
+                {
+                    ligandList[index].second.set_context ( "ligand" );
+                    ligandsOnly.push_back(ligandList[index]);
+                }
+
+                
+                bool occupancy_check = false;
+                std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                    if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                        occupancy_check = true;
+
+                ligandList[index].second.set_occupancy_check ( occupancy_check );
+                
+            });
+            processedMonomers++;
+
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+            #endif
+
+        }
+
+        #if DUMP
+            std::cout << std::endl;
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+        #endif
+        
+        while(pool.n_remaining_jobs() > 0)
+            pool.sync();
+        
+        #if DUMP
+            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
+        #endif
+        
+    }
+    else
+    {
+        int processedMonomers = 0;
+        for (int index = 0; index < ligandList.size(); index++)
+        {
+            float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+            x=y=z=0.0;
+            maxX=maxY=maxZ=-999999.0;
+            minX=minY=minZ=999999.0;
+
+            for (int natom = 0; natom < sugarList[index].size(); natom++)
+            {
+                if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+            }
+
+            x = minX + ((maxX - minX)/2);
+            y = minY + ((maxY - minY)/2);
+            z = minZ + ((maxZ - minZ)/2);
+
+
+            // now calculate the correlation between the weighted experimental & calculated maps
+            // maps are scanned only inside a sphere containing the sugar for performance reasons,
+            // although RSCC and <RMS> are restricted to a mask surrounding the model
+
+
+            //////// mask calculation //////////
+
+            clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+            clipper::EDcalc_mask<double> masker( ipradius );
+            masker(mask, sugarList[index].atom_list());
+
+            ////////////////////////////////////
+
+            clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+            clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+            double accum = 0.0;
+            double corr_coeff = 0.0;
+            std::pair<double, double> rscc_and_accum;
+
+
+            rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+            
+            corr_coeff = rscc_and_accum.first;
+            accum = rscc_and_accum.second;
+
+            ligandList[index].second.set_rscc ( corr_coeff );
+            ligandList[index].second.set_accum_score ( accum );
+            ///////////// here we deal with the sugar /////////////
+
+            std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+            bool found_in_tree = false;
+
+            for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+            {
+                std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                {
+                    if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                    {
+                        if ( list_of_glycans[i].get_type() == "n-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "n-glycan" );
+                            
+                        }
+                        else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "c-glycan" );
+                            
+                        }
+                        else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "o-glycan" );
+                            
+                        }
+                        else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                        {
+                            ligandList[index].second.set_context ( "s-glycan" );
+                            
+                        }
+                        found_in_tree = true;
+                        break;
+                    }
+                }
+                if ( found_in_tree ) break;
+            }
+
+            if ( !found_in_tree )
+            {
+                ligandList[index].second.set_context ( "ligand" );
+                ligandsOnly.push_back(ligandList[index]);
+            }
+
+
+            bool occupancy_check = false;
+            std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+            for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                    occupancy_check = true;
+
+            ligandList[index].second.set_occupancy_check ( occupancy_check );
+
+            processedMonomers++;
+
+            #if DUMP
+                std::cout << std::endl;
+                DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+            #endif
+        }
+    }
+
+        
+    this->final_LigandsOnly = ligandsOnly;
+    this->finalLigandList = ligandList;
+    this->sugar_summary_of_experimental_data = generate_sugar_experimental_data_summary(finalLigandList);
+    this->ligand_summary_of_experimental_data = generate_sugar_experimental_data_summary(final_LigandsOnly);
+}
+
+// private methods //
+pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList)
+{
+    pybind11::list output; 
+
+    for(int index = 0; index < finalLigandList.size(); index++)
+    {
+        std::string ccdCode = finalLigandList[index].second.type().c_str();
+        std::string chainID = finalLigandList[index].first;
+        int sugarID = index;
+        int pdbID = std::stoi(finalLigandList[index].second.id().trim());
+        float RSCC = finalLigandList[index].second.get_rscc();
+        float accum = finalLigandList[index].second.get_accum();
+        bool occupancy_check = finalLigandList[index].second.get_occupancy_check();
+
+        std::string sugardiagnostic;
+        if(finalLigandList[index].second.is_sane())
+        {
+            if(!finalLigandList[index].second.ok_with_conformation())
+            {
+                sugardiagnostic = "check";
+            }
+            else
+                sugardiagnostic = "yes";
+        }
+        else
+            sugardiagnostic = "no";
+
+        auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic, "occupancy_check_required"_a=occupancy_check);
+        output.append(currentSugar);
+    }
+    return output;
+}
+// private methods end //
+
+///////////////////////////////////////////////// Class CryoEMData END ////////////////////////////////////////////////////////////////////
+
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
 namespace py = pybind11;
@@ -1588,13 +2195,16 @@ void init_pyanalysis(py::module& m)
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())
         .def(py::init<std::string&, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined")
+        .def(py::init<std::string&, std::string&, std::string&, int, float, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined")
+        .def(py::init<std::string&, std::string&, float, int, float, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined")
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition::get_path_of_model_file_used)
         .def("get_expression_system_used",  &pa::GlycosylationComposition::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition::get_summary_of_detected_glycans)
         .def("get_glycan",  &pa::GlycosylationComposition::get_glycan)
         .def("get_ligands",  &pa::GlycosylationComposition::get_ligands)
-        .def("update_with_experimental_data",  &pa::GlycosylationComposition::update_with_experimental_data)
+        .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::XRayData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with X-Ray Crystallography Data")
+        .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::CryoEMData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with CryoEM Data")
         .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
@@ -1664,6 +2274,13 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_summary_with_experimental_data", &pa::XRayData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::XRayData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::XRayData::print_cpp_console_output_summary);
+
+    py::class_<pa::CryoEMData>(m, "CryoEMData")
+        .def(py::init<>())
+        .def(py::init<std::string&, std::string&, float, float, int>(), py::arg("path_to_mrc_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("resolution")="-1", py::arg("ipradius")=2.5, py::arg("nThreads")=-1)
+        .def("get_sugar_summary_with_experimental_data", &pa::CryoEMData::get_sugar_summary_with_experimental_data)
+        .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
+        .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////
