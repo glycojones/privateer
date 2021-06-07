@@ -35,7 +35,6 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 clipper::String program_version = "MKIV";
@@ -374,8 +373,11 @@ int main(int argc, char** argv)
 
         else if ( args[arg] == "-ignore_missing" )
             ignore_set_null = true;
-
-
+        
+        else if ( args[arg] == "-debug" )
+        {
+            #define DUMP 1
+        }
         else if ( args[arg] == "-blobs_threshold" )
         {
             if ( ++arg < args.size() )
