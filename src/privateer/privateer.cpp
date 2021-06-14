@@ -55,6 +55,7 @@ int main(int argc, char** argv)
 
     prog.set_termination_message( "Failed" );
 
+    test
     std::cout << "\nCopyright 2013-2021 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
     std::cout << "\n\nPlease reference these articles: "<< std::endl ;
     std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
