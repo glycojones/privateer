@@ -18,10 +18,15 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
     std::vector<int> temp;
 
     int totalEditableNodes = editable_node_list.size();
-    bool checkedEditableNode[totalEditableNodes];
-    memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
 
-    
+    #ifdef _MSC_VER
+        std::vector<bool> checkedEditableNode(totalEditableNodes,false);
+        // memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
+    #else
+        bool checkedEditableNode[totalEditableNodes];
+        memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
+    #endif
+
     for(int i = 1; i <= totalEditableNodes; i++)
     {
         CombinationGenerator(editable_node_list, i, 0, 0, checkedEditableNode, totalEditableNodes, result, temp);
@@ -30,7 +35,11 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
     return result;
 }
 
-void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
+#ifdef _MSC_VER
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, std::vector<bool>& checkedEditableNode, int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp);
+#else
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
+#endif
 {
    if(currLength > reqLength)
    return;
