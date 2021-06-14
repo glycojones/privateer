@@ -15,7 +15,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 
-
+set(CLIBDENV $ENV{CLIBD})
 
 ## Find Privateer's dependencies that have been compiled locally. 
 #
@@ -56,6 +56,9 @@ include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${PYTHON_INCLUDE_DIRS}
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
+
+file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json 
+    DESTINATION ${CLIBDENV})
 
 add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
