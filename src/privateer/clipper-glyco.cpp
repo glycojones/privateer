@@ -21,7 +21,6 @@
 
 
 using namespace clipper;
-using json = nlohmann::json;
 
 
 ///////////////////////// MSugar ///////////////////////////////
@@ -2888,28 +2887,28 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
     this->expression_system = expression_system;
 
-    std::vector < clipper::MMonomer > potential_n_roots;
-    std::vector < clipper::MMonomer > potential_o_roots;
-    std::vector < clipper::MMonomer > potential_s_roots;
-    std::vector < clipper::MMonomer > potential_c_roots;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_n_roots;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_o_roots;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_s_roots;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_c_roots;
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
-            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] ); // n-linked GlcNAc ?
-            else if ( mmol[pol][mon].type() == "ARG" ) potential_n_roots.push_back ( mmol[pol][mon] ); // Arginine rhamnosylation?
-            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( mmol[pol][mon] ); // o-linked stuff ?
-            else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( mmol[pol][mon] );
-            else if ( mmol[pol][mon].type() == "LYS" ) potential_o_roots.push_back ( mmol[pol][mon] );
-            else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( mmol[pol][mon] );
-            else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( mmol[pol][mon] ); // s-linked stuff ?
-            else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( mmol[pol][mon] ); // C-linked stuff for C/TRP-mannosylation
+            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // n-linked GlcNAc ?
+            else if ( mmol[pol][mon].type() == "ARG" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Arginine rhamnosylation?
+            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // o-linked stuff ?
+            else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type() == "LYS" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
+            else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
         }
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i] ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -2927,15 +2926,15 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     #endif
 
                     #if DUMP
-                        DBG << "potential n roots is " << potential_n_roots[i].type() << std::endl;
+                        DBG << "potential n roots is " << potential_n_roots[i].first.type() << std::endl;
                         DBG << "sugar is " << sugar.type() << std::endl;
                         DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                     #endif
 
-                    clipper::MGlycan mg ( mmol[linked[j].second.polymer()].id(),
-                                                             potential_n_roots[i],
-                                                             list_of_sugars.back(),
-                                                             this->expression_system );
+                    clipper::MGlycan mg (   potential_n_roots[i].second,
+                                            potential_n_roots[i].first,
+                                            list_of_sugars.back(),
+                                            this->expression_system );
 
                     #if DUMP
                         DBG << "Exited the glycan constructor!" << std::endl;
@@ -2954,8 +2953,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].first.find("CG");      // CG
+                    clipper::MAtom cb = potential_n_roots[i].first.find("CB");      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -2983,15 +2982,15 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
-                                                            potential_n_roots[i], list_of_sugars.back(), this->expression_system );
+                    clipper::MGlycan mg = clipper::MGlycan ( potential_n_roots[i].second,
+                                                            potential_n_roots[i].first, list_of_sugars.back(), this->expression_system );
                     mg.set_kind_of_glycan ( "n-glycan" );
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].first.find("CG");      // CG
+                    clipper::MAtom cb = potential_n_roots[i].first.find("CB");      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3026,7 +3025,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
     for ( int i = 0 ; i < potential_o_roots.size() ; i++ )  // create o-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_o_roots[i] ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_o_roots[i].first ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -3039,16 +3038,16 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
-                                                             potential_o_roots[i], sugar, this->expression_system );
+                    clipper::MGlycan mg = clipper::MGlycan ( potential_o_roots[i].second,
+                                                             potential_o_roots[i].first, sugar, this->expression_system );
 
                     mg.set_kind_of_glycan ( "o-glycan" );
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom og1= sugar.anomeric_substituent();         // OG/OG1 SER/THR
-                    clipper::MAtom cg = potential_o_roots[i].find("CB");      // CB
-                    clipper::MAtom cb = potential_o_roots[i].find("CA");      // CA
+                    clipper::MAtom cg = potential_o_roots[i].first.find("CB");      // CB
+                    clipper::MAtom cb = potential_o_roots[i].first.find("CA");      // CA
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3074,7 +3073,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
     for ( int i = 0 ; i < potential_s_roots.size() ; i++ )  // create o-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_s_roots[i] ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_s_roots[i].first ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -3087,8 +3086,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
-                                                             potential_s_roots[i], sugar, this->expression_system );
+                    clipper::MGlycan mg = clipper::MGlycan ( potential_s_roots[i].second,
+                                                             potential_s_roots[i].first, sugar, this->expression_system );
                     mg.set_kind_of_glycan ( "s-glycan" );
                     list_of_glycans.push_back ( mg );
                     break;
@@ -3099,7 +3098,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
     for ( int i = 0 ; i < potential_c_roots.size() ; i++ )  // create c-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_c_roots[i] ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_c_roots[i].first ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -3111,15 +3110,15 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
-                    clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
-                                                             potential_c_roots[i], sugar, this->expression_system );
+                    clipper::MGlycan mg = clipper::MGlycan ( potential_c_roots[i].second,
+                                                             potential_c_roots[i].first, sugar, this->expression_system );
                     mg.set_kind_of_glycan ( "c-glycan" );
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom cd1= sugar.anomeric_substituent();         // CD1 TRP
-                    clipper::MAtom cg = potential_c_roots[i].find("CG");      // CB
-                    clipper::MAtom cb = potential_c_roots[i].find("CB");      // CG
+                    clipper::MAtom cg = potential_c_roots[i].first.find("CG");      // CB
+                    clipper::MAtom cb = potential_c_roots[i].first.find("CB");      // CG
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),

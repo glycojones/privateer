@@ -12,7 +12,20 @@ def return_response_from_glyconnect_api(glytoucanID):
     data = f'{{ "glytoucan_id": "{glytoucanID}"}}'
     response = requests.post('https://glyconnect.expasy.org/api/structures/search/glytoucan', headers=headers, data=data)
     return response
-   
+
+def return_glyconnect_id_from_gtc_external_id(glytoucanID):
+    jsonObject = return_json(f'https://sparqlist.glycosmos.org/sparqlist/api/gtc_external_id?accNum={glytoucanID}')
+    if "GlyConnect" in jsonObject:
+        listResponse = jsonObject["GlyConnect"]["list"]
+        for item in listResponse:
+            if "id" in item:
+                glyconnectID =item["id"]
+                return glyconnectID
+            else:
+                return "Error: return_glyconnect_id_from_gtc_external_id() found GlyConnect, but did not find id."
+    else:
+        return "NotFound"
+    
 
 def parse_json_file(path):
     with open(path) as json_file:
@@ -306,7 +319,9 @@ glyconnectHTTP500Exceptions = { "G82348BZ": {"id": 3247,
                                 "G59784AY": {"id": 3309,
                                             "core": "Complex",
                                             "type": "N-Linked",
-                                            "comment": "Incomplete information in .json file, please visit: https://glyconnect.expasy.org/browser/structures/3309 for full details"}
+                                            "comment": "Incomplete information in .json file, please visit: https://glyconnect.expasy.org/browser/structures/3309 for full details"},
+
+                                            
                                             }
 
 date = datetime.now()
@@ -325,19 +340,24 @@ print(f"Finished downloading GlyTouCan data.")
 
 numFailedToMatch = 0
 
-jsonObjectNew = []
+jsonOutput = { "privateer_database": None}
+array_of_entries = []
 for count, line in enumerate(jsonObject):
     print(f'Currently processing: {line["AccessionNumber"]}\nProgress: {count} out of {len(jsonObject)}\t Progress - {int((count/len(jsonObject)*100))}%')
     glytoucanID = line['AccessionNumber']
     responseGlyConnect = return_response_from_glyconnect_api(glytoucanID)
     print("Current HTTP response: " + str(responseGlyConnect.status_code))
     if responseGlyConnect.status_code == 200:
-        line['glyconnect'] = responseGlyConnect.json()
+        tempjson = responseGlyConnect.json()
+        line['glyconnect'] = str(tempjson["id"])
     elif responseGlyConnect.status_code == 404: 
         line['glyconnect'] = "NotFound"
     elif responseGlyConnect.status_code == 500:
+        alternativeAPIGlyConnectID = return_glyconnect_id_from_gtc_external_id(glytoucanID)
         if glytoucanID in glyconnectHTTP500Exceptions:
-            line['glyconnect'] = glyconnectHTTP500Exceptions[glytoucanID]
+            line['glyconnect'] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
+        elif alternativeAPIGlyConnectID != "NotFound": 
+            line['glyconnect'] = alternativeAPIGlyConnectID
         else:
             line['glyconnect'] = "Unable to match GlyTouCan ID in Glyconnect database as HTTP 500 error was returned, nor it is described in glyconnectHTTP500Exceptions dict. Please report this to hb1115@york.ac.uk"
             numFailedToMatch += 1
@@ -345,15 +365,22 @@ for count, line in enumerate(jsonObject):
         try:
             responseGlyConnect.raise_for_status()
         except requests.exceptions.HTTPError as e:
-            line['glyconnect'] = "Error: " + str(e)
-            numFailedToMatch += 1
-    jsonObjectNew.append(line)
+            if glytoucanID in glyconnectHTTP500Exceptions:
+                line['glyconnect'] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
+            elif alternativeAPIGlyConnectID != "NotFound": 
+                line['glyconnect'] = alternativeAPIGlyConnectID
+            else:
+                line['glyconnect'] = "Error: " + str(e)
+                numFailedToMatch += 1
+    array_of_entries.append(line)
 
 if os.path.exists(fullPath):
     os.remove(fullPath)
 
+jsonOutput["privateer_database"] = {"entries": array_of_entries}
+
 with open(fullPath, 'w', encoding='utf-8') as file:
-    json.dump(jsonObjectNew, file, ensure_ascii=False, indent=4)
+    json.dump(jsonOutput, file, ensure_ascii=False, indent=4)
 
 print(f"Finished downloading and appending GlyConnect data. \nAbsolute path of the output: {fullPath}")
 print(f"Failed to match {numFailedToMatch} GlyConnect IDs in GlyConnect database out of {len(jsonObject)}. Please CTRL + F for \"Unable\" in output file and modify the exception list if possible.")

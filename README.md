@@ -33,13 +33,15 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 5.) virtualenv privateerpython
 
-6.) source privateerpython/bin/activate
+6.) source ccp4.envsetup-sh
 
-7.) pip install -r requirements.txt
+7.) source privateerpython/bin/activate
 
-8.) python setup.py install
+8.) pip install -r requirements.txt
 
-9.) source ccp4.envsetup-sh
+9.) python setup.py install
+
+
 
 
 
@@ -55,7 +57,7 @@ Before executing Privateer it is important to have ccp4.envsetup-sh properly sou
 
 3.) cd tmp
 
-4.) .././privateer -pdbin ../../../tests/test_data/5fjj.pdb -mtzin ../../../tests/test_data/5fjj.mtz -glytoucan -databasein ../../../src/privateer/database.json -debug_output -all_permutations
+4.) .././privateer -pdbin ../../../tests/test_data/5fjj.pdb -mtzin ../../../tests/test_data/5fjj.mtz -glytoucan -databasein ../../../src/privateer/privateer_database.json -debug_output -all_permutations
 
 Privateer's Python bindings(assuming that the virtualenv is not deactivated) can also be accessed via: 
 
