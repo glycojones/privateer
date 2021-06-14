@@ -36,7 +36,6 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
-// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 clipper::String program_version = "MKIV";
@@ -55,16 +54,13 @@ int main(int argc, char** argv)
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nCopyright 2013-2019 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
-    std::cout << "\n\nPlease reference these articles: "<< std::endl ;
-    std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
-    std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;
-    std::cout << "\n  'Carbohydrate anomalies in the PDB'";
-    std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
-
-    #if DUMP
-        std::cout << "   WARNING: THIS IS A DEBUG VERSION - NOT INTENDED FOR PUBLIC DISTRIBUTION" << std::endl ;
-    #endif
+    std::cout << "\nPrivateer version " << program_version << ". Copyright 2013-2021 Jon Agirre (@glycojones) & University of York.";
+    std::cout << "\nContributors: Haroldas Bagdonas (@GABRAHREX) and the rest of Glycojones Team at York.";
+    std::cout << "\nPlease reference these articles: "<< std::endl ;
+    std::cout << "\n   - 'Privateer: software for the conformational validation of carbohydrate structures'";
+    std::cout << "\n      Agirre et al, 2015 Nat Struct & Mol Biol 22(11):833-834." << std::endl;
+    std::cout << "\n   - 'Leveraging glycomics data in glycoprotein 3D structure validation with Privateer'";
+    std::cout << "\n      Bagdonas, Ungar & Agirre, 2020 Beilstein Journal of Organic Chemistry 16(1):2523-2533." << std::endl;
 
     clipper::HKL_info hklinfo; // allocate space for the hkl metadata
     clipper::CIFfile cifin;
@@ -104,8 +100,9 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     bool useParallelism = true;
-    bool closest_match_disable = false; 
-    float resolution = -1; 
+    bool rscc_diff = false;
+    bool closest_match_disable = false;
+    float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
     FILE *output;
@@ -121,354 +118,358 @@ int main(int argc, char** argv)
 
 
     // command input
+    std::cout << "\nSupplied arguments: ";
     CCP4CommandInput args( argc, argv, true );
     int arg = 0;
     while ( ++arg < args.size() )
     {
         if ( args[arg] == "-title" )
         {
-            if ( ++arg < args.size() )
-                title = args[arg];
+          if ( ++arg < args.size() )
+            title = args[arg];
         }
         else if ( args[arg] == "-colin-fo" )
         {
-            if  (++arg < args.size() )
-                input_column_fobs = args[arg];
+          if  (++arg < args.size() )
+            input_column_fobs = args[arg];
+        }
+        else if ( args[arg] == "-rscc-diff" )
+        {
+          rscc_diff = true;
         }
         else if ( args[arg] == "-mtzout" )
         {
-            if ( ++arg < args.size() )
-            {
-                output_mapcoeffs_mtz = args[arg];
-                output_mtz = true;
-            }
+          if ( ++arg < args.size() )
+          {
+            output_mapcoeffs_mtz = args[arg];
+            output_mtz = true;
+          }
         }
         else if ( args[arg] == "-pdbin" )
         {
-            if ( ++arg < args.size() )
-                input_model = args[arg];
+          if ( ++arg < args.size() )
+            input_model = args[arg];
         }
         else if ( args[arg] == "-mtzin" )
         {
-            if ( ++arg < args.size() )
-            {
-                useMTZ = true;
-                input_reflections_mtz = args[arg];
-            }
+          if ( ++arg < args.size() )
+          {
+            useMTZ = true;
+            input_reflections_mtz = args[arg];
+          }
         }
         else if ( args[arg] == "-mapin" )
         {
-            if ( ++arg < args.size() )
-            {
-                useMRC = true;
-                input_cryoem_map = args[arg];
-            }
+          if ( ++arg < args.size() )
+          {
+            useMRC = true;
+            input_cryoem_map = args[arg];
+          }
         }
         else if ( args[arg] == "-resolution" )
         {
-            if ( ++arg < args.size() )
+          if ( ++arg < args.size() )
+          {
+            resolution = clipper::String(args[arg]).f();
+            if (resolution < 0.0)
             {
-                resolution = clipper::String(args[arg]).f();
-                if (resolution < 0.0)
-                {
-                    std::cout << "\n\nResolution value is negative! Expected a positive decimal." << std::endl << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+              std::cout << "\n\nResolution value is negative! Expected a positive decimal." << std::endl << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+          }
         }
         else if ( args[arg] == "-cifin" )
         {
-            if ( ++arg < args.size() )
-                input_reflections_cif = args[arg];
+          if ( ++arg < args.size() )
+            input_reflections_cif = args[arg];
         }
         else if ( args[arg] == "-list" )
         {
-            privateer::util::print_supported_code_list();
-            prog.set_termination_message( "Success" );
-            return 0;
+          privateer::util::print_supported_code_list();
+          prog.set_termination_message( "Success" );
+          return 0;
         }
         else if ( args[arg] == "-expression" )
         {
-            if ( ++arg < args.size() )
-                input_expression_system = args[arg];
-            if ( input_expression_system.trim() != "undefined" &&
-                 input_expression_system.trim() != "fungal" &&
-                 input_expression_system.trim() != "yeast" &&
-                 input_expression_system.trim() != "plant" &&
-                 input_expression_system.trim() != "insect" &&
-                 input_expression_system.trim() != "mammalian" &&
-                 input_expression_system.trim() != "human" )
-            {
-                std::cout << std::endl << std::endl << "Error: " << input_expression_system << " is not a supported expression system" << std::endl << std::endl;
-                privateer::util::print_usage();
-                prog.set_termination_message( "Failed" );
-                return 1;
-            }
+          if ( ++arg < args.size() )
+              input_expression_system = args[arg];
+          if ( input_expression_system.trim() != "undefined" &&
+            input_expression_system.trim() != "fungal" &&
+            input_expression_system.trim() != "yeast" &&
+            input_expression_system.trim() != "plant" &&
+            input_expression_system.trim() != "insect" &&
+            input_expression_system.trim() != "mammalian" &&
+            input_expression_system.trim() != "human" )
+          {
+            std::cout << std::endl << std::endl << "Error: " << input_expression_system << " is not a supported expression system" << std::endl << std::endl;
+            privateer::util::print_usage();
+            prog.set_termination_message( "Failed" );
+            return 1;
+          }
         }
         else if ( args[arg] == "-codein" )
         {
-            if ( ++arg < args.size() )
-            {
-                input_ccd_code = clipper::String(args[arg]);
-                allSugars = false;
+          if ( ++arg < args.size() )
+          {
+            input_ccd_code = clipper::String(args[arg]);
+            allSugars = false;
 
-                if (input_ccd_code.trim().length() != 3)
-                {
-                    std::cout << std::endl << std::endl << "Error: the sugar code must be three characters long, e.g. GLC."
-                    << "\nPlease refer to the Chemical Component Dictionary (http://www.wwpdb.org/ccd.html).\n"
-                    << "Alternatively, use the -list option to get a full list of supported codes\nExiting..." << std::endl << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+            if (input_ccd_code.trim().length() != 3)
+            {
+              std::cout << std::endl << std::endl << "Error: the sugar code must be three characters long, e.g. GLC."
+                        << "\nPlease refer to the Chemical Component Dictionary (http://www.wwpdb.org/ccd.html).\n"
+                        << "Alternatively, use the -list option to get a full list of supported codes\nExiting..." << std::endl << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+          }
         }
         else if ( args[arg] == "-closest_match_disable" )
         {
-            closest_match_disable = true;
+          closest_match_disable = true;
         }
         else if ( args[arg] == "-all_permutations" )
         {
-            glucose_only = false;
+          glucose_only = false;
         }
         else if ( args[arg] == "-cores" )
         {
-            if ( ++arg < args.size() )
+          if ( ++arg < args.size() )
+          {
+            int detectedThreads = std::thread::hardware_concurrency();
+            nThreads = clipper::String(args[arg]).i();
+
+            if(nThreads < 2)
             {
-                int detectedThreads = std::thread::hardware_concurrency();
-                nThreads = clipper::String(args[arg]).i();
-                
-                if(nThreads < 2)
-                {
-                    std::cout << "Error: Less than 2 cores/threads were inputted as an argument." << "\nPlease disable multithreaded execution via -singlethreaded keyword argument or give more cores to Privateer!" << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
-                
-                if(nThreads > detectedThreads)
-                {
-                    std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
-                    << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
-                    << "\n\tNumber of Cores/Threads requested via -cores argument: " << nThreads << "." << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+              std::cout << "Error: Less than 2 cores/threads were inputted as an argument." << "\nPlease disable multithreaded execution via -singlethreaded keyword argument or give more cores to Privateer!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+
+            if(nThreads > detectedThreads)
+            {
+              std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system."
+                        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads
+                        << "\n\tNumber of Cores/Threads requested via -cores argument: " << nThreads << "." << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
+            }
+          }
         }
         else if ( args[arg] == "-singlethreaded" )
         {
-            useParallelism = false;
-            nThreads = 0;
+          useParallelism = false;
+          nThreads = 0;
         }
         else if ( args[arg] == "-debug_output" )
         {
-            debug_output = true;
+          debug_output = true;
         }
         else if ( args[arg] == "-glytoucan" )
         {
-            useWURCSDataBase = true;
+          useWURCSDataBase = true;
         }
         else if ( args[arg] == "-databasein" )
         {
-            if ( ++arg < args.size() )
+          if ( ++arg < args.size() )
+          {
+            if(clipper::String(args[arg])[0] != '-')
             {
-                if(clipper::String(args[arg])[0] != '-')
-                {
-                    ipwurcsjson = args[arg];
+              ipwurcsjson = args[arg];
+              std::string fileName = ipwurcsjson.tail();
+              std::string fileExtension = fileName.substr( fileName.length() - 5 );
 
-                    std::string fileName = ipwurcsjson.tail();
-                    std::string fileExtension = fileName.substr( fileName.length() - 5 );
-
-                    if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
-                    {
-                        std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
-                        << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
-                        prog.set_termination_message( "Failed" );
-                        return 1;
-                    }
-                }
-                else
-                {
-                    std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+              if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
+              {
+                std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                          << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                prog.set_termination_message( "Failed" );
+                return 1;
+              }
             }
             else
             {
-                std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
-                prog.set_termination_message( "Failed" );
-                return 1;
+              std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+          }
+          else
+          {
+            std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+            prog.set_termination_message( "Failed" );
+            return 1;
+          }
         }
         else if ( args[arg] == "-sleep_timer" )
         {
-            if ( ++arg < args.size() )
+          if ( ++arg < args.size() )
+          {
+            sleepTimer = clipper::String(args[arg]).i();
+            if (sleepTimer < 1)
             {
-                sleepTimer = clipper::String(args[arg]).i();
-                if (sleepTimer < 1)
-                {
-                    std::cout << "Error: sleepTimer < 1." << "\nUnfortunately disabling sleepTimer is unadvisable due to some limitations in the parallelized code. Only use this argument to increase sleepTimer if you are getting segfaults in parallelized permutation algorithm!" << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+              std::cout << "Error: sleepTimer < 1." << "\nUnfortunately disabling sleepTimer is unadvisable due to some limitations in the parallelized code. Only use this argument to increase sleepTimer if you are getting segfaults in parallelized permutation algorithm!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+          }
         }
         else if ( args[arg] == "-mode" )
         {
-            if ( ++arg < args.size() )
-                if (clipper::String(args[arg]) == "ccp4i2")
-                    batch = true;
+          if ( ++arg < args.size() )
+           if (clipper::String(args[arg]) == "ccp4i2")
+            batch = true;
         }
         else if ( args[arg] == "-vertical" )
         {
-            vertical = true;
+          vertical = true;
         }
         else if ( args[arg] == "-oldstyle" )
         {
-            oldstyleinput = true;
+          oldstyleinput = true;
         }
         else if ( args[arg] == "-essentials" )
         {
-            original = false;
+          original = false;
         }
         else if ( args[arg] == "-invert" )
         {
-            invert = true;
+          invert = true;
         }
         else if ( args[arg] == "-radiusin" )
         {
-            if ( ++arg < args.size() )
+          if ( ++arg < args.size() )
+          {
+            ipradius = clipper::String(args[arg]).f();
+            if (ipradius < 1.0)
             {
-                ipradius = clipper::String(args[arg]).f();
-                if (ipradius < 1.0)
-                {
-                    std::cout << "\n\nMask radius is too small!" << std::endl << std::endl;
-                    prog.set_termination_message( "Failed" );
-                    return 1;
-                }
+              std::cout << "\n\nMask radius is too small!" << std::endl << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
             }
+          }
         }
         else if ( args[arg] == "-valstring" )
         {
-            if ( ++arg < args.size() )
-            {
-                input_validation_string = args[arg];
+          if ( ++arg < args.size() )
+          {
+            input_validation_string = args[arg];
 
-                input_validation_options = input_validation_string.split(",");
-                if ( privateer::util::compute_and_print_external_validation ( input_validation_options, external_validation ) )
-                {
-                    prog.set_termination_message ( "Failed" );
-                    return -1;
-                }
+            input_validation_options = input_validation_string.split(",");
+            if ( privateer::util::compute_and_print_external_validation ( input_validation_options, external_validation ) )
+            {
+              prog.set_termination_message ( "Failed" );
+              return -1;
             }
+          }
         }
         else if ( args[arg] == "-showgeom" )
-            showGeom = true;
+          showGeom = true;
 
         else if ( args[arg] == "-nomaps" )
-            noMaps = true;
+          noMaps = true;
 
         else if ( args[arg] == "-check-unmodelled" )
-            check_unmodelled = true;
+          check_unmodelled = true;
 
 
         else if ( args[arg] == "-ignore_missing" )
-            ignore_set_null = true;
+          ignore_set_null = true;
 
-
+        else if ( args[arg] == "-debug" )
+        {
+          #define DUMP 1
+        }
         else if ( args[arg] == "-blobs_threshold" )
         {
-            if ( ++arg < args.size() )
-            {
-                thresholdElectronDensityValue = clipper::String(args[arg]).f();
-            }
+          if ( ++arg < args.size() )
+          {
+            thresholdElectronDensityValue = clipper::String(args[arg]).f();
+          }
         }
-
         else
         {
-            std::cout << "\nUnrecognised:\t" << args[arg] << std::endl;
-            args.clear();
+          std::cout << "\nUnrecognised:\t" << args[arg] << std::endl;
+          args.clear();
         }
     }
-
     if ( useMTZ && useMRC )
     {
-        std::cout << "\nFATAL: Both MTZ and MRC file formats were inputted. Expected only one of them, not both at the same time!" << std::endl << std::endl;
-        prog.set_termination_message("Failed");
-        return 1;
+      std::cout << "\nFATAL: Both MTZ and MRC file formats were inputted. Expected only one of them, not both at the same time!" << std::endl << std::endl;
+      prog.set_termination_message("Failed");
+      return 1;
     }
 
     if ( useMRC && resolution == -1)
     {
-        std::cout << "\nFATAL: An MRC file was inputted, but no resolution value was given. To import a Cryo-EM map please use -mapin and -resolution arguments!" << std::endl << std::endl;
-        prog.set_termination_message("Failed");
-        return 1;
+      std::cout << "\nFATAL: An MRC file was inputted, but no resolution value was given. To import a Cryo-EM map please use -mapin and -resolution arguments!" << std::endl << std::endl;
+      prog.set_termination_message("Failed");
+      return 1;
     }
 
 
     if ( input_ccd_code != "XXX" )
     {
-        if ((( !clipper::MSugar::search_database(input_ccd_code.c_str())) && (clipper::MDisaccharide::search_disaccharides(input_ccd_code.c_str())==-1)) && (input_validation_options.size() == 0) )
-        {
-            std::cout << "\n\nError: no internal validation data found for " << input_ccd_code << std::endl;
-            std::cout << "\nYou can provide external validation data with -valstring <data>" << std::endl;
-            std::cout << "\n\tAccepted format: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n";
-            std::cout << "\tThree-letter code, ring atoms separated by /, anomer, handedness, expected conformation.\n" << std::endl;
-            prog.set_termination_message("Failed");
-            return 1;
-        }
+      if ((( !clipper::MSugar::search_database(input_ccd_code.c_str())) && (clipper::MDisaccharide::search_disaccharides(input_ccd_code.c_str())==-1)) && (input_validation_options.size() == 0) )
+      {
+        std::cout << "\n\nError: no internal validation data found for " << input_ccd_code << std::endl;
+        std::cout << "\nYou can provide external validation data with -valstring <data>" << std::endl;
+        std::cout << "\n\tAccepted format: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n";
+        std::cout << "\tThree-letter code, ring atoms separated by /, anomer, handedness, expected conformation.\n" << std::endl;
+        prog.set_termination_message("Failed");
+        return 1;
+      }
     }
-
-    
     if (batch)
     {
-        output = fopen("validation_data-privateer","w");
-        if (NULL == output)
-        {
-            std::cout << std::endl << "Error: unable to create output file. Please check directory permissions." << std::endl;
-            prog.set_termination_message( "Failed" );
-            return 1;
-        }
+      output = fopen("validation_data-privateer","w");
+      if (NULL == output)
+      {
+        std::cout << std::endl << "Error: unable to create output file. Please check directory permissions." << std::endl;
+        prog.set_termination_message( "Failed" );
+        return 1;
+      }
     }
-
     if ( (input_model != "NONE") && ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (input_cryoem_map == "NONE")) )
-        noMaps = true;
+      noMaps = true;
 
     if ( (input_model == "NONE") || ((input_reflections_cif == "NONE") && (input_reflections_mtz == "NONE") && (input_cryoem_map == "NONE") && (noMaps == false)) )
     {
-        privateer::util::print_usage();
-        prog.set_termination_message( "Failed" );
-        return 1;
+      privateer::util::print_usage();
+      prog.set_termination_message( "Failed" );
+      return 1;
     }
 
     unsigned int detectedCores;
-    
-    if(nThreads == 0 && useParallelism) nThreads = std::thread::hardware_concurrency(); 
-    
+
+    if(nThreads == 0 && useParallelism)
+      nThreads = std::thread::hardware_concurrency();
+
     if(nThreads < 2 && useParallelism)
     {
-        useParallelism = false;
-        std::cout << std::endl << "Error: Less than two cores/threads were detected in the system. Number of Threads detected on the system: " << nThreads << "\nPlease disable multithreaded execution via -singlethreaded keyword argument!" << std::endl;
-        prog.set_termination_message( "Failed" );
-        return 1;
+      useParallelism = false;
+      std::cout << std::endl << "Error: Less than two cores/threads were detected in the system. Number of Threads detected on the system: " << nThreads << "\nPlease disable multithreaded execution via -singlethreaded keyword argument!" << std::endl;
+      prog.set_termination_message( "Failed" );
+      return 1;
     }
     else if(!useParallelism)
-        std::cout << std::endl << "THREADING: Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl << std::endl;
+      std::cout << std::endl << "THREADING: Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl << std::endl;
     else
     {
-        std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
-        pool.resize(nThreads);
-        std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+      std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
+      pool.resize(nThreads);
+      std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
     }
-        
 
 
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
 
 
-    if ( (useMTZ && !useMRC) || noMaps ) privateer::util::read_coordinate_file_mtz ( mfile, mmol, input_model, batch);
+    if ( (useMTZ && !useMRC) || noMaps )
+      privateer::util::read_coordinate_file_mtz ( mfile, mmol, input_model, batch);
+
     int pos_slash = input_model.rfind("/");
 
     if(useWURCSDataBase)
@@ -509,7 +510,7 @@ int main(int argc, char** argv)
             clipper::String current_chain = "" ;
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
-            {  
+            {
                 clipper::String wurcs_string;
                 if ( current_chain != list_of_glycans[i].get_chain() )
                 {
@@ -532,22 +533,22 @@ int main(int argc, char** argv)
                             std::cout << std::endl;
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                         #endif
-                        
+
                         while(pool.n_remaining_jobs() > 0)
                             pool.sync();
-                        
+
                         #if DUMP
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
                         #endif
                     }
-                    
+
                     if(!finalGlycanPermutationContainer.empty())
                         {
                             glycansPermutated++;
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
-                                {   
-                                    if(oldstyleinput) 
+                                {
+                                    if(oldstyleinput)
                                     {
                                         privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                                         plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
@@ -650,7 +651,7 @@ int main(int argc, char** argv)
                         id.resize(1);
 
                         #if DUMP
-                            std::cout << "Looking at chain " << id << std::endl;
+                            DBG << "Looking at chain " << id << std::endl;
                         #endif
 
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
@@ -660,7 +661,7 @@ int main(int argc, char** argv)
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug_b));
                             sugarList.push_back(mmol[p][m]);
                         }
-                            
+
 
                         if ( msug.type_of_sugar() == "unsupported" )
                         {
@@ -774,7 +775,7 @@ int main(int argc, char** argv)
 
                 std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
                 bool found_in_tree = false;
-                
+
                 for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
                 {
                     std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
@@ -967,7 +968,7 @@ int main(int argc, char** argv)
 
                 if ( ! ligandList[index].second.ok_with_conformation () )
                     enable_torsions_for.push_back (ligandList[index].second.type().trim());
-                    
+
                 bool occupancy_check = false;
                 std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
 
@@ -1145,7 +1146,7 @@ int main(int argc, char** argv)
         privateer::cryo_em::read_cryoem_map ( input_cryoem_map, hklinfo, cryo_em_map, mrcin, resolution);
         privateer::util::read_coordinate_file_mrc (mfile, mmol, input_model, cryo_em_map, batch);
     }
-    else 
+    else
     {
         // assume CIF file format instead
         if (!batch)
@@ -1177,7 +1178,7 @@ int main(int argc, char** argv)
     clipper::HKL_data<clipper::data32::F_phi> fc_cryoem_obs;    // allocate space for cryoEM calculated structure factors, that acts as observed data.
     clipper::HKL_data<clipper::data32::F_phi> fc_all_cryoem_data; // allocate space for entire cryoEM calculated model, that acts as calculated data.
     clipper::HKL_data<clipper::data32::F_phi> fc_ligands_only_cryoem_data; // allocate space for calculated cryoEM model of ligands only, that acts as calculated data.
-    
+
 
     if (!useMTZ && !useMRC && !noMaps)
     {
@@ -1220,14 +1221,14 @@ int main(int argc, char** argv)
             fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
             fc_all_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
             fc_ligands_only_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
-         
+
             cryo_em_map.fft_to(fc_cryoem_obs);
             // privateer::cryo_em::initialize_dummy_fobs( fobs, fc_cryoem_obs ); // might not be necessary at all.
         }
     }
 
 
-   
+
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
@@ -1243,7 +1244,7 @@ int main(int argc, char** argv)
     list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
 
     // expand the alternativeGlycans big vector here to list of glycans and match indices. so like original glycan -> all of its permutations + scores and so on.
-    //                                                                                             original glycan -> all of its permutations 
+    //                                                                                             original glycan -> all of its permutations
     // std::vector<std::vector<std::pair<clipper::MGlycan, std::vector<int>>>> originalGlycansAndPermutations(list_of_glycans.size());
     if ( !batch )
     {
@@ -1255,7 +1256,7 @@ int main(int argc, char** argv)
             clipper::String current_chain = "" ;
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
-            {  
+            {
                 clipper::String wurcs_string;
                 if ( current_chain != list_of_glycans[i].get_chain() )
                 {
@@ -1278,15 +1279,15 @@ int main(int argc, char** argv)
                             std::cout << std::endl;
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                         #endif
-                        
+
                         while(pool.n_remaining_jobs() > 0)
                             pool.sync();
-                        
+
                         #if DUMP
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
                         #endif
                     }
-                    
+
                     if(!finalGlycanPermutationContainer.empty())
                         {
                             glycansPermutated++;
@@ -1301,7 +1302,7 @@ int main(int argc, char** argv)
                                         os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
                                         plot.write_to_file ( os.str() );
                                     }
-                                    else 
+                                    else
                                     {
                                         privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                                         plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
@@ -1329,7 +1330,7 @@ int main(int argc, char** argv)
                     plot.write_to_file ( os.str() );
                 }
             }
-            
+
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }
 
@@ -1340,7 +1341,7 @@ int main(int argc, char** argv)
     {
         for (int i = 0; i < list_of_glycans.size() ; i++ )
         {
-            
+
             clipper::String wurcs_string;
             int glycansPermutated = 0;
 
@@ -1358,15 +1359,15 @@ int main(int argc, char** argv)
                         std::cout << std::endl;
                         DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                     #endif
-                    
+
                     while(pool.n_remaining_jobs() > 0)
                         pool.sync();
-                    
+
                     #if DUMP
                         DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
                     #endif
                 }
-                
+
                 if(!finalGlycanPermutationContainer.empty())
                     {
                         glycansPermutated++;
@@ -1381,7 +1382,7 @@ int main(int argc, char** argv)
                                         os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
                                         plot.write_to_file ( os.str() );
                                     }
-                                    else 
+                                    else
                                     {
                                         privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
                                         plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
@@ -1421,7 +1422,7 @@ int main(int argc, char** argv)
         clipper::MiniMol modelRemovedWaters = get_model_without_waters(input_model);
 
         clipper::Atom_list withoutWaterModelAtomList = modelRemovedWaters.atom_list();
-        
+
         std::vector<std::vector<GlycosylationMonomerMatch> > PotentialMonomers = get_matching_monomer_positions(modelRemovedWaters);
 
 
@@ -1434,7 +1435,7 @@ int main(int argc, char** argv)
 
         std::cout << "Imports were successful." << std::endl;
 
-        bool no_errors = false; 
+        bool no_errors = false;
         if (noMaps && !useMTZ && !useMRC)
         {
             std::cout << std::endl << "Error: this feature requires a map input. Please either import cryo-em map(.map) or x-ray crystallography structure factors(.mtz)" << std::endl;
@@ -1443,7 +1444,7 @@ int main(int argc, char** argv)
         }
         else
         {
-            if (useMTZ) 
+            if (useMTZ)
             {
                 if (useMRC)
                 {
@@ -1451,10 +1452,10 @@ int main(int argc, char** argv)
                     prog.set_termination_message( "Failed" );
                     return 1;
                 }
-                else 
+                else
                     no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList, fobs, fc_cryoem_obs, sigmaa_all_map, sigmaa_dif_map, ignore_set_null, useMTZ );
             }
-            else 
+            else
             {
                 if (useMTZ)
                 {
@@ -1462,11 +1463,11 @@ int main(int argc, char** argv)
                     prog.set_termination_message( "Failed" );
                     return 1;
                 }
-                else 
+                else
                     std::cout << std::endl << "Error: This function is currently unsupported for cryo em maps." << std::endl;
                     prog.set_termination_message( "Failed" );
                     return 1;
-                    // no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList, fobs, fc_cryoem_obs, sigmaa_all_map, sigmaa_dif_map, ignore_set_null, useMTZ);                                             
+                    // no_errors = privateer::util::calculate_sigmaa_maps ( withoutWaterModelAtomList, fobs, fc_cryoem_obs, sigmaa_all_map, sigmaa_dif_map, ignore_set_null, useMTZ);
             }
 
         }
@@ -1512,7 +1513,7 @@ int main(int argc, char** argv)
                                 buffer << "\tC-Glycosylation: Value of experimental mean electron density in detected consensus sequence for" << mmol[results[i].first.chainID][results[i].first.monomerID].id() <<
                                 "-" << mmol[results[i].first.chainID][results[i].first.monomerID].type()
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
-                            
+
                                 std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
                                 C_SiteBlobs.push_back(blobInfo);
                             }
@@ -1529,7 +1530,7 @@ int main(int argc, char** argv)
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
                                 std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
-                                O_SiteBlobs.push_back(blobInfo);                            
+                                O_SiteBlobs.push_back(blobInfo);
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = O_SiteBlobs;
                         buffer << std::endl;
@@ -1545,12 +1546,12 @@ int main(int argc, char** argv)
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
                                 std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
-                                S_SiteBlobs.push_back(blobInfo);                          
+                                S_SiteBlobs.push_back(blobInfo);
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = S_SiteBlobs;
                         buffer << std::endl;
                         }
-                        
+
                         if(type == 4)
                         {
                         std::vector< std::tuple <clipper::String, clipper::MMonomer, double> > NRem_SiteBlobs;
@@ -1561,7 +1562,7 @@ int main(int argc, char** argv)
                                 << " monomer in Chain " << mmol[results[i].first.chainID].id() << ": " << results[i].second << std::endl;
 
                                 std::tuple <clipper::String, clipper::MMonomer, double> blobInfo(modelRemovedWaters[results[i].first.chainID].id(), modelRemovedWaters[results[i].first.chainID][results[i].first.monomerID], results[i].second);
-                                NRem_SiteBlobs.push_back(blobInfo);                            
+                                NRem_SiteBlobs.push_back(blobInfo);
                             }
                         blobsProteinBackboneSummaryForCoot.at(type) = NRem_SiteBlobs;
                         buffer << std::endl;
@@ -1581,7 +1582,7 @@ int main(int argc, char** argv)
             }
 
             std::cout << "Finished scanning waterless difference map for unmodelled glycosylation sites on protein backbone..." << std::endl;
-            
+
 
             if(!list_of_glycans.empty())
             {
@@ -1618,7 +1619,7 @@ int main(int argc, char** argv)
                 else
                 {
                     std::cout << std::endl << "\tPossibly unmodelled Carbohydrate monomers were not detected in this model." << std::endl;
-                }    
+                }
             }
 
 
@@ -1626,15 +1627,15 @@ int main(int argc, char** argv)
 
             if(check_unmodelled)
             {
-                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ ) 
+                for ( int chn = 0; chn < modelRemovedWaters.size(); chn++ )
                 {
-                    if ( modelRemovedWaters[chn].id() == "" ) 
+                    if ( modelRemovedWaters[chn].id() == "" )
                     {
                         clipper::String label = mmol[chn].id();
                         modelRemovedWaters[chn].set_id(label);
                     }
                 }
-                 
+
                 clipper::MMDBfile pdbfile;
                 pdbfile.export_minimol( modelRemovedWaters );
                 pdbfile.write_file( "input_model_nowater.pdb" );
@@ -1788,7 +1789,7 @@ int main(int argc, char** argv)
     if (useMRC && !useMTZ && !noMaps) //cryoem here
     {
         if (!batch) std::cout << "Done analyzing modelled carbohydrates.\nCalculating simulated structure factors from model input... "; fflush(0);
-        
+
         privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
 
         std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
@@ -1814,36 +1815,36 @@ int main(int argc, char** argv)
                 prog.set_termination_message( "Failed" );
                 return 1;
             }
-    
+
         clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
         if(useParallelism)
         {
             pool.push([&cryo_em_dif_map_all, &difference_coefficients](int id)
-            { 
+            {
                 #if DUMP
                     std::cout << std::endl;
                     DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 cryo_em_dif_map_all.fft_from(difference_coefficients);
             });
 
             pool.push([&modelmap, &fc_all_cryoem_data](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 modelmap.fft_from(fc_all_cryoem_data);
             });
 
             pool.push([&ligandmap, &fc_ligands_only_cryoem_data](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 ligandmap.fft_from(fc_ligands_only_cryoem_data);
             });
         }
@@ -1851,11 +1852,11 @@ int main(int argc, char** argv)
         {
             cryo_em_dif_map_all.fft_from( difference_coefficients );
 
-            modelmap.fft_from( fc_all_cryoem_data ); 
+            modelmap.fft_from( fc_all_cryoem_data );
 
             ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
         }
-        
+
 
         if (useParallelism)
         {
@@ -1863,10 +1864,10 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
@@ -1890,29 +1891,29 @@ int main(int argc, char** argv)
 
         if (!batch)
         {
-            
+
             // TO DO: Write a function in parallelism code that would reserve threads(or detach) that are used in this task and therefore would not require to be synced in subsequent steps.
             //        Might be more difficult to write than it sounds...
             if(useParallelism)
             {
                 pool.push([&diff_mapOut, &cryo_em_dif_map_all](int id)
-                { 
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Writing and outputting cryo_em_dif_map_all to \"cryoem_diff.map\" from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     diff_mapOut.open_write( "cryoem_diff.map" );
                     diff_mapOut.export_xmap( cryo_em_dif_map_all );
                     diff_mapOut.close_write();
                 });
 
                 pool.push([&modelmapout, &modelmap](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Writing and outputting modelmap to \"cryoem_calcmodel.map\" from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     modelmapout.open_write( "cryoem_calcmodel.map" );
                     modelmapout.export_xmap( modelmap );
                     modelmapout.close_write();
@@ -1930,16 +1931,16 @@ int main(int argc, char** argv)
 
                 std::cout << "done." << std::endl;
             }
-            
 
-            // this one does not need syncing all the way till the end, can just keep running on the side, while the rest executes. 
 
-           
+            // this one does not need syncing all the way till the end, can just keep running on the side, while the rest executes.
+
+
             std::cout << "\n\nDetailed validation data" << std::endl;
             std::cout << "------------------------" << std::endl;
         }
-        
-        //Try to sync the thread pool, so that one another iteration is initiated when one thread frees up, instead of waiting for all to finish. 
+
+        //Try to sync the thread pool, so that one another iteration is initiated when one thread frees up, instead of waiting for all to finish.
         if(useParallelism)
         {
             int processedMonomers = 0;
@@ -1951,19 +1952,19 @@ int main(int argc, char** argv)
 
                 if(pool.n_idle() == 0)
                     pool.greedy_sync();
-                
+
                 pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch](int id)
-                { 
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
                     #endif
-                    
+
                     float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                     x=y=z=0.0;
                     maxX=maxY=maxZ=-999999.0;
                     minX=minY=minZ=999999.0;
-                    
+
                     for (int natom = 0; natom < sugarList[index].size(); natom++)
                     {
                         if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
@@ -2002,7 +2003,7 @@ int main(int argc, char** argv)
 
 
                     rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-                    
+
                     corr_coeff = rscc_and_accum.first;
                     accum = rscc_and_accum.second;
 
@@ -2049,7 +2050,7 @@ int main(int argc, char** argv)
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
-                    
+
 
                     if ( ! ligandList[index].second.ok_with_conformation () )
                         enable_torsions_for.push_back (ligandList[index].second.type().trim());
@@ -2062,7 +2063,7 @@ int main(int argc, char** argv)
                             occupancy_check = true;
 
                     ligandList[index].second.set_occupancy_check ( occupancy_check );
-                    
+
                 });
                 processedMonomers++;
 
@@ -2078,14 +2079,14 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
-            
+
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
         else
@@ -2136,7 +2137,7 @@ int main(int argc, char** argv)
 
 
                 rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-                
+
                 corr_coeff = rscc_and_accum.first;
                 accum = rscc_and_accum.second;
 
@@ -2183,7 +2184,7 @@ int main(int argc, char** argv)
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
-                
+
 
                 if ( ! ligandList[index].second.ok_with_conformation () )
                     enable_torsions_for.push_back (ligandList[index].second.type().trim());
@@ -2225,30 +2226,30 @@ int main(int argc, char** argv)
             if(useParallelism)
             {
                 pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms](int id)
-                { 
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Calculating sfcbligands from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sfcbligands( fc_ligands_bsc, fobs, ligandAtoms );
                 });
-        
+
                 pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Calculating sfcb from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sfcb( fc_omit_bsc, fobs, mainAtoms );
                 });
 
                 pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Calculating sfcball from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sfcball( fc_all_bsc, fobs, allAtoms );
                 });
             }
@@ -2272,10 +2273,10 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
@@ -2294,6 +2295,7 @@ int main(int argc, char** argv)
         clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );  // define grid
         clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa best map
         clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+        clipper::Xmap<float> sigmaa_omit_fb( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa omit diff map
         clipper::Xmap<float> sigmaa_omit_fd( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa omit diff map
         clipper::Xmap<float> ligandmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
@@ -2307,17 +2309,17 @@ int main(int argc, char** argv)
         if(useParallelism)
             {
                 pool.push([&sfscale, &fobs_scaled, &fc_all_bsc](int id)
-                { 
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Calculating sfscale from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sfscale( fobs_scaled, fc_all_bsc );
                 });
 
                 pool.push([&fobs_scaled, &flag, &ih](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Calculating flag[ih].flag() from Thread ID: " << id << '.' << std::endl;
                     #endif
@@ -2339,7 +2341,7 @@ int main(int argc, char** argv)
                     else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
                 }
             }
-            
+
 
         double FobsFcalcSum = 0.0;
         double FobsFcalcAllSum = 0.0;
@@ -2358,10 +2360,10 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
@@ -2371,24 +2373,24 @@ int main(int argc, char** argv)
         if(useParallelism)
         {
             pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param](int id)
-            { 
+            {
                 #if DUMP
                     std::cout << std::endl;
                     DBG << "Calculating sfw_omit from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
                 sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
             });
 
             pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating sfw_all from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-                sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); 
+                sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
             });
         }
         else
@@ -2397,9 +2399,9 @@ int main(int argc, char** argv)
             sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
 
             clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-            sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag ); 
+            sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
         }
-        
+
         // fb:          output best map coefficients
         // fd:          output difference map coefficients
         // phiw:        output phase and fom
@@ -2414,10 +2416,10 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
@@ -2436,44 +2438,53 @@ int main(int argc, char** argv)
         if(useParallelism)
         {
             pool.push([&sigmaa_all_map, &fb_all](int id)
-            { 
+            {
                 #if DUMP
                     std::cout << std::endl;
                     DBG << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 sigmaa_all_map.fft_from(fb_all);
             });
 
             pool.push([&sigmaa_dif_map, &fd_all](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 sigmaa_dif_map.fft_from(fd_all);
-            });     
+            });
+
+            pool.push([&sigmaa_omit_fb, &fb_omit](int id)
+            {
+                #if DUMP
+                    DBG << "Calculating sigmaa_omit_fb from Thread ID: " << id << '.' << std::endl;
+                #endif
+
+                sigmaa_omit_fb.fft_from(fb_omit);
+            });
 
             pool.push([&sigmaa_omit_fd, &fd_omit](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
                 #endif
-                
+
                 sigmaa_omit_fd.fft_from(fd_omit);
-            });  
+            });
 
             pool.push([&ligandmap, &fc_ligands_bsc](int id)
-            { 
+            {
                 ligandmap.fft_from(fc_ligands_bsc);
-                
+
                 #if DUMP
                     DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
                 #endif
             });
 
             pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum](int id)
-            { 
+            {
                 #if DUMP
                     DBG << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
                 #endif
@@ -2495,11 +2506,9 @@ int main(int argc, char** argv)
         else
         {
             sigmaa_all_map.fft_from( fb_all );  // calculate the maps
-
             sigmaa_dif_map.fft_from( fd_all );
-
+            sigmaa_omit_fb.fft_from( fb_omit );
             sigmaa_omit_fd.fft_from( fd_omit );
-
             ligandmap.fft_from( fc_ligands_bsc );       // this is the map that will serve as Fc map for the RSCC calculation
 
             for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
@@ -2522,15 +2531,15 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
         }
-    
+
         if (!batch)
             std::cout << "done." << std::endl;
 
@@ -2578,7 +2587,7 @@ int main(int argc, char** argv)
             opmtz_omit.close_write ();
         }
 
-            
+
         if (!batch)
             printf("\n R-all = %1.3f  R-omit = %1.3f\n", (FobsFcalcAllSum / FobsSum), (FobsFcalcSum / FobsSum));
 
@@ -2609,46 +2618,45 @@ int main(int argc, char** argv)
         if (allSugars)
             input_ccd_code = "all";
 
-
         if (!batch)
         {
             if(useParallelism)
             {
                 pool.push([&sigmaa_all_MapOut, &sigmaa_all_map](int id)
-                { 
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Writing and outputting sigmaa_all_map to \"sigmaa_best.map\" from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                     sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
                     sigmaa_all_MapOut.close_write();
                 });
 
                 pool.push([&sigmaa_dif_MapOut, &sigmaa_dif_map](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Writing and outputting sigmaa_dif_map to \"sigmaa_diff.map\" from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
                     sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
                     sigmaa_dif_MapOut.close_write();
                 });
 
                 pool.push([&sigmaa_omit_fd_MapOut, &sigmaa_omit_fd](int id)
-                { 
+                {
                     #if DUMP
                         DBG << "Writing and outputting sigmaa_omit_fd to \"sigmaa_omit.map\" from Thread ID: " << id << '.' << std::endl;
                     #endif
-                    
+
                     sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                     sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
                     sigmaa_omit_fd_MapOut.close_write();
                 });
             }
-            else 
+            else
             {
                 sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                 sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
@@ -2661,7 +2669,7 @@ int main(int argc, char** argv)
                 sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                 sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
                 sigmaa_omit_fd_MapOut.close_write();
-                
+
                 std::cout << "done." << std::endl;
             }
 
@@ -2672,20 +2680,20 @@ int main(int argc, char** argv)
                     std::cout << std::endl;
                     DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                 #endif
-                
+
                 while(pool.n_remaining_jobs() > 0)
                     pool.sync();
-                
+
                 #if DUMP
                     DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
                 #endif
             }
 
-            
+
             std::cout << "\n\nDetailed validation data" << std::endl;
             std::cout << "------------------------" << std::endl;
         }
-        
+
 
         // TO DO in medium term: Parallelize, clean up and match this bit to what is currently done with cryo-em maps. Too much code duplication here.
         if(useParallelism)
@@ -2698,14 +2706,14 @@ int main(int argc, char** argv)
 
                 if(pool.n_idle() == 0)
                     pool.greedy_sync();
-  
-                pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa](int id)
-                { 
+
+                pool.push([&sugarList, &rscc_diff, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa](int id)
+                {
                     #if DUMP
                         std::cout << std::endl;
                         DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
                     #endif
-                    
+
                     float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                     x=y=z=0.0;
                     maxX=maxY=maxZ=-999999.0;
@@ -2743,8 +2751,12 @@ int main(int argc, char** argv)
                     double accum = 0.0;
                     double corr_coeff = 0.0;
                     std::pair<double, double> rscc_and_accum;
-
-                    rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    if ( rscc_diff ) {
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    }
+                    else {
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    }
                     corr_coeff = rscc_and_accum.first;
                     accum = rscc_and_accum.second;
 
@@ -2791,7 +2803,7 @@ int main(int argc, char** argv)
                         ligandList[index].second.set_context ( "ligand" );
                     }
 
-                    
+
 
                     if ( ! ligandList[index].second.ok_with_conformation () )
                         enable_torsions_for.push_back (ligandList[index].second.type().trim());
@@ -2804,7 +2816,7 @@ int main(int argc, char** argv)
                             occupancy_check = true;
 
                     ligandList[index].second.set_occupancy_check ( occupancy_check );
-                    
+
                 });
                 processedMonomers++;
 
@@ -2819,14 +2831,14 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
-            
+
             while(pool.n_remaining_jobs() > 0)
                 pool.sync();
-            
+
             #if DUMP
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
             #endif
-            
+
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
         else
@@ -2873,7 +2885,12 @@ int main(int argc, char** argv)
                 double corr_coeff = 0.0;
                 std::pair<double, double> rscc_and_accum;
 
-                rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                if ( rscc_diff ) {
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                }
+                else {
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                }
 
                 corr_coeff = rscc_and_accum.first;
                 accum = rscc_and_accum.second;
@@ -2921,7 +2938,7 @@ int main(int argc, char** argv)
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
-                
+
 
                 if ( ! ligandList[index].second.ok_with_conformation () )
                     enable_torsions_for.push_back (ligandList[index].second.type().trim());
@@ -2954,10 +2971,10 @@ int main(int argc, char** argv)
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
-        
+
         while(pool.n_remaining_jobs() > 0)
             pool.sync();
-        
+
         #if DUMP
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
         #endif
@@ -2993,7 +3010,7 @@ int main(int argc, char** argv)
         privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
         privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, all_MapName, dif_MapName, omit_dif_MapName, batch, "input_model_nowater.pdb", check_unmodelled);
     }
-    
+
 
     int n_geom = 0, n_anomer = 0, n_config = 0, n_pucker = 0, n_conf = 0;
 
@@ -3127,9 +3144,9 @@ int main(int argc, char** argv)
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
-                            // Printing vector tuples 
+                            // Printing vector tuples
                         clipper::String diagnostic = "N-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
@@ -3143,12 +3160,12 @@ int main(int argc, char** argv)
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
                         clipper::String diagnostic = "C-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
-                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                       
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
                     }
                 }
 
@@ -3157,12 +3174,12 @@ int main(int argc, char** argv)
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
                         clipper::String diagnostic = "O-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
-                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
                     }
                 }
 
@@ -3171,46 +3188,46 @@ int main(int argc, char** argv)
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
                         clipper::String diagnostic = "S-linked blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
-                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
                     }
-                }   
+                }
 
                 if(type == 4 && !blobsProteinBackboneSummaryForCoot[type].empty())
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
                         clipper::String diagnostic = "PNGase blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
-                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
                     }
-                }   
+                }
                 if(type == 5 && !blobsProteinBackboneSummaryForCoot[type].empty())
                 {
                     for(int i = 0; i < blobsProteinBackboneSummaryForCoot[type].size(); i++)
                     {
                         clipper::String diagnostic = "Glycan chain blob: " + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).id() + "-" + std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).type() + " of Chain " + std::get<0>(blobsProteinBackboneSummaryForCoot[type][i]) + " = " + clipper::String(std::get<2>(blobsProteinBackboneSummaryForCoot[type][i])) + " - might be in proximity of unmodelled glycosylation site";
-                        
+
                         clipper::MAtom DUMAtom;
                         DUMAtom = std::get<1>(blobsProteinBackboneSummaryForCoot[type][i]).find(" DUM", clipper::MM::ANY);
 
                         privateer::coot::insert_coot_go_to_sugar_scheme ( of_scm, DUMAtom.coord_orth(), diagnostic);
-                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);                        
+                        privateer::coot::insert_coot_go_to_sugar_python ( of_py, DUMAtom.coord_orth(), diagnostic);
                     }
-                }                                          
+                }
 
             }
     }
 
-    
+
     privateer::coot::insert_coot_epilogue_scheme ( of_scm );
     privateer::coot::insert_coot_epilogue_python ( of_py );
     of_scm.close();
@@ -3227,7 +3244,7 @@ int main(int argc, char** argv)
 
     privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, glycomics_database);
 
-    
+
 
     if ( enable_torsions_for.size() > 0 )
     {
@@ -3238,15 +3255,15 @@ int main(int argc, char** argv)
 
     if (useParallelism)
     {
-        
+
         #if DUMP
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
-        
+
         while(pool.n_remaining_jobs() > 0)
             pool.sync();
-        
+
         #if DUMP
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
         #endif
