@@ -1,6 +1,6 @@
-from privateer.privateer_core import check_monlib_access
-from privateer.privateer_core import CarbohydrateDictionary
-from privateer.privateer_core import CarbohydrateLibrary
+from privateer.libprivateer import check_monlib_access
+from privateer.libprivateer import CarbohydrateDictionary
+from privateer.libprivateer import CarbohydrateLibrary
 import os
 
 def minimise_from_smiles ( smiles_string = "", n_conformers=50, filename="privateer-minimised.pdb" ) :
