@@ -603,7 +603,7 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     return false;
 }
 
-void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::Database>& glycomics_database )
+void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, nlohmann::json &jsonObject )
 {
     std::fstream of_xml;
 
@@ -675,26 +675,27 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         of_xml << "     <GlycanPDB>"        << pdbname                                           << "</GlycanPDB>\n"                                         ;
         of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
         of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().first.type().trim() + list_of_glycans[i].get_root().first.id().trim() << "</GlycanRoot>\n" ;
-        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain().substr(0,1)         << "</GlycanChain>\n"                                      ;
+        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
         of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
         of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;
         
-        if(!glycomics_database.empty())
+        if(!jsonObject.empty())
         {
-            int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
+            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
             
             std::string glyTouCanID, glyConnectID;
             if (valueLocation != -1)
                 {
-                    glyTouCanID = glycomics_database[valueLocation].GlyTouCanID;
+                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
                     if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
                     {
                         glyTouCanID.erase(0, 1);
                         glyTouCanID.pop_back();
                     }
 
-                    glyConnectID = glycomics_database[valueLocation].GlyConnectID;
+                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                    else     glyConnectID = "NotFound";
                 }
             else glyTouCanID = "NotFound", glyConnectID = "NotFound";
 
@@ -726,21 +727,22 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
                                 residueDeletions = list_of_glycans_associated_to_permutations[i][j].first.second[2];
 
                             clipper::String glycanWURCS = list_of_glycans_associated_to_permutations[i][j].first.first.generate_wurcs();
-                            int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
+                            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
 
                             os_permutation << list_of_glycans_associated_to_permutations[i][j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
                             
                             std::string glyTouCanID, glyConnectID;
                             if (valueLocation != -1)
                                 {
-                                    glyTouCanID = glycomics_database[valueLocation].GlyTouCanID;
+                                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
                                     if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
                                     {
                                         glyTouCanID.erase(0, 1);
                                         glyTouCanID.pop_back();
                                     }
 
-                                    glyConnectID = glycomics_database[valueLocation].GlyConnectID;
+                                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
+                                    else     glyConnectID = "NotFound";
                                 }
                             else glyTouCanID = "NotFound", glyConnectID = "NotFound";
                             
@@ -852,25 +854,38 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
     return map_data;
 }
 
-int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::Database>& glycomics_database, std::string inputwurcs )
+nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
 {
-    auto result = std::find_if(glycomics_database.begin(), 
-             glycomics_database.end(), 
-             [&inputwurcs]
-             (const privateer::json::Database& entry) -> bool { return inputwurcs == entry.WURCS; });
+    std::string path_copy = path;
+    if(path_copy == "nopath" || path_copy.empty()) 
+        {
+            std::string env(std::getenv ( "CINCL" ));
 
-    int index = -1;
-    if (result != std::end(glycomics_database))
-    {
-        index = std::distance(glycomics_database.begin(), result);
-        return index;
-    }
-    else
-    {
-        return -1;
-    }
+            path_copy = env + "/privateer/" + "database.json";
+        }
 
-    return index;
+    std::cout << "Reading " << path_copy << "... done." << std::endl;
+
+    std::ifstream input(path_copy);
+
+    input >> jsonContainer;
+
+    return jsonContainer;
+}
+
+int privateer::util::find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value )
+{
+    std::string jsonValue;
+    for (nlohmann::json::iterator it = jsonContainer.begin(); it != jsonContainer.end(); it++)
+    {
+        jsonValue = it.value()[key];
+        if(jsonValue == value)
+        {
+            int index = it - jsonContainer.begin();
+            return index;
+        }
+    }
+    return -1;
 }
 
 char privateer::util::get_altconformation(clipper::MAtom ma)

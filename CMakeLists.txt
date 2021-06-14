@@ -15,7 +15,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 
-set(CLIBDENV $ENV{CLIBD})
+
 
 ## Find Privateer's dependencies that have been compiled locally. 
 #
@@ -38,6 +38,9 @@ find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
 find_library(CLIPPERCIFDEP NAMES clipper-cif
             HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
 
+#Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 
 find_package(Threads REQUIRED)
@@ -54,25 +57,20 @@ include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
-file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json 
-    DESTINATION ${CLIBDENV})
-
 add_library(privateer_lib
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
-    ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-dbquery.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
-    ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
+            ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-dbquery.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
 
 target_link_libraries ( privateer_lib 
                         ${MMDB2DEP} 
@@ -85,6 +83,7 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json
                         Threads::Threads)
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
@@ -103,7 +102,8 @@ target_link_libraries ( privateer_exec
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
@@ -122,7 +122,8 @@ target_link_libraries ( libprivateer PRIVATE
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
 
 
 install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})

@@ -21,6 +21,7 @@
 #include <ccp4srs/ccp4srs_manager.h>
 #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
+// #include <nlohmann/json.hpp>
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
@@ -73,11 +74,12 @@ namespace privateer
                          std::vector < clipper::MGlycan > list_of_glycans,
                          std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations,
                          clipper::String pdbname,
-                         std::vector<privateer::json::Database>& glycomics_database );
+                         nlohmann::json& jsonObject );
         bool read_coordinate_file_mtz (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, bool batch);
         bool read_coordinate_file_mrc (clipper::MMDBfile& mfile, clipper::MiniMol& mmol, clipper::String& ippdb, clipper::Xmap<double>& input_map, bool batch);
         clipper::Xmap<float> read_map_file ( std::string path );
-        int find_index_of_value_from_wurcs ( std::vector<privateer::json::Database>& glycomics_database, std::string value );
+        nlohmann::json read_json_file ( clipper::String& path, nlohmann::json& jsonContainer );
+        int find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value );
         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
         void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
         void print_monosaccharide_summary_python (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, clipper::HKL_info& hklinfo, clipper::String input_model);

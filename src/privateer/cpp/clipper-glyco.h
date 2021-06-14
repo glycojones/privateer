@@ -28,7 +28,11 @@
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
 #include <clipper/minimol/minimol_utils.h>
-#include "privateer-json.h"
+
+#ifdef _WIN32
+    #undef snprintf
+#endif
+#include <nlohmann/json.hpp>
 
 inline bool altconf_compatible ( char m1, char m2 )
 {

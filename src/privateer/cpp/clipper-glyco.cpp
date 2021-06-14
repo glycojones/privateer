@@ -21,6 +21,7 @@
 
 
 using namespace clipper;
+using json = nlohmann::json;
 
 
 ///////////////////////// MSugar ///////////////////////////////
