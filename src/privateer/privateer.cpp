@@ -55,12 +55,14 @@ int main(int argc, char** argv)
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nCopyright 2013-2019 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
+    std::cout << "\nCopyright 2013-2021 Jon Agirre, Kevin Cowtan and The University of York." << std::endl  ;
     std::cout << "\n\nPlease reference these articles: "<< std::endl ;
     std::cout << "\n  'Privateer: software for the conformational validation of carbohydrate structures'";
     std::cout << "\n   Agirre J, Fernandez-Iglesias J, Rovira C, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Structural & Molecular Biology 22 (11), 833-834." << std::endl;
     std::cout << "\n  'Carbohydrate anomalies in the PDB'";
-    std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl << std::endl;
+    std::cout << "\n   Agirre J, Davies GJ, Wilson KS and Cowtan KD. (2015) Nature Chemical Biology 11 (5), 303." << std::endl;
+    std::cout << "\n  'Leveraging glycomics data in glycoprotein 3D structure validation with Privateer.'";
+    std::cout << "\n   Bagdonas H, Ungar D, Agirre J. (2020) Beilstein Journal of Organic Chemistry, 16(1), 2523-2533." << std::endl << std::endl;
 
     #if DUMP
         std::cout << "   WARNING: THIS IS A DEBUG VERSION - NOT INTENDED FOR PUBLIC DISTRIBUTION" << std::endl ;
