@@ -15,7 +15,7 @@
 
 #include "clipper-glyco.h"
 
-// #define DUMP 1
+//#define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -2591,24 +2591,24 @@ Function used to obtain a std::vector populated with WURCS residue descriptions 
 
 Performance considerations: uses a non ideal implementation of making sure that only unique strings are added to std::vector
                             via std::find function. This gives O(N*N) complexity. However, this method is used regardless for the
-                            following reasons: 
+                            following reasons:
                             1.) This std::vector is unlikely to ever be significantly huge, thus unlikely to cause a huge performance penalty.
                             2.) WURCS requires that the sequence of items pushed into vector are maintained - we don't want
-                            to rearrange the order of individual items within the std::vector. 
+                            to rearrange the order of individual items within the std::vector.
 
 Last modified on: 03/01/2020
 */
 std::vector < std::string > MGlycan::obtain_unique_WURCS_residues()
 {
     std::vector < std::string > uniqueResidues;
-    
+
     for(int i = 0; i < node_list.size(); i++)
-    {   
+    {
         clipper::MSugar msug;
         std::string msug_wurcs_string;
 
         msug = node_list[i].get_sugar();
-        msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() ); 
+        msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() );
 
         if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_wurcs_string) == uniqueResidues.end()) {
             uniqueResidues.push_back(msug_wurcs_string);
@@ -2645,9 +2645,9 @@ Last modified on: 03/01/2020
 const int MGlycan::obtain_total_number_of_glycosidic_bonds()
 {
     int totalConnections = 0;
-    
+
     for(int i = 0; i < node_list.size(); i++)
-    {   
+    {
         int numOfConnectionsPerResidue = node_list[i].number_of_connections();
         totalConnections += numOfConnectionsPerResidue;
     }
@@ -2663,15 +2663,15 @@ WURCS=Version/Unique Residue Count, Chain Length Count, Number of linkages betwe
 WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
 
-TEST CASE: 
+TEST CASE:
 PDB ID:                                 3v8x
 GlyTouCan ID for glycan on Chain A:     G98736SM
 GlyTouCan ID for glycan on Chain B:     G74608QW
 
-WURCS2GTC DEMO: 
-Glycan on Chain A: 
+WURCS2GTC DEMO:
+Glycan on Chain A:
 https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,10,9/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-4-5-3-1-4/a4-b1_b4-c1_c3-d1_c6-h1_d4-e1_e4-f1_f6-g2_h4-i1_i4-j1
-Chain on Chain B: 
+Chain on Chain B:
 https://api.glycosmos.org/glytoucan/sparql/wurcs2gtcids?wurcs=WURCS=2.0/5,9,8/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-1-3-1-4-5/a4-b1_b4-c1_c3-d1_c6-f1_d4-e1_f4-g1_g4-h1_h6-i2
 
 12/02/2020: All previously noted issues have been addressed. The current version of the code should be much more robust and not have any significant bugs.
@@ -2766,7 +2766,7 @@ clipper::String MGlycan::generate_wurcs()
                 wurcs_string += "2";
             else
                 wurcs_string += "1";
-            
+
             wurcs_string += "_";
             }
         }
@@ -2834,7 +2834,7 @@ void MGlycan::remove_node_at_index ( int index )
     if (index>node_list.size()-1)
     {
         int lastElementID = node_list.size() - 1;
-        
+
 
         for (int i = 0; i < node_list.size(); i++)
         {
@@ -2844,7 +2844,7 @@ void MGlycan::remove_node_at_index ( int index )
                 for (int j = 0; j < node_list[i].number_of_connections(); j++ )
                 {
                     int connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
-                    if(connectedToNodeID > index) 
+                    if(connectedToNodeID > index)
                         {
                             node_list[i].get_connection(j).modify_linked_node_id(connectedToNodeID - 1);
                             continue;
@@ -2867,7 +2867,7 @@ void MGlycan::remove_node_at_index ( int index )
                 for (int j = 0; j < node_list[i].number_of_connections(); j++ )
                 {
                     int connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
-                    if(connectedToNodeID > index) 
+                    if(connectedToNodeID > index)
                         {
                             node_list[i].get_connection(j).modify_linked_node_id(connectedToNodeID - 1);
                             continue;
@@ -3161,20 +3161,20 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
 
                     if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
-                    // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults. 
+                    // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults.
                     {
                         // Consensus sequence Trp-X-X-Trp || Trp-Ser/Thr-X-Cys according to https://www.uniprot.org/help/carbohyd
                         bool firstConsensus = false;
                         bool secondConsensus = false;
-                        if ( linked[j].second.monomer()-3 > 0 ) 
+                        if ( linked[j].second.monomer()-3 > 0 )
                             if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "TRP" ||
                                 mmol[linked[j].second.polymer()][linked[j].second.monomer()-3].type().trim() == "TRP" )
                                     firstConsensus = true;
-                        if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "SER" || 
+                        if ( mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "SER" ||
                              mmol[linked[j].second.polymer()][linked[j].second.monomer()+1].type().trim() == "THR" &&
                              mmol[linked[j].second.polymer()][linked[j].second.monomer()+3].type().trim() == "CYS" )
                                 secondConsensus = true;
-                            
+
                         if (!firstConsensus && !secondConsensus) mg.add_root_annotation ( " Warning: this glycosylation point does not follow the Trp-X-X-Trp or Trp-Ser/Thr-X-Cys consensus sequence. ");
                     }
 
