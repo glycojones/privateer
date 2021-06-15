@@ -533,7 +533,7 @@ int main(int argc, char** argv)
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                         #endif
 
-                        while(pool.n_remaining_jobs() > 0)
+                        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                             pool.sync();
 
                         #if DUMP
@@ -1289,7 +1289,7 @@ int main(int argc, char** argv)
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                         #endif
 
-                        while(pool.n_remaining_jobs() > 0)
+                        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                             pool.sync();
 
                         #if DUMP
@@ -1369,7 +1369,7 @@ int main(int argc, char** argv)
                         DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                     #endif
 
-                    while(pool.n_remaining_jobs() > 0)
+                    while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                         pool.sync();
 
                     #if DUMP
@@ -1874,7 +1874,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -1956,11 +1956,8 @@ int main(int argc, char** argv)
             for (int index = 0; index < ligandList.size(); index++)
             {
 
-                // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                //     pool.sync();
-
-                if(pool.n_idle() == 0)
-                    pool.greedy_sync();
+                if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                    pool.sync();
 
                 pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch](int id)
                 {
@@ -2094,7 +2091,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -2293,7 +2290,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -2380,7 +2377,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -2436,7 +2433,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -2551,7 +2548,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -2700,7 +2697,7 @@ int main(int argc, char** argv)
                     DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
                 #endif
 
-                while(pool.n_remaining_jobs() > 0)
+                while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
 
                 #if DUMP
@@ -2720,11 +2717,8 @@ int main(int argc, char** argv)
             int processedMonomers = 0;
             for (int index = 0; index < ligandList.size(); index++)
             {
-                // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                //     pool.sync();
-
-                if(pool.n_idle() == 0)
-                    pool.greedy_sync();
+                if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                    pool.sync();
 
                 pool.push([&sugarList, &rscc_diff, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa](int id)
                 {
@@ -2856,7 +2850,7 @@ int main(int argc, char** argv)
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
             #endif
 
-            while(pool.n_remaining_jobs() > 0)
+            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
             #if DUMP
@@ -3001,7 +2995,7 @@ int main(int argc, char** argv)
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
 
-        while(pool.n_remaining_jobs() > 0)
+        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
         #if DUMP
@@ -3286,7 +3280,7 @@ int main(int argc, char** argv)
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
 
-        while(pool.n_remaining_jobs() > 0)
+        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
         #if DUMP

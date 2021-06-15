@@ -1296,7 +1296,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-                pool.sync();
+            pool.sync();
         
         #if DUMP
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
@@ -1320,11 +1320,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         int processedMonomers = 0;
         for (int index = 0; index < ligandList.size(); index++)
         {
-            // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-            //     pool.sync();
-
-            if(pool.n_idle() == 0)
-                pool.greedy_sync();
+            if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                pool.sync();
 
             pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa](int id)
             { 
@@ -1867,7 +1864,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
         
-        while(pool.n_remaining_jobs() > 0)
+        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
         #if DUMP
@@ -1881,12 +1878,9 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         for (int index = 0; index < ligandList.size(); index++)
         {
 
-            // if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-            //     pool.sync();
-
-            if(pool.n_idle() == 0)
-                pool.greedy_sync();
-            
+            if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
+                pool.sync();
+       
             pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index](int id)
             { 
                 #if DUMP
@@ -2014,7 +2008,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
         #endif
         
-        while(pool.n_remaining_jobs() > 0)
+        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
         #if DUMP
