@@ -15,7 +15,6 @@
 
 #include "clipper-glyco.h"
 
-//#define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -38,12 +37,13 @@ MSugar::MSugar( )
 	\param mm A MMonomer object that will be extended into a sugar
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, char alt_conf)
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, bool& debug_output, char alt_conf)
 {
 
 	// we calculate the non-bond object first, then continue with normal creation
+    this->debug_output = debug_output;
 	const clipper::MAtomNonBond& nb = MAtomNonBond (ml, 5.0);
-	MSugar(ml, mm, nb, alt_conf);
+	MSugar(ml, mm, nb, debug_output, alt_conf);
 }
 
 
@@ -54,12 +54,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, char alt
 	\param nb An MAtomNonBond object to be used for the determination of the stereochemistry
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, char alt_conf )
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, bool& debug_output, char alt_conf )
 {
 
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
-
+    this->debug_output = debug_output;
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
     this->sugar_parent_molecule_nonbond = &nb; // store pointers
@@ -68,19 +68,21 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
 
-    #if DUMP
+    if(debug_output)
+    {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
-    #endif
+    }
 
-    #if DUMP
+    if(debug_output)
+    {
         std::cout << "Size of (*this).size() " << (*this).size() << std::endl;
         for(int i = 0; i < (*this).size(); i++)
         {
             std::cout << "Atom ID: (*this)[" << i << "].id " << (*this)[i].id() << std::endl;
         }
-    #endif
+    }
 
     this->sugar_found_db = lookup_database(this->type().trim());
 
@@ -97,9 +99,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
     if ( this->sugar_found_db )
     {
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "found it! " << std::endl;
-        #endif
+        }
 
         std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
 
@@ -114,9 +117,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
                 index_atom = this->lookup(buffer[i].trim()+sugar_alternate_confcode,clipper::MM::UNIQUE);
 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "index_atom in line 146" << index_atom << std::endl;
-                #endif
+                }
 
                 if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now
                 {
@@ -134,9 +138,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 index_atom = this->lookup(buffer[i],clipper::MM::ANY);
 
 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << "test" << std::endl;
-                #endif
+                }
 
                 if (index_atom == -1)
                 {
@@ -150,9 +155,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                     return;
                 }
             }
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "trying to push (*this)[index_atom] in line 181" << (*this)[index_atom].id() << std::endl;
-            #endif
+            }
             sugar_ring_elements.push_back((*this)[index_atom]);
         }
     }
@@ -167,18 +173,20 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 		this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
 
-		#if DUMP
+		if(debug_output)
+        {
 			DBG << "After checking the conformation..." << std::endl;
-		#endif
+		}
 	}
 	else if (this->sugar_ring_elements.size() == 6)
 	{
 		this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
 
-        #if DUMP
+        if(debug_output)
+        {
 			DBG << "After checking the conformation..." << std::endl;
-		#endif
+		}
 	}
 	else
 	{
@@ -211,9 +219,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	this->sugar_sane = false;
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Just before examining the ring..." << std::endl;
-	#endif
+	}
 
 
 	if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
@@ -339,9 +348,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 	}
 
-	#if DUMP
+	if(debug_output)
+    {
 	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
-	#endif
+	}
 }
 
 
@@ -355,10 +365,11 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     \param validation_data A data structure containing validation data that overrides whatever there is in the database
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data, char alt_conf )
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf )
 {
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+    this->debug_output = debug_output;
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
     this->sugar_parent_molecule_nonbond = &nb; // store pointers
@@ -367,11 +378,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
     this->sugar_context = "";
 
-    #if DUMP
+    if(debug_output)
+    {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
-    #endif
+    }
 
     this->sugar_found_db = true;
 
@@ -386,9 +398,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     sugar_bfactor /= this->size();
     sugar_bfactor = clipper::Util::u2b(sugar_bfactor);
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "found it! " << std::endl;
-    #endif
+    }
 
     std::vector <clipper::String> buffer = validation_data.ring_atoms.trim().split(" ");
 
@@ -430,9 +443,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
         this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
         this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
 
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "After checking the conformation..." << std::endl;
-        #endif
+        }
     }
     else if (this->sugar_ring_elements.size() == 6)
     {
@@ -469,9 +483,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     // sanity check:
     this->sugar_sane = false;
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "Just before examining the ring..." << std::endl;
-    #endif
+    }
 
     if ( examine_ring() )
         sugar_diag_ring = true;
@@ -545,9 +560,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
         sugar_sane = true;
 
-    #if DUMP
-	DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
-    #endif
+    if(debug_output)
+    {
+	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
+    }
 
 }
 
@@ -599,15 +615,17 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     clipper::String nz5 = ring_atoms[4].name().trim();
     clipper::String nz6 = ring_atoms[5].name().trim(); // End of ring
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "getting the stereochemistry..." << std::endl;
-	#endif
+	}
 
 	stereochemistry_pairs stereo = get_stereochemistry(mmol);
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "done." << std::endl;
-	#endif
+	}
 
 	this->sugar_anomeric_carbon = stereo.first.first;
 	this->sugar_anomeric_substituent = stereo.first.second;
@@ -735,10 +753,11 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     nz6_substituent.transform(shift); // we still need to recentre the atom
     z6_substituent = clipper::Vec3<clipper::ftype>::dot(nz6_substituent.coord_orth(), n);
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "last in-ring carbon has occupancy " << ring_atoms[5].occupancy() << " and it's substituent is "
             << nz6_substituent.name().trim() << " with occupancy " << nz6_substituent.occupancy() << std::endl;
-    #endif
+    }
 
 	///////// stereochemistry ///////////
 
@@ -868,17 +887,19 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 			}
 		}
 
-		#if DUMP
+		if(debug_output)
+        {
 			DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
 			DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " << configurational_substituent << "/" << z_configurational_substituent << std::endl;
 			DBG << "z6= " << z6 << " z6_subs= " << z6_substituent << std::endl;
-		#endif
+		}
 
     cpParams.push_back( z6 - z6_substituent );
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Finished Cremer-Pople analysis, returning to caller..." << std::endl;
-	#endif
+	}
 
     return cpParams;
 
@@ -919,9 +940,10 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 	this->sugar_configurational_carbon = stereo.second.first;
 	this->sugar_configurational_substituent = stereo.second.second;
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "After getting the stereochemistry" << std::endl;
-	#endif
+	}
 
 
 	if ( configurational_carbon != "XXX" )
@@ -957,9 +979,10 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         clipper::Coord_orth centre(centre_x,centre_y,centre_z);
 	this->sugar_centre = centre;
 
-        #if DUMP
-	    DBG << "Ring centre: " << centre.format() << std::endl;
-	#endif
+        if(debug_output)
+        {
+            DBG << "Ring centre: " << centre.format() << std::endl;
+        }
 
         clipper::RTop_orth shift(clipper::Mat33<>::identity(), (- centre)); //clipper::Vec3<>::null()
         sugar.transform(shift); // recentre the sugar coordinates
@@ -1016,13 +1039,14 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 
         for ( int i = 0 ; i < neighbourhood.size() ; i++ )
         {
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Neighbour found for " << ring_atoms[4].name()
                     << ": " << (mmol.atom(neighbourhood[i]).name())
                     << " at distance "
                     << clipper::Coord_orth::length ( mmol.atom(neighbourhood[i]).coord_orth(), ring_atoms[4].coord_orth() )
                     << std::endl;
-            #endif
+            }
 
             if (( mmol.atom(neighbourhood[i]).element().trim() != "H" ) &&
                 (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[4].name().trim())) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
@@ -1039,9 +1063,10 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
             }
         }
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "substituent at last in-ring carbon: " << nz5_substituent.name().trim() << std::endl;
-	#endif
+	}
 
 	nz5_substituent.transform(shift); // we still need to recentre the atom
 	z5_substituent = clipper::Vec3<clipper::ftype>::dot(nz5_substituent.coord_orth(), n);
@@ -1153,12 +1178,13 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         }
     }
 
-	#if DUMP
+	if(debug_output)
+    {
         DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
         DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= "
             << configurational_substituent << "/" << z_configurational_substituent << std::endl;
 	    DBG << "z5= " << z5 << " z5_subs= " << z5_substituent << std::endl;
-	#endif
+	}
 
     cpParams.push_back( z5 - z5_substituent );
 
@@ -1297,10 +1323,11 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 
 	std::vector<clipper::MAtom> result;
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Dumping ring contents... " << std::endl;
 		for (int runner = 0 ; runner < buffer.size() ; runner++ ) DBG << buffer[runner].name().trim() << " with occupancy = " << buffer[runner].occupancy() << std::endl;
-	#endif
+	}
 
 	for ( int i = 0 ; i < buffer.size() ; i++ ) if ( buffer[i].element().trim() == "O" ) result.push_back( buffer[i] ); // find the oxygen and assign it to the first position
 
@@ -1320,18 +1347,20 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 				int destination;
 				stream_2 >> destination;
 
-				//#if DUMP
+				//if(debug_output)
+                //{
 				//	DBG << buffer[i].name().trim() << " with index " << origin << " VS " << result[1].name().trim() << " with index " << destination << std::endl;
-				//#endif
+				//}
 
 				int subindex = 1;
 
 				while ( ( origin > destination ) && (subindex < result.size() ) )
 				{
 
-				//#if DUMP
+				//if(debug_output)
+                //{
 				//	DBG << "Subindex is " << subindex << " and result[subindex] is " << result[subindex].name() << std::endl;
-				//#endif
+				//}
 
 					if ( ++subindex < result.size() )
 					{
@@ -1340,25 +1369,28 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 					}
 				}
 
-				//#if DUMP
+				//if(debug_output)
+                //{
 				//	DBG << "Inserting " << origin << " which is smaller than " << destination << " at position " << subindex << " and result.size() is " << result.size() << std::endl;
-				//#endif
+				//}
 
 				result.insert( result.begin() + subindex , buffer[i] );
 			}
 			else
 			{
 				result.push_back( buffer[i] );
-				//#if DUMP
+				//if(debug_output)
+                //{
 				//	DBG << "Inserting " << buffer[i].name().trim() << " as first item after the oxygen..." << std::endl;
-				//#endif
+				//}
 			}
 		}
 	}
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Successfully determined ring members!" << std::endl;
-	#endif
+	}
 
 	return result;
 }
@@ -1540,9 +1572,10 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
         }
     }
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Anomeric carbon: " << anomeric_carbon.id() << "  Substituent: " << anomeric_substituent.id() << std::endl;
-	#endif
+	}
 
 	result.first.first = anomeric_carbon;
 	result.first.second = anomeric_substituent;
@@ -1575,9 +1608,10 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 			}
 
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "(in-ring) configurational carbon: " << configurational_carbon.id() << "  substituent: " << configurational_substituent.id() << std::endl;
-	#endif
+	}
 
 	// we've recorded the highest ranked in-ring carbon atom & substituent in configurational_*
 
@@ -1619,9 +1653,10 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 	result.second.first = configurational_carbon;
 	result.second.second = configurational_substituent;
 
-	#if DUMP
+	if(debug_output)
+    {
 		DBG << "Configurational carbon: " << configurational_carbon.id() << "  Substituent: " << configurational_substituent.id() << std::endl;
-	#endif
+	}
 
 	return result;
 
@@ -1664,9 +1699,10 @@ bool MSugar::is_stereocentre(const clipper::MAtom& ma, const clipper::MiniMol& m
 		if ( distance < 2.0 ) // check link
 			if (( mmol.atom(neighbourhood[k]).element().trim() != "H" ) && (mmol.atom(neighbourhood[k]).name().trim() != ma.name().trim() ) && altconf_compatible(get_altconf(mmol.atom(neighbourhood[k])), get_altconf(ma)) )
 			{
-				//#if DUMP
+				//if(debug_output)
+                //{
 				//	DBG << "Counting " << mmol.atom(neighbourhood[k]).id() << " as substituent from a total of " << neighbourhood.size() << " atoms with symop " << neighbourhood[k].symmetry() << std::endl;
-				//#endif
+				//}
 
 				bool found = false;
 
@@ -1682,9 +1718,10 @@ bool MSugar::is_stereocentre(const clipper::MAtom& ma, const clipper::MiniMol& m
 			}
 	}
 
-	//#if DUMP
+	//if(debug_output)
+    //{
 	//	DBG << "Number of substituents: " << substituent_list.size() << std::endl;
-	//#endif
+	//}
 
 	if ( substituent_list.size() > 2 ) return true;
 	else return false;
@@ -2154,15 +2191,16 @@ std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar:
 ///////////////////////// MDisaccharide ///////////////////////////////
 
 
-MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm )
+MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm, bool& debug_output )
 {
+    this->debug_output = debug_output;
     int index = search_disaccharides ( mm.type().c_str() ); // we know beforehand that this is a known disaccharide, no need to re-check
 
     clipper::data::sugar_database_entry val_string_one = clipper::data::disaccharide_database[index].sugar_one;
     clipper::data::sugar_database_entry val_string_two = clipper::data::disaccharide_database[index].sugar_two;
 
-    sugar_one = clipper::MSugar ( mmol, mm, manb, val_string_one );
-    sugar_two = clipper::MSugar ( mmol, mm, manb, val_string_two );
+    sugar_one = clipper::MSugar ( mmol, mm, manb, val_string_one, debug_output );
+    sugar_two = clipper::MSugar ( mmol, mm, manb, val_string_two, debug_output );
 
     sugar_one.set_type ( clipper::String( sugar_one.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_one.name_short + "]" ));
     sugar_two.set_type ( clipper::String( sugar_two.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_two.name_short + "]" ));
@@ -2175,8 +2213,9 @@ MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
 
 
-MGlycan::MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, std::string expression_system )
+MGlycan::MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, bool& debug_output, std::string expression_system )
 {
+    this->debug_output = debug_output;
     root.second = clipper::MSugar(root_sugar);
     sugars.push_back ( root.second );
     Node first_node( root.second );
@@ -2187,9 +2226,10 @@ MGlycan::MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::M
 
     this->chain = chain;
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "root.first: " << root.first.type() << "; root.second: " << root.second.type() << std::endl;
-    #endif
+    }
 
     /*if ( expression_system != "undefined" )
         set_annotations ( expression_system );*/
@@ -2201,17 +2241,19 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 {
     clipper::String buffer = "";
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "Glycan length: " << sugars.size() << std::endl;
-    #endif
+    }
 
     if ( html_format ) buffer.insert ( 0, "</sub>" );
     buffer.insert ( 0, root.first.id().trim() );
     if ( html_format ) buffer.insert ( 0, "<sub>" );
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "Accessed the root, which contains this sugar: " << root.second.type() <<  std::endl;
-    #endif
+    }
 
     buffer.insert( 0, root.first.type().c_str() );
 
@@ -2227,10 +2269,11 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 
     clipper::MSugar msug = node_list.front().get_sugar();
 
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Node list size: " << node_list.size() << std::endl;
             DBG << "Accessed the first sugar!" << std::endl;
-        #endif
+        }
 
     if ( print_info )
     {
@@ -2247,9 +2290,10 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
         buffer.insert ( 0, "<span title=\"" );
     }
 
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Node list size: " << node_list.size() << std::endl;
-        #endif
+        }
 
     if ( node_list.size() < 2 ) return buffer;
     else
@@ -2345,9 +2389,10 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     int index = 0;
     bool found = false;
 
-    #if DUMP
+    if(debug_output)
+    {
         DBG << "Linking " << first_sugar.type() << " with " << next_sugar.type() << std::endl;
-    #endif
+    }
 
     for ( int i = 0 ; i < node_list.size() ; i++ )
         if ( strcmp( node_list[i].get_sugar().id().c_str(), first_sugar.id().c_str()) == 0)
@@ -2359,9 +2404,10 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
     if (!found)
     {
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "We haven't found a match for the first sugar. This is bad news." << std::endl;
-        #endif
+        }
 
         return true;
     }
@@ -2520,9 +2566,10 @@ void MGlycan::set_annotations ( std::string expression_system )
             {
                 if ( node_list[0].get_connection(i).get_order() != 6 || node_list[0].get_connection(i).get_anomericity() != "alpha" )
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << std::endl << "Wrong core linkage" << std::endl;
-                    #endif
+                    }
                     node_list[0].get_connection(i).add_annotation ( " Warning: this GlcNAc-Fuc linkage should be alpha 1-6 " );
                 }
             }
@@ -2711,11 +2758,12 @@ clipper::String MGlycan::generate_wurcs()
                 wurcs_string += "-";
         }
 
-#if DUMP
+if(debug_output)
+{
         DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
         DBG << "Number of connections for msug/node_list[0]: " << node_list[0].number_of_connections() << std::endl
             << std::endl;
-#endif
+}
 
         wurcs_string += "/";
 
@@ -2751,30 +2799,34 @@ clipper::String MGlycan::generate_wurcs()
         {
             msug = node_list[i].get_sugar();
 
-#if DUMP
+if(debug_output)
+{
             DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
             DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl
                 << std::endl;
             DBG << "Residue code via ::MSugar.type().trim() = " << msug.type().trim() << std::endl;
-#endif
+}
 
             if (node_list[i].number_of_connections() > 0)
             {
                 for (int j = 0; j < node_list[i].number_of_connections(); j++)
                 {
-#if DUMP
+if(debug_output)
+{
             DBG << "Connection: " << j+1 << " out of " << node_list[i].number_of_connections() << std::endl;
-#endif
+}
                     std::ostringstream linkagePosition;
                     connectedToNodeID = node_list[i].get_connection(j).get_linked_node_id();
-#if DUMP
+if(debug_output)
+{
             DBG << "connectedToNodeID: " << connectedToNodeID << std::endl;
-#endif
+}
                     msug = node_list[connectedToNodeID].get_sugar();
                     linkagePosition << node_list[i].get_connection(j).get_order();
-#if DUMP
+if(debug_output)
+{
             DBG << "linkagePosition: " << linkagePosition.str() << std::endl;
-#endif
+}
 
                     wurcs_string += convertNumberToLetter(i);
                     wurcs_string += linkagePosition.str();
@@ -2871,17 +2923,17 @@ void MGlycan::update_msugar_in_root ( clipper::MSugar& newmsug )
 
 
 
-MGlycology::MGlycology ( const clipper::MiniMol& mmol, std::string expression_system )
+MGlycology::MGlycology ( const clipper::MiniMol& mmol, bool debug_output, std::string expression_system )
 {
     const clipper::MAtomNonBond nb = MAtomNonBond ( mmol, 1.0 );
-
-    MGlycology( mmol, nb, expression_system );
+    this->debug_output = debug_output;
+    MGlycology( mmol, nb, debug_output, expression_system );
 }
 
 
-MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, std::string expression_system )
+MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, bool debug_output, std::string expression_system )
 {
-
+    this->debug_output = debug_output;
     this->manb = &manb;
     this->mmol = &mmol;
 
@@ -2918,27 +2970,31 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar = clipper::MSugar( mmol, tmpmon, manb );
+                    clipper::MSugar sugar = clipper::MSugar( mmol, tmpmon, manb, debug_output );
                     list_of_sugars.push_back ( sugar );
 
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Created the MSugar object" << std::endl;
-                    #endif
+                    }
 
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "potential n roots is " << potential_n_roots[i].first.type() << std::endl;
                         DBG << "sugar is " << sugar.type() << std::endl;
                         DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
-                    #endif
+                    }
 
                     clipper::MGlycan mg (   potential_n_roots[i].second,
                                             potential_n_roots[i].first,
                                             list_of_sugars.back(),
+                                            debug_output,
                                             this->expression_system );
 
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Exited the glycan constructor!" << std::endl;
-                    #endif
+                    }
 
                     mg.set_kind_of_glycan ( "n-glycan" );
 
@@ -2980,10 +3036,10 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
                     list_of_sugars.push_back ( sugar );
                     clipper::MGlycan mg = clipper::MGlycan ( potential_n_roots[i].second,
-                                                            potential_n_roots[i].first, list_of_sugars.back(), this->expression_system );
+                                                            potential_n_roots[i].first, list_of_sugars.back(), debug_output, this->expression_system );
                     mg.set_kind_of_glycan ( "n-glycan" );
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
@@ -3036,10 +3092,10 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
                     list_of_sugars.push_back ( sugar );
                     clipper::MGlycan mg = clipper::MGlycan ( potential_o_roots[i].second,
-                                                             potential_o_roots[i].first, sugar, this->expression_system );
+                                                             potential_o_roots[i].first, sugar, debug_output, this->expression_system );
 
                     mg.set_kind_of_glycan ( "o-glycan" );
 
@@ -3084,10 +3140,10 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
                     list_of_sugars.push_back ( sugar );
                     clipper::MGlycan mg = clipper::MGlycan ( potential_s_roots[i].second,
-                                                             potential_s_roots[i].first, sugar, this->expression_system );
+                                                             potential_s_roots[i].first, sugar, debug_output, this->expression_system );
                     mg.set_kind_of_glycan ( "s-glycan" );
                     list_of_glycans.push_back ( mg );
                     break;
@@ -3108,10 +3164,10 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb );
+                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
                     list_of_sugars.push_back ( sugar );
                     clipper::MGlycan mg = clipper::MGlycan ( potential_c_roots[i].second,
-                                                             potential_c_roots[i].first, sugar, this->expression_system );
+                                                             potential_c_roots[i].first, sugar, debug_output, this->expression_system );
                     mg.set_kind_of_glycan ( "c-glycan" );
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
@@ -3195,7 +3251,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
     {
         if (clipper::data::found_in_database ( tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type() ))
         {
-            clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb );
+            clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
 
             const std::vector<clipper::MSugar> sugar_list = mg.get_sugars();
 

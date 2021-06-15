@@ -6,7 +6,7 @@
 // The University of York
 
 
-// #define DUMP 1
+
 #include "privateer-lib.h"
 
 void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
@@ -3971,7 +3971,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4065,7 +4065,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, expression_system);
+    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     const std::vector < clipper::MGlycan >& list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4125,7 +4125,7 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
