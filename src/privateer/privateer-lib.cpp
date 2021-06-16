@@ -974,7 +974,7 @@ void privateer::util::print_usage ( )
               << "\t-colin-fo\t\t\tColumns containing F & SIGF, e.g. FOBS,SIGFOBS\n"
               << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path\n"
               << "\t-codein <3-letter code>\t\tA 3-letter code (should match that in -valstring)\n"
-              << "\t-rscc-diff\t\t\tCalculate RSCC against difference omit density (Fobs used by default)\n"
+              << "\t-rscc-best\t\t\tCalculate RSCC against best omit density (Fobs used by default)\n"
               << "\t-valstring <options>\t\tUse external validation options (to be deprecated in MKV)\n"
               << "\t\t\t\t\tExample: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n"
               << "\t\t\t\t\tThree-letter code, ring atoms, anomer, handedness, expected conformation\n"

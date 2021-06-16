@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     bool useParallelism = true;
-    bool rscc_diff = false;
+    bool rscc_best = false;
     bool closest_match_disable = false;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
@@ -134,9 +134,9 @@ int main(int argc, char** argv)
           if  (++arg < args.size() )
             input_column_fobs = args[arg];
         }
-        else if ( args[arg] == "-rscc-diff" )
+        else if ( args[arg] == "-rscc-best" )
         {
-          rscc_diff = true;
+          rscc_best = true;
         }
         else if ( args[arg] == "-mtzout" )
         {
@@ -2747,7 +2747,7 @@ int main(int argc, char** argv)
                 if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
                     pool.sync();
 
-                pool.push([&sugarList, &rscc_diff, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa, &debug_output](int id)
+                pool.push([&sugarList, &rscc_best, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa, &debug_output](int id)
                 {
                     if(debug_output)
                     {
@@ -2792,11 +2792,11 @@ int main(int argc, char** argv)
                     double accum = 0.0;
                     double corr_coeff = 0.0;
                     std::pair<double, double> rscc_and_accum;
-                    if ( rscc_diff ) {
-                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    if ( rscc_best ) {
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                     }
                     else {
-                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                     }
                     corr_coeff = rscc_and_accum.first;
                     accum = rscc_and_accum.second;
@@ -2929,11 +2929,11 @@ int main(int argc, char** argv)
                 double corr_coeff = 0.0;
                 std::pair<double, double> rscc_and_accum;
 
-                if ( rscc_diff ) {
-                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                if ( rscc_best ) {
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                 }
                 else {
-                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                 }
 
                 corr_coeff = rscc_and_accum.first;
