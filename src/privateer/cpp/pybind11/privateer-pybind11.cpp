@@ -7,7 +7,7 @@
 
 
 #include <pybind11/pybind11.h>
-#include <exception>      
+#include <exception>
 
 namespace py=pybind11;
 void init_ccp4mg(py::module &m);

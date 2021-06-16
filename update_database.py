@@ -4,6 +4,9 @@ import os
 import json
 from datetime import datetime
 
+# TO DO: currently this is the old version of privateer_database.json.
+# Need to redesign in anticipation of CCP4 v8.0 or sooner
+
 def return_response_from_glyconnect_api(glytoucanID):
     headers = {
         'accept': 'application/json',

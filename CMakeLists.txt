@@ -1,7 +1,7 @@
 ## Project settings
 #
 cmake_minimum_required(VERSION 3.12)
-project(privateer VERSION 0.4 LANGUAGES C CXX)
+project(privateer VERSION 0.5 LANGUAGES C CXX)
 
 SET(PRIVATEER_CC_FLAGS "-g -O2 -w")
 SET(PRIVATEER_CXX_FLAGS "-g -O2 -w")
@@ -42,6 +42,7 @@ find_library(CLIPPERCIFDEP NAMES clipper-cif
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11_json)
 
 find_package(Threads REQUIRED)
 
@@ -53,6 +54,7 @@ set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
                     ${PYBIND11_INCLUDE_DIR}
+                    ${CMAKE_SOURCE_DIR}/dependencies/pybind11_json/include
                     ${PYTHON_INCLUDE_DIRS}
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
