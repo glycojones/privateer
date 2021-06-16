@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include "privateer-error.h"
-#include "third-party/sajson.h"
+#include "sajson.h"
 
 #include <vector>
 #include <cstdio>    // for FILE, fopen, fclose
