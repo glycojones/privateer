@@ -17,6 +17,17 @@
 #include <unordered_set>
 #include <set>
 
+
+#ifdef _MSC_VER
+#ifdef PRIVATEER_BUILD_DLL
+#define PRIVATEER_DLL_IMPORT(type) __declspec(dllexport) type
+#else
+#define PRIVATEER_DLL_IMPORT(type) __declspec(dllimport) type
+#endif
+#else
+#define PRIVATEER_DLL_IMPORT(type) type
+#endif
+
 namespace clipper
 {
     namespace data
@@ -43,12 +54,22 @@ namespace clipper
             sugar_database_entry sugar_two;
         };
 
-        extern const String iupac_conformational_landscape[];
-        extern const String conformational_landscape[];
-        extern const sugar_database_entry sugar_database[];
-        extern const disaccharide disaccharide_database[];
-        extern const int disaccharide_database_size;
-        extern const int sugar_database_size;
+        #ifdef _MSC_VER
+            extern PRIVATEER_DLL_IMPORT(const String) iupac_conformational_landscape[];
+            extern PRIVATEER_DLL_IMPORT(const String) conformational_landscape[];
+            extern PRIVATEER_DLL_IMPORT(const sugar_database_entry) sugar_database[];
+            extern PRIVATEER_DLL_IMPORT(const disaccharide) disaccharide_database[];
+            extern PRIVATEER_DLL_IMPORT(const int) disaccharide_database_size;
+            extern PRIVATEER_DLL_IMPORT(const int) sugar_database_size;
+        #else
+            extern const String iupac_conformational_landscape[];
+            extern const String conformational_landscape[];
+            extern const sugar_database_entry sugar_database[];
+            extern const disaccharide disaccharide_database[];
+            extern const int disaccharide_database_size;
+            extern const int sugar_database_size;
+        #endif  
+
 
         bool found_in_database ( clipper::String name );
         bool found_in_database ( std::string name );

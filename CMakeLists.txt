@@ -16,9 +16,6 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
-#Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
-# set(JSON_BuildTests OFF CACHE INTERNAL "")
-# add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 
 if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
@@ -111,6 +108,9 @@ include_directories(${CCP4_INCLUDE_DIRS}
 ## Create libprivateer
 #
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/sajson.h
+            ${PRIVATEER_SOURCE_DIR}/privateer-error.h
+            ${PRIVATEER_SOURCE_DIR}/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
@@ -159,7 +159,10 @@ file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
 install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+install ( FILES ${PRIVATEER_SOURCE_DIR}/sajson.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-error.h
+                ${PRIVATEER_SOURCE_DIR}/privateer-json.h
+                ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
                 ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
@@ -168,8 +171,7 @@ install ( FILES ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
                 ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
-                ${PRIVATEER_SOURCE_DIR}/privateer-lib.h
-                ${PRIVATEER_SOURCE_DIR}/database.json
+                ${PRIVATEER_SOURCE_DIR}/privateer-lib.h            
           DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
