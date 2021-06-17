@@ -20,9 +20,6 @@
 #include <algorithm>
 #include <iterator>
 
-#if defined(_WIN32)
-#include "utf.hpp"
-#endif
 
 namespace privateer
 {
