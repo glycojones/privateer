@@ -156,23 +156,30 @@ target_link_libraries ( privateer_core PRIVATE
 file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
      DESTINATION ${CLIBDENV})
 
-set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
+set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2/privateer )
+
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
-install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES ${PRIVATEER_SOURCE_DIR}/sajson.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-error.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-json.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
-                ${PRIVATEER_SOURCE_DIR}/privateer-lib.h            
-          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
+
+install (   FILES   ${PRIVATEER_SOURCE_DIR}/privateer/__init__.py
+                    ${PRIVATEER_SOURCE_DIR}/privateer/analysis.py
+                    ${PRIVATEER_SOURCE_DIR}/privateer/restraints.py
+            DESTINATION ${PYTHON_MODULE_PATH}   )
+
+install (   FILES   ${PRIVATEER_SOURCE_DIR}/sajson.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-error.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-json.h
+                    ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+                    ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
+                    ${PRIVATEER_SOURCE_DIR}/privateer-lib.h            
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
+
 install ( TARGETS privateer_lib
           LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 install ( TARGETS privateer_exec DESTINATION bin)
