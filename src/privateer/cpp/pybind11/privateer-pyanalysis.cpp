@@ -2179,6 +2179,28 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
 
 ///////////////////////////////////////////////// Class CryoEMData END ////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////// Class OfflineDatabase ////////////////////////////////////////////////////////////////////
+void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path_to_input_file )
+{
+    this->path_of_input_file = path_of_input_file;
+    std::string path = path_of_input_file;
+    if(path == "nopath" || path.empty()) 
+        {
+            std::string env(std::getenv ( "CLIBD" ));
+
+            path = env + "/privateer_database.json";
+        }
+
+    std::ifstream input(path);
+
+    input >> glytoucanglyconnectdatabase;
+
+
+}
+///////////////////////////////////////////////// Class OfflineDatabase END ////////////////////////////////////////////////////////////////////
+
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
 namespace py = pybind11;
@@ -2275,6 +2297,12 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_summary_with_experimental_data", &pa::CryoEMData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);
+    
+    py::class_<pa::OfflineDatabase>(m, "OfflineDatabase")
+        .def(py::init<>())
+        .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
+        .def("import_json_file", &pa::OfflineDatabase::import_json_file)
+        .def("return_imported_database", &pa::OfflineDatabase::return_imported_database);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

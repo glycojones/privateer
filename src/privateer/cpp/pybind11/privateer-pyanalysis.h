@@ -36,6 +36,7 @@ namespace privateer {
     class CarbohydrateStructure;
     class XRayData;
     class CryoEMData;
+    class OfflineDatabase;
 
     class GlycosylationComposition 
     {
@@ -94,6 +95,7 @@ namespace privateer {
         void pyinit ( const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition);
         void pyinitWithExperimentalData (const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, std::vector<std::pair< clipper::String , clipper::MSugar> >& finalLigandList);
         void initialize_summary_of_glycan();
+        // void update_summary_of_glycan(); // could be a private method after database stuff. 
         
         int get_glycan_id( ) const { return glycanID; };
         int get_total_number_of_sugars( ) { return numberOfSugars; };
@@ -108,6 +110,10 @@ namespace privateer {
 
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
+
+        // void query_offline_database( const OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // would return a list of permutated GlycanStructure Objects. Interesting to see how much the memory will have blown up.
+        // void generateSNFG();
 
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
@@ -322,6 +328,25 @@ namespace privateer {
         // private methods
         pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
     };
+
+    class OfflineDatabase 
+    {
+      public:
+        OfflineDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineDatabase(std::string& path_to_input_file) {
+          this->import_json_file ( path_to_input_file);
+        };
+        void import_json_file( std::string& path_to_input_file );
+        ~OfflineDatabase() { };
+
+        nlohmann::json return_imported_database() { return glytoucanglyconnectdatabase; };
+
+      private:
+        std::string path_of_input_file;
+        nlohmann::json glytoucanglyconnectdatabase;
+
+    };
+
   }
 }
 
