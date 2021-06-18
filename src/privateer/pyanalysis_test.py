@@ -1,21 +1,21 @@
 from privateer import libprivateer as pvt
 
-# print("____________________GLYCOSYLATION LEVEL_______________")
+print("____________________GLYCOSYLATION LEVEL_______________")
 # glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
-# # glycosylation = pvt.GlycosylationComposition("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb")
+glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
 # print("Expression system defined: " + glycosylation.get_expression_system_used())
 # print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
 # print("Number of Glycan chains detected in the model: " + str(glycosylation.get_number_of_glycan_chains_detected()))
 
-# listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
+listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 
-# print("\n")
-# for entry in listOfDetectedGlycans:
-#     for key, value in entry.items():
-#         print('{}: {}'.format(key, value))
-#     print("_______________________")
+print("\n")
+for entry in listOfDetectedGlycans:
+    for key, value in entry.items():
+        print('{}: {}'.format(key, value))
+    print("_______________________")
 
-# glycan = glycosylation.get_glycan(0)
+glycan = glycosylation.get_glycan(5)
 
 # print("\n")
 # print("____________________GLYCAN CHAIN LEVEL_______________")
@@ -111,4 +111,13 @@ from privateer import libprivateer as pvt
 #     print("_______________________")
 
 json = pvt.OfflineDatabase()
-output = json.return_imported_database()
+
+glycoproteomicsoutput = glycan.query_offline_database(json, True, True)
+
+print(glycoproteomicsoutput)
+
+permutations = glycoproteomicsoutput['permutations']
+for entry in permutations:
+    for key, value in entry.items():
+        print('{}: {}'.format(key, value))
+    print("_______________________")

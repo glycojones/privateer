@@ -111,7 +111,8 @@ namespace privateer {
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
 
-        // void query_offline_database( const OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::dict query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // would return a list of permutated GlycanStructure Objects. Interesting to see how much the memory will have blown up.
         // void generateSNFG();
 
@@ -132,6 +133,8 @@ namespace privateer {
         pybind11::dict glycanSummary;
         pybind11::list sugars;
 
+        pybind11::dict glycoproteomicsDB;
+
         bool updatedWithExperimentalData;
     };
   
@@ -147,7 +150,6 @@ namespace privateer {
           this->updatedWithExperimentalData = true;
           this->pyinitWithExperimentalData ( mglycan, sugarID, glycanID, parentGlycosylationComposition, parentGlycanStructure, list_of_sugars );
         };
-        // bool updatedWithExperimentalData
         CarbohydrateStructure(const int sugarID, std::vector<std::pair<clipper::String, clipper::MSugar>>& inputSugarList, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, bool updatedWithExperimentalData){
           this->updatedWithExperimentalData = updatedWithExperimentalData;
           this->pyinitLigand( sugarID, inputSugarList, parentGlycosylationComposition );

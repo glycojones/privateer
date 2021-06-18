@@ -497,6 +497,172 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
     auto sugarObject = sugars[sugarID].cast<privateer::pyanalysis::CarbohydrateStructure>();
     return sugarObject;
 }
+
+
+
+pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads )
+{
+    nlohmann::json jsonObject = importedDatabase.return_imported_database();
+    std::string currentWURCS = glycanWURCS;
+    clipper::MGlycan currentGlycan = glycan;
+
+    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", currentWURCS);
+
+    // auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic, "occupancy_check_required"_a=occupancy_check);
+    // Design pattern: Have a bunc of ifs that get activated under specific condition and each condition creates a custom dict. 
+    if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+    {
+        std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+        if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+        {
+            glytoucanID.erase(0, 1);
+            glytoucanID.pop_back();
+        }
+
+        auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+        this->glycoproteomicsDB = databaseOutput;
+        return databaseOutput;
+    }
+    else if(returnClosestMatches && currentGlycan.number_of_nodes() > 1)
+    {
+        std::string glytoucanID = "Not Found";
+        if(valueLocation != -1)
+        {
+            glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+            if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+            {
+                glytoucanID.erase(0, 1);
+                glytoucanID.pop_back();
+            }
+        }
+
+        privateer::thread_pool pool(0);
+        int detectedThreads = std::thread::hardware_concurrency();
+        bool useParallelism = true;
+        
+        if(nThreads < 0)
+            nThreads = detectedThreads;
+        
+        else if(nThreads < 2 && nThreads > -1)
+        {
+            useParallelism = false;
+        }
+        else if(nThreads > detectedThreads)
+        {
+            std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
+            << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+            << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
+
+            throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
+        }
+
+        if(useParallelism)
+        {
+            std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
+            pool.resize(nThreads);
+            std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+        }
+
+        std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
+        
+        if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, returnAllPossiblePermutations, false, 1, pool, useParallelism);
+        else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, returnAllPossiblePermutations, false);   
+        
+        if(!alternativeGlycans.empty())
+        {
+            std::vector<std::pair<clipper::MGlycan, std::vector<int>>> uniqueAlternativeGlycans;
+            for (int i = 0; i < alternativeGlycans.size(); i++)
+            {
+                auto tempObject = alternativeGlycans[i];
+                clipper::MGlycan currentPermutatedGlycan = tempObject.first;
+                clipper::String currentPermutatedGlycanWURCS = currentPermutatedGlycan.generate_wurcs();
+                
+                if(uniqueAlternativeGlycans.empty())
+                {
+                    uniqueAlternativeGlycans.push_back(tempObject);
+                    continue;
+                }
+
+                for(int j = 0; j < uniqueAlternativeGlycans.size(); j++)
+                {
+                    clipper::MGlycan currentPermutatedGlycanInFinalContainer = uniqueAlternativeGlycans[j].first;
+                    clipper::String currentPermutatedGlycanWURCSInFinalContainer = currentPermutatedGlycanInFinalContainer.generate_wurcs();
+
+                    if(currentPermutatedGlycanWURCS == currentPermutatedGlycanWURCSInFinalContainer)
+                        break;
+
+                    if(j == (uniqueAlternativeGlycans.size() - 1))
+                        uniqueAlternativeGlycans.push_back(tempObject);
+                }
+            }
+            
+            std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
+            for (int i = 0; i < uniqueAlternativeGlycans.size(); i++)
+            {
+                int originalGlycanLength = currentGlycan.number_of_nodes(),
+                    currentGlycanLength = uniqueAlternativeGlycans[i].first.number_of_nodes();
+
+                int anomerPermutations = uniqueAlternativeGlycans[i].second[0],
+                    residuePermutations = uniqueAlternativeGlycans[i].second[1],
+                    residueDeletions = uniqueAlternativeGlycans[i].second[2];
+                
+                float finalScore, maxPermutationScore, currentPermutationScore;
+
+                maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
+                currentPermutationScore = ( ( (anomerPermutations * 5) + (residuePermutations * 25) + (residueDeletions * 100) ) / originalGlycanLength );
+                finalScore = (currentPermutationScore / maxPermutationScore) * 100;
+
+                auto tempObject = std::make_pair(uniqueAlternativeGlycans[i], finalScore);
+                finalGlycanPermutationContainer.push_back(tempObject);
+            }
+            
+            // sort by permutation score for sensical output to the user.
+            std::sort(finalGlycanPermutationContainer.begin(), finalGlycanPermutationContainer.end(), [](std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> a, std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> b){
+                return a.second < b.second;
+            });
+
+            auto permutationDatabaseOutputList = pybind11::list();
+            for(int i = 0; i < finalGlycanPermutationContainer.size(); i++)
+            {
+                clipper::String temporaryWURCS = finalGlycanPermutationContainer[i].first.first.generate_wurcs();
+                int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+
+                std::string permutationGlyTouCanID = "Not Found";
+                permutationGlyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (permutationGlyTouCanID.front() == '"' && permutationGlyTouCanID.front() == '"')
+                {
+                    permutationGlyTouCanID.erase(0, 1);
+                    permutationGlyTouCanID.pop_back();
+                }
+                
+                std::string permutationWURCS = temporaryWURCS;
+                auto permutationGlyConnectID = jsonObject[valueLocation]["glyconnect"]["id"];
+                float permutationScore = finalGlycanPermutationContainer[i].second;
+                int anomerPermutations = finalGlycanPermutationContainer[i].first.second[0];
+                int residuePermutations = finalGlycanPermutationContainer[i].first.second[1];
+                int residueDeletions = finalGlycanPermutationContainer[i].first.second[2];
+
+                auto permutationInfo = pybind11::dict ("wurcs"_a=permutationWURCS, "glytoucan_id"_a=permutationGlyTouCanID, "glyconnect_id"_a=permutationGlyConnectID, "permutation_score"_a=permutationScore, "anomer_permutations"_a=anomerPermutations, "residue_permutations"_a=residuePermutations, "residue_deletions"_a=residueDeletions);
+                permutationDatabaseOutputList.append(permutationInfo);
+            }   
+            auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Permutations were generated with closest matches detected", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found", "permutations"_a=permutationDatabaseOutputList);
+            this->glycoproteomicsDB = databaseOutput;
+            return databaseOutput;
+        }
+        else
+        {
+            auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Permutations were generated but no closest match detected", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found");
+            this->glycoproteomicsDB = databaseOutput;
+            return databaseOutput;
+        }
+    }
+    else 
+    {
+        auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="GlyTouCan ID not found, no permutations were generated to find the closest match", "glytoucan_id"_a="Not Found", "glyconnect_id"_a="Not Found");
+        this->glycoproteomicsDB = databaseOutput;
+        return databaseOutput;
+    }
+}
 ///////////////////////////////////////////////// Class GlycanStructure END ////////////////////////////////////////////////////////////////////
 
 
@@ -2179,8 +2345,6 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
 
 ///////////////////////////////////////////////// Class CryoEMData END ////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
-
 ///////////////////////////////////////////////// Class OfflineDatabase ////////////////////////////////////////////////////////////////////
 void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path_to_input_file )
 {
@@ -2196,8 +2360,6 @@ void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path
     std::ifstream input(path);
 
     input >> glytoucanglyconnectdatabase;
-
-
 }
 ///////////////////////////////////////////////// Class OfflineDatabase END ////////////////////////////////////////////////////////////////////
 
@@ -2238,6 +2400,8 @@ void init_pyanalysis(py::module& m)
         .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)
         .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide)
         .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides)
+        .def("query_offline_database", &pa::GlycanStructure::query_offline_database, "Function to query GlyTouCan and GlyConnect databases with a possibility to return closest matches detected on GlyConnect",
+        py::arg("importedDatabase"), py::arg("returnClosestMatches") = true, py::arg("returnAllPossiblePermutations") = false, py::arg("nThreads") = -1)
         .def("check_if_updated_with_experimental_data", &pa::GlycanStructure::check_if_updated_with_experimental_data);
 
     py::class_<pa::CarbohydrateStructure>(m, "CarbohydrateStructure")
