@@ -108,7 +108,8 @@ include_directories(${CCP4_INCLUDE_DIRS}
 ## Create libprivateer
 #
 add_library(privateer_lib
-            ${PRIVATEER_SOURCE_DIR}/sajson.h
+            ${PRIVATEER_SOURCE_DIR}/third-party/sajson.h
+            ${PRIVATEER_SOURCE_DIR}/third-party/utf.hpp
             ${PRIVATEER_SOURCE_DIR}/privateer-error.h
             ${PRIVATEER_SOURCE_DIR}/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
@@ -165,7 +166,8 @@ install (   FILES   ${PRIVATEER_SOURCE_DIR}/privateer/__init__.py
                     ${PRIVATEER_SOURCE_DIR}/privateer/restraints.py
             DESTINATION ${PYTHON_MODULE_PATH}   )
 
-install (   FILES   ${PRIVATEER_SOURCE_DIR}/sajson.h
+install (   FILES   ${PRIVATEER_SOURCE_DIR}/third-party/sajson.h
+                    ${PRIVATEER_SOURCE_DIR}/third-party/utf.hpp
                     ${PRIVATEER_SOURCE_DIR}/privateer-error.h
                     ${PRIVATEER_SOURCE_DIR}/privateer-json.h
                     ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
