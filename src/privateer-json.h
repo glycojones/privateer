@@ -11,7 +11,11 @@
 
 #include <iostream>
 #include "privateer-error.h"
-#include "sajson.h"
+#include "third-party/sajson.h"
+
+#if defined(_WIN32)
+    #include "third-party/utf.hpp"
+#endif
 
 #include <vector>
 #include <cstdio>    // for FILE, fopen, fclose
@@ -20,7 +24,7 @@
 #include <algorithm>
 #include <iterator>
 
-
+// Solution obtained and adopted from Marcin Wojdyr's Gemmi project - https://github.com/project-gemmi/gemmi 
 namespace privateer
 {
     namespace json
@@ -153,7 +157,7 @@ namespace privateer
                     path_copy = env + "/privateer_database.json";
                 }
 
-            std::cout << "Reading " << path_copy << " for Glycomics database";
+            std::cout << "Reading " << path_copy << " for Glycomics database" << std::endl;
 
             fileptr_t f = file_open(path_copy.c_str(), "rb");
             size_t buf_size = file_size(f.get(), path_copy);

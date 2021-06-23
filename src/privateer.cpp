@@ -241,9 +241,9 @@ int main(int argc, char** argv)
             int detectedThreads = std::thread::hardware_concurrency();
             nThreads = clipper::String(args[arg]).i();
 
-            if(nThreads < 2)
+            if(nThreads < 1)
             {
-              std::cout << "Error: Less than 2 cores/threads were inputted as an argument." << "\nPlease disable multithreaded execution via -singlethreaded keyword argument or give more cores to Privateer!" << std::endl;
+              std::cout << "Error: Nonsensical user input." << "\nIf you would like to disable multithreading, please use \'-cores 1\' keyword argument or don't use -cores flag at all to run Privateer with maximum number of threads available on the computer!" << std::endl;
               prog.set_termination_message( "Failed" );
               return 1;
             }
@@ -256,12 +256,13 @@ int main(int argc, char** argv)
               prog.set_termination_message( "Failed" );
               return 1;
             }
+
+            if(nThreads == 1)
+            {
+                useParallelism = false;
+                nThreads = 0;
+            }
           }
-        }
-        else if ( args[arg] == "-singlethreaded" )
-        {
-          useParallelism = false;
-          nThreads = 0;
         }
         else if ( args[arg] == "-debug" )
         {
@@ -453,7 +454,7 @@ int main(int argc, char** argv)
       return 1;
     }
     else if(!useParallelism)
-      std::cout << std::endl << "THREADING: Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl << std::endl;
+      std::cout << std::endl << "THREADING: Running Privateer on a single thread (\'-cores 1\' argument was provided)!" << std::endl << std::endl;
     else
     {
       std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
