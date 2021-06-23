@@ -8,6 +8,10 @@ SET(PRIVATEER_CXX_FLAGS "-g -O2 -w")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS}")
 
+if (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--allow-multiple-definition")
+endif()
+
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -29,7 +33,6 @@ find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper
 # Required for std::thread in C++11 standard. 
 find_package(Threads REQUIRED)
 
-set(CLIBDENV $ENV{CLIBD})
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
@@ -155,7 +158,7 @@ target_link_libraries ( privateer_core PRIVATE
 #
 
 file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
-     DESTINATION ${CLIBDENV})
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/data)
 
 set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2/privateer )
 
@@ -183,7 +186,8 @@ install (   FILES   ${PRIVATEER_SOURCE_DIR}/third-party/sajson.h
             DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
 
 install ( TARGETS privateer_lib
-          LIBRARY DESTINATION ${LIB_INSTALL_DIR})
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+          RUNTIME DESTINATION bin)
 install ( TARGETS privateer_exec DESTINATION bin)
 install ( TARGETS privateer_core DESTINATION ${PYTHON_MODULE_PATH} )
 
