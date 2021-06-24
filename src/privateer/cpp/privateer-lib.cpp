@@ -3267,6 +3267,238 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_footer ( )
     return of.str();
 }
 
+void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std::ostringstream& of )
+{
+
+    of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
+       << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
+       << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
+       << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
+       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
+       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
+       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
+       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
+       << "     version=\"1.1\"\n"
+       << "     width=\"" << get_width() << "\" \n"
+       << "     height=\"" << get_height() << "\" \n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "  <style>\n"
+       << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
+       << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
+       << "    .my_yellow { fill:" << get_colour ( rootyellow, original_colour_scheme  ) << " }\n"
+       << "  </style>\n";
+
+}
+
+
+void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( std::ostringstream& of )
+{
+    of << "  <defs>\n"
+
+       // colour patterns for two-colour shapes
+
+       << "    <filter id=\"displace\">\n"
+       << "      <feTurbulence  baseFrequency=\".05\" numOctaves=\"3\" result=\"myturbulence\" />\n"
+       << "      <feDisplacementMap in=\"SourceGraphic\" in2=\"myturbulence\" scale=\"10\" />\n"
+       << "    </filter>\n\n"
+
+       // use with filter="url(#displace)"
+
+       << "    <!-- Half-yellow pattern --> \n"
+       << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- Half-blue pattern --> \n"
+       << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- Half-green pattern --> \n"
+       << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- yellow_left pattern --> \n"
+       << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- blue_up pattern --> \n"
+       << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- green_right pattern --> \n"
+       << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       << "    <!-- tan_down pattern --> \n"
+       << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
+       << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
+       << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
+       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
+       << get_colour ( white, original_colour_scheme ) << "\" />\n"
+       << "      </pattern>\n"
+
+       // hexoses, circles
+
+       << "    <!--  Glc   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Gal   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"gal\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Man   --> "
+       <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"man\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Fuc   --> "
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!--  Xyl   --> "
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // n-acetyl hexosamines, squares
+
+       << "    <!-- GlcNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"galnac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( yellow, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManNAc --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"mannac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       // hexosamines, squares in two colours
+
+       << "    <!-- GlcN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"glcn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_blue);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"galn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_yellow);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManN --> "
+       <<  "<rect width =\"50\" height=\"50\" id=\"mann\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#half_green);"
+       << "stroke-width:2.8;\" />\n"
+
+       // acidic sugars, diamond shapes in one or two colours
+
+       << "    <!-- Neu5Ac --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- Neu5Gc --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- KDN --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GlcA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- IdoA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- GalA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
+       << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- ManA --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
+       << "stroke-width:2.8;\" />\n"
+
+
+       << "    <!--  bond  --> "
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+
+       // a generic hexagon shape for unsupported sugars
+
+       << "    <!-- Other  --> "
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
+       << "stroke-width:4.0; \" />\n"
+
+       << "  </defs>\n\n" ;
+
+}
+
+void privateer::glycanbuilderplot::Plot::write_svg_contents_ostringstream ( std::ostringstream& of )
+{
+    of << "<title>" << get_title() << "</title>\n";
+
+    for (int i = 0; i < list_of_shapes.size() ; i ++)
+    {
+        of << list_of_shapes[i]->get_XML();
+    }
+} //!< doesn't add html anchors, as SVG files are supposed to be standalone and not linked to any other CCP4 application
+
+
+void privateer::glycanbuilderplot::Plot::write_svg_footer_ostringstream ( std::ostringstream& of )
+{
+    of << "\n</svg>" ;
+}
+
+
 
 bool privateer::glycanbuilderplot::Plot::write_to_file  ( std::string file_path )
 {
@@ -3282,6 +3514,20 @@ bool privateer::glycanbuilderplot::Plot::write_to_file  ( std::string file_path 
     out.close();
 
     return false;
+}
+
+std::string privateer::glycanbuilderplot::Plot::write_to_string()
+{
+    std::ostringstream stream;
+
+    write_svg_header_ostringstream      ( stream );
+    write_svg_definitions_ostringstream ( stream );
+    write_svg_contents_ostringstream    ( stream );
+    write_svg_footer_ostringstream      ( stream );
+
+
+    std::string output = stream.str();
+    return output;
 }
 
 

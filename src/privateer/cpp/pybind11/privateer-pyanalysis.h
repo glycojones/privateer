@@ -26,12 +26,17 @@
 #ifndef PRIVATEER_PYANALYSIS_H_INCLUDED
 #define PRIVATEER_PYANALYSIS_H_INCLUDED
 
+using namespace pybind11::literals;
+
 namespace privateer {
 
   namespace pyanalysis {
 
     // TODO: add [] operator for these classes.
 
+    // class Privateer/Session/Core/Settings; // for stuff like setting output directory, calling a pipeline, user settings, generating coot files etc etc.
+    // Maybe even that's the place to force users to default nCores arguments and stuff like that.
+    // Leaning the closest to class Session or class Core;
     class GlycanStructure;
     class CarbohydrateStructure;
     class XRayData;
@@ -95,7 +100,7 @@ namespace privateer {
         void pyinit ( const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition);
         void pyinitWithExperimentalData (const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, std::vector<std::pair< clipper::String , clipper::MSugar> >& finalLigandList);
         void initialize_summary_of_glycan();
-        // void update_summary_of_glycan(); // could be a private method after database stuff. 
+         
         
         int get_glycan_id( ) const { return glycanID; };
         int get_total_number_of_sugars( ) { return numberOfSugars; };
@@ -112,9 +117,9 @@ namespace privateer {
         pybind11::list get_all_monosaccharides( ) { return sugars; };
 
         pybind11::dict query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::dict get_SNFG_strings(bool includeClosestMatches);
 
-        // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // would return a list of permutated GlycanStructure Objects. Interesting to see how much the memory will have blown up.
-        // void generateSNFG();
+        // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
 
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
@@ -136,6 +141,13 @@ namespace privateer {
         pybind11::dict glycoproteomicsDB;
 
         bool updatedWithExperimentalData;
+        std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> outputGlycanPermutationContainer;
+        
+        void update_summary_of_glycan_after_dbquery()
+        {
+          auto tempGlycanSummary = glycanSummary;
+          this->glycanSummary = pybind11::dict("GlycanID"_a=glycanID, "WURCS"_a=glycanWURCS, "GlycosylationType"_a=glycosylationType, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData, "Glycoproteomics_DB_query"_a=glycoproteomicsDB);
+        };
     };
   
     class CarbohydrateStructure 
@@ -276,6 +288,8 @@ namespace privateer {
           clipper::String path_to_model_file_clipper = path_to_model_file;
           privateer::util::print_monosaccharide_summary_python (false, false, pos_slash, false, finalLigandList, hklinfo, path_to_model_file_clipper); 
         };
+
+        void write_output_maps();
         
 
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandList() { return finalLigandList; } // only c++

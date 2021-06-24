@@ -121,3 +121,19 @@ for entry in permutations:
     for key, value in entry.items():
         print('{}: {}'.format(key, value))
     print("_______________________")
+
+print("Now getting from class without having to repeat compute intensive functon\n\n\n\n")
+
+glycoproteomicsoutputrepeated = glycan.query_offline_database(json, True, True)
+
+permutations = glycoproteomicsoutputrepeated['permutations']
+for entry in permutations:
+    for key, value in entry.items():
+        print('{}: {}'.format(key, value))
+    print("_______________________")
+
+print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
+
+SNFGstrings = glycan.get_SNFG_strings()
+# print(SNFGstrings)
+

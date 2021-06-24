@@ -859,6 +859,11 @@ namespace privateer
                 void write_svg_definitions   ( std::fstream& of );
                 void write_svg_contents      ( std::fstream& of );
                 void write_svg_footer        ( std::fstream& of );
+                // Need to rework this bit so that ostringstream would brand into fstream etc.
+                void write_svg_header_ostringstream        ( std::ostringstream& of );
+                void write_svg_definitions_ostringstream   ( std::ostringstream& of );
+                void write_svg_contents_ostringstream      ( std::ostringstream& of );
+                void write_svg_footer_ostringstream        ( std::ostringstream& of );
 
                 void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false );
 
