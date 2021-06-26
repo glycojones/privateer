@@ -478,6 +478,7 @@ const sugar_database_entry sugar_database[] =
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
+        // Neu5Gc is NGC(alpha) and NGE(beta)
 
         else if ( name == "SIA" ) new_name = "Neu5Ac" ; // alpha
         else if ( name == "SLB" ) new_name = "Neu5Ac" ; // beta
@@ -593,6 +594,7 @@ const sugar_database_entry sugar_database[] =
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
+        // Neu5Gc is NGC(alpha) and NGE(beta)
 
         else if ( name == "SIA" ) new_name = "SLB" ; 
         else if ( name == "SLB" ) new_name = "SIA" ; 
@@ -681,6 +683,7 @@ const sugar_database_entry sugar_database[] =
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
+        // Neu5Gc is NGC(alpha) and NGE(beta)
 
         else if ( name == "SIA" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O" ; // alpha
         else if ( name == "SLB" ) wurcs_residue_code = "Aad21122h-2b_2-6_5*NCC/3=O" ; // beta

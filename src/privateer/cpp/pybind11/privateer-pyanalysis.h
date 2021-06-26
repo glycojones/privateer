@@ -214,6 +214,13 @@ namespace privateer {
         float get_sugar_accum() { return sugar_accum; };
         bool get_sugar_occupancy_check() { return sugar_occupancy_check; }; 
         std::string get_glycosylation_context() { return sugar_context; };
+        
+        
+        // int get_number_of_connections()
+        // int connectedToSugar = node_list[0].get_connection(j).get_linked_node_id(); or pybind11::dict of some sorts.
+        // linkagePosition << node_list[0].get_connection(j).get_order();
+        // Basically get the goodies from WURCS notation generating stuff - could definitely aid in the creation of LINK records.
+        // Also relate to the other CarbohydrateStructures objects from GlycanStructure
 
         void set_sugar_rscc(float input_sugar_rscc) { sugar_rscc = input_sugar_rscc; };
         void set_sugar_accum(float input_sugar_accum) { sugar_accum = input_sugar_accum; };
