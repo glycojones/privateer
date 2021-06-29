@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as etree
-from privateer.libprivateer import get_annotated_glycans_hierarchical, found_in_database
+from privateer.privateer_core import get_annotated_glycans_hierarchical, found_in_database
 
 def print_glycosidic_torsions ( pdb_filename = "", first="ASN", second="NAG" ) :
 

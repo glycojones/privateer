@@ -1,4 +1,4 @@
-from privateer import libprivateer as pvt
+from privateer import privateer_core as pvt
 
 print("____________________GLYCOSYLATION LEVEL_______________")
 # glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")

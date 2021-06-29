@@ -15,7 +15,7 @@ void init_restraints(py::module &m);
 void init_pyanalysis(py::module &m);
 
 
-PYBIND11_MODULE(libprivateer, m) {
+PYBIND11_MODULE(privateer_core, m) {
     m.doc() = "Python wrapper for libPrivateer(C++) exposed via pybind11.";
 
     py::register_exception_translator([](std::exception_ptr p) {
