@@ -180,7 +180,7 @@ namespace privateer {
         
         int get_sugar_id( ) const { return sugarID; };
         int get_glycan_id( ) const { return glycanID; };
-        int get_sugar_pdb_id() const { return sugar_pdb_id; };
+        std::string get_sugar_pdb_id() const { return sugar_pdb_id; };
         std::string get_sugar_pdb_chain() const { return sugar_pdb_chain; };
 
         std::string get_conformation_name() { return sugar_conformation_name; };
@@ -237,7 +237,7 @@ namespace privateer {
 
         int sugarID;
         int glycanID;
-        int sugar_pdb_id;
+        std::string sugar_pdb_id;
         std::string sugar_pdb_chain;
 
         int sugar_conformation_code;

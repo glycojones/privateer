@@ -649,9 +649,6 @@ int main(int argc, char** argv)
                         clipper::String id = mmol[p].id();
                         id.resize(1);
 
-                        #if DUMP
-                            DBG << "Looking at chain " << id << std::endl;
-                        #endif
 
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
                         // add both conformers if the current monomer contains more than one
@@ -807,6 +804,12 @@ int main(int argc, char** argv)
                                 
                                 fprintf ( output, "\t(s) " );
                             }
+                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            {
+                                ligandList[index].second.set_context ( "ligand" );
+                                
+                                fprintf ( output, "\t(l) " );
+                            }
                             found_in_tree = true;
                             break;
                         }
@@ -934,6 +937,12 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "s-glycan" );
                                 
                                 std::cout << "\t(s) ";
+                            }
+                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            {
+                                ligandList[index].second.set_context ( "ligand" );
+
+                                std::cout << "\t(l) ";
                             }
                             found_in_tree = true;
                             break;
@@ -2048,6 +2057,10 @@ int main(int argc, char** argv)
                                     ligandList[index].second.set_context ( "s-glycan" );
                                     
                                 }
+                                else if ( list_of_glycans[i].get_type() == "ligand" )
+                                {
+                                    ligandList[index].second.set_context ( "ligand" );
+                                }
                                 found_in_tree = true;
                                 break;
                             }
@@ -2186,6 +2199,10 @@ int main(int argc, char** argv)
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
                                 
+                            }
+                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            {
+                                ligandList[index].second.set_context ( "ligand" );
                             }
                             found_in_tree = true;
                             break;
@@ -2808,6 +2825,10 @@ int main(int argc, char** argv)
                                     ligandList[index].second.set_context ( "s-glycan" );
                                     
                                 }
+                                else if ( list_of_glycans[i].get_type() == "ligand" )
+                                {
+                                    ligandList[index].second.set_context ( "ligand" );
+                                }
                                 found_in_tree = true;
                                 break;
                             }
@@ -2945,7 +2966,11 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
-                                ligandList[index].second.set_context ( "s-glycan" );
+                                ligandList[index].second.set_context ( "s-glycan" ); 
+                            }
+                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            {
+                                ligandList[index].second.set_context ( "ligand" );
                                 
                             }
                             found_in_tree = true;

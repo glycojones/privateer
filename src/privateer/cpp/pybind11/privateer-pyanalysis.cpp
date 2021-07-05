@@ -43,21 +43,19 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
 
-    this->mgl = clipper::MGlycology(mmol, expression_system);
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
+    this->mgl = clipper::MGlycology(mmol, manb, expression_system);
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
-
+    std::cout << "After getting list of glycans" << std::endl;
+    
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
 
     std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
     std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
-
-    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
-
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
     {
@@ -147,6 +145,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             }
         }
     }
+    std::cout << "After massive for loop" << std::endl;
 
     std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
     int processedMonomers = 0;
@@ -202,7 +201,10 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
                     else if ( list_of_glycans[i].get_type() == "s-glycan" )
                     {
                         ligandList[index].second.set_context ( "s-glycan" );
-                        
+                    }
+                    else if ( list_of_glycans[i].get_type() == "ligand" )
+                    {
+                        ligandList[index].second.set_context ( "ligand" );
                     }
                     found_in_tree = true;
                     break;
@@ -234,23 +236,22 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         #endif
     }
+    std::cout << "After massive for loop number 2 which sets rscc and accum values etc" << std::endl;
 
     this->updatedWithExperimentalData = false;
     this->ligandList = ligandList;
     this->ligandsOnly = ligandsOnly;
 
-    if(!ligandsOnly.empty())
-    {
-        auto list = pybind11::list();
-    }
-
+    std::cout << "Before creating glycanList" << std::endl;
     auto glycanList = pybind11::list();
     for(int i = 0; i < list_of_glycans.size(); i++)
     {
+        std::cout << "Attempting to create GlycanStructure object" << std::endl;
         auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this);
         glycanList.append(glycanObject);
     }
     this->glycans = glycanList;
+    std::cout << "After creating glycanList" << std::endl;
 
     auto ligandPyList = pybind11::list();
     if(!ligandsOnly.empty())
@@ -262,10 +263,13 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             ligandPyList.append(sugarObject);
         }
     }
+    std::cout << "After creating ligandPyList" << std::endl;
     this->glycans = glycanList;
     this->ligands = ligandPyList;
     
+    std::cout << "completed read_from_file" << std::endl;
     initialize_summary_of_detected_glycans();
+    std::cout << "After initialize_summary_of_detected_glycans" << std::endl;
 }
 
 void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_detected_glycans()
@@ -388,9 +392,11 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
-
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=std::stoi(proteinResidueID), "ProteinChainID"_a=proteinChainID);
+    
+    std::cout << "GlycanStructure: Before initializing rootSummary" << std::endl;
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
     this->rootSummary = rootSummary;
+    std::cout << "GlycanStructure: After initializing rootSummary" << std::endl;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
     auto protein_glycan_linkage_torsion = pybind11::dict("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
@@ -406,6 +412,7 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     }
     this->sugars = list;
 
+    std::cout << "Calling initializing summary of glycan" << std::endl;
     initialize_summary_of_glycan();
 }
 
@@ -437,7 +444,7 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
 
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=std::stoi(proteinResidueID), "ProteinChainID"_a=proteinChainID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -766,7 +773,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 
     this->sugar_name_full = inputSugar.full_name();
     this->sugar_name_short = inputSugar.short_name();
-    this->sugar_pdb_id = std::stoi(inputSugar.id());
+    this->sugar_pdb_id = inputSugar.id();
     this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
 
@@ -859,7 +866,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
 
     this->sugar_name_full = inputSugar.second.full_name();
     this->sugar_name_short = inputSugar.second.short_name();
-    this->sugar_pdb_id = std::stoi(inputSugar.second.id());
+    this->sugar_pdb_id = inputSugar.second.id();
     this->sugar_pdb_chain = inputSugar.first;
     this->sugar_type = inputSugar.second.full_type();
 
@@ -957,7 +964,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
     this->sugar_name_full = inputSugar.full_name();
     this->sugar_name_short = inputSugar.short_name();
-    this->sugar_pdb_id = std::stoi(inputSugar.id());
+    this->sugar_pdb_id = inputSugar.id();
     this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
 
@@ -1802,7 +1809,7 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
         std::string ccdCode = finalLigandList[index].second.type().c_str();
         std::string chainID = finalLigandList[index].first;
         int sugarID = index;
-        int pdbID = std::stoi(finalLigandList[index].second.id().trim());
+        std::string pdbID = finalLigandList[index].second.id().trim();
         float RSCC = finalLigandList[index].second.get_rscc();
         float accum = finalLigandList[index].second.get_accum();
         bool occupancy_check = finalLigandList[index].second.get_occupancy_check();
@@ -2367,7 +2374,7 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
         std::string ccdCode = finalLigandList[index].second.type().c_str();
         std::string chainID = finalLigandList[index].first;
         int sugarID = index;
-        int pdbID = std::stoi(finalLigandList[index].second.id().trim());
+        std::string pdbID = finalLigandList[index].second.id().trim();
         float RSCC = finalLigandList[index].second.get_rscc();
         float accum = finalLigandList[index].second.get_accum();
         bool occupancy_check = finalLigandList[index].second.get_occupancy_check();

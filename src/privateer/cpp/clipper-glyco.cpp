@@ -15,7 +15,7 @@
 
 #include "clipper-glyco.h"
 
-//#define DUMP 1
+// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -139,7 +139,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 
                 #if DUMP
-                    DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << "test" << std::endl;
+                    DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << std::endl;
                 #endif
 
                 if (index_atom == -1)
@@ -2202,6 +2202,26 @@ MGlycan::MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::M
         set_annotations ( expression_system );*/
 }
 
+MGlycan::MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, std::string expression_system )
+{
+    root.second = clipper::MSugar(root_sugar);
+    sugars.push_back ( root.second );
+    Node first_node( root.second );
+
+    node_list.push_back ( first_node );
+
+    root.first = clipper::MMonomer();
+
+    this->chain = chain;
+
+    #if DUMP
+        DBG << "root.first: " << root.first.type() << "; root.second: " << root.second.type() << std::endl;
+    #endif
+
+    /*if ( expression_system != "undefined" )
+        set_annotations ( expression_system );*/
+}
+
 
 clipper::String MGlycan::print_linear ( const bool print_info, const bool html_format, const bool translate )
 {
@@ -2918,10 +2938,17 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
     std::vector < clipper::MMonomer > potential_o_roots;
     std::vector < clipper::MMonomer > potential_s_roots;
     std::vector < clipper::MMonomer > potential_c_roots;
+    std::vector < clipper::MMonomer > potential_rootless_polysaccharides;
+    
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
+            for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
+            {
+                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :A") 
+                    potential_rootless_polysaccharides.push_back(mmol[pol][mon]);
+            }
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
             if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] ); // n-linked GlcNAc ?
@@ -3185,6 +3212,28 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         }
     }
 
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
+    {
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i] ) ;
+
+        for ( int j = 0 ; j < linked.size() ; j++ )
+        {
+            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
+
+
+            if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            {
+                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i], manb);
+                list_of_sugars.push_back ( rootSugar );
+                clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
+                                                            rootSugar, this->expression_system );
+                mg.set_kind_of_glycan ( "ligand" );
+                list_of_glycans.push_back ( mg );
+                break;
+            }
+        }
+    }
+
 
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
@@ -3198,7 +3247,6 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
 void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, std::string expression_system )
 {
-
     this->manb = &manb;
     this->mmol = &mmol;
 
@@ -3208,10 +3256,16 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
     std::vector < clipper::MMonomer > potential_o_roots;
     std::vector < clipper::MMonomer > potential_s_roots;
     std::vector < clipper::MMonomer > potential_c_roots;
+    std::vector < clipper::MMonomer > potential_rootless_polysaccharides;
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
+            for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
+            {
+                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :A") 
+                    potential_rootless_polysaccharides.push_back(mmol[pol][mon]);
+            }
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
             if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( mmol[pol][mon] ); // n-linked GlcNAc ?
@@ -3475,6 +3529,27 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
         }
     }
 
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
+    {
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i] ) ;
+
+        for ( int j = 0 ; j < linked.size() ; j++ )
+        {
+            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
+
+
+            if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            {
+                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i], manb);
+                list_of_sugars.push_back ( rootSugar );
+                clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
+                                                            rootSugar, this->expression_system );
+                mg.set_kind_of_glycan ( "ligand" );
+                list_of_glycans.push_back ( mg );
+                break;
+            }
+        }
+    }
 
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )

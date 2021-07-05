@@ -395,12 +395,15 @@ namespace clipper
     }; // class MDisaccharide
 
     //! Stores a tree built with Node(s) and Linkage(s), which contain references to MSugar(s)
+    // TO DO: Make this class a prototype that would be inherited both by MGlycan and MLigandGlycan. Currently, I'm just gonna add hack'ish way to work with
+    //        ligand glycans via the introduction of an alternative constructor. 
     class MGlycan
     {
         public:
 
             MGlycan () { } //!< null constructor
             MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, std::string expression_system = "undefined" );
 
             class Node;
 
@@ -678,7 +681,6 @@ namespace clipper
             // std::string wurcs;
 
     }; // class MGlycan
-
 
     class MGlycology
     {
