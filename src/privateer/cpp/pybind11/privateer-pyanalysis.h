@@ -215,12 +215,10 @@ namespace privateer {
         bool get_sugar_occupancy_check() { return sugar_occupancy_check; }; 
         std::string get_glycosylation_context() { return sugar_context; };
         
-        
-        // int get_number_of_connections()
-        // int connectedToSugar = node_list[0].get_connection(j).get_linked_node_id(); or pybind11::dict of some sorts.
-        // linkagePosition << node_list[0].get_connection(j).get_order();
-        // Basically get the goodies from WURCS notation generating stuff - could definitely aid in the creation of LINK records.
-        // Also relate to the other CarbohydrateStructures objects from GlycanStructure
+
+        std::string get_wurcs_residue_code() { return clipper::data::convert_to_wurcs_residue_code(sugar.type().trim()); };
+        int get_number_of_connections() { return parentGlycan.get_node(sugarID).number_of_connections(); };
+        pybind11::list get_sugar_linkage_info() { return sugar_linkages; };
 
         void set_sugar_rscc(float input_sugar_rscc) { sugar_rscc = input_sugar_rscc; };
         void set_sugar_accum(float input_sugar_accum) { sugar_accum = input_sugar_accum; };
@@ -232,6 +230,7 @@ namespace privateer {
         privateer::pyanalysis::GlycanStructure parentGlycanStructure;
         clipper::MSugar sugar;
         clipper::MGlycan parentGlycan;
+        clipper::MGlycan::Node sugarNode;
 
         pybind11::dict sugarSummary;
 
@@ -274,6 +273,9 @@ namespace privateer {
         float sugar_accum = -1; // need to develop setter method as in privateer.cpp
         bool sugar_occupancy_check = false; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
+
+        int sugar_connections;
+        pybind11::list sugar_linkages;
 
         bool updatedWithExperimentalData;
     };

@@ -48,7 +48,6 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
     this->mgl = clipper::MGlycology(mmol, manb, expression_system);
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
-    std::cout << "After getting list of glycans" << std::endl;
     
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
@@ -145,7 +144,6 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             }
         }
     }
-    std::cout << "After massive for loop" << std::endl;
 
     std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
     int processedMonomers = 0;
@@ -236,22 +234,18 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         #endif
     }
-    std::cout << "After massive for loop number 2 which sets rscc and accum values etc" << std::endl;
 
     this->updatedWithExperimentalData = false;
     this->ligandList = ligandList;
     this->ligandsOnly = ligandsOnly;
 
-    std::cout << "Before creating glycanList" << std::endl;
     auto glycanList = pybind11::list();
     for(int i = 0; i < list_of_glycans.size(); i++)
     {
-        std::cout << "Attempting to create GlycanStructure object" << std::endl;
         auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, i, *this);
         glycanList.append(glycanObject);
     }
     this->glycans = glycanList;
-    std::cout << "After creating glycanList" << std::endl;
 
     auto ligandPyList = pybind11::list();
     if(!ligandsOnly.empty())
@@ -263,13 +257,10 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             ligandPyList.append(sugarObject);
         }
     }
-    std::cout << "After creating ligandPyList" << std::endl;
     this->glycans = glycanList;
     this->ligands = ligandPyList;
     
-    std::cout << "completed read_from_file" << std::endl;
     initialize_summary_of_detected_glycans();
-    std::cout << "After initialize_summary_of_detected_glycans" << std::endl;
 }
 
 void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_detected_glycans()
@@ -393,10 +384,8 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     
-    std::cout << "GlycanStructure: Before initializing rootSummary" << std::endl;
     auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
     this->rootSummary = rootSummary;
-    std::cout << "GlycanStructure: After initializing rootSummary" << std::endl;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
     auto protein_glycan_linkage_torsion = pybind11::dict("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
@@ -412,7 +401,6 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     }
     this->sugars = list;
 
-    std::cout << "Calling initializing summary of glycan" << std::endl;
     initialize_summary_of_glycan();
 }
 
@@ -817,6 +805,34 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugar_diag_puckering=inputSugar.ok_with_puckering();
     this->sugar_context=mglycan.get_type();
 
+    this->sugarNode = parentGlycan.get_node(sugarID);
+    this->sugar_connections=sugarNode.number_of_connections();
+
+    auto sugar_linkage_info_list_tmp = pybind11::list();
+    if (sugarNode.number_of_connections() > 0)
+    {
+        for (int j = 0; j < sugarNode.number_of_connections(); j++ )
+        {
+            std::ostringstream linkagePositiontmp;
+            int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
+            linkagePositiontmp << sugarNode.get_connection(j).get_order();
+            std::string linkagePosition = linkagePositiontmp.str();
+
+            std::string hostLinkagePosition;
+
+            if (sugar.full_type() == "ketose")
+                hostLinkagePosition += "2";
+            else
+                hostLinkagePosition += "1";
+
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+            sugar_linkage_info_list_tmp.append(sugar_linkage_info);
+        }
+    }
+
+    this->sugar_linkages = sugar_linkage_info_list_tmp;
+
+
     initialize_summary_of_sugar();
 }
 
@@ -912,6 +928,33 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_accum=inputSugar.second.get_accum();
     this->sugar_occupancy_check=inputSugar.second.get_occupancy_check();
     this->sugar_context=inputSugar.second.get_context();
+
+    this->sugarNode = parentGlycan.get_node(sugarID);
+    this->sugar_connections=sugarNode.number_of_connections();
+
+    auto sugar_linkage_info_list_tmp = pybind11::list();
+    if (sugarNode.number_of_connections() > 0)
+    {
+        for (int j = 0; j < sugarNode.number_of_connections(); j++ )
+        {
+            std::ostringstream linkagePositiontmp;
+            int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
+            linkagePositiontmp << sugarNode.get_connection(j).get_order();
+            std::string linkagePosition = linkagePositiontmp.str();
+
+            std::string hostLinkagePosition;
+
+            if (sugar.full_type() == "ketose")
+                hostLinkagePosition += "2";
+            else
+                hostLinkagePosition += "1";
+
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+            sugar_linkage_info_list_tmp.append(sugar_linkage_info);
+        }
+    }
+
+    this->sugar_linkages = sugar_linkage_info_list_tmp;
 
     initialize_summary_of_sugar();
 }
@@ -1011,13 +1054,39 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->sugar_occupancy_check=inputSugar.get_occupancy_check();
     this->sugar_context=mglycan.get_type();
 
+    this->sugarNode = parentGlycan.get_node(sugarID);
+    this->sugar_connections=sugarNode.number_of_connections();
+
+    auto sugar_linkage_info_list_tmp = pybind11::list();
+    if (sugarNode.number_of_connections() > 0)
+    {
+        for (int j = 0; j < sugarNode.number_of_connections(); j++ )
+        {
+            std::ostringstream linkagePositiontmp;
+            int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
+            linkagePositiontmp << sugarNode.get_connection(j).get_order();
+            std::string linkagePosition = linkagePositiontmp.str();
+
+            std::string hostLinkagePosition;
+
+            if (sugar.full_type() == "ketose")
+                hostLinkagePosition += "2";
+            else
+                hostLinkagePosition += "1";
+
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+            sugar_linkage_info_list_tmp.append(sugar_linkage_info);
+        }
+    }
+
+    this->sugar_linkages = sugar_linkage_info_list_tmp;
     initialize_summary_of_sugar();
 }
 
 
 void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check);
+    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check, "SugarLinkages"_a=sugar_linkages);
 
     this->sugarSummary = dict;
 }
@@ -2504,6 +2573,9 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_accum", &pa::CarbohydrateStructure::get_sugar_accum)
         .def("get_sugar_occupancy_check", &pa::CarbohydrateStructure::get_sugar_occupancy_check)
         .def("get_glycosylation_type", &pa::CarbohydrateStructure::get_glycosylation_context)
+        .def("get_wurcs_uniqres_code", &pa::CarbohydrateStructure::get_wurcs_residue_code)
+        .def("get_number_of_connections", &pa::CarbohydrateStructure::get_number_of_connections)
+        .def("get_sugar_linkage_info", &pa::CarbohydrateStructure::get_sugar_linkage_info)
         .def("check_if_updated_with_experimental_data", &pa::CarbohydrateStructure::check_if_updated_with_experimental_data);
 
     py::class_<pa::XRayData>(m, "XRayData")
