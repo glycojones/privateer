@@ -8,6 +8,10 @@ SET(PRIVATEER_CXX_FLAGS "-g -O2 -w")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS}")
 
+if (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--allow-multiple-definition")
+endif()
+
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,9 +20,6 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
-#Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
-# set(JSON_BuildTests OFF CACHE INTERNAL "")
-# add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 
 if(NOT DEFINED LIB_INSTALL_DIR)
     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
@@ -32,16 +33,15 @@ find_package(CCP4 REQUIRED mmdb2 ccp4c ccp4srs clipper-core clipper-mmdb clipper
 # Required for std::thread in C++11 standard. 
 find_package(Threads REQUIRED)
 
-set(CLIBDENV $ENV{CLIBD})
 
 ## Required Python stuff - link against system Python3 for testing on YSBL machines
 #
     # Link against CCP4-distributed Python
 if(APPLE)
-    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python
+    find_program(PYTHON NAMES $ENV{PYTHON} ccpem-python
                         HINTS ${CMAKE_INSTALL_PREFIX}/bin )
 else()
-    find_program(PYTHON NAMES $ENV{PYTHON} ccp4-python python.exe
+    find_program(PYTHON NAMES $ENV{PYTHON} ccpem-python python.exe
                         HINTS ${CMAKE_INSTALL_PREFIX}/bin
                         PATHS [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath])
 endif()
@@ -111,6 +111,10 @@ include_directories(${CCP4_INCLUDE_DIRS}
 ## Create libprivateer
 #
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/third-party/sajson.h
+            ${PRIVATEER_SOURCE_DIR}/third-party/utf.hpp
+            ${PRIVATEER_SOURCE_DIR}/privateer-error.h
+            ${PRIVATEER_SOURCE_DIR}/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco.cpp
             ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/privateer-blobs.cpp
@@ -154,25 +158,36 @@ target_link_libraries ( privateer_core PRIVATE
 #
 
 file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
-     DESTINATION ${CLIBDENV})
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/data)
 
-set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2 )
+set     ( PYTHON_MODULE_PATH ${CMAKE_INSTALL_PREFIX}/lib/py2/privateer )
+
 message ( STATUS "Installing Python module to: ${PYTHON_MODULE_PATH}")
-install ( DIRECTORY ${PRIVATEER_SOURCE_DIR}/privateer DESTINATION ${PYTHON_MODULE_PATH})
-install ( FILES ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
-                ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
-                ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
-                ${PRIVATEER_SOURCE_DIR}/privateer-lib.h
-                ${PRIVATEER_SOURCE_DIR}/database.json
-          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
+
+install (   FILES   ${PRIVATEER_SOURCE_DIR}/privateer/__init__.py
+                    ${PRIVATEER_SOURCE_DIR}/privateer/analysis.py
+                    ${PRIVATEER_SOURCE_DIR}/privateer/restraints.py
+            DESTINATION ${PYTHON_MODULE_PATH}   )
+
+install (   FILES   ${PRIVATEER_SOURCE_DIR}/third-party/sajson.h
+                    ${PRIVATEER_SOURCE_DIR}/third-party/utf.hpp
+                    ${PRIVATEER_SOURCE_DIR}/privateer-error.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-json.h
+                    ${PRIVATEER_SOURCE_DIR}/clipper-glyco.h
+                    ${PRIVATEER_SOURCE_DIR}/clipper-glyco_data.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-blobs.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-composition.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-dbquery.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-cryo_em.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-parallelism.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-xray.h
+                    ${PRIVATEER_SOURCE_DIR}/privateer-restraints.h 
+                    ${PRIVATEER_SOURCE_DIR}/privateer-lib.h            
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/include/privateer)
+
 install ( TARGETS privateer_lib
-          LIBRARY DESTINATION ${LIB_INSTALL_DIR})
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+          RUNTIME DESTINATION bin)
 install ( TARGETS privateer_exec DESTINATION bin)
 install ( TARGETS privateer_core DESTINATION ${PYTHON_MODULE_PATH} )
 

@@ -6,7 +6,7 @@
 // The University of York
 
 
-// #define DUMP 1
+
 #include "privateer-lib.h"
 
 void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
@@ -86,7 +86,7 @@ void privateer::coot::insert_coot_files_loadup_python ( std::fstream& output, co
 
             output << "set_last_map_colour  (1.00,  0.13,  0.89)\n"
            << "interesting_things_gui (\"Validation report from Privateer\",[\n";
-    }  
+    }
 }
 
 void privateer::coot::insert_coot_epilogue_scheme ( std::fstream& output )
@@ -187,7 +187,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
                                              clipper::Xmap<float>& best_map,
                                              clipper::Xmap<float>& difference_map,
                                              bool ignore_set_null,
-                                             bool useMTZ, 
+                                             bool useMTZ,
                                              int n_refln,
                                              int n_param)
 // what is n_refln and n_param? They seem kind of important in convergence mathematical functions of sfweight.cpp? How would they be different in cryoem?
@@ -251,7 +251,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
 
         // std::cout << "sigmaa_weighting.debug() after = " << std::endl;
         // sigmaa_weighting.debug();
-        
+
 
         best_map.fft_from ( best_map_coefficients );
         difference_map.fft_from ( difference_map_coefficients );
@@ -328,7 +328,7 @@ bool privateer::util::calculate_sigmaa_maps (const clipper::Atom_list& list_of_a
         std::cout << "After doing fft transformations" << std::endl;
 
         return true;
-     
+
     }
 }
 
@@ -603,7 +603,7 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     return false;
 }
 
-void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, nlohmann::json &jsonObject )
+void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::Database>& glycomics_database )
 {
     std::fstream of_xml;
 
@@ -668,34 +668,33 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
 
         clipper::String glycanWURCS = list_of_glycans[i].generate_wurcs();
 
-        
+
 
 
         of_xml << "    <Glycan>\n" ;
         of_xml << "     <GlycanPDB>"        << pdbname                                           << "</GlycanPDB>\n"                                         ;
         of_xml << "     <GlycanType>"       << list_of_glycans[i].get_type()                     << "</GlycanType>\n"                                       ;
         of_xml << "     <GlycanRoot>"       << list_of_glycans[i].get_root().first.type().trim() + list_of_glycans[i].get_root().first.id().trim() << "</GlycanRoot>\n" ;
-        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain()                    << "</GlycanChain>\n"                                      ;
+        of_xml << "     <GlycanChain>"      << list_of_glycans[i].get_chain().substr(0,1)         << "</GlycanChain>\n"                                      ;
         of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
         of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;
         
-        if(!jsonObject.empty())
+        if(!glycomics_database.empty())
         {
-            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+            int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
             
             std::string glyTouCanID, glyConnectID;
             if (valueLocation != -1)
                 {
-                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                    glyTouCanID = glycomics_database[valueLocation].GlyTouCanID;
                     if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
                     {
                         glyTouCanID.erase(0, 1);
                         glyTouCanID.pop_back();
                     }
 
-                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
-                    else     glyConnectID = "NotFound";
+                    glyConnectID = glycomics_database[valueLocation].GlyConnectID;
                 }
             else glyTouCanID = "NotFound", glyConnectID = "NotFound";
 
@@ -703,15 +702,15 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
             if(valueLocation == -1)
             of_xml << "     <GlycanGTCID>"      << "Unable to find GlyTouCan ID"                     << "</GlycanGTCID>\n"                                      ;
             else
-            of_xml << "     <GlycanGTCID>"      << glyTouCanID                                       << "</GlycanGTCID>\n"                                      ; 
-            
+            of_xml << "     <GlycanGTCID>"      << glyTouCanID                                       << "</GlycanGTCID>\n"                                      ;
+
             if(glyConnectID == "NotFound")
             of_xml << "     <GlycanGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</GlycanGlyConnectID>\n"                               ;
             else
-            of_xml << "     <GlycanGlyConnectID>" << glyConnectID                                    << "</GlycanGlyConnectID>\n"                               ;                                  
-            
+            of_xml << "     <GlycanGlyConnectID>" << glyConnectID                                    << "</GlycanGlyConnectID>\n"                               ;
+
             // std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>
-            
+
             if(!list_of_glycans_associated_to_permutations[i].empty())
                 {
                     of_xml << "     <GlycanPermutations>\n" ;
@@ -727,40 +726,39 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
                                 residueDeletions = list_of_glycans_associated_to_permutations[i][j].first.second[2];
 
                             clipper::String glycanWURCS = list_of_glycans_associated_to_permutations[i][j].first.first.generate_wurcs();
-                            int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", glycanWURCS);
+                            int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
 
                             os_permutation << list_of_glycans_associated_to_permutations[i][j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                            
+
                             std::string glyTouCanID, glyConnectID;
                             if (valueLocation != -1)
                                 {
-                                    glyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                                    glyTouCanID = glycomics_database[valueLocation].GlyTouCanID;
                                     if (glyTouCanID.front() == '"' && glyTouCanID.front() == '"')
                                     {
                                         glyTouCanID.erase(0, 1);
                                         glyTouCanID.pop_back();
                                     }
 
-                                    if      (jsonObject[valueLocation]["glyconnect"] != "NotFound") glyConnectID = to_string(jsonObject[valueLocation]["glyconnect"]["id"]);
-                                    else     glyConnectID = "NotFound";
+                                    glyConnectID = glycomics_database[valueLocation].GlyConnectID;
                                 }
                             else glyTouCanID = "NotFound", glyConnectID = "NotFound";
-                            
+
                             of_xml << "        <PermutationWURCS>"      << glycanWURCS                                       << "</PermutationWURCS>\n"                                      ;
-            
+
                             of_xml << "        <PermutationScore>"      << permutationScore                                  << "</PermutationScore>\n"                                      ;
-                            
+
                             of_xml << "        <anomerPermutations>"    << anomerPermutations                                << "</anomerPermutations>\n"                                    ;
 
                             of_xml << "        <residuePermutations>"   << residuePermutations                               << "</residuePermutations>\n"                                   ;
 
                             of_xml << "        <residueDeletions>"      << residueDeletions                                  << "</residueDeletions>\n"                                   ;
-                            
+
                             if(valueLocation == -1)
                             of_xml << "        <PermutationGTCID>"      << "Unable to find GlyTouCan ID"                     << "</PermutationGTCID>\n"                                      ;
                             else
-                            of_xml << "        <PermutationGTCID>"      << glyTouCanID                                       << "</PermutationGTCID>\n"                                      ; 
-                            
+                            of_xml << "        <PermutationGTCID>"      << glyTouCanID                                       << "</PermutationGTCID>\n"                                      ;
+
                             if(glyConnectID == "NotFound")
                             of_xml << "        <PermutationGlyConnectID>" << "Unable to find GlyConnect ID"                  << "</PermutationGlyConnectID>\n"                               ;
                             else
@@ -855,38 +853,25 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
     return map_data;
 }
 
-nlohmann::json privateer::util::read_json_file ( clipper::String& path, nlohmann::json& jsonContainer )
+int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::Database>& glycomics_database, std::string inputwurcs )
 {
-    std::string path_copy = path;
-    if(path_copy == "nopath" || path_copy.empty()) 
-        {
-            std::string env(std::getenv ( "CLIBD" ));
+    auto result = std::find_if(glycomics_database.begin(), 
+             glycomics_database.end(), 
+             [&inputwurcs]
+             (const privateer::json::Database& entry) -> bool { return inputwurcs == entry.WURCS; });
 
-            path_copy = env + "privateer_database.json";
-        }
-
-    std::cout << "Reading " << path_copy << "... done." << std::endl;
-
-    std::ifstream input(path_copy);
-
-    input >> jsonContainer;
-
-    return jsonContainer;
-}
-
-int privateer::util::find_index_of_value ( nlohmann::json& jsonContainer, std::string key, std::string value )
-{
-    std::string jsonValue;
-    for (nlohmann::json::iterator it = jsonContainer.begin(); it != jsonContainer.end(); it++)
+    int index = -1;
+    if (result != std::end(glycomics_database))
     {
-        jsonValue = it.value()[key];
-        if(jsonValue == value)
-        {
-            int index = it - jsonContainer.begin();
-            return index;
-        }
+        index = std::distance(glycomics_database.begin(), result);
+        return index;
     }
-    return -1;
+    else
+    {
+        return -1;
+    }
+
+    return index;
 }
 
 char privateer::util::get_altconformation(clipper::MAtom ma)
@@ -981,37 +966,27 @@ bool privateer::util::compute_and_print_external_validation ( const std::vector<
 
 void privateer::util::print_usage ( )
 {
-    std::cout << "Usage: privateer\n\n"
+    std::cout << "\nUsage: privateer\n\n"
               << "\t-pdbin <.pdb>\t\t\tCOMPULSORY: input model in PDB or mmCIF format\n"
-              << "\t-cifin <.cif> OR -mtzin <.mtz>\tan mmCIF or MTZ file containing merged I's or F's\n"
-              << "\t\t\t\t\tNote: intensities will be run through 'ctruncate'\n"
-              << "\t\t\t\t\tin order to generate amplitudes\n"
-              << "\t\t\t\t\tObservations are required for RSCC calculation and map output\n"
+              << "\t-cifin <.cif> OR -mtzin <.mtz>\tmmCIF or MTZ file with merged I or F (needed for RSCC)\n"
+              << "\t\t\t\t\tNote: intensities will ctruncate-d into amplitudes\n"
               << "\t-mtzout <.mtz>\t\t\tOutput best and difference map coefficients to MTZ files\n"
               << "\t-colin-fo\t\t\tColumns containing F & SIGF, e.g. FOBS,SIGFOBS\n"
               << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path\n"
-              << "\t-codein <3-letter code>\t\tA 3-letter code for the target sugar\n"
-              << "\t\t\t\t\tIf not supplied, Privateer will check all known sugar codes\n"
-              << "\t-valstring <options>\t\tUse external validation options\n"
+              << "\t-codein <3-letter code>\t\tA 3-letter code (should match that in -valstring)\n"
+              << "\t-rscc-best\t\t\tCalculate RSCC against best omit density (Fobs used by default)\n"
+              << "\t-valstring <options>\t\tUse external validation options (to be deprecated in MKV)\n"
               << "\t\t\t\t\tExample: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n"
               << "\t\t\t\t\tThree-letter code, ring atoms, anomer, handedness, expected conformation\n"
               << "\t-showgeom\t\t\tRing bond lengths, angles and torsions are reported clockwise\n"
-              << "\t\t\t\t\tExample: first bond, angle and torsion for an aldopyranose:\n"
-              << "\t\t\t\t\t\t (O5-C1), (C5-O5-C1), (C5-O5-C1-C2)\n"
-              << "\t-radiusin <value>\t\tA radius for the calculation of a mask around the target sugar\n"
-              << "\t\t\t\t\tDefault value is 1.5 angstroems\n"
+              << "\t\t\t\t\tExample: first bond (O5-C1) angle (C5-O5-C1) & torsion (C5-O5-C1-C2) for aldopyranoses\n"
+              << "\t-radiusin <value>\t\tA radius (def:2.5)for the calculation of a mask around the target monosaccharide\n"
               << "\t-list\t\t\t\tProduces a list of space-separated supported 3-letter codes and stops\n"
-              << "\t-mode <normal|ccp4i2>\t\tOptional: mode of operation. Defaults to normal\n"
-              << "\t\t\t\t\tccp4i2 mode produces XML and tabbed-value files\n\n"
+              << "\t-mode <normal|ccp4i2>\t\tRun mode (def:normal). ccp4i2 mode produces XML and CSV files\n"
               << "\t-expression\t\t\tSpecify which expression system the input glycoprotein was produced in\n"
               << "\t\t\t\t\tSupported systems: undefined, fungal, yeast, plant, insect, mammalian, human\n"
-              << "\t-vertical\t\t\tGenerate vertical glycan plots\n"
-              << "\t-essentials\t\t\tUse the Essentials of glycobiology colour code for the glycan plots\n"
-              << "\t-invert\t\t\t\tUse white outlines (hint: good for dark background slides?)\n\n"
-              << "\tThe program will also produce a visual checklist with the conflicting sugar models in the form\n"
-              << "\tof Scheme and Python scripts for use with Coot\n"
-              << "\n\tTo use them: 'coot --script privateer-results.scm' or 'coot --script privateer-results.py'\n"
-              << "\tBlue map: 2mFo-DFc map. Pink map: mFo-DFc omit map. RSCC is computed against this map" << std::endl;
+              << "\t-vertical/-essentials/-invert\tControl SNFG glycan plot output (SVG graphics)\n\n"
+              << "\tDetected issues can be checked in Coot by running 'coot --script privateer-results.py'\n" << std::endl;
 
     return;
 
@@ -1082,7 +1057,7 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
             fprintf(output,"%1.3f \t", ligandList[index].second.get_accum());
 
             float bfac = ligandList[index].second.get_bfactor ();
-                        
+
             fprintf ( output, "%3.2f", bfac ); // output <bfactor>
 
             if ( ligandList[index].second.get_context() == "n-glycan" )
@@ -1164,7 +1139,7 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
             printf("%1.2f\t", ligandList[index].second.get_rscc());                                                                                              // output RSCC and data resolution
             printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
             printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
-            printf("%1.3f \t", ligandList[index].second.get_accum());     
+            printf("%1.3f \t", ligandList[index].second.get_accum());
 
             float bfac = 0.0;
 
@@ -3361,7 +3336,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
             up_down++;
             if ( link.get_order() == 3 ) // it goes down
             {
-                
+
                 std::string anomerSymbol;
                 if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "alpha")     anomerSymbol = "&#945;";
                 else if (clipper::data::get_anomer(linked_node.get_sugar().type().trim()) == "beta") anomerSymbol = "&#946;";
@@ -3428,7 +3403,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
         {
             Link_type orientation;
             int sign = 0;
-            bool nodeHasSpecialCase = false; 
+            bool nodeHasSpecialCase = false;
 
             for ( int j = 0; j < node.number_of_connections(); j++)
                 {
@@ -3440,7 +3415,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                     if(nodeHasSpecialCase) break;
                 }
-            
+
             switch (branches - j - up_down)
             {
                 case 3:
@@ -3457,7 +3432,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     {
                         sign = 1;
                         orientation = branch_side;
-                    }      
+                    }
                     break;
                 case 1:
                     if ( branches != 1 )
@@ -3471,7 +3446,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         {
                             sign = -1;
                             orientation = up_side;
-                        }      
+                        }
                     }
                     else
                     {
@@ -3579,7 +3554,7 @@ bool privateer::glycanbuilderplot::Plot::plot_demo ( )
     add_block(glc);  add_block(gal);  add_block(man);    add_block(fuc);    add_block(xyl);    add_block(glcn);   add_block(galn);
     add_block(mann); add_block(glca); add_block(gala);   add_block(mana);   add_block(idoa);   add_block(neu5ac); add_block(neu5gc);
     add_block(kdn);  add_block(unk);  add_block(glcnac); add_block(galnac); add_block(mannac); add_block(gn);     add_block(go);
-    add_block(gs);   add_link(bb);    
+    add_block(gs);   add_link(bb);
 
     return false;
 }
@@ -3933,7 +3908,7 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             std::stringstream stream;
             stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
-            
+
             anomerSymbolPosX = get_x() - 20;
             anomerSymbolPosY = get_y() - 65;
             linkageSymbolPosX = get_x() - 20;
@@ -3945,7 +3920,7 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             std::stringstream stream;
             stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
-            
+
             anomerSymbolPosX = get_x() - 55;
             anomerSymbolPosY = get_y() + 20;
             linkageSymbolPosX = get_x() - 19;
@@ -3996,7 +3971,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4090,7 +4065,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, expression_system);
+    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     const std::vector < clipper::MGlycan >& list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4135,25 +4110,25 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 {
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
- 
+
     const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum |
                           mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks |
                           mmdb::MMDBF_EnforceUniqueChainID;
- 
+
     mfile.SetFlag(mmdbflags);
- 
+
     mfile.read_file(pdb_filename);
     mfile.import_minimol(mmol);
- 
+
     if (mmol.cell().is_null()) // fixme: crystal-less NMR models were causing trouble
         mmol.init(clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr(300, 300, 300, 90, 90, 90)));
- 
+
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
- 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
- 
+
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
+
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
- 
+
     if (!list_of_glycans.empty())
     {
         std::string summaryString;
@@ -4168,7 +4143,7 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 
             glycanRoot = list_of_glycans[i].get_root_by_name();
             wurcsDescription = list_of_glycans[i].generate_wurcs();
- 
+
             temporaryString = temporaryString + glycanRoot + "\n" + wurcsDescription + "\n";
             summaryString.append(temporaryString);
         }
@@ -4256,5 +4231,3 @@ void privateer::scripting::svg_graphics_demo ( bool original_colour_scheme, bool
     plot.write_to_file ( "privateer-glycoplot_demo.svg" );
     plot.delete_shapes();
 }
-
-
