@@ -137,3 +137,8 @@ print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
 SNFGstrings = glycan.get_SNFG_strings()
 # print(SNFGstrings)
 
+ligands = glycosylation.get_ligands()
+
+for count, item in enumerate(ligands):
+    print('{}: {}'.format(count, item.get_sugar_summary()))
+    print("_______________________")

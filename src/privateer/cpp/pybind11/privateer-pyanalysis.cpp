@@ -862,7 +862,6 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
         sugar_cremer_pople_params.append(currentParam);
     }
     this->sugar_cremer_pople_params=sugar_cremer_pople_params;
-
     this->sugar_sane = inputSugar.second.is_sane();
 
     std::string sugardiagnostic;
@@ -929,33 +928,32 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_occupancy_check=inputSugar.second.get_occupancy_check();
     this->sugar_context=inputSugar.second.get_context();
 
-    this->sugarNode = parentGlycan.get_node(sugarID);
-    this->sugar_connections=sugarNode.number_of_connections();
-
+    this->sugarNode = clipper::MGlycan::Node(); // we don't have an MGlycan object with free float ligands...
+    this->sugar_connections = 0;
     auto sugar_linkage_info_list_tmp = pybind11::list();
-    if (sugarNode.number_of_connections() > 0)
-    {
-        for (int j = 0; j < sugarNode.number_of_connections(); j++ )
-        {
-            std::ostringstream linkagePositiontmp;
-            int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
-            linkagePositiontmp << sugarNode.get_connection(j).get_order();
-            std::string linkagePosition = linkagePositiontmp.str();
+    // if (sugarNode.number_of_connections() > 0)
+    // {
+    //     std::cout << "After basics step 2" << std::endl;
+    //     for (int j = 0; j < sugarNode.number_of_connections(); j++ )
+    //     {
+    //         std::ostringstream linkagePositiontmp;
+    //         int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
+    //         linkagePositiontmp << sugarNode.get_connection(j).get_order();
+    //         std::string linkagePosition = linkagePositiontmp.str();
 
-            std::string hostLinkagePosition;
+    //         std::string hostLinkagePosition;
 
-            if (sugar.full_type() == "ketose")
-                hostLinkagePosition += "2";
-            else
-                hostLinkagePosition += "1";
+    //         if (sugar.full_type() == "ketose")
+    //             hostLinkagePosition += "2";
+    //         else
+    //             hostLinkagePosition += "1";
 
-            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
-            sugar_linkage_info_list_tmp.append(sugar_linkage_info);
-        }
-    }
+    //         auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+    //         sugar_linkage_info_list_tmp.append(sugar_linkage_info);
+    //     }
+    // }
 
     this->sugar_linkages = sugar_linkage_info_list_tmp;
-
     initialize_summary_of_sugar();
 }
 
