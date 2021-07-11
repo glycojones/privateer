@@ -1958,12 +1958,24 @@ bool MSugar::examine_ring()
 
     for (i = 0 ; i < sugar_ring_elements.size() -1 ; i++)
         if (!bonded(sugar_ring_elements[i], sugar_ring_elements[i+1]))
-	    return false;
-
+        {
+            #if DUMP
+                DBG << std::endl << "Returning false - sugar_ring_elements[" << i << "].id().trim() "  << sugar_ring_elements[i].id().trim() << "\t\t\tsugar_ring_elements[" << i+1 << "].id().trim() " << sugar_ring_elements[i+1].id().trim() << std::endl;
+            #endif
+            return false;
+        }
         if (!bonded(sugar_ring_elements[i], sugar_ring_elements[0]))
-	    return false;
+        {
+            #if DUMP
+                DBG << std::endl << "Returning false - sugar_ring_elements[" << i << "].id().trim() "  << sugar_ring_elements[i].id().trim() << "\t\t\tsugar_ring_elements[" << 0 << "].id().trim() " << sugar_ring_elements[0].id().trim() << std::endl;
+            #endif
+            return false;
+        }
         else
-	    return true;
+        {
+            return true;
+        }
+	    
 }
 
 /*! Internal function for checking whether two atoms are bonded or not
@@ -1975,7 +1987,9 @@ bool MSugar::examine_ring()
 bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) const
 {
     clipper::ftype distance = clipper::Coord_orth::length( ma_one.coord_orth(), ma_two.coord_orth() );
-
+    #if DUMP
+        DBG << std::endl << "Received - ma_one.id().trim() " << ma_one.id().trim() << "\t\t\tma_two.id().trim() " << ma_two.id().trim() << "\tdistance = " << distance << std::endl;
+    #endif
     if ( ma_one.element().trim() == "C" )
     {
         if ( ma_two.element().trim() == "C" )
