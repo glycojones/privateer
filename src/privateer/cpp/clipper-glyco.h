@@ -149,7 +149,13 @@ namespace clipper
             const clipper::String conformation_name_iupac() const { return clipper::data::iupac_conformational_landscape[sugar_conformation]; }
             //!< get HTML-formatted, iupac-compliant codes describing the conformation of the sugar ring
 
-            const clipper::ftype puckering_amplitude() const { return sugar_cremer_pople_params[0]; }
+            const clipper::ftype puckering_amplitude() const 
+            { 
+                if(sugar_cremer_pople_params.empty())
+                    return -1;
+                else
+                    return sugar_cremer_pople_params[0]; 
+            }
             //!< convenience function for getting the puckering amplitude (in Angstroems) of the sugar ring
 
             int conformation_code() const { return sugar_conformation; }
