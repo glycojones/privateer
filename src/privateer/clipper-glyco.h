@@ -106,7 +106,7 @@ inline clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::V
     return angle;
 }
 
-//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions 
+//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions
 namespace clipper
 {
 
@@ -248,6 +248,8 @@ namespace clipper
             void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
 
             void set_accum_score ( clipper::ftype accum_in ) { sugar_accum = accum_in; }
+
+            void override_conformation_diag ( bool is_it_ok ) { sugar_diag_conformation = is_it_ok; }
 
             void set_occupancy_check ( bool occupancy_check_in ) { sugar_occupancy_check = occupancy_check_in; }
 
@@ -576,13 +578,13 @@ namespace clipper
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
-            
+
             // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION BEGIN //
             char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
             std::vector < std::string > obtain_unique_WURCS_residues();
             const int obtain_total_number_of_glycosidic_bonds();
             clipper::String generate_wurcs ();
-            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END // 
+            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END //
 
 
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }

@@ -3170,6 +3170,12 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                                              potential_c_roots[i].first, sugar, debug_output, this->expression_system );
                     mg.set_kind_of_glycan ( "c-glycan" );
 
+                    // Check 1C4 conformation on ring - see John et al, Nature Chemical Biology 2021 (17):428–437
+                    if ( sugar.conformation_name() == "1c4" ){
+                      sugar.override_conformation_diag ( true );
+                    }
+
+
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom cd1= sugar.anomeric_substituent();         // CD1 TRP
