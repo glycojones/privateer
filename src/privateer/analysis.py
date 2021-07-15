@@ -1,13 +1,13 @@
 import xml.etree.ElementTree as etree
-from privateer.privateer_core import get_annotated_glycans,get_annotated_glycans_hierarchical
+from privateer import privateer_core as pvt
 
 def print_glycosidic_torsions ( pdb_filename = "", first="ASN", second="NAG" ) :
 
-    xml = privateer.get_annotated_glycans_hierarchical ( pdb_filename )
+    xml = pvt.get_annotated_glycans_hierarchical ( pdb_filename )
 
     xml_tree = etree.fromstring ( xml )
 
-    if not privateer.found_in_database ( first ) :
+    if not pvt.found_in_database ( first ) :
         first_residues  = xml_tree.xpath("glycan[contains(@root, '" + first + "')]")
 
         print (str("RESIDUE \t").rjust(18) + str("SUGAR  \t").rjust(18) + str("PHI  \t").rjust(18) + str("PSI  ").rjust(18))

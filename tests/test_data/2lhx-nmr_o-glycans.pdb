@@ -7,12 +7,16 @@ COMPND   3 CHAIN: A;
 COMPND   4 ENGINEERED: YES                                                      
 SOURCE    MOL_ID: 1;                                                            
 SOURCE   2 SYNTHETIC: YES;                                                      
-SOURCE   3 OTHER_DETAILS: SYNTHESIZED VIA SOLID PHASE PEPTIDE SYNTHESIS         
+SOURCE   3 ORGANISM_SCIENTIFIC: SYNTHETIC CONSTRUCT;                            
+SOURCE   4 ORGANISM_TAXID: 32630;                                               
+SOURCE   5 OTHER_DETAILS: SYNTHESIZED VIA SOLID PHASE PEPTIDE SYNTHESIS         
 KEYWDS    GLYCOSYLATION, TN ANTIGEN, SUGAR BINDING PROTEIN                      
 EXPDTA    SOLUTION NMR                                                          
 NUMMDL    24                                                                    
 AUTHOR    A.BORGERT,J.HEIMBURG-MOLINARO,Y.LASANAJAK,T.JU,M.LIU,P.THOMPSON,      
 AUTHOR   2 G.RAGUPATHI,G.BARANY,R.CUMMINGS,D.SMITH,D.LIVE                       
+REVDAT   3   29-JUL-20 2LHX    1       COMPND SOURCE REMARK HETNAM              
+REVDAT   3 2                   1       LINK   SITE   ATOM                       
 REVDAT   2   27-JUN-12 2LHX    1       JRNL                                     
 REVDAT   1   04-APR-12 2LHX    0                                                
 JRNL        AUTH   A.BORGERT,J.HEIMBURG-MOLINARO,X.SONG,Y.LASANAJAK,T.JU,M.LIU, 
@@ -28,15 +32,16 @@ REMARK   2
 REMARK   2 RESOLUTION. NOT APPLICABLE.                                          
 REMARK   3                                                                      
 REMARK   3 REFINEMENT.                                                          
-REMARK   3   PROGRAM     : XPLOR-NIH                                            
-REMARK   3   AUTHORS     : SCHWIETERS, KUSZEWSKI, TJANDRA AND CLORE             
+REMARK   3   PROGRAM     : CNS, XPLOR-NIH                                       
+REMARK   3   AUTHORS     : BRUNGER A. T. ET.AL. (CNS), SCHWIETERS, KUSZEWSKI,   
+REMARK   3                 TJANDRA AND CLORE (XPLOR-NIH)                        
 REMARK   3                                                                      
 REMARK   3  OTHER REFINEMENT REMARKS: NULL                                      
 REMARK   4                                                                      
 REMARK   4 2LHX COMPLIES WITH FORMAT V. 3.30, 13-JUL-11                         
 REMARK 100                                                                      
 REMARK 100 THIS ENTRY HAS BEEN PROCESSED BY RCSB ON 24-AUG-11.                  
-REMARK 100 THE RCSB ID CODE IS RCSB102405.                                      
+REMARK 100 THE DEPOSITION ID IS D_1000102405.                                   
 REMARK 210                                                                      
 REMARK 210 EXPERIMENTAL DETAILS                                                 
 REMARK 210  EXPERIMENT TYPE                : NMR                                
@@ -45,27 +50,29 @@ REMARK 210  PH                             : 4.5
 REMARK 210  IONIC STRENGTH                 : NULL                               
 REMARK 210  PRESSURE                       : AMBIENT                            
 REMARK 210  SAMPLE CONTENTS                : 2-10 MM MUC2 MUCIN DOMAIN          
-REMARK 210  PEPTIDE, 2-10 MM SUGAR (N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE), 2-10   
-REMARK 210  MM SUGAR (N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE), 90% H2O/10% D2O;     
-REMARK 210  2-10 MM MUC2 MUCIN DOMAIN PEPTIDE, 2-10 MM SUGAR (N-ACETYL-2-       
-REMARK 210  DEOXY-2-AMINO-GALACTOSE), 2-10 MM SUGAR (N-ACETYL-2-DEOXY-2-AMINO   
-REMARK 210  -GALACTOSE), 100% D2O                                               
+REMARK 210  PEPTIDE, 2-10 MM SUGAR (N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE), 2-     
+REMARK 210  10 MM SUGAR (N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE), 90% H2O/10%       
+REMARK 210  D2O; 2-10 MM MUC2 MUCIN DOMAIN PEPTIDE, 2-10 MM SUGAR (N-ACETYL-    
+REMARK 210  2-DEOXY-2-AMINO-GALACTOSE), 2-10 MM SUGAR (N-ACETYL-2-DEOXY-2-      
+REMARK 210  AMINO-GALACTOSE), 100% D2O                                          
 REMARK 210                                                                      
 REMARK 210  NMR EXPERIMENTS CONDUCTED      : 2D 1H-1H NOESY; 3D TOCSY-NOESY;    
 REMARK 210                                   2D 1H-15N HSQC; 2D 1H-13C HSQC;    
-REMARK 210                                   2D 1H-1H TOCSY; 2D 1H-1H COSY; 2D  
-REMARK 210                                   1H-13C HMBC                        
+REMARK 210                                   2D 1H-1H TOCSY; 2D 1H-1H COSY;     
+REMARK 210                                   2D 1H-13C HMBC                     
 REMARK 210  SPECTROMETER FIELD STRENGTH    : 600 MHZ; 800 MHZ; 900 MHZ          
 REMARK 210  SPECTROMETER MODEL             : INOVA                              
 REMARK 210  SPECTROMETER MANUFACTURER      : VARIAN                             
 REMARK 210                                                                      
 REMARK 210  STRUCTURE DETERMINATION.                                            
-REMARK 210   SOFTWARE USED                 : CNS                                
-REMARK 210   METHOD USED                   : TORSION SPACE SIMULATED ANNEALING  
+REMARK 210   SOFTWARE USED                 : NULL                               
+REMARK 210   METHOD USED                   : TORSION SPACE SIMULATED            
+REMARK 210                                   ANNEALING                          
 REMARK 210                                                                      
 REMARK 210 CONFORMERS, NUMBER CALCULATED   : 100                                
 REMARK 210 CONFORMERS, NUMBER SUBMITTED    : 24                                 
-REMARK 210 CONFORMERS, SELECTION CRITERIA  : NULL                               
+REMARK 210 CONFORMERS, SELECTION CRITERIA  : STRUCTURES WITH THE LEAST          
+REMARK 210                                   RESTRAINT VIOLATIONS               
 REMARK 210                                                                      
 REMARK 210 BEST REPRESENTATIVE CONFORMER IN THIS ENSEMBLE : 1                   
 REMARK 210                                                                      
@@ -102,6 +109,15 @@ REMARK 400 RELEVANT TO STRUCTURE/FUNCTION ANALYSIS OF POST TRANSLATIONAL
 REMARK 400 GLYCOSYLATION OF MUC2, FOR WHICH IT WAS USED AS A MODEL SUBSTRATE.   
 REMARK 400 STUDIES ON IT AND ON O-GALNAC GLYCOSYLATED FORMS HAD BEEN CARRIED    
 REMARK 400 OUT USING SEVERAL POLYPEPTIDE GALNAC TRANSFERASE ISOFORMS.           
+REMARK 500                                                                      
+REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
+REMARK 500 SUBTOPIC: CLOSE CONTACTS                                             
+REMARK 500                                                                      
+REMARK 500 THE FOLLOWING ATOMS ARE IN CLOSE CONTACT.                            
+REMARK 500                                                                      
+REMARK 500  ATM1  RES C  SSEQI   ATM2  RES C  SSEQI           DISTANCE          
+REMARK 500                                                                      
+REMARK 500 REMARK: NULL                                                         
 REMARK 500                                                                      
 REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
 REMARK 500 SUBTOPIC: TORSION ANGLES                                             
@@ -144,15 +160,6 @@ REMARK 500 23 PRO A   6       95.25    -44.48
 REMARK 500 23 LEU A   7     -141.84     27.88                                   
 REMARK 500                                                                      
 REMARK 500 REMARK: NULL                                                         
-REMARK 800                                                                      
-REMARK 800 SITE                                                                 
-REMARK 800 SITE_IDENTIFIER: AC1                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE A2G A 10                  
-REMARK 800                                                                      
-REMARK 800 SITE_IDENTIFIER: AC2                                                 
-REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
-REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE A2G A 11                  
 REMARK 900                                                                      
 REMARK 900 RELATED ENTRIES                                                      
 REMARK 900 RELATED ID: 17870   RELATED DB: BMRB                                 
@@ -177,16 +184,14 @@ HET    A2G  A  10      28
 HET    A2G  A  11      28                                                       
 HETNAM     ACE ACETYL GROUP                                                     
 HETNAM     NH2 AMINO GROUP                                                      
-HETNAM     A2G N-ACETYL-2-DEOXY-2-AMINO-GALACTOSE                               
+HETNAM     A2G 2-ACETAMIDO-2-DEOXY-ALPHA-D-GALACTOPYRANOSE                      
 FORMUL   1  ACE    C2 H4 O                                                      
 FORMUL   1  NH2    H2 N                                                         
 FORMUL   2  A2G    2(C8 H15 N O6)                                               
 LINK         C   ACE A   1                 N   PRO A   2     1555   1555  1.30  
-LINK         C   LYS A   8                 N   NH2 A   9     1555   1555  1.31  
 LINK         OG1 THR A   4                 C1  A2G A  10     1555   1555  1.41  
 LINK         OG1 THR A   5                 C1  A2G A  11     1555   1555  1.41  
-SITE     1 AC1  2 THR A   4  THR A   5                                          
-SITE     1 AC2  2 THR A   5  LEU A   7                                          
+LINK         C   LYS A   8                 N   NH2 A   9     1555   1555  1.31  
 CRYST1    1.000    1.000    1.000  90.00  90.00  90.00 P 1           1          
 ORIGX1      1.000000  0.000000  0.000000        0.00000                         
 ORIGX2      0.000000  1.000000  0.000000        0.00000                         
@@ -314,7 +319,7 @@ HETATM  116  N   NH2 A   9     -12.850   3.689 -28.807  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.927   3.857 -28.525  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -13.554   3.572 -28.136  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -17.945  -2.030 -35.538  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -17.945  -2.030 -35.538  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.050  -1.209 -35.232  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.327  -0.310 -36.438  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.462   0.563 -36.163  1.00  0.00           N  
@@ -336,13 +341,13 @@ HETATM  138  HO3 A2G A  10     -20.687  -0.239 -38.980  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -18.727  -2.863 -38.656  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.555  -0.691 -38.731  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.100  -3.532 -36.324  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -16.831  -4.398 -35.817  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.832   2.509 -34.855  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.424   2.396 -36.512  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.391   3.744 -36.034  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.226  -4.591 -37.525  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.018  -2.210 -36.782  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.816   0.481 -27.653  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -16.831  -4.398 -35.817  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.832   2.509 -34.855  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.424   2.396 -36.512  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.391   3.744 -36.034  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.226  -4.591 -37.525  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.018  -2.210 -36.782  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.816   0.481 -27.653  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.713   0.167 -29.024  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.824  -1.070 -29.166  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.684  -1.429 -30.572  1.00  0.00           N  
@@ -364,12 +369,12 @@ HETATM  166  HO3 A2G A  11     -16.104  -3.368 -27.563  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.234  -2.572 -26.418  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -15.748  -1.766 -26.924  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.480  -0.682 -27.368  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -18.543  -0.847 -24.805  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.435  -2.183 -32.932  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.684  -2.390 -32.875  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.373  -0.811 -33.251  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -17.955   0.748 -25.272  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.197   1.043 -26.090  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -18.543  -0.847 -24.805  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.435  -2.183 -32.932  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.684  -2.390 -32.875  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.373  -0.811 -33.251  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -17.955   0.748 -25.272  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.197   1.043 -26.090  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        2                                                                  
 HETATM    1  C   ACE A   1     -25.061  -7.627 -35.078  1.00  0.00           C  
@@ -491,7 +496,7 @@ HETATM  116  N   NH2 A   9     -12.334  -0.407 -34.523  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.932  -1.062 -34.939  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.383  -0.392 -34.761  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -16.985  -2.048 -35.395  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -16.985  -2.048 -35.395  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.051  -1.129 -35.298  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -18.213  -0.441 -36.654  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.304   0.525 -36.600  1.00  0.00           N  
@@ -513,13 +518,13 @@ HETATM  138  HO3 A2G A  10     -18.085  -0.032 -38.931  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -17.663  -3.369 -38.364  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.064  -1.159 -37.625  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -18.191  -3.601 -35.978  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -15.986  -4.459 -35.194  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.768   2.612 -35.839  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.052   2.437 -37.570  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.022   3.737 -36.972  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -16.342  -4.964 -36.845  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -14.192  -3.857 -36.153  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.752   0.015 -26.983  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -15.986  -4.459 -35.194  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.768   2.612 -35.839  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.052   2.437 -37.570  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.022   3.737 -36.972  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -16.342  -4.964 -36.845  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -14.192  -3.857 -36.153  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.752   0.015 -26.983  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.458  -0.065 -28.360  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.374  -1.127 -28.556  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -17.033  -1.239 -29.969  1.00  0.00           N  
@@ -541,12 +546,12 @@ HETATM  166  HO3 A2G A  11     -17.235  -4.284 -28.278  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.809  -3.221 -26.244  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.507  -1.727 -26.325  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.233  -1.402 -27.073  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -19.539  -1.823 -24.457  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.374  -1.713 -32.345  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.629  -1.665 -32.091  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.529  -0.164 -32.318  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.193  -0.102 -24.629  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.390  -0.616 -24.030  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -19.539  -1.823 -24.457  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.374  -1.713 -32.345  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.629  -1.665 -32.091  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.529  -0.164 -32.318  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.193  -0.102 -24.629  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.390  -0.616 -24.030  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        3                                                                  
 HETATM    1  C   ACE A   1     -22.537  -6.738 -37.078  1.00  0.00           C  
@@ -668,7 +673,7 @@ HETATM  116  N   NH2 A   9     -11.863   3.471 -34.714  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.794   3.776 -34.752  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.133   4.118 -34.804  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.446  -2.150 -36.995  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.446  -2.150 -36.995  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.925  -1.118 -36.162  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.491  -0.009 -37.051  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.993   1.085 -36.230  1.00  0.00           N  
@@ -690,13 +695,13 @@ HETATM  138  HO3 A2G A  10     -20.562   1.209 -38.666  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -20.930  -2.274 -39.196  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.555  -2.139 -39.802  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.235  -3.154 -37.014  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.871  -4.851 -37.838  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.495   2.927 -34.519  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -20.888   3.826 -35.984  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -19.360   4.118 -35.154  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -19.491  -4.178 -39.345  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -17.480  -2.704 -38.894  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.890   0.552 -26.760  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.871  -4.851 -37.838  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.495   2.927 -34.519  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -20.888   3.826 -35.984  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -19.360   4.118 -35.154  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -19.491  -4.178 -39.345  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -17.480  -2.704 -38.894  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.890   0.552 -26.760  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.638   0.412 -28.144  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.793  -0.848 -28.357  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -17.518  -1.033 -29.777  1.00  0.00           N  
@@ -718,12 +723,12 @@ HETATM  166  HO3 A2G A  11     -17.615  -3.571 -27.010  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.521  -2.615 -25.977  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.177  -1.019 -25.937  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.610  -0.569 -26.783  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.748  -0.857 -24.407  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -17.069  -1.219 -32.206  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -15.668  -2.268 -31.988  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.458  -0.518 -32.061  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.082  -0.322 -24.181  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.380   1.139 -24.508  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.748  -0.857 -24.407  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -17.069  -1.219 -32.206  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -15.668  -2.268 -31.988  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.458  -0.518 -32.061  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.082  -0.322 -24.181  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.380   1.139 -24.508  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        4                                                                  
 HETATM    1  C   ACE A   1     -26.530  -6.530 -37.201  1.00  0.00           C  
@@ -845,7 +850,7 @@ HETATM  116  N   NH2 A   9     -10.688   2.068 -32.409  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -10.894   2.208 -31.461  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9      -9.769   2.178 -32.732  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.146  -2.431 -35.466  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.146  -2.431 -35.466  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.004  -1.351 -35.179  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.287  -0.606 -36.484  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.167   0.530 -36.233  1.00  0.00           N  
@@ -867,13 +872,13 @@ HETATM  138  HO3 A2G A  10     -19.394  -0.248 -38.802  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.587  -3.541 -38.245  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.188  -2.309 -37.597  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.680  -3.750 -35.804  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.527  -4.964 -35.444  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.495   2.515 -35.479  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.337   3.153 -37.116  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.268   3.730 -35.837  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.285  -5.381 -36.980  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.876  -4.011 -38.028  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.787  -0.006 -26.805  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.527  -4.964 -35.444  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.495   2.515 -35.479  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.337   3.153 -37.116  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.268   3.730 -35.837  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.285  -5.381 -36.980  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.876  -4.011 -38.028  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.787  -0.006 -26.805  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.288   0.139 -28.116  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.230  -0.941 -28.347  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.679  -0.824 -29.692  1.00  0.00           N  
@@ -895,12 +900,12 @@ HETATM  166  HO3 A2G A  11     -16.965  -3.904 -27.486  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.085  -3.312 -26.694  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.319  -1.394 -25.638  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.291  -1.283 -27.370  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.720  -2.103 -25.104  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.784  -0.422 -31.977  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.400  -1.461 -31.635  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.261   0.286 -31.443  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.323  -1.217 -24.493  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.208  -0.036 -24.138  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.720  -2.103 -25.104  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.784  -0.422 -31.977  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.400  -1.461 -31.635  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.261   0.286 -31.443  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.323  -1.217 -24.493  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.208  -0.036 -24.138  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        5                                                                  
 HETATM    1  C   ACE A   1     -24.343  -7.955 -35.897  1.00  0.00           C  
@@ -1022,7 +1027,7 @@ HETATM  116  N   NH2 A   9     -13.373   4.522 -30.305  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.644   4.712 -29.677  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -13.340   4.879 -31.217  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.224  -1.753 -35.940  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.224  -1.753 -35.940  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.304  -0.944 -35.531  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.608   0.051 -36.654  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.718   0.916 -36.271  1.00  0.00           N  
@@ -1044,13 +1049,13 @@ HETATM  138  HO3 A2G A  10     -19.539  -0.095 -39.720  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.127  -2.330 -39.083  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.918  -0.222 -39.112  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.430  -3.173 -36.797  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.327  -4.282 -36.562  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -22.287   2.455 -34.913  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.440   3.189 -36.509  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.450   3.965 -35.273  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.498  -3.965 -38.288  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.434  -3.373 -37.393  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.098   1.162 -28.803  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.327  -4.282 -36.562  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -22.287   2.455 -34.913  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.440   3.189 -36.509  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.450   3.965 -35.273  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.498  -3.965 -38.288  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.434  -3.373 -37.393  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.098   1.162 -28.803  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.371   0.451 -29.990  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.373  -0.702 -30.098  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.615  -1.463 -31.319  1.00  0.00           N  
@@ -1072,12 +1077,12 @@ HETATM  166  HO3 A2G A  11     -14.681  -2.201 -28.643  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -16.590  -1.391 -26.740  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -14.452  -0.965 -27.812  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -18.370   0.025 -27.664  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -17.550   0.787 -25.543  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -17.116  -2.421 -33.571  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -15.685  -3.437 -33.404  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.600  -1.940 -34.333  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -16.102   1.477 -26.278  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -18.571   2.362 -27.207  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -17.550   0.787 -25.543  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -17.116  -2.421 -33.571  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -15.685  -3.437 -33.404  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.600  -1.940 -34.333  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -16.102   1.477 -26.278  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -18.571   2.362 -27.207  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        6                                                                  
 HETATM    1  C   ACE A   1     -26.697  -6.407 -37.658  1.00  0.00           C  
@@ -1199,7 +1204,7 @@ HETATM  116  N   NH2 A   9     -12.525   1.225 -33.585  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.753   0.786 -33.168  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -13.430   1.035 -33.262  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.471  -3.295 -35.275  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.471  -3.295 -35.275  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.113  -2.072 -34.993  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.428  -1.380 -36.321  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.089  -0.103 -36.077  1.00  0.00           N  
@@ -1221,13 +1226,13 @@ HETATM  138  HO3 A2G A  10     -21.352  -1.231 -38.432  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -20.355  -4.336 -37.803  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.778  -3.980 -37.615  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.224  -4.358 -35.352  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.718  -6.132 -35.178  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.874   2.147 -35.189  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -20.953   2.569 -36.900  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -19.597   3.122 -35.917  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.980  -6.084 -36.921  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.920  -5.790 -37.052  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.886   0.282 -27.178  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.718  -6.132 -35.178  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.874   2.147 -35.189  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -20.953   2.569 -36.900  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -19.597   3.122 -35.917  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.980  -6.084 -36.921  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.920  -5.790 -37.052  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.886   0.282 -27.178  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.653   0.322 -28.568  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.743  -0.852 -28.934  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.469  -0.847 -30.366  1.00  0.00           N  
@@ -1249,12 +1254,12 @@ HETATM  166  HO3 A2G A  11     -16.888  -4.013 -28.294  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.392  -2.977 -26.799  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.000  -2.681 -26.645  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.561  -0.890 -27.352  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -18.994  -1.725 -24.864  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.930  -1.182 -32.805  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.177  -1.249 -32.628  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.999   0.310 -32.676  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.177  -0.163 -24.807  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.213   0.303 -24.243  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -18.994  -1.725 -24.864  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.930  -1.182 -32.805  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.177  -1.249 -32.628  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.999   0.310 -32.676  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.177  -0.163 -24.807  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.213   0.303 -24.243  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        7                                                                  
 HETATM    1  C   ACE A   1     -23.028  -7.627 -34.776  1.00  0.00           C  
@@ -1376,7 +1381,7 @@ HETATM  116  N   NH2 A   9     -12.458   4.380 -29.304  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.706   3.890 -28.911  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -12.532   5.349 -29.176  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.301  -1.599 -35.895  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.301  -1.599 -35.895  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.361  -0.767 -35.481  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.628   0.254 -36.589  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.717   1.142 -36.201  1.00  0.00           N  
@@ -1398,13 +1403,13 @@ HETATM  138  HO3 A2G A  10     -19.780   0.028 -39.742  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.192  -2.098 -39.054  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.190  -0.686 -37.718  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.538  -2.971 -36.787  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.525  -4.193 -36.611  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -22.341   2.687 -34.982  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.327   3.547 -36.522  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.400   4.169 -35.156  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.564  -3.717 -38.309  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.939  -2.835 -36.238  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.782   0.245 -27.485  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.525  -4.193 -36.611  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -22.341   2.687 -34.982  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.327   3.547 -36.522  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.400   4.169 -35.156  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.564  -3.717 -38.309  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.939  -2.835 -36.238  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.782   0.245 -27.485  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.267   0.148 -28.794  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.358  -1.081 -28.861  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.795  -1.218 -30.199  1.00  0.00           N  
@@ -1426,12 +1431,12 @@ HETATM  166  HO3 A2G A  11     -16.583  -3.306 -29.045  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.510  -2.949 -26.943  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.586  -2.942 -25.914  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.439  -0.889 -27.903  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.185  -1.458 -25.189  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.675  -1.971 -32.358  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.013  -1.661 -31.857  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.048  -0.323 -32.360  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.718   0.239 -25.300  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.755   0.105 -26.829  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.185  -1.458 -25.189  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.675  -1.971 -32.358  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.013  -1.661 -31.857  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.048  -0.323 -32.360  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.718   0.239 -25.300  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.755   0.105 -26.829  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        8                                                                  
 HETATM    1  C   ACE A   1     -25.778  -7.065 -33.873  1.00  0.00           C  
@@ -1553,7 +1558,7 @@ HETATM  116  N   NH2 A   9     -13.431   6.108 -30.401  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -14.155   6.076 -31.060  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -12.953   6.948 -30.239  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.082  -3.320 -36.165  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.082  -3.320 -36.165  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.856  -2.171 -35.904  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -18.973  -1.367 -37.200  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.763  -0.163 -36.976  1.00  0.00           N  
@@ -1575,13 +1580,13 @@ HETATM  138  HO3 A2G A  10     -18.854  -0.980 -39.533  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.384  -4.208 -39.087  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.406  -2.333 -38.863  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.703  -4.471 -36.668  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.050  -6.118 -36.313  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.840   1.997 -36.096  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -20.757   2.415 -37.808  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -19.593   3.102 -36.676  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.138  -6.008 -38.071  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.234  -4.848 -36.331  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.067  -0.044 -27.718  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.050  -6.118 -36.313  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.840   1.997 -36.096  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -20.757   2.415 -37.808  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -19.593   3.102 -36.676  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.138  -6.008 -38.071  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.234  -4.848 -36.331  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.067  -0.044 -27.718  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.948  -0.369 -29.085  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.744  -1.299 -29.252  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.578  -1.657 -30.655  1.00  0.00           N  
@@ -1603,12 +1608,12 @@ HETATM  166  HO3 A2G A  11     -15.754  -3.778 -29.322  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -17.509  -3.035 -26.389  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -15.851  -0.803 -26.944  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.302  -1.628 -27.304  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -18.390  -1.485 -24.804  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.155  -2.523 -32.985  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.437  -2.128 -33.051  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.641  -0.877 -33.360  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.015   0.170 -25.286  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.349  -0.075 -26.182  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -18.390  -1.485 -24.804  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.155  -2.523 -32.985  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.437  -2.128 -33.051  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.641  -0.877 -33.360  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.015   0.170 -25.286  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.349  -0.075 -26.182  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL        9                                                                  
 HETATM    1  C   ACE A   1     -27.722  -6.021 -37.281  1.00  0.00           C  
@@ -1730,7 +1735,7 @@ HETATM  116  N   NH2 A   9     -10.988   5.344 -34.241  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.781   5.122 -34.774  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -10.100   5.061 -34.543  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.936  -3.535 -35.680  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.936  -3.535 -35.680  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.589  -2.325 -35.367  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -20.043  -1.674 -36.675  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.721  -0.413 -36.401  1.00  0.00           N  
@@ -1752,13 +1757,13 @@ HETATM  138  HO3 A2G A  10     -20.892  -2.637 -39.352  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -21.003  -4.692 -38.006  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.661  -4.638 -38.406  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.653  -4.652 -35.576  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -19.075  -6.372 -35.499  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.543   1.843 -35.576  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.801   2.166 -37.290  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.389   2.833 -36.471  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -19.503  -6.380 -37.210  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -17.454  -4.692 -36.344  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.098  -0.831 -27.142  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -19.075  -6.372 -35.499  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.543   1.843 -35.576  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.801   2.166 -37.290  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.389   2.833 -36.471  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -19.503  -6.380 -37.210  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -17.454  -4.692 -36.344  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.098  -0.831 -27.142  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.649  -0.556 -28.450  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.698  -1.678 -28.873  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.202  -1.431 -30.223  1.00  0.00           N  
@@ -1780,12 +1785,12 @@ HETATM  166  HO3 A2G A  11     -16.403  -4.562 -28.274  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.671  -4.089 -27.429  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.711  -2.468 -26.234  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.729  -1.901 -27.777  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -19.521  -3.175 -25.403  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.275  -1.379 -32.561  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.571  -1.468 -32.114  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.415   0.080 -32.067  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.783  -1.633 -24.966  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.250  -1.836 -26.332  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -19.521  -3.175 -25.403  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.275  -1.379 -32.561  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.571  -1.468 -32.114  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.415   0.080 -32.067  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.783  -1.633 -24.966  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.250  -1.836 -26.332  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       10                                                                  
 HETATM    1  C   ACE A   1     -28.508  -5.417 -34.809  1.00  0.00           C  
@@ -1907,7 +1912,7 @@ HETATM  116  N   NH2 A   9     -10.238   3.369 -31.031  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9      -9.292   3.625 -31.026  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -10.539   2.619 -31.587  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.006  -3.374 -36.143  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.006  -3.374 -36.143  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.799  -2.246 -35.853  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.144  -1.551 -37.172  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.961  -0.371 -36.920  1.00  0.00           N  
@@ -1929,13 +1934,13 @@ HETATM  138  HO3 A2G A  10     -21.045  -1.983 -39.544  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.655  -4.544 -38.776  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.145  -3.611 -38.352  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.615  -4.633 -36.323  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.798  -6.143 -36.080  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.953   1.895 -36.049  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.313   1.939 -37.775  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.007   2.928 -37.122  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.209  -6.227 -37.793  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.396  -5.270 -38.295  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.166   0.733 -28.015  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.798  -6.143 -36.080  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.953   1.895 -36.049  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.313   1.939 -37.775  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.007   2.928 -37.122  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.209  -6.227 -37.793  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.396  -5.270 -38.295  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.166   0.733 -28.015  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.181   0.300 -29.356  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -15.949  -0.578 -29.589  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -15.919  -1.045 -30.969  1.00  0.00           N  
@@ -1957,12 +1962,12 @@ HETATM  166  HO3 A2G A  11     -14.207  -2.253 -28.035  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -16.283  -2.102 -26.529  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -14.876  -0.614 -25.865  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -18.248  -0.872 -27.337  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -17.066  -0.467 -24.979  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.656  -2.172 -33.198  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.984  -1.689 -33.479  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.298  -0.576 -33.857  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -16.860   1.158 -25.630  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -18.829   1.381 -24.920  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -17.066  -0.467 -24.979  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.656  -2.172 -33.198  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.984  -1.689 -33.479  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.298  -0.576 -33.857  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -16.860   1.158 -25.630  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -18.829   1.381 -24.920  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       11                                                                  
 HETATM    1  C   ACE A   1     -22.040  -6.748 -35.391  1.00  0.00           C  
@@ -2084,7 +2089,7 @@ HETATM  116  N   NH2 A   9     -11.147   1.325 -32.782  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -10.651   0.913 -32.043  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.108   2.295 -32.918  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -17.951  -2.059 -35.305  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -17.951  -2.059 -35.305  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.852  -0.990 -35.124  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.073  -0.316 -36.479  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.997   0.804 -36.339  1.00  0.00           N  
@@ -2106,13 +2111,13 @@ HETATM  138  HO3 A2G A  10     -19.414  -1.408 -39.394  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.166  -3.332 -38.120  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.883  -1.925 -37.362  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.432  -3.427 -35.682  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.187  -4.493 -35.123  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.909   3.184 -35.409  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.583   2.894 -37.013  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.290   4.074 -36.801  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.974  -5.121 -36.570  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.650  -4.488 -36.678  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.808   0.633 -26.710  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.187  -4.493 -35.123  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.909   3.184 -35.409  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.583   2.894 -37.013  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.290   4.074 -36.801  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.974  -5.121 -36.570  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.650  -4.488 -36.678  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.808   0.633 -26.710  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.572   0.459 -28.088  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.654  -0.752 -28.267  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -17.376  -0.967 -29.682  1.00  0.00           N  
@@ -2134,12 +2139,12 @@ HETATM  166  HO3 A2G A  11     -17.723  -3.679 -28.411  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.291  -2.531 -25.828  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.112  -0.725 -25.715  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.473  -0.563 -26.700  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.277  -0.959 -24.202  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.936  -1.471 -32.069  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -15.326  -2.127 -31.770  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.528  -0.410 -32.117  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.963   0.219 -24.190  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.663   0.621 -24.934  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.277  -0.959 -24.202  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.936  -1.471 -32.069  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -15.326  -2.127 -31.770  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.528  -0.410 -32.117  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.963   0.219 -24.190  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.663   0.621 -24.934  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       12                                                                  
 HETATM    1  C   ACE A   1     -28.242  -5.613 -36.481  1.00  0.00           C  
@@ -2261,7 +2266,7 @@ HETATM  116  N   NH2 A   9     -13.335   3.751 -27.919  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -13.317   2.854 -27.525  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -13.138   4.534 -27.364  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.225  -3.570 -35.961  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.225  -3.570 -35.961  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.950  -2.390 -35.700  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.169  -1.662 -37.028  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.912  -0.427 -36.806  1.00  0.00           N  
@@ -2283,13 +2288,13 @@ HETATM  138  HO3 A2G A  10     -19.145  -1.806 -39.579  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.805  -4.597 -38.695  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.031  -4.048 -39.657  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.907  -4.709 -36.245  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.336  -6.416 -35.983  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.075   1.711 -36.225  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -20.810   2.238 -37.886  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -19.726   2.782 -36.606  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.439  -6.316 -37.741  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.627  -4.655 -36.425  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.038   0.060 -28.020  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.336  -6.416 -35.983  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.075   1.711 -36.225  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -20.810   2.238 -37.886  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -19.726   2.782 -36.606  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.439  -6.316 -37.741  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.627  -4.655 -36.425  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.038   0.060 -28.020  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.187  -0.095 -29.414  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.046  -0.979 -29.921  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.157  -1.162 -31.364  1.00  0.00           N  
@@ -2311,12 +2316,12 @@ HETATM  166  HO3 A2G A  11     -14.547  -3.408 -28.776  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -16.261  -3.062 -27.199  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -14.692  -1.839 -26.392  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -18.184  -1.582 -27.573  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -16.649  -1.658 -25.315  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.966  -1.954 -33.824  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.460  -1.112 -34.188  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.965  -0.203 -34.043  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -16.657   0.074 -25.649  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -18.903  -1.634 -25.377  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -16.649  -1.658 -25.315  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.966  -1.954 -33.824  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.460  -1.112 -34.188  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.965  -0.203 -34.043  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -16.657   0.074 -25.649  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -18.903  -1.634 -25.377  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       13                                                                  
 HETATM    1  C   ACE A   1     -27.857  -5.823 -35.819  1.00  0.00           C  
@@ -2438,7 +2443,7 @@ HETATM  116  N   NH2 A   9     -12.049   5.932 -29.244  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.376   6.827 -29.019  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.155   5.650 -28.960  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.389  -3.683 -35.624  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.389  -3.683 -35.624  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.934  -2.398 -35.402  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.214  -1.753 -36.760  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.764  -0.416 -36.576  1.00  0.00           N  
@@ -2460,13 +2465,13 @@ HETATM  138  HO3 A2G A  10     -19.697  -2.445 -39.402  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -20.390  -4.691 -38.085  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.611  -3.395 -39.150  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.184  -4.668 -35.647  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.614  -6.433 -35.408  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -20.249   1.981 -35.810  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -20.593   2.191 -37.526  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -19.073   2.779 -36.852  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -19.154  -6.544 -37.082  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.940  -4.953 -36.427  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.884  -0.756 -26.840  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.614  -6.433 -35.408  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -20.249   1.981 -35.810  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -20.593   2.191 -37.526  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -19.073   2.779 -36.852  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -19.154  -6.544 -37.082  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.940  -4.953 -36.427  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.884  -0.756 -26.840  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.409  -0.702 -28.168  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.602  -1.969 -28.435  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.050  -1.933 -29.784  1.00  0.00           N  
@@ -2488,12 +2493,12 @@ HETATM  166  HO3 A2G A  11     -16.864  -4.882 -27.614  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.911  -3.922 -26.816  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.649  -4.130 -26.166  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.664  -1.649 -27.309  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -19.597  -2.697 -24.854  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.084  -2.097 -32.109  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.433  -2.491 -31.629  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -13.988  -0.818 -31.588  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.540  -1.316 -24.559  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.877  -0.847 -25.984  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -19.597  -2.697 -24.854  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.084  -2.097 -32.109  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.433  -2.491 -31.629  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -13.988  -0.818 -31.588  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.540  -1.316 -24.559  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.877  -0.847 -25.984  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       14                                                                  
 HETATM    1  C   ACE A   1     -26.842  -6.609 -36.450  1.00  0.00           C  
@@ -2615,7 +2620,7 @@ HETATM  116  N   NH2 A   9     -13.858   3.973 -29.478  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -14.145   3.058 -29.274  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -14.104   4.708 -28.880  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.668  -2.822 -35.989  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.668  -2.822 -35.989  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.474  -1.710 -35.671  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -20.021  -1.128 -36.976  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.857   0.033 -36.695  1.00  0.00           N  
@@ -2637,13 +2642,13 @@ HETATM  138  HO3 A2G A  10     -21.034  -0.775 -39.007  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -20.584  -4.249 -38.295  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.531  -4.003 -39.063  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.220  -4.158 -35.868  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.207  -5.489 -35.759  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.875   2.272 -35.898  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.477   2.227 -37.555  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.128   3.285 -37.135  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.990  -5.851 -37.297  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -17.529  -3.887 -37.918  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.967   0.315 -27.319  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.207  -5.489 -35.759  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.875   2.272 -35.898  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.477   2.227 -37.555  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.128   3.285 -37.135  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.990  -5.851 -37.297  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -17.529  -3.887 -37.918  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.967   0.315 -27.319  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.592   0.344 -28.678  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.579  -0.777 -28.919  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.157  -0.781 -30.315  1.00  0.00           N  
@@ -2665,12 +2670,12 @@ HETATM  166  HO3 A2G A  11     -15.778  -3.037 -29.485  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.311  -2.962 -26.913  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.001  -1.395 -26.634  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.539  -0.963 -27.635  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.106  -1.242 -25.420  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.393  -0.168 -32.652  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.405  -1.624 -32.522  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -13.672  -0.037 -32.288  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.428  -1.185 -24.878  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -18.442   1.033 -25.153  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.106  -1.242 -25.420  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.393  -0.168 -32.652  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.405  -1.624 -32.522  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -13.672  -0.037 -32.288  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.428  -1.185 -24.878  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -18.442   1.033 -25.153  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       15                                                                  
 HETATM    1  C   ACE A   1     -23.991  -7.444 -37.797  1.00  0.00           C  
@@ -2792,7 +2797,7 @@ HETATM  116  N   NH2 A   9     -12.078  -1.721 -33.831  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.693  -2.354 -34.257  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.111  -1.876 -33.870  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -17.737  -0.912 -34.961  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -17.737  -0.912 -34.961  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.936  -0.212 -34.714  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.167   0.764 -35.869  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.398   1.516 -35.652  1.00  0.00           N  
@@ -2814,13 +2819,13 @@ HETATM  138  HO3 A2G A  10     -19.935   1.594 -38.019  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -18.119  -1.530 -38.200  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.397  -0.359 -38.287  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -18.668  -2.427 -35.983  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -16.311  -3.022 -35.246  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -22.095   3.166 -34.339  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.437   3.260 -36.066  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.594   4.583 -35.260  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -16.653  -3.334 -36.947  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.691  -1.303 -37.415  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.914   0.887 -26.856  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -16.311  -3.022 -35.246  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -22.095   3.166 -34.339  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.437   3.260 -36.066  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.594   4.583 -35.260  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -16.653  -3.334 -36.947  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.691  -1.303 -37.415  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.914   0.887 -26.856  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.494   0.677 -28.187  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.545  -0.522 -28.205  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -17.079  -0.774 -29.563  1.00  0.00           N  
@@ -2842,12 +2847,12 @@ HETATM  166  HO3 A2G A  11     -17.880  -3.643 -27.462  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.470  -2.259 -25.952  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -18.141  -1.384 -24.479  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.551  -0.337 -27.033  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.955  -0.522 -24.655  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.259  -0.948 -31.932  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -15.179  -2.218 -31.355  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.567  -0.581 -31.596  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.399   0.220 -24.282  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.231   2.082 -25.489  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.955  -0.522 -24.655  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.259  -0.948 -31.932  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -15.179  -2.218 -31.355  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.567  -0.581 -31.596  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.399   0.220 -24.282  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.231   2.082 -25.489  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       16                                                                  
 HETATM    1  C   ACE A   1     -25.492  -6.458 -32.831  1.00  0.00           C  
@@ -2969,7 +2974,7 @@ HETATM  116  N   NH2 A   9     -12.077   0.644 -30.906  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.776   0.501 -31.828  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.800   0.026 -30.199  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.141  -2.763 -36.629  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.141  -2.763 -36.629  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.990  -1.678 -36.335  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.471  -1.078 -37.657  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.343   0.063 -37.402  1.00  0.00           N  
@@ -2991,13 +2996,13 @@ HETATM  138  HO3 A2G A  10     -19.741  -1.586 -40.249  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.911  -4.186 -39.054  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.567  -2.881 -40.317  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.661  -4.141 -36.616  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.792  -5.557 -36.473  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.499   2.168 -36.582  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.798   2.450 -38.297  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.506   3.321 -37.472  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.214  -5.661 -38.183  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.675  -3.600 -38.034  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.023  -0.191 -27.731  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.792  -5.557 -36.473  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.499   2.168 -36.582  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.798   2.450 -38.297  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.506   3.321 -37.472  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.214  -5.661 -38.183  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.675  -3.600 -38.034  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.023  -0.191 -27.731  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.568  -0.077 -29.060  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.556  -1.194 -29.315  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.048  -1.109 -30.680  1.00  0.00           N  
@@ -3019,12 +3024,12 @@ HETATM  166  HO3 A2G A  11     -15.396  -3.188 -29.064  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.449  -3.482 -27.586  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.852  -3.396 -26.253  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.598  -1.411 -28.219  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -19.490  -2.347 -25.746  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.156  -1.255 -33.014  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.473  -1.536 -32.571  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.106   0.108 -32.627  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.619  -0.844 -25.439  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.382   0.282 -26.326  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -19.490  -2.347 -25.746  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.156  -1.255 -33.014  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.473  -1.536 -32.571  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.106   0.108 -32.627  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.619  -0.844 -25.439  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.382   0.282 -26.326  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       17                                                                  
 HETATM    1  C   ACE A   1     -27.663  -7.357 -35.056  1.00  0.00           C  
@@ -3146,7 +3151,7 @@ HETATM  116  N   NH2 A   9     -11.400   5.876 -33.801  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -10.494   5.894 -34.176  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -12.113   5.388 -34.265  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.021  -2.766 -35.285  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.021  -2.766 -35.285  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.047  -1.825 -35.062  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.259  -1.035 -36.354  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.305  -0.037 -36.165  1.00  0.00           N  
@@ -3168,13 +3173,13 @@ HETATM  138  HO3 A2G A  10     -19.853  -0.366 -38.507  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -18.943  -3.861 -38.283  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.413  -2.498 -38.989  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.310  -4.243 -35.890  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.254  -5.384 -35.386  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.790   1.861 -35.275  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.900   2.218 -36.999  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.859   3.193 -35.961  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.447  -5.450 -37.137  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.345  -4.686 -36.065  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.479  -0.865 -27.308  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.254  -5.384 -35.386  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.790   1.861 -35.275  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.900   2.218 -36.999  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.859   3.193 -35.961  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.447  -5.450 -37.137  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.345  -4.686 -36.065  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.479  -0.865 -27.308  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.020  -0.546 -28.603  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.986  -1.595 -29.014  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.473  -1.299 -30.346  1.00  0.00           N  
@@ -3196,12 +3201,12 @@ HETATM  166  HO3 A2G A  11     -16.991  -4.811 -28.930  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.847  -4.146 -27.660  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.647  -2.608 -26.776  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.030  -2.024 -27.986  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.076  -3.292 -25.739  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.616  -0.901 -32.645  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.983  -1.484 -32.320  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.393   0.205 -32.023  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.009  -2.021 -25.142  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.577  -0.504 -25.665  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.076  -3.292 -25.739  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.616  -0.901 -32.645  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.983  -1.484 -32.320  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.393   0.205 -32.023  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.009  -2.021 -25.142  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.577  -0.504 -25.665  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       18                                                                  
 HETATM    1  C   ACE A   1     -26.870  -5.794 -37.455  1.00  0.00           C  
@@ -3323,7 +3328,7 @@ HETATM  116  N   NH2 A   9     -13.071   6.221 -29.738  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -12.447   5.900 -29.054  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -13.218   7.183 -29.855  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.066  -2.749 -35.074  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.066  -2.749 -35.074  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.035  -1.749 -34.854  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.099  -0.863 -36.101  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.087   0.194 -35.915  1.00  0.00           N  
@@ -3345,13 +3350,13 @@ HETATM  138  HO3 A2G A  10     -19.780  -1.451 -39.210  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -18.816  -3.562 -38.205  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.978  -2.674 -38.625  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.411  -4.072 -35.878  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.509  -5.422 -35.320  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.497   2.120 -34.972  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.450   2.627 -36.661  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.425   3.428 -35.471  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.540  -5.328 -37.081  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.967  -3.761 -35.316  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.578  -1.055 -26.958  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.509  -5.422 -35.320  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.497   2.120 -34.972  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.450   2.627 -36.661  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.425   3.428 -35.471  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.540  -5.328 -37.081  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.967  -3.761 -35.316  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.578  -1.055 -26.958  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.014  -0.875 -28.237  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -17.100  -2.067 -28.529  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.487  -1.919 -29.844  1.00  0.00           N  
@@ -3373,12 +3378,12 @@ HETATM  166  HO3 A2G A  11     -16.710  -4.692 -27.745  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.314  -4.289 -27.131  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.323  -2.722 -25.899  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.215  -2.068 -27.668  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.305  -3.223 -25.245  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.406  -1.908 -32.103  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.752  -2.142 -31.538  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.455  -0.524 -31.564  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.454  -1.744 -24.799  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -22.020  -2.075 -25.882  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.305  -3.223 -25.245  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.406  -1.908 -32.103  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.752  -2.142 -31.538  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.455  -0.524 -31.564  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.454  -1.744 -24.799  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -22.020  -2.075 -25.882  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       19                                                                  
 HETATM    1  C   ACE A   1     -27.702  -6.814 -36.046  1.00  0.00           C  
@@ -3500,7 +3505,7 @@ HETATM  116  N   NH2 A   9     -13.369   6.235 -34.422  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -13.158   6.989 -35.010  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -14.163   5.687 -34.592  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.129  -2.759 -35.219  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.129  -2.759 -35.219  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.078  -1.771 -34.885  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.259  -0.853 -36.095  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.230   0.191 -35.794  1.00  0.00           N  
@@ -3522,13 +3527,13 @@ HETATM  138  HO3 A2G A  10     -19.470   0.011 -38.205  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.154  -3.493 -38.289  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -17.446  -2.414 -38.888  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.536  -4.069 -35.933  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.665  -5.483 -35.648  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.593   2.021 -34.651  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.581   2.725 -36.267  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.507   3.360 -35.022  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.703  -5.202 -37.389  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.090  -3.899 -35.460  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.486  -0.373 -26.972  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.665  -5.483 -35.648  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.593   2.021 -34.651  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.581   2.725 -36.267  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.507   3.360 -35.022  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.703  -5.202 -37.389  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.090  -3.899 -35.460  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.486  -0.373 -26.972  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.926  -0.290 -28.263  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.938  -1.445 -28.432  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.329  -1.395 -29.756  1.00  0.00           N  
@@ -3550,12 +3555,12 @@ HETATM  166  HO3 A2G A  11     -16.294  -3.819 -29.115  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -19.021  -3.646 -26.815  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -17.702  -3.422 -25.212  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -20.052  -1.552 -27.575  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -20.088  -2.458 -25.048  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.220  -1.654 -32.000  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -13.560  -1.726 -31.410  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.356  -0.165 -31.613  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -19.330  -0.893 -24.753  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -21.886  -1.505 -25.661  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -20.088  -2.458 -25.048  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.220  -1.654 -32.000  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -13.560  -1.726 -31.410  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.356  -0.165 -31.613  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -19.330  -0.893 -24.753  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -21.886  -1.505 -25.661  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       20                                                                  
 HETATM    1  C   ACE A   1     -25.767  -7.231 -37.375  1.00  0.00           C  
@@ -3677,7 +3682,7 @@ HETATM  116  N   NH2 A   9     -12.990   6.726 -29.435  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -13.223   6.916 -28.503  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -12.291   7.247 -29.883  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.526  -3.118 -36.039  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.526  -3.118 -36.039  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.281  -1.965 -35.743  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.594  -1.250 -37.059  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.367  -0.041 -36.801  1.00  0.00           N  
@@ -3699,13 +3704,13 @@ HETATM  138  HO3 A2G A  10     -19.715  -1.629 -39.706  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -20.229  -4.218 -38.670  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.535  -3.631 -39.745  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.174  -4.326 -36.221  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.749  -6.096 -36.231  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.257   2.193 -35.895  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.631   2.424 -37.603  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.241   3.240 -36.887  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.497  -5.702 -37.932  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.725  -5.655 -36.003  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.284   0.423 -27.898  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.749  -6.096 -36.231  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.257   2.193 -35.895  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.631   2.424 -37.603  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.241   3.240 -36.887  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.497  -5.702 -37.932  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.725  -5.655 -36.003  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.284   0.423 -27.898  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.415   0.155 -29.276  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.269  -0.767 -29.696  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.361  -1.067 -31.120  1.00  0.00           N  
@@ -3727,12 +3732,12 @@ HETATM  166  HO3 A2G A  11     -15.328  -3.243 -30.044  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -16.522  -2.622 -26.816  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -14.626  -0.952 -27.823  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -18.438  -1.177 -27.335  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -17.224  -1.177 -25.021  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.415  -1.843 -33.493  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.683  -1.694 -33.786  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.732  -0.289 -33.973  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -16.691   0.440 -25.484  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -19.381  -0.192 -25.821  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -17.224  -1.177 -25.021  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.415  -1.843 -33.493  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.683  -1.694 -33.786  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.732  -0.289 -33.973  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -16.691   0.440 -25.484  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -19.381  -0.192 -25.821  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       21                                                                  
 HETATM    1  C   ACE A   1     -26.428  -5.022 -38.173  1.00  0.00           C  
@@ -3854,7 +3859,7 @@ HETATM  116  N   NH2 A   9      -9.806   3.374 -32.503  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9      -9.966   3.731 -33.401  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9      -8.891   3.216 -32.193  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.726  -2.866 -34.929  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.726  -2.866 -34.929  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.704  -1.897 -34.630  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.878  -1.000 -35.858  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.881   0.026 -35.591  1.00  0.00           N  
@@ -3876,13 +3881,13 @@ HETATM  138  HO3 A2G A  10     -20.042  -0.175 -37.987  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.665  -3.666 -38.012  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.067  -2.326 -38.586  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -20.087  -4.218 -35.657  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -18.169  -5.568 -35.293  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -22.320   1.871 -34.553  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.303   2.473 -36.211  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.277   3.224 -34.988  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -18.217  -5.352 -37.042  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -16.874  -3.347 -36.353  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.479   0.953 -27.942  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -18.169  -5.568 -35.293  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -22.320   1.871 -34.553  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.303   2.473 -36.211  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.277   3.224 -34.988  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -18.217  -5.352 -37.042  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -16.874  -3.347 -36.353  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.479   0.953 -27.942  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.630   0.331 -29.199  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.541  -0.733 -29.342  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.656  -1.398 -30.634  1.00  0.00           N  
@@ -3904,12 +3909,12 @@ HETATM  166  HO3 A2G A  11     -15.069  -2.544 -27.469  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -16.885  -1.726 -26.073  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -15.333   0.347 -27.197  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -18.717  -0.370 -26.982  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -17.276   0.233 -24.780  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.684  -2.796 -32.726  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -15.021  -2.478 -33.217  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -16.288  -1.308 -33.585  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -17.037   1.725 -25.691  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -19.038   2.236 -25.365  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -17.276   0.233 -24.780  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.684  -2.796 -32.726  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -15.021  -2.478 -33.217  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -16.288  -1.308 -33.585  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -17.037   1.725 -25.691  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -19.038   2.236 -25.365  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       22                                                                  
 HETATM    1  C   ACE A   1     -26.936  -6.148 -36.461  1.00  0.00           C  
@@ -4031,7 +4036,7 @@ HETATM  116  N   NH2 A   9     -13.837   3.545 -29.255  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -13.375   3.096 -28.517  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -14.751   3.282 -29.495  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -17.946  -3.096 -34.707  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -17.946  -3.096 -34.707  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.893  -2.058 -34.582  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -18.921  -1.277 -35.897  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.884  -0.185 -35.811  1.00  0.00           N  
@@ -4053,13 +4058,13 @@ HETATM  138  HO3 A2G A  10     -18.938  -0.633 -38.093  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -18.680  -4.145 -37.771  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.727  -2.413 -36.666  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.315  -4.448 -35.418  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.554  -5.887 -34.819  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.356   1.798 -35.114  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.041   2.277 -36.782  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.179   3.065 -35.459  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.349  -5.745 -36.565  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.520  -5.298 -34.883  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.821  -0.299 -27.008  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.554  -5.887 -34.819  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.356   1.798 -35.114  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.041   2.277 -36.782  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.179   3.065 -35.459  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.349  -5.745 -36.565  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.520  -5.298 -34.883  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.821  -0.299 -27.008  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.554  -0.489 -28.380  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.757  -1.785 -28.537  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.452  -2.020 -29.944  1.00  0.00           N  
@@ -4081,12 +4086,12 @@ HETATM  166  HO3 A2G A  11     -16.704  -4.411 -28.915  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.655  -3.403 -26.175  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.331  -1.807 -25.938  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.599  -1.320 -27.068  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -19.120  -1.825 -24.455  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.881  -2.721 -32.300  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.139  -2.867 -32.064  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.862  -1.281 -32.329  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.227  -0.313 -24.625  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.934  -0.761 -25.341  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -19.120  -1.825 -24.455  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.881  -2.721 -32.300  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.139  -2.867 -32.064  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.862  -1.281 -32.329  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.227  -0.313 -24.625  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.934  -0.761 -25.341  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       23                                                                  
 HETATM    1  C   ACE A   1     -27.647  -7.350 -36.059  1.00  0.00           C  
@@ -4208,7 +4213,7 @@ HETATM  116  N   NH2 A   9     -11.408   5.190 -31.028  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -11.361   6.035 -31.524  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -11.503   5.199 -30.053  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -18.070  -1.707 -35.921  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -18.070  -1.707 -35.921  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -19.160  -0.929 -35.480  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -19.586  -0.009 -36.626  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -20.711   0.821 -36.212  1.00  0.00           N  
@@ -4230,13 +4235,13 @@ HETATM  138  HO3 A2G A  10     -19.555  -0.143 -39.591  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -19.145  -2.485 -38.965  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -18.050  -0.293 -39.125  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -19.257  -3.224 -36.626  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -17.215  -4.346 -36.607  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -22.374   2.276 -34.931  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -22.455   3.133 -36.469  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -21.520   3.806 -35.135  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -17.286  -3.828 -38.291  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -15.712  -2.478 -37.953  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -17.705   0.723 -27.769  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -17.215  -4.346 -36.607  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -22.374   2.276 -34.931  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -22.455   3.133 -36.469  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -21.520   3.806 -35.135  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -17.286  -3.828 -38.291  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -15.712  -2.478 -37.953  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -17.705   0.723 -27.769  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -17.489   0.415 -29.128  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.588  -0.818 -29.202  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.332  -1.170 -30.594  1.00  0.00           N  
@@ -4258,12 +4263,12 @@ HETATM  166  HO3 A2G A  11     -16.739  -3.723 -27.800  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -18.217  -2.337 -26.588  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.697  -1.176 -25.399  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.385  -0.445 -27.627  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -18.734  -0.634 -25.008  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -15.813  -2.072 -32.887  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.055  -2.015 -32.743  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -14.954  -0.555 -33.156  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -17.997   0.925 -25.379  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.514   0.451 -24.902  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -18.734  -0.634 -25.008  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -15.813  -2.072 -32.887  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.055  -2.015 -32.743  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -14.954  -0.555 -33.156  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -17.997   0.925 -25.379  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.514   0.451 -24.902  1.00  0.00           H  
 ENDMDL                                                                          
 MODEL       24                                                                  
 HETATM    1  C   ACE A   1     -26.337  -6.847 -33.440  1.00  0.00           C  
@@ -4385,7 +4390,7 @@ HETATM  116  N   NH2 A   9     -13.371   6.368 -30.468  1.00  0.00           N
 HETATM  117  HN1 NH2 A   9     -14.186   6.905 -30.558  1.00  0.00           H  
 HETATM  118  HN2 NH2 A   9     -12.502   6.756 -30.703  1.00  0.00           H  
 TER     119      NH2 A   9                                                      
-HETATM  120  O   A2G A  10     -17.542  -2.458 -35.224  1.00  0.00           O  
+HETATM  120  O5  A2G A  10     -17.542  -2.458 -35.224  1.00  0.00           O  
 HETATM  121  C1  A2G A  10     -18.702  -1.658 -35.163  1.00  0.00           C  
 HETATM  122  C2  A2G A  10     -18.639  -0.639 -36.302  1.00  0.00           C  
 HETATM  123  N2  A2G A  10     -19.820   0.218 -36.273  1.00  0.00           N  
@@ -4407,13 +4412,13 @@ HETATM  138  HO3 A2G A  10     -18.280  -0.939 -39.508  1.00  0.00           H
 HETATM  139  H4  A2G A  10     -17.396  -2.964 -38.502  1.00  0.00           H  
 HETATM  140  HO4 A2G A  10     -16.356  -0.717 -37.761  1.00  0.00           H  
 HETATM  141  H5  A2G A  10     -18.404  -3.858 -36.451  1.00  0.00           H  
-HETATM  142  H6  A2G A  10     -16.337  -4.771 -35.391  1.00  0.00           H  
-HETATM  143  H8  A2G A  10     -21.613   1.906 -35.290  1.00  0.00           H  
-HETATM  144  H8A A2G A  10     -21.554   2.253 -37.019  1.00  0.00           H  
-HETATM  145  H8B A2G A  10     -20.796   3.356 -35.872  1.00  0.00           H  
-HETATM  146  H14 A2G A  10     -16.271  -4.844 -37.151  1.00  0.00           H  
-HETATM  147  H15 A2G A  10     -14.758  -3.393 -35.388  1.00  0.00           H  
-HETATM  148  O   A2G A  11     -18.292  -0.059 -27.866  1.00  0.00           O  
+HETATM  142  H61 A2G A  10     -16.337  -4.771 -35.391  1.00  0.00           H  
+HETATM  143  H81 A2G A  10     -21.613   1.906 -35.290  1.00  0.00           H  
+HETATM  144  H82 A2G A  10     -21.554   2.253 -37.019  1.00  0.00           H  
+HETATM  145  H83 A2G A  10     -20.796   3.356 -35.872  1.00  0.00           H  
+HETATM  146  H62 A2G A  10     -16.271  -4.844 -37.151  1.00  0.00           H  
+HETATM  147  HO6 A2G A  10     -14.758  -3.393 -35.388  1.00  0.00           H  
+HETATM  148  O5  A2G A  11     -18.292  -0.059 -27.866  1.00  0.00           O  
 HETATM  149  C1  A2G A  11     -18.129  -0.416 -29.221  1.00  0.00           C  
 HETATM  150  C2  A2G A  11     -16.896  -1.315 -29.335  1.00  0.00           C  
 HETATM  151  N2  A2G A  11     -16.685  -1.704 -30.723  1.00  0.00           N  
@@ -4435,12 +4440,12 @@ HETATM  166  HO3 A2G A  11     -16.047  -4.082 -27.877  1.00  0.00           H
 HETATM  167  H4  A2G A  11     -17.687  -2.999 -26.447  1.00  0.00           H  
 HETATM  168  HO4 A2G A  11     -16.614  -0.684 -26.023  1.00  0.00           H  
 HETATM  169  H5  A2G A  11     -19.493  -1.667 -27.443  1.00  0.00           H  
-HETATM  170  H6  A2G A  11     -18.799  -1.480 -24.938  1.00  0.00           H  
-HETATM  171  H8  A2G A  11     -16.269  -2.534 -33.033  1.00  0.00           H  
-HETATM  172  H8A A2G A  11     -14.517  -2.347 -32.980  1.00  0.00           H  
-HETATM  173  H8B A2G A  11     -15.533  -0.987 -33.453  1.00  0.00           H  
-HETATM  174  H14 A2G A  11     -18.200   0.118 -25.383  1.00  0.00           H  
-HETATM  175  H15 A2G A  11     -20.629  -0.258 -26.432  1.00  0.00           H  
+HETATM  170  H61 A2G A  11     -18.799  -1.480 -24.938  1.00  0.00           H  
+HETATM  171  H81 A2G A  11     -16.269  -2.534 -33.033  1.00  0.00           H  
+HETATM  172  H82 A2G A  11     -14.517  -2.347 -32.980  1.00  0.00           H  
+HETATM  173  H83 A2G A  11     -15.533  -0.987 -33.453  1.00  0.00           H  
+HETATM  174  H62 A2G A  11     -18.200   0.118 -25.383  1.00  0.00           H  
+HETATM  175  HO6 A2G A  11     -20.629  -0.258 -26.432  1.00  0.00           H  
 ENDMDL                                                                          
 CONECT    1    2    3    7                                                      
 CONECT    2    1                                                                
@@ -4511,5 +4516,5 @@ CONECT  172  161
 CONECT  173  161                                                                
 CONECT  174  157                                                                
 CONECT  175  158                                                                
-MASTER      143    0    4    0    0    0    2    6   84    1   69    1          
+MASTER      146    0    4    0    0    0    0    6   84    1   69    1          
 END                                                                             
