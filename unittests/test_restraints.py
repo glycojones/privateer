@@ -1,4 +1,3 @@
-from __future__ import print_function
 import os
 import shutil
 import sys
@@ -58,8 +57,3 @@ def test_chemistry ( ):
     assert (bond_length == 1.524)
     # to do: test esd's
 
-def test_conformer_generation():
-    test_output = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_output')
-    if not os.path.exists ( test_output ) : os.makedirs ( test_output )
-    privateer.restraints.minimise_from_smiles("O[C@@H]1[C@H](O)[C@@H](O)[C@H](O)[C@]([H])(O1)(CO)", 500, test_output + "/GLC_minimised.pdb")
-    assert(os.path.exists(test_output + "/GLC_minimised.pdb"))

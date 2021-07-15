@@ -1,8 +1,7 @@
-from __future__ import print_function
 import os
 import shutil
 import sys
-import privateer
+from privateer import privateer_core as pvt
 
 def test_svg_graphics ( ):
 
@@ -15,7 +14,7 @@ def test_svg_graphics ( ):
     # GRAPHICS AND LIBRARY CALLS
     print ("Testing SVG graphics output demo (Essentials colour scheme)")
 
-    privateer.svg_graphics_demo ( True, False )
+    pvt.svg_graphics_demo ( True, False )
 
     assert os.path.exists ( "privateer-glycoplot_demo.svg" )
 
@@ -24,7 +23,7 @@ def test_svg_graphics ( ):
 
     print ("Testing SVG graphics output demo (Privateer colour scheme)")
 
-    privateer.svg_graphics_demo ( False, False )
+    pvt.svg_graphics_demo ( False, False )
 
     assert os.path.exists ( "privateer-glycoplot_demo.svg" )
     os.rename ( os.path.join(current_dir, "privateer-glycoplot_demo.svg"), os.path.join(test_output, "privateer-glycoplot_demo_new.svg") )
@@ -32,14 +31,14 @@ def test_svg_graphics ( ):
 
     print ("Testing SVG graphics output demo (Essentials colour scheme, dark background)")
 
-    privateer.svg_graphics_demo ( True, True )
+    pvt.svg_graphics_demo ( True, True )
 
     assert os.path.exists ( "privateer-glycoplot_demo.svg" )
     os.rename ( os.path.join(current_dir, "privateer-glycoplot_demo.svg"), os.path.join(test_output, "privateer-glycoplot_demo_original_dark.svg") )
 
     print ("Testing SVG graphics output demo (Privateer colour scheme, dark background)")
 
-    privateer.svg_graphics_demo ( False, True )
+    pvt.svg_graphics_demo ( False, True )
 
     assert os.path.exists ( "privateer-glycoplot_demo.svg" )
     os.rename ( os.path.join(current_dir, "privateer-glycoplot_demo.svg"), os.path.join(test_output, "privateer-glycoplot_demo_new_dark.svg") )
