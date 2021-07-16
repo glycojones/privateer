@@ -493,7 +493,7 @@ int main(int argc, char** argv)
 
         std::vector < std::pair <clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
         std::vector < clipper::MMonomer > sugarList; // store the original MMonomer
-
+        
         const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
         mgl = clipper::MGlycology(mmol, manb, input_expression_system);

@@ -152,7 +152,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 
                 #if DUMP
-                    DBG << "index_atom in line 146 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << std::endl;
+                    DBG << "index_atom in line 155 = " << index_atom << " value of buffer[" << i << "] = " << buffer[i] << std::endl;
                 #endif
 
                 if (index_atom == -1)
@@ -172,7 +172,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 }
             }
             #if DUMP
-                DBG << "trying to push (*this)[index_atom] in line 158" << (*this)[index_atom].id() << std::endl;
+                DBG << "trying to push (*this)[index_atom] in line 175 = " << (*this)[index_atom].id() << std::endl;
             #endif
             sugar_ring_elements.push_back((*this)[index_atom]);
         }
@@ -2431,6 +2431,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             index = i;
             break;
         }
+    
 
     if (!found)
     {
@@ -2448,15 +2449,44 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
     clipper::ftype omega, psi, phi;
     clipper::MAtom c1, o1, c2, o2, c3, o3, c4, o4, c5, o5, c6, o6, o5f;
-
     if ( link == 6 )
     {
-        o5 = next_sugar.ring_members()[0];              // O5
-        c1 = next_sugar.ring_members()[1];              // C1
-        o6 = next_sugar.anomeric_substituent();         // O6 usually
-        c5 = first_sugar.ring_members()[5];             // C5
-        c6 = first_sugar.configurational_substituent(); // C6
-        o5f= first_sugar.ring_members()[5];             // O5 for omega
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o6 = next_sugar.anomeric_substituent();         // O6 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            // c1 = next_sugar.ring_members()[1];              // C1
+            o6 = next_sugar.anomeric_substituent();         // O6 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c5 = first_sugar.ring_members()[5];             // C5 - for pyranose
+            c6 = first_sugar.configurational_substituent(); // C6
+            o5f= first_sugar.ring_members()[5];             // O5 for omega
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c5 = first_sugar.ring_members()[4];             // C5 - for furanose
+            c6 = first_sugar.configurational_substituent(); // C6
+            o5f = first_sugar.ring_members()[4];             // O5 for omega
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
 
         phi   = clipper::Coord_orth::torsion ( o5.coord_orth(),
                                                c1.coord_orth(),
@@ -2477,11 +2507,40 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     }
     else if ( link == 4 )
     {
-        o5 = next_sugar.ring_members()[0];              // O5
-        c1 = next_sugar.ring_members()[1];              // C1
-        o4 = next_sugar.anomeric_substituent();         // O4 usually
-        c4 = first_sugar.ring_members()[4];             // C4
-        c5 = first_sugar.ring_members()[5];             // C5
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o4 = next_sugar.anomeric_substituent();         // O4 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            // c1 = next_sugar.ring_members()[1];              // C1
+            o4 = next_sugar.anomeric_substituent();         // O4 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c4 = first_sugar.ring_members()[4];             // C4
+            c5 = first_sugar.ring_members()[5];             // C5
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c4 = first_sugar.ring_members()[3];             // C4
+            c5 = first_sugar.ring_members()[4];             // C5
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
 
         phi   = clipper::Coord_orth::torsion ( o5.coord_orth(),
                                                c1.coord_orth(),
@@ -2497,11 +2556,41 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     }
     else if ( link == 3 )
     {
-        o5 = next_sugar.ring_members()[0];              // O5
-        c1 = next_sugar.ring_members()[1];              // C1
-        o3 = next_sugar.anomeric_substituent();         // O3 usually
-        c3 = first_sugar.ring_members()[3];             // C3
-        c4 = first_sugar.ring_members()[4];             // C4
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o3 = next_sugar.anomeric_substituent();         // O3 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            // c1 = next_sugar.ring_members()[1];              // C1
+            o3 = next_sugar.anomeric_substituent();         // O3 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c3 = first_sugar.ring_members()[3];             // C3
+            c4 = first_sugar.ring_members()[4];             // C4
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c3 = first_sugar.ring_members()[2];             // C3
+            c4 = first_sugar.ring_members()[3];             // C4
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
 
         phi   = clipper::Coord_orth::torsion ( o5.coord_orth(),
                                                c1.coord_orth(),
@@ -2517,11 +2606,40 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     }
     else if ( link == 2 )
     {
-        o5 = next_sugar.ring_members()[0];              // O5
-        c1 = next_sugar.ring_members()[1];              // C1
-        o2 = next_sugar.anomeric_substituent();         // O2 usually
-        c2 = first_sugar.ring_members()[2];             // C2
-        c3 = first_sugar.ring_members()[3];             // C3
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o2 = next_sugar.anomeric_substituent();         // O2 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            // c1 = next_sugar.ring_members()[1];              // C1
+            o2 = next_sugar.anomeric_substituent();         // O2 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c2 = first_sugar.ring_members()[2];             // C2
+            c3 = first_sugar.ring_members()[3];             // C3
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c2 = first_sugar.ring_members()[1];             // C2
+            c3 = first_sugar.ring_members()[2];             // C3
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
 
         phi   = clipper::Coord_orth::torsion ( o5.coord_orth(),
                                                c1.coord_orth(),
@@ -2977,7 +3095,6 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, std::string expression_sy
 
 MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, std::string expression_system )
 {
-
     this->manb = &manb;
     this->mmol = &mmol;
 
@@ -3085,6 +3202,18 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
+
+                     #if DUMP
+                        DBG << "Created the MSugar object" << std::endl;
+                    #endif
+
+                    #if DUMP
+                        DBG << "potential n roots is " << potential_n_roots[i].type() << std::endl;
+                        DBG << "sugar is " << sugar.type() << std::endl;
+                        DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    #endif
+
+
                     clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                             potential_n_roots[i], list_of_sugars.back(), this->expression_system );
                     mg.set_kind_of_glycan ( "n-glycan" );
@@ -3141,6 +3270,18 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
+
+                    #if DUMP
+                        DBG << "Created the MSugar object" << std::endl;
+                    #endif
+
+                    #if DUMP
+                        DBG << "potential o roots is " << potential_o_roots[i].type() << std::endl;
+                        DBG << "sugar is " << sugar.type() << std::endl;
+                        DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    #endif
+
+
                     clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                              potential_o_roots[i], sugar, this->expression_system );
 
@@ -3189,6 +3330,17 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
+
+                    #if DUMP
+                        DBG << "Created the MSugar object" << std::endl;
+                    #endif
+
+                    #if DUMP
+                        DBG << "potential s roots is " << potential_s_roots[i].type() << std::endl;
+                        DBG << "sugar is " << sugar.type() << std::endl;
+                        DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    #endif
+
                     clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                              potential_s_roots[i], sugar, this->expression_system );
                     mg.set_kind_of_glycan ( "s-glycan" );
@@ -3213,6 +3365,17 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 {
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
+
+                    #if DUMP
+                        DBG << "Created the MSugar object" << std::endl;
+                    #endif
+
+                    #if DUMP
+                        DBG << "potential c roots is " << potential_s_roots[i].type() << std::endl;
+                        DBG << "sugar is " << sugar.type() << std::endl;
+                        DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    #endif
+
                     clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                              potential_c_roots[i], sugar, this->expression_system );
                     mg.set_kind_of_glycan ( "c-glycan" );
@@ -3274,6 +3437,17 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i], manb);
                 list_of_sugars.push_back ( rootSugar );
+
+                #if DUMP
+                        DBG << "Created the MSugar object" << std::endl;
+                #endif
+
+                #if DUMP
+                    DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].type() << std::endl;
+                    DBG << "rootSugar is " << rootSugar.type() << std::endl;
+                    DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                #endif
+
                 clipper::MGlycan mg = clipper::MGlycan ( mmol[linked[j].second.polymer()].id().trim(),
                                                             rootSugar, this->expression_system );
                 mg.set_kind_of_glycan ( "ligand" );
