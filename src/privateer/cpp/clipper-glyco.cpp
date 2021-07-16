@@ -27,7 +27,6 @@ using json = nlohmann::json;
 ///////////////////////// MSugar ///////////////////////////////
 
 /*! Constructor: Empty constructor for later initialisation. */
-
 MSugar::MSugar( )
 {
 
@@ -46,7 +45,16 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, char alt
 	const clipper::MAtomNonBond& nb = MAtomNonBond (ml, 5.0);
 	MSugar(ml, mm, nb, alt_conf);
 }
+/*
+ok_with_ring() = True
+ok_with_bonds_rmsd() = True
+ok_with_angles_rmsd() = True
+ok_with_anomer() = True
+ok_with_chirality() = True
+ok_with_conformation() = True
 
+In MSugar steps where if statement that returns incomplete MSugar, set these to false - the way that I did with cremer_pople_params and sugar_conformation_code
+*/
 
 /*! Constructor: create a new sugar object from a standard MMonomer.
 	If reference data for the sugar cannot be found in the database, the members of the ring will be determined using a recursive version of Fleury's algorithm for finding eulerian cycles in undirected graphs
@@ -59,7 +67,6 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 {
 
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
-
 
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
@@ -119,7 +126,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                 index_atom = this->lookup(buffer[i].trim()+sugar_alternate_confcode,clipper::MM::UNIQUE);
 
                 #if DUMP
-                    DBG << "index_atom in line 146" << index_atom << std::endl;
+                    DBG << "index_atom in line 122" << index_atom << std::endl;
                 #endif
 
                 if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now
@@ -129,6 +136,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                     this->sugar_denomination = "    unsupported    ";
                     this->sugar_anomer = "X";
                     this->sugar_handedness = "X";
+                    
+                    for(int j = 0; j < 3; j++)
+                        this->sugar_cremer_pople_params.push_back(-1);
+
+                    this->sugar_conformation = 0;
+
                     return;
                 }
             }
@@ -139,7 +152,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 
 
                 #if DUMP
-                    DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << std::endl;
+                    DBG << "index_atom in line 146 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << std::endl;
                 #endif
 
                 if (index_atom == -1)
@@ -150,12 +163,16 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
                     this->sugar_anomer = "X";
                     this->sugar_handedness = "X";
 
+                    for(int j = 0; j < 3; j++)
+                       this->sugar_cremer_pople_params.push_back(-1);
+
+                    this->sugar_conformation = 0;
 
                     return;
                 }
             }
             #if DUMP
-                DBG << "trying to push (*this)[index_atom] in line 181" << (*this)[index_atom].id() << std::endl;
+                DBG << "trying to push (*this)[index_atom] in line 158" << (*this)[index_atom].id() << std::endl;
             #endif
             sugar_ring_elements.push_back((*this)[index_atom]);
         }
@@ -164,7 +181,6 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     {
         this->sugar_ring_elements = this->ringMembers();
     }
-
 
 	if (this->sugar_ring_elements.size() == 5)
 	{
@@ -191,6 +207,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 		this->sugar_denomination = "    unsupported    ";
 		this->sugar_anomer = "X";
 		this->sugar_handedness = "X";
+
+        for(int j = 0; j < 3; j++)
+            this->sugar_cremer_pople_params.push_back(-1);
+        
+        this->sugar_conformation = 0;
+        
 	}
 
     if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
@@ -362,7 +384,6 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
 MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data, char alt_conf )
 {
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
-
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
     this->sugar_parent_molecule_nonbond = &nb; // store pointers
@@ -411,6 +432,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
             this->sugar_denomination = "    unsupported    ";
             this->sugar_anomer = "X";
             this->sugar_handedness = "X";
+
+            for(int j = 0; j < 3; j++)
+                this->sugar_cremer_pople_params.push_back(-1);
+
+            this->sugar_conformation = 0;
+
             return;
         }
         else if ( alt_conf != ' ' ) // alternate conformations are present
@@ -453,6 +480,12 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
         this->sugar_denomination = "    unsupported    ";
         this->sugar_anomer = "X";
         this->sugar_handedness = "X";
+
+        for(int j = 0; j < 3; j++)
+            this->sugar_cremer_pople_params.push_back(-1);
+
+        this->sugar_conformation = 0;
+
     }
 
     if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
@@ -1239,6 +1272,7 @@ int MSugar::conformationPyranose(const clipper::ftype& phi, const clipper::ftype
 
              }
     else if (theta >= 157.5) confCode = conf_pyranose_1C4; // canonical chair
+    else if (phi == -1 && theta == -1) confCode = 0;
 
     return confCode;
 }
@@ -1273,6 +1307,7 @@ int MSugar::conformationFuranose(const clipper::ftype& phi) const
     else if ((phi > 315.0) && (phi <= 333.0)) confCode = conf_furanose_EV4;
     else if ((phi > 333.0) && (phi <= 351.0)) confCode = conf_furanose_OT4;
     else if ((phi > 351.0) || (phi <=   9.0)) confCode = conf_furanose_OEV;
+    else if (phi == -1) confCode = 0;
 
     return confCode;
 }

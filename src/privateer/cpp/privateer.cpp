@@ -591,7 +591,6 @@ int main(int argc, char** argv)
 
         // erase ligand atoms from the model and then calculate phases using
         // the omitted model, effectively computing an omit map
-
         for ( int p = 0; p < mmol.size(); p++ )
         {
             for ( int m = 0; m < mmol[p].size(); m++ )
@@ -712,7 +711,6 @@ int main(int argc, char** argv)
                 }
             }
         }
-
         if (!batch) printf("\nPDB \t    Sugar   \t  Q  \t Phi  \tTheta \t   Detected type   \tCnf\t<Bfac>\tCtx\t Ok?");
         if (!batch && showGeom) printf("\tBond lengths, angles and torsions, reported clockwise with in-ring oxygen as first vertex");
         if (!batch) printf("\n----\t------------\t-----\t------\t------\t-------------------\t---\t------\t---\t-----");
@@ -725,7 +723,6 @@ int main(int argc, char** argv)
             x = y = z = 0.0;
             maxX = maxY = maxZ = -999999.0;
             minX = minY = minZ =  999999.0;
-
             for (int natom = 0; natom < sugarList[index].size(); natom++)
             {
                 if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
@@ -1017,7 +1014,6 @@ int main(int argc, char** argv)
                 std::cout << std::endl;
             }
         }
-
         if (!batch)
         {
             std::cout << "\nPartially occupied monosaccharides, if any, are marked with an asterisk (*)";
