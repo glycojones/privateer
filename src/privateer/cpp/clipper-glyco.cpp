@@ -3112,7 +3112,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         {
             for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
             {
-                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :A") 
+                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :A" || mmol[pol][mon][atom].id().trim() == "O1 :C" || mmol[pol][mon][atom].id().trim() == "O1 :D") 
                     potential_rootless_polysaccharides.push_back(mmol[pol][mon]);
             }
             // Will need to keep this list up to date with the latest discoveries
@@ -3173,8 +3173,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_n_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3221,8 +3221,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_n_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3290,8 +3290,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom og1= sugar.anomeric_substituent();         // OG/OG1 SER/THR
-                    clipper::MAtom cg = potential_o_roots[i].find("CB");      // CB
-                    clipper::MAtom cb = potential_o_roots[i].find("CA");      // CA
+                    clipper::MAtom cg = potential_o_roots[i].find("CB", clipper::MM::ANY);      // CB
+                    clipper::MAtom cb = potential_o_roots[i].find("CA", clipper::MM::ANY);      // CA
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3383,8 +3383,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom cd1= sugar.anomeric_substituent();         // CD1 TRP
-                    clipper::MAtom cg = potential_c_roots[i].find("CG");      // CB
-                    clipper::MAtom cb = potential_c_roots[i].find("CB");      // CG
+                    clipper::MAtom cg = potential_c_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_c_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3547,8 +3547,8 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_n_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3583,8 +3583,8 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom nd2= sugar.anomeric_substituent();         // ND2 usually
-                    clipper::MAtom cg = potential_n_roots[i].find("CG");      // CG
-                    clipper::MAtom cb = potential_n_roots[i].find("CB");      // CB
+                    clipper::MAtom cg = potential_n_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_n_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3640,8 +3640,8 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom og1= sugar.anomeric_substituent();         // OG/OG1 SER/THR
-                    clipper::MAtom cg = potential_o_roots[i].find("CB");      // CB
-                    clipper::MAtom cb = potential_o_roots[i].find("CA");      // CA
+                    clipper::MAtom cg = potential_o_roots[i].find("CB", clipper::MM::ANY);      // CB
+                    clipper::MAtom cb = potential_o_roots[i].find("CA", clipper::MM::ANY);      // CA
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
@@ -3711,8 +3711,8 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
                     clipper::MAtom cd1= sugar.anomeric_substituent();         // CD1 TRP
-                    clipper::MAtom cg = potential_c_roots[i].find("CG");      // CB
-                    clipper::MAtom cb = potential_c_roots[i].find("CB");      // CG
+                    clipper::MAtom cg = potential_c_roots[i].find("CG", clipper::MM::ANY);      // CG
+                    clipper::MAtom cb = potential_c_roots[i].find("CB", clipper::MM::ANY);      // CB
                     clipper::ftype phi, psi;
 
                     phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),

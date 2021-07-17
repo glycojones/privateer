@@ -378,7 +378,7 @@ int main(int argc, char** argv)
 
         else if ( args[arg] == "-debug" )
         {
-          #define DUMP 1
+        //   #define DUMP 1
         }
         else if ( args[arg] == "-blobs_threshold" )
         {
