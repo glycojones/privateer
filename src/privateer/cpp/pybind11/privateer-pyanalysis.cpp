@@ -394,7 +394,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
         std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
         std::string proteinChainID = list_of_glycans[i].get_chain().substr(0,1);
 
-        auto rootSummary = pybind11::dict ("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=std::stoi(proteinResidueID), "ProteinChainID"_a=proteinChainID);
+        auto rootSummary = pybind11::dict ("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
         
         std::vector<float> torsions = list_of_glycans[i].get_glycosylation_torsions();
         auto protein_glycan_linkage_torsion = pybind11::dict ("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
