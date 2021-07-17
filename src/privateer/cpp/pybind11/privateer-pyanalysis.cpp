@@ -2493,6 +2493,9 @@ namespace pa = privateer::pyanalysis;
 
 void init_pyanalysis(py::module& m)
 {
+    // Need to pa::GlycosylationComposition_memorysafe(and probably pa::GlycanStructure_memorysafe) class or something like that for them huge ribosomes that
+    // cause the Python process to hog all the Computer's memory. 
+    // Basically change the paradigm from compute everything first and then rely on getters to call getter that then initiates a computation
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())
         .def(py::init<std::string&, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined")
