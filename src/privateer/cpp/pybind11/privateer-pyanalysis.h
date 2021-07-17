@@ -84,10 +84,42 @@ namespace privateer {
         bool updatedWithExperimentalData;
     };
 
+    class GlycosylationComposition_memsafe
+    {
+      public:
+      // need to add constructor with both model and experimental data too. 
+        GlycosylationComposition_memsafe() { };
+        GlycosylationComposition_memsafe(std::string& path_to_model_file, std::string expression_system) {
+          this->read_from_file ( path_to_model_file, expression_system );
+        };
+        ~GlycosylationComposition_memsafe() { };
+        void read_from_file( std::string path_to_model_file, std::string expression_system );
+        void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
+
+        std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
+        std::string get_expression_system_used ( ) { return expression_system; };
+        int get_number_of_glycan_chains_detected ( ) { return numberOfGlycanChains; };
+        
+        pybind11::list get_summary_of_detected_glycans () { return glycosylationSummary; };
+        
+        GlycanStructure get_glycan(const int id);
+
+      private:
+        clipper::MGlycology mgl;
+        std::string path_to_model_file;
+        std::string expression_system;
+        int numberOfGlycanChains;
+        pybind11::list glycosylationSummary;
+    };
+
     class GlycanStructure 
     {
       public:
         GlycanStructure() { };
+        GlycanStructure(const clipper::MGlycology& mgl, const int glycanID){
+          this->updatedWithExperimentalData = false;
+          this->pyinit_memsafe ( mgl, glycanID );
+        };
         GlycanStructure(const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition){
           this->updatedWithExperimentalData = false;
           this->pyinit ( mgl, glycanID, parentGlycosylationComposition );
@@ -98,6 +130,7 @@ namespace privateer {
         };
         ~GlycanStructure() { };
         void pyinit ( const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition);
+        void pyinit_memsafe ( const clipper::MGlycology& mgl, const int glycanID);
         void pyinitWithExperimentalData (const clipper::MGlycology& mgl, const int glycanID, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition, std::vector<std::pair< clipper::String , clipper::MSugar> >& finalLigandList);
         void initialize_summary_of_glycan();
          
@@ -121,6 +154,8 @@ namespace privateer {
 
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
 
+        void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
+        void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
       private:
         privateer::pyanalysis::GlycosylationComposition parentGlycosylation;
