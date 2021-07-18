@@ -36,6 +36,7 @@
 #include <clipper/minimol/minimol_utils.h>
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+// #define DUMP 1
 
 clipper::String program_version = "MKIV";
 using clipper::data32::F_sigF;

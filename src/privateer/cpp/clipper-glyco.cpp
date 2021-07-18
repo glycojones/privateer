@@ -179,6 +179,10 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     }
     else
     {
+        #if DUMP
+            std::cout << std::endl ;
+            DBG << "Unable to find the " << this->id() << " in the database. Initiating ringMembers() function" << std::endl;
+        #endif
         this->sugar_ring_elements = this->ringMembers();
     }
 
@@ -1319,7 +1323,6 @@ int MSugar::conformationFuranose(const clipper::ftype& phi) const
 
 std::vector<clipper::MAtom> MSugar::ringMembers() const
 {
-
 	MSugar mm = *this;
 
 	MSugar::visited_arcs background;
@@ -1334,7 +1337,10 @@ std::vector<clipper::MAtom> MSugar::ringMembers() const
 	if (buffer.size() > 2)
 		while ( (buffer[0].name().trim() != buffer[index].name().trim()) && (index < buffer.size()) ) index++;
 
-	buffer.erase( buffer.begin() );
+
+    if(buffer.size() > 0)
+	    buffer.erase( buffer.begin() );
+
 	buffer.resize( index, clipper::MAtom() );
 
 	std::vector<clipper::MAtom> result;
@@ -3268,6 +3274,9 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
+                    #if DUMP
+                        DBG << "Creating the MSugar object from potential_o_roots" << std::endl;
+                    #endif
                     clipper::MSugar sugar( mmol, tmpmon, manb );
                     list_of_sugars.push_back ( sugar );
 
@@ -3424,7 +3433,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         }
     }
 
-    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
+    // Ligand under MGlycan will only extend if it is linked to another sugar that is detected in the database and only if and only if itself is found on the clipper-glyco_data.cpp
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar.
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i] ) ;
 
@@ -3433,7 +3443,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
 
 
-            if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].type().c_str()) && clipper::MSugar::search_database( tmpmon.type().c_str() ) )
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i], manb);
                 list_of_sugars.push_back ( rootSugar );
@@ -3761,7 +3771,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
 
 
-            if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].type().c_str()) && clipper::MSugar::search_database( tmpmon.type().c_str() ) )
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i], manb);
                 list_of_sugars.push_back ( rootSugar );
