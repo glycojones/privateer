@@ -2472,7 +2472,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2490,7 +2492,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2528,7 +2532,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2544,7 +2550,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2577,7 +2585,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2593,7 +2603,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2627,7 +2639,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
@@ -2643,7 +2657,9 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else
         {
-            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring.\nRing size received " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
             throw std::runtime_error("Unsupported ring size");
         }
 
