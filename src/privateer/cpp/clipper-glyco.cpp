@@ -15,7 +15,7 @@
 
 #include "clipper-glyco.h"
 
-// #define DUMP 1
+#define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -3947,6 +3947,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         link_tmp.first = candidates[i];
                         link_tmp.second = contacts[j];
                         tmpresults.push_back ( link_tmp );
+                        #if DUMP
+                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                            DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\t link_tmp.second(MAtomNonBond) = " << tmpAtom.id() << std::endl;
+                            // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+                        #endif
                     }
                 }
             }
