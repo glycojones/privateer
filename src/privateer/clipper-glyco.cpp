@@ -860,7 +860,17 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     cpParams.push_back(q3);
     cpParams.push_back(this->sugar_conformation);
 
-    if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
+    if ( stereo.second.first.name().trim() == "C8") { // Simplified bit for sialic acids
+      if (z_anomeric_substituent > z_anomeric_carbon) {
+        cpParams.push_back(anomer_beta);
+				this->sugar_anomer="beta";
+      }
+      else {
+        cpParams.push_back(anomer_alpha);
+				this->sugar_anomer="alpha";
+      }
+    }
+    else if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
 		{
 			if (lurd_reverse)
 			{
@@ -2383,7 +2393,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
     return buffer;
 }
 
-// Fix me: need to add support for 1-8 links (Sialic Acids)
+// Fix me: need to add support for 2-8 links (Sialic Acids)
 bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar )
 {
     int index = 0;
@@ -2539,6 +2549,14 @@ void MGlycan::set_annotations ( std::string expression_system )
         {
             if ( node_list[0].get_sugar().anomer() != "beta" )
                 add_link_annotation ( " Warning: o-GlcNAc linkage should be beta! " );
+        }
+        else if ( get_type() == "c-glycan" )
+        {
+          if ( clipper::data::carbname_of(node_list[0].get_sugar().type().trim()) == "Man" )
+          {
+              if ( node_list[0].get_sugar().anomer() != "alpha" )
+                  add_link_annotation ( " Warning: Man-Trp linkage should be alpha! " );
+          }
         }
         return; // no more o-glycosylation validation for now; will come back to this later
     }
