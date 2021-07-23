@@ -15,7 +15,7 @@
 
 #include "clipper-glyco.h"
 
-#define DUMP 1
+// #define DUMP 1
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
@@ -2451,6 +2451,10 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     Node new_node( next_sugar );      // create a new node with the next sugar
     node_list.push_back ( new_node ); // add the new sugar to the node list
 
+    #if DUMP
+        DBG << "Creating new connection.\nlink: " << link << "\tnext_sugar.anomer(): " << next_sugar.anomer() << "\tnode_list.size()-1: " << node_list.size()-1 << std::endl;
+    #endif
+
     Linkage new_connection ( link, next_sugar.anomer(), node_list.size()-1 );
 
     clipper::ftype omega, psi, phi;
@@ -3825,13 +3829,19 @@ const char MGlycology::get_altconf(const clipper::MAtom& ma) const
 	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
 }                                                       // We will return a blank character if there is no code present or if it is, but is blank
 
-
+//Add debug here to figure out how parse_order ( contacts[i].first.id() ) prioritizes
 void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
 {
+    #if DUMP
+        DBG << "clipper::MGlycan mg.number_of_nodes() = " << mg.number_of_nodes() << "\tmsug.id() = " << msug.id() << std::endl;
+    #endif
     std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > contacts = get_contacts ( msug );
 
     const clipper::MiniMol& tmpmol = *this->mmol;
 
+    #if DUMP
+        DBG << "contacts.size() = " << contacts.size() << std::endl;
+    #endif
     for (int i = 0 ; i < contacts.size() ; i++ )
     {
         if (clipper::data::found_in_database ( tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type() ))
@@ -3842,6 +3852,9 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
 
             if (std::find(sugar_list.begin(), sugar_list.end(), tmpsug) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
             {
+                #if DUMP
+                    DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                #endif
                 mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
                 extend_tree ( mg, tmpsug );
             }
@@ -3935,6 +3948,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         {
             std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.0 );
 
+            // Potential solutiion, check that link_tmp.second(MAtomNonBond) is either C1 or C2 atom.
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
                 if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
@@ -3943,15 +3957,19 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                     if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]),
                                              get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
                     {
-                        std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                        link_tmp.first = candidates[i];
-                        link_tmp.second = contacts[j];
-                        tmpresults.push_back ( link_tmp );
-                        #if DUMP
-                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
-                            DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\t link_tmp.second(MAtomNonBond) = " << tmpAtom.id() << std::endl;
-                            // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
-                        #endif
+                        clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                        if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2")
+                        {
+                            std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                            link_tmp.first = candidates[i];
+                            link_tmp.second = contacts[j];
+                            tmpresults.push_back ( link_tmp );
+                            #if DUMP
+                                // clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                                DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\t link_tmp.second(MAtomNonBond) = " << tmpAtom.id() << std::endl;
+                                // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+                            #endif
+                        }
                     }
                 }
             }
