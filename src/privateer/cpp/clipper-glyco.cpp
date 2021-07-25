@@ -3829,7 +3829,6 @@ const char MGlycology::get_altconf(const clipper::MAtom& ma) const
 	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
 }                                                       // We will return a blank character if there is no code present or if it is, but is blank
 
-//Add debug here to figure out how parse_order ( contacts[i].first.id() ) prioritizes
 void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
 {
     #if DUMP
@@ -3948,7 +3947,6 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         {
             std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.0 );
 
-            // Potential solutiion, check that link_tmp.second(MAtomNonBond) is either C1 or C2 atom.
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
                 if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
@@ -3958,6 +3956,10 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                                              get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
                     {
                         clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                        // Alternatively, this could also be - if(tmpAtom.element().trim() == "C")
+                        // However, according to chemical rules a Carbon has to be next to the nucleophillic Oxygen, i.e. O5 and
+                        // it appears that this atom naming standard is now properly enforced by the PDB., therefore for now I am sticking
+                        // with C1 for typical pyranose sugars and C2 for sialic acids etc. 
                         if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2")
                         {
                             std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
@@ -3965,9 +3967,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                             link_tmp.second = contacts[j];
                             tmpresults.push_back ( link_tmp );
                             #if DUMP
-                                // clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
                                 DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\t link_tmp.second(MAtomNonBond) = " << tmpAtom.id() << std::endl;
-                                // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
                             #endif
                         }
                     }
