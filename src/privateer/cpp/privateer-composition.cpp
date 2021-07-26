@@ -7,8 +7,8 @@
 
 
 #include "privateer-composition.h"
-// #define DUMP 1
-// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
 std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list)
@@ -18,10 +18,15 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
     std::vector<int> temp;
 
     int totalEditableNodes = editable_node_list.size();
-    bool checkedEditableNode[totalEditableNodes];
-    memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
 
-    
+    #ifdef _MSC_VER
+        std::vector<bool> checkedEditableNode(totalEditableNodes,false);
+        // memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
+    #else
+        bool checkedEditableNode[totalEditableNodes];
+        memset( checkedEditableNode, false, totalEditableNodes*sizeof(bool) );
+    #endif
+
     for(int i = 1; i <= totalEditableNodes; i++)
     {
         CombinationGenerator(editable_node_list, i, 0, 0, checkedEditableNode, totalEditableNodes, result, temp);
@@ -30,7 +35,11 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
     return result;
 }
 
-void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
+#ifdef _MSC_VER
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, std::vector<bool>& checkedEditableNode, int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp);
+#else
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp)
+#endif
 {
    if(currLength > reqLength)
    return;
@@ -175,21 +184,22 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(debug_output) std::cout << "Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
+            if(debug_output) DBG << "Generating monomer permutations for Alpha combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinations.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerAlpha](int id)
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerAlpha, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanAlpha from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanAlpha combination: " << index << std::endl << "/" << totalCombinations.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -285,21 +295,22 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            if(debug_output) std::cout << "Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
+            if(debug_output) DBG << "Generating monomer permutations for Bravo combination: " << globalOffset << "/" << totalCombinations.size() << "." << std::endl;
             for(int job = 0; job < totalThreads; job++)
             {
                 if( (job + globalOffset) < totalCombinations.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerBravo](int id)
+                    pool.push([job, globalOffset, &totalCombinations, &glycan, &jsonObject, residueDeletions, &threadSafeContainerBravo, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanBravo from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanBravo combination: " << index << std::endl << "/" << totalCombinations.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -432,16 +443,17 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafAlpha](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafAlpha, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanAlpha_LEAF from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanAlpha_LEAF combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -541,16 +553,17 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLeaf.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafBravo](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLeaf, &glycan_node_removed_leaf, &jsonObject, residueDeletions, &threadSafeContainerLeafBravo, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanBravo_LEAF from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanBravo_LEAF combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLeaf.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -656,16 +669,17 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastAlpha](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastAlpha, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanAlpha_LAST from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanAlpha_LAST combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLast.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -766,16 +780,17 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
             {
                 if( (job + globalOffset) < totalCombinationsNodeRemovedLast.size() )
                 {
-                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastBravo](int id)
+                    pool.push([job, globalOffset, &totalCombinationsNodeRemovedLast, &glycan_node_removed_last, &jsonObject, residueDeletions, &threadSafeContainerLastBravo, &debug_output](int id)
                     {
 
                         int index = job + globalOffset;
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Calculating monomer permutations for tempGlycanBravo_LAST from Thread ID: " << id << '.' << std::endl;
                             DBG << "MONOMER PERMUTATION tempGlycanBravo_LAST combination: " << index << std::endl << "/" << totalCombinationsNodeRemovedLast.size() << "." << std::endl;
-                        #endif
+                        }
 
                         std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempContainer; 
                         
@@ -887,7 +902,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
 
     for(int i = totalNodes; i > 0; i--)
     {
-        if(debug_output) std::cout << "Generating glycan permutations for current length: " << i << "/" << totalNodes << "." << std::endl;
+        if(debug_output) DBG << "Generating glycan permutations for current length: " << i << "/" << totalNodes << "." << std::endl;
         
         if(i == totalNodes)
         {
@@ -949,7 +964,7 @@ void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clip
 
     for(int i = 0; i < totalCombinations.size(); i++)
     {
-        // if(debug_output) std::cout << "Generating monomer permutations for combination: " << i << "/" << totalCombinations.size() << "." << std::endl;
+        if(debug_output) DBG << "Generating monomer permutations for combination: " << i << "/" << totalCombinations.size() << "." << std::endl;
         clipper::MGlycan tempGlycanAlpha = glycan, 
                          tempGlycanBravo = glycan;
 

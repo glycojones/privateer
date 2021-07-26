@@ -6,7 +6,7 @@
 // The University of York
 
 
-// #define DUMP 1
+
 #include "privateer-lib.h"
 
 void privateer::coot::insert_coot_prologue_scheme ( std::fstream& output )
@@ -636,6 +636,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
 
             of_xml << "      <SugarPDB>"            << pdbname                                          << "</SugarPDB>\n"          ;
             of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
+            of_xml << "      <SugarSeqNum>"         << sugarList[i].second.seqnum()                     << "</SugarSeqNum>\n"       ;
             of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
             of_xml << "      <SugarQ>"              << puckering_amplitude                              << "</SugarQ>\n"            ;
 
@@ -988,7 +989,7 @@ void privateer::util::print_usage ( )
               << "\t-colin-fo\t\t\tColumns containing F & SIGF, e.g. FOBS,SIGFOBS\n"
               << "\t\t\t\t\tIf not supplied, Privateer will try to guess the path\n"
               << "\t-codein <3-letter code>\t\tA 3-letter code (should match that in -valstring)\n"
-              << "\t-rscc-diff\t\t\tCalculate RSCC against difference omit density (Fobs used by default)\n"
+              << "\t-rscc-best\t\t\tCalculate RSCC against best omit density (Fobs used by default)\n"
               << "\t-valstring <options>\t\tUse external validation options (to be deprecated in MKV)\n"
               << "\t\t\t\t\tExample: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1\n"
               << "\t\t\t\t\tThree-letter code, ring atoms, anomer, handedness, expected conformation\n"
@@ -4344,7 +4345,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4438,7 +4439,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, expression_system);
+    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     const std::vector < clipper::MGlycan >& list_of_glycans = mgl.get_list_of_glycans();
 
@@ -4498,7 +4499,7 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, expression_system);
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 

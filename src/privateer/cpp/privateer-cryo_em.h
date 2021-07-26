@@ -26,7 +26,7 @@ namespace privateer
 
     void initialize_dummy_fobs(clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs);
 
-    void calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism);
+    void calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism, bool& debug_output);
 
     bool generate_output_map_coefficients (clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients, clipper::HKL_data<clipper::data32::F_phi>& fc_cryoem_obs, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_info& hklinfo);
     

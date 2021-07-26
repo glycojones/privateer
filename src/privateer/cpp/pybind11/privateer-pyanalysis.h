@@ -48,13 +48,13 @@ namespace privateer {
       public:
       // need to add constructor with both model and experimental data too. 
         GlycosylationComposition() { };
-        GlycosylationComposition(std::string& path_to_model_file, std::string expression_system) {
-          this->read_from_file ( path_to_model_file, expression_system );
+        GlycosylationComposition(std::string& path_to_model_file, std::string expression_system, bool debug_output) {
+          this->read_from_file ( path_to_model_file, expression_system, debug_output );
         };
-        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system);
-        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system);
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool debug_output);
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool debug_output);
         ~GlycosylationComposition() { };
-        void read_from_file( std::string path_to_model_file, std::string expression_system );
+        void read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output );
         void initialize_summary_of_detected_glycans();
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
@@ -70,7 +70,10 @@ namespace privateer {
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
         bool check_if_updated_with_experimental_data() { return updatedWithExperimentalData; };
+
       private:
+        bool debug_output;
+
         clipper::MGlycology mgl;
         std::vector<std::pair<clipper::String, clipper::MSugar>> ligandList;
         std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
@@ -89,11 +92,11 @@ namespace privateer {
       public:
       // need to add constructor with both model and experimental data too. 
         GlycosylationComposition_memsafe() { };
-        GlycosylationComposition_memsafe(std::string& path_to_model_file, std::string expression_system) {
-          this->read_from_file ( path_to_model_file, expression_system );
+        GlycosylationComposition_memsafe(std::string& path_to_model_file, std::string expression_system, bool debug_output) {
+          this->read_from_file ( path_to_model_file, expression_system, debug_output );
         };
         ~GlycosylationComposition_memsafe() { };
-        void read_from_file( std::string path_to_model_file, std::string expression_system );
+        void read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output );
         void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
@@ -105,6 +108,8 @@ namespace privateer {
         GlycanStructure get_glycan(const int id);
 
       private:
+        bool debug_output;
+
         clipper::MGlycology mgl;
         std::string path_to_model_file;
         std::string expression_system;
@@ -215,6 +220,7 @@ namespace privateer {
         
         int get_sugar_id( ) const { return sugarID; };
         int get_glycan_id( ) const { return glycanID; };
+        int get_seqnum( ) const { return sugar_seqnum; };
         std::string get_sugar_pdb_id() const { return sugar_pdb_id; };
         std::string get_sugar_pdb_chain() const { return sugar_pdb_chain; };
 
@@ -271,6 +277,7 @@ namespace privateer {
 
         int sugarID;
         int glycanID;
+        int sugar_seqnum;
         std::string sugar_pdb_id;
         std::string sugar_pdb_chain;
 
@@ -319,11 +326,11 @@ namespace privateer {
     {
       public:
         XRayData() { };
-        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads);
+        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, debug_output);
         };
         ~XRayData() { };
-        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads);
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output);
         pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
         pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
         void print_cpp_console_output_summary() 
@@ -338,7 +345,9 @@ namespace privateer {
 
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandList() { return finalLigandList; } // only c++
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandOnly() { return final_LigandsOnly; } // only c++
+
       private:
+        bool debug_output;
         std::string path_to_model_file;
         clipper::MiniMol mmol;
         clipper::HKL_info hklinfo;
@@ -357,11 +366,11 @@ namespace privateer {
     {
       public:
         CryoEMData() { };
-        CryoEMData(std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads) {
-          this->read_from_file ( path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads);
+        CryoEMData(std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output) {
+          this->read_from_file ( path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, debug_output);
         };
         ~CryoEMData() { };
-        void read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads);
+        void read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output);
         pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
         pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
         void print_cpp_console_output_summary() 
@@ -374,7 +383,9 @@ namespace privateer {
 
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandList() { return finalLigandList; } // only c++
         std::vector<std::pair< clipper::String , clipper::MSugar> > get_finalLigandOnly() { return final_LigandsOnly; } // only c++
+
       private:
+        bool debug_output;
         std::string path_to_model_file;
         float resolution;
         clipper::MiniMol mmol;

@@ -35,8 +35,8 @@
 #include <clipper/contrib/sfcalc_obs.h>
 #include <clipper/minimol/minimol_utils.h>
 
+
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
-// #define DUMP 1
 
 clipper::String program_version = "MKIV";
 using clipper::data32::F_sigF;
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
     bool useParallelism = true;
-    bool rscc_diff = false;
+    bool rscc_best = false;
     bool closest_match_disable = false;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
@@ -133,9 +133,9 @@ int main(int argc, char** argv)
           if  (++arg < args.size() )
             input_column_fobs = args[arg];
         }
-        else if ( args[arg] == "-rscc-diff" )
+        else if ( args[arg] == "-rscc-best" )
         {
-          rscc_diff = true;
+          rscc_best = true;
         }
         else if ( args[arg] == "-mtzout" )
         {
@@ -240,9 +240,9 @@ int main(int argc, char** argv)
             int detectedThreads = std::thread::hardware_concurrency();
             nThreads = clipper::String(args[arg]).i();
 
-            if(nThreads < 2)
+            if(nThreads < 1)
             {
-              std::cout << "Error: Less than 2 cores/threads were inputted as an argument." << "\nPlease disable multithreaded execution via -singlethreaded keyword argument or give more cores to Privateer!" << std::endl;
+              std::cout << "Error: Nonsensical user input." << "\nIf you would like to disable multithreading, please use \'-cores 1\' keyword argument or don't use -cores flag at all to run Privateer with maximum number of threads available on the computer!" << std::endl;
               prog.set_termination_message( "Failed" );
               return 1;
             }
@@ -255,16 +255,20 @@ int main(int argc, char** argv)
               prog.set_termination_message( "Failed" );
               return 1;
             }
+
+            if(nThreads == 1)
+            {
+                useParallelism = false;
+                nThreads = 0;
+            }
           }
         }
-        else if ( args[arg] == "-singlethreaded" )
-        {
-          useParallelism = false;
-          nThreads = 0;
-        }
-        else if ( args[arg] == "-debug_output" )
+        else if ( args[arg] == "-debug" )
         {
           debug_output = true;
+          std::cout << std::endl << "!!!!! RUNNING PRIVATEER IN DEBUG MODE, REMOVE -debug FLAG TO RUN IN RELEASE MODE !!!!!" << std::endl;
+          std::cout << std::endl << "!!!!! RUNNING PRIVATEER IN DEBUG MODE, REMOVE -debug FLAG TO RUN IN RELEASE MODE !!!!!" << std::endl;
+          std::cout << std::endl << "!!!!! RUNNING PRIVATEER IN DEBUG MODE, REMOVE -debug FLAG TO RUN IN RELEASE MODE !!!!!" << std::endl;
         }
         else if ( args[arg] == "-glytoucan" )
         {
@@ -373,14 +377,9 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-check-unmodelled" )
           check_unmodelled = true;
 
-
         else if ( args[arg] == "-ignore_missing" )
           ignore_set_null = true;
 
-        else if ( args[arg] == "-debug" )
-        {
-        //   #define DUMP 1
-        }
         else if ( args[arg] == "-blobs_threshold" )
         {
           if ( ++arg < args.size() )
@@ -454,7 +453,7 @@ int main(int argc, char** argv)
       return 1;
     }
     else if(!useParallelism)
-      std::cout << std::endl << "THREADING: Running Privateer on a single thread (-singlethreaded argument was provided)!" << std::endl << std::endl;
+      std::cout << std::endl << "THREADING: Running Privateer on a single thread (\'-cores 1\' argument was provided)!" << std::endl << std::endl;
     else
     {
       std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
@@ -497,7 +496,7 @@ int main(int argc, char** argv)
         
         const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-        mgl = clipper::MGlycology(mmol, manb, input_expression_system);
+        mgl = clipper::MGlycology(mmol, manb, debug_output, input_expression_system);
 
         list_of_glycans = mgl.get_list_of_glycans();
         list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
@@ -529,17 +528,19 @@ int main(int argc, char** argv)
 
                     if (useParallelism)
                     {
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                        #endif
+                        }
 
                         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                             pool.sync();
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                        #endif
+                        }
                     }
 
                     if(!finalGlycanPermutationContainer.empty())
@@ -600,7 +601,7 @@ int main(int argc, char** argv)
                 {
                     if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
                     {
-                        clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                        clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
                         sugarList.push_back ( mmol[p][m] );
                         sugarList.push_back ( mmol[p][m] );
                         clipper::String id = mmol[p].id();
@@ -623,32 +624,37 @@ int main(int argc, char** argv)
 
                         std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                        // #if DUMP
+                        // if(debug_output)
+                        // {
                         //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                        // #endif
+                        // }
 
                         int n_conf = conformers.size();
 
                         if ( n_conf > 0 )
                         {
                             if ( n_conf == 1 )
-                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
                             else
                             {
-                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                                msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                                msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
                             }
 
                         }
                         else
                         {
-                            msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                            msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
                         }
 
                         sugarList.push_back(mmol[p][m]);
                         clipper::String id = mmol[p].id();
                         id.resize(1);
 
+                        if(debug_output)
+                        {
+                            DBG << "Looking at chain " << id << std::endl;
+                        }
 
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (id, msug));
                         // add both conformers if the current monomer contains more than one
@@ -690,14 +696,14 @@ int main(int argc, char** argv)
                     {
                         if ( input_validation_options.size() > 0 )
                         {
-                            const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
+                            const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation, debug_output );
 
                             sugarList.push_back(mmol[p][m]);
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
                         }
                         else
                         {
-                            const clipper::MSugar msug(mmol, mmol[p][m], manb);
+                            const clipper::MSugar msug(mmol, mmol[p][m], manb, debug_output);
 
                             sugarList.push_back(mmol[p][m]);
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
@@ -1253,7 +1259,7 @@ int main(int argc, char** argv)
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    mgl = clipper::MGlycology(mmol, manb, input_expression_system);
+    mgl = clipper::MGlycology(mmol, manb, debug_output, input_expression_system);
 
     list_of_glycans = mgl.get_list_of_glycans();
     list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
@@ -1290,17 +1296,19 @@ int main(int argc, char** argv)
 
                     if (useParallelism)
                     {
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                        #endif
+                        }
 
                         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                             pool.sync();
 
-                        #if DUMP
+                        if(debug_output)
+                        {
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                        #endif
+                        }
                     }
 
                     if(!finalGlycanPermutationContainer.empty())
@@ -1370,17 +1378,19 @@ int main(int argc, char** argv)
 
                 if (useParallelism)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                    #endif
+                    }
 
                     while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                         pool.sync();
 
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                    #endif
+                    }
                 }
 
                 if(!finalGlycanPermutationContainer.empty())
@@ -1674,7 +1684,7 @@ int main(int argc, char** argv)
             {
                 if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
                 {
-                    clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                    clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
                     sugarList.push_back ( mmol[p][m] );
                     sugarList.push_back ( mmol[p][m] );
                     clipper::String id = mmol[p].id();
@@ -1712,26 +1722,27 @@ int main(int argc, char** argv)
 
                     std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                    // #if DUMP
+                    // if(debug_output)
+                    // {
                     //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                    // #endif
+                    // }
 
                     int n_conf = conformers.size();
 
                     if ( n_conf > 0 )
                     {
                         if ( n_conf == 1 )
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
                         else
                         {
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                            msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                            msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
                         }
 
                     }
                     else
                     {
-                        msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                        msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
                     }
 
                     sugarList.push_back(mmol[p][m]);
@@ -1777,14 +1788,14 @@ int main(int argc, char** argv)
                 {
                     if ( input_validation_options.size() > 0 )
                     {
-                        const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation );
+                        const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation, debug_output );
 
                         sugarList.push_back(mmol[p][m]);
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
                     }
                     else
                     {
-                        const clipper::MSugar msug(mmol, mmol[p][m], manb);
+                        const clipper::MSugar msug(mmol, mmol[p][m], manb, debug_output);
 
                         sugarList.push_back(mmol[p][m]);
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
@@ -1805,7 +1816,7 @@ int main(int argc, char** argv)
     {
         if (!batch) std::cout << "Done analyzing modelled carbohydrates.\nCalculating simulated structure factors from model input... "; fflush(0);
 
-        privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
+        privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism, debug_output);
 
         std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
         fflush(0);
@@ -1835,30 +1846,33 @@ int main(int argc, char** argv)
 
         if(useParallelism)
         {
-            pool.push([&cryo_em_dif_map_all, &difference_coefficients](int id)
+            pool.push([&cryo_em_dif_map_all, &difference_coefficients, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 cryo_em_dif_map_all.fft_from(difference_coefficients);
             });
 
-            pool.push([&modelmap, &fc_all_cryoem_data](int id)
+            pool.push([&modelmap, &fc_all_cryoem_data, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 modelmap.fft_from(fc_all_cryoem_data);
             });
 
-            pool.push([&ligandmap, &fc_ligands_only_cryoem_data](int id)
+            pool.push([&ligandmap, &fc_ligands_only_cryoem_data, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 ligandmap.fft_from(fc_ligands_only_cryoem_data);
             });
@@ -1875,17 +1889,19 @@ int main(int argc, char** argv)
 
         if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
 
@@ -1911,23 +1927,25 @@ int main(int argc, char** argv)
             //        Might be more difficult to write than it sounds...
             if(useParallelism)
             {
-                pool.push([&diff_mapOut, &cryo_em_dif_map_all](int id)
+                pool.push([&diff_mapOut, &cryo_em_dif_map_all, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Writing and outputting cryo_em_dif_map_all to \"cryoem_diff.map\" from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     diff_mapOut.open_write( "cryoem_diff.map" );
                     diff_mapOut.export_xmap( cryo_em_dif_map_all );
                     diff_mapOut.close_write();
                 });
 
-                pool.push([&modelmapout, &modelmap](int id)
+                pool.push([&modelmapout, &modelmap, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Writing and outputting modelmap to \"cryoem_calcmodel.map\" from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     modelmapout.open_write( "cryoem_calcmodel.map" );
                     modelmapout.export_xmap( modelmap );
@@ -1965,12 +1983,13 @@ int main(int argc, char** argv)
                 if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
                     pool.sync();
 
-                pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch](int id)
+                pool.push([&sugarList, &output, &input_model, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                    #endif
+                    }
 
                     float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                     x=y=z=0.0;
@@ -2088,25 +2107,28 @@ int main(int argc, char** argv)
                 });
                 processedMonomers++;
 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-                #endif
+                }
 
-                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
 
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -2230,12 +2252,13 @@ int main(int argc, char** argv)
 
                 processedMonomers++;
 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-                #endif
+                }
 
-                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -2255,30 +2278,33 @@ int main(int argc, char** argv)
         {   // calculate structure factors with bulk solvent correction
             if(useParallelism)
             {
-                pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms](int id)
+                pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Calculating sfcbligands from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sfcbligands( fc_ligands_bsc, fobs, ligandAtoms );
                 });
 
-                pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms](int id)
+                pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Calculating sfcb from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sfcb( fc_omit_bsc, fobs, mainAtoms );
                 });
 
-                pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms](int id)
+                pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Calculating sfcball from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sfcball( fc_all_bsc, fobs, allAtoms );
                 });
@@ -2299,17 +2325,19 @@ int main(int argc, char** argv)
 
         if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
         fc_ligands_bsc[0].set_null();
@@ -2338,21 +2366,23 @@ int main(int argc, char** argv)
 
         if(useParallelism)
             {
-                pool.push([&sfscale, &fobs_scaled, &fc_all_bsc](int id)
+                pool.push([&sfscale, &fobs_scaled, &fc_all_bsc, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Calculating sfscale from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sfscale( fobs_scaled, fc_all_bsc );
                 });
 
-                pool.push([&fobs_scaled, &flag, &ih](int id)
+                pool.push([&fobs_scaled, &flag, &ih, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Calculating flag[ih].flag() from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
                     {
@@ -2386,38 +2416,42 @@ int main(int argc, char** argv)
 
         if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
 
         if(useParallelism)
         {
-            pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param](int id)
+            pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating sfw_omit from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
                 sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
             });
 
-            pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param](int id)
+            pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sfw_all from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
                 sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
@@ -2442,17 +2476,19 @@ int main(int argc, char** argv)
 
         if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
         std::vector<double> params( n_param, 2.0 );
@@ -2467,57 +2503,63 @@ int main(int argc, char** argv)
 
         if(useParallelism)
         {
-            pool.push([&sigmaa_all_map, &fb_all](int id)
+            pool.push([&sigmaa_all_map, &fb_all, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 sigmaa_all_map.fft_from(fb_all);
             });
 
-            pool.push([&sigmaa_dif_map, &fd_all](int id)
+            pool.push([&sigmaa_dif_map, &fd_all, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 sigmaa_dif_map.fft_from(fd_all);
             });
 
-            pool.push([&sigmaa_omit_fb, &fb_omit](int id)
+            pool.push([&sigmaa_omit_fb, &fb_omit, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sigmaa_omit_fb from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 sigmaa_omit_fb.fft_from(fb_omit);
             });
 
-            pool.push([&sigmaa_omit_fd, &fd_omit](int id)
+            pool.push([&sigmaa_omit_fd, &fd_omit, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 sigmaa_omit_fd.fft_from(fd_omit);
             });
 
-            pool.push([&ligandmap, &fc_ligands_bsc](int id)
+            pool.push([&ligandmap, &fc_ligands_bsc, &debug_output](int id)
             {
                 ligandmap.fft_from(fc_ligands_bsc);
 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
             });
 
-            pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum](int id)
+            pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum, &debug_output](int id)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
                 {
@@ -2557,17 +2599,19 @@ int main(int argc, char** argv)
 
         if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
         if (!batch)
@@ -2652,34 +2696,37 @@ int main(int argc, char** argv)
         {
             if(useParallelism)
             {
-                pool.push([&sigmaa_all_MapOut, &sigmaa_all_map](int id)
+                pool.push([&sigmaa_all_MapOut, &sigmaa_all_map, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Writing and outputting sigmaa_all_map to \"sigmaa_best.map\" from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
                     sigmaa_all_MapOut.export_xmap( sigmaa_all_map );
                     sigmaa_all_MapOut.close_write();
                 });
 
-                pool.push([&sigmaa_dif_MapOut, &sigmaa_dif_map](int id)
+                pool.push([&sigmaa_dif_MapOut, &sigmaa_dif_map, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Writing and outputting sigmaa_dif_map to \"sigmaa_diff.map\" from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );
                     sigmaa_dif_MapOut.export_xmap( sigmaa_dif_map );
                     sigmaa_dif_MapOut.close_write();
                 });
 
-                pool.push([&sigmaa_omit_fd_MapOut, &sigmaa_omit_fd](int id)
+                pool.push([&sigmaa_omit_fd_MapOut, &sigmaa_omit_fd, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         DBG << "Writing and outputting sigmaa_omit_fd to \"sigmaa_omit.map\" from Thread ID: " << id << '.' << std::endl;
-                    #endif
+                    }
 
                     sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );
                     sigmaa_omit_fd_MapOut.export_xmap( sigmaa_omit_fd );
@@ -2706,17 +2753,19 @@ int main(int argc, char** argv)
 
             if (useParallelism)
             {
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                #endif
+                }
 
                 while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                     pool.sync();
 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                #endif
+                }
             }
 
 
@@ -2734,12 +2783,13 @@ int main(int argc, char** argv)
                 if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
                     pool.sync();
 
-                pool.push([&sugarList, &rscc_diff, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa](int id)
+                pool.push([&sugarList, &rscc_best, &output, &input_model, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fb, &sigmaa_omit_fd, &ligandmap, &mgl, &enable_torsions_for, showGeom, ipradius, pos_slash, index, batch, useSigmaa, &debug_output](int id)
                 {
-                    #if DUMP
+                    if(debug_output)
+                    {
                         std::cout << std::endl;
                         DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                    #endif
+                    }
 
                     float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                     x=y=z=0.0;
@@ -2778,11 +2828,11 @@ int main(int argc, char** argv)
                     double accum = 0.0;
                     double corr_coeff = 0.0;
                     std::pair<double, double> rscc_and_accum;
-                    if ( rscc_diff ) {
-                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    if ( rscc_best ) {
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                     }
                     else {
-                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                      rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                     }
                     corr_coeff = rscc_and_accum.first;
                     accum = rscc_and_accum.second;
@@ -2856,24 +2906,27 @@ int main(int argc, char** argv)
                 });
                 processedMonomers++;
 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-                #endif
+                }
 
-                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
 
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
 
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -2921,11 +2974,11 @@ int main(int argc, char** argv)
                 double corr_coeff = 0.0;
                 std::pair<double, double> rscc_and_accum;
 
-                if ( rscc_diff ) {
-                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                if ( rscc_best ) {
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                 }
                 else {
-                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                  rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
                 }
 
                 corr_coeff = rscc_and_accum.first;
@@ -2999,12 +3052,13 @@ int main(int argc, char** argv)
 
                 processedMonomers++;
 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-                #endif
+                }
 
-                if(debug_output) std::cout << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
+                if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -3012,17 +3066,19 @@ int main(int argc, char** argv)
 
     if (useParallelism)
     {
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
 
@@ -3041,7 +3097,11 @@ int main(int argc, char** argv)
 
     privateer::coot::insert_coot_prologue_scheme ( of_scm );
     privateer::coot::insert_coot_prologue_python ( of_py );
-    if (useMRC && !useMTZ && !noMaps)
+    
+    clipper::String all_MapName, dif_MapName, omit_dif_MapName;
+        all_MapName = ""; dif_MapName = ""; omit_dif_MapName = "";
+
+    if (useMRC && !useMTZ && !noMaps) 
     {
         privateer::coot::insert_coot_files_loadup_scheme (of_scm, input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
         privateer::coot::insert_coot_files_loadup_python (of_py,  input_model, "cryoem_calcmodel.map", "cryoem_diff.map", input_cryoem_map, batch, "input_model_nowater.pdb", check_unmodelled);
@@ -3297,17 +3357,19 @@ int main(int argc, char** argv)
     if (useParallelism)
     {
 
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
 
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
 

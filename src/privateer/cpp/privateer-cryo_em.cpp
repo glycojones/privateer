@@ -9,8 +9,8 @@
 
 #include "privateer-cryo_em.h"
 
-// #define DUMP 1
-// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 void privateer::cryo_em::read_cryoem_map  ( clipper::String const pathname, clipper::HKL_info& hklinfo, clipper::Xmap<double>& output_map, clipper::CCP4MAPfile& mrcin, float const resolution_value )
 {
@@ -50,7 +50,7 @@ void privateer::cryo_em::initialize_dummy_fobs(clipper::HKL_data<clipper::data32
 }
 
 
-void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism) //calculated ligandmap here, lacks atom list of ligands. Replace reference_map with direct object of fc_ligands_bsc
+void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data, clipper::Atom_list& allAtoms, clipper::Atom_list& ligandAtoms, privateer::thread_pool& pool, bool useParallelism, bool &debug_output) //calculated ligandmap here, lacks atom list of ligands. Replace reference_map with direct object of fc_ligands_bsc
 {
   clipper::SFcalc_iso_fft<float> sfcligands;
   clipper::SFcalc_iso_fft<float> sfcall;
@@ -59,22 +59,24 @@ void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::
     {
       if(useParallelism)
       {
-        pool.push([&sfcligands, &fc_ligands_only_cryoem_data, &ligandAtoms](int id)
+        pool.push([&sfcligands, &fc_ligands_only_cryoem_data, &ligandAtoms, &debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             sfcligands( fc_ligands_only_cryoem_data,  ligandAtoms );
         });
 
-        pool.push([&sfcall, &fc_all_cryoem_data, &allAtoms](int id)
+        pool.push([&sfcall, &fc_all_cryoem_data, &allAtoms, &debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             sfcall( fc_all_cryoem_data, allAtoms );
         });
@@ -92,17 +94,19 @@ void privateer::cryo_em::calculate_sfcs_of_fc_maps ( clipper::HKL_data<clipper::
 
     if (useParallelism)
       {
-          #if DUMP
+          if(debug_output)
+          {
               std::cout << std::endl;
               DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-          #endif
+          }
           
           while(pool.n_remaining_jobs() > 0)
               pool.sync();
           
-          #if DUMP
+          if(debug_output)
+          {
               DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-          #endif
+          }
       }
 }
 

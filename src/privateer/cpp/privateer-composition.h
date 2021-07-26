@@ -35,7 +35,11 @@
 #include <nlohmann/json.hpp>
 
 std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list);
-void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp);
+#ifdef _MSC_VER
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, std::vector<bool>& checkedEditableNode, int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp);
+#else
+    void CombinationGenerator(std::vector<int> editable_node_list, int reqLength, int shifter, int currLength, bool checkedEditableNode[], int totalEditableNodes, std::vector<std::vector<int>>& result, std::vector<int>& temp);
+#endif
 std::vector<int> get_editable_node_list_for_anomer_permutations(std::vector < clipper::MSugar >& sugar_list);
 std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < clipper::MSugar >& sugar_list, bool glucose_only);
 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, nlohmann::json &jsonObject, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism);

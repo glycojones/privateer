@@ -9,6 +9,8 @@
 
 #include "privateer-dbquery.h"
 
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
 void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
 {
     int valueLocation;
@@ -53,17 +55,19 @@ void output_dbquery(nlohmann::json &jsonObject, clipper::String glycanWURCS, cli
                     if (useParallelism)
                     {
                         
-                        #if DUMP
+                        if(debug_output)
+                        {
                             std::cout << std::endl;
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                        #endif
+                        }
                         
                         while(pool.n_remaining_jobs() > 0)
                             pool.sync();
                         
-                        #if DUMP
+                        if(debug_output)
+                        {
                             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                        #endif
+                        }
                     }
                 
                     if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(jsonObject, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    

@@ -9,25 +9,26 @@
 
 // using namespace pybind11::literals;
 
-// #define DUMP 1
-// #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+#define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool debug_output) 
 {
-    this->read_from_file ( path_to_model_file, expression_system );
-    privateer::pyanalysis::XRayData experimental_data(path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads);
+    this->debug_output = debug_output;
+    this->read_from_file ( path_to_model_file, expression_system, debug_output );
+    privateer::pyanalysis::XRayData experimental_data(path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, debug_output);
     this->update_with_experimental_data(experimental_data);
 };
 
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool debug_output) 
 {
-    this->read_from_file ( path_to_model_file, expression_system );
-    privateer::pyanalysis::CryoEMData experimental_data(path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads);
+    this->debug_output = debug_output;
+    this->read_from_file ( path_to_model_file, expression_system, debug_output );
+    privateer::pyanalysis::CryoEMData experimental_data(path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, debug_output);
     this->update_with_experimental_data(experimental_data);
 };
 
-void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system ) {
+void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output ) {
 
     if(path_to_model_file == "undefined")
     {
@@ -45,7 +46,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    this->mgl = clipper::MGlycology(mmol, manb, expression_system);
+    this->mgl = clipper::MGlycology(mmol, manb, debug_output, expression_system);
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     
@@ -62,7 +63,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -97,26 +98,27 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
                 std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                // #if DUMP
+                // if(debug_output)
+                // {
                 //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                // #endif
+                // }
 
                 int n_conf = conformers.size();
 
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -229,10 +231,11 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
         processedMonomers++;
 
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-        #endif
+        }
     }
 
     this->updatedWithExperimentalData = false;
@@ -357,8 +360,9 @@ void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_d
 
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system ) {
-
+void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output ) 
+{
+    this->debug_output = debug_output;
     if(path_to_model_file == "undefined")
     {
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
@@ -373,7 +377,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( st
 
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
 
-    this->mgl = clipper::MGlycology(mmol, expression_system);
+    this->mgl = clipper::MGlycology(mmol, debug_output, expression_system);
 
     initialize_summary_of_detected_glycans(mgl);
 }
@@ -558,7 +562,7 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     {
         for(int k = 0; k < finalLigandList.size(); k++)
         {
-            if(finalLigandList[k].first == inputGlycan.get_chain().substr(0,1) && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name())
+            if(list_of_sugars_original[i].size() == finalLigandList[k].second.size() && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].type().trim() == finalLigandList[k].second.type().trim() && list_of_sugars_original[i].seqnum() == finalLigandList[k].second.seqnum())
                 list_of_sugars_modified.push_back(finalLigandList[k].second);
         }
     }
@@ -958,6 +962,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 
     this->sugar_name_full = inputSugar.full_name();
     this->sugar_name_short = inputSugar.short_name();
+    this->sugar_seqnum = inputSugar.get_seqnum();
     this->sugar_pdb_id = inputSugar.id();
     this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
@@ -1078,6 +1083,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
 
     this->sugar_name_full = inputSugar.second.full_name();
     this->sugar_name_short = inputSugar.second.short_name();
+    this->sugar_seqnum = inputSugar.second.get_seqnum();
     this->sugar_pdb_id = inputSugar.second.id();
     this->sugar_pdb_chain = inputSugar.first;
     this->sugar_type = inputSugar.second.full_type();
@@ -1202,6 +1208,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
     this->sugar_name_full = inputSugar.full_name();
     this->sugar_name_short = inputSugar.short_name();
+    this->sugar_seqnum = inputSugar.get_seqnum();
     this->sugar_pdb_id = inputSugar.id();
     this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
@@ -1281,7 +1288,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
 void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check, "SugarLinkages"_a=sugar_linkages);
+    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_seqnum"_a=sugar_seqnum, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check, "SugarLinkages"_a=sugar_linkages);
 
     this->sugarSummary = dict;
 }
@@ -1290,8 +1297,9 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads) {
-
+void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output) 
+{
+    this->debug_output = debug_output;
     privateer::thread_pool pool(0);
 
     bool useSigmaa = false;
@@ -1377,7 +1385,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, debug_output, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
     {
@@ -1385,7 +1393,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -1420,26 +1428,27 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
                 std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                // #if DUMP
+                // if(debug_output)
+                // {
                 //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                // #endif
+                // }
 
                 int n_conf = conformers.size();
 
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -1476,30 +1485,33 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     {   // calculate structure factors with bulk solvent correction
         if(useParallelism)
         {
-            pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms](int id)
+            pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating sfcbligands from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
                 
                 sfcbligands( fc_ligands_bsc, fobs, ligandAtoms );
             });
     
-            pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms](int id)
+            pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sfcb from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
                 
                 sfcb( fc_omit_bsc, fobs, mainAtoms );
             });
 
-            pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms](int id)
+            pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating sfcball from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
                 
                 sfcball( fc_all_bsc, fobs, allAtoms );
             });
@@ -1520,17 +1532,19 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if (useParallelism)
         {
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            #endif
+            }
             
             while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
                 pool.sync();
             
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            #endif
+            }
         }
 
 
@@ -1554,21 +1568,23 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if(useParallelism)
         {
-            pool.push([&sfscale, &fobs_scaled, &fc_all_bsc](int id)
+            pool.push([&sfscale, &fobs_scaled, &fc_all_bsc, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating sfscale from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
                 
                 sfscale( fobs_scaled, fc_all_bsc );
             });
 
-            pool.push([&fobs_scaled, &flag, &ih](int id)
+            pool.push([&fobs_scaled, &flag, &ih, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     DBG << "Calculating flag[ih].flag() from Thread ID: " << id << '.' << std::endl;
-                #endif
+                }
 
                 for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
                 {
@@ -1603,40 +1619,44 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if (useParallelism)
     {
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
         
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
 
     if(useParallelism)
     {
-        pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param](int id)
+        pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Calculating sfw_omit from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
             sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
         });
 
-        pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param](int id)
+        pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating sfw_all from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
             sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
@@ -1661,10 +1681,11 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if (useParallelism)
     {
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
         
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
@@ -1674,9 +1695,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         }
             
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
     std::vector<double> params( n_param, 2.0 );
@@ -1691,48 +1713,53 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if(useParallelism)
     {
-        pool.push([&sigmaa_all_map, &fb_all](int id)
+        pool.push([&sigmaa_all_map, &fb_all, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             sigmaa_all_map.fft_from(fb_all);
         });
 
-        pool.push([&sigmaa_dif_map, &fd_all](int id)
+        pool.push([&sigmaa_dif_map, &fd_all, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             sigmaa_dif_map.fft_from(fd_all);
         });     
 
-        pool.push([&sigmaa_omit_fd, &fd_omit](int id)
+        pool.push([&sigmaa_omit_fd, &fd_omit, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             sigmaa_omit_fd.fft_from(fd_omit);
         });  
 
-        pool.push([&ligandmap, &fc_ligands_bsc](int id)
+        pool.push([&ligandmap, &fc_ligands_bsc, debug_output](int id)
         { 
             ligandmap.fft_from(fc_ligands_bsc);
             
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
         });
 
-        pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum](int id)
+        pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
 
             for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
             {
@@ -1774,19 +1801,21 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if (useParallelism)
     {
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
         
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
     if (((FobsFcalcAllSum / FobsSum)*10) > hklinfo.resolution().limit() + 0.6)
@@ -1809,12 +1838,13 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
                 pool.sync();
 
-            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa](int id)
+            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                #endif
+                }
                 
                 float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                 x=y=z=0.0;
@@ -1919,25 +1949,28 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             });
             processedMonomers++;
 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            #endif
+            }
 
         }
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
     else
     {
@@ -2048,10 +2081,11 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
             processedMonomers++;
 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            #endif
+            }
 
         }
     }
@@ -2102,8 +2136,9 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
 
 ///////////////////////////////////////////////// Class CryoEMData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads) {
-
+void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output) 
+{
+    this->debug_output = debug_output;
     privateer::thread_pool pool(0);
 
     bool useSigmaa = false;
@@ -2186,7 +2221,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, "undefined");
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, debug_output, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
     {
@@ -2194,7 +2229,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m] );
+                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -2229,26 +2264,26 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
                 std::vector <char> conformers = privateer::util::number_of_conformers(mmol[p][m]);
 
-                // #if DUMP
+                // if(debug_output)
                 //     std::cout << "number of alternate conformations: " << conformers.size() << std::endl;
-                // #endif
+                // }
 
                 int n_conf = conformers.size();
 
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb);
+                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -2277,7 +2312,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         }
     }
 
-    privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism);
+    privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism, debug_output);
 
     std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
     fflush(0);
@@ -2305,30 +2340,33 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     if(useParallelism)
     {
-        pool.push([&cryo_em_dif_map_all, &difference_coefficients](int id)
+        pool.push([&cryo_em_dif_map_all, &difference_coefficients, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             cryo_em_dif_map_all.fft_from(difference_coefficients);
         });
 
-        pool.push([&modelmap, &fc_all_cryoem_data](int id)
+        pool.push([&modelmap, &fc_all_cryoem_data, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             modelmap.fft_from(fc_all_cryoem_data);
         });
 
-        pool.push([&ligandmap, &fc_ligands_only_cryoem_data](int id)
+        pool.push([&ligandmap, &fc_ligands_only_cryoem_data, debug_output](int id)
         { 
-            #if DUMP
+            if(debug_output)
+            {
                 DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-            #endif
+            }
             
             ligandmap.fft_from(fc_ligands_only_cryoem_data);
         });
@@ -2345,17 +2383,19 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     if (useParallelism)
     {
-        #if DUMP
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
     }
 
     if(useParallelism)
@@ -2367,12 +2407,13 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
                 pool.sync();
        
-            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index](int id)
+            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, debug_output](int id)
             { 
-                #if DUMP
+                if(debug_output)
+                {
                     std::cout << std::endl;
                     DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                #endif
+                }
                 
                 float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
                 x=y=z=0.0;
@@ -2482,24 +2523,28 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             });
             processedMonomers++;
 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            #endif
+            }
 
         }
 
-        #if DUMP
+
+        if(debug_output)
+        {
             std::cout << std::endl;
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        #endif
+        }
         
         while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
             pool.sync();
         
-        #if DUMP
+        if(debug_output)
+        {
             DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        #endif
+        }
         
     }
     else
@@ -2614,10 +2659,11 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
             processedMonomers++;
 
-            #if DUMP
+            if(debug_output)
+            {
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            #endif
+            }
         }
     }
 
@@ -2695,9 +2741,9 @@ void init_pyanalysis(py::module& m)
     // Basically change the paradigm from compute everything first and then rely on getters to call getter that then initiates a computation
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined")
-        .def(py::init<std::string&, std::string&, std::string&, int, float, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined")
-        .def(py::init<std::string&, std::string&, float, int, float, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined")
+        .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, std::string&, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, float, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition::get_path_of_model_file_used)
         .def("get_expression_system_used",  &pa::GlycosylationComposition::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition::get_number_of_glycan_chains_detected)
@@ -2710,7 +2756,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationComposition_memsafe>(m, "GlycosylationComposition_memsafe")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined")
+        .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition_memsafe::get_path_of_model_file_used)
         .def("get_expression_system_used",  &pa::GlycosylationComposition_memsafe::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition_memsafe::get_number_of_glycan_chains_detected)
@@ -2750,6 +2796,7 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_summary", &pa::CarbohydrateStructure::get_sugar_summary)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
         .def("get_glycan_id", &pa::CarbohydrateStructure::get_glycan_id)
+        .def("get_seqnum", &pa::CarbohydrateStructure::get_seqnum)
         .def("get_sugar_pdb_id", &pa::CarbohydrateStructure::get_sugar_pdb_id)
         .def("get_sugar_pdb_chain", &pa::CarbohydrateStructure::get_sugar_pdb_chain)
         .def("get_conformation_name", &pa::CarbohydrateStructure::get_conformation_name)
@@ -2790,14 +2837,14 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, std::string&, float, int>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1)
+        .def(py::init<std::string&, std::string&, std::string&, float, int, bool>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("debug_output")=false)
         .def("get_sugar_summary_with_experimental_data", &pa::XRayData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::XRayData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::XRayData::print_cpp_console_output_summary);
 
     py::class_<pa::CryoEMData>(m, "CryoEMData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, float, float, int>(), py::arg("path_to_mrc_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("resolution")="-1", py::arg("ipradius")=2.5, py::arg("nThreads")=-1)
+        .def(py::init<std::string&, std::string&, float, float, int, bool>(), py::arg("path_to_mrc_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("resolution")="-1", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("debug_output")=false)
         .def("get_sugar_summary_with_experimental_data", &pa::CryoEMData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);

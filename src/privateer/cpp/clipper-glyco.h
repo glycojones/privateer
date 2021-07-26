@@ -138,9 +138,9 @@ namespace clipper
         public:
 
             MSugar ();
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, char alt_conf = ' ' ); //!< default constructor
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, char alt_conf = ' ' );
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, char alt_conf = ' '  );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
@@ -213,6 +213,8 @@ namespace clipper
             clipper::String short_name() const { return sugar_name_short; }
 
             clipper::String pdb_id() const { return sugar_pdb_id; }
+
+            int get_seqnum() const { return sugar_seqnum; }
 
             clipper::String full_type() const { return sugar_type; }
 
@@ -331,6 +333,7 @@ namespace clipper
             String                          sugar_name_full;
             String                          sugar_name_short;
             String                          sugar_pdb_id;
+            int                             sugar_seqnum;
             bool                            sugar_diag_ring;
             bool                            sugar_diag_bonds_rmsd;
             bool                            sugar_diag_angles_rmsd;
@@ -350,6 +353,7 @@ namespace clipper
             std::vector < MSugar >          sugar_linked_to;                    // size: number of carbon atoms - 1
             clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
             int                             glycan_index;
+            bool                            debug_output;
 
             // private methods
 
@@ -382,8 +386,8 @@ namespace clipper
         public:
 
             MDisaccharide () {} //!< null constructor
-            MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; }
-            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm );
+            MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two, bool& debug_output) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; this->debug_output = debug_output; }
+            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm, bool& debug_output );
             clipper::MSugar& get_first_sugar () { return sugar_one; }
             clipper::MSugar& get_second_sugar () { return sugar_two; }
 
@@ -397,6 +401,7 @@ namespace clipper
             } //!< returns -1 if not found
 
         private:
+            bool debug_output;
             clipper::MSugar sugar_one;
             clipper::MSugar sugar_two;
 
@@ -410,8 +415,8 @@ namespace clipper
         public:
 
             MGlycan () { } //!< null constructor
-            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, std::string expression_system = "undefined" );
-            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, bool& debug_output, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, bool& debug_output, std::string expression_system = "undefined" );
 
             class Node;
 
@@ -502,7 +507,6 @@ namespace clipper
                     }
 
                 private:
-
                     float torsion_phi;
                     float torsion_psi;
                     float torsion_omega;    // for 1-6 linkages
@@ -678,7 +682,7 @@ namespace clipper
             void set_annotations ( std::string expression_system );  // function that annotates glycobiologic validation
 
         private:
-
+            bool debug_output;
             clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan or s-glycan
             std::pair < clipper::MMonomer, clipper::MSugar > root;     // this is the root, should be null if this is a ligand saccharide
             std::vector < Node > node_list;                 // interlinked nodes
@@ -695,10 +699,10 @@ namespace clipper
         public:
 
             MGlycology () { } //!< null constructor
-            MGlycology ( const clipper::MiniMol&, std::string expression_system = "undefined" );
-            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system = "undefined" );
+            MGlycology ( const clipper::MiniMol&, bool debug_output, std::string expression_system = "undefined" );
+            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system = "undefined" );
 
-            void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system );
+            void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system );
             clipper::MGlycan get_glycan_by_id ( int id ) { return list_of_glycans[id]; };
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {
@@ -713,6 +717,7 @@ namespace clipper
         private:
 
             // private properties
+            bool debug_output;
             std::vector < clipper::MSugar >  list_of_sugars;
             std::vector < clipper::MGlycan > list_of_glycans;
             const clipper::MAtomNonBond* manb;
