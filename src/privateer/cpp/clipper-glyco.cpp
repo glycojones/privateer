@@ -909,39 +909,49 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     cpParams.push_back(q3);
     cpParams.push_back(this->sugar_conformation);
 
-    if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
-		{
-			if (lurd_reverse)
-			{
-				cpParams.push_back(anomer_beta);
+    if ( stereo.second.first.name().trim() == "C8") { // Simplified bit for sialic acids
+      if (z_anomeric_substituent > z_anomeric_carbon) {
+        cpParams.push_back(anomer_beta);
 				this->sugar_anomer="beta";
-			}
-			else
-			{
-				cpParams.push_back(anomer_alpha);
+      }
+      else {
+        cpParams.push_back(anomer_alpha);
 				this->sugar_anomer="alpha";
-			}
-		}
-		else
-		{
-			if (lurd_reverse)
-			{
-				cpParams.push_back(anomer_alpha);
-				this->sugar_anomer="alpha";
-			}
-			else
-			{
-				cpParams.push_back(anomer_beta);
-				this->sugar_anomer="beta";
-			}
-		}
-
-		if(debug_output)
+      }
+    }
+    else if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
+    {
+        if (lurd_reverse)
         {
-			DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
-			DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " << configurational_substituent << "/" << z_configurational_substituent << std::endl;
-			DBG << "z6= " << z6 << " z6_subs= " << z6_substituent << std::endl;
-		}
+            cpParams.push_back(anomer_beta);
+            this->sugar_anomer="beta";
+        }
+        else
+        {
+            cpParams.push_back(anomer_alpha);
+            this->sugar_anomer="alpha";
+        }
+    }
+    else
+    {
+        if (lurd_reverse)
+        {
+            cpParams.push_back(anomer_alpha);
+            this->sugar_anomer="alpha";
+        }
+        else
+        {
+            cpParams.push_back(anomer_beta);
+            this->sugar_anomer="beta";
+        }
+    }
+
+    if(debug_output)
+    {
+        DBG << "an_c= " << anomeric_carbon << "/" << z_anomeric_carbon << " - an_subs= " << anomeric_substituent << "/" << z_anomeric_substituent << std::endl;
+        DBG << "conf_c= " << configurational_carbon << "/" << z_configurational_carbon << " - conf_subs= " << configurational_substituent << "/" << z_configurational_substituent << std::endl;
+        DBG << "z6= " << z6 << " z6_subs= " << z6_substituent << std::endl;
+    }
 
     cpParams.push_back( z6 - z6_substituent );
 
@@ -2474,7 +2484,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
     return buffer;
 }
 
-// Fix me: need to add support for 1-8 links (Sialic Acids)
+// Fix me: need to add support for 2-8 links (Sialic Acids)
 bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar )
 {
     int index = 0;
@@ -2769,6 +2779,14 @@ void MGlycan::set_annotations ( std::string expression_system )
         {
             if ( node_list[0].get_sugar().anomer() != "beta" )
                 add_link_annotation ( " Warning: o-GlcNAc linkage should be beta! " );
+        }
+        else if ( get_type() == "c-glycan" )
+        {
+          if ( clipper::data::carbname_of(node_list[0].get_sugar().type().trim()) == "Man" )
+          {
+              if ( node_list[0].get_sugar().anomer() != "alpha" )
+                  add_link_annotation ( " Warning: Man-Trp linkage should be alpha! " );
+          }
         }
         return; // no more o-glycosylation validation for now; will come back to this later
     }
@@ -3502,6 +3520,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                             debug_output,
                                             this->expression_system );
                     mg.set_kind_of_glycan ( "c-glycan" );
+
+                    // Check 1C4 conformation on ring - see John et al, Nature Chemical Biology 2021 (17):428–437
+                    if ( sugar.conformation_name() == "1c4" ){
+                      sugar.override_conformation_diag ( true );
+                    }
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
