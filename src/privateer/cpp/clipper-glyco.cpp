@@ -3493,7 +3493,10 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
     {
         std::vector < clipper::MSugar >& sugar_list = list_of_glycans[i].get_sugars();
         clipper::MSugar first_sugar = clipper::MSugar ( sugar_list.front() );
-        extend_tree ( list_of_glycans[i] , first_sugar );
+        
+        if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
+            extend_tree ( list_of_glycans[i] , first_sugar );
+
         list_of_glycans[i].set_annotations( this->expression_system );
     }
 }
@@ -3809,7 +3812,10 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
     {
         std::vector < clipper::MSugar >& sugar_list = list_of_glycans[i].get_sugars();
         clipper::MSugar first_sugar = clipper::MSugar ( sugar_list.front() );
-        extend_tree ( list_of_glycans[i] , first_sugar );
+        
+        if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
+            extend_tree ( list_of_glycans[i] , first_sugar );
+        
         list_of_glycans[i].set_annotations( this->expression_system );
     }
 }
@@ -3854,8 +3860,12 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
                 #if DUMP
                     DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
                 #endif
-                mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
-                extend_tree ( mg, tmpsug );
+                
+                if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
+                {
+                    mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
+                    extend_tree ( mg, tmpsug );
+                }
             }
         }
     }
