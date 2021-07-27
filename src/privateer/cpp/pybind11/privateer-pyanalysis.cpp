@@ -627,21 +627,43 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
         clipper::MGlycan currentGlycan = glycan;
 
         int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", currentWURCS);
-
-        // auto currentSugar = pybind11::dict ("three_letter_code"_a=ccdCode, "Chain"_a=chainID, "sugar_index_internal"_a=sugarID, "PDB_ID"_a=pdbID, "RSCC"_a=RSCC, "mFo"_a=accum, "privateer_diagnostic"_a=sugardiagnostic, "occupancy_check_required"_a=occupancy_check);
-        // Design pattern: Have a bunc of ifs that get activated under specific condition and each condition creates a custom dict. 
-        if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+        if(!returnClosestMatches && currentGlycan.number_of_nodes() > 1)
         {
-            std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
-            if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
             {
-                glytoucanID.erase(0, 1);
-                glytoucanID.pop_back();
-            }
+                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                {
+                    glytoucanID.erase(0, 1);
+                    glytoucanID.pop_back();
+                }
 
-            auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
-            this->glycoproteomicsDB = databaseOutput;
-            return databaseOutput;
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
+            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            {
+                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                {
+                    glytoucanID.erase(0, 1);
+                    glytoucanID.pop_back();
+                }
+
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a match for GlyTouCan ID, but GlyTouCan ID not found in GlyConnect. No permutations were generated due to False flag on returnClosestMatches", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found" );
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
+            else
+            {
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="GlyTouCan ID not found, no permutations were generated to find the closest match", "glytoucan_id"_a="Not Found", "glyconnect_id"_a="Not Found");
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
         }
         else if(returnClosestMatches && currentGlycan.number_of_nodes() > 1)
         {
@@ -782,10 +804,40 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
         }
         else 
         {
-            auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="GlyTouCan ID not found, no permutations were generated to find the closest match", "glytoucan_id"_a="Not Found", "glyconnect_id"_a="Not Found");
-            this->glycoproteomicsDB = databaseOutput;
-            update_summary_of_glycan_after_dbquery();
-            return databaseOutput;
+            std::string glytoucanID = "Not Found";
+            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+            {
+                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                {
+                    glytoucanID.erase(0, 1);
+                    glytoucanID.pop_back();
+                }
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
+            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            {
+                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
+                {
+                    glytoucanID.erase(0, 1);
+                    glytoucanID.pop_back();
+                }
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a match for GlyTouCan ID, but GlyTouCan ID not found in GlyConnect. No permutations were generated as the input Glycan is too short for permutations algorithm", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found" );
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
+            else
+            {
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="GlyTouCan ID not found, no permutations were generated to find the closest match as the input glycan is too short for permutations algorithm.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found");
+                this->glycoproteomicsDB = databaseOutput;
+                update_summary_of_glycan_after_dbquery();
+                return databaseOutput;
+            }
         }
     }
 }
