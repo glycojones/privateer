@@ -4115,8 +4115,9 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         // Alternatively, this could also be - if(tmpAtom.element().trim() == "C")
                         // However, according to chemical rules a Carbon has to be next to the nucleophillic Oxygen, i.e. O5 and
                         // it appears that this atom naming standard is now properly enforced by the PDB., therefore for now I am sticking
-                        // with C1 for typical pyranose sugars and C2 for sialic acids etc. 
-                        if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2")
+                        // with C1 for typical pyranose sugars and C2 for sialic acids etc.
+                        // if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2") // Have to replace this with alternative due to altconfs.
+                        if(tmpAtom.element().trim() == "C")
                         {
                             std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
                             link_tmp.first = candidates[i];
