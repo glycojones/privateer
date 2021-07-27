@@ -357,6 +357,8 @@ for count, line in enumerate(jsonObject):
             line['glyconnect'] = glyconnectHTTP500Exceptions[glytoucanID]
         elif alternativeAPIGlyConnectID != "NotFound":
             line['glyconnect'] = alternativeAPIGlyConnectID
+        elif alternativeAPIGlyConnectID == "NotFound":
+            line['glyconnect'] = "NotFound"
         else:
             line['glyconnect'] = "Unable to match GlyTouCan ID in Glyconnect database as HTTP 500 error was returned, nor it is described in glyconnectHTTP500Exceptions dict. Please report this to hb1115@york.ac.uk"
             numFailedToMatch += 1
