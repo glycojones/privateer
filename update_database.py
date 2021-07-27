@@ -15,6 +15,19 @@ def return_response_from_glyconnect_api(glytoucanID):
     data = f'{{ "glytoucan_id": "{glytoucanID}"}}'
     response = requests.post('https://glyconnect.expasy.org/api/structures/search/glytoucan', headers=headers, data=data)
     return response
+
+def return_glyconnect_id_from_gtc_external_id(glytoucanID):
+    jsonObject = return_json(f'https://sparqlist.glycosmos.org/sparqlist/api/gtc_external_id?accNum={glytoucanID}')
+    if "GlyConnect" in jsonObject:
+        listResponse = jsonObject["GlyConnect"]["list"]
+        for item in listResponse:
+            if "id" in item:
+                glyconnectID =item["id"]
+                return glyconnectID
+            else:
+                return "Error: return_glyconnect_id_from_gtc_external_id() found GlyConnect, but did not find id."
+    else:
+        return "NotFound"
    
 
 def parse_json_file(path):
@@ -314,7 +327,7 @@ glyconnectHTTP500Exceptions = { "G82348BZ": {"id": 3247,
 
 date = datetime.now()
 date = date.strftime('%Y-%m-%d')
-fileName = "database.json"
+fileName = "privateer_database.json"
 
 rootDir = os.getcwd()
 outputFolder = os.path.join(rootDir, "src/privateer")
@@ -339,8 +352,11 @@ for count, line in enumerate(jsonObject):
     elif responseGlyConnect.status_code == 404: 
         line['glyconnect'] = "NotFound"
     elif responseGlyConnect.status_code == 500:
+        alternativeAPIGlyConnectID = return_glyconnect_id_from_gtc_external_id(glytoucanID)
         if glytoucanID in glyconnectHTTP500Exceptions:
             line['glyconnect'] = glyconnectHTTP500Exceptions[glytoucanID]
+        elif alternativeAPIGlyConnectID != "NotFound":
+            line['glyconnect'] = alternativeAPIGlyConnectID
         else:
             line['glyconnect'] = "Unable to match GlyTouCan ID in Glyconnect database as HTTP 500 error was returned, nor it is described in glyconnectHTTP500Exceptions dict. Please report this to hb1115@york.ac.uk"
             numFailedToMatch += 1
@@ -348,8 +364,13 @@ for count, line in enumerate(jsonObject):
         try:
             responseGlyConnect.raise_for_status()
         except requests.exceptions.HTTPError as e:
-            line['glyconnect'] = "Error: " + str(e)
-            numFailedToMatch += 1
+            if glytoucanID in glyconnectHTTP500Exceptions:
+                line['glyconnect'] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
+            elif alternativeAPIGlyConnectID != "NotFound":
+                line['glyconnect'] = alternativeAPIGlyConnectID
+            else:
+                line['glyconnect'] = "Error: " + str(e)
+                numFailedToMatch += 1
     jsonObjectNew.append(line)
 
 if os.path.exists(fullPath):
