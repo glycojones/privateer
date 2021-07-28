@@ -3224,8 +3224,20 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         {
             for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
             {
-                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :A" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :C" || mmol[pol][mon][atom].id().trim() == "O1 :D") 
-                    potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                clipper::MAtom tmpAtom = mmol[pol][mon][atom];
+                if(get_altconf(tmpAtom) != ' ')
+                {
+                    const char altconf = get_altconf(tmpAtom);
+                    
+                    std::string altConfSymbol(1, altconf);
+                    std::string O1_with_altconf = "O1 :" + altConfSymbol;
+
+                    if (tmpAtom.id().trim() == O1_with_altconf)
+                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                }
+                else
+                    if (tmpAtom.id().trim() == "O1") 
+                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
             }
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
@@ -3643,8 +3655,20 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
         {
             for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
             {
-                if (mmol[pol][mon][atom].id().trim() == "O1" || mmol[pol][mon][atom].id().trim() == "O1 :B" || mmol[pol][mon][atom].id().trim() == "O1 :A" || mmol[pol][mon][atom].id().trim() == "O1 :C" || mmol[pol][mon][atom].id().trim() == "O1 :D") 
-                    potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                clipper::MAtom tmpAtom = mmol[pol][mon][atom];
+                if(get_altconf(tmpAtom) != ' ')
+                {
+                    const char altconf = get_altconf(tmpAtom);
+                    
+                    std::string altConfSymbol(1, altconf);
+                    std::string O1_with_altconf = "O1 :" + altConfSymbol;
+
+                    if (tmpAtom.id().trim() == O1_with_altconf)
+                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                }
+                else
+                    if (tmpAtom.id().trim() == "O1") 
+                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
             }
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
@@ -4101,31 +4125,58 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
         for ( int i = 0 ; i < candidates.size() ; i++ )
         {
-            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.0 );
+            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
 
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
                 if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                 {                            //         of crappy structures in MG
                     if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]),
                                              get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
                     {
                         clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
-                        // Alternatively, this could also be - if(tmpAtom.element().trim() == "C")
-                        // However, according to chemical rules a Carbon has to be next to the nucleophillic Oxygen, i.e. O5 and
-                        // it appears that this atom naming standard is now properly enforced by the PDB., therefore for now I am sticking
-                        // with C1 for typical pyranose sugars and C2 for sialic acids etc.
-                        // if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2") // Have to replace this with alternative due to altconfs.
-                        if(tmpAtom.element().trim() == "C")
+                        
+                        if(debug_output)
+                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << std::endl;
+
+                        if(get_altconf(tmpAtom) != ' ')
                         {
-                            std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                            link_tmp.first = candidates[i];
-                            link_tmp.second = contacts[j];
-                            tmpresults.push_back ( link_tmp );
+                            const char altconf = get_altconf(tmpAtom);
+                            
+
+                            std::string altConfSymbol(1, altconf);
+                            std::string C1_with_altconf = "C1 :" + altConfSymbol;
+                            std::string C2_with_altconf = "C2 :" + altConfSymbol;
+
                             if(debug_output)
+                                DBG << "tmpAtom.id().trim(): " << tmpAtom.id().trim() << "\tC1_with_altconf:" << C1_with_altconf << std::endl;
+
+                            if(tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == C2_with_altconf) 
                             {
-                                DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\t link_tmp.second(MAtomNonBond) = " << tmpAtom.id() << std::endl;
+                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                link_tmp.first = candidates[i];
+                                link_tmp.second = contacts[j];
+                                tmpresults.push_back ( link_tmp );
+                                if(debug_output)
+                                {
+                                    DBG << "Link made between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                }
+                            }
+                        }
+                        else 
+                        {
+                            if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2") 
+                            {
+                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                link_tmp.first = candidates[i];
+                                link_tmp.second = contacts[j];
+                                tmpresults.push_back ( link_tmp );
+                                if(debug_output)
+                                {
+                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                }
                             }
                         }
                     }
