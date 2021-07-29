@@ -84,6 +84,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
+        DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     }
 
@@ -419,6 +420,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
+        DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     }
 
@@ -1649,11 +1651,20 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 			{
 				configurational_carbon = ring_atoms[i];
 
+                if(debug_output)
+                {
+                    DBG << "i: " << i << "\tring_atoms.size() " << ring_atoms.size() << std::endl;
+                }
+
 				// get the configurational carbon's target substituent
 				const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(configurational_carbon.coord_orth(), 1.2); // was 1.4
 
 				for ( int i2 = 0 ; i2 < neighbourhood.size() ; i2++ )
 				{
+                    if(debug_output && i2 == 1 || debug_output && i2 == neighbourhood.size()-2)
+                    {
+                        DBG << "i2: " << i2 << "\tneighbourhood.size() " << neighbourhood.size() << std::endl;
+                    }
 					if ( !is_part_of_ring(mmol.atom(neighbourhood[i2]),ring_atoms)
 						&& (mmol.atom(neighbourhood[i2]).element().trim() != "H" )
 						&& altconf_compatible(get_altconf(mmol.atom(neighbourhood[i2])), get_altconf(anomeric_carbon)))
@@ -4060,16 +4071,16 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
     {
         if (clipper::data::found_in_database ( tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type() ))
         {
-            clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
 
             const std::vector<clipper::MSugar> sugar_list = mg.get_sugars();
-
-            if (std::find(sugar_list.begin(), sugar_list.end(), tmpsug) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
+            if (std::find_if(sugar_list.begin(), sugar_list.end(),
+                [&](const clipper::MSugar& element) { return element.id() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id(); }) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
             {
                 if(debug_output)
                 {
                     DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
                 }
+                clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
