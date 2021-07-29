@@ -503,7 +503,7 @@ for count, line in enumerate(jsonObject):
         if glytoucanID in glyconnectHTTP500Exceptions:
             line["glyconnect"] = glyconnectHTTP500Exceptions[glytoucanID]
         elif alternativeAPIGlyConnectID != "NotFound":
-            line["glyconnect"] = {"id": int(alternativeAPIGlyConnectID)}
+            line["glyconnect"] = {"id": alternativeAPIGlyConnectID}
         elif alternativeAPIGlyConnectID == "NotFound":
             line["glyconnect"] = "NotFound"
         else:
@@ -518,7 +518,7 @@ for count, line in enumerate(jsonObject):
             if glytoucanID in glyconnectHTTP500Exceptions:
                 line["glyconnect"] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
             elif alternativeAPIGlyConnectID != "NotFound":
-                line["glyconnect"] = {"id": int(alternativeAPIGlyConnectID)}
+                line["glyconnect"] = {"id": alternativeAPIGlyConnectID}
             else:
                 line["glyconnect"] = "Error: " + str(e)
                 numFailedToMatch += 1
