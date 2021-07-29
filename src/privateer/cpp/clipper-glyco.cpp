@@ -2579,7 +2579,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c6.coord_orth(),
                                                c5.coord_orth() );
 
-        omega = clipper::Coord_orth::torsion ( o5f.coord_orth(),
+        omega = clipper::Coord_orth::torsion (  o5f.coord_orth(),
                                                 c5.coord_orth(),
                                                 c6.coord_orth(),
                                                 o6.coord_orth() );
@@ -3309,11 +3309,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3365,11 +3365,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3447,11 +3447,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            og1.coord_orth(),
+                                                                og1.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            og1.coord_orth(),
+                                                                og1.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3561,11 +3561,11 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            cd1.coord_orth(),
+                                                                cd1.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            cd1.coord_orth(),
+                                                                cd1.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3760,11 +3760,11 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3803,11 +3803,11 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            nd2.coord_orth(),
+                                                                nd2.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3866,11 +3866,11 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            og1.coord_orth(),
+                                                                og1.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            og1.coord_orth(),
+                                                                og1.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
@@ -3949,11 +3949,11 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
 
                         phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
                                                                 c1.coord_orth(),
-                                                            cd1.coord_orth(),
+                                                                cd1.coord_orth(),
                                                                 cg.coord_orth() );
 
                         psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
-                                                            cd1.coord_orth(),
+                                                                cd1.coord_orth(),
                                                                 cg.coord_orth(),
                                                                 cb.coord_orth() );
 
