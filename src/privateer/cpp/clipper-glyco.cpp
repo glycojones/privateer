@@ -4066,6 +4066,11 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
     if(debug_output)
     {
         DBG << "contacts.size() = " << contacts.size() << std::endl;
+        for (int i = 0 ; i < contacts.size() ; i++ )
+        {
+            DBG << "Detected contacts[" << i << "].first.id().trim() from msug = " << contacts[i].first.id().trim() << "\t\t\tcontacts[" << i << "].second....id().trim() = " << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type().trim() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()].id() << std::endl;
+            DBG << "Distance of contacts[" << i << "].first and  = " << "contacts[" << i << "].second = " << clipper::Coord_orth::length(contacts[i].first.coord_orth(), tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()].coord_orth()) << std::endl;
+        }
     }
     for (int i = 0 ; i < contacts.size() ; i++ )
     {
@@ -4081,7 +4086,6 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
                     DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
                 }
                 clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
-                
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
                     mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
@@ -4211,7 +4215,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                                 tmpresults.push_back ( link_tmp );
                                 if(debug_output)
                                 {
-                                    DBG << "Link made between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                    DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
                                     DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
                                 }
                             }
@@ -4232,8 +4236,18 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         }
                     }
                 }
-            }
+            }        
         }
+
+        std::sort(tmpresults.begin(), tmpresults.end(), [&tmpmol](const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &left, const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &right) {
+            if(tmpmol[left.second.polymer()][left.second.monomer()].type().trim() == tmpmol[right.second.polymer()][right.second.monomer()].type().trim() && tmpmol[left.second.polymer()][left.second.monomer()].id() == tmpmol[right.second.polymer()][right.second.monomer()].id())
+            {
+                clipper::ftype distanceLeft = clipper::Coord_orth::length(left.first.coord_orth(), tmpmol[left.second.polymer()][left.second.monomer()][left.second.atom()].coord_orth());
+                clipper::ftype distanceRight = clipper::Coord_orth::length(right.first.coord_orth(), tmpmol[right.second.polymer()][right.second.monomer()][right.second.atom()].coord_orth());
+                return distanceLeft < distanceRight;
+            }
+            else return false;
+        });
         return tmpresults;
     }
 }
