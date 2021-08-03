@@ -417,8 +417,8 @@ namespace clipper
         public:
 
             MGlycan () { } //!< null constructor
-            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, bool& debug_output, std::string expression_system = "undefined" );
-            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, bool& debug_output, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
 
             class Node;
 
@@ -619,6 +619,7 @@ namespace clipper
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
 
             const clipper::String& get_chain () const { return chain; }
+            const clipper::String& get_root_sugar_chainID () const { return chain_root_sugar; }
             // const std::string get_wurcs() const { return wurcs; }
             int number_of_nodes ( ) const { return node_list.size(); }
 
@@ -689,6 +690,7 @@ namespace clipper
             std::pair < clipper::MMonomer, clipper::MSugar > root;     // this is the root, should be null if this is a ligand saccharide
             std::vector < Node > node_list;                 // interlinked nodes
             clipper::String chain;                          // Chain ID for this glycan
+            clipper::String chain_root_sugar;              // Chain ID for root sugar
             std::vector < clipper::MSugar > sugars;         // vector of sugars
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;

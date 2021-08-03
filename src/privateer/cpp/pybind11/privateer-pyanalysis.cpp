@@ -401,8 +401,9 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
         std::string proteinResidue = list_of_glycans[i].get_root().first.type().trim();
         std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
         std::string proteinChainID = list_of_glycans[i].get_chain().substr(0,1);
+        std::string sugarRootChainID = list_of_glycans[i].get_root_sugar_chainID();
 
-        auto rootSummary = pybind11::dict ("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
+        auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=sugarRootChainID);
         
         std::vector<float> torsions = list_of_glycans[i].get_glycosylation_torsions();
         auto protein_glycan_linkage_torsion = pybind11::dict ("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
@@ -456,8 +457,9 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
+    this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
     
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -504,8 +506,9 @@ void privateer::pyanalysis::GlycanStructure::pyinit_memsafe( const clipper::MGly
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
+    this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
     
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -552,8 +555,9 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
-
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID);
+    this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
+    
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -2864,6 +2868,7 @@ void init_pyanalysis(py::module& m)
         .def("get_unique_monosaccharide_codes", &pa::GlycanStructure::get_unique_monosaccharide_codes)
         .def("get_total_of_glycosidic_bonds", &pa::GlycanStructure::get_total_of_glycosidic_bonds)
         .def("get_glycosylation_type", &pa::GlycanStructure::get_glycosylation_type)
+        .def("get_root_sugar_chain_id", &pa::GlycanStructure::get_root_sugar_chain_id)
         .def("get_root_info", &pa::GlycanStructure::get_root_info)
         .def("get_protein_glycan_linkage_torsions", &pa::GlycanStructure::get_protein_glycan_linkage_torsions)
         .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)

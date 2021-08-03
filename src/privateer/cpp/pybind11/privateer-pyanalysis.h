@@ -146,6 +146,7 @@ namespace privateer {
         pybind11::list get_unique_monosaccharide_codes( ) { return uniqueMonosaccharides; };
         int get_total_of_glycosidic_bonds( ) { return numberOfGlycosidicBonds; };
         std::string get_glycosylation_type( ) { return glycosylationType; };
+        std::string get_root_sugar_chain_id( ) { return chain_root_sugar_ID; };
         pybind11::dict get_root_info( ) { return rootSummary; };
         pybind11::dict get_protein_glycan_linkage_torsions( ) { return protein_glycan_linkage_torsion; };
 
@@ -173,6 +174,7 @@ namespace privateer {
         pybind11::list uniqueMonosaccharides;
         int numberOfGlycosidicBonds;
         std::string glycosylationType;
+        std::string chain_root_sugar_ID;
         pybind11::dict rootSummary;
         pybind11::dict protein_glycan_linkage_torsion;
         pybind11::dict glycanSummary;
