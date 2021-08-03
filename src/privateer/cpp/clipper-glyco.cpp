@@ -3291,7 +3291,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             DBG << "sugar is " << sugar.type() << std::endl;
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_n_roots[i].second,
                                                 potential_n_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3362,7 +3362,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
 
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_n_roots[i].second,
                                                 potential_n_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3444,7 +3444,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
 
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_o_roots[i].second,
                                                 potential_o_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3513,7 +3513,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
                         
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_s_roots[i].second,
                                                 potential_s_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3558,7 +3558,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
 
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_c_roots[i].second,
                                                 potential_c_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3644,7 +3644,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                 }
 
-                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                 clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
                                         rootSugar,
                                         root_sugar_chain_id,
@@ -3752,7 +3752,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                             DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
                         }
 
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_n_roots[i].second,
                                                 potential_n_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3810,7 +3810,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_n_roots[i].second,
                                                 potential_n_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3875,7 +3875,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_o_roots[i].second,
                                                 potential_o_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3931,7 +3931,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_s_roots[i].second,
                                                 potential_s_roots[i].first,
                                                 list_of_sugars.back(),
@@ -3963,7 +3963,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
-                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                        clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                         clipper::MGlycan mg (   potential_c_roots[i].second,
                                                 potential_c_roots[i].first,
                                                 list_of_sugars.back(),
@@ -4030,7 +4030,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
                 list_of_sugars.push_back ( rootSugar );
-                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim();
+                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
                 clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
                                         rootSugar,
                                         root_sugar_chain_id,
