@@ -4173,8 +4173,12 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
     }
     else
     {
+        int id = mm.lookup ( "O1", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
 
-        int id = mm.lookup ( "O2", clipper::MM::ANY );
+        id = mm.lookup ( "O2", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
