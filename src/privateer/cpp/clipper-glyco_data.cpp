@@ -706,11 +706,13 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "NGK" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O_4*OSO/3=O/3=O" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
         
 
-        else wurcs_residue_code = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
+        else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
         return wurcs_residue_code;
     } 
-
+    
+    // Consider getting rid of clipper::data::get_anomer when there is already clipper::MSugar::anomer()
+    // Or maybe not, SNFG generation functions depend on this.
     std::string get_anomer( std::string name )
     {
         clipper::String anomer;
@@ -770,7 +772,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "NGK" ) anomer = "alpha" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
         
 
-        else anomer = "[ERROR: UNABLE TO FIND RESIDUE CODE IN INTERNAL DATABASE]";
+        else anomer = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
         return anomer;
     }
