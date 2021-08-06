@@ -1086,16 +1086,16 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
             std::ostringstream linkagePositiontmp;
             int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
             linkagePositiontmp << sugarNode.get_connection(j).get_order();
-            std::string linkagePosition = linkagePositiontmp.str();
+            std::string donorPosition = linkagePositiontmp.str();
 
-            std::string hostLinkagePosition;
+            std::string acceptorPosition;
 
             if (sugar.full_type() == "ketose")
-                hostLinkagePosition += "2";
+                acceptorPosition += "2";
             else
-                hostLinkagePosition += "1";
+                acceptorPosition += "1";
 
-            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition);
             sugar_linkage_info_list_tmp.append(sugar_linkage_info);
         }
     }
@@ -1212,27 +1212,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugarNode = clipper::MGlycan::Node(); // we don't have an MGlycan object with free float ligands...
     this->sugar_connections = 0;
     auto sugar_linkage_info_list_tmp = pybind11::list();
-    // if (sugarNode.number_of_connections() > 0)
-    // {
-    //     std::cout << "After basics step 2" << std::endl;
-    //     for (int j = 0; j < sugarNode.number_of_connections(); j++ )
-    //     {
-    //         std::ostringstream linkagePositiontmp;
-    //         int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
-    //         linkagePositiontmp << sugarNode.get_connection(j).get_order();
-    //         std::string linkagePosition = linkagePositiontmp.str();
 
-    //         std::string hostLinkagePosition;
-
-    //         if (sugar.full_type() == "ketose")
-    //             hostLinkagePosition += "2";
-    //         else
-    //             hostLinkagePosition += "1";
-
-    //         auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
-    //         sugar_linkage_info_list_tmp.append(sugar_linkage_info);
-    //     }
-    // }
 
     this->sugar_linkages = sugar_linkage_info_list_tmp;
     initialize_summary_of_sugar();
@@ -1345,16 +1325,16 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
             std::ostringstream linkagePositiontmp;
             int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
             linkagePositiontmp << sugarNode.get_connection(j).get_order();
-            std::string linkagePosition = linkagePositiontmp.str();
+            std::string donorPosition = linkagePositiontmp.str();
 
-            std::string hostLinkagePosition;
+            std::string acceptorPosition;
 
             if (sugar.full_type() == "ketose")
-                hostLinkagePosition += "2";
+                acceptorPosition += "2";
             else
-                hostLinkagePosition += "1";
+                acceptorPosition += "1";
 
-            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "linkagePositionForeign"_a=linkagePosition, "hostLinkagePosition"_a=hostLinkagePosition);
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition);
             sugar_linkage_info_list_tmp.append(sugar_linkage_info);
         }
     }
