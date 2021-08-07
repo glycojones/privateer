@@ -3641,43 +3641,66 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         }
     }
 
-    // Ligand under MGlycan will only extend if it is linked to another sugar that is detected in the database and only if and only if itself is found on the clipper-glyco_data.cpp
-    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar.
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first ) ;
 
-        for ( int j = 0 ; j < linked.size() ; j++ )
+        if(linked.empty())
         {
-            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
-
-
-            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) && clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
                 list_of_sugars.push_back ( rootSugar );
-
+                clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
+                
                 if(debug_output)
                 {
-                    DBG << "Created the MSugar object" << std::endl;
-                }
-
-                if(debug_output)
-                {
+                    DBG << "Created the rootSugar object in linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
                     DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
                     DBG << "rootSugar is " << rootSugar.type() << std::endl;
-                    DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    DBG << "id is " << root_sugar_chain_id << std::endl;
                 }
-
-                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
+                
                 clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
                                         rootSugar,
                                         root_sugar_chain_id,
                                         debug_output,
                                         this->expression_system );
-
                 mg.set_kind_of_glycan ( "ligand" );
                 list_of_glycans.push_back ( mg );
-                break;
+            }
+        }
+        else
+        {
+            for ( int j = 0 ; j < linked.size() ; j++ )
+            {
+                const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
+
+
+                // Might need to revert this change. To test with running Privateer again on a local pdb_mirror.
+                if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
+                {
+                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                    list_of_sugars.push_back ( rootSugar );
+                    clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
+                    
+                    if(debug_output)
+                    {
+                        DBG << "Created the rootSugar object where !linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
+                        DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
+                        DBG << "rootSugar is " << rootSugar.type() << std::endl;
+                        DBG << "id is " << mmol[linked[j].second.polymer()].id().trim() << std::endl;
+                    }
+                    clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
+                                            rootSugar,
+                                            root_sugar_chain_id,
+                                            debug_output,
+                                            this->expression_system );
+
+                    mg.set_kind_of_glycan ( "ligand" );
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
             }
         }
     }
@@ -4045,16 +4068,22 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first ) ;
 
-        for ( int j = 0 ; j < linked.size() ; j++ )
+        if(linked.empty())
         {
-            const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
-
-
-            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) && clipper::MSugar::search_database( tmpmon.type().c_str() ) )
+            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
             {
                 clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
                 list_of_sugars.push_back ( rootSugar );
-                clipper::String root_sugar_chain_id = mmol[linked[j].second.polymer()].id().trim().substr(0,1);
+                clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
+                
+                if(debug_output)
+                {
+                    DBG << "Created the rootSugar object in linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
+                    DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
+                    DBG << "rootSugar is " << rootSugar.type() << std::endl;
+                    DBG << "id is " << root_sugar_chain_id << std::endl;
+                }
+
                 clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
                                         rootSugar,
                                         root_sugar_chain_id,
@@ -4062,7 +4091,39 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                                         this->expression_system );
                 mg.set_kind_of_glycan ( "ligand" );
                 list_of_glycans.push_back ( mg );
-                break;
+            }
+        }
+        else
+        {
+            for ( int j = 0 ; j < linked.size() ; j++ )
+            {
+                const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
+
+
+                // Might need to revert this change. To test with running Privateer again on a local pdb_mirror.
+                if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
+                {
+                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                    list_of_sugars.push_back ( rootSugar );
+                    clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
+
+                    if(debug_output)
+                    {
+                        DBG << "Created the rootSugar object where !linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
+                        DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
+                        DBG << "rootSugar is " << rootSugar.type() << std::endl;
+                        DBG << "id is " << root_sugar_chain_id << std::endl;
+                    }
+
+                    clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
+                                            rootSugar,
+                                            root_sugar_chain_id,
+                                            debug_output,
+                                            this->expression_system );
+                    mg.set_kind_of_glycan ( "ligand" );
+                    list_of_glycans.push_back ( mg );
+                    break;
+                }
             }
         }
     }
@@ -4128,19 +4189,228 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
             if (std::find_if(sugar_list.begin(), sugar_list.end(),
                 [&](const clipper::MSugar& element) { return element.id() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id(); }) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
             {
-                if(debug_output)
-                {
-                    DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
-                }
                 clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
                     clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
-                    mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
-                    extend_tree ( mg, tmpsug );
+                    if(get_altconf(contacts[i].first) != ' ' && get_altconf(acceptorAtom) != ' ')
+                    {
+                        if(altconf_compatible(get_altconf(contacts[i].first), get_altconf(acceptorAtom)))
+                        {
+                            if(debug_output)
+                            {
+                                DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                            }
+                            mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
+                            extend_tree ( mg, tmpsug );
+                        }
+                    }
+                    else
+                    {
+                        if(debug_output)
+                        {
+                            DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                        }
+                        mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
+                        extend_tree ( mg, tmpsug );
+                    }
                 }
             }
         }
+    }
+}
+
+
+const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology::get_overlapping_residues ( const clipper::MMonomer& mm )
+{
+    // mm can be aminoacid (typically ASN) or sugar: ND2, O2, O3, O4, O6
+
+    std::vector < clipper::MAtom > candidates; // look for the possibilities
+    std::vector < std::pair< clipper::String, clipper::MMonomer > > tmpresults;
+    std::vector < std::pair< clipper::String, clipper::MMonomer > > finalOutput;
+
+    if ( mm.type().trim() == "ASN" )
+    {
+        int id1 = mm.lookup ( "ND2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "SER" )
+    {
+        int id = mm.lookup ( "OG", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "THR" )
+    {
+        int id = mm.lookup ( "OG1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "TRP" )
+    {
+        int id = mm.lookup ( "CD1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else
+    {
+        int id = mm.lookup ( "O1", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+    }
+
+    if ( candidates.size() == 0 )
+        return tmpresults;  // empty result
+    else
+    {
+        const clipper::MiniMol& tmpmol = *mmol;
+
+        for ( int i = 0 ; i < candidates.size() ; i++ )
+        {
+            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
+            for (int j = 0 ; j < contacts.size() ; j++ )
+            {
+                if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 0.25 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                {                            //         of crappy structures in MG
+                    tmpresults.push_back(std::make_pair(tmpmol[contacts[j].polymer()].id().trim(), tmpmol[contacts[j].polymer()][contacts[j].monomer()]));
+                }
+            }        
+        }
+
+        for(int i = 0; i < tmpresults.size(); i++)
+        {
+            std::pair< clipper::String, clipper::MMonomer > currentResult = tmpresults[i];
+            
+            auto searchresult_finalOutput = std::find_if(std::begin(finalOutput), std::end(finalOutput), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
+                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
+            });
+            auto searchresult_tmpresults = std::find_if(std::begin(tmpresults) + (i+1), std::end(tmpresults), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
+                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
+            });
+            
+            if(searchresult_finalOutput == std::end(finalOutput) && searchresult_tmpresults != std::end(tmpresults))
+                finalOutput.push_back(currentResult);
+
+        }
+        return finalOutput;
     }
 }
 

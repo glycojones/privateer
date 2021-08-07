@@ -397,7 +397,6 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
         std::string wurcsNotation = list_of_glycans[i].generate_wurcs();
         std::string kindOfGlycan = list_of_glycans[i].get_type();
         
-        list_of_glycans[i].get_root_by_name();
         std::string proteinResidue = list_of_glycans[i].get_root().first.type().trim();
         std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
         std::string proteinChainID = list_of_glycans[i].get_chain().substr(0,1);

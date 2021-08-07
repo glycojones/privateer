@@ -608,8 +608,9 @@ namespace clipper
 
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan or s-glycan
-            std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
-            std::string get_root_for_filename () { return "[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
+            // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
+            std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
+            std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
@@ -737,7 +738,8 @@ namespace clipper
             const clipper::MiniMol * mmol;
 
             // private methods
-            const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm_one );
+            const std::vector < std::pair< clipper::String, clipper::MMonomer > > get_overlapping_residues ( const clipper::MMonomer& mm );
+            const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm );
             int parse_order ( clipper::String str ) { const char *s = str.c_str(); return atoi(&s[2]); }
             void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug );
             const char get_altconf ( const clipper::MAtom& ) const;
