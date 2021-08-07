@@ -439,6 +439,7 @@ namespace clipper
                         this->index = index;
                         this->type = anomericity;
                         torsion_phi = torsion_psi = torsion_omega = 0.0;
+                        donorAtom = acceptorAtom = clipper::MAtom();
                     }
 
                     // Linkage& operator= ( const Linkage& link ) { if ( this != &link ) node = link.node; return *this;  }
@@ -496,8 +497,14 @@ namespace clipper
 
                     } //!< [0]=phi, [1]=psi, { [2]=omega, if 1-6 linkage }
 
+                    std::pair<clipper::MAtom, clipper::MAtom> get_linkage_atoms () const
+                    {
+                        return std::make_pair(donorAtom, acceptorAtom);
+                    } //!< .first=donorAtom, .second=acceptorAtom
 
                     void set_torsions ( float phi, float psi, float omega=0.0 ) { torsion_phi = phi; torsion_psi = psi; torsion_omega=omega; }
+
+                    void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
 
                     std::string format() const
                     {
@@ -516,6 +523,8 @@ namespace clipper
                     int node_id;            // sugar connected to by this linkage
                     std::string type;       // anomer
                     std::string annotation; // include validation information
+                    clipper::MAtom donorAtom;
+                    clipper::MAtom acceptorAtom;
 
             }; // class Linkage
 
@@ -595,7 +604,7 @@ namespace clipper
 
             }; // class Node
 
-            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar ); // true if there's been any problem
+            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom ); // true if there's been any problem
 
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan or s-glycan

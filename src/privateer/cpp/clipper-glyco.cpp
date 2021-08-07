@@ -2498,7 +2498,8 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 }
 
 // Fix me: need to add support for 2-8 links (Sialic Acids)
-bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar )
+// TO DO: review atom assignments regarding furanoses, as the changes here were made when I misunderstood some chemistry
+bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom )
 {
     int index = 0;
     bool found = false;
@@ -2598,6 +2599,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                 o6.coord_orth() );
 
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega) );
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+
     }
     else if ( link == 4 )
     {
@@ -2651,6 +2654,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c5.coord_orth() );
 
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
     else if ( link == 3 )
     {
@@ -2705,6 +2709,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c4.coord_orth() );
 
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
     else if ( link == 2 )
     {
@@ -2758,6 +2763,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c3.coord_orth() );
 
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
 
     sugars.push_back ( next_sugar );
@@ -3057,6 +3063,7 @@ clipper::String MGlycan::generate_wurcs()
             connectedToNodeID = node_list[0].get_connection(j).get_linked_node_id();
             msug = node_list[connectedToNodeID].get_sugar();
             linkagePosition << node_list[0].get_connection(j).get_order();
+            std::pair<clipper::MAtom, clipper::MAtom> linkage_atoms = node_list[0].get_connection(j).get_linkage_atoms();
 
             wurcs_string += convertNumberToLetter(0);
             wurcs_string += linkagePosition.str();
@@ -3064,11 +3071,19 @@ clipper::String MGlycan::generate_wurcs()
             wurcs_string += "-";
 
             wurcs_string += convertNumberToLetter(connectedToNodeID);
-
             if (msug.full_type() == "ketose")
+            {
                 wurcs_string += "2";
+                if(linkage_atoms.first.element().trim() != "O")
+                    wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
+            }
             else
+            {
                 wurcs_string += "1";
+                if(linkage_atoms.first.element().trim() != "O")
+                    wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
+            }
+            
 
             wurcs_string += "_";
             }
@@ -3105,6 +3120,7 @@ clipper::String MGlycan::generate_wurcs()
                     }
                     msug = node_list[connectedToNodeID].get_sugar();
                     linkagePosition << node_list[i].get_connection(j).get_order();
+                    std::pair<clipper::MAtom, clipper::MAtom> linkage_atoms = node_list[i].get_connection(j).get_linkage_atoms();
                     
                     if(debug_output)
                     {
@@ -3117,11 +3133,19 @@ clipper::String MGlycan::generate_wurcs()
                     wurcs_string += "-";
 
                     wurcs_string += convertNumberToLetter(connectedToNodeID);
-
                     if (msug.full_type() == "ketose")
+                    {
                         wurcs_string += "2";
+                        if(linkage_atoms.first.element().trim() != "O")
+                            wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
+                    }
                     else
+                    {
                         wurcs_string += "1";
+                        if(linkage_atoms.first.element().trim() != "O")
+                            wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
+                    }
+            
 
                     if (i < (node_list.size() - 2))
                         wurcs_string += "_";
@@ -4111,7 +4135,8 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
                 clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
-                    mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug );
+                    clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
+                    mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
                     extend_tree ( mg, tmpsug );
                 }
             }
@@ -4194,6 +4219,81 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "O6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F6", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
