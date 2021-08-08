@@ -1077,6 +1077,15 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugarNode = parentGlycan.get_node(sugarID);
     this->sugar_connections=sugarNode.number_of_connections();
 
+    auto ringatoms = pybind11::list();
+    std::vector<clipper::MAtom> ringmembers = inputSugar.ring_members();
+    for(int i = 0; i < ringmembers.size(); i++)
+    {
+        std::string atomname = ringmembers[i].id().trim();
+        ringatoms.append(atomname);
+    }
+    this->sugar_ring_atoms = ringatoms;
+
     auto sugar_linkage_info_list_tmp = pybind11::list();
     if (sugarNode.number_of_connections() > 0)
     {
@@ -1086,6 +1095,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
             int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
             linkagePositiontmp << sugarNode.get_connection(j).get_order();
             std::pair<clipper::MAtom, clipper::MAtom> linkage_atoms = sugarNode.get_connection(j).get_linkage_atoms();
+            std::vector<float> linkage_torsions = sugarNode.get_connection(j).get_torsions();
             std::string donorAtomID = linkage_atoms.first.id().trim();
             std::string acceptorAtomID = linkage_atoms.second.id().trim();
             std::string donorPosition = linkagePositiontmp.str();
@@ -1096,7 +1106,17 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
             else
                 acceptorPosition += "1";
 
-            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition, "donorAtom"_a=donorAtomID, "acceptorAtom"_a=acceptorAtomID);
+            auto linkage_torsion_dict = pybind11::dict();
+            if (linkage_torsions.size() == 2)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1]);
+            else if(linkage_torsions.size() == 3)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega"_a=linkage_torsions[2]);
+            else if(linkage_torsions.size() == 4)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega_six"_a=linkage_torsions[2], "omega_seven"_a=linkage_torsions[3]);
+            else if(linkage_torsions.size() == 6)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega_seven"_a=linkage_torsions[2], "omega_eight"_a=linkage_torsions[3], "omega_nine"_a=linkage_torsions[4], "phic1c2o8c8"_a=linkage_torsions[5]);
+
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition, "donorAtom"_a=donorAtomID, "acceptorAtom"_a=acceptorAtomID, "linkageTorsions"_a=linkage_torsion_dict);
             sugar_linkage_info_list_tmp.append(sugar_linkage_info);
         }
     }
@@ -1196,6 +1216,15 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_diag_chirality=inputSugar.second.ok_with_chirality();
     this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
     this->sugar_diag_puckering=inputSugar.second.ok_with_puckering();
+
+    auto ringatoms = pybind11::list();
+    std::vector<clipper::MAtom> ringmembers = inputSugar.second.ring_members();
+    for(int i = 0; i < ringmembers.size(); i++)
+    {
+        std::string atomname = ringmembers[i].id().trim();
+        ringatoms.append(atomname);
+    }
+    this->sugar_ring_atoms = ringatoms;
 
     if(sugar_context == "c-glycan")
         if ( inputSugar.second.type().trim() == "MAN" ) {
@@ -1315,6 +1344,15 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->sugar_occupancy_check=inputSugar.get_occupancy_check();
     this->sugar_context=mglycan.get_type();
 
+    auto ringatoms = pybind11::list();
+    std::vector<clipper::MAtom> ringmembers = inputSugar.ring_members();
+    for(int i = 0; i < ringmembers.size(); i++)
+    {
+        std::string atomname = ringmembers[i].id().trim();
+        ringatoms.append(atomname);
+    }
+    this->sugar_ring_atoms = ringatoms;
+
     this->sugarNode = parentGlycan.get_node(sugarID);
     this->sugar_connections=sugarNode.number_of_connections();
 
@@ -1327,10 +1365,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
             int connectedToNodeID = sugarNode.get_connection(j).get_linked_node_id();
             linkagePositiontmp << sugarNode.get_connection(j).get_order();
             std::pair<clipper::MAtom, clipper::MAtom> linkage_atoms = sugarNode.get_connection(j).get_linkage_atoms();
+            std::vector<float> linkage_torsions = sugarNode.get_connection(j).get_torsions();
             std::string donorAtomID = linkage_atoms.first.id().trim();
             std::string acceptorAtomID = linkage_atoms.second.id().trim();
             std::string donorPosition = linkagePositiontmp.str();
-
             std::string acceptorPosition;
 
             if (sugar.full_type() == "ketose")
@@ -1338,7 +1376,17 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
             else
                 acceptorPosition += "1";
 
-            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition, "donorAtom"_a=donorAtomID, "acceptorAtom"_a=acceptorAtomID);
+            auto linkage_torsion_dict = pybind11::dict();
+            if (linkage_torsions.size() == 2)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1]);
+            else if(linkage_torsions.size() == 3)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega"_a=linkage_torsions[2]);
+            else if(linkage_torsions.size() == 4)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega_six"_a=linkage_torsions[2], "omega_seven"_a=linkage_torsions[3]);
+            else if(linkage_torsions.size() == 6)
+                linkage_torsion_dict = pybind11::dict("phi"_a=linkage_torsions[0], "psi"_a=linkage_torsions[1], "omega_seven"_a=linkage_torsions[2], "omega_eight"_a=linkage_torsions[3], "omega_nine"_a=linkage_torsions[4], "phic1c2o8c8"_a=linkage_torsions[5]);
+
+            auto sugar_linkage_info = pybind11::dict( "linkageID"_a=j, "connectedToSugarID"_a=connectedToNodeID, "donorPosition"_a=donorPosition, "acceptorPosition"_a=acceptorPosition, "donorAtom"_a=donorAtomID, "acceptorAtom"_a=acceptorAtomID, "linkageTorsions"_a=linkage_torsion_dict);
             sugar_linkage_info_list_tmp.append(sugar_linkage_info);
         }
     }
@@ -2909,6 +2957,7 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_accum", &pa::CarbohydrateStructure::get_sugar_accum)
         .def("get_sugar_occupancy_check", &pa::CarbohydrateStructure::get_sugar_occupancy_check)
         .def("get_glycosylation_type", &pa::CarbohydrateStructure::get_glycosylation_context)
+        .def("get_ring_atom_names", &pa::CarbohydrateStructure::get_ring_atom_names)
         .def("get_wurcs_uniqres_code", &pa::CarbohydrateStructure::get_wurcs_residue_code)
         .def("get_number_of_connections", &pa::CarbohydrateStructure::get_number_of_connections)
         .def("get_sugar_linkage_info", &pa::CarbohydrateStructure::get_sugar_linkage_info)

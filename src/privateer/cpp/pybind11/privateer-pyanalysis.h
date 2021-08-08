@@ -258,7 +258,7 @@ namespace privateer {
         bool get_sugar_occupancy_check() { return sugar_occupancy_check; }; 
         std::string get_glycosylation_context() { return sugar_context; };
         
-
+        pybind11::list get_ring_atom_names() { return sugar_ring_atoms; };
         std::string get_wurcs_residue_code() { return clipper::data::convert_to_wurcs_residue_code(sugar.type().trim()); };
         int get_number_of_connections() { return parentGlycan.get_node(sugarID).number_of_connections(); };
         pybind11::list get_sugar_linkage_info() { return sugar_linkages; };
@@ -317,6 +317,8 @@ namespace privateer {
         float sugar_accum = -1; // need to develop setter method as in privateer.cpp
         bool sugar_occupancy_check = false; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
+
+        pybind11::list sugar_ring_atoms;
 
         int sugar_connections;
         pybind11::list sugar_linkages;
