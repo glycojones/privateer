@@ -2534,13 +2534,197 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     if(debug_output)
     {
         DBG << "Creating new connection.\nlink: " << link << "\tnext_sugar.anomer(): " << next_sugar.anomer() << "\tnode_list.size()-1: " << node_list.size()-1 << std::endl;
+        DBG << "Anomeric substituent: " << next_sugar.anomeric_substituent().id().trim() << " located at: " << next_sugar.anomeric_substituent().coord_orth().format() << std::endl;
     }
 
     Linkage new_connection ( link, next_sugar.anomer(), node_list.size()-1 );
 
-    clipper::ftype omega, psi, phi;
-    clipper::MAtom c1, o1, c2, o2, c3, o3, c4, o4, c5, o5, c6, o6, o5f;
-    if ( link == 6 )
+    clipper::ftype  omega_nine  = 0.0, 
+                    omega_eight = 0.0, 
+                    omega_seven = 0.0, 
+                    omega_six   = 0.0, 
+                    omega       = 0.0, 
+                    psi         = 0.0, 
+                    phi         = 0.0,
+                    phi_cone_ctwo_oeight_ceight = 0.0;
+
+    clipper::MAtom actual_c1, first_sugar_c1, c1, o1, c2, o2, c3, o3, c4, o4, c5, o5_next_sugar, o5, next_sugar_ring_oxygen, c6, o6, first_sugar_ring_oxygen, c7, o7, c8, o8, c9, o9;
+    if ( link == 8 )
+    {
+        // next_sugar 5 SIA - MAN
+        // first_sugar 4 SIA - BMA
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o6 = next_sugar.ring_members()[0];              // O6
+            c2 = next_sugar.ring_members()[1];              // C2
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)];
+            o8 = next_sugar.anomeric_substituent();         // O8 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o6 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; 
+            c2 = next_sugar.ring_members()[1];              // C2
+            o8 = next_sugar.anomeric_substituent();         // O8 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c6 = first_sugar.ring_members()[5];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O6 for omega_seven
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
+            c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+            o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c6 = first_sugar.ring_members()[5];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O6 for omega_seven
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
+            c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+            o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        phi   = clipper::Coord_orth::torsion ( o6.coord_orth(),
+                                               c2.coord_orth(),
+                                               o8.coord_orth(),
+                                               c8.coord_orth() );
+        
+        phi_cone_ctwo_oeight_ceight   = clipper::Coord_orth::torsion (  c1.coord_orth(),
+                                                                        c2.coord_orth(),
+                                                                        o8.coord_orth(),
+                                                                        c8.coord_orth() );
+
+        psi   = clipper::Coord_orth::torsion ( c2.coord_orth(),
+                                               o8.coord_orth(),
+                                               c8.coord_orth(),
+                                               c7.coord_orth() );
+
+        omega_seven = clipper::Coord_orth::torsion (    o7.coord_orth(),
+                                                        c7.coord_orth(),
+                                                        c6.coord_orth(),
+                                                        first_sugar_ring_oxygen.coord_orth() );
+
+        omega_eight = clipper::Coord_orth::torsion (    o8.coord_orth(),
+                                                        c8.coord_orth(),
+                                                        c7.coord_orth(),
+                                                        o7.coord_orth() );
+        
+        omega_nine = clipper::Coord_orth::torsion (     o9.coord_orth(),
+                                                        c9.coord_orth(),
+                                                        c8.coord_orth(),
+                                                        o8.coord_orth() );
+
+
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tphi_c1c2o8c8 = " << torsions[5] << "\t\tpsi = " << torsions[1] << "\t\tomega_seven = " << torsions[2] << "\t\tomega_eight = " << torsions[3] << "\t\tomega_nine = " << torsions[4] << std::endl;
+        }
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+    }
+    else if ( link == 7 )
+    {
+        // next_sugar 6 GMH - MAN
+        // first_sugar 3 GM0 - BMA
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o7 = next_sugar.anomeric_substituent();         // O7 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
+            o7 = next_sugar.anomeric_substituent();         // O7 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c5 = first_sugar.ring_members()[5];
+            c6 = first_sugar[first_sugar.lookup("C6",clipper::MM::ANY)];
+            o6 = first_sugar[first_sugar.lookup("O6",clipper::MM::ANY)];
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O5 for omega
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c5 = first_sugar.ring_members()[5];
+            c6 = first_sugar[first_sugar.lookup("C6",clipper::MM::ANY)];
+            o6 = first_sugar[first_sugar.lookup("O6",clipper::MM::ANY)];
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O5 for omega
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        phi   = clipper::Coord_orth::torsion ( o5.coord_orth(),
+                                               c1.coord_orth(),
+                                               o7.coord_orth(),
+                                               c7.coord_orth() );
+
+        psi   = clipper::Coord_orth::torsion ( c1.coord_orth(),
+                                               o7.coord_orth(),
+                                               c7.coord_orth(),
+                                               c6.coord_orth() );
+
+        // 6-7 = 7
+        // 7-8 = 8
+        // 8-9 = 9
+
+        omega_six = clipper::Coord_orth::torsion (  o6.coord_orth(),
+                                                    c6.coord_orth(),
+                                                    c5.coord_orth(),
+                                                    first_sugar_ring_oxygen.coord_orth() );
+
+        omega_seven = clipper::Coord_orth::torsion (    o7.coord_orth(),
+                                                        c7.coord_orth(),
+                                                        c6.coord_orth(),
+                                                        o6.coord_orth() );
+
+
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega_six = " << torsions[2] << "\t\tomega_seven = " << torsions[3] << std::endl; 
+        }
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+    }
+    else if ( link == 6 )
     {
         if(next_sugar.ring_members().size() == 6)
         {
@@ -2551,8 +2735,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         else if(next_sugar.ring_members().size() == 5)
         {
             o5 = next_sugar.ring_members()[0];              // O5
-            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
-            // c1 = next_sugar.ring_members()[1];              // C1
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
             o6 = next_sugar.anomeric_substituent();         // O6 usually
         }
         else
@@ -2567,13 +2751,13 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         {
             c5 = first_sugar.ring_members()[5];             // C5 - for pyranose
             c6 = first_sugar.configurational_substituent(); // C6
-            o5f= first_sugar.ring_members()[5];             // O5 for omega
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O5 for omega
         }
         else if(first_sugar.ring_members().size() == 5)
         {
             c5 = first_sugar.ring_members()[4];             // C5 - for furanose
             c6 = first_sugar.configurational_substituent(); // C6
-            o5f = first_sugar.ring_members()[4];             // O5 for omega
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O5 for omega
         }
         else
         {
@@ -2593,12 +2777,78 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c6.coord_orth(),
                                                c5.coord_orth() );
 
-        omega = clipper::Coord_orth::torsion (  o5f.coord_orth(),
+        omega = clipper::Coord_orth::torsion (  first_sugar_ring_oxygen.coord_orth(),
                                                 c5.coord_orth(),
                                                 c6.coord_orth(),
                                                 o6.coord_orth() );
 
-        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega) );
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl; 
+        }
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+    }
+    else if ( link == 5 )
+    {
+        // next_sugar GMH - BMA
+        // first_sugar KDO - NAG
+        if(next_sugar.ring_members().size() == 6)
+        {
+            next_sugar_ring_oxygen = next_sugar.ring_members()[0];  // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o5 = next_sugar.anomeric_substituent();         // O5 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            next_sugar_ring_oxygen = next_sugar.ring_members()[0];  // O5
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
+            o5 = next_sugar.anomeric_substituent();         // O4 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c5 = first_sugar.ring_members()[4];             // C5
+            c6 = first_sugar.ring_members()[5];             // C6
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c5 = first_sugar.ring_members()[3];             // C5
+            c6 = first_sugar.ring_members()[4];             // C6
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        phi   = clipper::Coord_orth::torsion ( next_sugar_ring_oxygen.coord_orth(),
+                                               c1.coord_orth(),
+                                               o5.coord_orth(),
+                                               c5.coord_orth() );
+
+        psi   = clipper::Coord_orth::torsion ( c1.coord_orth(),
+                                               o5.coord_orth(),
+                                               c5.coord_orth(),
+                                               c6.coord_orth() );
+
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;  
+        }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
     else if ( link == 4 )
@@ -2612,8 +2862,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         else if(next_sugar.ring_members().size() == 5)
         {
             o5 = next_sugar.ring_members()[0];              // O5
-            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
-            // c1 = next_sugar.ring_members()[1];              // C1
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
             o4 = next_sugar.anomeric_substituent();         // O4 usually
         }
         else
@@ -2652,7 +2902,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c4.coord_orth(),
                                                c5.coord_orth() );
 
-        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;  
+        }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
     else if ( link == 3 )
@@ -2666,8 +2921,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         else if(next_sugar.ring_members().size() == 5)
         {
             o5 = next_sugar.ring_members()[0];              // O5
-            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
-            // c1 = next_sugar.ring_members()[1];              // C1
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
             o3 = next_sugar.anomeric_substituent();         // O3 usually
         }
         else
@@ -2707,7 +2962,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                c3.coord_orth(),
                                                c4.coord_orth() );
 
-        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
+        }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
     }
     else if ( link == 2 )
@@ -2721,8 +2981,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         else if(next_sugar.ring_members().size() == 5)
         {
             o5 = next_sugar.ring_members()[0];              // O5
-            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
-            // c1 = next_sugar.ring_members()[1];              // C1
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
             o2 = next_sugar.anomeric_substituent();         // O2 usually
         }
         else
@@ -2760,9 +3020,107 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                o2.coord_orth(),
                                                c2.coord_orth(),
                                                c3.coord_orth() );
-
-        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
+        }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+    }
+    else if ( link == 1 )
+    {
+        // next_sugar 5 GLC - 4 MAN
+        // first_sugar 4 FRU - 3 BMA
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o5 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar.ring_members()[1];              // C1
+            o1 = next_sugar.anomeric_substituent();         // O1 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o5 = first_sugar.ring_members()[0];              // O5
+            o5_next_sugar = next_sugar.ring_members()[0];
+            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+            c1 = next_sugar.ring_members()[1];              // C2
+            actual_c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)];
+            o1 = next_sugar.anomeric_substituent();         // O1 usually
+            c3 = next_sugar.ring_members()[2];             // C3
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            first_sugar_c1 = first_sugar.ring_members()[1];  // C1
+            c2 = first_sugar.ring_members()[2];             // C2
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            first_sugar_c1 = first_sugar.ring_members()[1];  // C2
+            c2 = first_sugar.ring_members()[2];             // C3
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(next_sugar.ring_members().size() == 6)
+        {
+
+            phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
+                                                    c1.coord_orth(),
+                                                    o1.coord_orth(),
+                                                    first_sugar_c1.coord_orth() );
+
+            psi   = clipper::Coord_orth::torsion (  c1.coord_orth(),
+                                                    o1.coord_orth(),
+                                                    first_sugar_c1.coord_orth(),
+                                                    c2.coord_orth() );
+
+            new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+            if(debug_output)
+            {
+                std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+                DBG << "Torsions for when next_sugar has 6 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
+            }
+            new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
+                                                    first_sugar_c1.coord_orth(),
+                                                    o1.coord_orth(),
+                                                    actual_c1.coord_orth() );
+
+            // Can't figure this shit out, to come back later. 
+            psi   = clipper::Coord_orth::torsion (  c2.coord_orth(),
+                                                    first_sugar_c1.coord_orth(),
+                                                    o1.coord_orth(),
+                                                    actual_c1.coord_orth() );
+            
+            omega = clipper::Coord_orth::torsion (  o1.coord_orth(),
+                                                    actual_c1.coord_orth(),
+                                                    c1.coord_orth(),
+                                                    c3.coord_orth() );
+
+            new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+            if(debug_output)
+            {
+                std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+                DBG << "Torsions for when next_sugar has 5 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl;
+            }
+            new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        }
     }
 
     sugars.push_back ( next_sugar );

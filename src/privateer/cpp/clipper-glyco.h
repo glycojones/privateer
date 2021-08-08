@@ -488,21 +488,49 @@ namespace clipper
                     std::vector<float> get_torsions () const
                     {
                         std::vector<float> result;
+
                         result.push_back ( torsion_phi );
                         result.push_back ( torsion_psi );
 
-                        if (index == 6)
+                        if (index == 6 || (index == 1 && torsion_omega != 0.0))
+                        {
                             result.push_back ( torsion_omega );
+                        }
+                        
+                        if (index == 7)
+                        {
+                            result.push_back ( torsion_omega_six );
+                            result.push_back ( torsion_omega_seven );
+                        }
+
+                        if (index == 8)
+                        {
+                            result.push_back ( torsion_omega_seven );
+                            result.push_back ( torsion_omega_eight );
+                            result.push_back ( torsion_omega_nine );
+                            result.push_back ( torsion_phi_cone_ctwo_oeight_ceight );
+                        }
+
                         return result;
 
-                    } //!< [0]=phi, [1]=psi, { [2]=omega, if 1-6 linkage }
+                    } //!< [0]=phi, [1]=psi, { [2]=omega if 1-6 linkage }
 
                     std::pair<clipper::MAtom, clipper::MAtom> get_linkage_atoms () const
                     {
                         return std::make_pair(donorAtom, acceptorAtom);
                     } //!< .first=donorAtom, .second=acceptorAtom
 
-                    void set_torsions ( float phi, float psi, float omega=0.0 ) { torsion_phi = phi; torsion_psi = psi; torsion_omega=omega; }
+                    void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
+                    { 
+                        torsion_phi         =   phi;
+                        torsion_psi         =   psi; 
+                        torsion_omega       =   omega; 
+                        torsion_omega_six   =   omega_six;
+                        torsion_omega_seven =   omega_seven;
+                        torsion_omega_eight =   omega_eight; 
+                        torsion_omega_nine  =   omega_nine;
+                        torsion_phi_cone_ctwo_oeight_ceight = phi_cone_ctwo_oeight_ceight;
+                    }
 
                     void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
 
@@ -518,11 +546,16 @@ namespace clipper
                 private:
                     float torsion_phi;
                     float torsion_psi;
-                    float torsion_omega;    // for 1-6 linkages
-                    int index;              // carbon to which this is connected
-                    int node_id;            // sugar connected to by this linkage
-                    std::string type;       // anomer
-                    std::string annotation; // include validation information
+                    float torsion_omega;        // for 1-6 linkages
+                    float torsion_omega_six;    // for 1-7 linkages
+                    float torsion_omega_seven;  // for 1-7 and 2-8 linkages
+                    float torsion_omega_eight;  // for 2-8 linkages
+                    float torsion_omega_nine;   // for 2-8 linkages
+                    float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
+                    int index;                  // carbon to which this is connected
+                    int node_id;                // sugar connected to by this linkage
+                    std::string type;           // anomer
+                    std::string annotation;     // include validation information
                     clipper::MAtom donorAtom;
                     clipper::MAtom acceptorAtom;
 
