@@ -2600,7 +2600,6 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega) );
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-
     }
     else if ( link == 4 )
     {
@@ -3074,13 +3073,13 @@ clipper::String MGlycan::generate_wurcs()
             if (msug.full_type() == "ketose")
             {
                 wurcs_string += "2";
-                if(linkage_atoms.first.element().trim() != "O")
+                if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
                     wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
             }
             else
             {
                 wurcs_string += "1";
-                if(linkage_atoms.first.element().trim() != "O")
+                if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
                     wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
             }
             
@@ -3136,13 +3135,13 @@ clipper::String MGlycan::generate_wurcs()
                     if (msug.full_type() == "ketose")
                     {
                         wurcs_string += "2";
-                        if(linkage_atoms.first.element().trim() != "O")
+                        if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
                             wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
                     }
                     else
                     {
                         wurcs_string += "1";
-                        if(linkage_atoms.first.element().trim() != "O")
+                        if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
                             wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
                     }
             
@@ -4294,8 +4293,23 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "O6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4320,7 +4334,22 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "S5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "S6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4345,7 +4374,22 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "N5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "N6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4370,7 +4414,22 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "F5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "F6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4487,8 +4546,23 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "O6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4513,7 +4587,22 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "S5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "S6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4538,7 +4627,22 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "N5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "N6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -4563,7 +4667,22 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "F5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "F6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F8", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
