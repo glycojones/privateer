@@ -3611,11 +3611,13 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_s_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_c_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_rootless_polysaccharides;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> special_rootless_polysaccharides;
     
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
+            std::vector<clipper::MAtom> KDOlikerecipe;
             for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
             {
                 clipper::MAtom tmpAtom = mmol[pol][mon][atom];
@@ -3625,14 +3627,26 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                     
                     std::string altConfSymbol(1, altconf);
                     std::string O1_with_altconf = "O1 :" + altConfSymbol;
+                    std::string C1_with_altconf = "C1 :" + altConfSymbol;
+                    std::string OA_with_altconf = "O1A :" + altConfSymbol;
+                    std::string OB_with_altconf = "O1B :" + altConfSymbol;
 
                     if (tmpAtom.id().trim() == O1_with_altconf)
                         potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                    
+                    if (tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == OA_with_altconf || tmpAtom.id().trim() == OB_with_altconf)
+                        KDOlikerecipe.push_back(tmpAtom);
                 }
                 else
                     if (tmpAtom.id().trim() == "O1") 
                         potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                    
+                    if (tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "O1A" || tmpAtom.id().trim() == "O1B")
+                        KDOlikerecipe.push_back(tmpAtom);
             }
+            if(KDOlikerecipe.size() == 3)
+                special_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
             if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // n-linked GlcNAc ?
@@ -3644,6 +3658,8 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
             else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
         }
+    for(int i = 0; i < special_rootless_polysaccharides.size(); i++)
+        potential_rootless_polysaccharides.push_back(special_rootless_polysaccharides[i]);
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first ) ;
@@ -4094,11 +4110,13 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_s_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_c_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_rootless_polysaccharides;
+    std::vector<std::pair<clipper::MMonomer, clipper::String>> special_rootless_polysaccharides;
     
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
+            std::vector<clipper::MAtom> KDOlikerecipe;
             for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
             {
                 clipper::MAtom tmpAtom = mmol[pol][mon][atom];
@@ -4108,14 +4126,26 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                     
                     std::string altConfSymbol(1, altconf);
                     std::string O1_with_altconf = "O1 :" + altConfSymbol;
+                    std::string C1_with_altconf = "C1 :" + altConfSymbol;
+                    std::string OA_with_altconf = "O1A :" + altConfSymbol;
+                    std::string OB_with_altconf = "O1B :" + altConfSymbol;
 
                     if (tmpAtom.id().trim() == O1_with_altconf)
                         potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                    
+                    if (tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == OA_with_altconf || tmpAtom.id().trim() == OB_with_altconf)
+                        KDOlikerecipe.push_back(tmpAtom);
                 }
                 else
                     if (tmpAtom.id().trim() == "O1") 
                         potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+                    
+                    if (tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "O1A" || tmpAtom.id().trim() == "O1B")
+                        KDOlikerecipe.push_back(tmpAtom);
             }
+            if(KDOlikerecipe.size() == 3)
+                special_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+
             // Will need to keep this list up to date with the latest discoveries
             // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
             if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // n-linked GlcNAc ?
@@ -4127,6 +4157,8 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
             else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
         }
+    for(int i = 0; i < special_rootless_polysaccharides.size(); i++)
+        potential_rootless_polysaccharides.push_back(special_rootless_polysaccharides[i]);
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first ) ;
