@@ -71,10 +71,12 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-modelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
 
 target_link_libraries ( privateer_lib 
@@ -112,11 +114,33 @@ target_link_libraries ( privateer_exec
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-pybind11_add_module(privateer_core  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
-                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
-                                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp)
+pybind11_add_module(privateer_core          ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
+
+pybind11_add_module(privateer_modelling     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
+                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
+
 target_link_libraries ( privateer_core PRIVATE 
+                        privateer_lib 
+                        ${MMDB2DEP} 
+                        ${CCP4CDEP} 
+                        ${CCP4SRSDEP}
+                        ${CLIPPERCOREDEP}
+                        ${CLIPPERMMDBDEP}
+                        ${CLIPPERMINIMOLDEP}
+                        ${CLIPPERCONTRIBDEP}
+                        ${CLIPPERCCP4DEP}
+                        ${CLIPPERCIFDEP}
+                        ${PYTHON_LIBRARY}
+                        nlohmann_json::nlohmann_json)
+
+target_link_libraries ( privateer_modelling PRIVATE 
                         privateer_lib 
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 
@@ -134,3 +158,4 @@ target_link_libraries ( privateer_core PRIVATE
 install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
+install ( TARGETS privateer_modelling DESTINATION ${PROJECT_SOURCE_DIR} )

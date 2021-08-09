@@ -13,6 +13,7 @@ namespace py=pybind11;
 void init_ccp4mg(py::module &m);
 void init_restraints(py::module &m);
 void init_pyanalysis(py::module &m);
+void init_pymodelling(py::module &m);
 
 
 PYBIND11_MODULE(privateer_core, m) {
@@ -29,6 +30,20 @@ PYBIND11_MODULE(privateer_core, m) {
     init_ccp4mg(m);
     init_restraints(m);
     init_pyanalysis(m);
+}
+
+PYBIND11_MODULE(privateer_modelling, m) {
+    m.doc() = "Python wrapper for privateer_modelling(C++) exposed via pybind11.";
+
+    py::register_exception_translator([](std::exception_ptr p) {
+        try {
+            if (p) std::rethrow_exception(p);
+        } catch (const std::exception& e) {
+            PyErr_SetString(PyExc_RuntimeError, e.what());
+        }
+    });
+
+    init_pymodelling(m);
 }
 
 // Prepare a google doc describing the organisation of python cppmodule and how they would work in practice.
