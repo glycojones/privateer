@@ -31,18 +31,46 @@
 namespace privateer {
 	namespace modelling {
 
+		struct protein_sidechain_glycosylation
+        {
+            clipper::String residue_name;       
+            clipper::String connected_atom;          
+            clipper::String vector_origin;
+			clipper::String vector_target;     
+            clipper::ftype Phi;        
+            clipper::ftype Psi;       
+        };
+
+
+		struct sugar_attachment
+        {
+            clipper::String glycan_type;       
+            clipper::String connection_atom;
+			clipper::String coplanar_atom;        
+            clipper::String supporting_atom;   
+        };
+
+		extern const protein_sidechain_glycosylation backbone_instructions[];
+        extern const sugar_attachment sugar_instructions[];
+		extern const int backbone_instructions_size;
+        extern const int sugar_instructions_size;
+
 		class Grafter
     	{
       		public:
 				Grafter() { } //!< null constructor
-				Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, bool debug_output);
+				Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, bool enable_user_messages, bool debug_output);
 				int get_number_of_glycans_detected() { return donor_glycans.size(); };
 				clipper::MiniMol& get_receiving_model() { return receiving_model; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
 				clipper::MPolymer convert_mglycan_to_mpolymer(clipper::MGlycan input);
-				void graft_mpolymer_to_receiving_model(clipper::Coord_orth target, clipper::Coord_orth source, std::vector<float> torsions, clipper::MPolymer input_chain);
+				void graft_mpolymer_to_receiving_model(clipper::RTop_orth relocator, clipper::MPolymer input_chain);
+
+				int lookup_protein_backbone_glycosylation_database( clipper::String name);
+				int lookup_glycan_type_glycosylation_database( clipper::String type);
 			private:
+				bool enable_user_messages;
 				bool debug_output;
 				clipper::MiniMol receiving_model;
 				clipper::MiniMol donor_model;
