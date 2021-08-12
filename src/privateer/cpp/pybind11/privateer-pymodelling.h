@@ -34,7 +34,7 @@ namespace privateer {
 					pybind11::list get_glycan_summary_from_donor () { return glycan_summary_donor; };
 					void graft_glycan_to_receiver (int mglycanindex, int receiver_chain_index, int received_residue_index);
 					void export_grafted_model( std::string& output_path );
-					clipper::Coord_orth get_glycan_target_point(clipper::Coord_orth& connecting_atom, clipper::Coord_orth& vector_origin, clipper::Coord_orth& vector_target, float vectorShiftDistance);
+					
 
 
 				private:

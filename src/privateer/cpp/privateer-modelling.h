@@ -35,8 +35,8 @@ namespace privateer {
         {
             clipper::String residue_name;       
             clipper::String connected_atom;          
-            clipper::String vector_origin;
-			clipper::String vector_target;     
+            clipper::String vector_point_alpha;
+			clipper::String vector_point_bravo;     
             clipper::ftype Phi;        
             clipper::ftype Psi;       
         };
@@ -46,8 +46,8 @@ namespace privateer {
         {
             clipper::String glycan_type;       
             clipper::String connection_atom;
-			clipper::String coplanar_atom;        
-            clipper::String supporting_atom;   
+			clipper::String vector_point_alpha;        
+            clipper::String vector_point_bravo;   
         };
 
 		extern const protein_sidechain_glycosylation backbone_instructions[];
@@ -65,7 +65,9 @@ namespace privateer {
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
 				clipper::MPolymer convert_mglycan_to_mpolymer(clipper::MGlycan input);
-				void graft_mpolymer_to_receiving_model(clipper::RTop_orth relocator, clipper::MPolymer input_chain);
+				clipper::Coord_orth get_glycan_target_point(clipper::Coord_orth& connecting_atom, clipper::Coord_orth& vector_origin, clipper::Coord_orth& vector_target, float vectorShiftDistance);
+				void graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, bool ANY_search_policy);
+				clipper::Mat33<clipper::ftype> generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::ftype degrees_to_rotate, clipper::Vec3<clipper::ftype> input_vector);
 
 				int lookup_protein_backbone_glycosylation_database( clipper::String name);
 				int lookup_glycan_type_glycosylation_database( clipper::String type);

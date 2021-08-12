@@ -120,11 +120,6 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         std::cout << "Grafting glycan with the WURCS of:\n" << glycan_to_graft.generate_wurcs() << std::endl;
     }
 
-    clipper::MPolymer converted_mglycan = Grafter.convert_mglycan_to_mpolymer(glycan_to_graft);
-
-    if(debug_output)
-        DBG << "Converted MGlycan to MPolymer. MPolymer.size(): " << converted_mglycan.size() << std::endl;
-
     clipper::MMonomer receiver_monomer = imported_receiving_model[receiver_chain_index][received_residue_index];
     
     if(debug_output)
@@ -137,149 +132,8 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         std::cout << "Grafting input glycan to: " << imported_receiving_model[receiver_chain_index].id().trim() << "/" << imported_receiving_model[receiver_chain_index][received_residue_index].type().trim() << "-" << imported_receiving_model[receiver_chain_index][received_residue_index].id().trim() << std::endl;
     }
 
-    int receiver_atom_index = Grafter.lookup_protein_backbone_glycosylation_database(receiver_monomer.type().trim());
-
-    clipper::String residue_name;       
-    clipper::String connected_atom;          
-    clipper::String vector_origin;
-    clipper::String vector_target;
-    clipper::ftype Phi;        
-    clipper::ftype Psi; 
-
-    if(receiver_atom_index != -1)
-    {
-        residue_name = privateer::modelling::backbone_instructions[receiver_atom_index].residue_name;
-        connected_atom = privateer::modelling::backbone_instructions[receiver_atom_index].connected_atom;
-        vector_origin = privateer::modelling::backbone_instructions[receiver_atom_index].vector_origin;
-        vector_target = privateer::modelling::backbone_instructions[receiver_atom_index].vector_target;
-        Phi = privateer::modelling::backbone_instructions[receiver_atom_index].Phi;
-        Psi = privateer::modelling::backbone_instructions[receiver_atom_index].Psi;
-
-        if(enable_user_messages && !debug_output)
-            std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_origin << " and " << vector_target << " used to generate rotation-translation matrix. Phi = " << Phi << " Psi = " << Psi << std::endl;
-
-        if(debug_output)
-            DBG << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_origin << " and " << vector_target << " used to generate rotation-translation matrix. Phi = " << Phi << " Psi = " << Psi << std::endl;
-
-    }
-    else
-    {
-        DBG << "Unable to locate " << receiver_monomer.type().trim() << " in protein_backbone_glycosylation_instruction_set from receiving model! ...Aborting..." << std::endl;
-        throw std::invalid_argument( "Unable to generate instructions for input monomer from input receiver." );
-    }
-
-    clipper::String glycan_type = "non-ideal";
-    for(int atom = 0; atom < converted_mglycan[0].size(); atom++)
-    {
-        if(converted_mglycan[0][atom].id().trim() == "O1")
-        {
-            glycan_type = "ideal";
-        }
-    }
-
-    clipper::String sugar_connection_atom;
-    clipper::String sugar_coplanar_atom;        
-    clipper::String sugar_supporting_atom;
-
-    int glycan_grafting_type = Grafter.lookup_glycan_type_glycosylation_database(glycan_type);
-    if(glycan_grafting_type != -1)
-    {
-        sugar_connection_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].connection_atom;
-        sugar_coplanar_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].coplanar_atom;
-        sugar_supporting_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].supporting_atom;
-
-        if(enable_user_messages && !debug_output)
-            std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " with " << sugar_coplanar_atom << " and " << sugar_supporting_atom << " used to generate rotation-translation matrix." << std::endl;
-
-        if(debug_output)
-            DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " with " << sugar_coplanar_atom << " and " << sugar_supporting_atom << " used to generate rotation-translation matrix." << std::endl;
-    }
-    else
-    {
-        DBG << "Unable to locate " << glycan_type << " in sugar_attachment_instruction_set from donor model! ...Aborting..." << std::endl;
-        throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
-    }
-
-    clipper::Coord_orth protein_connecting_target;
-    clipper::Coord_orth protein_vector_origin;
-    clipper::Coord_orth protein_vector_target;
-    clipper::Coord_orth sugar_connecting_target;
-    clipper::Coord_orth sugar_coplanar_target;
-    clipper::Coord_orth sugar_supporting_target;
-    if(ANY_search_policy)
-    {
-        protein_connecting_target = receiver_monomer.find(connected_atom, clipper::MM::ANY).coord_orth(); // ND2
-        protein_vector_origin = receiver_monomer.find(vector_origin, clipper::MM::ANY).coord_orth(); // CB
-        protein_vector_target = receiver_monomer.find(vector_target, clipper::MM::ANY).coord_orth(); // CB
-        sugar_connecting_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::ANY).coord_orth(); // C1
-        sugar_coplanar_target = converted_mglycan[0].find(sugar_coplanar_atom, clipper::MM::ANY).coord_orth(); // C1 - this used for vector
-        sugar_supporting_target = converted_mglycan[0].find(sugar_supporting_atom, clipper::MM::ANY).coord_orth(); // O1 - used for vector
-    }
-    else
-    {
-        protein_connecting_target = receiver_monomer.find(connected_atom, clipper::MM::UNIQUE).coord_orth(); // ND2
-        protein_vector_origin = receiver_monomer.find(vector_origin, clipper::MM::UNIQUE).coord_orth(); // CB
-        protein_vector_target = receiver_monomer.find(vector_target, clipper::MM::UNIQUE).coord_orth(); // CB
-        sugar_connecting_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::UNIQUE).coord_orth(); // C1
-        sugar_coplanar_target = converted_mglycan[0].find(sugar_coplanar_atom, clipper::MM::UNIQUE).coord_orth(); // C1 - this used for vector
-        sugar_supporting_target = converted_mglycan[0].find(sugar_supporting_atom, clipper::MM::UNIQUE).coord_orth(); // O1 - used for vector
-    }
-
-
-    clipper::Coord_orth potential_C1_position = get_glycan_target_point(protein_connecting_target, protein_vector_origin, protein_vector_target, 1.5);
-    clipper::Vec3<clipper::ftype> sugarVector((sugar_supporting_target.x()-sugar_coplanar_target.x()),(sugar_supporting_target.y()-sugar_coplanar_target.y()), (sugar_supporting_target.z()-sugar_coplanar_target.z()));
-    clipper::Vec3<clipper::ftype> proteinTargetVector((potential_C1_position.x()-protein_connecting_target .x()),(potential_C1_position.y()-protein_connecting_target .y()), (potential_C1_position.z()-protein_connecting_target .z()));
-    
-    // clipper::Coord_orth source(sugarVector);
-    // std::vector<clipper::Coord_orth> sourceVector;
-    // sourceVector.push_back(source);
-
-    // clipper::Coord_orth target(proteinTargetVector);
-    // std::vector<clipper::Coord_orth> targetVector;
-    // targetVector.push_back(target);
-
-    clipper::Coord_orth source(sugar_connecting_target);
-    std::vector<clipper::Coord_orth> sourceVector;
-    sourceVector.push_back(source);
-
-    clipper::Coord_orth target(potential_C1_position);
-    std::vector<clipper::Coord_orth> targetVector;
-    targetVector.push_back(target);
-    
-    
-    clipper::RTop_orth relocator(sourceVector, targetVector);
-
-    if(enable_user_messages && !debug_output)
-    {
-        std::cout << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-        std::cout << "Coordinates of " << vector_origin << ":\t" << protein_vector_origin.format() << std::endl;
-        std::cout << "Coordinates of " << vector_target << ":\t" << protein_vector_target.format() << std::endl;
-        std::cout << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connecting_target.format() << std::endl;
-        std::cout << "Coordinates of " << sugar_coplanar_atom << ":\t" << sugar_coplanar_target.format() << std::endl;
-        std::cout << "Coordinates of " << sugar_supporting_atom << ":\t" << sugar_supporting_target.format() << std::endl;
-        std::cout << "Coordinates of potential C1 position:\t" << potential_C1_position.format() << std::endl;
-        std::cout << "Vector values of sugarVector:\t" << sugarVector.format() << std::endl;
-        std::cout << "Vector values of proteinTargetVector:\t" << proteinTargetVector.format() << std::endl;
-        std::cout << "Coordinates of source:\t" << source.format() << std::endl;
-        std::cout << "Coordinates of target:\t" << target.format() << std::endl;
-    }
-
-    if(debug_output)
-    {
-        DBG << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-        DBG << "Coordinates of " << vector_origin << ":\t" << protein_vector_origin.format() << std::endl;
-        DBG << "Coordinates of " << vector_target << ":\t" << protein_vector_target.format() << std::endl;
-        DBG << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connecting_target.format() << std::endl;
-        DBG << "Coordinates of " << sugar_coplanar_atom << ":\t" << sugar_coplanar_target.format() << std::endl;
-        DBG << "Coordinates of " << sugar_supporting_atom << ":\t" << sugar_supporting_target.format() << std::endl;
-        DBG << "Coordinates of potential C1 position:\t" << potential_C1_position.format() << std::endl;
-        DBG << "Vector values of sugarVector:\t" << sugarVector.format() << std::endl;
-        DBG << "Vector values of proteinTargetVector:\t" << proteinTargetVector.format() << std::endl;
-        DBG << "Coordinates of source:\t" << source.format() << std::endl;
-        DBG << "Coordinates of target:\t" << target.format() << std::endl;
-    }
-
-    Grafter.graft_mpolymer_to_receiving_model(relocator, converted_mglycan);
+    // Grafter.graft_mpolymer_to_receiving_model(relocator, converted_mglycan);
+    Grafter.graft_mpolymer_to_receiving_model(glycan_to_graft, receiver_monomer, ANY_search_policy);
     this->imported_receiving_model = Grafter.get_receiving_model();
 }
 
@@ -288,22 +142,6 @@ void privateer::pymodelling::Builder::export_grafted_model(std::string& output_p
     clipper::MMDBfile pdbfile;
     pdbfile.export_minimol( imported_receiving_model );
     pdbfile.write_file( output_path );
-}
-
-
-
-clipper::Coord_orth privateer::pymodelling::Builder::get_glycan_target_point(clipper::Coord_orth& connecting_atom, clipper::Coord_orth& vector_origin, clipper::Coord_orth& vector_target, float vectorShiftDistance)
-{
-	clipper::Coord_orth coord; 
-
-	clipper::Vec3<clipper::ftype> baseVector((vector_target.x()-vector_origin.x()),(vector_target.y()-vector_origin.y()), (vector_target.z()-vector_origin.z()));
-	// Create a 1A unit vector out of baseVector, to be used later in vector shifting
-	clipper::Vec3<clipper::ftype> unitVector = baseVector.unit();
-
-	// Obtain coordinates in the middle of suspected glycan density via 5A vector shift. This is the nearest glycan bonded via ND2 atom to ASN residue.
-	coord = clipper::Coord_orth( (connecting_atom.x()+(unitVector[0]*vectorShiftDistance)), (connecting_atom.y()+(unitVector[1]*vectorShiftDistance)), (connecting_atom.z()+(unitVector[2]*vectorShiftDistance)) );
-
-	return coord;
 }
 
 
