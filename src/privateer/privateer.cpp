@@ -102,6 +102,7 @@ int main(int argc, char** argv)
     bool useWURCSDataBase = false;
     bool useParallelism = true;
     bool rscc_best = false;
+    bool produce_external_restraints = false;
     bool closest_match_disable = false;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
@@ -233,6 +234,10 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-all_permutations" )
         {
           glucose_only = false;
+        }
+        else if ( args[arg] == "-external_restraints" )
+        {
+          produce_external_restraints = true;
         }
         else if ( args[arg] == "-cores" )
         {
@@ -1142,6 +1147,15 @@ int main(int argc, char** argv)
         {
             privateer::util::write_refmac_keywords ( enable_torsions_for );
             privateer::util::write_libraries( enable_torsions_for );
+        }
+
+        if ( produce_external_restraints ) {
+          std::string buffer = mgl.write_external_restraints ( true, false, 0.1 );
+          std::fstream of;
+          of.open("privateer-restraints.txt", std::fstream::out);
+          of << buffer;
+          of.close();
+          std::cout << "External restraints have been written to privateer-restraints.txt" << std::endl;
         }
 
         prog.set_termination_message( "Normal termination" );
@@ -3006,7 +3020,8 @@ int main(int argc, char** argv)
                             break;
                         }
                     }
-                    if ( found_in_tree ) break;
+                    if ( found_in_tree )
+                      break;
                 }
 
                 if ( !found_in_tree )
@@ -3350,6 +3365,14 @@ int main(int argc, char** argv)
         }
     }
 
+    if ( produce_external_restraints ) {
+      std::string buffer = mgl.write_external_restraints ( true, false, 0.1 );
+      std::fstream of;
+      of.open("privateer-restraints.txt", std::fstream::out);
+      of << buffer;
+      of.close();
+      std::cout << "External restraints have been written to privateer-restraints.txt" << std::endl;
+    }
 
     prog.set_termination_message( "Normal termination" );
     system("touch scored");
