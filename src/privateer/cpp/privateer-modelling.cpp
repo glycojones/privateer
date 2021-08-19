@@ -63,7 +63,7 @@ namespace privateer
             return output;
         }
 
-        clipper::Coord_orth Grafter::get_glycan_target_point(clipper::Coord_orth& connecting_atom, clipper::Coord_orth& vector_origin, clipper::Coord_orth& vector_target, float vectorShiftDistance)
+        clipper::Coord_orth Grafter::get_glycan_target_point(clipper::Coord_orth connecting_atom, clipper::Coord_orth vector_origin, clipper::Coord_orth vector_target, float vectorShiftDistance)
         {
             clipper::Coord_orth coord; 
 
@@ -77,11 +77,22 @@ namespace privateer
             return coord;
         }
 
-        void Grafter::graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, bool ANY_search_policy)
-        { 
-
+        void Grafter::overlay_mglycan_via_atom(clipper::Coord_orth target, clipper::Coord_orth origin, clipper::MPolymer& converted_mglycan)
+        {
             clipper::Mat33<clipper::ftype> identity_matrix;
             identity_matrix = identity_matrix.identity();
+
+            clipper::Vec3<clipper::ftype> origin_to_target_vector(  target.x() - origin.x(), 
+                                                                    target.y() - origin.y(), 
+                                                                    target.z() - origin.z());
+            
+
+            clipper::RTop_orth target_origin_overlayer(identity_matrix, origin_to_target_vector);
+            converted_mglycan.transform(target_origin_overlayer);
+        }
+
+        void Grafter::graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, bool ANY_search_policy)
+        { 
 
             int receiver_atom_index = lookup_protein_backbone_glycosylation_database(input_protein_side_chain_residue.type().trim());
 
@@ -102,7 +113,7 @@ namespace privateer
                 targetPsi = privateer::modelling::backbone_instructions[receiver_atom_index].Psi;
 
                 if(enable_user_messages && !debug_output)
-                    std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Targer Phi = " << targetPhi << " target Psi = " << targetPsi << std::endl;
+                    std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Target Phi = " << targetPhi << ", target Psi = " << targetPsi << std::endl;
 
                 if(debug_output)
                     DBG << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Target Phi = " << targetPhi << " target Psi = " << targetPsi << std::endl;
@@ -142,19 +153,24 @@ namespace privateer
 
             if(glycan_type == "non-ideal")
             {
+                clipper::MM::MODE search_policy;
+                if(ANY_search_policy)
+                    search_policy = clipper::MM::MODE::ANY;
+                else
+                    search_policy = clipper::MM::MODE::UNIQUE;
+
                 clipper::String sugar_connection_atom;
 
                 int glycan_grafting_type = lookup_glycan_type_glycosylation_database(glycan_type);
                 if(glycan_grafting_type != -1)
                 {
                     sugar_connection_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].connection_atom;
-                    
 
                     if(enable_user_messages && !debug_output)
                         std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
 
                     if(debug_output)
-                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
+                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_connection_atom << " used to translate in vicinity of " << connected_atom << " atom." << std::endl;
                 }
                 else
                 {
@@ -162,65 +178,55 @@ namespace privateer
                     throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
                 }
 
-                clipper::Coord_orth protein_connecting_target;
-                clipper::Coord_orth protein_vector_point_alpha;
-                clipper::Coord_orth protein_vector_point_bravo;
-                clipper::Coord_orth sugar_connection_target;
+                clipper::MAtom protein_connecting_target;
+                clipper::MAtom protein_vector_point_alpha;
+                clipper::MAtom protein_vector_point_bravo;
+                clipper::MAtom sugar_connection_target;
 
-                if(ANY_search_policy)
-                {
-                    protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, clipper::MM::ANY).coord_orth(); // ND2
-                    protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, clipper::MM::ANY).coord_orth(); // CG
-                    protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, clipper::MM::ANY).coord_orth(); // CB
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::ANY).coord_orth(); // C1
-                }
-                else
-                {
-                    protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, clipper::MM::UNIQUE).coord_orth(); // ND2
-                    protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, clipper::MM::UNIQUE).coord_orth(); // CG
-                    protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, clipper::MM::UNIQUE).coord_orth(); // CB
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::UNIQUE).coord_orth(); // C1
-                }
+                protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, search_policy); // ND2
+                protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, search_policy); // CB
+                protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, search_policy); // CG
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
 
-
-                clipper::Coord_orth potential_C1_position = get_glycan_target_point(protein_connecting_target, protein_vector_point_alpha, protein_vector_point_bravo, 1.5);
-
-                clipper::Coord_orth source(sugar_connection_target);
-                std::vector<clipper::Coord_orth> sourceVector;
-                sourceVector.push_back(source);
-
-                clipper::Coord_orth target(potential_C1_position);
-                std::vector<clipper::Coord_orth> targetVector;
-                targetVector.push_back(target);
+                clipper::Coord_orth potential_C1_position = get_glycan_target_point(protein_connecting_target.coord_orth(), protein_vector_point_bravo.coord_orth(), protein_vector_point_alpha.coord_orth(), 1.50);
                 
+                overlay_mglycan_via_atom(potential_C1_position, sugar_connection_target.coord_orth(), converted_mglycan);
+
+                // Update the coordinates of C1 and O1, get O5 coords from the glycan.
+                clipper::String ring_oxygen_name = glycan_to_graft.get_sugars()[0].ring_members()[0].id().trim();
+                clipper::MAtom ring_oxygen;
+
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+                double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
+                std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
                 
+                clipper::Coord_orth psiDirection = protein_vector_point_alpha.coord_orth() - protein_connecting_target.coord_orth(); // CG(origin_shift) - ND2(base)
+                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, psiDirection, protein_vector_point_alpha.coord_orth(), psiTorsionAtoms, targetPsi, debug_output);
 
-                if(enable_user_messages && !debug_output)
-                {
-                    std::cout << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-                    std::cout << "Coordinates of " << vector_point_alpha << ":\t" << protein_vector_point_alpha.format() << std::endl;
-                    std::cout << "Coordinates of " << vector_point_bravo << ":\t" << protein_vector_point_bravo.format() << std::endl;
-                    std::cout << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    std::cout << "Coordinates of potential C1 position:\t" << potential_C1_position.format() << std::endl;
-                    std::cout << "Coordinates of source:\t" << source.format() << std::endl;
-                    std::cout << "Coordinates of target:\t" << target.format() << std::endl;
-                }
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
 
+                currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
+                
                 if(debug_output)
-                {
-                    DBG << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-                    DBG << "Coordinates of " << vector_point_alpha << ":\t" << protein_vector_point_alpha.format() << std::endl;
-                    DBG << "Coordinates of " << vector_point_bravo << ":\t" << protein_vector_point_bravo.format() << std::endl;
-                    DBG << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    DBG << "Coordinates of potential C1 position:\t" << potential_C1_position.format() << std::endl;
-                    DBG << "Coordinates of source:\t" << source.format() << std::endl;
-                    DBG << "Coordinates of target:\t" << target.format() << std::endl;
-                }
+                    DBG << "Psi value after rotation: " << currentPsiTorsionAngle << std::endl;
 
-                clipper::RTop_orth relocator(sourceVector, targetVector);
-                converted_mglycan.transform(relocator);
+                double currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
+                std::vector<std::pair<clipper::MAtom, std::string>> phiTorsionAtoms = { std::make_pair(ring_oxygen, "sugar"), std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein") };
 
+                clipper::Coord_orth phiDirection = protein_connecting_target.coord_orth() - sugar_connection_target.coord_orth(); // ND2(origin_shift) - C1(base)
+                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, phiDirection, protein_connecting_target.coord_orth(), phiTorsionAtoms, targetPhi, debug_output);
+
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+                currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
                 
+                if(debug_output)
+                    DBG << "Phi value after rotation: " << currentPhiTorsionAngle << std::endl;
+
                 if(enable_user_messages && !debug_output)
                     std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                 
@@ -238,6 +244,12 @@ namespace privateer
             }
             else if(glycan_type == "ideal")
             {
+                clipper::MM::MODE search_policy;
+                if(ANY_search_policy)
+                    search_policy = clipper::MM::MODE::ANY;
+                else
+                    search_policy = clipper::MM::MODE::UNIQUE;
+
                 clipper::String sugar_connection_atom;
                 clipper::String sugar_vector_point;
 
@@ -251,7 +263,7 @@ namespace privateer
                         std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
 
                     if(debug_output)
-                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
+                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_vector_point << " used to translate onto " << connected_atom << " atom." << std::endl;
                 }
                 else
                 {
@@ -259,197 +271,221 @@ namespace privateer
                     throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
                 }
 
-                clipper::Coord_orth protein_connecting_target;
-                clipper::Coord_orth protein_vector_point_alpha;
-                clipper::Coord_orth protein_vector_point_bravo;
-                clipper::Coord_orth sugar_connection_target;
-                clipper::Coord_orth sugar_vector_point_target;
+                clipper::MAtom protein_connecting_target;
+                clipper::MAtom protein_vector_point_alpha;
+                clipper::MAtom protein_vector_point_bravo;
+                clipper::MAtom sugar_connection_target;
+                clipper::MAtom sugar_vector_point_target;
 
-                if(ANY_search_policy)
-                {
-                    protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, clipper::MM::ANY).coord_orth(); // ND2
-                    protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, clipper::MM::ANY).coord_orth(); // CB
-                    protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, clipper::MM::ANY).coord_orth(); // CG
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::ANY).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::ANY).coord_orth(); // O1
-                }
-                else
-                {
-                    protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, clipper::MM::UNIQUE).coord_orth(); // ND2
-                    protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, clipper::MM::UNIQUE).coord_orth(); // CB
-                    protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, clipper::MM::UNIQUE).coord_orth(); // CG
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::UNIQUE).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::UNIQUE).coord_orth(); // O1
-                }
+                protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, search_policy); // ND2
+                protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, search_policy); // CB
+                protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, search_policy); // CG
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
 
 
-                clipper::Vec3<clipper::ftype> O1toND2vector(protein_connecting_target.x() - sugar_vector_point_target.x(), 
-                                                            protein_connecting_target.y() - sugar_vector_point_target.y(), 
-                                                            protein_connecting_target.z() - sugar_vector_point_target.z());
-                
-    
-                clipper::RTop_orth ND2_O1_overlayer(identity_matrix, O1toND2vector);
-                converted_mglycan.transform(ND2_O1_overlayer);
+                overlay_mglycan_via_atom(protein_connecting_target.coord_orth(), sugar_vector_point_target.coord_orth(), converted_mglycan);
 
                 // Update the coordinates of C1 and O1, get O5 coords from the glycan.
                 clipper::String ring_oxygen_name = glycan_to_graft.get_sugars()[0].ring_members()[0].id().trim();
-                clipper::Coord_orth ring_oxygen_coords;
-                if(ANY_search_policy)
-                {
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::ANY).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::ANY).coord_orth(); // O1
-                    ring_oxygen_coords = converted_mglycan[0].find(ring_oxygen_name, clipper::MM::ANY).coord_orth(); // O5
-                }
-                else
-                {
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::UNIQUE).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::UNIQUE).coord_orth(); // O1
-                    ring_oxygen_coords = converted_mglycan[0].find(ring_oxygen_name, clipper::MM::UNIQUE).coord_orth(); // O5
-                }
+                clipper::MAtom ring_oxygen;
 
-                clipper::Vec3<clipper::ftype> C1toND2vector(protein_connecting_target.x() - sugar_connection_target.x(), 
-                                                            protein_connecting_target.y() - sugar_connection_target.y(), 
-                                                            protein_connecting_target.z() - sugar_connection_target.z());
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+                double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
+                std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
                 
-                clipper::ftype currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen_coords, sugar_connection_target, protein_connecting_target, protein_vector_point_alpha));
+                clipper::Coord_orth psiDirection = protein_vector_point_alpha.coord_orth() - protein_connecting_target.coord_orth(); // CG(origin_shift) - ND2(base)
+                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, psiDirection, protein_vector_point_alpha.coord_orth(), psiTorsionAtoms, targetPsi, debug_output);
+
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+                currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
                 
                 if(debug_output)
-                    DBG << "Phi = " << currentPhiTorsionAngle << "\t\t" << ring_oxygen_name << "-" << sugar_connection_atom << "-" << connected_atom << "-" << vector_point_alpha << std::endl;
+                    DBG << "Psi value after rotation: " << currentPsiTorsionAngle << std::endl;
+
+                double currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
+                std::vector<std::pair<clipper::MAtom, std::string>> phiTorsionAtoms = { std::make_pair(ring_oxygen, "sugar"), std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein") };
+
+                clipper::Coord_orth phiDirection = protein_connecting_target.coord_orth() - sugar_connection_target.coord_orth(); // ND2(origin_shift) - C1(base)
+                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, phiDirection, protein_connecting_target.coord_orth(), phiTorsionAtoms, targetPhi, debug_output);
+
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+                currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
+                
+                if(debug_output)
+                    DBG << "Phi value after rotation: " << currentPhiTorsionAngle << std::endl;
+
+                bool first_sugar_has_hydrogens = check_if_residue_has_hydrogens(converted_mglycan[0]);
+
+                if(first_sugar_has_hydrogens)
+                {
+                    clipper::MPolymer deleted_vector_point_target = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
+
+                    clipper::String vector_point_target_hydrogen_name = "H" + sugar_vector_point.substr(1,1);
+
+                    if(debug_output)
+                        DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
+
+                    clipper::MAtom vector_point_target_hydrogen = deleted_vector_point_target[0].find(vector_point_target_hydrogen_name, search_policy);
+
+                    clipper::MPolymer export_glycan = delete_atom_from_mglycan(deleted_vector_point_target, vector_point_target_hydrogen);
+
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                     
+                    if(debug_output)
+                        DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
+                    
+                    export_glycan.set_id(chainID);
+                    receiving_model.insert(export_glycan);
 
-                bool isCurrentPhiNegative = std::signbit(currentPhiTorsionAngle);
-                clipper::ftype phiDifference;
-                if(isCurrentPhiNegative)
-                    phiDifference = targetPhi - currentPhiTorsionAngle;
-                else
-                    phiDifference = targetPhi + currentPhiTorsionAngle;
-
-                if(debug_output)
-                {
-                    DBG << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    DBG << "Coordinates of " << sugar_vector_point << ":\t" << sugar_vector_point_target.format() << std::endl;
-                    DBG << "Coordinates of " << ring_oxygen_name << ":\t" << ring_oxygen_coords.format() << std::endl;
-                }
-                
-                clipper::Mat33<clipper::ftype> rodrigues_rotation_matrix_for_phi = generate_rotation_matrix_from_rodrigues_rotation_formula(phiDifference, C1toND2vector);
-
-                if(debug_output)
-                {
-                    clipper::RTop_orth phiRotator(rodrigues_rotation_matrix_for_phi);
-                    DBG << "targetPhi: " << targetPhi << "\t\tcurrentPhiTorsionAngle: " << currentPhiTorsionAngle << "\t\tphiDifference: " << phiDifference << "\t\t" << ring_oxygen_name << "-" << sugar_connection_atom << "-" << connected_atom << "-" << vector_point_alpha << std::endl;
-                    // DBG << "RTop_orth: \n" << phiRotator.format() << std::endl;
-                }
-                   
-                if(enable_user_messages && !debug_output)
-                    std::cout << "Target value of Phi torsion angle: " << targetPhi << "\t\tValue of Phi after translation: " << currentPhiTorsionAngle << "\t\tRotation along will be done by: " << phiDifference << " degrees." << "\t\t" << ring_oxygen_name << "-" << sugar_connection_atom << "-" << connected_atom << "-" << vector_point_alpha << std::endl;
-                
-                clipper::RTop_orth phiRotator(rodrigues_rotation_matrix_for_phi);
-                converted_mglycan.transform(phiRotator);
-
-                if(ANY_search_policy)
-                {
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::ANY).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::ANY).coord_orth(); // O1
-                    ring_oxygen_coords = converted_mglycan[0].find(ring_oxygen_name, clipper::MM::ANY).coord_orth(); // O5
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
+                    
+                    if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
                 }
                 else
                 {
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, clipper::MM::UNIQUE).coord_orth(); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, clipper::MM::UNIQUE).coord_orth(); // O1
-                    ring_oxygen_coords = converted_mglycan[0].find(ring_oxygen_name, clipper::MM::UNIQUE).coord_orth(); // O5
+                    clipper::MPolymer export_glycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
+
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
+                    
+                    if(debug_output)
+                        DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
+                    
+                    export_glycan.set_id(chainID);
+                    receiving_model.insert(export_glycan);
+
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
+                    
+                    if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
                 }
 
-                if(debug_output)
-                {
-                    // DBG << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-                    // DBG << "Coordinates of " << vector_point_alpha << ":\t" << protein_vector_point_alpha.format() << std::endl;
-                    // DBG << "Coordinates of " << vector_point_bravo << ":\t" << protein_vector_point_bravo.format() << std::endl;
-                    DBG << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    DBG << "Coordinates of " << sugar_vector_point << ":\t" << sugar_vector_point_target.format() << std::endl;
-                    DBG << "Coordinates of " << ring_oxygen_name << ":\t" << ring_oxygen_coords.format() << std::endl;
-                    currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen_coords, sugar_connection_target, protein_connecting_target, protein_vector_point_alpha));
-                    DBG << "targetPhi: " << targetPhi << "\t\tcurrentPhiTorsionAngle: " << currentPhiTorsionAngle << "\t\tphiDifference: " << phiDifference << "\t\t" << ring_oxygen_name << "-" << sugar_connection_atom << "-" << connected_atom << "-" << vector_point_alpha << std::endl;
-                }
-
-
-                if(enable_user_messages && !debug_output)
-                {
-                    std::cout << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-                    std::cout << "Coordinates of " << vector_point_alpha << ":\t" << protein_vector_point_alpha.format() << std::endl;
-                    std::cout << "Coordinates of " << vector_point_bravo << ":\t" << protein_vector_point_bravo.format() << std::endl;
-                    std::cout << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    std::cout << "Coordinates of " << ring_oxygen_name << ":\t" << ring_oxygen_coords.format() << std::endl;
-                }
-
-                if(debug_output)
-                {
-                    DBG << "Coordinates of " << connected_atom << ":\t" << protein_connecting_target.format() << std::endl;
-                    DBG << "Coordinates of " << vector_point_alpha << ":\t" << protein_vector_point_alpha.format() << std::endl;
-                    DBG << "Coordinates of " << vector_point_bravo << ":\t" << protein_vector_point_bravo.format() << std::endl;
-                    DBG << "Coordinates of " << sugar_connection_atom << ":\t" << sugar_connection_target.format() << std::endl;
-                    std::cout << "Coordinates of " << ring_oxygen_name << ":\t" << ring_oxygen_coords.format() << std::endl;
-                }
-
-                if(enable_user_messages && !debug_output)
-                    std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                
-                if(debug_output)
-                    DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                
-                converted_mglycan.set_id(chainID);
-                receiving_model.insert(converted_mglycan);
-
-                if(enable_user_messages && !debug_output)
-                    std::cout << "Glycan has been grafted!" << std::endl;
-                
-                if(debug_output)
-                    DBG << "Glycan has been grafted!" << std::endl;
             }   
         }
 
-        clipper::Mat33<clipper::ftype> Grafter::generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::ftype degrees_to_rotate, clipper::Vec3<clipper::ftype> input_vector)
+        // Function adopted from Paul Emsley's Coot software. 
+        clipper::Coord_orth Grafter::generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::Coord_orth direction, clipper::Coord_orth position, clipper::Coord_orth origin_shift, double angle)
         {
-            clipper::Vec3<clipper::ftype> input_unit_vector = input_vector.unit();
-            clipper::ftype input_angle_in_radians = clipper::Util::d2rad(degrees_to_rotate);
-
-            clipper::ftype omega_x = input_unit_vector[0];
-            clipper::ftype omega_y = input_unit_vector[1];
-            clipper::ftype omega_z = input_unit_vector[2];
+            clipper::Coord_orth unit_vec = clipper::Coord_orth(direction.unit());
             
-            /*
-            clipper::Mat33<clipper::ftype> matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
-            |         1,         2,         3|
-            |         4,         5,         6|
-            |         7,         8,         9|
-            */
-            // clipper::ftype mat00 = ( cos(input_angle_in_radians) + pow(omega_x, 2) * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat01 = ( omega_x * omega_y * (1 - cos(input_angle_in_radians)) - omega_z * sin(input_angle_in_radians) );
-            // clipper::ftype mat02 = ( omega_y * sin(input_angle_in_radians) + omega_x * omega_z * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat10 = ( omega_z * sin(input_angle_in_radians) + omega_x * omega_y * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat11 = ( cos(input_angle_in_radians) + pow(omega_y, 2) * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat12 = ( (-1 * omega_x) * sin(input_angle_in_radians) + omega_y * omega_z * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat20 = ( (-1 * omega_y) * sin(input_angle_in_radians) + omega_x * omega_z * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat21 = ( omega_x * sin(input_angle_in_radians ) + omega_y * omega_z * (1 - cos(input_angle_in_radians)) );
-            // clipper::ftype mat22 = ( cos(input_angle_in_radians) + pow(omega_z, 2) * (1 - cos(input_angle_in_radians)) );
+            double l = unit_vec[0];
+            double m = unit_vec[1];
+            double n = unit_vec[2];
 
-            clipper::ftype mat00 = ( pow(omega_x, 2) + (1 - pow(omega_x, 2)) * cos(input_angle_in_radians) );
-            clipper::ftype mat01 = ( omega_x * omega_y * (1 - cos(input_angle_in_radians)) + omega_z * sin(input_angle_in_radians) );
-            clipper::ftype mat02 = ( omega_z * omega_x * (1 - cos(input_angle_in_radians)) + omega_y * sin(input_angle_in_radians) );
-
-            clipper::ftype mat10 = ( omega_x * omega_y * (1 - cos(input_angle_in_radians)) + omega_z * sin(input_angle_in_radians) );
-            clipper::ftype mat11 = ( pow(omega_y, 2) + (1 - pow(omega_y, 2)) * cos(input_angle_in_radians) );
-            clipper::ftype mat12 = ( omega_y * omega_z * (1 - cos(input_angle_in_radians)) - omega_x * sin(input_angle_in_radians) );
-
-            clipper::ftype mat20 = ( omega_z * omega_x * (1 - cos(input_angle_in_radians)) - omega_y * sin(input_angle_in_radians) );
-            clipper::ftype mat21 = ( omega_y * omega_z * (1 - cos(input_angle_in_radians)) + omega_x * sin(input_angle_in_radians) );
-            clipper::ftype mat22 = ( pow(omega_z, 2) + (1 - pow(omega_z, 2)) * cos(input_angle_in_radians) );
+            double ll = l*l;
+            double mm = m*m;
+            double nn = n*n;
+            double cosk = cos(angle);
+            double sink = sin(angle);
+            double I_cosk = 1.0 - cosk;
             
-            clipper::Mat33<clipper::ftype> rodrigures_rotation_matrix(mat00, mat01, mat02, mat10, mat11, mat12, mat20, mat21, mat22);
-
-            return rodrigures_rotation_matrix;
+            // The Rotation matrix angle w about vector with direction cosines l,m,n.
+            // 
+            // ( l**2+(m**2+n**2)cos k     lm(1-cos k)-nsin k        nl(1-cos k)+msin k   )
+            // ( lm(1-cos k)+nsin k        m**2+(l**2+n**2)cos k     mn(1-cos k)-lsin k   )
+            // ( nl(1-cos k)-msin k        mn(1-cos k)+lsin k        n*2+(l**2+m**2)cos k )
+            //
+            // (Amore documentation) Thanks for that pointer EJD :).
+            
+            clipper::Mat33<double> r( ll+(mm+nn)*cosk,    l*m*I_cosk-n*sink,  n*l*I_cosk+m*sink,
+                            l*m*I_cosk+n*sink,  mm+(ll+nn)*cosk,    m*n*I_cosk-l*sink,
+                            n*l*I_cosk-m*sink,  m*n*I_cosk+l*sink,  nn+(ll+mm)*cosk );
+            
+            clipper::RTop_orth rtop(r, clipper::Coord_orth(0,0,0));
+            return origin_shift + (position-origin_shift).transform(rtop);
         }
 
 
+        void Grafter::rotate_mglycan_until_torsion_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& torsionAtoms, double targetAngle, bool debug_output)
+        {
+            clipper::MAtom firstTorsionAtom; // always sugar
+            clipper::MAtom secondTorsionAtom; 
+            clipper::MAtom thirdTorsionAtom; // always protein
+            clipper::MAtom fourthTorsionAtom; // always protein
+
+            firstTorsionAtom = converted_mglycan[0].find(torsionAtoms[0].first.id().trim(), clipper::MM::UNIQUE);
+            
+            if(torsionAtoms[1].second == "sugar")
+            {
+                clipper::String secondTorsionAtomName = torsionAtoms[1].first.id().trim();
+                secondTorsionAtom = converted_mglycan[0].find(secondTorsionAtomName, clipper::MM::UNIQUE);
+            }
+            else
+            {
+                clipper::String secondTorsionAtomName = torsionAtoms[1].first.id().trim();
+                secondTorsionAtom = protein_residue.find(secondTorsionAtomName, clipper::MM::UNIQUE);
+            }
+            
+            thirdTorsionAtom = protein_residue.find(torsionAtoms[2].first.id().trim(), clipper::MM::UNIQUE);
+            fourthTorsionAtom = protein_residue.find(torsionAtoms[3].first.id().trim(), clipper::MM::UNIQUE);
+
+            double currentTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(firstTorsionAtom.coord_orth(), secondTorsionAtom.coord_orth(), thirdTorsionAtom.coord_orth(), fourthTorsionAtom.coord_orth()));
+            double rotangle_radian = clipper::Util::d2rad(currentTorsionAngle - targetAngle);
+
+            if(debug_output)
+                DBG << "targetTorsion: " << targetAngle << "\t\tCurrent value of torsion: " << currentTorsionAngle << "\trotangle " << clipper::Util::rad2d(rotangle_radian) << "\t\t\t" << firstTorsionAtom.id().trim() << "-" << secondTorsionAtom.id().trim() << "-" << thirdTorsionAtom.id().trim() << "-" << fourthTorsionAtom.id().trim() << std::endl;
+
+            for(int residue = 0; residue < converted_mglycan.size(); residue++)
+            {
+                clipper::MMonomer currentResidue = converted_mglycan[residue];
+                for(int atom = 0; atom < converted_mglycan[residue].size(); atom++)
+                {
+                    clipper::MAtom currentAtom = converted_mglycan[residue][atom];
+                    clipper::Coord_orth old_pos = currentAtom.coord_orth();
+                    clipper::Coord_orth new_pos = generate_rotation_matrix_from_rodrigues_rotation_formula(direction, old_pos, origin_shift, rotangle_radian);
+                    converted_mglycan[residue][atom].set_coord_orth(new_pos);
+                }
+            }
+        }
+
+        bool Grafter::check_if_residue_has_hydrogens(clipper::MMonomer residue_to_check)
+        {
+            for(int atom = 0; atom < residue_to_check.size(); atom++)
+            {
+                clipper::MAtom currentAtom = residue_to_check[atom];
+                if(currentAtom.element().trim() == "H")
+                    return true;
+            }
+
+            return false;
+        }
+
+        clipper::MPolymer Grafter::delete_atom_from_mglycan(clipper::MPolymer& converted_mglycan, clipper::MAtom& atom_to_be_deleted)
+        {
+            clipper::MPolymer output;
+            for(int residue = 0; residue < converted_mglycan.size(); residue++)
+            {
+                clipper::MMonomer output_residue;
+                for(int atom = 0; atom < converted_mglycan[residue].size(); atom++)
+                {
+                    clipper::MAtom currentAtom = converted_mglycan[residue][atom];
+                    if(currentAtom.coord_orth() != atom_to_be_deleted.coord_orth())
+                    {
+                        output_residue.insert(currentAtom, -1);
+                    }
+                }
+                output_residue.set_id(converted_mglycan[residue].id());
+                output_residue.set_type(converted_mglycan[residue].type());
+                output_residue.set_seqnum(converted_mglycan[residue].seqnum());
+                output.insert(output_residue, -1);
+            }
+            output.set_id(converted_mglycan.id());
+            return output;
+        }
 
         int Grafter::lookup_protein_backbone_glycosylation_database (clipper::String name)
         {
