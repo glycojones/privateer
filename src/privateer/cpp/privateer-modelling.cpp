@@ -27,11 +27,13 @@ namespace privateer
         };
         const int sugar_instructions_size = sizeof( sugar_instructions ) / sizeof( sugar_instructions[0] );
     
-        Grafter::Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, bool enable_user_messages, bool debug_output)
+        Grafter::Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, bool trim_donor_when_clashes_detected, bool enable_user_messages, bool debug_output)
         {
             this->enable_user_messages = enable_user_messages;
             this->debug_output = debug_output;
             this->receiving_model = receiving_model;
+            this->export_model = receiving_model;
+            this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
             clipper::MGlycology donor_model_mgl = clipper::MGlycology(donor_model, debug_output, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans_from_donor = donor_model_mgl.get_list_of_glycans();
 
@@ -91,7 +93,7 @@ namespace privateer
             converted_mglycan.transform(target_origin_overlayer);
         }
 
-        void Grafter::graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, bool ANY_search_policy)
+        void Grafter::graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, bool ANY_search_policy)
         { 
 
             int receiver_atom_index = lookup_protein_backbone_glycosylation_database(input_protein_side_chain_residue.type().trim());
@@ -127,9 +129,9 @@ namespace privateer
 
             const clipper::String chainids = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             std::vector<clipper::String> used_chain_ids;
-            for(int i = 0; i < receiving_model.size(); i++)
+            for(int i = 0; i < export_model.size(); i++)
             {
-                clipper::String currentChainID = receiving_model[i].id().trim();
+                clipper::String currentChainID = export_model[i].id().trim();
                 used_chain_ids.push_back(currentChainID);
             }
 
@@ -234,7 +236,7 @@ namespace privateer
                     DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                 
                 converted_mglycan.set_id(chainID);
-                receiving_model.insert(converted_mglycan);
+                export_model.insert(converted_mglycan);
 
                 if(enable_user_messages && !debug_output)
                     std::cout << "Glycan has been grafted!" << std::endl;
@@ -328,16 +330,16 @@ namespace privateer
 
                 if(first_sugar_has_hydrogens)
                 {
-                    clipper::MPolymer deleted_vector_point_target = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
+                    converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
 
                     clipper::String vector_point_target_hydrogen_name = "H" + sugar_vector_point.substr(1,1);
 
                     if(debug_output)
                         DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
 
-                    clipper::MAtom vector_point_target_hydrogen = deleted_vector_point_target[0].find(vector_point_target_hydrogen_name, search_policy);
+                    clipper::MAtom vector_point_target_hydrogen = converted_mglycan[0].find(vector_point_target_hydrogen_name, search_policy);
 
-                    clipper::MPolymer export_glycan = delete_atom_from_mglycan(deleted_vector_point_target, vector_point_target_hydrogen);
+                    converted_mglycan = delete_atom_from_mglycan(converted_mglycan, vector_point_target_hydrogen);
 
                     if(enable_user_messages && !debug_output)
                         std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
@@ -345,8 +347,8 @@ namespace privateer
                     if(debug_output)
                         DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                     
-                    export_glycan.set_id(chainID);
-                    receiving_model.insert(export_glycan);
+                    converted_mglycan.set_id(chainID);
+                    export_model.insert(converted_mglycan);
 
                     if(enable_user_messages && !debug_output)
                         std::cout << "Glycan has been grafted!" << std::endl;
@@ -356,7 +358,7 @@ namespace privateer
                 }
                 else
                 {
-                    clipper::MPolymer export_glycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
+                    clipper::MPolymer converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
 
                     if(enable_user_messages && !debug_output)
                         std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
@@ -364,8 +366,8 @@ namespace privateer
                     if(debug_output)
                         DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                     
-                    export_glycan.set_id(chainID);
-                    receiving_model.insert(export_glycan);
+                    converted_mglycan.set_id(chainID);
+                    export_model.insert(converted_mglycan);
 
                     if(enable_user_messages && !debug_output)
                         std::cout << "Glycan has been grafted!" << std::endl;
@@ -373,8 +375,11 @@ namespace privateer
                     if(debug_output)
                         DBG << "Glycan has been grafted!" << std::endl;
                 }
-
-            }   
+            }
+            Grafter::check_for_clashes(trim_donor_when_clashes_detected, export_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
+            // get_resulting_clashes(trim_donor_when_clashes_detected, export_model, converted_mglycan, input_protein_side_chain_residue, chainID)
+            // if(delete_clashes)
+                // delete_clashes  
         }
 
         // Function adopted from Paul Emsley's Coot software. 
@@ -487,6 +492,89 @@ namespace privateer
             return output;
         }
 
+        bool Grafter::check_for_clashes(bool trim_donor_when_clashes_detected, clipper::MiniMol& export_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id)
+        {
+            bool clashes_detected = false;
+            clipper::MAtomNonBond manb = clipper::MAtomNonBond(export_model, 1.0);
+            clipper::MGlycology mgl = clipper::MGlycology(export_model, manb, debug_output, "undefined");
+            std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+
+            clipper::MGlycan grafted_mglycan;
+            clipper::MSugar root_msugar;
+
+            for(int i = 0; i < list_of_glycans.size(); i++)
+            {
+                clipper::MGlycan currentGlycan = list_of_glycans[i];
+                clipper::MSugar currentRootSugar = currentGlycan.get_root().second;
+
+                if(currentGlycan.get_chain().trim() == root_chain_id && currentGlycan.get_root_sugar_chainID().trim() == root_sugar_chain_id && currentRootSugar.type().trim() == root_sugar.type().trim() && currentRootSugar.id().trim() == root_sugar.id().trim())
+                {
+                    grafted_mglycan = currentGlycan;
+                    root_msugar = currentRootSugar;
+                }
+            }
+
+            std::vector<clipper::MSugar> sugars_in_grafted_mglycan = grafted_mglycan.get_sugars();
+
+            std::vector<std::pair<clipper::MMonomer, clipper::MSugar>> clashing_residues;
+            clipper::MAtomNonBond clashmanb( export_model, 4.0 );
+            for(int node = 0; node < grafted_mglycan.number_of_nodes(); node++)
+            {
+                clipper::MGlycan::Node currentNode = grafted_mglycan.get_node(node);
+                clipper::MSugar currentSugar = currentNode.get_sugar();
+                
+                for(int atom = 0; atom < currentSugar.size(); atom++)
+                {
+                    clipper::Coord_orth currentSugarAtomCoord = currentSugar[atom].coord_orth();
+                    std::vector<clipper::MAtomIndexSymmetry> neighbourhood_atoms = clashmanb( currentSugarAtomCoord, 2.0 );
+
+
+                    for(int i = 0; i < neighbourhood_atoms.size(); i++)
+                    {
+                        int detected_chain      = neighbourhood_atoms[i].polymer();
+                        int detected_monomer    = neighbourhood_atoms[i].monomer();
+                        int detected_atom       = neighbourhood_atoms[i].atom();
+
+                        auto search_result = std::find_if(std::begin(sugars_in_grafted_mglycan), std::end(sugars_in_grafted_mglycan),
+                        [&export_model, &detected_chain, &detected_monomer](clipper::MSugar& sugar) {
+                            return sugar.id().trim() == export_model[detected_chain][detected_monomer].id().trim() && sugar.type().trim() == export_model[detected_chain][detected_monomer].type().trim() &&
+                                   sugar.seqnum() == export_model[detected_chain][detected_monomer].seqnum();
+                        });
+                        // DBG << "(search_result == std::end(sugars_in_grafted_mglycan)" << std::endl;
+                        if(search_result == std::end(sugars_in_grafted_mglycan) && clipper::Coord_orth::length(currentSugarAtomCoord, export_model[detected_chain][detected_monomer][detected_atom].coord_orth()) < 1.5)
+                        {
+                            auto previously_identified = std::find_if(std::begin(clashing_residues), std::end(clashing_residues),
+                            [&](std::pair<clipper::MMonomer, clipper::MSugar>& element) {
+                                return  element.first.type().trim() == export_model[detected_chain][detected_monomer].type().trim() && element.first.id().trim() == export_model[detected_chain][detected_monomer].id().trim() && element.first.seqnum() == export_model[detected_chain][detected_monomer].seqnum() && 
+                                        element.second.type().trim() == currentSugar.type().trim() && element.second.id().trim() == currentSugar.id().trim() && element.second.seqnum() == currentSugar.seqnum();
+                            });
+
+                            // DBG << "if(previously_identified == std::end(clashing_residues)" << std::endl;
+                            if(previously_identified == std::end(clashing_residues))
+                                clashing_residues.push_back(std::make_pair(export_model[detected_chain][detected_monomer], currentSugar));
+                        }
+                        
+                        // DBG << "Detected " << export_model[detected_chain].id().trim() << "/" << export_model[detected_chain][detected_monomer].type().trim() << "-" << export_model[detected_chain][detected_monomer].id().trim()
+                            // << " with the distance of: " << clipper::Coord_orth::length(currentSugarAtomCoord, export_model[detected_chain][detected_monomer][detected_atom].coord_orth()) << "\t\t\t" << currentSugar[atom].id().trim() << std::endl;
+                    }
+                }
+            }
+
+            if(debug_output)
+            {
+                for(int i = 0; i < clashing_residues.size(); i++)
+                {
+                     DBG << "Detected clash: " << clashing_residues[i].first.id().trim() << "-" << clashing_residues[i].first.type().trim() << "\t\t\tSugar: " << clashing_residues[i].second.id().trim() << "-" << clashing_residues[i].second.type().trim() << std::endl;
+                }
+            }
+
+            if(!clashing_residues.empty())
+                clashes_detected = true;
+
+
+            return clashes_detected;
+        }
+
         int Grafter::lookup_protein_backbone_glycosylation_database (clipper::String name)
         {
             for (int i = 0; i < backbone_instructions_size; i++)
@@ -512,9 +600,5 @@ namespace privateer
             return -1;
         }
     
-
-
-
-
     }
 }

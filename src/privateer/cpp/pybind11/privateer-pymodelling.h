@@ -25,14 +25,14 @@ namespace privateer {
 			{
 				public:
 					Builder() { };
-					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
+					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
 					
-					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
+					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
 					std::string get_path_of_receiving_model_file_used ( ) { return path_to_receiving_model; };
 					std::string get_path_of_donor_model_file_used ( ) { return path_to_donor_model; };
 					pybind11::list get_receiving_model_sequence_info () { return imported_receiving_model_seq_info; };
 					pybind11::list get_glycan_summary_from_donor () { return glycan_summary_donor; };
-					void graft_glycan_to_receiver (int mglycanindex, int receiver_chain_index, int received_residue_index);
+					void graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index);
 					void export_grafted_model( std::string& output_path );
 					
 
@@ -41,21 +41,21 @@ namespace privateer {
 					bool ANY_search_policy;
 					bool enable_user_messages;
 					bool debug_output;
+					bool trim_donor_when_clashes_detected;
 					std::string path_to_receiving_model;
 					std::string path_to_donor_model;
 
+					privateer::modelling::Grafter grafter;
+
 					clipper::MiniMol imported_receiving_model;
 					clipper::MiniMol imported_donor_model;
+
+					clipper::MiniMol export_model;
 
 					pybind11::list imported_receiving_model_seq_info;
 					pybind11::list glycan_summary_donor;
 
 					pybind11::list get_protein_sequence_information (clipper::MiniMol& input);
-					// std::pair<clipper::MAtom, clipper::MAtom> get_protein_sidechain_atom_targets(clipper::MMonomer residue, bool any_policy);
-					// std::pair<clipper::MAtom, clipper::MAtom> get_sugar_atom_targets(clipper::MMonomer residue, bool any_policy);
-					// clipper::Vec3<clipper::ftype> get_vector(clipper::Coord_orth& alpha, clipper::Coord_orth& bravo);
-
-
 			};
 		
 

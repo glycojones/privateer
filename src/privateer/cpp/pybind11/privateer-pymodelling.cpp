@@ -12,15 +12,16 @@
 
 
 
-privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
+privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
 {
+    this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
     this->ANY_search_policy = ANY_search_policy;
     this->enable_user_messages = enable_user_messages;
     this->debug_output = debug_output;
-    this->read_from_file ( path_to_receiving_model_file, path_to_donor_model_file, ANY_search_policy, enable_user_messages, debug_output );
+    this->read_from_file ( path_to_receiving_model_file, path_to_donor_model_file, trim_donor_when_clashes_detected, ANY_search_policy, enable_user_messages, debug_output );
 };
 
-void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
+void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
 
     if(path_to_receiving_model == "undefined")
     {
@@ -81,6 +82,9 @@ void privateer::pymodelling::Builder::read_from_file( std::string& path_to_recei
     
     if(debug_output)
         DBG << "Generated a pybind11 list with summary of glycans detected in donor. Length of output list: " << glycan_summary_donor.size() << std::endl;
+
+    this->grafter = privateer::modelling::Grafter(imported_receiving_model, imported_donor_model, trim_donor_when_clashes_detected, enable_user_messages, debug_output);
+    
 }
 
 pybind11::list privateer::pymodelling::Builder::get_protein_sequence_information( clipper::MiniMol& input ) 
@@ -105,9 +109,7 @@ pybind11::list privateer::pymodelling::Builder::get_protein_sequence_information
 
 void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index)
 {
-    privateer::modelling::Grafter Grafter(imported_receiving_model, imported_donor_model, enable_user_messages, debug_output);
-
-    std::vector<clipper::MGlycan> donor_glycans = Grafter.get_donor_glycans();
+    std::vector<clipper::MGlycan> donor_glycans = grafter.get_donor_glycans();
     clipper::MGlycan glycan_to_graft = donor_glycans[mglycanindex];
     
     if(debug_output)
@@ -132,15 +134,19 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         std::cout << "Grafting input glycan to: " << imported_receiving_model[receiver_chain_index].id().trim() << "/" << imported_receiving_model[receiver_chain_index][received_residue_index].type().trim() << "-" << imported_receiving_model[receiver_chain_index][received_residue_index].id().trim() << std::endl;
     }
 
-    // Grafter.graft_mpolymer_to_receiving_model(relocator, converted_mglycan);
-    Grafter.graft_mpolymer_to_receiving_model(glycan_to_graft, receiver_monomer, ANY_search_policy);
-    this->imported_receiving_model = Grafter.get_receiving_model();
+    grafter.graft_mpolymer_to_receiving_model(glycan_to_graft, receiver_monomer, imported_receiving_model[receiver_chain_index].id().trim(), ANY_search_policy);
+    if(trim_donor_when_clashes_detected)
+    {
+        // grafter.delete_clashes()
+    }
+
+    this->export_model = grafter.get_final_receiving_model();
 }
 
 void privateer::pymodelling::Builder::export_grafted_model(std::string& output_path)
 {
     clipper::MMDBfile pdbfile;
-    pdbfile.export_minimol( imported_receiving_model );
+    pdbfile.export_minimol( export_model );
     pdbfile.write_file( output_path );
 }
 
@@ -155,7 +161,7 @@ void init_pymodelling(py::module& m)
 {
     py::class_<pm::Builder>(m, "Builder")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, bool, bool, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("path_to_donor_model")="undefined", py::arg("ANY_search_policy")=true, py::arg("enable_user_messages")=true, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, bool, bool, bool, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("path_to_donor_model")="undefined", py::arg("trim_donor_when_clashes_detected")=true, py::arg("ANY_search_policy")=true, py::arg("enable_user_messages")=true, py::arg("debug_output")=false)
         .def("get_path_of_receiving_model_file_used", &pm::Builder::get_path_of_receiving_model_file_used)
         .def("get_path_of_donor_model_file_used", &pm::Builder::get_path_of_donor_model_file_used)
         .def("get_receiving_model_sequence_info", &pm::Builder::get_receiving_model_sequence_info)
