@@ -71,7 +71,7 @@ namespace privateer {
 				clipper::Coord_orth generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::Coord_orth direction, clipper::Coord_orth position, clipper::Coord_orth origin_shift, double targetAngle);
 				void rotate_mglycan_until_torsion_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& torsionAtoms, double angle, bool debug_output);
 				
-				bool check_for_clashes(bool trim_donor_when_clashes_detected, clipper::MiniMol& export_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > check_for_clashes(bool trim_donor_when_clashes_detected, clipper::MiniMol& export_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
 				// check_for_clashes(trim_donor_when_clashes_detected, export_model, export_glycan, input_protein_side_chain_residue, chainID)
 
 				// bool detect_clashes();
