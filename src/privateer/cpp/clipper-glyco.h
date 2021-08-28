@@ -660,6 +660,7 @@ namespace clipper
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
+            std::vector<Node> get_node_list_vector() { return node_list; }; 
 
             const clipper::String& get_chain () const { return chain; }
             const clipper::String& get_root_sugar_chainID () const { return chain_root_sugar; }
