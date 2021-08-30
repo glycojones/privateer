@@ -65,6 +65,7 @@ namespace privateer {
 				Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, bool trim_donor_when_clashes_detected, bool enable_user_messages, bool debug_output);
 				int get_number_of_glycans_detected() { return donor_glycans.size(); };
 				clipper::MiniMol& get_final_receiving_model() { return export_model; };
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > get_grafted_clashes() { return clashes; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
 				clipper::MPolymer convert_mglycan_to_mpolymer(clipper::MGlycan input);
@@ -73,7 +74,7 @@ namespace privateer {
 				void graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, bool ANY_search_policy);
 				clipper::Coord_orth generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::Coord_orth direction, clipper::Coord_orth position, clipper::Coord_orth origin_shift, double targetAngle);
 				void rotate_mglycan_until_torsion_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& torsionAtoms, double angle, bool debug_output);
-				std::pair<double, double> rotate_mglycan_until_clashes_are_minimized(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output);
+				clipper::MPolymer rotate_mglycan_until_clashes_are_minimized(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output);
 
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > check_for_clashes(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
 				clipper::MiniMol trim_graft_until_no_clashes_left(clipper::MiniMol& current_model, clipper::MGlycan& grafted_glycan, std::pair<clipper::MMonomer, clipper::String> root_residue, clipper::String graft_chain_id, std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > current_clashes);
@@ -95,7 +96,7 @@ namespace privateer {
 
 				clipper::MiniMol export_model;
 
-				bool clashes_detected_in_exported_model;
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes;
 
 				std::vector<clipper::MGlycan> donor_glycans;
 				int numDonorGlycansDetected;
