@@ -544,6 +544,7 @@ namespace privateer
             clipper::MPolymer manipulated_glycan = converted_mglycan;
             clipper::MPolymer best_performing_glycan = converted_mglycan;
             double bestPerformingPsi, bestPerformingPhi;
+            double previousAverageDistanceBetweenResidues = 0.0;
 
             tmp_clash_model.insert(manipulated_glycan);
             std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > reference_clashes = check_for_clashes(tmp_clash_model, converted_mglycan[0], protein_residue, root_chain_id, root_sugar_chain_id);
@@ -579,7 +580,7 @@ namespace privateer
             bestPerformingPsi = currentPsiTorsionAngle;
             bestPerformingPhi = currentPhiTorsionAngle;
             best_performing_glycan = converted_mglycan;
-            
+
             for(double currentPsiIterator = -psiError; currentPsiIterator <= +psiError; currentPsiIterator += 5.0)
             {
                 for(double currentPhiIterator = -phiError; currentPhiIterator <= +phiError; currentPhiIterator += 5.0)
@@ -657,12 +658,52 @@ namespace privateer
                     
                     n_most_recent_clashes = current_clashes.size();
 
-                    if(n_most_recent_clashes < n_reference_clashes)
+                    if(n_most_recent_clashes < n_reference_clashes || n_most_recent_clashes == n_reference_clashes)
                     {
-                        bestPerformingPsi = currentPsiTorsionAngle;
-                        bestPerformingPhi = currentPhiTorsionAngle;
-                        best_performing_glycan = manipulated_glycan;
-                        n_reference_clashes = n_most_recent_clashes;
+                        if(n_most_recent_clashes < n_reference_clashes)
+                        {
+                            bestPerformingPsi = currentPsiTorsionAngle;
+                            bestPerformingPhi = currentPhiTorsionAngle;
+                            best_performing_glycan = manipulated_glycan;
+                            n_reference_clashes = n_most_recent_clashes;
+                            previousAverageDistanceBetweenResidues = 0.0;
+                        }
+                        else
+                        {
+                            double currentAverageDistanceBetweenResidues = 0.0;
+                            double totalAveragesOfPerResidueDistances = 0.0;
+
+                            for(int i = 0; i < current_clashes.size(); i++)
+                            {
+                                int n_protein_side_chain_atoms = current_clashes[i].first.first.size();
+                                int n_sugar_atoms = current_clashes[i].second.first.size();
+                                int totalAtoms = n_protein_side_chain_atoms + n_sugar_atoms;
+                                double averageDistance = 0.0;
+                                double totalDistance = 0.0;
+                                
+                                for(int sugarAtom = 0; sugarAtom < n_sugar_atoms; sugarAtom++)
+                                {
+                                    for(int proteinResidueAtom = 0; proteinResidueAtom < n_protein_side_chain_atoms; proteinResidueAtom++)
+                                    {
+                                        double currentDistance = clipper::Coord_orth::length(current_clashes[i].first.first[proteinResidueAtom].coord_orth(), current_clashes[i].second.first[sugarAtom].coord_orth());
+                                        totalDistance = totalDistance + currentDistance;
+                                    }
+                                }
+                                averageDistance = totalDistance / totalAtoms;
+                                totalAveragesOfPerResidueDistances = totalAveragesOfPerResidueDistances + averageDistance;
+                            }
+                            
+                            currentAverageDistanceBetweenResidues = totalAveragesOfPerResidueDistances / n_most_recent_clashes;
+
+                            if(currentAverageDistanceBetweenResidues > previousAverageDistanceBetweenResidues)
+                            {
+                                bestPerformingPsi = currentPsiTorsionAngle;
+                                bestPerformingPhi = currentPhiTorsionAngle;
+                                best_performing_glycan = manipulated_glycan;
+                                n_reference_clashes = n_most_recent_clashes;
+                                previousAverageDistanceBetweenResidues = currentAverageDistanceBetweenResidues;
+                            }
+                        }
                     }
 
                     if(current_clashes.empty())

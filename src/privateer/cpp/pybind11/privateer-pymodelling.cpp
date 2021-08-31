@@ -10,8 +10,6 @@
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
-
-
 privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
 {
     this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
@@ -20,6 +18,25 @@ privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_fi
     this->debug_output = debug_output;
     this->read_from_file ( path_to_receiving_model_file, path_to_donor_model_file, trim_donor_when_clashes_detected, ANY_search_policy, enable_user_messages, debug_output );
 };
+
+std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single_letter(std::string three_letter_code)
+{
+    std::unordered_map<std::string, std::string> code_conversion = 
+    {
+        {"ALA", "A"}, {"ARG", "R"}, {"ASN", "N"}, {"ASP", "D"},
+        {"CYS", "C"}, {"GLN", "Q"}, {"GLU", "E"}, {"GLY", "G"},
+        {"HIS", "H"}, {"ILE", "I"}, {"LEU", "L"}, {"LYS", "K"},
+        {"MET", "M"}, {"PHE", "F"}, {"PRO", "P"}, {"SER", "S"},
+        {"THR", "T"}, {"TRP", "W"}, {"TYR", "Y"}, {"VAL", "V"}
+    };
+
+    std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);
+
+    if ( result == code_conversion.end() )
+        return "X";
+    else
+        return result->second;
+}
 
 void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
 
@@ -87,21 +104,25 @@ void privateer::pymodelling::Builder::read_from_file( std::string& path_to_recei
     
 }
 
+// return single letter code also
 pybind11::list privateer::pymodelling::Builder::get_protein_sequence_information( clipper::MiniMol& input ) 
 {
     pybind11::list output;
     for(int i = 0; i < input.size(); i++)
     {
         pybind11::list residues;
+        std::string complete_polymer_seq;
         for(int j = 0; j < input[i].size(); j++)
         {
             std::string residueType = input[i][j].type().trim();
+            std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
             int residueSeqnum = input[i][j].seqnum();
-            auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueSeqnum"_a=residueSeqnum);
+            auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueCode"_a=residueCode, "residueSeqnum"_a=residueSeqnum);
+            complete_polymer_seq += residueCode;
             residues.append(residue_dict);
         }
         std::string chainID = input[i].id().trim();
-        auto mpolymer_dict = pybind11::dict("index"_a = i, "ChainID"_a=chainID, "Residues"_a=residues);
+        auto mpolymer_dict = pybind11::dict("index"_a = i, "ChainID"_a=chainID, "Sequence"_a=complete_polymer_seq, "Residues"_a=residues);
         output.append(mpolymer_dict);
     }
     return output;

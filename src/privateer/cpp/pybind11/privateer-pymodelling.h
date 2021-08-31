@@ -8,6 +8,7 @@
 #ifndef PRIVATEER_PYMODELLING_H_INCLUDED
 #define PRIVATEER_PYMODELLING_H_INCLUDED
 
+#include <unordered_map>
 #include "privateer-modelling.h"
 #include "privateer-pyanalysis.h"
 #include <Python.h>
@@ -30,6 +31,8 @@ namespace privateer {
 					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
 					std::string get_path_of_receiving_model_file_used ( ) { return path_to_receiving_model; };
 					std::string get_path_of_donor_model_file_used ( ) { return path_to_donor_model; };
+					std::string convert_three_letter_code_to_single_letter (std::string three_letter_code);
+
 					pybind11::list get_receiving_model_sequence_info () { return imported_receiving_model_seq_info; };
 					pybind11::list get_glycan_summary_from_donor () { return glycan_summary_donor; };
 					void graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index);
