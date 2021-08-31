@@ -66,6 +66,7 @@ namespace privateer {
 				int get_number_of_glycans_detected() { return donor_glycans.size(); };
 				clipper::MiniMol& get_final_receiving_model() { return export_model; };
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > get_grafted_clashes() { return clashes; };
+				clipper::MGlycan& get_grafted_glycan() { return grafted_glycan; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
 				clipper::MPolymer convert_mglycan_to_mpolymer(clipper::MGlycan input);
@@ -95,6 +96,7 @@ namespace privateer {
 				clipper::MiniMol donor_model;
 
 				clipper::MiniMol export_model;
+				clipper::MGlycan grafted_glycan; 
 
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes;
 

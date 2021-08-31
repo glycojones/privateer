@@ -35,6 +35,7 @@ namespace privateer {
 
 					pybind11::list get_receiving_model_sequence_info () { return imported_receiving_model_seq_info; };
 					pybind11::list get_glycan_summary_from_donor () { return glycan_summary_donor; };
+					pybind11::list get_final_clashes() { return clashes; };
 					void graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index);
 					void export_grafted_model( std::string& output_path );
 					
@@ -55,6 +56,7 @@ namespace privateer {
 
 					clipper::MiniMol export_model;
 
+					pybind11::list clashes;
 					pybind11::list imported_receiving_model_seq_info;
 					pybind11::list glycan_summary_donor;
 

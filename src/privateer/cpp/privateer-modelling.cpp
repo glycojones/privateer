@@ -417,6 +417,7 @@ namespace privateer
                     if(debug_output)
                         DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                     
+                    this->grafted_glycan = glycan_to_graft;
                     export_model.insert(converted_mglycan);
 
                     if(trim_donor_when_clashes_detected)
@@ -443,6 +444,7 @@ namespace privateer
                     if(debug_output)
                         DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                     
+                    this->grafted_glycan = glycan_to_graft;
                     export_model.insert(converted_mglycan);
 
                     if(trim_donor_when_clashes_detected)
@@ -833,16 +835,19 @@ namespace privateer
                 if(lastNode_removed_clashes.empty())
                 {
                     output_model = deleted_lastNode_model;
+                    this->grafted_glycan = lastNode_removed;
                     break;
                 }
                 else if(leafNode_removed_clashes.empty())
                 {
                     output_model = deleted_leafNode_model;
+                    this->grafted_glycan = leafNode_removed;
                     break;
                 }
                 else
                 {
                     output_model = deleted_lastNode_model;
+                    this->grafted_glycan = lastNode_removed;
                 }
 
                 residueDeletions++;
