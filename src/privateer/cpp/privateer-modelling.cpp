@@ -146,6 +146,7 @@ namespace privateer
             char new_chain_id = chainids[used_chain_ids.size()];
             std::string tempchainid(1, new_chain_id);
             clipper::String chainID(tempchainid);
+            this->grafted_glycan_chainID = chainID;
 
             clipper::MPolymer converted_mglycan = convert_mglycan_to_mpolymer(glycan_to_graft);
 
@@ -679,9 +680,9 @@ namespace privateer
                             {
                                 int n_protein_side_chain_atoms = current_clashes[i].first.first.size();
                                 int n_sugar_atoms = current_clashes[i].second.first.size();
-                                int totalAtoms = n_protein_side_chain_atoms + n_sugar_atoms;
                                 double averageDistance = 0.0;
                                 double totalDistance = 0.0;
+                                int totalIterations = 0;
                                 
                                 for(int sugarAtom = 0; sugarAtom < n_sugar_atoms; sugarAtom++)
                                 {
@@ -689,9 +690,11 @@ namespace privateer
                                     {
                                         double currentDistance = clipper::Coord_orth::length(current_clashes[i].first.first[proteinResidueAtom].coord_orth(), current_clashes[i].second.first[sugarAtom].coord_orth());
                                         totalDistance = totalDistance + currentDistance;
+                                        totalIterations++;
                                     }
                                 }
-                                averageDistance = totalDistance / totalAtoms;
+
+                                averageDistance = totalDistance / totalIterations;
                                 totalAveragesOfPerResidueDistances = totalAveragesOfPerResidueDistances + averageDistance;
                             }
                             

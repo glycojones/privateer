@@ -167,19 +167,21 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
     {
         int n_protein_side_chain_atoms = grafted_clashes[i].first.first.size();
         int n_sugar_atoms = grafted_clashes[i].second.first.size();
-        int totalAtoms = n_protein_side_chain_atoms + n_sugar_atoms;
         double averageDistance = 0.0;
         double totalDistance = 0.0;
-        
+        int totalIterations = 0;
+
         for(int sugarAtom = 0; sugarAtom < n_sugar_atoms; sugarAtom++)
         {
             for(int proteinResidueAtom = 0; proteinResidueAtom < n_protein_side_chain_atoms; proteinResidueAtom++)
             {
                 double currentDistance = clipper::Coord_orth::length(grafted_clashes[i].first.first[proteinResidueAtom].coord_orth(), grafted_clashes[i].second.first[sugarAtom].coord_orth());
                 totalDistance = totalDistance + currentDistance;
+                totalIterations++;
             }
         }
-        averageDistance = totalDistance / totalAtoms;
+
+        averageDistance = totalDistance / totalIterations;
         totalAveragesOfPerResidueDistances = totalAveragesOfPerResidueDistances + averageDistance;
 
         std::string protein_chain = grafted_clashes[i].first.second;
@@ -197,11 +199,36 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         glycanClashes.append(clash_dict);
     }
 
-    currentAverageDistanceBetweenResidues = totalAveragesOfPerResidueDistances / grafted_clashes.size();
+    if(!grafted_clashes.empty())
+    {
+        currentAverageDistanceBetweenResidues = totalAveragesOfPerResidueDistances / grafted_clashes.size();
+        std::string graftedGlycanWURCS = grafter.get_grafted_glycan().generate_wurcs();
+        std::string proteinChainID = imported_receiving_model[receiver_chain_index].id().trim();
+        std::string receivermonomertype = receiver_monomer.type().trim();
+        std::string receivermonomerID = receiver_monomer.id().trim();
+        
+        std::string grafted_glycan_chainID = grafter.get_grafted_glycan_chainID();
+        std::string rootSugarType = grafter.get_grafted_glycan().get_node(0).get_sugar().type().trim();
+        std::string rootSugarPDBID = grafter.get_grafted_glycan().get_node(0).get_sugar().id().trim();
 
-    std::string graftedGlycanWURCS = grafter.get_grafted_glycan().generate_wurcs();
-    auto glycan_clash_dict = pybind11::dict("index"_a=clashes.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiver_residue_index"_a=received_residue_index, "AvgTotalAtomicDistance"_a=currentAverageDistanceBetweenResidues, "ClashingResidues"_a=glycanClashes);
-    clashes.append(glycan_clash_dict);
+        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "AvgTotalAtomicDistance"_a=currentAverageDistanceBetweenResidues, "ClashingResidues"_a=glycanClashes);
+        summary_of_grafted_glycans.append(glycan_clash_dict);
+    }
+    else
+    {
+        std::string graftedGlycanWURCS = grafter.get_grafted_glycan().generate_wurcs();
+        std::string proteinChainID = imported_receiving_model[receiver_chain_index].id().trim();
+        std::string receivermonomertype = receiver_monomer.type().trim();
+        std::string receivermonomerID = receiver_monomer.id().trim();
+        
+        std::string grafted_glycan_chainID = grafter.get_grafted_glycan_chainID();
+        std::string rootSugarType = grafter.get_grafted_glycan().get_node(0).get_sugar().type().trim();
+        std::string rootSugarPDBID = grafter.get_grafted_glycan().get_node(0).get_sugar().id().trim();
+        
+        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "AvgTotalAtomicDistance"_a=pybind11::cast<pybind11::none>(Py_None), "ClashingResidues"_a=glycanClashes);
+        summary_of_grafted_glycans.append(glycan_clash_dict);
+    }
+    
     this->export_model = grafter.get_final_receiving_model();
 }
 
@@ -228,7 +255,7 @@ void init_pymodelling(py::module& m)
         .def("get_path_of_donor_model_file_used", &pm::Builder::get_path_of_donor_model_file_used)
         .def("get_receiving_model_sequence_info", &pm::Builder::get_receiving_model_sequence_info)
         .def("get_glycan_summary_from_donor", &pm::Builder::get_glycan_summary_from_donor)
-        .def("get_final_clashes", &pm::Builder::get_final_clashes)
+        .def("get_summary_of_grafted_glycans", &pm::Builder::get_summary_of_grafted_glycans)
         .def("graft_glycan_to_receiver", &pm::Builder::graft_glycan_to_receiver)
         .def("export_grafted_model", &pm::Builder::export_grafted_model);
 }
