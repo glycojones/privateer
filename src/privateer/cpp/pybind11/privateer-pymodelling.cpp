@@ -67,7 +67,7 @@ void privateer::pymodelling::Builder::import_receiving_model_only( std::string& 
     {
         std::cout << "Importing receiver model ONLY with the path of: " << path_to_model_file_clipper_receiver << std::endl;
         std::cout << "Number of chains detected in receiver model: " << receiver_mmol.size() << std::endl;
-        std::cout << "Donor model will not be imported!" << std::endl;
+        std::cout << "Donor model was not imported!" << std::endl;
     }
 
 
