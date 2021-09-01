@@ -10,6 +10,15 @@
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
 
+privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, bool enable_user_messages) 
+{
+    this->trim_donor_when_clashes_detected = false;
+    this->ANY_search_policy = false;
+    this->enable_user_messages = enable_user_messages;
+    this->debug_output = false;
+    this->import_receiving_model_only(path_to_receiving_model_file);
+};
+
 privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
 {
     this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
@@ -38,14 +47,42 @@ std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single
         return result->second;
 }
 
-void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
+void privateer::pymodelling::Builder::import_receiving_model_only( std::string& path_to_receiving_model_file) {
 
-    if(path_to_receiving_model == "undefined")
+    if(path_to_receiving_model_file == "undefined")
     {
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
     }
 
-    if(path_to_donor_model == "undefined")
+    this->path_to_receiving_model = path_to_receiving_model_file;
+    this->path_to_donor_model = "undefined";
+    
+    clipper::MiniMol receiver_mmol;
+    clipper::MMDBfile receiver_mfile;
+    clipper::String path_to_model_file_clipper_receiver = path_to_receiving_model_file;
+
+    privateer::util::read_coordinate_file_mtz(receiver_mfile, receiver_mmol, path_to_model_file_clipper_receiver, true);
+
+    if(enable_user_messages && !debug_output)
+    {
+        std::cout << "Importing receiver model ONLY with the path of: " << path_to_model_file_clipper_receiver << std::endl;
+        std::cout << "Number of chains detected in receiver model: " << receiver_mmol.size() << std::endl;
+        std::cout << "Donor model will not be imported!" << std::endl;
+    }
+
+
+    this->imported_receiving_model = receiver_mmol;
+    this->imported_receiving_model_seq_info = get_protein_sequence_information(imported_receiving_model);
+}
+
+void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
+
+    if(path_to_receiving_model_file == "undefined")
+    {
+        throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
+
+    if(path_to_donor_model_file == "undefined")
     {
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
     }
@@ -250,6 +287,7 @@ void init_pymodelling(py::module& m)
 {
     py::class_<pm::Builder>(m, "Builder")
         .def(py::init<>())
+        .def(py::init<std::string&, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("enable_user_messages")=true)
         .def(py::init<std::string&, std::string&, bool, bool, bool, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("path_to_donor_model")="undefined", py::arg("trim_donor_when_clashes_detected")=true, py::arg("ANY_search_policy")=true, py::arg("enable_user_messages")=true, py::arg("debug_output")=false)
         .def("get_path_of_receiving_model_file_used", &pm::Builder::get_path_of_receiving_model_file_used)
         .def("get_path_of_donor_model_file_used", &pm::Builder::get_path_of_donor_model_file_used)
