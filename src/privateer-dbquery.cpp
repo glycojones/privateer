@@ -11,7 +11,7 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism)
+void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int nThreads, bool useParallelism)
 {
     int valueLocation;
     valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
@@ -28,7 +28,7 @@ void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, 
 
                 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
                 
-                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
                 else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output);   
                 
                 if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
@@ -49,27 +49,9 @@ void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, 
                 {
                     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
 
-                    if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, sleepTimer, pool, useParallelism);
+                    if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
                     else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output); 
 
-                    if (useParallelism)
-                    {
-                        
-                        if(debug_output)
-                        {
-                            std::cout << std::endl;
-                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-                        }
-                        
-                        while(pool.n_remaining_jobs() > 0)
-                            pool.sync();
-                        
-                        if(debug_output)
-                        {
-                            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-                        }
-                    }
-                
                     if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
                     else std::cout << "ERROR: Unable to generate permutations that would be found on GlyConnect database!" << std::endl;
                 }

@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -26,7 +27,6 @@
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-dbquery.h"
 #include "privateer-lib.h"
-#include "privateer-parallelism.h"
 #include "privateer-json.h"
 
 std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list);
@@ -37,9 +37,9 @@ std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vect
 #endif
 std::vector<int> get_editable_node_list_for_anomer_permutations(std::vector < clipper::MSugar >& sugar_list);
 std::vector<int> get_editable_node_list_for_monomer_permutations(std::vector < clipper::MSugar >& sugar_list, bool glucose_only);
-std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, std::vector<privateer::json::Database>& glycomics_database, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism);
-void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, std::vector<privateer::json::Database>& glycomics_database, int residueDeletions, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl);
-void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, std::vector<privateer::json::Database>& glycomics_database, int residueDeletions, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism, bool& statusControl);
+std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_parallel(clipper::MGlycan& fullglycan, std::vector<privateer::json::Database>& glycomics_database, bool glucose_only, bool debug_output, int nThreads, bool useParallelism);
+void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, std::vector<privateer::json::Database>& glycomics_database, int residueDeletions, bool debug_output, int nThreads, bool useParallelism, bool& statusControl);
+void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list_leaf, std::vector<int>& editable_node_list_last, clipper::MGlycan glycan_node_removed_leaf, clipper::MGlycan glycan_node_removed_last, std::vector<privateer::json::Database>& glycomics_database, int residueDeletions, bool debug_output, int nThreads, bool useParallelism, bool& statusControl);
 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matches_singlethreaded(clipper::MGlycan& fullglycan, std::vector<privateer::json::Database>& glycomics_database, bool glucose_only, bool debug_output);
 void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, std::vector<privateer::json::Database>& glycomics_database, int residueDeletions, bool debug_output);
 void generate_all_anomer_permutations(std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& result, std::vector<int>& editable_node_list, clipper::MGlycan glycan, std::vector<privateer::json::Database>& glycomics_database, int residuePermuations, int residueDeletions);
