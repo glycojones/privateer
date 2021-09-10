@@ -106,7 +106,7 @@ inline clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::V
     return angle;
 }
 
-//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions 
+//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions
 namespace clipper
 {
 
@@ -248,6 +248,8 @@ namespace clipper
             void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
 
             void set_accum_score ( clipper::ftype accum_in ) { sugar_accum = accum_in; }
+
+            void override_conformation_diag ( bool is_it_ok ) { sugar_diag_conformation = is_it_ok; }
 
             void set_occupancy_check ( bool occupancy_check_in ) { sugar_occupancy_check = occupancy_check_in; }
 
@@ -574,15 +576,18 @@ namespace clipper
             std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
             std::string get_root_for_filename () { return "[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
+            std::string write_ring_ext_restraints ( float weight );
+            std::string write_link_ext_restraints ( float weight );
+
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
-            
+
             // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION BEGIN //
             char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
             std::vector < std::string > obtain_unique_WURCS_residues();
             const int obtain_total_number_of_glycosidic_bonds();
             clipper::String generate_wurcs ();
-            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END // 
+            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END //
 
 
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
@@ -675,6 +680,9 @@ namespace clipper
             }
             std::vector < clipper::MGlycan > get_list_of_glycans () const { return list_of_glycans; }
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; }
+            std::string write_external_restraints ( bool restrain_rings,
+                                                    bool restrain_links,
+                                                    float weight = 0.1 );
 
         private:
 

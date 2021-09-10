@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -26,13 +27,12 @@
 #include "clipper-glyco_data.h"
 #include "privateer-composition.h"
 #include "privateer-lib.h"
-#include "privateer-parallelism.h"
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-json.h"
 
 
 
-void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int sleepTimer, privateer::thread_pool& pool, bool useParallelism);
+void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int nThreads, bool useParallelism);
 void push_data_to_final_permutation_container(std::vector<privateer::json::Database>& glycomics_database, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer);
 void print_output_from_database(std::vector<privateer::json::Database>& glycomics_database, int valueLocation, clipper::MGlycan &currentGlycan);
 

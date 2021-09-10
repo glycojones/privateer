@@ -13,10 +13,6 @@
 #include "privateer-error.h"
 #include "third-party/sajson.h"
 
-#if defined(_WIN32)
-    #include "third-party/utf.hpp"
-#endif
-
 #include <vector>
 #include <cstdio>    // for FILE, fopen, fclose
 #include <memory>    // for unique_ptr
@@ -24,7 +20,10 @@
 #include <algorithm>
 #include <iterator>
 
-// Solution obtained and adopted from Marcin Wojdyr's Gemmi project - https://github.com/project-gemmi/gemmi 
+#if defined(_WIN32)
+#include "utf.hpp"
+#endif
+
 namespace privateer
 {
     namespace json

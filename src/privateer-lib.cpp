@@ -636,6 +636,7 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
 
             of_xml << "      <SugarPDB>"            << pdbname                                          << "</SugarPDB>\n"          ;
             of_xml << "      <SugarName>"           << sugarList[i].second.type()                       << "</SugarName>\n"         ;
+            of_xml << "      <SugarSeqNum>"         << sugarList[i].second.seqnum()                     << "</SugarSeqNum>\n"       ;
             of_xml << "      <SugarChain>"          << sugarList[i].first                               << "</SugarChain>\n"        ;
             of_xml << "      <SugarQ>"              << puckering_amplitude                              << "</SugarQ>\n"            ;
 
@@ -679,11 +680,11 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         of_xml << "     <GlycanText><![CDATA["<< list_of_glycans[i].print_linear ( false, true, true )    << "]]></GlycanText>\n"                           ;
         of_xml << "     <GlycanSVG>"        << os.str()                                          << "</GlycanSVG>\n"                                        ;
         of_xml << "     <GlycanWURCS>"      << glycanWURCS                                       << "</GlycanWURCS>\n"                                      ;
-        
+
         if(!glycomics_database.empty())
         {
             int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
-            
+
             std::string glyTouCanID, glyConnectID;
             if (valueLocation != -1)
                 {
@@ -855,8 +856,8 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
 
 int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::Database>& glycomics_database, std::string inputwurcs )
 {
-    auto result = std::find_if(glycomics_database.begin(), 
-             glycomics_database.end(), 
+    auto result = std::find_if(glycomics_database.begin(),
+             glycomics_database.end(),
              [&inputwurcs]
              (const privateer::json::Database& entry) -> bool { return inputwurcs == entry.WURCS; });
 
