@@ -20,7 +20,6 @@
 #include "privateer-xray.h"
 #include "privateer-cryo_em.h"
 #include "privateer-dbquery.h"
-#include "privateer-parallelism.h"
 
 
 #ifndef PRIVATEER_PYANALYSIS_H_INCLUDED

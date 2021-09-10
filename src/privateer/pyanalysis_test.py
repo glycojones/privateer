@@ -1,7 +1,9 @@
 from privateer import privateer_core as pvt
 
 print("____________________GLYCOSYLATION LEVEL_______________")
-glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
+glycosylation = pvt.GlycosylationComposition(
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
+)
 # glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
 # print("Expression system defined: " + glycosylation.get_expression_system_used())
 # print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
@@ -12,7 +14,7 @@ listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 print("\n")
 for entry in listOfDetectedGlycans:
     for key, value in entry.items():
-        print('{}: {}'.format(key, value))
+        print("{}: {}".format(key, value))
     print("_______________________")
 
 glycan = glycosylation.get_glycan(13)
@@ -20,8 +22,14 @@ glycan = glycosylation.get_glycan(13)
 print("\n")
 print("____________________GLYCAN CHAIN LEVEL_______________")
 print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
-print("Number of glycosidic bonds in the glycan: " + str(glycan.get_total_of_glycosidic_bonds()))
-print("Unique monosaccharide codes in the glycan: " + str(glycan.get_unique_monosaccharide_codes()))
+print(
+    "Number of glycosidic bonds in the glycan: "
+    + str(glycan.get_total_of_glycosidic_bonds())
+)
+print(
+    "Unique monosaccharide codes in the glycan: "
+    + str(glycan.get_unique_monosaccharide_codes())
+)
 
 print("\n")
 print("____________________INDIVIDUAL SUGAR LEVEL_______________")
@@ -68,17 +76,23 @@ sugarSummary = sugars[2].get_sugar_summary()
 print("\n")
 
 for key, value in sugarSummary.items():
-    print('{}: {}'.format(key, value))
+    print("{}: {}".format(key, value))
 print("_______________________")
 
 # XRayData = pvt.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb", "NONE", 2.5, -1)
-XRayData = pvt.XRayData("/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz", "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb", "NONE", 2.5, -1)
+XRayData = pvt.XRayData(
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz",
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb",
+    "NONE",
+    2.5,
+    -1,
+)
 
 experimentaldata = XRayData.get_sugar_summary_with_experimental_data()
 print("\n")
 for entry in experimentaldata:
     for key, value in entry.items():
-        print('{}: {}'.format(key, value))
+        print("{}: {}".format(key, value))
     print("_______________________")
 
 XRayData.print_cpp_console_output_summary()
@@ -86,7 +100,7 @@ XRayData.print_cpp_console_output_summary()
 
 glycosylation.update_with_experimental_data(XRayData)
 status = glycosylation.check_if_updated_with_experimental_data()
-print(f'Glycosylation object updated with experimental data: {status}')
+print(f"Glycosylation object updated with experimental data: {status}")
 glycanUpdated = glycosylation.get_glycan(32)
 sugarUpdated = glycanUpdated.get_monosaccharide(2)
 sugarUpdatedTwo = glycanUpdated.get_monosaccharide(4)
@@ -95,34 +109,43 @@ print("get_sugar_accum() = " + str(sugarUpdated.get_sugar_accum()))
 print("get_sugar_occupancy_check() = " + str(sugarUpdated.get_sugar_occupancy_check()))
 print("get_sugar_rscc()Updated = " + str(sugarUpdatedTwo.get_sugar_rscc()))
 print("get_sugar_accum()Updated = " + str(sugarUpdatedTwo.get_sugar_accum()))
-print("get_sugar_occupancy_check() Updated = " + str(sugarUpdatedTwo.get_sugar_occupancy_check()))
+print(
+    "get_sugar_occupancy_check() Updated = "
+    + str(sugarUpdatedTwo.get_sugar_occupancy_check())
+)
 print(sugarUpdated.get_sugar_summary())
 print(sugarUpdatedTwo.get_sugar_summary())
 
 ligands = glycosylation.get_ligands()
 print("Ligands.len() = " + str(len(ligands)))
 
-glycosylationMasterConstructor = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb", "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz", "NONE", -1, 2.5, "undefined")
+glycosylationMasterConstructor = pvt.GlycosylationComposition(
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb",
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz",
+    "NONE",
+    -1,
+    2.5,
+    "undefined",
+)
 discoteque = glycosylationMasterConstructor.get_summary_of_detected_glycans()
 
 print("\n")
 for entry in discoteque:
     for key, value in entry.items():
-        print('{}: {}'.format(key, value))
+        print("{}: {}".format(key, value))
     print("_______________________")
 
 
-
-
-
-# glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
+# glycosylation = pvt.GlycosylationComposition(
+#     "/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb"
+# )
 
 # listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 
 # print("\n")
 # for entry in listOfDetectedGlycans:
 #     for key, value in entry.items():
-#         print('{}: {}'.format(key, value))
+#         print("{}: {}".format(key, value))
 #     print("_______________________")
 
 # glycan = glycosylation.get_glycan(5)
@@ -133,20 +156,22 @@ for entry in discoteque:
 
 # print(glycoproteomicsoutput)
 
-# permutations = glycoproteomicsoutput['permutations']
+# permutations = glycoproteomicsoutput["permutations"]
 # for entry in permutations:
 #     for key, value in entry.items():
-#         print('{}: {}'.format(key, value))
+#         print("{}: {}".format(key, value))
 #     print("_______________________")
 
-# print("Now getting from class without having to repeat compute intensive functon\n\n\n\n")
+# print(
+#     "Now getting from class without having to repeat compute intensive functon\n\n\n\n"
+# )
 
 # glycoproteomicsoutputrepeated = glycan.query_offline_database(json, True, True)
 
-# permutations = glycoproteomicsoutputrepeated['permutations']
+# permutations = glycoproteomicsoutputrepeated["permutations"]
 # for entry in permutations:
 #     for key, value in entry.items():
-#         print('{}: {}'.format(key, value))
+#         print("{}: {}".format(key, value))
 #     print("_______________________")
 
 # print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
@@ -157,5 +182,5 @@ for entry in discoteque:
 # ligands = glycosylation.get_ligands()
 
 # for count, item in enumerate(ligands):
-#     print('{}: {}'.format(count, item.get_sugar_summary()))
+#     print("{}: {}".format(count, item.get_sugar_summary()))
 #     print("_______________________")

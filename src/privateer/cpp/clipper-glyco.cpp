@@ -806,7 +806,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
 
     if(debug_output)
     {
-        DBG << "last in-ring carbon has occupancy " << ring_atoms[5].occupancy() << " and it's substituent is "
+        DBG << "last in-ring carbon has occupancy " << ring_atoms[5].occupancy() << " and its substituent is "
             << nz6_substituent.name().trim() << " with occupancy " << nz6_substituent.occupancy() << std::endl;
     }
 
@@ -914,6 +914,18 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     if ( stereo.second.first.name().trim() == "C8") { // Simplified bit for sialic acids
       if (z_anomeric_substituent > z_anomeric_carbon) {
         cpParams.push_back(anomer_beta);
+				this->sugar_anomer="beta";
+      }
+      else {
+        cpParams.push_back(anomer_alpha);
+				this->sugar_anomer="alpha";
+      }
+    }
+    else if (( (z_anomeric_substituent > z_anomeric_carbon) && (z_configurational_substituent > z_configurational_carbon) ) || ( (z_anomeric_substituent < z_anomeric_carbon) && (z_configurational_substituent < z_configurational_carbon) ) )
+		{
+			if (lurd_reverse)
+			{
+				cpParams.push_back(anomer_beta);
 				this->sugar_anomer="beta";
       }
       else {
@@ -1596,7 +1608,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 
 	if ( !ring_atoms.empty() )
 	{
-        if ( ring_atoms[1].element().trim() == "C" )        // the atom in position 1 is the anomeric carbon, let's identify it's substituent:
+        if ( ring_atoms[1].element().trim() == "C" )        // the atom in position 1 is the anomeric carbon, let's identify its substituent:
         {
             anomeric_carbon = ring_atoms[1]; // we're always getting the anomeric carbon here, given the way we detect/order the ring
             const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(ring_atoms[1].coord_orth(), 1.2); // 1.2
@@ -3520,6 +3532,88 @@ clipper::String MGlycan::generate_wurcs()
     return wurcs_string;
 }
 
+std::string MGlycan::write_ring_ext_restraints ( float weight ) {
+
+  std::string buffer = "";
+
+  std::vector<clipper::MSugar> sugar_list = this->get_sugars();
+  for ( int i = 0; i < sugar_list.size(); i++ ) {
+    buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
+    std::string residue = sugar_list[i].id();
+    std::string chain = this->get_chain();
+    if ( this->kind_of_glycan == "c-glycan" ) { // needs 1C4 restraints
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 value -55.71 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 value  51.72 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 value -47.55 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 value  45.67 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 value -51.06 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 value 56.33 sigma 0.1 period 1\n\n";
+    }
+    else {
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 value  55.71 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 value -51.72 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                      " chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 value  47.55 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                      " chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 value -45.67 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                      " chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 value  51.06 sigma 0.1 period 1\n";
+
+      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                      " chain " + chain + " residue " + residue + " atom O5 next" +
+                                      " chain " + chain + " residue " + residue + " atom C1 next" +
+                                      " chain " + chain + " residue " + residue + " atom C2 value -56.33 sigma 0.1 period 1\n\n";
+    }
+  }
+  return buffer;
+}
+
+std::string MGlycan::write_link_ext_restraints ( float weight ) {
+
+  std::string buffer = "";
+  return buffer;
+}
+
+
 void MGlycan::remove_node_at_index ( int index )
 {
     if (index>node_list.size()-1)
@@ -4535,7 +4629,28 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
     }
 }
 
+std::string MGlycology::write_external_restraints ( bool restrain_rings,
+                                                    bool restrain_links,
+                                                    float weight ) {
 
+  std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
+  restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
+  std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
+
+  for ( int i = 0; i < glycan_list.size(); i++ ) {
+    if ( restrain_rings ) {
+      restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
+                 + " at " + glycan_list[i].get_root_description() + "\n";
+      restraints += glycan_list[i].write_ring_ext_restraints ( weight );
+    }
+    if ( restrain_links ) {
+      restraints += "\n# Glycosidic bond conformation restraints\n" ;
+      restraints += glycan_list[i].write_link_ext_restraints ( weight );
+    }
+  }
+  restraints += "\n\n################ EOF ################\n" ;
+  return restraints;
+}
 
 
 /*! Internal function for getting the alternate conformation code

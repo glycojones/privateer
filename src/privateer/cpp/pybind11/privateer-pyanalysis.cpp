@@ -681,7 +681,6 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
                 }
             }
 
-            privateer::thread_pool pool(0);
             int detectedThreads = std::thread::hardware_concurrency();
             bool useParallelism = true;
             
@@ -703,14 +702,12 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
 
             if(useParallelism)
             {
-                std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
-                pool.resize(nThreads);
-                std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+                std::cout << std::endl << "THREADING: Privateer will use " << nThreads << " of the " << detectedThreads << " available threads..." << std::endl;
             }
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
             
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, returnAllPossiblePermutations, false, 1, pool, useParallelism);
+            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, returnAllPossiblePermutations, false, nThreads, useParallelism);
             else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, returnAllPossiblePermutations, false);   
             
             if(!alternativeGlycans.empty())
@@ -1409,8 +1406,8 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output) 
 {
+    bool rscc_best = false;
     this->debug_output = debug_output;
-    privateer::thread_pool pool(0);
 
     bool useSigmaa = false;
     int detectedThreads = std::thread::hardware_concurrency();
@@ -1435,9 +1432,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     if(useParallelism)
     {
-        std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
-        pool.resize(nThreads);
-        std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+        std::cout << std::endl << "THREADING: Privateer will use " << nThreads << " of the " << std::thread::hardware_concurrency() << " available threads..." << std::endl;
     }
 
     if(path_to_model_file == "undefined" || path_to_model_file == "")
@@ -1593,38 +1588,37 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     try
     {   // calculate structure factors with bulk solvent correction
-        if(useParallelism)
+        if(useParallelism && nThreads >= 2)
         {
-            pool.push([&sfcbligands, &fc_ligands_bsc, &fobs, &ligandAtoms, debug_output](int id)
-            { 
-                if(debug_output)
+            std::vector<std::future<void>> thread_results;
+            thread_results.push_back(std::async(std::launch::async, 
+                [](clipper::SFcalc_obs_bulk<float>& sfcbligands, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& ligandAtoms)
                 {
-                    std::cout << std::endl;
-                    DBG << "Calculating sfcbligands from Thread ID: " << id << '.' << std::endl;
-                }
-                
-                sfcbligands( fc_ligands_bsc, fobs, ligandAtoms );
-            });
-    
-            pool.push([&sfcb, &fc_omit_bsc, &fobs, &mainAtoms, debug_output](int id)
-            { 
-                if(debug_output)
-                {
-                    DBG << "Calculating sfcb from Thread ID: " << id << '.' << std::endl;
-                }
-                
-                sfcb( fc_omit_bsc, fobs, mainAtoms );
-            });
+                    sfcbligands( fc_ligands_bsc, fobs, ligandAtoms ); // was fobs_scaled
+                },
+                std::ref(sfcbligands), std::ref(fc_ligands_bsc), std::ref(fobs), std::ref(ligandAtoms)
+                ));
 
-            pool.push([&sfcball, &fc_all_bsc, &fobs, &allAtoms, debug_output](int id)
-            { 
-                if(debug_output)
+            thread_results.push_back(std::async(std::launch::async, 
+                [](clipper::SFcalc_obs_bulk<float>& sfcb, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& mainAtoms)
                 {
-                    DBG << "Calculating sfcball from Thread ID: " << id << '.' << std::endl;
-                }
-                
-                sfcball( fc_all_bsc, fobs, allAtoms );
-            });
+                    sfcb( fc_omit_bsc, fobs, mainAtoms ); // was fobs_scaled
+                },
+                std::ref(sfcb), std::ref(fc_omit_bsc), std::ref(fobs), std::ref(mainAtoms)
+                ));
+
+            thread_results.push_back(std::async(std::launch::async, 
+                [](clipper::SFcalc_obs_bulk<float>& sfcball, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& allAtoms)
+                {
+                    sfcball( fc_all_bsc, fobs, allAtoms ); // was fobs_scaled
+                },
+                std::ref(sfcball), std::ref(fc_all_bsc), std::ref(fobs), std::ref(allAtoms)
+                ));
+            
+            for (auto& r: thread_results)
+                r.get();
+
+            thread_results.clear();
         }
         else
         {
@@ -1640,23 +1634,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         std::cout << "\nThe input file has unrecognised atoms. Might cause unexpected results...\n";  // this causes clipper to freak out, so better remove those unknowns
     }
 
-    if (useParallelism)
-        {
-            if(debug_output)
-            {
-                std::cout << std::endl;
-                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-            }
-            
-            while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-                pool.sync();
-            
-            if(debug_output)
-            {
-                DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-            }
-        }
-
 
     fc_ligands_bsc[0].set_null();
     fc_omit_bsc[0].set_null();
@@ -1666,6 +1643,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::Grid_sampling mygrid( hklinfo.spacegroup(), hklinfo.cell(), hklinfo.resolution() );  // define grid
     clipper::Xmap<float> sigmaa_all_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa best map
     clipper::Xmap<float> sigmaa_dif_map( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa diff  map
+    clipper::Xmap<float> sigmaa_omit_fb( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
     clipper::Xmap<float> sigmaa_omit_fd( hklinfo.spacegroup(), hklinfo.cell(), mygrid );          // define sigmaa omit diff map
     clipper::Xmap<float> ligandmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
@@ -1676,43 +1654,44 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::SFscale_aniso<float> sfscale;
 
 
-    if(useParallelism)
-        {
-            pool.push([&sfscale, &fobs_scaled, &fc_all_bsc, debug_output](int id)
-            { 
-                if(debug_output)
-                {
-                    std::cout << std::endl;
-                    DBG << "Calculating sfscale from Thread ID: " << id << '.' << std::endl;
-                }
-                
-                sfscale( fobs_scaled, fc_all_bsc );
-            });
-
-            pool.push([&fobs_scaled, &flag, &ih, debug_output](int id)
-            { 
-                if(debug_output)
-                {
-                    DBG << "Calculating flag[ih].flag() from Thread ID: " << id << '.' << std::endl;
-                }
-
+    if(useParallelism && nThreads >= 2)
+    {
+        std::vector<std::future<void>> thread_results;
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::SFscale_aniso<float>& sfscale, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc)
+            {
+                sfscale( fobs_scaled, fc_all_bsc ); // was fobs_scaled
+            },
+            std::ref(sfscale), std::ref(fobs_scaled), std::ref(fc_all_bsc)
+            ));
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::HKL_data<clipper::datatypes::Flag>& flag, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, HRI& ih)
+            {
                 for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
                 {
                     if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
                     else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
-                }
-            });
-        }
-        else
-        {
-            sfscale( fobs_scaled, fc_all_bsc );  // anisotropic scaling of Fobs. We scale Fobs to Fcalc instead of scaling our 3 Fcalcs to Fobs
 
-            for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
-            {
-                if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
-                else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
-            }
+                }
+            },
+            std::ref(flag), std::ref(fobs_scaled), std::ref(ih)
+            ));
+        
+        
+        for (auto& r: thread_results)
+            r.get();
+
+        thread_results.clear();
+    }
+    else
+    {
+        sfscale( fobs_scaled, fc_all_bsc );  // anisotropic scaling of Fobs. We scale Fobs to Fcalc instead of scaling our 3 Fcalcs to Fobs
+        for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
+        {
+            if ( !fobs_scaled[ih].missing() ) flag[ih].flag() = clipper::SFweight_spline<float>::BOTH;
+            else flag[ih].flag() = clipper::SFweight_spline<float>::NONE;
         }
+    }
 
     int n_refln = 1000;
     int n_param = 20;
@@ -1727,50 +1706,37 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     clipper::HKL_data<clipper::data32::F_phi> fd_all( hklinfo );
     clipper::HKL_data<clipper::data32::Phi_fom> phiw_all( hklinfo );
 
-    if (useParallelism)
+
+    if(useParallelism && nThreads >= 2)
     {
-        if(debug_output)
-        {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        }
-        
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-            pool.sync();
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        }
-    }
-
-
-    if(useParallelism)
-    {
-        pool.push([&fb_omit, &fd_omit, &phiw_omit, &fobs_scaled, &fc_omit_bsc, &flag, n_refln, n_param, debug_output](int id)
-        { 
-            if(debug_output)
+        std::vector<std::future<void>> thread_results;
+        thread_results.push_back(std::async(std::launch::async, 
+            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_omit, clipper::HKL_data<clipper::data32::F_phi>& fd_omit, 
+            clipper::HKL_data<clipper::data32::Phi_fom>& phiw_omit, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc,
+            clipper::HKL_data<clipper::datatypes::Flag>& flag)
             {
-                std::cout << std::endl;
-                DBG << "Calculating sfw_omit from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
-            sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
-        });
+                clipper::SFweight_spline<float> sfw_omit (n_refln, n_param );
+                sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
+            },
+            n_refln, n_param, std::ref(fb_omit), std::ref(fd_omit), std::ref(phiw_omit), std::ref(fobs_scaled), std::ref(fc_omit_bsc), std::ref(flag)
+            ));
 
-        pool.push([&fb_all, &fd_all, &phiw_all, &fobs_scaled, &fc_all_bsc, &flag, n_refln, n_param, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_all, clipper::HKL_data<clipper::data32::F_phi>& fd_all, 
+            clipper::HKL_data<clipper::data32::Phi_fom>& phiw_all, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc,
+            clipper::HKL_data<clipper::datatypes::Flag>& flag)
             {
-                DBG << "Calculating sfw_all from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-            sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
-        });
+                clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
+                sfw_all( fb_all, fd_all, phiw_all, fobs_scaled, fc_all_bsc, flag );
+            },
+            n_refln, n_param, std::ref(fb_all), std::ref(fd_all), std::ref(phiw_all), std::ref(fobs_scaled), std::ref(fc_all_bsc), std::ref(flag)
+            ));
+        
+        for (auto& r: thread_results)
+            r.get();
+        
+
+        thread_results.clear();
     }
     else
     {
@@ -1778,7 +1744,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         sfw_omit( fb_omit, fd_omit, phiw_omit, fobs_scaled, fc_omit_bsc, flag );
 
         clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
-        sfw_all( fb_all,  fd_all,  phiw_all,  fobs_scaled, fc_all_bsc,  flag );
+        sfw_all( fb_all,  fd_all,  phiw_all, fobs_scaled, fc_all_bsc, flag );
     }
     
     // fb:          output best map coefficients
@@ -1788,28 +1754,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     // fc_omit_bsc: input calculated omit data, with bulk solvent correction
     // fc_all_bsc:  input calculated data, with bsc
 
-
-    if (useParallelism)
-    {
-        if(debug_output)
-        {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        }
-        
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-        {
-            pool.sync();
-        }
-            
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        }
-    }
 
     std::vector<double> params( n_param, 2.0 );
     clipper::BasisFn_spline wrk_basis( hklinfo, n_param, 2.0 );
@@ -1821,81 +1765,83 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
     double Fo, Fc_all, Fc_omit;
 
-    if(useParallelism)
+    if(useParallelism && nThreads >= 2)
     {
-        pool.push([&sigmaa_all_map, &fb_all, debug_output](int id)
-        { 
-            if(debug_output)
+        std::vector<std::future<void>> thread_results;
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<float>& sigmaa_all_map, clipper::HKL_data<clipper::data32::F_phi>& fb_all)
             {
-                std::cout << std::endl;
-                DBG << "Calculating sigmaa_all_map from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            sigmaa_all_map.fft_from(fb_all);
-        });
+                sigmaa_all_map.fft_from( fb_all );
+            },
+            std::ref(sigmaa_all_map), std::ref(fb_all)
+            ));
 
-        pool.push([&sigmaa_dif_map, &fd_all, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<float>& sigmaa_dif_map, clipper::HKL_data<clipper::data32::F_phi>& fd_all)
             {
-                DBG << "Calculating sigmaa_dif_map from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            sigmaa_dif_map.fft_from(fd_all);
-        });     
+                sigmaa_dif_map.fft_from( fd_all );
+            },
+            std::ref(sigmaa_dif_map), std::ref(fd_all)
+            ));
 
-        pool.push([&sigmaa_omit_fd, &fd_omit, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<float>& sigmaa_omit_fb, clipper::HKL_data<clipper::data32::F_phi>& fb_omit)
             {
-                DBG << "Calculating sigmaa_omit_fd from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            sigmaa_omit_fd.fft_from(fd_omit);
-        });  
+                sigmaa_omit_fb.fft_from( fb_omit );
+            },
+            std::ref(sigmaa_omit_fb), std::ref(fb_omit)
+            ));
 
-        pool.push([&ligandmap, &fc_ligands_bsc, debug_output](int id)
-        { 
-            ligandmap.fft_from(fc_ligands_bsc);
-            
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<float>& sigmaa_omit_fd, clipper::HKL_data<clipper::data32::F_phi>& fd_omit)
             {
-                DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-            }
-        });
+                sigmaa_omit_fd.fft_from( fd_omit );
+            },
+            std::ref(sigmaa_omit_fd), std::ref(fd_omit)
+            ));
 
-        pool.push([&fobs_scaled, &Fo, &Fc_all, &Fc_omit, &wrk_scale_all, &fc_all_bsc, &wrk_scale_omit, &fc_omit_bsc, &FobsFcalcSum, &FobsFcalcAllSum, &FobsSum, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<float>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc)
             {
-                DBG << "Calculating FobsSum, FobsFCalcSum and FobsFcalcAllSum from Thread ID: " << id << '.' << std::endl;
-            }
+                ligandmap.fft_from( fc_ligands_bsc );
+            },
+            std::ref(ligandmap), std::ref(fc_ligands_bsc)
+            ));
 
-            for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::ResolutionFn& wrk_scale_all, clipper::ResolutionFn& wrk_scale_omit,
+                clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, HRI& ih, 
+                double& Fo, double& Fc_all, double& Fc_omit, double& FobsFcalcAllSum, double& FobsFcalcSum, double& FobsSum)
             {
-                if ( !fobs_scaled[ih].missing() )
+                for ( ih = fobs_scaled.first(); !ih.last(); ih.next() )
                 {
-                    Fo = fobs_scaled[ih].f();
-                    Fc_all = sqrt ( wrk_scale_all.f(ih) ) * fc_all_bsc[ih].f() ;
-                    Fc_omit = sqrt ( wrk_scale_omit.f(ih) ) * fc_omit_bsc[ih].f() ;
-                    FobsFcalcSum += fabs( Fo - Fc_omit); // R factor calculation
-                    FobsFcalcAllSum += fabs( Fo- Fc_all);
-                    FobsSum += Fo;
+                    if ( !fobs_scaled[ih].missing() )
+                    {
+                        Fo = fobs_scaled[ih].f();
+                        Fc_all = sqrt ( wrk_scale_all.f(ih) ) * fc_all_bsc[ih].f() ;
+                        Fc_omit = sqrt ( wrk_scale_omit.f(ih) ) * fc_omit_bsc[ih].f() ;
+                        FobsFcalcSum += fabs( Fo - Fc_omit); // R factor calculation
+                        FobsFcalcAllSum += fabs( Fo- Fc_all);
+                        FobsSum += Fo;
+                    }
                 }
-            }
-        });
+            },
+            std::ref(fobs_scaled), std::ref(wrk_scale_all), std::ref(wrk_scale_omit), std::ref(fc_all_bsc), std::ref(fc_omit_bsc), std::ref(ih), std::ref(Fo), std::ref(Fc_all), std::ref(Fc_omit), std::ref(FobsFcalcAllSum), std::ref(FobsFcalcSum), std::ref(FobsSum)
+            ));
+        
+        for (auto& r: thread_results)
+            r.get();
+        thread_results.clear();
     }
     else
     {
         sigmaa_all_map.fft_from( fb_all );  // calculate the maps
-
         sigmaa_dif_map.fft_from( fd_all );
-
+        sigmaa_omit_fb.fft_from( fb_omit );
         sigmaa_omit_fd.fft_from( fd_omit );
-
         ligandmap.fft_from( fc_ligands_bsc );       // this is the map that will serve as Fc map for the RSCC calculation
 
-        for ( HRI ih = fobs_scaled.first(); !ih.last(); ih.next() )
+        for ( ih = fobs_scaled.first(); !ih.last(); ih.next() )
         {
             if ( !fobs_scaled[ih].missing() )
             {
@@ -1906,25 +1852,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 FobsFcalcAllSum += fabs( Fo- Fc_all);
                 FobsSum += Fo;
             }
-        }
-    }
-
-    if (useParallelism)
-    {
-        if(debug_output)
-        {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        }
-        
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-            pool.sync();
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
         }
     }
 
@@ -1940,151 +1867,136 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         std::cout << std::endl << " The studied portions of the model account for a very significant part of the data. Calculating RSCC against a regular 2mFo-DFc map" << std::endl;
     }
 
-    if(useParallelism)
+    if(useParallelism && nThreads >= 2)
     {
-        int processedMonomers = 0;
-        for (int index = 0; index < ligandList.size(); index++)
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        size_t sugars_per_thread = ligandList.size() / nThreads + 1;
+        size_t start = 0, end;
+        std::vector<std::future<void>> thread_results;
+        for (size_t i = 0; i < nThreads; i++)
         {
-            if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                pool.sync();
-
-            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &sigmaa_all_map, &sigmaa_omit_fd, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, useSigmaa, debug_output](int id)
-            { 
-                if(debug_output)
-                {
-                    std::cout << std::endl;
-                    DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                }
-                
-                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                x=y=z=0.0;
-                maxX=maxY=maxZ=-999999.0;
-                minX=minY=minZ=999999.0;
-
-                for (int natom = 0; natom < sugarList[index].size(); natom++)
-                {
-                    if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
-                    if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
-                    if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
-                    if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
-                    if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
-                    if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
-                }
-
-                x = minX + ((maxX - minX)/2);
-                y = minY + ((maxY - minY)/2);
-                z = minZ + ((maxZ - minZ)/2);
-
-                // now calculate the correlation between the weighted experimental & calculated maps
-                // maps are scanned only inside a sphere containing the sugar for performance reasons,
-                // although RSCC and <RMS> are restricted to a mask surrounding the model
-
-                //////// mask calculation //////////
-                clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-                clipper::EDcalc_mask<float> masker( ipradius );
-                masker(mask, sugarList[index].atom_list());
-
-                ////////////////////////////////////
-
-                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
-
-
-                double accum = 0.0;
-                double corr_coeff = 0.0;
-                std::pair<double, double> rscc_and_accum;
-
-                rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
-                corr_coeff = rscc_and_accum.first;
-                accum = rscc_and_accum.second;
-
-                ligandList[index].second.set_rscc ( corr_coeff );
-                ligandList[index].second.set_accum_score ( accum );
-                // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
-
-                std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
-                bool found_in_tree = false;
-
-                for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
-                {
-                    std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
-
-                    for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
-                    {
-                        if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
-                        {
-                            if ( list_of_glycans[i].get_type() == "n-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "n-glycan" );
-                                
-                            }
-                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
-                            {
-                                if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                  if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                    ligandList[index].second.override_conformation_diag ( true );
-                                  }
-                                }
-                                ligandList[index].second.set_context ( "c-glycan" );
-                            }
-                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "o-glycan" );
-                                
-                            }
-                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "s-glycan" );
-                                
-                            }
-                            found_in_tree = true;
-                            break;
-                        }
-                    }
-                    if ( found_in_tree ) break;
-                }
-
-                if ( !found_in_tree )
-                {
-                    ligandList[index].second.set_context ( "ligand" );
-                    ligandsOnly.push_back(ligandList[index]);
-                }
-
-
-                bool occupancy_check = false;
-                std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
-
-                for ( int i = 0 ; i < ringcomponents.size() ; i++ )
-                    if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
-                        occupancy_check = true;
-
-                ligandList[index].second.set_occupancy_check ( occupancy_check );
-                
-            });
-            processedMonomers++;
-
-            if(debug_output)
+            end = std::min(start + sugars_per_thread, ligandList.size());
+            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& path_to_model_file_clipper, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
+            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<float>& sigmaa_all_map, clipper::Xmap<float>& sigmaa_omit_fb, clipper::Xmap<float>& sigmaa_omit_fd, clipper::Xmap<float>& ligandmap, clipper::MGlycology& mgl, 
+            bool showGeom, float ipradius, int pos_slash, bool useSigmaa, bool rscc_best, size_t start, size_t end, bool debug_output)
             {
-                std::cout << std::endl;
-                DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            }
+                for(size_t index = start; index < end; index++)
+                {
 
-        }
-        if(debug_output)
-        {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                    float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+                    x=y=z=0.0;
+                    maxX=maxY=maxZ=-999999.0;
+                    minX=minY=minZ=999999.0;
+
+                    for (int natom = 0; natom < sugarList[index].size(); natom++)
+                    {
+                        if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                        if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                        if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                        if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+                    }
+
+                    x = minX + ((maxX - minX)/2);
+                    y = minY + ((maxY - minY)/2);
+                    z = minZ + ((maxZ - minZ)/2);
+
+                    // now calculate the correlation between the weighted experimental & calculated maps
+                    // maps are scanned only inside a sphere containing the sugar for performance reasons,
+                    // although RSCC and <RMS> are restricted to a mask surrounding the model
+
+                    //////// mask calculation //////////
+                    clipper::Xmap<float> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+                    clipper::EDcalc_mask<float> masker( ipradius );
+                    masker(mask, sugarList[index].atom_list());
+
+                    ////////////////////////////////////
+
+                    clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+                    clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+
+                    double accum = 0.0;
+                    double corr_coeff = 0.0;
+                    std::pair<double, double> rscc_and_accum;
+                    if ( rscc_best ) {
+                    rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    }
+                    else {
+                    rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+                    }
+                    corr_coeff = rscc_and_accum.first;
+                    accum = rscc_and_accum.second;
+
+                    ligandList[index].second.set_rscc ( corr_coeff );
+                    ligandList[index].second.set_accum_score ( accum );
+                    // calculation of the mean densities of the calc (ligandmap) and weighted obs (sigmaamap) maps
+
+                    std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                    bool found_in_tree = false;
+
+                    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                    {
+                        std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                        for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                        {
+                            if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                            {
+                                if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "n-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                {
+                                    if ( ligandList[index].second.type().trim() == "MAN" ) {
+                                    if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                                        ligandList[index].second.override_conformation_diag ( true );
+                                    }
+                                    }
+                                    ligandList[index].second.set_context ( "c-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "o-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "s-glycan" );
+                                }
+                                found_in_tree = true;
+                                break;
+                            }
+                        }
+                        if ( found_in_tree ) break;
+                    }
+
+                    if ( !found_in_tree )
+                    {
+                        ligandList[index].second.set_context ( "ligand" );
+                    }
+
+
+                    bool occupancy_check = false;
+                    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                    for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                        if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                            occupancy_check = true;
+
+                    ligandList[index].second.set_occupancy_check ( occupancy_check );
+                }
+            },
+            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(sigmaa_all_map), std::ref(sigmaa_omit_fb), std::ref(sigmaa_omit_fd), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, useSigmaa, rscc_best, start, end, debug_output 
+            ));
+            start += sugars_per_thread;
         }
 
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        for (auto& r: thread_results)
+            r.get();
         
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-            pool.sync();
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        }
+        thread_results.clear();
     }
     else
     {
@@ -2130,7 +2042,12 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             double corr_coeff = 0.0;
             std::pair<double, double> rscc_and_accum;
 
-            rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+            if ( rscc_best ) {
+                rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fb, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+            }
+            else {
+                rscc_and_accum = privateer::xray::calculate_rscc(sigmaa_all_map, sigmaa_omit_fd, ligandmap, mask, hklinfo, mygrid, origin, destination, useSigmaa);
+            }
 
             corr_coeff = rscc_and_accum.first;
             accum = rscc_and_accum.second;
@@ -2153,7 +2070,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
                         {
                             ligandList[index].second.set_context ( "n-glycan" );
-                            
                         }
                         else if ( list_of_glycans[i].get_type() == "c-glycan" )
                         {
@@ -2167,27 +2083,24 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                         else if ( list_of_glycans[i].get_type() == "o-glycan" )
                         {
                             ligandList[index].second.set_context ( "o-glycan" );
-                            
                         }
                         else if ( list_of_glycans[i].get_type() == "s-glycan" )
                         {
                             ligandList[index].second.set_context ( "s-glycan" );
-                            
                         }
                         found_in_tree = true;
                         break;
                     }
                 }
-                if ( found_in_tree ) break;
+                if ( found_in_tree )
+                    break;
             }
 
             if ( !found_in_tree )
             {
                 ligandList[index].second.set_context ( "ligand" );
-                ligandsOnly.push_back(ligandList[index]);
             }
 
-        
             bool occupancy_check = false;
             std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
 
@@ -2204,7 +2117,6 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
-
         }
     }
 
@@ -2257,7 +2169,6 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
 void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output) 
 {
     this->debug_output = debug_output;
-    privateer::thread_pool pool(0);
 
     bool useSigmaa = false;
     int detectedThreads = std::thread::hardware_concurrency();
@@ -2286,9 +2197,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     if(useParallelism)
     {
-        std::cout << std::endl << "THREADING: Resizing and initiating a thread pool object with " << nThreads << " threads..." << std::endl;
-        pool.resize(nThreads);
-        std::cout << "THREADING: Successfully initialized a thread pool with " << pool.size() << " threads!" << std::endl << std::endl;
+        std::cout << std::endl << "THREADING: Privateer will use " << nThreads << " of the " << std::thread::hardware_concurrency() << " available threads..." << std::endl;
     }
 
     if(path_to_model_file == "undefined" || path_to_model_file == "")
@@ -2430,7 +2339,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         }
     }
 
-    privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, pool, useParallelism, debug_output);
+    privateer::cryo_em::calculate_sfcs_of_fc_maps ( fc_all_cryoem_data, fc_ligands_only_cryoem_data, allAtoms, ligandAtoms, nThreads, useParallelism, debug_output);
 
     std::cout << "done." << std::endl << "Computing Fo-DFc map... ";
     fflush(0);
@@ -2456,218 +2365,174 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     clipper::Xmap<double> modelmap( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
 
-    if(useParallelism)
+    if(useParallelism && nThreads >= 2)
     {
-        pool.push([&cryo_em_dif_map_all, &difference_coefficients, debug_output](int id)
-        { 
-            if(debug_output)
+        std::vector<std::future<void>> thread_results;
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<double>& cryo_em_dif_map_all, clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients)
             {
-                std::cout << std::endl;
-                DBG << "Calculating cryo_em_dif_map_all from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            cryo_em_dif_map_all.fft_from(difference_coefficients);
-        });
+                cryo_em_dif_map_all.fft_from( difference_coefficients );
+            },
+            std::ref(cryo_em_dif_map_all), std::ref(difference_coefficients)
+            ));
 
-        pool.push([&modelmap, &fc_all_cryoem_data, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<double>& modelmap, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data)
             {
-                DBG << "Calculating modelmap from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            modelmap.fft_from(fc_all_cryoem_data);
-        });
+                modelmap.fft_from( fc_all_cryoem_data );
+            },
+            std::ref(modelmap), std::ref(fc_all_cryoem_data)
+            ));
 
-        pool.push([&ligandmap, &fc_ligands_only_cryoem_data, debug_output](int id)
-        { 
-            if(debug_output)
+        thread_results.push_back(std::async(std::launch::async, 
+            [](clipper::Xmap<double>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data)
             {
-                DBG << "Calculating ligandmap from Thread ID: " << id << '.' << std::endl;
-            }
-            
-            ligandmap.fft_from(fc_ligands_only_cryoem_data);
-        });
+                ligandmap.fft_from( fc_ligands_only_cryoem_data );
+            },
+            std::ref(ligandmap), std::ref(fc_ligands_only_cryoem_data)
+            ));
+        
+        for (auto& r: thread_results)
+            r.get();
+
+        thread_results.clear();
     }
     else
     {
         cryo_em_dif_map_all.fft_from( difference_coefficients );
 
-        modelmap.fft_from( fc_all_cryoem_data ); 
+        modelmap.fft_from( fc_all_cryoem_data );
 
         ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
     }
     
-
-    if (useParallelism)
+    if(useParallelism && nThreads >= 2)
     {
-        if(debug_output)
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        size_t sugars_per_thread = ligandList.size() / nThreads + 1;
+        size_t start = 0, end;
+        std::vector<std::future<void>> thread_results;
+        for (size_t i = 0; i < nThreads; i++)
         {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
-        }
-        
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-            pool.sync();
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        }
-    }
-
-    if(useParallelism)
-    {
-        int processedMonomers = 0;
-        for (int index = 0; index < ligandList.size(); index++)
-        {
-
-            if(pool.n_remaining_jobs() >= (pool.n_idle() - 1))
-                pool.sync();
-       
-            pool.push([&ligandsOnly, &sugarList, &path_to_model_file_clipper, &ligandList, &hklinfo, &mygrid, &cryo_em_map, &ligandmap, &mgl, showGeom, ipradius, pos_slash, index, debug_output](int id)
-            { 
-                if(debug_output)
-                {
-                    std::cout << std::endl;
-                    DBG << "Calculating RSCC score from Thread ID: " << id << " for nth " << index << " index out of " << ligandList.size() << " total indices." << std::endl;
-                }
-                
-                float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
-                x=y=z=0.0;
-                maxX=maxY=maxZ=-999999.0;
-                minX=minY=minZ=999999.0;
-                
-                for (int natom = 0; natom < sugarList[index].size(); natom++)
-                {
-                    if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
-                    if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
-                    if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
-                    if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
-                    if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
-                    if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
-                }
-
-                x = minX + ((maxX - minX)/2);
-                y = minY + ((maxY - minY)/2);
-                z = minZ + ((maxZ - minZ)/2);
-
-
-                // now calculate the correlation between the weighted experimental & calculated maps
-                // maps are scanned only inside a sphere containing the sugar for performance reasons,
-                // although RSCC and <RMS> are restricted to a mask surrounding the model
-
-
-                //////// mask calculation //////////
-
-                clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
-
-                clipper::EDcalc_mask<double> masker( ipradius );
-                masker(mask, sugarList[index].atom_list());
-
-                ////////////////////////////////////
-
-                clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
-                clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
-
-                double accum = 0.0;
-                double corr_coeff = 0.0;
-                std::pair<double, double> rscc_and_accum;
-
-
-                rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-                
-                corr_coeff = rscc_and_accum.first;
-                accum = rscc_and_accum.second;
-
-                ligandList[index].second.set_rscc ( corr_coeff );
-                ligandList[index].second.set_accum_score ( accum );
-                ///////////// here we deal with the sugar /////////////
-
-                std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
-                bool found_in_tree = false;
-
-                for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
-                {
-                    std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
-
-                    for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
-                    {
-                        if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
-                        {
-                            if ( list_of_glycans[i].get_type() == "n-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "n-glycan" );
-                                
-                            }
-                            else if ( list_of_glycans[i].get_type() == "c-glycan" )
-                            {
-                                if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                  if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                    ligandList[index].second.override_conformation_diag ( true );
-                                  }
-                                }
-                                ligandList[index].second.set_context ( "c-glycan" );
-                            }
-                            else if ( list_of_glycans[i].get_type() == "o-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "o-glycan" );
-                                
-                            }
-                            else if ( list_of_glycans[i].get_type() == "s-glycan" )
-                            {
-                                ligandList[index].second.set_context ( "s-glycan" );
-                                
-                            }
-                            found_in_tree = true;
-                            break;
-                        }
-                    }
-                    if ( found_in_tree ) break;
-                }
-
-                if ( !found_in_tree )
-                {
-                    ligandList[index].second.set_context ( "ligand" );
-                    ligandsOnly.push_back(ligandList[index]);
-                }
-
-                
-                bool occupancy_check = false;
-                std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
-
-                for ( int i = 0 ; i < ringcomponents.size() ; i++ )
-                    if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
-                        occupancy_check = true;
-
-                ligandList[index].second.set_occupancy_check ( occupancy_check );
-                
-            });
-            processedMonomers++;
-
-            if(debug_output)
+            end = std::min(start + sugars_per_thread, ligandList.size());
+            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
+            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<double>& cryo_em_map, clipper::Xmap<double>& ligandmap, clipper::MGlycology& mgl, 
+            bool showGeom, float ipradius, int pos_slash, size_t start, size_t end, bool debug_output)
             {
-                std::cout << std::endl;
-                DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
-            }
+                for(size_t index = start; index < end; index++)
+                {
+                    float x,y,z,maxX,maxY,maxZ,minX,minY,minZ;
+                    x=y=z=0.0;
+                    maxX=maxY=maxZ=-999999.0;
+                    minX=minY=minZ=999999.0;
 
-        }
+                    for (int natom = 0; natom < sugarList[index].size(); natom++)
+                    {
+                        if(sugarList[index][natom].coord_orth().x() > maxX) maxX=sugarList[index][natom].coord_orth().x(); // calculation of the sugar centre
+                        if(sugarList[index][natom].coord_orth().y() > maxY) maxY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() > maxZ) maxZ=sugarList[index][natom].coord_orth().z();
+                        if(sugarList[index][natom].coord_orth().x() < minX) minX=sugarList[index][natom].coord_orth().x();
+                        if(sugarList[index][natom].coord_orth().y() < minY) minY=sugarList[index][natom].coord_orth().y();
+                        if(sugarList[index][natom].coord_orth().z() < minZ) minZ=sugarList[index][natom].coord_orth().z();
+                    }
+
+                    x = minX + ((maxX - minX)/2);
+                    y = minY + ((maxY - minY)/2);
+                    z = minZ + ((maxZ - minZ)/2);
 
 
-        if(debug_output)
-        {
-            std::cout << std::endl;
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << std::endl;
+                    // now calculate the correlation between the weighted experimental & calculated maps
+                    // maps are scanned only inside a sphere containing the sugar for performance reasons,
+                    // although RSCC and <RMS> are restricted to a mask surrounding the model
+
+
+                    //////// mask calculation //////////
+
+                    clipper::Xmap<double> mask( hklinfo.spacegroup(), hklinfo.cell(), mygrid );
+
+                    clipper::EDcalc_mask<double> masker( ipradius );
+                    masker(mask, sugarList[index].atom_list());
+
+                    ////////////////////////////////////
+
+                    clipper::Coord_orth origin(minX-2,minY-2,minZ-2);
+                    clipper::Coord_orth destination(maxX+2,maxY+2,maxZ+2);
+
+                    double accum = 0.0;
+                    double corr_coeff = 0.0;
+                    std::pair<double, double> rscc_and_accum;
+
+
+                    rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
+
+                    corr_coeff = rscc_and_accum.first;
+                    accum = rscc_and_accum.second;
+
+                    ligandList[index].second.set_rscc ( corr_coeff );
+                    ligandList[index].second.set_accum_score ( accum );
+                    ///////////// here we deal with the sugar /////////////
+
+                    std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
+                    bool found_in_tree = false;
+
+                    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+                    {
+                        std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+
+                        for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
+                        {
+                            if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() )
+                            {
+                                if ( list_of_glycans[i].get_type() == "n-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "n-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "c-glycan" )
+                                {
+                                    if ( ligandList[index].second.type().trim() == "MAN" ) {
+                                    if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                                        ligandList[index].second.override_conformation_diag ( true );
+                                    }
+                                    }
+                                    ligandList[index].second.set_context ( "c-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "o-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "o-glycan" );
+                                }
+                                else if ( list_of_glycans[i].get_type() == "s-glycan" )
+                                {
+                                    ligandList[index].second.set_context ( "s-glycan" );
+                                }
+                                found_in_tree = true;
+                                break;
+                            }
+                        }
+                        if ( found_in_tree ) break;
+                    }
+
+                    if ( !found_in_tree )
+                    {
+                        ligandList[index].second.set_context ( "ligand" );
+                    }
+
+                    bool occupancy_check = false;
+                    std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
+
+                    for ( int i = 0 ; i < ringcomponents.size() ; i++ )
+                        if (privateer::util::get_altconformation(ringcomponents[i]) != ' ')
+                            occupancy_check = true;
+
+                    ligandList[index].second.set_occupancy_check ( occupancy_check );
+                }
+            },
+            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(cryo_em_map), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, start, end, debug_output 
+            ));
+            start += sugars_per_thread;
         }
-        
-        while(pool.n_idle() != pool.size() || pool.n_remaining_jobs() > 0)
-            pool.sync();
-        
-        if(debug_output)
-        {
-            DBG << "Number of jobs in the queue: " << pool.n_remaining_jobs() << " after sync operation!" << std::endl;
-        }
-        
+        for (auto& r: thread_results)
+            r.get();
+        thread_results.clear();
     }
     else
     {
@@ -2717,7 +2582,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
 
             rscc_and_accum = privateer::cryo_em::calculate_rscc(cryo_em_map, ligandmap, mask, hklinfo, mygrid, origin, destination);
-            
+
             corr_coeff = rscc_and_accum.first;
             accum = rscc_and_accum.second;
 
@@ -2739,7 +2604,6 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
                         {
                             ligandList[index].second.set_context ( "n-glycan" );
-                            
                         }
                         else if ( list_of_glycans[i].get_type() == "c-glycan" )
                         {
@@ -2753,12 +2617,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                         else if ( list_of_glycans[i].get_type() == "o-glycan" )
                         {
                             ligandList[index].second.set_context ( "o-glycan" );
-                            
                         }
                         else if ( list_of_glycans[i].get_type() == "s-glycan" )
                         {
                             ligandList[index].second.set_context ( "s-glycan" );
-                            
                         }
                         found_in_tree = true;
                         break;
@@ -2770,9 +2632,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             if ( !found_in_tree )
             {
                 ligandList[index].second.set_context ( "ligand" );
-                ligandsOnly.push_back(ligandList[index]);
             }
-
 
             bool occupancy_check = false;
             std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
@@ -2790,9 +2650,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                 std::cout << std::endl;
                 DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
             }
+
+            if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         }
     }
-
         
     this->final_LigandsOnly = ligandsOnly;
     this->finalLigandList = ligandList;

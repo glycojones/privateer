@@ -69,7 +69,6 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-dbquery.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-modelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
