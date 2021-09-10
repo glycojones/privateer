@@ -14,7 +14,6 @@
 #include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-minimol.h>
 #include <clipper/clipper-contrib.h>
-#include "privateer-parallelism.h"
 #include <future>
 
 typedef clipper::HKL_data_base::HKL_reference_index HRI;

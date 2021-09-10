@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -26,7 +27,6 @@
 #include "clipper-glyco_data.h"
 #include "privateer-composition.h"
 #include "privateer-lib.h"
-#include "privateer-parallelism.h"
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-json.h"
 

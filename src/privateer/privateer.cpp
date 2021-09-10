@@ -18,6 +18,7 @@
 #include <tuple>
 #include <iostream>
 #include <iomanip>
+#include <future>
 #include "privateer-json.h"
 #include "privateer-lib.h"
 #include "privateer-cryo_em.h"
@@ -26,7 +27,6 @@
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
 #include "privateer-dbquery.h"
-#include "privateer-parallelism.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>

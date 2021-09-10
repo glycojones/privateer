@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -26,7 +27,6 @@
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-dbquery.h"
 #include "privateer-lib.h"
-#include "privateer-parallelism.h"
 #include "privateer-json.h"
 
 std::vector<std::vector<int>> generate_all_possible_index_combinations(std::vector<int>& editable_node_list);
