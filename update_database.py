@@ -4,9 +4,6 @@ import os
 import json
 from datetime import datetime
 
-# TO DO: currently this is the old version of privateer_database.json.
-# Need to redesign in anticipation of CCP4 v8.0 or sooner
-
 
 def return_response_from_glyconnect_api(glytoucanID):
     headers = {
@@ -484,7 +481,8 @@ print(f"Finished downloading GlyTouCan data.")
 
 numFailedToMatch = 0
 
-jsonObjectNew = []
+jsonOutput = {"privateer_database": None}
+array_of_entries = []
 for count, line in enumerate(jsonObject):
     print(
         f'Currently processing: {line["AccessionNumber"]}\nProgress: {count} out of {len(jsonObject)}\t Progress - {int((count/len(jsonObject)*100))}%'
@@ -493,7 +491,8 @@ for count, line in enumerate(jsonObject):
     responseGlyConnect = return_response_from_glyconnect_api(glytoucanID)
     print("Current HTTP response: " + str(responseGlyConnect.status_code))
     if responseGlyConnect.status_code == 200:
-        line["glyconnect"] = responseGlyConnect.json()
+        tempjson = responseGlyConnect.json()
+        line["glyconnect"] = str(tempjson["id"])
     elif responseGlyConnect.status_code == 404:
         line["glyconnect"] = "NotFound"
     elif responseGlyConnect.status_code == 500:
@@ -501,11 +500,9 @@ for count, line in enumerate(jsonObject):
             glytoucanID
         )
         if glytoucanID in glyconnectHTTP500Exceptions:
-            line["glyconnect"] = glyconnectHTTP500Exceptions[glytoucanID]
+            line["glyconnect"] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
         elif alternativeAPIGlyConnectID != "NotFound":
-            line["glyconnect"] = {"id": alternativeAPIGlyConnectID}
-        elif alternativeAPIGlyConnectID == "NotFound":
-            line["glyconnect"] = "NotFound"
+            line["glyconnect"] = alternativeAPIGlyConnectID
         else:
             line[
                 "glyconnect"
@@ -518,17 +515,19 @@ for count, line in enumerate(jsonObject):
             if glytoucanID in glyconnectHTTP500Exceptions:
                 line["glyconnect"] = str(glyconnectHTTP500Exceptions[glytoucanID]["id"])
             elif alternativeAPIGlyConnectID != "NotFound":
-                line["glyconnect"] = {"id": alternativeAPIGlyConnectID}
+                line["glyconnect"] = alternativeAPIGlyConnectID
             else:
                 line["glyconnect"] = "Error: " + str(e)
                 numFailedToMatch += 1
-    jsonObjectNew.append(line)
+    array_of_entries.append(line)
 
 if os.path.exists(fullPath):
     os.remove(fullPath)
 
+jsonOutput["privateer_database"] = {"entries": array_of_entries}
+
 with open(fullPath, "w", encoding="utf-8") as file:
-    json.dump(jsonObjectNew, file, ensure_ascii=False, indent=4)
+    json.dump(jsonOutput, file, ensure_ascii=False, indent=4)
 
 print(
     f"Finished downloading and appending GlyConnect data. \nAbsolute path of the output: {fullPath}"

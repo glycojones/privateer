@@ -625,30 +625,37 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
         return glycoproteomicsDB;
     else
     {
-        nlohmann::json jsonObject = importedDatabase.return_imported_database();
+        std::vector<privateer::json::Database> glycomics_database = importedDatabase.return_imported_database();
         std::string currentWURCS = glycanWURCS;
         clipper::MGlycan currentGlycan = glycan;
 
-        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", currentWURCS);
+        int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
         if(!returnClosestMatches && currentGlycan.number_of_nodes() > 1)
         {
-            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+            if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID, glyconnectID;
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
                     glytoucanID.pop_back();
                 }
+                glyconnectID = glycomics_database[valueLocation].GlyConnectID;
+                if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
+                {
+                    glyconnectID.erase(0, 1);
+                    glyconnectID.pop_back();
+                }
 
-                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=glyconnectID );
                 this->glycoproteomicsDB = databaseOutput;
                 update_summary_of_glycan_after_dbquery();
                 return databaseOutput;
             }
-            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            else if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -673,7 +680,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
             std::string glytoucanID = "Not Found";
             if(valueLocation != -1)
             {
-                glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -707,8 +714,8 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
             
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, returnAllPossiblePermutations, false, nThreads, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, returnAllPossiblePermutations, false);   
+            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, returnAllPossiblePermutations, false, nThreads, useParallelism);
+            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);   
             
             if(!alternativeGlycans.empty())
             {
@@ -769,18 +776,22 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
                 for(int i = 0; i < finalGlycanPermutationContainer.size(); i++)
                 {
                     clipper::String temporaryWURCS = finalGlycanPermutationContainer[i].first.first.generate_wurcs();
-                    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+                    int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, temporaryWURCS);
 
                     std::string permutationGlyTouCanID = "Not Found";
-                    permutationGlyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                    permutationGlyTouCanID = glycomics_database[valueLocation].GlyConnectID;
                     if (permutationGlyTouCanID.front() == '"' && permutationGlyTouCanID.front() == '"')
                     {
                         permutationGlyTouCanID.erase(0, 1);
                         permutationGlyTouCanID.pop_back();
-                    }
-                    
+                    }                    
                     std::string permutationWURCS = temporaryWURCS;
-                    auto permutationGlyConnectID = jsonObject[valueLocation]["glyconnect"]["id"];
+                    auto permutationGlyConnectID = glycomics_database[valueLocation].GlyConnectID;
+                    if (permutationGlyConnectID.front() == '"' && permutationGlyConnectID.front() == '"')
+                    {
+                        permutationGlyConnectID.erase(0, 1);
+                        permutationGlyConnectID.pop_back();
+                    }
                     float permutationScore = finalGlycanPermutationContainer[i].second;
                     int anomerPermutations = finalGlycanPermutationContainer[i].first.second[0];
                     int residuePermutations = finalGlycanPermutationContainer[i].first.second[1];
@@ -805,22 +816,29 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
         else 
         {
             std::string glytoucanID = "Not Found";
-            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+            if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID, glyconnectID;
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
                     glytoucanID.pop_back();
                 }
-                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                glyconnectID = glycomics_database[valueLocation].GlyConnectID;
+                if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
+                {
+                    glyconnectID.erase(0, 1);
+                    glyconnectID.pop_back();
+                }
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=glyconnectID );
                 this->glycoproteomicsDB = databaseOutput;
                 update_summary_of_glycan_after_dbquery();
                 return databaseOutput;
             }
-            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            else if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -2701,18 +2719,8 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
 ///////////////////////////////////////////////// Class OfflineDatabase ////////////////////////////////////////////////////////////////////
 void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path_to_input_file )
 {
-    this->path_of_input_file = path_of_input_file;
-    std::string path = path_of_input_file;
-    if(path == "nopath" || path.empty()) 
-        {
-            std::string env(std::getenv ( "CLIBD" ));
-
-            path = env + "/privateer_database.json";
-        }
-
-    std::ifstream input(path);
-
-    input >> glytoucanglyconnectdatabase;
+    std::vector<privateer::json::Database> glycomics_database = privateer::json::read_json_file(path_to_input_file);
+    this->glytoucanglyconnectdatabase = glycomics_database;
 }
 ///////////////////////////////////////////////// Class OfflineDatabase END ////////////////////////////////////////////////////////////////////
 
@@ -2841,8 +2849,8 @@ void init_pyanalysis(py::module& m)
     py::class_<pa::OfflineDatabase>(m, "OfflineDatabase")
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
-        .def("import_json_file", &pa::OfflineDatabase::import_json_file)
-        .def("return_imported_database", &pa::OfflineDatabase::return_imported_database);
+        .def("import_json_file", &pa::OfflineDatabase::import_json_file);
+        // .def("return_imported_database", &pa::OfflineDatabase::return_imported_database);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

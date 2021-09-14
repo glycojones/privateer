@@ -7,8 +7,6 @@
 
 
 #include <Python.h>
-#include <pybind11_json/pybind11_json.hpp> //nlohman::json
-#include <nlohmann/json.hpp> //nlohman::json
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
@@ -413,11 +411,11 @@ namespace privateer {
         void import_json_file( std::string& path_to_input_file );
         ~OfflineDatabase() { };
 
-        nlohmann::json return_imported_database() { return glytoucanglyconnectdatabase; };
+        std::vector<privateer::json::Database> return_imported_database() { return glytoucanglyconnectdatabase; };
 
       private:
         std::string path_of_input_file;
-        nlohmann::json glytoucanglyconnectdatabase;
+        std::vector<privateer::json::Database> glytoucanglyconnectdatabase;
 
     };
 

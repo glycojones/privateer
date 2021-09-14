@@ -148,7 +148,7 @@ for entry in discoteque:
 #         print("{}: {}".format(key, value))
 #     print("_______________________")
 
-# glycan = glycosylation.get_glycan(5)
+# glycan = glycosylation.get_glycan(6)
 
 # json = pvt.OfflineDatabase()
 

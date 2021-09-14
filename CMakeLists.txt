@@ -38,11 +38,7 @@ find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
 find_library(CLIPPERCIFDEP NAMES clipper-cif
             HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
 
-#Add nlohmann::json and gemmi that need to be integrated into privateer's shared library
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/json)
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
-add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11_json)
 
 find_package(Threads REQUIRED)
 
@@ -54,7 +50,6 @@ set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
                     ${PYBIND11_INCLUDE_DIR}
-                    ${CMAKE_SOURCE_DIR}/dependencies/pybind11_json/include
                     ${PYTHON_INCLUDE_DIRS}
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
@@ -63,6 +58,8 @@ file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json
     DESTINATION ${CLIBDENV})
 
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
@@ -89,7 +86,6 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
-                        nlohmann_json::nlohmann_json
                         Threads::Threads)
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
@@ -108,8 +104,7 @@ target_link_libraries ( privateer_exec
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
@@ -136,8 +131,7 @@ target_link_libraries ( privateer_core PRIVATE
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
 
 target_link_libraries ( privateer_modelling PRIVATE 
                         privateer_lib 
@@ -150,8 +144,7 @@ target_link_libraries ( privateer_modelling PRIVATE
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY}
-                        nlohmann_json::nlohmann_json)
+                        ${PYTHON_LIBRARY})
 
 
 install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})

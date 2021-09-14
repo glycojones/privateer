@@ -12,8 +12,6 @@
 #include "privateer-modelling.h"
 #include "privateer-pyanalysis.h"
 #include <Python.h>
-#include <pybind11_json/pybind11_json.hpp> //nlohman::json
-#include <nlohmann/json.hpp> //nlohman::json
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
