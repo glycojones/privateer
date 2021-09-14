@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
