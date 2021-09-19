@@ -16,16 +16,18 @@ privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_fi
     this->ANY_search_policy = false;
     this->enable_user_messages = enable_user_messages;
     this->debug_output = false;
+    this->nThreads = -1;
     this->import_receiving_model_only(path_to_receiving_model_file);
 };
 
-privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
+privateer::pymodelling::Builder::Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output) 
 {
     this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
     this->ANY_search_policy = ANY_search_policy;
     this->enable_user_messages = enable_user_messages;
     this->debug_output = debug_output;
-    this->read_from_file ( path_to_receiving_model_file, path_to_donor_model_file, trim_donor_when_clashes_detected, ANY_search_policy, enable_user_messages, debug_output );
+    this->nThreads = nThreads;
+    this->read_from_file ( path_to_receiving_model_file, path_to_donor_model_file, nThreads, trim_donor_when_clashes_detected, ANY_search_policy, enable_user_messages, debug_output );
 };
 
 std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single_letter(std::string three_letter_code)
@@ -75,7 +77,7 @@ void privateer::pymodelling::Builder::import_receiving_model_only( std::string& 
     this->imported_receiving_model_seq_info = get_protein_sequence_information(imported_receiving_model);
 }
 
-void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
+void privateer::pymodelling::Builder::read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model_file, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output ) {
 
     if(path_to_receiving_model_file == "undefined")
     {
@@ -85,6 +87,31 @@ void privateer::pymodelling::Builder::read_from_file( std::string& path_to_recei
     if(path_to_donor_model_file == "undefined")
     {
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
+
+
+    int detectedThreads = std::thread::hardware_concurrency();
+    bool useParallelism = true;
+    
+    if(nThreads < 0)
+        nThreads = detectedThreads;
+    
+    else if(nThreads < 2 && nThreads > -1)
+    {
+        useParallelism = false;
+    }
+    else if(nThreads > detectedThreads)
+    {
+        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
+        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+        << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
+
+        throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
+    }
+
+    if(useParallelism)
+    {
+        std::cout << std::endl << "THREADING: Privateer will use " << nThreads << " of the " << detectedThreads << " available threads..." << std::endl;
     }
 
     this->path_to_receiving_model = path_to_receiving_model_file;
@@ -288,7 +315,7 @@ void init_pymodelling(py::module& m)
     py::class_<pm::Builder>(m, "Builder")
         .def(py::init<>())
         .def(py::init<std::string&, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("enable_user_messages")=true)
-        .def(py::init<std::string&, std::string&, bool, bool, bool, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("path_to_donor_model")="undefined", py::arg("trim_donor_when_clashes_detected")=true, py::arg("ANY_search_policy")=true, py::arg("enable_user_messages")=true, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, int, bool, bool, bool, bool>(), py::arg("path_to_receiving_model_file")="undefined", py::arg("path_to_donor_model")="undefined", py::arg("nThreads")=-1, py::arg("trim_donor_when_clashes_detected")=true, py::arg("ANY_search_policy")=true, py::arg("enable_user_messages")=true, py::arg("debug_output")=false)
         .def("get_path_of_receiving_model_file_used", &pm::Builder::get_path_of_receiving_model_file_used)
         .def("get_path_of_donor_model_file_used", &pm::Builder::get_path_of_donor_model_file_used)
         .def("get_receiving_model_sequence_info", &pm::Builder::get_receiving_model_sequence_info)

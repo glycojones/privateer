@@ -15,6 +15,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
+#include <future>
 
 namespace privateer {
 
@@ -25,10 +26,10 @@ namespace privateer {
 				public:
 					Builder() { };
 					Builder(std::string& path_to_receiving_model_file, bool enable_user_messages);
-					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
+					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
 					
 					void import_receiving_model_only( std::string& path_to_receiving_model_file);
-					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
+					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
 					std::string get_path_of_receiving_model_file_used ( ) { return path_to_receiving_model; };
 					std::string get_path_of_donor_model_file_used ( ) { return path_to_donor_model; };
 					std::string convert_three_letter_code_to_single_letter (std::string three_letter_code);
@@ -43,6 +44,7 @@ namespace privateer {
 
 
 				private:
+					int nThreads;
 					bool ANY_search_policy;
 					bool enable_user_messages;
 					bool debug_output;

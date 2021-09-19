@@ -50,7 +50,7 @@ namespace privateer {
             clipper::String glycan_type;       
             clipper::String connection_atom;
 			clipper::String vector_point_alpha;        
-            clipper::String vector_point_bravo;   
+            clipper::String vector_point_bravo;
         };
 
 		extern const protein_sidechain_glycosylation backbone_instructions[];
@@ -72,6 +72,7 @@ namespace privateer {
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
 				clipper::MPolymer convert_mglycan_to_mpolymer(clipper::MGlycan input);
 				clipper::Coord_orth get_glycan_target_point(clipper::Coord_orth connecting_atom, clipper::Coord_orth vector_origin, clipper::Coord_orth vector_target, float vectorShiftDistance);
+				clipper::Coord_orth get_dummy_O1_position(clipper::MAtom& sugar_connection_target, clipper::MAtom& sugar_vector_point_alpha_target, clipper::MAtom& sugar_vector_point_bravo_target, clipper::String residue_name);
 				void overlay_mglycan_via_atom(clipper::Coord_orth target, clipper::Coord_orth origin, clipper::MPolymer& converted_mglycan);
 				void graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, bool ANY_search_policy);
 				clipper::Coord_orth generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::Coord_orth direction, clipper::Coord_orth position, clipper::Coord_orth origin_shift, double targetAngle);
