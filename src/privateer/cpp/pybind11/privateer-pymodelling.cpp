@@ -164,7 +164,7 @@ void privateer::pymodelling::Builder::read_from_file( std::string& path_to_recei
     if(debug_output)
         DBG << "Generated a pybind11 list with summary of glycans detected in donor. Length of output list: " << glycan_summary_donor.size() << std::endl;
 
-    this->grafter = privateer::modelling::Grafter(imported_receiving_model, imported_donor_model, trim_donor_when_clashes_detected, enable_user_messages, debug_output);
+    this->grafter = privateer::modelling::Grafter(imported_receiving_model, imported_donor_model, nThreads, trim_donor_when_clashes_detected, enable_user_messages, debug_output);
     
 }
 
