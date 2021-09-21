@@ -219,6 +219,15 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         std::cout << "Grafting input glycan to: " << imported_receiving_model[receiver_chain_index].id().trim() << "/" << imported_receiving_model[receiver_chain_index][received_residue_index].type().trim() << "-" << imported_receiving_model[receiver_chain_index][received_residue_index].id().trim() << std::endl;
     }
 
+    if(userValuesChanged)
+    {
+        grafter.setPhi(userPhi);
+        grafter.setPsi(userPsi);
+        grafter.setPhi_error(userPhi_error);
+        grafter.setPhi_error(userPsi_error);
+        grafter.setIteration_step(userIteration_step);
+    }
+
     grafter.graft_mpolymer_to_receiving_model(glycan_to_graft, receiver_monomer, imported_receiving_model[receiver_chain_index].id().trim(), ANY_search_policy);
     
     std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > grafted_clashes = grafter.get_grafted_clashes();
@@ -322,7 +331,13 @@ void init_pymodelling(py::module& m)
         .def("get_glycan_summary_from_donor", &pm::Builder::get_glycan_summary_from_donor)
         .def("get_summary_of_grafted_glycans", &pm::Builder::get_summary_of_grafted_glycans)
         .def("graft_glycan_to_receiver", &pm::Builder::graft_glycan_to_receiver)
-        .def("export_grafted_model", &pm::Builder::export_grafted_model);
+        .def("export_grafted_model", &pm::Builder::export_grafted_model)
+        .def("set_phi", &pm::Builder::setPhi)
+        .def("set_psi", &pm::Builder::setPsi)
+        .def("set_phi_error", &pm::Builder::setPhi_error)
+        .def("set_psi_error", &pm::Builder::setPsi_error)
+        .def("set_iterator_step", &pm::Builder::setIteration_step)
+        ;
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

@@ -41,6 +41,11 @@ namespace privateer {
 					void graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index);
 					void export_grafted_model( std::string& output_path );
 					
+					void setPhi (double inputPhi) { this->userPhi = inputPhi; this->userValuesChanged = true; };
+					void setPsi (double inputPsi) { this->userPsi = inputPsi; this->userValuesChanged = true; };
+					void setPhi_error (double inputPhi_error) { this->userPhi_error = inputPhi_error; this->userValuesChanged = true; };
+					void setPsi_error (double inputPsi_error) { this->userPsi_error = inputPsi_error; this->userValuesChanged = true; };
+					void setIteration_step (double inputIteration_step) { this->userIteration_step = inputIteration_step; this->userValuesChanged = true; };
 
 
 				private:
@@ -53,6 +58,13 @@ namespace privateer {
 					std::string path_to_donor_model;
 
 					privateer::modelling::Grafter grafter;
+
+					bool userValuesChanged = false;
+					double userPhi = -42069;        
+					double userPsi = -42069;
+					double userPhi_error = -42069;
+					double userPsi_error = -42069;
+					double userIteration_step = -42069;
 
 					clipper::MiniMol imported_receiving_model;
 					clipper::MiniMol imported_donor_model;

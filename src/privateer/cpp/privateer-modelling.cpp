@@ -154,6 +154,18 @@ namespace privateer
                 Phi_error = privateer::modelling::backbone_instructions[receiver_atom_index].Phi_error;
                 Psi_error = privateer::modelling::backbone_instructions[receiver_atom_index].Psi_error;
 
+                if(userValuesChanged)
+                {
+                    if(userPhi != -42069)
+                        targetPhi = userPhi;
+                    if(userPsi != -42069)
+                        targetPsi = userPsi;
+                    if(userPhi_error != -42069)
+                        Phi_error = userPhi_error;
+                    if(userPsi_error != -42069)
+                        Psi_error = userPsi_error;
+                }
+
                 if(enable_user_messages && !debug_output)
                     std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Target Phi = " << targetPhi << ", target Psi = " << targetPsi << std::endl;
 
@@ -643,6 +655,8 @@ namespace privateer
         clipper::MPolymer Grafter::rotate_mglycan_until_clashes_are_minimized_parallelized(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output)
         {
             double iteration_step = 1.0;
+            if(userIteration_step != -42069)
+                iteration_step = userIteration_step;
             clipper::MiniMol single_clash_model = export_model;
             clipper::MPolymer best_performing_glycan = converted_mglycan;
             double bestPerformingPsi, bestPerformingPhi;
@@ -858,6 +872,9 @@ namespace privateer
    
         clipper::MPolymer Grafter::rotate_mglycan_until_clashes_are_minimized_singlethreaded(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output)
         {
+            double iteration_step = 1.0;
+            if(userIteration_step != -42069)
+                iteration_step = userIteration_step;
             clipper::MiniMol tmp_clash_model = export_model;
             clipper::MPolymer manipulated_glycan = converted_mglycan;
             clipper::MPolymer best_performing_glycan = converted_mglycan;
@@ -899,9 +916,9 @@ namespace privateer
             bestPerformingPhi = currentPhiTorsionAngle;
             best_performing_glycan = converted_mglycan;
 
-            for(double currentPsiIterator = -psiError; currentPsiIterator <= +psiError; currentPsiIterator += 5.0)
+            for(double currentPsiIterator = -psiError; currentPsiIterator <= +psiError; currentPsiIterator += iteration_step)
             {
-                for(double currentPhiIterator = -phiError; currentPhiIterator <= +phiError; currentPhiIterator += 5.0)
+                for(double currentPhiIterator = -phiError; currentPhiIterator <= +phiError; currentPhiIterator += iteration_step)
                 {
                     manipulated_glycan = converted_mglycan;
                     tmp_clash_model = export_model;

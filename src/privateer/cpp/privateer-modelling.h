@@ -91,6 +91,12 @@ namespace privateer {
 				double get_average_distance_between_clashing_residues(std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > >& input_clashes);
 				int lookup_protein_backbone_glycosylation_database( clipper::String name);
 				int lookup_glycan_type_glycosylation_database( clipper::String type);
+
+				void setPhi (double inputPhi) { this->userPhi = inputPhi; this->userValuesChanged = true; };
+				void setPsi (double inputPsi) { this->userPsi = inputPsi; this->userValuesChanged = true; };
+				void setPhi_error (double inputPhi_error) { this->userPhi_error = inputPhi_error; this->userValuesChanged = true; };
+				void setPsi_error (double inputPsi_error) { this->userPsi_error = inputPsi_error; this->userValuesChanged = true; };
+				void setIteration_step (double inputIteration_step) { this->userIteration_step = inputIteration_step; this->userValuesChanged = true; };
 			private:
 				int nThreads;
 				bool useParallelism;
@@ -100,6 +106,13 @@ namespace privateer {
 
 				clipper::MiniMol receiving_model;
 				clipper::MiniMol donor_model;
+
+				bool userValuesChanged = false;
+				clipper::ftype userPhi = -42069;        
+				clipper::ftype userPsi = -42069;
+				clipper::ftype userPhi_error = -42069;
+				clipper::ftype userPsi_error = -42069;
+				clipper::ftype userIteration_step = -42069;
 
 				clipper::MiniMol export_model;
 				clipper::MGlycan grafted_glycan;
