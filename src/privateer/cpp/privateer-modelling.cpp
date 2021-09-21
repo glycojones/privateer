@@ -792,6 +792,11 @@ namespace privateer
                     start += iterations_per_thread;
                 }
 
+                for (auto& r: thread_results)
+                    r.get();
+
+                thread_results.clear();
+
                 std::sort(results.begin(), results.end(), [](ClashMinimizedGlycan& a, ClashMinimizedGlycan& b) {
                     return a.clashes.size() < b.clashes.size();
                 });
@@ -824,7 +829,7 @@ namespace privateer
                         int currentNumClashes = results[0].clashes.size();
                         std::vector<ClashMinimizedGlycan> clashes_minimized;
                         int index = 0;
-                        while(results[index].clashes.size() == 0)
+                        while(results[index].clashes.size() == currentNumClashes)
                         {
                             clashes_minimized.push_back(results[index]);
                             index++;
