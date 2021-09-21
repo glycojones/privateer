@@ -821,8 +821,9 @@ namespace privateer
 
                             return lhs_aggregatedAngle < rhs_aggregatedAngle;
                         });
-
-                        return clashes_eliminated[0].glycan;
+                        
+                        if(!clashes_eliminated.empty())
+                            return clashes_eliminated[0].glycan;
                     }
                     else
                     {
@@ -841,10 +842,11 @@ namespace privateer
                             double lhs_averageResidueDistance = get_average_distance_between_clashing_residues(lhs_clashes);
                             double rhs_averageResidueDistance = get_average_distance_between_clashing_residues(rhs_clashes);
 
-                            return lhs_averageResidueDistance < rhs_averageResidueDistance;
+                            return lhs_averageResidueDistance > rhs_averageResidueDistance;
                         });
-
-                        return clashes_minimized[0].glycan;
+                        
+                        if(!clashes_minimized.empty())
+                            return clashes_minimized[0].glycan;
                     }
                 }
 
