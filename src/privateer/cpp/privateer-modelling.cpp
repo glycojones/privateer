@@ -26,8 +26,8 @@ namespace privateer
 
         const sugar_attachment sugar_instructions[] =
         {
-            { "ideal", "C1", "O1", "" },   
-            { "non-ideal", "C1", "C4", "O4" }
+            { "ideal", "C1", "O1" },   
+            { "non-ideal", "C1", "O1" }
         };
         const int sugar_instructions_size = sizeof( sugar_instructions ) / sizeof( sugar_instructions[0] );
     
@@ -208,143 +208,228 @@ namespace privateer
 
             if(glycan_type == "non-ideal")
             {
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                std::cout << "!!! THIS METHOD OF GRAFTING IS CURRENTLY UNOPTIMIZED. THIS WILL BE CORRECTED IN DUE FUTURE. PLEASE USE THE SUPPLIED GLYCAN BLOCKS AS THEY CONTAIN O1 ATOMS !!!" << std::endl;
-                converted_mglycan.set_id(chainID);
-                clipper::MM::MODE search_policy;
-                if(ANY_search_policy)
-                    search_policy = clipper::MM::MODE::ANY;
-                else
-                    search_policy = clipper::MM::MODE::UNIQUE;
-
-                clipper::String sugar_connection_atom;
-
-                int glycan_grafting_type = lookup_glycan_type_glycosylation_database(glycan_type);
-                if(glycan_grafting_type != -1)
+                std::pair < clipper::MMonomer, clipper::MSugar > glycan_root = glycan_to_graft.get_root();
+                if(glycan_root.first.size() > 0)
                 {
-                    sugar_connection_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].connection_atom;
+                    std::vector<std::pair<clipper::MAtom, clipper::MAtom>> O1_atom_candidates; // .first - sugar atom, .second - amino acid atom
+                    for(int sugarAtom = 0; sugarAtom < glycan_root.second.size(); sugarAtom++)
+                    {
+                        if(glycan_root.second[sugarAtom].element().trim() != "C")
+                            continue;
+                        for(int proteinAtom = 0; proteinAtom < glycan_root.first.size(); proteinAtom++)
+                            O1_atom_candidates.push_back(std::make_pair(glycan_root.second[sugarAtom], glycan_root.first[proteinAtom]));
+                    }
 
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
+                    std::sort(O1_atom_candidates.begin(), O1_atom_candidates.end(), [](std::pair<clipper::MAtom, clipper::MAtom>& lhs, std::pair<clipper::MAtom, clipper::MAtom>& rhs) {
+                        clipper::ftype lhs_distance_between_atoms = clipper::Coord_orth::length(lhs.first.coord_orth(), lhs.second.coord_orth());;
+                        clipper::ftype rhs_distance_between_atoms = clipper::Coord_orth::length(rhs.first.coord_orth(), rhs.second.coord_orth());;
 
-                    if(debug_output)
-                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_connection_atom << " used to translate in vicinity of " << connected_atom << " atom." << std::endl;
+                        return lhs_distance_between_atoms < rhs_distance_between_atoms;
+                    });
+
+                    std::pair<clipper::MAtom, clipper::MAtom> best_O1_candidate_pair = O1_atom_candidates[0];
+                    clipper::MAtom dummy_O1_atom;
+                    dummy_O1_atom.set_id("O1");
+                    dummy_O1_atom.set_name("O1");
+                    dummy_O1_atom.set_element("O");
+                    dummy_O1_atom.set_coord_orth(best_O1_candidate_pair.second.coord_orth());
+                    dummy_O1_atom.set_occupancy(best_O1_candidate_pair.second.occupancy());
+                    dummy_O1_atom.set_u_aniso_orth(best_O1_candidate_pair.second.u_aniso_orth());
+                    dummy_O1_atom.set_u_iso(best_O1_candidate_pair.second.u_iso());
+                    converted_mglycan[0].insert(dummy_O1_atom);
                 }
                 else
+                    throw std::runtime_error("Non-ideal glycan donor(lacks O1 atom), connected to amino acid: " + glycan_root.first.type() + " contains no atoms!" + 
+                                             "\nThis could have been caused by Privateer detecting a ligand that contained no O1 atom.");
+            }
+
+            converted_mglycan.set_id(chainID);
+            clipper::MM::MODE search_policy;
+            if(ANY_search_policy)
+                search_policy = clipper::MM::MODE::ANY;
+            else
+                search_policy = clipper::MM::MODE::UNIQUE;
+
+            clipper::String sugar_connection_atom;
+            clipper::String sugar_vector_point;
+
+            int glycan_grafting_type = lookup_glycan_type_glycosylation_database(glycan_type);
+            if(glycan_grafting_type != -1)
+            {
+                sugar_connection_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].connection_atom;
+                sugar_vector_point = privateer::modelling::sugar_instructions[glycan_grafting_type].vector_point;
+
+                if(enable_user_messages && !debug_output)
+                    std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " and " << sugar_vector_point << " used to generate rotation-translation matrix." << std::endl;
+
+                if(debug_output)
+                    DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_connection_atom << " and " << sugar_vector_point << " used to translate onto " << connected_atom << " atom." << std::endl;
+            }
+            else
+            {
+                DBG << "Unable to locate " << glycan_type << " in sugar_attachment_instruction_set from donor model! ...Aborting..." << std::endl;
+                throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
+            }
+
+            clipper::MAtom protein_connecting_target;
+            clipper::MAtom protein_vector_point_alpha;
+            clipper::MAtom protein_vector_point_bravo;
+            clipper::MAtom sugar_connection_target;
+            clipper::MAtom sugar_vector_point_target;
+
+            protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, search_policy); // ND2
+            protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, search_policy); // CB
+            protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, search_policy); // CG
+            sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+            sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+
+
+            overlay_mglycan_via_atom(protein_connecting_target.coord_orth(), sugar_vector_point_target.coord_orth(), converted_mglycan);
+
+            // Update the coordinates of C1 and O1, get O5 coords from the glycan.
+            clipper::String ring_oxygen_name = glycan_to_graft.get_sugars()[0].ring_members()[0].id().trim();
+            clipper::MAtom ring_oxygen;
+
+            sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+            sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+            ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+            double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
+            std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
+            
+            clipper::Coord_orth psiDirection = protein_vector_point_alpha.coord_orth() - protein_connecting_target.coord_orth(); // CG(origin_shift) - ND2(base)
+            rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, psiDirection, protein_vector_point_alpha.coord_orth(), psiTorsionAtoms, targetPsi, debug_output);
+
+            sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+            sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+            ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+            currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
+            
+            if(debug_output)
+                DBG << "Psi value after rotation: " << currentPsiTorsionAngle << std::endl;
+
+            double currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
+            std::vector<std::pair<clipper::MAtom, std::string>> phiTorsionAtoms = { std::make_pair(ring_oxygen, "sugar"), std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein") };
+
+            clipper::Coord_orth phiDirection = protein_connecting_target.coord_orth() - sugar_connection_target.coord_orth(); // ND2(origin_shift) - C1(base)
+            rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, phiDirection, protein_connecting_target.coord_orth(), phiTorsionAtoms, targetPhi, debug_output);
+
+            sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+            sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+            ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+
+            currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
+            
+            this->graftedPhi = currentPhiTorsionAngle;
+            this->graftedPsi = currentPsiTorsionAngle;
+            
+            if(debug_output)
+                DBG << "Phi value after rotation: " << currentPhiTorsionAngle << std::endl;
+
+            clipper::MiniMol tmp_clash_model = export_model;
+            tmp_clash_model.insert(converted_mglycan);
+
+            std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_initial_grafting = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
+            this->clashes = clashes_after_initial_grafting;
+
+            if(debug_output)
+                DBG << "clashes_after_initial_grafting.size(): " << clashes_after_initial_grafting.size() << std::endl;
+
+            if(clashes_after_initial_grafting.size() > 0)
+            {
+                tmp_clash_model = export_model;
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+                
+                if(enable_user_messages)
                 {
-                    DBG << "Unable to locate " << glycan_type << " in sugar_attachment_instruction_set from donor model! ...Aborting..." << std::endl;
-                    throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
+                    std::cout << "Unfortunately, the grafted glycan resulted in " << clashes_after_initial_grafting.size() << " clashes with protein backbone. Attempting to eliminate or minimize clashes through further manipulation of Phi/Psi torsion angles." << std::endl;
+                    for(int i = 0; i < clashes_after_initial_grafting.size(); i++)
+                    {
+                        std::cout << i+1 << "/" << clashes_after_initial_grafting.size() << " initial clash: " << clashes_after_initial_grafting[i].first.second << "/" << clashes_after_initial_grafting[i].first.first.id().trim() << "-" << clashes_after_initial_grafting[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_initial_grafting[i].second.second << "/" << clashes_after_initial_grafting[i].second.first.id().trim() << "-" << clashes_after_initial_grafting[i].second.first.type().trim() << std::endl;
+                    }
                 }
 
-                clipper::MAtom protein_connecting_target;
-                clipper::MAtom protein_vector_point_alpha;
-                clipper::MAtom protein_vector_point_bravo;
-                clipper::MAtom sugar_connection_target;
-
-                protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, search_policy); // ND2
-                protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, search_policy); // CB
-                protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, search_policy); // CG
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-
-                clipper::Coord_orth potential_C1_position = get_glycan_target_point(protein_connecting_target.coord_orth(), protein_vector_point_bravo.coord_orth(), protein_vector_point_alpha.coord_orth(), 1.50);
+                clipper::MPolymer minimized_clashes_glycan;
+                if(useParallelism)
+                    minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_parallelized(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
+                else
+                    minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_singlethreaded(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
                 
-                overlay_mglycan_via_atom(potential_C1_position, sugar_connection_target.coord_orth(), converted_mglycan);
-
-                // Update the coordinates of C1 and O1, get O5 coords from the glycan.
-                clipper::String ring_oxygen_name = glycan_to_graft.get_sugars()[0].ring_members()[0].id().trim();
-                clipper::MAtom ring_oxygen;
-
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
-                double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
-                std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
+                sugar_connection_target = minimized_clashes_glycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = minimized_clashes_glycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = minimized_clashes_glycan[0].find(ring_oxygen_name, search_policy); // O5
                 
-                clipper::Coord_orth psiDirection = protein_vector_point_alpha.coord_orth() - protein_connecting_target.coord_orth(); // CG(origin_shift) - ND2(base)
-                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, psiDirection, protein_vector_point_alpha.coord_orth(), psiTorsionAtoms, targetPsi, debug_output);
+                tmp_clash_model = export_model;
+                tmp_clash_model.insert(minimized_clashes_glycan);
 
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
+                
+                std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_manipulation = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
+            
+                currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
                 currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
                 
-                if(debug_output)
-                    DBG << "Psi value after rotation: " << currentPsiTorsionAngle << std::endl;
+                this->graftedPhi = currentPhiTorsionAngle;
+                this->graftedPsi = currentPsiTorsionAngle;
 
-                double currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                std::vector<std::pair<clipper::MAtom, std::string>> phiTorsionAtoms = { std::make_pair(ring_oxygen, "sugar"), std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein") };
-
-                clipper::Coord_orth phiDirection = protein_connecting_target.coord_orth() - sugar_connection_target.coord_orth(); // ND2(origin_shift) - C1(base)
-                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, phiDirection, protein_connecting_target.coord_orth(), phiTorsionAtoms, targetPhi, debug_output);
-
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
-                currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                
-                if(debug_output)
-                    DBG << "Phi value after rotation: " << currentPhiTorsionAngle << std::endl;
-
-                clipper::MiniMol tmp_clash_model = export_model;
-                tmp_clash_model.insert(converted_mglycan);
-
-                std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_initial_grafting = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                this->clashes = clashes_after_initial_grafting;
-
-                if(debug_output)
-                    DBG << "clashes_after_initial_grafting.size(): " << clashes_after_initial_grafting.size() << std::endl;
-
-                if(clashes_after_initial_grafting.size() > 0)
+                if(enable_user_messages)
                 {
-                    tmp_clash_model = export_model;
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                    ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-                    
-                    if(enable_user_messages)
-                    {
-                        std::cout << "Unfortunately, the grafted glycan resulted in " << clashes_after_initial_grafting.size() << " clashes with protein backbone. Attempting to eliminate or minimize clashes through further manipulation of Phi/Psi torsion angles." << std::endl;
-                        for(int i = 0; i < clashes_after_initial_grafting.size(); i++)
-                        {
-                            std::cout << i+1 << "/" << clashes_after_initial_grafting.size() << " initial clash: " << clashes_after_initial_grafting[i].first.second << "/" << clashes_after_initial_grafting[i].first.first.id().trim() << "-" << clashes_after_initial_grafting[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_initial_grafting[i].second.second << "/" << clashes_after_initial_grafting[i].second.first.id().trim() << "-" << clashes_after_initial_grafting[i].second.first.type().trim() << std::endl;
-                        }
-                    }
-                    
-                    clipper::MPolymer minimized_clashes_glycan;
-                    if(useParallelism)
-                        minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_parallelized(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
-                    else
-                        minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_singlethreaded(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
-                    
-                    sugar_connection_target = minimized_clashes_glycan[0].find(sugar_connection_atom, search_policy); // C1
-                    ring_oxygen = minimized_clashes_glycan[0].find(ring_oxygen_name, search_policy); // O5
-                    
-                    tmp_clash_model = export_model;
-                    tmp_clash_model.insert(minimized_clashes_glycan);
 
+                    std::cout << "After manipulating Phi/Psi torsion angles further, the following were found to minimize clashes the most, Psi: " << currentPsiTorsionAngle << "\t\tPhi: " << currentPhiTorsionAngle << std::endl; 
+                    std::cout << "Managed to eliminate " << clashes_after_initial_grafting.size() - clashes_after_manipulation.size() << " clashes. Remaining clashes: " << std::endl;
                     
-                    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_manipulation = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                
-                    if(enable_user_messages)
+                    for(int i = 0; i < clashes_after_manipulation.size(); i++)
                     {
-                        currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                        currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
-                        if(enable_user_messages)
-                        {
-                            std::cout << "After manipulating Phi/Psi torsion angles further, the following were found to minimize clashes the most, Psi: " << currentPsiTorsionAngle << "\t\tPhi: " << currentPhiTorsionAngle << std::endl; 
-                            std::cout << "Managed to eliminate " << clashes_after_initial_grafting.size() - clashes_after_manipulation.size() << " clashes. Remaining clashes: " << std::endl;
-                        }
-                        for(int i = 0; i < clashes_after_manipulation.size(); i++)
-                        {
-                            std::cout << i+1 << "/" << clashes_after_manipulation.size() << " remaining clash: " << clashes_after_manipulation[i].first.second << "/" << clashes_after_manipulation[i].first.first.id().trim() << "-" << clashes_after_manipulation[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_manipulation[i].second.second << "/" << clashes_after_manipulation[i].second.first.id().trim() << "-" << clashes_after_manipulation[i].second.first.type().trim() << std::endl;
-                        }
+                        std::cout << i+1 << "/" << clashes_after_manipulation.size() << " remaining clash: " << clashes_after_manipulation[i].first.second << "/" << clashes_after_manipulation[i].first.first.id().trim() << "-" << clashes_after_manipulation[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_manipulation[i].second.second << "/" << clashes_after_manipulation[i].second.first.id().trim() << "-" << clashes_after_manipulation[i].second.first.type().trim() << std::endl;
                     }
-                    this->clashes = clashes_after_manipulation;
-                    converted_mglycan = minimized_clashes_glycan;
                 }
+                this->clashes = clashes_after_manipulation;
+                converted_mglycan = minimized_clashes_glycan;
+            }
+
+            bool first_sugar_has_hydrogens = check_if_residue_has_hydrogens(converted_mglycan[0]);
+
+            if(first_sugar_has_hydrogens)
+            {
+                converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
+
+                clipper::String vector_point_target_hydrogen_name = "H" + sugar_vector_point.substr(1,1);
+
+                if(debug_output)
+                    DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
+
+                clipper::MAtom vector_point_target_hydrogen = converted_mglycan[0].find(vector_point_target_hydrogen_name, search_policy);
+
+                converted_mglycan = delete_atom_from_mglycan(converted_mglycan, vector_point_target_hydrogen);
+
+                if(enable_user_messages && !debug_output)
+                    std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
+                
+                if(debug_output)
+                    DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
+                
+                this->grafted_glycan = glycan_to_graft;
+                export_model.insert(converted_mglycan);
+
+                if(trim_donor_when_clashes_detected)
+                {
+                    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_grafting = check_for_clashes(export_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
+                    clipper::MiniMol clash_free = trim_graft_until_no_clashes_left(export_model, glycan_to_graft, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID, clashes_after_grafting);
+                    export_model = clash_free;
+                }
+                    
+                if(enable_user_messages && !debug_output)
+                    std::cout << "Glycan has been grafted!" << std::endl;
+                
+                if(debug_output)
+                    DBG << "Glycan has been grafted!" << std::endl;
+
+            }
+            else
+            {
+                converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
 
                 if(enable_user_messages && !debug_output)
                     std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
@@ -368,213 +453,6 @@ namespace privateer
                 if(debug_output)
                     DBG << "Glycan has been grafted!" << std::endl;
             }
-            else if(glycan_type == "ideal")
-            {
-                converted_mglycan.set_id(chainID);
-                clipper::MM::MODE search_policy;
-                if(ANY_search_policy)
-                    search_policy = clipper::MM::MODE::ANY;
-                else
-                    search_policy = clipper::MM::MODE::UNIQUE;
-
-                clipper::String sugar_connection_atom;
-                clipper::String sugar_vector_point;
-
-                int glycan_grafting_type = lookup_glycan_type_glycosylation_database(glycan_type);
-                if(glycan_grafting_type != -1)
-                {
-                    sugar_connection_atom = privateer::modelling::sugar_instructions[glycan_grafting_type].connection_atom;
-                    sugar_vector_point = privateer::modelling::sugar_instructions[glycan_grafting_type].vector_point_alpha;
-
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " used to generate rotation-translation matrix." << std::endl;
-
-                    if(debug_output)
-                        DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_vector_point << " used to translate onto " << connected_atom << " atom." << std::endl;
-                }
-                else
-                {
-                    DBG << "Unable to locate " << glycan_type << " in sugar_attachment_instruction_set from donor model! ...Aborting..." << std::endl;
-                    throw std::invalid_argument( "Unable to generate instructions from donor model from input receiver." );
-                }
-
-                clipper::MAtom protein_connecting_target;
-                clipper::MAtom protein_vector_point_alpha;
-                clipper::MAtom protein_vector_point_bravo;
-                clipper::MAtom sugar_connection_target;
-                clipper::MAtom sugar_vector_point_target;
-
-                protein_connecting_target = input_protein_side_chain_residue.find(connected_atom, search_policy); // ND2
-                protein_vector_point_alpha = input_protein_side_chain_residue.find(vector_point_alpha, search_policy); // CB
-                protein_vector_point_bravo = input_protein_side_chain_residue.find(vector_point_bravo, search_policy); // CG
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-
-
-                overlay_mglycan_via_atom(protein_connecting_target.coord_orth(), sugar_vector_point_target.coord_orth(), converted_mglycan);
-
-                // Update the coordinates of C1 and O1, get O5 coords from the glycan.
-                clipper::String ring_oxygen_name = glycan_to_graft.get_sugars()[0].ring_members()[0].id().trim();
-                clipper::MAtom ring_oxygen;
-
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
-                double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
-                std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
-                
-                clipper::Coord_orth psiDirection = protein_vector_point_alpha.coord_orth() - protein_connecting_target.coord_orth(); // CG(origin_shift) - ND2(base)
-                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, psiDirection, protein_vector_point_alpha.coord_orth(), psiTorsionAtoms, targetPsi, debug_output);
-
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
-                currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
-                
-                if(debug_output)
-                    DBG << "Psi value after rotation: " << currentPsiTorsionAngle << std::endl;
-
-                double currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                std::vector<std::pair<clipper::MAtom, std::string>> phiTorsionAtoms = { std::make_pair(ring_oxygen, "sugar"), std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein") };
-
-                clipper::Coord_orth phiDirection = protein_connecting_target.coord_orth() - sugar_connection_target.coord_orth(); // ND2(origin_shift) - C1(base)
-                rotate_mglycan_until_torsion_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, phiDirection, protein_connecting_target.coord_orth(), phiTorsionAtoms, targetPhi, debug_output);
-
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-
-                currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                
-                if(debug_output)
-                    DBG << "Phi value after rotation: " << currentPhiTorsionAngle << std::endl;
-
-                clipper::MiniMol tmp_clash_model = export_model;
-                tmp_clash_model.insert(converted_mglycan);
-
-                std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_initial_grafting = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                this->clashes = clashes_after_initial_grafting;
-
-                if(debug_output)
-                    DBG << "clashes_after_initial_grafting.size(): " << clashes_after_initial_grafting.size() << std::endl;
-
-                if(clashes_after_initial_grafting.size() > 0)
-                {
-                    tmp_clash_model = export_model;
-                    sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                    sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-                    ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
-                    
-                    if(enable_user_messages)
-                    {
-                        std::cout << "Unfortunately, the grafted glycan resulted in " << clashes_after_initial_grafting.size() << " clashes with protein backbone. Attempting to eliminate or minimize clashes through further manipulation of Phi/Psi torsion angles." << std::endl;
-                        for(int i = 0; i < clashes_after_initial_grafting.size(); i++)
-                        {
-                            std::cout << i+1 << "/" << clashes_after_initial_grafting.size() << " initial clash: " << clashes_after_initial_grafting[i].first.second << "/" << clashes_after_initial_grafting[i].first.first.id().trim() << "-" << clashes_after_initial_grafting[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_initial_grafting[i].second.second << "/" << clashes_after_initial_grafting[i].second.first.id().trim() << "-" << clashes_after_initial_grafting[i].second.first.type().trim() << std::endl;
-                        }
-                    }
-
-                    clipper::MPolymer minimized_clashes_glycan;
-                    if(useParallelism)
-                        minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_parallelized(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
-                    else
-                        minimized_clashes_glycan = rotate_mglycan_until_clashes_are_minimized_singlethreaded(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, phiTorsionAtoms, psiTorsionAtoms, Phi_error, Psi_error, root_chain_id, chainID, debug_output);
-                    
-                    sugar_connection_target = minimized_clashes_glycan[0].find(sugar_connection_atom, search_policy); // C1
-                    sugar_vector_point_target = minimized_clashes_glycan[0].find(sugar_vector_point, search_policy); // O1
-                    ring_oxygen = minimized_clashes_glycan[0].find(ring_oxygen_name, search_policy); // O5
-                    
-                    tmp_clash_model = export_model;
-                    tmp_clash_model.insert(minimized_clashes_glycan);
-
-                    
-                    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_manipulation = check_for_clashes(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                
-                    if(enable_user_messages)
-                    {
-                        currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
-                        currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
-                        if(enable_user_messages)
-                        {
-                            std::cout << "After manipulating Phi/Psi torsion angles further, the following were found to minimize clashes the most, Psi: " << currentPsiTorsionAngle << "\t\tPhi: " << currentPhiTorsionAngle << std::endl; 
-                            std::cout << "Managed to eliminate " << clashes_after_initial_grafting.size() - clashes_after_manipulation.size() << " clashes. Remaining clashes: " << std::endl;
-                        }
-                        for(int i = 0; i < clashes_after_manipulation.size(); i++)
-                        {
-                            std::cout << i+1 << "/" << clashes_after_manipulation.size() << " remaining clash: " << clashes_after_manipulation[i].first.second << "/" << clashes_after_manipulation[i].first.first.id().trim() << "-" << clashes_after_manipulation[i].first.first.type().trim() << "\t\t\tSugar: " << clashes_after_manipulation[i].second.second << "/" << clashes_after_manipulation[i].second.first.id().trim() << "-" << clashes_after_manipulation[i].second.first.type().trim() << std::endl;
-                        }
-                    }
-                    this->clashes = clashes_after_manipulation;
-                    converted_mglycan = minimized_clashes_glycan;
-                }
-
-                bool first_sugar_has_hydrogens = check_if_residue_has_hydrogens(converted_mglycan[0]);
-
-                if(first_sugar_has_hydrogens)
-                {
-                    converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
-
-                    clipper::String vector_point_target_hydrogen_name = "H" + sugar_vector_point.substr(1,1);
-
-                    if(debug_output)
-                        DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
-
-                    clipper::MAtom vector_point_target_hydrogen = converted_mglycan[0].find(vector_point_target_hydrogen_name, search_policy);
-
-                    converted_mglycan = delete_atom_from_mglycan(converted_mglycan, vector_point_target_hydrogen);
-
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                    
-                    if(debug_output)
-                        DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                    
-                    this->grafted_glycan = glycan_to_graft;
-                    export_model.insert(converted_mglycan);
-
-                    if(trim_donor_when_clashes_detected)
-                    {
-                        std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_grafting = check_for_clashes(export_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                        clipper::MiniMol clash_free = trim_graft_until_no_clashes_left(export_model, glycan_to_graft, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID, clashes_after_grafting);
-                        export_model = clash_free;
-                    }
-                        
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Glycan has been grafted!" << std::endl;
-                    
-                    if(debug_output)
-                        DBG << "Glycan has been grafted!" << std::endl;
-
-                }
-                else
-                {
-                    clipper::MPolymer converted_mglycan = delete_atom_from_mglycan(converted_mglycan, sugar_vector_point_target);
-
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                    
-                    if(debug_output)
-                        DBG << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
-                    
-                    this->grafted_glycan = glycan_to_graft;
-                    export_model.insert(converted_mglycan);
-
-                    if(trim_donor_when_clashes_detected)
-                    {
-                        std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes_after_grafting = check_for_clashes(export_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-                        clipper::MiniMol clash_free = trim_graft_until_no_clashes_left(export_model, glycan_to_graft, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID, clashes_after_grafting);
-                        export_model = clash_free;
-                    }
-                    
-                    if(enable_user_messages && !debug_output)
-                        std::cout << "Glycan has been grafted!" << std::endl;
-                    
-                    if(debug_output)
-                        DBG << "Glycan has been grafted!" << std::endl;
-                }
-            }  
         }
 
         // Function adopted from Paul Emsley's Coot software. 

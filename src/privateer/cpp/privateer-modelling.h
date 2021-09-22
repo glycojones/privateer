@@ -50,8 +50,7 @@ namespace privateer {
         {
             clipper::String glycan_type;       
             clipper::String connection_atom;
-			clipper::String vector_point_alpha;        
-            clipper::String vector_point_bravo;
+			clipper::String vector_point;        
         };
 
 		extern const protein_sidechain_glycosylation backbone_instructions[];
@@ -97,6 +96,9 @@ namespace privateer {
 				void setPhi_error (double inputPhi_error) { this->userPhi_error = inputPhi_error; this->userValuesChanged = true; };
 				void setPsi_error (double inputPsi_error) { this->userPsi_error = inputPsi_error; this->userValuesChanged = true; };
 				void setIteration_step (double inputIteration_step) { this->userIteration_step = inputIteration_step; this->userValuesChanged = true; };
+
+				float getGraftedPhi() {return graftedPhi; };
+				float getGraftedPsi() {return graftedPsi; };
 			private:
 				int nThreads;
 				bool useParallelism;
@@ -119,6 +121,9 @@ namespace privateer {
 				std::string grafted_glycan_chainID;
 
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes;
+
+				float graftedPhi = -42069;
+				float graftedPsi = -42069;
 
 				std::vector<clipper::MGlycan> donor_glycans;
 				int numDonorGlycansDetected;
