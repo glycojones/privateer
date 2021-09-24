@@ -295,22 +295,24 @@ namespace privateer
             ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
 
             clipper::MiniMol tmp_clash_model = export_model;
-            // tmp_clash_model.insert(converted_mglycan);
-            // std::vector<std::pair<clipper::MAtom, clipper::MAtom>> unflipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-
-            // tmp_clash_model = export_model;
-            // clipper::MPolymer flipped_glycan = flip_glycan(converted_mglycan, sugar_vector_point_target, debug_output);
-            // tmp_clash_model.insert(flipped_glycan);
-            // std::vector<std::pair<clipper::MAtom, clipper::MAtom>> flipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, flipped_glycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
-
-            // if(unflipped_clashes_with_target_amino_acid.size() > flipped_clashes_with_target_amino_acid.size())
-            //     converted_mglycan = flipped_glycan;
+            tmp_clash_model.insert(converted_mglycan);
+            std::vector<std::pair<clipper::MAtom, clipper::MAtom>> unflipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
             
-            // tmp_clash_model = export_model;
+            tmp_clash_model = export_model;
+            
+            clipper::MPolymer flipped_mglycan = converted_mglycan;
+            flip_glycan(flipped_mglycan, sugar_vector_point_target, debug_output);
+            tmp_clash_model.insert(flipped_mglycan);
+            std::vector<std::pair<clipper::MAtom, clipper::MAtom>> flipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, flipped_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
+            
+            if(unflipped_clashes_with_target_amino_acid.size() > flipped_clashes_with_target_amino_acid.size())
+                converted_mglycan = flipped_mglycan;
+            
+            tmp_clash_model = export_model;
 
-            // sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-            // sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-            // ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+            sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+            sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+            ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
 
             double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
             std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
@@ -539,7 +541,7 @@ namespace privateer
             return returned_position;
         }
 
-        clipper::MPolymer Grafter::flip_glycan(clipper::MPolymer input_glycan, clipper::MAtom& atom_to_flip_around, bool debug_output)
+        void Grafter::flip_glycan(clipper::MPolymer& input_glycan, clipper::MAtom& atom_to_flip_around, bool debug_output)
         {
             clipper::Coord_orth atom_to_flip_around_coords = atom_to_flip_around.coord_orth();
             for(int residue = 0; residue < input_glycan.size(); residue++)
@@ -553,8 +555,6 @@ namespace privateer
                     input_glycan[residue][atom].set_coord_orth(new_pos);
                 }
             }
-
-            return input_glycan;
         }
 
 
@@ -1043,7 +1043,7 @@ namespace privateer
             AminoAcidInfo root_amino_acid_info = { root_chain_id, input_protein_side_chain_residue.id().trim(), input_protein_side_chain_residue.type().trim(), input_protein_side_chain_residue.seqnum() };
                 
             std::vector<std::pair<clipper::MAtom, clipper::MAtom>> clashing_atoms; // .first - sugar atom, .second - amino acid atom.
-            clipper::MAtomNonBond clashmanb( input_model, 1.5 );
+            clipper::MAtomNonBond clashmanb( input_model, 3.0 );
 
             for(int atom = 0; atom < root_msugar.size(); atom++)
             {
@@ -1051,7 +1051,7 @@ namespace privateer
                     continue; 
 
                 clipper::Coord_orth currentSugarAtomCoord = root_msugar[atom].coord_orth();
-                std::vector<clipper::MAtomIndexSymmetry> neighbourhood_atoms = clashmanb( currentSugarAtomCoord, 1.5 );
+                std::vector<clipper::MAtomIndexSymmetry> neighbourhood_atoms = clashmanb( currentSugarAtomCoord, 3.0 );
 
                 for(int i = 0; i < neighbourhood_atoms.size(); i++)
                 {
@@ -1068,7 +1068,7 @@ namespace privateer
                     });
 
 
-                    if(search_result != std::end(atoms_in_root_amino_acid) && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= 1.0)
+                    if(search_result != std::end(atoms_in_root_amino_acid) && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= 1.25)
                     {
                         auto previously_identified = std::find_if(std::begin(clashing_atoms), std::end(clashing_atoms),
                         [&](std::pair<clipper::MAtom, clipper::MAtom>& element) {
@@ -1404,6 +1404,12 @@ namespace privateer
 
             return -1;
         }
-    
+
+        void Grafter::debug_output_file(clipper::String path, clipper::MiniMol& export_model)
+        {
+            clipper::MMDBfile testpdbfile;
+            testpdbfile.export_minimol( export_model );
+            testpdbfile.write_file( path );
+        }
     }
 }

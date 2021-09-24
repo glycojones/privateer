@@ -76,7 +76,7 @@ namespace privateer {
 				void overlay_mglycan_via_atom(clipper::Coord_orth target, clipper::Coord_orth origin, clipper::MPolymer& converted_mglycan);
 				void graft_mpolymer_to_receiving_model(clipper::MGlycan& glycan_to_graft, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, bool ANY_search_policy);
 				clipper::Coord_orth flip_glycan_atom(clipper::Coord_orth atom_to_flip_around, clipper::Coord_orth position);
-				clipper::MPolymer flip_glycan(clipper::MPolymer converted_mglycan, clipper::MAtom& atom_to_flip_around, bool debug_output);
+				void flip_glycan(clipper::MPolymer& converted_mglycan, clipper::MAtom& atom_to_flip_around, bool debug_output);
 				clipper::Coord_orth generate_rotation_matrix_from_rodrigues_rotation_formula(clipper::Coord_orth direction, clipper::Coord_orth position, clipper::Coord_orth origin_shift, double targetAngle);
 				void rotate_mglycan_until_torsion_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& torsionAtoms, double angle, bool debug_output);
 				clipper::MPolymer rotate_mglycan_until_clashes_are_minimized_parallelized(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output);
@@ -130,6 +130,9 @@ namespace privateer {
 
 				std::vector<clipper::MGlycan> donor_glycans;
 				int numDonorGlycansDetected;
+
+
+				void debug_output_file(clipper::String path, clipper::MiniMol& export_model);
 
     	};
 
