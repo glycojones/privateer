@@ -2012,6 +2012,10 @@ int main(int argc, char** argv)
 									{
 										ligandList[index].second.set_context ( "s-glycan" );
 									}
+                                    else if ( list_of_glycans[i].get_type() == "ligand" )
+                                    {
+                                        ligandList[index].second.set_context ( "ligand" );
+                                    }
 									found_in_tree = true;
 									break;
 								}
@@ -2709,6 +2713,10 @@ int main(int argc, char** argv)
 									{
 										ligandList[index].second.set_context ( "s-glycan" );
 									}
+                                    else if ( list_of_glycans[i].get_type() == "ligand" )
+                                    {
+                                        ligandList[index].second.set_context ( "ligand" );
+                                    }
 									found_in_tree = true;
 									break;
 								}
@@ -2842,7 +2850,6 @@ int main(int argc, char** argv)
                             else if ( list_of_glycans[i].get_type() == "ligand" )
                             {
                                 ligandList[index].second.set_context ( "ligand" );
-                                
                             }
                             found_in_tree = true;
                             break;
