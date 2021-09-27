@@ -150,11 +150,11 @@ namespace privateer
         {
             std::string path_copy = path;
             if(path_copy == "nopath" || path_copy.empty()) 
-                {
-                    std::string env(std::getenv ( "CLIBD" ));
+            {
+                std::string env(std::getenv ( "PRIVATEERDATA" ));
 
-                    path_copy = env + "/privateer_database.json";
-                }
+                path_copy = env + "/glycomics/privateer_database.json";
+            }
 
             std::cout << "Reading " << path_copy << " for Glycomics database" << std::endl;
 
