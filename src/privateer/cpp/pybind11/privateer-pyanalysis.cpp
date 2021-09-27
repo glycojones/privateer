@@ -1983,6 +1983,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                                 {
                                     ligandList[index].second.set_context ( "s-glycan" );
                                 }
+                                else if ( list_of_glycans[i].get_type() == "ligand" )
+                                {
+                                    ligandList[index].second.set_context ( "ligand" );
+                                }
                                 found_in_tree = true;
                                 break;
                             }
@@ -2105,6 +2109,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                         else if ( list_of_glycans[i].get_type() == "s-glycan" )
                         {
                             ligandList[index].second.set_context ( "s-glycan" );
+                        }
+                        else if ( list_of_glycans[i].get_type() == "ligand" )
+                        {
+                            ligandList[index].second.set_context ( "ligand" );
                         }
                         found_in_tree = true;
                         break;
@@ -2522,6 +2530,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                                 {
                                     ligandList[index].second.set_context ( "s-glycan" );
                                 }
+                                else if ( list_of_glycans[i].get_type() == "ligand" )
+                                {
+                                    ligandList[index].second.set_context ( "ligand" );
+                                }
                                 found_in_tree = true;
                                 break;
                             }
@@ -2639,6 +2651,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                         else if ( list_of_glycans[i].get_type() == "s-glycan" )
                         {
                             ligandList[index].second.set_context ( "s-glycan" );
+                        }
+                        else if ( list_of_glycans[i].get_type() == "ligand" )
+                        {
+                            ligandList[index].second.set_context ( "ligand" );
                         }
                         found_in_tree = true;
                         break;
