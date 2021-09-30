@@ -603,7 +603,7 @@ bool privateer::util::write_libraries ( std::vector < std::string > code_list, f
     return false;
 }
 
-void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::Database>& glycomics_database )
+void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::GlycomicsDatabase>& glycomics_database )
 {
     std::fstream of_xml;
 
@@ -853,12 +853,12 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
     return map_data;
 }
 
-int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::Database>& glycomics_database, std::string inputwurcs )
+int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, std::string inputwurcs )
 {
     auto result = std::find_if(glycomics_database.begin(), 
              glycomics_database.end(), 
              [&inputwurcs]
-             (const privateer::json::Database& entry) -> bool { return inputwurcs == entry.WURCS; });
+             (const privateer::json::GlycomicsDatabase& entry) -> bool { return inputwurcs == entry.WURCS; });
 
     int index = -1;
     if (result != std::end(glycomics_database))

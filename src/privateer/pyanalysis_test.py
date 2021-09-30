@@ -136,51 +136,51 @@ for entry in discoteque:
     print("_______________________")
 
 
-# glycosylation = pvt.GlycosylationComposition(
-#     "/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb"
-# )
+glycosylation = pvt.GlycosylationComposition(
+    "/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb"
+)
 
-# listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
+listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 
-# print("\n")
-# for entry in listOfDetectedGlycans:
-#     for key, value in entry.items():
-#         print("{}: {}".format(key, value))
-#     print("_______________________")
+print("\n")
+for entry in listOfDetectedGlycans:
+    for key, value in entry.items():
+        print("{}: {}".format(key, value))
+    print("_______________________")
 
-# glycan = glycosylation.get_glycan(6)
+glycan = glycosylation.get_glycan(6)
 
-# json = pvt.OfflineDatabase()
+json = pvt.OfflineGlycomicsDatabase()
 
-# glycoproteomicsoutput = glycan.query_offline_database(json, True, True)
+glycoproteomicsoutput = glycan.query_offline_database(json, True, True)
 
-# print(glycoproteomicsoutput)
+print(glycoproteomicsoutput)
 
-# permutations = glycoproteomicsoutput["permutations"]
-# for entry in permutations:
-#     for key, value in entry.items():
-#         print("{}: {}".format(key, value))
-#     print("_______________________")
+permutations = glycoproteomicsoutput["permutations"]
+for entry in permutations:
+    for key, value in entry.items():
+        print("{}: {}".format(key, value))
+    print("_______________________")
 
-# print(
-#     "Now getting from class without having to repeat compute intensive functon\n\n\n\n"
-# )
+print(
+    "Now getting from class without having to repeat compute intensive functon\n\n\n\n"
+)
 
-# glycoproteomicsoutputrepeated = glycan.query_offline_database(json, True, True)
+glycoproteomicsoutputrepeated = glycan.query_offline_database(json, True, True)
 
-# permutations = glycoproteomicsoutputrepeated["permutations"]
-# for entry in permutations:
-#     for key, value in entry.items():
-#         print("{}: {}".format(key, value))
-#     print("_______________________")
+permutations = glycoproteomicsoutputrepeated["permutations"]
+for entry in permutations:
+    for key, value in entry.items():
+        print("{}: {}".format(key, value))
+    print("_______________________")
 
-# print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
+print("Summary of the glycan: " + str(glycan.get_glycan_summary()))
 
-# SNFGstrings = glycan.get_SNFG_strings()
-# # print(SNFGstrings)
+SNFGstrings = glycan.get_SNFG_strings()
+# print(SNFGstrings)
 
-# ligands = glycosylation.get_ligands()
+ligands = glycosylation.get_ligands()
 
-# for count, item in enumerate(ligands):
-#     print("{}: {}".format(count, item.get_sugar_summary()))
-#     print("_______________________")
+for count, item in enumerate(ligands):
+    print("{}: {}".format(count, item.get_sugar_summary()))
+    print("_______________________")

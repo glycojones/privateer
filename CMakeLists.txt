@@ -14,8 +14,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
+set(PRIVATEERDATA ${CMAKE_SOURCE_DIR}/data)
 
-set(PRIVATEERDATA $ENV{PRIVATEERDATA})
+set(CLIBDENV $ENV{CLIBD})
 
 ## Find Privateer's dependencies that have been compiled locally. 
 #
@@ -54,8 +55,11 @@ include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
-file(COPY ${PRIVATEER_SOURCE_DIR}/privateer_database.json 
-    DESTINATION ${PRIVATEERDATA}/glycomics)
+file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
+    DESTINATION ${CLIBDENV})
+
+file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json 
+    DESTINATION ${CLIBDENV})
 
 add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h

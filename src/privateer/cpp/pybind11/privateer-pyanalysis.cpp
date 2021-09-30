@@ -619,13 +619,13 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
 
 
 
-pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads )
+pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads )
 {
     if(!glycoproteomicsDB.empty())
         return glycoproteomicsDB;
     else
     {
-        std::vector<privateer::json::Database> glycomics_database = importedDatabase.return_imported_database();
+        std::vector<privateer::json::GlycomicsDatabase> glycomics_database = importedDatabase.return_imported_database();
         std::string currentWURCS = glycanWURCS;
         clipper::MGlycan currentGlycan = glycan;
 
@@ -2732,13 +2732,13 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
 
 ///////////////////////////////////////////////// Class CryoEMData END ////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////// Class OfflineDatabase ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path_to_input_file )
+///////////////////////////////////////////////// Class OfflineGlycomicsDatabase ////////////////////////////////////////////////////////////////////
+void privateer::pyanalysis::OfflineGlycomicsDatabase::import_json_file( std::string& path_to_input_file )
 {
-    std::vector<privateer::json::Database> glycomics_database = privateer::json::read_json_file(path_to_input_file);
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_input_file);
     this->glytoucanglyconnectdatabase = glycomics_database;
 }
-///////////////////////////////////////////////// Class OfflineDatabase END ////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////// Class OfflineGlycomicsDatabase END ////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
@@ -2862,11 +2862,11 @@ void init_pyanalysis(py::module& m)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);
     
-    py::class_<pa::OfflineDatabase>(m, "OfflineDatabase")
+    py::class_<pa::OfflineGlycomicsDatabase>(m, "OfflineGlycomicsDatabase")
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
-        .def("import_json_file", &pa::OfflineDatabase::import_json_file);
-        // .def("return_imported_database", &pa::OfflineDatabase::return_imported_database);
+        .def("import_json_file", &pa::OfflineGlycomicsDatabase::import_json_file);
+        // .def("return_imported_database", &pa::OfflineGlycomicsDatabase::return_imported_database);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

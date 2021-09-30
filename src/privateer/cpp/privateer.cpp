@@ -74,6 +74,8 @@ int main(int argc, char** argv)
     clipper::String input_reflections_cif   = "NONE";
     clipper::String input_ccd_code          = "XXX";
     clipper::String ipwurcsjson             = "nopath";
+    clipper::String iptorsionsjson          = "nopath";
+    // torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
     clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
     clipper::String title                   = "generic title";
     clipper::String input_reflections_mtz   = "NONE";
@@ -81,7 +83,8 @@ int main(int argc, char** argv)
     clipper::String input_validation_string = "";
     std::vector<clipper::String> input_validation_options;
     clipper::data::sugar_database_entry external_validation;
-    std::vector<privateer::json::Database> glycomics_database;
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database;
+    std::vector<privateer::json::TorsionsDatabase> torsions_database;
     bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -277,7 +280,7 @@ int main(int argc, char** argv)
         {
           useWURCSDataBase = true;
         }
-        else if ( args[arg] == "-databasein" )
+        else if ( args[arg] == "-glycomics_dbpath" )
         {
           if ( ++arg < args.size() )
           {
@@ -297,18 +300,50 @@ int main(int argc, char** argv)
             }
             else
             {
-              std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+              std::cout << "Error: No Path was given to -glycomics_dbpath argument!" << std::endl;
               prog.set_termination_message( "Failed" );
               return 1;
             }
           }
           else
           {
-            std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+            std::cout << "Error: No Path was given to -glycomics_dbpath argument!" << std::endl;
             prog.set_termination_message( "Failed" );
             return 1;
           }
         }
+        else if ( args[arg] == "-torsions_dbpath" )
+        {
+          if ( ++arg < args.size() )
+          {
+            if(clipper::String(args[arg])[0] != '-')
+            {
+              iptorsionsjson = args[arg];
+              std::string fileName = iptorsionsjson.tail();
+              std::string fileExtension = fileName.substr( fileName.length() - 5 );
+
+              if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
+              {
+                std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                          << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                prog.set_termination_message( "Failed" );
+                return 1;
+              }
+            }
+            else
+            {
+              std::cout << "Error: No Path was given to -torsions_dbpath argument!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
+            }
+          }
+          else
+          {
+            std::cout << "Error: No Path was given to -torsions_dbpath argument!" << std::endl;
+            prog.set_termination_message( "Failed" );
+            return 1;
+          }
+        }        
         else if ( args[arg] == "-mode" )
         {
           if ( ++arg < args.size() )
@@ -461,7 +496,7 @@ int main(int argc, char** argv)
 
     if(useWURCSDataBase)
     {
-      glycomics_database = privateer::json::read_json_file(ipwurcsjson);
+      glycomics_database = privateer::json::read_json_file_for_glycomics_database(ipwurcsjson);
     }
 
     // Fast mode, no maps nor correlation calculations

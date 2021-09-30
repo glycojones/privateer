@@ -38,7 +38,7 @@ namespace privateer {
     class CarbohydrateStructure;
     class XRayData;
     class CryoEMData;
-    class OfflineDatabase;
+    class OfflineGlycomicsDatabase;
 
     class GlycosylationComposition 
     {
@@ -152,7 +152,7 @@ namespace privateer {
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
 
-        pybind11::dict query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::dict query_offline_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
         pybind11::dict get_SNFG_strings(bool includeClosestMatches);
 
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
@@ -401,21 +401,21 @@ namespace privateer {
         pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
     };
 
-    class OfflineDatabase 
+    class OfflineGlycomicsDatabase 
     {
       public:
-        OfflineDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
-        OfflineDatabase(std::string& path_to_input_file) {
+        OfflineGlycomicsDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineGlycomicsDatabase(std::string& path_to_input_file) {
           this->import_json_file ( path_to_input_file);
         };
         void import_json_file( std::string& path_to_input_file );
-        ~OfflineDatabase() { };
+        ~OfflineGlycomicsDatabase() { };
 
-        std::vector<privateer::json::Database> return_imported_database() { return glytoucanglyconnectdatabase; };
+        std::vector<privateer::json::GlycomicsDatabase> return_imported_database() { return glytoucanglyconnectdatabase; };
 
       private:
         std::string path_of_input_file;
-        std::vector<privateer::json::Database> glytoucanglyconnectdatabase;
+        std::vector<privateer::json::GlycomicsDatabase> glytoucanglyconnectdatabase;
 
     };
 

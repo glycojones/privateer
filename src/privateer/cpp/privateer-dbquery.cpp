@@ -11,7 +11,7 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int nThreads, bool useParallelism)
+void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int nThreads, bool useParallelism)
 {
     int valueLocation;
     valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
@@ -62,7 +62,7 @@ void output_dbquery(std::vector<privateer::json::Database>& glycomics_database, 
 }
 
 
-void push_data_to_final_permutation_container(std::vector<privateer::json::Database>& glycomics_database, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer)
+void push_data_to_final_permutation_container(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer)
 {
 
     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> tempGlycanPermutationContainer;
@@ -148,7 +148,7 @@ void push_data_to_final_permutation_container(std::vector<privateer::json::Datab
 }
 
 
-void print_output_from_database(std::vector<privateer::json::Database>& glycomics_database, int valueLocation, clipper::MGlycan &currentGlycan)
+void print_output_from_database(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, int valueLocation, clipper::MGlycan &currentGlycan)
 {
     std::string glytoucanID;
     glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
