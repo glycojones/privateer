@@ -188,7 +188,7 @@ namespace privateer
             std::string type;
             std::string first_residue;
             std::string second_residue;
-            std::vector<std::pair<float, float>> torsions;
+            std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
         };
 
         inline void generate_torsions_database(std::vector<TorsionsDatabase>& torsions_database, const sajson::document& jsonObject) 

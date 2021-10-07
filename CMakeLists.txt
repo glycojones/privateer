@@ -72,14 +72,14 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-modelling.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
+            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
 
-target_link_libraries ( privateer_lib 
+target_link_libraries ( privateer_lib
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 
                         ${CCP4SRSDEP}
@@ -97,7 +97,7 @@ set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 add_executable(privateer_exec
                ${PRIVATEER_SOURCE})
 
-target_link_libraries ( privateer_exec 
+target_link_libraries ( privateer_exec
                         privateer_lib 
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 
@@ -137,7 +137,7 @@ target_link_libraries ( privateer_core PRIVATE
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY})
 
-target_link_libraries ( privateer_modelling PRIVATE 
+target_link_libraries ( privateer_modelling PRIVATE
                         privateer_lib 
                         ${MMDB2DEP} 
                         ${CCP4CDEP} 

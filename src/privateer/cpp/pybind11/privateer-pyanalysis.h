@@ -39,6 +39,7 @@ namespace privateer {
     class XRayData;
     class CryoEMData;
     class OfflineGlycomicsDatabase;
+    class OfflineTorsionsDatabase;
 
     class GlycosylationComposition 
     {
@@ -63,6 +64,8 @@ namespace privateer {
         GlycanStructure get_glycan(const int id);
 
         pybind11::list get_ligands() { return ligands; };
+        
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
 
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
@@ -80,6 +83,7 @@ namespace privateer {
         pybind11::list glycosylationSummary;
         pybind11::list glycans;
         pybind11::list ligands;
+        pybind11::list torsions;
 
         bool updatedWithExperimentalData;
     };
@@ -103,6 +107,8 @@ namespace privateer {
         pybind11::list get_summary_of_detected_glycans () { return glycosylationSummary; };
         
         GlycanStructure get_glycan(const int id);
+
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
 
       private:
         bool debug_output;
@@ -152,8 +158,10 @@ namespace privateer {
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
 
-        pybind11::dict query_offline_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
         pybind11::dict get_SNFG_strings(bool includeClosestMatches);
+        
 
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
 
@@ -416,6 +424,24 @@ namespace privateer {
       private:
         std::string path_of_input_file;
         std::vector<privateer::json::GlycomicsDatabase> glytoucanglyconnectdatabase;
+
+    };
+
+    class OfflineTorsionsDatabase 
+    {
+      public:
+        OfflineTorsionsDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineTorsionsDatabase(std::string& path_to_input_file) {
+          this->import_json_file ( path_to_input_file);
+        };
+        void import_json_file( std::string& path_to_input_file );
+        ~OfflineTorsionsDatabase() { };
+
+        std::vector<privateer::json::TorsionsDatabase> return_imported_database() { return torsionsdatabase; };
+
+      private:
+        std::string path_of_input_file;
+        std::vector<privateer::json::TorsionsDatabase> torsionsdatabase;
 
     };
 

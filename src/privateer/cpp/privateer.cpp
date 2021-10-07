@@ -75,7 +75,6 @@ int main(int argc, char** argv)
     clipper::String input_ccd_code          = "XXX";
     clipper::String ipwurcsjson             = "nopath";
     clipper::String iptorsionsjson          = "nopath";
-    // torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
     clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
     clipper::String title                   = "generic title";
     clipper::String input_reflections_mtz   = "NONE";
@@ -102,6 +101,7 @@ int main(int argc, char** argv)
     bool check_unmodelled = false;
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
+    bool useTorsionsDataBase = false;
     bool useParallelism = true;
     bool rscc_best = false;
     bool produce_external_restraints = false;
@@ -312,6 +312,10 @@ int main(int argc, char** argv)
             return 1;
           }
         }
+        else if ( args[arg] == "-plot_torsions" )
+        {
+          useTorsionsDataBase = true;
+        }
         else if ( args[arg] == "-torsions_dbpath" )
         {
           if ( ++arg < args.size() )
@@ -498,6 +502,10 @@ int main(int argc, char** argv)
     {
       glycomics_database = privateer::json::read_json_file_for_glycomics_database(ipwurcsjson);
     }
+    if(useTorsionsDataBase)
+    {
+      torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
+    }
 
     // Fast mode, no maps nor correlation calculations
 
@@ -543,6 +551,12 @@ int main(int argc, char** argv)
 
                 wurcs_string = list_of_glycans[i].generate_wurcs();
                 std::cout << wurcs_string << std::endl;
+
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
+                }
 
                 if(useWURCSDataBase)
                 {
@@ -591,6 +605,12 @@ int main(int argc, char** argv)
                     std::ostringstream os;
                     os << list_of_glycans[i].get_root_for_filename() << ".svg";
                     plot.write_to_file ( os.str() );
+                }
+
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
             }
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
@@ -1360,6 +1380,13 @@ int main(int argc, char** argv)
                     os << list_of_glycans[i].get_root_for_filename() << ".svg";
                     plot.write_to_file ( os.str() );
                 }
+                
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
+                }
+                
             }
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;

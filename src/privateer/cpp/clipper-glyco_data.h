@@ -16,6 +16,7 @@
 #include <clipper/clipper.h>
 #include <unordered_set>
 #include <set>
+#include <algorithm>
 
 
 #ifdef _MSC_VER
@@ -73,6 +74,7 @@ namespace clipper
 
         bool found_in_database ( clipper::String name );
         bool found_in_database ( std::string name );
+        bool is_amino_acid ( std::string name );
         std::string carbname_of ( std::string name );
         std::string alternative_anomer ( std::string name );
         std::vector<std::string> alternative_monomer( std::string name );
