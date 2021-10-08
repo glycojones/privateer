@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.lines as mlines
+import matplotlib.patheffects as pe
 from datetime import datetime
 
 
@@ -136,10 +137,14 @@ class TorsionVisualiser:
         CreateFolder(self.glycan_focused_view_output_folder)
         CreateFolder(self.structure_focused_view_output_folder)
 
-    def plot_single_pair_torsions(self, glycan_description, glycanIndex):
+    def plot_single_pair_torsions(self, glycan_description, glycanIndex=None):
         for torsion_pair in glycan_description:
             root_description = torsion_pair["root_descr"]
-            outputFolderDescription = f"[{glycanIndex}]__{root_description}"
+            outputFolderDescription = (
+                f"[{glycanIndex}]__{root_description}"
+                if glycanIndex is not None
+                else f"{root_description}"
+            )
             outputFolder = os.path.join(
                 self.glycan_focused_view_output_folder, outputFolderDescription
             )
@@ -147,30 +152,30 @@ class TorsionVisualiser:
             glycan_torsions = torsion_pair["detected_torsions"]
             bonds = [d["glycan_bond"] for d in glycan_torsions]
             color_labels = list(set(bonds))
-            col_values = sns.color_palette("colorblind")
+            col_values = sns.color_palette("hls", len(color_labels))
             color_map = dict(zip(color_labels, col_values))
             colors = [color_map[label] for label in bonds]
 
-            fig = plt.figure()
+            fig = plt.figure(figsize=(6.4, 3.6), dpi=300)
             ax = fig.add_subplot(111)
 
             plt.hist2d(
                 torsion_pair["database_phi"],
                 torsion_pair["database_psi"],
-                bins=(180, 180),
+                bins=(185, 185),
                 cmap=plt.get_cmap("gnuplot"),
-                range=[[-180, 180], [-180, 190]],
+                range=[[-185, 185], [-185, 185]],
                 norm=mcolors.PowerNorm(0.7),
             )
             first_residue_name = torsion_pair["first_residue"]
             second_residue_name = torsion_pair["second_residue"]
             plt.title(
-                f"Calculated torsions of the {first_residue_name}-{second_residue_name} linkage torsions detected in {root_description}"
+                f"{first_residue_name}-{second_residue_name} linkage torsions in {root_description}"
             )
             plt.axhline(linewidth=0.8, color="white")
             plt.axvline(linewidth=0.8, color="white")
-            plt.xlim((-180, 180))
-            plt.ylim((-180, 180))
+            plt.xlim((-185, 185))
+            plt.ylim((-185, 185))
             plt.xlabel("φ(Phi) / °", size=14)
             plt.ylabel("ψ(Psi) / °", size=14)
             plt.rc("xtick", labelsize=14)
@@ -186,26 +191,31 @@ class TorsionVisualiser:
                     currentPhi,
                     currentPsi,
                     marker="x",
-                    markersize=7,
+                    markersize=4,
+                    path_effects=[
+                        pe.Stroke(linewidth=1.1, foreground="w"),
+                        pe.Normal(),
+                    ],
                     linestyle="None",
                     color=colors[index],
                 )
 
             plt.tight_layout()
             plt.legend(
-                loc="upper center",
-                bbox_to_anchor=(0.5, -0.09),
-                fancybox=False,
-                shadow=False,
-                ncol=5,
+                loc=2,
+                bbox_to_anchor=(-0.8, 0.8),
                 handles=[
                     mlines.Line2D(
                         [],
                         [],
                         color=v,
                         marker="x",
+                        markersize=4,
+                        path_effects=[
+                            pe.Stroke(linewidth=1.1, foreground="w"),
+                            pe.Normal(),
+                        ],
                         linestyle="None",
-                        markersize=7,
                         label=k,
                     )
                     for k, v in color_map.items()
@@ -214,13 +224,96 @@ class TorsionVisualiser:
             imageFileName = (
                 f"{first_residue_name}-{second_residue_name}_{root_description}.png"
             )
-            plt.savefig(
-                os.path.join(outputFolder, imageFileName),
-                dpi=300,
-            )
+            plt.savefig(os.path.join(outputFolder, imageFileName))
+            plt.cla()
+            plt.clf()
+            plt.close(fig)
 
-    def plot_whole_structure_torsions(self):
-        pass
+    def plot_whole_structure_torsions(self, parsed_structure_output):
+        for torsion_pair in parsed_structure_output:
+            first_residue = torsion_pair["first"]
+            second_residue = torsion_pair["second"]
+            outputFolderDescription = f"{first_residue}-{second_residue}"
+            outputFolder = os.path.join(
+                self.structure_focused_view_output_folder, outputFolderDescription
+            )
+            CreateFolder(outputFolder)
+            glycan_torsions = torsion_pair["detected_torsions_in_structures"]
+            glycanIndices = [d["glycanIndex"] for d in glycan_torsions]
+            color_labels = list(set(glycanIndices))
+            col_values = sns.color_palette("hls", len(color_labels))
+            color_map = dict(zip(color_labels, col_values))
+            colors = [color_map[label] for label in glycanIndices]
+
+            fig = plt.figure(figsize=(6.4, 3.6), dpi=300)
+            ax = fig.add_subplot(111)
+
+            plt.hist2d(
+                torsion_pair["database_phi"],
+                torsion_pair["database_psi"],
+                bins=(185, 185),
+                cmap=plt.get_cmap("gnuplot"),
+                range=[[-185, 185], [-185, 185]],
+                norm=mcolors.PowerNorm(0.7),
+            )
+            plt.title(f"{first_residue}-{second_residue} linkage torsions")
+            plt.axhline(linewidth=0.8, color="white")
+            plt.axvline(linewidth=0.8, color="white")
+            plt.xlim((-185, 185))
+            plt.ylim((-185, 185))
+            plt.xlabel("φ(Phi) / °", size=14)
+            plt.ylabel("ψ(Psi) / °", size=14)
+            plt.rc("xtick", labelsize=14)
+            plt.rc("ytick", labelsize=14)
+            ax.set_aspect("equal")
+            cbar = plt.colorbar()
+            cbar.set_label("Frequency", size=14)
+
+            for index, glycan in enumerate(glycan_torsions):
+                torsions = glycan["glycan_torsions"]
+                for torsion in torsions:
+                    currentPhi = torsion["Phi"]
+                    currentPsi = torsion["Psi"]
+                    plt.plot(
+                        currentPhi,
+                        currentPsi,
+                        marker="x",
+                        markersize=4,
+                        path_effects=[
+                            pe.Stroke(linewidth=1.1, foreground="w"),
+                            pe.Normal(),
+                        ],
+                        linestyle="None",
+                        color=colors[index],
+                    )
+
+                    plt.tight_layout()
+                    plt.legend(
+                        prop={"size": 3},
+                        loc=2,
+                        bbox_to_anchor=(-0.8, 1.05),
+                        handles=[
+                            mlines.Line2D(
+                                [],
+                                [],
+                                color=v,
+                                marker="x",
+                                markersize=4,
+                                path_effects=[
+                                    pe.Stroke(linewidth=1.1, foreground="w"),
+                                    pe.Normal(),
+                                ],
+                                linestyle="None",
+                                label=k,
+                            )
+                            for k, v in color_map.items()
+                        ],
+                    )
+            imageFileName = f"{first_residue}-{second_residue}.png"
+            plt.savefig(os.path.join(outputFolder, imageFileName))
+            plt.cla()
+            plt.clf()
+            plt.close(fig)
 
 
 if __name__ == "__main__":
@@ -245,9 +338,9 @@ if __name__ == "__main__":
     print(f"Type of output generated by Privateer : {wrapper.getTypeOfOutput()}")
     parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure()
     visualizer = TorsionVisualiser(currentStructureResultsPath)
-    for item in parsed_structure_output:
-        print(item["first"] + "  " + item["second"])
-    # for item in total_torsions_in_structure:
-    #     glycan = item["all_torsions_in_structure"]
-    #     glycanIndex = item["glycanIndex"]
-    #     visualizer.plot_single_pair_torsions(glycan, glycanIndex)
+    print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
+    visualizer.plot_whole_structure_torsions(parsed_structure_output)
+    for item in total_torsions_in_structure:
+        glycan = item["all_torsions_in_structure"]
+        glycanIndex = item["glycanIndex"]
+        visualizer.plot_single_pair_torsions(glycan, glycanIndex)
