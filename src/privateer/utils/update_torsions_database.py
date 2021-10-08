@@ -187,8 +187,3 @@ if __name__ == "__main__":
         raise ValueError(
             f"Expected {unprocessedDataPath} to be a directory, for some reason the script is not detecting it as a directory."
         )
-
-    import sys
-
-    for p in sys.path:
-        print(p)
