@@ -157,30 +157,32 @@ class TorsionVisualiser:
             color_map = dict(zip(color_labels, col_values))
             colors = [color_map[label] for label in bonds]
 
-            fig = plt.figure(figsize=(6.4, 3.6), dpi=300)
+            fig = plt.figure(figsize=(6.4, 3.6), dpi=300, facecolor="gainsboro")
             ax = fig.add_subplot(111)
 
             plt.hist2d(
                 torsion_pair["database_phi"],
                 torsion_pair["database_psi"],
-                bins=(185, 185),
-                cmap=plt.get_cmap("gnuplot"),
+                bins=(180, 180),
+                cmap=plt.get_cmap("viridis"),
                 range=[[-185, 185], [-185, 185]],
                 norm=mcolors.PowerNorm(0.7),
             )
             first_residue_name = torsion_pair["first_residue"]
             second_residue_name = torsion_pair["second_residue"]
             plt.title(
-                f"{first_residue_name}-{second_residue_name} linkage torsions in {root_description}"
+                f"{first_residue_name}-{second_residue_name} in {root_description}"
             )
             plt.axhline(linewidth=0.8, color="white")
             plt.axvline(linewidth=0.8, color="white")
-            plt.xlim((-185, 185))
-            plt.ylim((-185, 185))
+            plt.xlim((-181, 181))
+            plt.ylim((-181, 181))
             plt.xlabel("φ(Phi) / °", size=14)
             plt.ylabel("ψ(Psi) / °", size=14)
-            plt.rc("xtick", labelsize=14)
-            plt.rc("ytick", labelsize=14)
+            plt.rc("xtick", labelsize=10)
+            plt.rc("ytick", labelsize=10)
+            plt.xticks(range(-180, 181, 60))
+            plt.yticks(range(-180, 181, 60))
             ax.set_aspect("equal")
             cbar = plt.colorbar()
             cbar.set_label("Frequency", size=14)
@@ -194,17 +196,20 @@ class TorsionVisualiser:
                     marker="x",
                     markersize=4,
                     path_effects=[
-                        pe.Stroke(linewidth=1.1, foreground="w"),
+                        pe.Stroke(linewidth=1.3, foreground="w"),
                         pe.Normal(),
                     ],
                     linestyle="None",
                     color=colors[index],
                 )
-
             plt.tight_layout()
             plt.legend(
+                prop={"size": 6},
                 loc=2,
+                ncol=1,
                 bbox_to_anchor=(-0.8, 0.8),
+                title="Linkage:",
+                title_fontsize="xx-small",
                 handles=[
                     mlines.Line2D(
                         [],
@@ -213,7 +218,7 @@ class TorsionVisualiser:
                         marker="x",
                         markersize=4,
                         path_effects=[
-                            pe.Stroke(linewidth=1.1, foreground="w"),
+                            pe.Stroke(linewidth=1.3, foreground="w"),
                             pe.Normal(),
                         ],
                         linestyle="None",
@@ -225,7 +230,12 @@ class TorsionVisualiser:
             imageFileName = (
                 f"{first_residue_name}-{second_residue_name}_{root_description}.png"
             )
-            plt.savefig(os.path.join(outputFolder, imageFileName))
+
+            plt.savefig(
+                os.path.join(outputFolder, imageFileName),
+                facecolor=fig.get_facecolor(),
+                transparent=True,
+            )
             plt.cla()
             plt.clf()
             plt.close(fig)
@@ -246,29 +256,41 @@ class TorsionVisualiser:
             color_map = dict(zip(color_labels, col_values))
             colors = [color_map[label] for label in glycanIndices]
 
-            fig = plt.figure(figsize=(6.4, 3.6), dpi=300)
+            fig = plt.figure(figsize=(6.4, 3.6), dpi=300, facecolor="gainsboro")
             ax = fig.add_subplot(111)
 
             plt.hist2d(
                 torsion_pair["database_phi"],
                 torsion_pair["database_psi"],
-                bins=(185, 185),
-                cmap=plt.get_cmap("gnuplot"),
+                bins=(180, 180),
+                cmap=plt.get_cmap("viridis"),
                 range=[[-185, 185], [-185, 185]],
                 norm=mcolors.PowerNorm(0.7),
             )
             plt.title(f"{first_residue}-{second_residue} linkage torsions")
             plt.axhline(linewidth=0.8, color="white")
             plt.axvline(linewidth=0.8, color="white")
-            plt.xlim((-185, 185))
-            plt.ylim((-185, 185))
+            plt.xlim((-181, 181))
+            plt.ylim((-181, 181))
             plt.xlabel("φ(Phi) / °", size=14)
             plt.ylabel("ψ(Psi) / °", size=14)
-            plt.rc("xtick", labelsize=14)
-            plt.rc("ytick", labelsize=14)
+            plt.rc("xtick", labelsize=10)
+            plt.rc("ytick", labelsize=10)
+            plt.xticks(range(-180, 181, 60))
+            plt.yticks(range(-180, 181, 60))
             ax.set_aspect("equal")
             cbar = plt.colorbar()
             cbar.set_label("Frequency", size=14)
+
+            imageFileName = f"{first_residue}-{second_residue}.png"
+            plt.tight_layout()
+            plt.savefig(
+                os.path.join(
+                    outputFolder, f"{first_residue}-{second_residue}_reference.png"
+                ),
+                facecolor=fig.get_facecolor(),
+                transparent=True,
+            )
 
             for index, glycan in enumerate(glycan_torsions):
                 torsions = glycan["glycan_torsions"]
@@ -281,7 +303,7 @@ class TorsionVisualiser:
                         marker="x",
                         markersize=4,
                         path_effects=[
-                            pe.Stroke(linewidth=1.1, foreground="w"),
+                            pe.Stroke(linewidth=1.3, foreground="w"),
                             pe.Normal(),
                         ],
                         linestyle="None",
@@ -289,29 +311,36 @@ class TorsionVisualiser:
                     )
 
                     plt.tight_layout()
-                    plt.legend(
-                        prop={"size": 3},
-                        loc=2,
-                        bbox_to_anchor=(-0.8, 1.05),
-                        handles=[
-                            mlines.Line2D(
-                                [],
-                                [],
-                                color=v,
-                                marker="x",
-                                markersize=4,
-                                path_effects=[
-                                    pe.Stroke(linewidth=1.1, foreground="w"),
-                                    pe.Normal(),
-                                ],
-                                linestyle="None",
-                                label=k,
-                            )
-                            for k, v in color_map.items()
+
+            plt.legend(
+                prop={"size": 4},
+                loc=2,
+                ncol=3,
+                bbox_to_anchor=(-0.8, 1.05),
+                title="Glycan ID:",
+                title_fontsize="xx-small",
+                handles=[
+                    mlines.Line2D(
+                        [],
+                        [],
+                        color=v,
+                        marker="x",
+                        markersize=4,
+                        path_effects=[
+                            pe.Stroke(linewidth=1.3, foreground="w"),
+                            pe.Normal(),
                         ],
+                        linestyle="None",
+                        label=k,
                     )
-            imageFileName = f"{first_residue}-{second_residue}.png"
-            plt.savefig(os.path.join(outputFolder, imageFileName))
+                    for k, v in color_map.items()
+                ],
+            )
+            plt.savefig(
+                os.path.join(outputFolder, imageFileName),
+                facecolor=fig.get_facecolor(),
+                transparent=True,
+            )
             plt.cla()
             plt.clf()
             plt.close(fig)
