@@ -7,8 +7,6 @@
 
 
 #include <Python.h>
-#include <pybind11_json/pybind11_json.hpp> //nlohman::json
-#include <nlohmann/json.hpp> //nlohman::json
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
@@ -40,7 +38,8 @@ namespace privateer {
     class CarbohydrateStructure;
     class XRayData;
     class CryoEMData;
-    class OfflineDatabase;
+    class OfflineGlycomicsDatabase;
+    class OfflineTorsionsDatabase;
 
     class GlycosylationComposition 
     {
@@ -65,6 +64,8 @@ namespace privateer {
         GlycanStructure get_glycan(const int id);
 
         pybind11::list get_ligands() { return ligands; };
+        
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
 
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
@@ -82,6 +83,7 @@ namespace privateer {
         pybind11::list glycosylationSummary;
         pybind11::list glycans;
         pybind11::list ligands;
+        pybind11::list torsions;
 
         bool updatedWithExperimentalData;
     };
@@ -105,6 +107,8 @@ namespace privateer {
         pybind11::list get_summary_of_detected_glycans () { return glycosylationSummary; };
         
         GlycanStructure get_glycan(const int id);
+
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
 
       private:
         bool debug_output;
@@ -154,8 +158,10 @@ namespace privateer {
         CarbohydrateStructure get_monosaccharide(const int glycanID);
         pybind11::list get_all_monosaccharides( ) { return sugars; };
 
-        pybind11::dict query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
+        pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
         pybind11::dict get_SNFG_strings(bool includeClosestMatches);
+        
 
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
 
@@ -403,21 +409,39 @@ namespace privateer {
         pybind11::list generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList);
     };
 
-    class OfflineDatabase 
+    class OfflineGlycomicsDatabase 
     {
       public:
-        OfflineDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
-        OfflineDatabase(std::string& path_to_input_file) {
+        OfflineGlycomicsDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineGlycomicsDatabase(std::string& path_to_input_file) {
           this->import_json_file ( path_to_input_file);
         };
         void import_json_file( std::string& path_to_input_file );
-        ~OfflineDatabase() { };
+        ~OfflineGlycomicsDatabase() { };
 
-        nlohmann::json return_imported_database() { return glytoucanglyconnectdatabase; };
+        std::vector<privateer::json::GlycomicsDatabase> return_imported_database() { return glytoucanglyconnectdatabase; };
 
       private:
         std::string path_of_input_file;
-        nlohmann::json glytoucanglyconnectdatabase;
+        std::vector<privateer::json::GlycomicsDatabase> glytoucanglyconnectdatabase;
+
+    };
+
+    class OfflineTorsionsDatabase 
+    {
+      public:
+        OfflineTorsionsDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineTorsionsDatabase(std::string& path_to_input_file) {
+          this->import_json_file ( path_to_input_file);
+        };
+        void import_json_file( std::string& path_to_input_file );
+        ~OfflineTorsionsDatabase() { };
+
+        std::vector<privateer::json::TorsionsDatabase> return_imported_database() { return torsionsdatabase; };
+
+      private:
+        std::string path_of_input_file;
+        std::vector<privateer::json::TorsionsDatabase> torsionsdatabase;
 
     };
 

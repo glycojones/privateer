@@ -12,11 +12,10 @@
 #include "privateer-modelling.h"
 #include "privateer-pyanalysis.h"
 #include <Python.h>
-#include <pybind11_json/pybind11_json.hpp> //nlohman::json
-#include <nlohmann/json.hpp> //nlohman::json
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
+#include <future>
 
 namespace privateer {
 
@@ -27,10 +26,10 @@ namespace privateer {
 				public:
 					Builder() { };
 					Builder(std::string& path_to_receiving_model_file, bool enable_user_messages);
-					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
+					Builder(std::string& path_to_receiving_model_file, std::string& path_to_donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output);
 					
 					void import_receiving_model_only( std::string& path_to_receiving_model_file);
-					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
+					void read_from_file( std::string& path_to_receiving_model_file, std::string& path_to_donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool ANY_search_policy, bool enable_user_messages, bool debug_output );
 					std::string get_path_of_receiving_model_file_used ( ) { return path_to_receiving_model; };
 					std::string get_path_of_donor_model_file_used ( ) { return path_to_donor_model; };
 					std::string convert_three_letter_code_to_single_letter (std::string three_letter_code);
@@ -42,9 +41,15 @@ namespace privateer {
 					void graft_glycan_to_receiver(int mglycanindex, int receiver_chain_index, int received_residue_index);
 					void export_grafted_model( std::string& output_path );
 					
+					void setPhi (double inputPhi) { this->userPhi = inputPhi; this->userValuesChanged = true; };
+					void setPsi (double inputPsi) { this->userPsi = inputPsi; this->userValuesChanged = true; };
+					void setPhi_error (double inputPhi_error) { this->userPhi_error = inputPhi_error; this->userValuesChanged = true; };
+					void setPsi_error (double inputPsi_error) { this->userPsi_error = inputPsi_error; this->userValuesChanged = true; };
+					void setIteration_step (double inputIteration_step) { this->userIteration_step = inputIteration_step; this->userValuesChanged = true; };
 
 
 				private:
+					int nThreads;
 					bool ANY_search_policy;
 					bool enable_user_messages;
 					bool debug_output;
@@ -53,6 +58,13 @@ namespace privateer {
 					std::string path_to_donor_model;
 
 					privateer::modelling::Grafter grafter;
+
+					bool userValuesChanged = false;
+					double userPhi = -42069;        
+					double userPsi = -42069;
+					double userPhi_error = -42069;
+					double userPsi_error = -42069;
+					double userIteration_step = -42069;
 
 					clipper::MiniMol imported_receiving_model;
 					clipper::MiniMol imported_donor_model;

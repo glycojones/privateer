@@ -28,11 +28,7 @@
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
 #include <clipper/minimol/minimol_utils.h>
-
-#ifdef _WIN32
-    #undef snprintf
-#endif
-#include <nlohmann/json.hpp>
+#include "privateer-json.h"
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
@@ -420,6 +416,15 @@ namespace clipper
             MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
             MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
 
+            struct MGlycanTorsionSummary 
+            {
+                std::string type;
+                clipper::String first_residue_name;
+                clipper::String second_residue_name;
+                std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms;
+                std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
+            };
+            
             class Node;
 
             class Linkage
@@ -638,7 +643,8 @@ namespace clipper
             }; // class Node
 
             bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom ); // true if there's been any problem
-
+            void add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
+            std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan or s-glycan
             // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
@@ -741,7 +747,7 @@ namespace clipper
             std::vector < clipper::MSugar > sugars;         // vector of sugars
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
-            // std::string wurcs;
+            std::vector<MGlycanTorsionSummary> all_torsions_within_mglycan;
 
     }; // class MGlycan
 

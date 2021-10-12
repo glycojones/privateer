@@ -360,6 +360,27 @@ void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_d
     
     initialize_summary_of_detected_glycans();
 }
+
+pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_summary(OfflineTorsionsDatabase& importedDatabase)
+{
+    if(!torsions.empty())
+        return torsions;
+    else
+    {
+        auto output = pybind11::list();
+        int totalGlycans = get_number_of_glycan_chains_detected();
+        for(int i = 0; i < totalGlycans; i++)
+        {
+            privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
+            pybind11::list current_glycan_torsions = currentGlycan.get_torsions_summary(importedDatabase);
+
+            auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_torsions_in_structure"_a=current_glycan_torsions);
+            output.append(current_glycan_torsion_info);
+        }
+        this->torsions = output;
+        return output;
+    }
+}
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 
@@ -424,6 +445,23 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
     auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, glycanID);
     
     return glycanObject;
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_torsions_summary(OfflineTorsionsDatabase& importedDatabase)
+{
+
+    auto output = pybind11::list();
+    int totalGlycans = get_number_of_glycan_chains_detected();
+    for(int i = 0; i < totalGlycans; i++)
+    {
+        privateer::pyanalysis::GlycanStructure currentGlycan = this->get_glycan(i);
+        pybind11::list current_glycan_torsions = currentGlycan.get_torsions_summary(importedDatabase);
+
+        auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_torsions_in_structure"_a=current_glycan_torsions);
+        output.append(current_glycan_torsion_info);
+    }
+
+    return output;
 }
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe END ////////////////////////////////////////////////////////////////////
@@ -619,36 +657,43 @@ privateer::pyanalysis::CarbohydrateStructure privateer::pyanalysis::GlycanStruct
 
 
 
-pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( OfflineDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads )
+pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads )
 {
     if(!glycoproteomicsDB.empty())
         return glycoproteomicsDB;
     else
     {
-        nlohmann::json jsonObject = importedDatabase.return_imported_database();
+        std::vector<privateer::json::GlycomicsDatabase> glycomics_database = importedDatabase.return_imported_database();
         std::string currentWURCS = glycanWURCS;
         clipper::MGlycan currentGlycan = glycan;
 
-        int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", currentWURCS);
+        int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
         if(!returnClosestMatches && currentGlycan.number_of_nodes() > 1)
         {
-            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+            if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID, glyconnectID;
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
                     glytoucanID.pop_back();
                 }
+                glyconnectID = glycomics_database[valueLocation].GlyConnectID;
+                if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
+                {
+                    glyconnectID.erase(0, 1);
+                    glyconnectID.pop_back();
+                }
 
-                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=glyconnectID );
                 this->glycoproteomicsDB = databaseOutput;
                 update_summary_of_glycan_after_dbquery();
                 return databaseOutput;
             }
-            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            else if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -673,7 +718,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
             std::string glytoucanID = "Not Found";
             if(valueLocation != -1)
             {
-                glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -707,8 +752,8 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
             
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, jsonObject, returnAllPossiblePermutations, false, nThreads, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, jsonObject, returnAllPossiblePermutations, false);   
+            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, returnAllPossiblePermutations, false, nThreads, useParallelism);
+            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);   
             
             if(!alternativeGlycans.empty())
             {
@@ -769,18 +814,22 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
                 for(int i = 0; i < finalGlycanPermutationContainer.size(); i++)
                 {
                     clipper::String temporaryWURCS = finalGlycanPermutationContainer[i].first.first.generate_wurcs();
-                    int valueLocation = privateer::util::find_index_of_value(jsonObject, "Sequence", temporaryWURCS);
+                    int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, temporaryWURCS);
 
                     std::string permutationGlyTouCanID = "Not Found";
-                    permutationGlyTouCanID = jsonObject[valueLocation]["AccessionNumber"];
+                    permutationGlyTouCanID = glycomics_database[valueLocation].GlyConnectID;
                     if (permutationGlyTouCanID.front() == '"' && permutationGlyTouCanID.front() == '"')
                     {
                         permutationGlyTouCanID.erase(0, 1);
                         permutationGlyTouCanID.pop_back();
-                    }
-                    
+                    }                    
                     std::string permutationWURCS = temporaryWURCS;
-                    auto permutationGlyConnectID = jsonObject[valueLocation]["glyconnect"]["id"];
+                    auto permutationGlyConnectID = glycomics_database[valueLocation].GlyConnectID;
+                    if (permutationGlyConnectID.front() == '"' && permutationGlyConnectID.front() == '"')
+                    {
+                        permutationGlyConnectID.erase(0, 1);
+                        permutationGlyConnectID.pop_back();
+                    }
                     float permutationScore = finalGlycanPermutationContainer[i].second;
                     int anomerPermutations = finalGlycanPermutationContainer[i].first.second[0];
                     int residuePermutations = finalGlycanPermutationContainer[i].first.second[1];
@@ -805,22 +854,29 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
         else 
         {
             std::string glytoucanID = "Not Found";
-            if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] != "NotFound")
+            if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID, glyconnectID;
+                glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
                     glytoucanID.pop_back();
                 }
-                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=jsonObject[valueLocation]["glyconnect"]["id"] );
+                glyconnectID = glycomics_database[valueLocation].GlyConnectID;
+                if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
+                {
+                    glyconnectID.erase(0, 1);
+                    glyconnectID.pop_back();
+                }
+                auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Found a complete database match, no permutations were produced.", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a=glyconnectID );
                 this->glycoproteomicsDB = databaseOutput;
                 update_summary_of_glycan_after_dbquery();
                 return databaseOutput;
             }
-            else if(valueLocation != -1 && jsonObject[valueLocation]["glyconnect"] == "NotFound")
+            else if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
             {
-                std::string glytoucanID = jsonObject[valueLocation]["AccessionNumber"];
+                std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
                 if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
                 {
                     glytoucanID.erase(0, 1);
@@ -840,6 +896,56 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_offline_database( O
             }
         }
     }
+}
+
+pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(OfflineTorsionsDatabase& importedDatabase)
+{
+    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = glycan.return_torsion_summary_within_glycan();
+    std::vector<privateer::json::TorsionsDatabase> torsions_database = importedDatabase.return_imported_database();
+    auto output = pybind11::list();
+    
+    for(int i = 0; i < torsion_summary_of_glycan.size(); i++)
+    {
+        clipper::MGlycan::MGlycanTorsionSummary current_torsion = torsion_summary_of_glycan[i];
+       
+        auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion](privateer::json::TorsionsDatabase& element)
+        {
+            return current_torsion.first_residue_name == element.first_residue && current_torsion.second_residue_name == element.second_residue && current_torsion.type == element.type;
+        });
+
+        if(search_result != std::end(torsions_database))
+        {
+            privateer::json::TorsionsDatabase& found_torsions_in_database = *search_result;
+            std::vector<std::pair<float, float>> database_torsions = found_torsions_in_database.torsions;
+           
+            std::vector<std::pair<float, float>> current_glycan_torsions = current_torsion.torsions;
+            std::vector<std::pair<clipper::MAtom, clipper::MAtom>> current_glycan_atoms = current_torsion.atoms;
+
+            auto database_psi = pybind11::list();
+            auto database_phi = pybind11::list();
+            auto glycan_torsions = pybind11::list();
+            
+            for(int j = 0; j < database_torsions.size(); j++)
+            {
+                database_phi.append(database_torsions[j].first);
+                database_psi.append(database_torsions[j].second);
+            }
+
+            for(int j = 0; j < current_glycan_torsions.size(); j++)
+            {
+                float currentPhi = current_glycan_torsions[j].first;
+                float currentPsi = current_glycan_torsions[j].second;
+                std::string current_bond_descr = current_glycan_atoms[j].first.id().trim() + "-" + current_glycan_atoms[j].second.id().trim();
+                auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
+                glycan_torsions.append(torsion_dict);
+            }
+            
+            std::string root_string = glycan.get_root_for_filename();
+            auto current_pair_dict = pybind11::dict("first_residue"_a=std::string(current_torsion.first_residue_name), "second_residue"_a=std::string(current_torsion.second_residue_name), "root_descr"_a=root_string, "detected_torsions"_a=glycan_torsions, "database_phi"_a=database_phi, "database_psi"_a=database_psi);
+            output.append(current_pair_dict);
+        }
+    }
+    return output;
 }
 
 pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool includeClosestMatches)
@@ -2714,23 +2820,21 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
 
 ///////////////////////////////////////////////// Class CryoEMData END ////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////// Class OfflineDatabase ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::OfflineDatabase::import_json_file( std::string& path_to_input_file )
+///////////////////////////////////////////////// Class OfflineGlycomicsDatabase ////////////////////////////////////////////////////////////////////
+void privateer::pyanalysis::OfflineGlycomicsDatabase::import_json_file( std::string& path_to_input_file )
 {
-    this->path_of_input_file = path_of_input_file;
-    std::string path = path_of_input_file;
-    if(path == "nopath" || path.empty()) 
-        {
-            std::string env(std::getenv ( "CLIBD" ));
-
-            path = env + "/privateer_database.json";
-        }
-
-    std::ifstream input(path);
-
-    input >> glytoucanglyconnectdatabase;
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_input_file);
+    this->glytoucanglyconnectdatabase = glycomics_database;
 }
-///////////////////////////////////////////////// Class OfflineDatabase END ////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////// Class OfflineGlycomicsDatabase END ////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////// Class OfflineTorsionsDatabase ////////////////////////////////////////////////////////////////////
+void privateer::pyanalysis::OfflineTorsionsDatabase::import_json_file( std::string& path_to_input_file )
+{
+    std::vector<privateer::json::TorsionsDatabase> torsions_database = privateer::json::read_json_file_for_torsions_database(path_to_input_file);
+    this->torsionsdatabase = torsions_database;
+}
+///////////////////////////////////////////////// Class OfflineTorsionsDatabase END ////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
@@ -2753,6 +2857,7 @@ void init_pyanalysis(py::module& m)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition::get_summary_of_detected_glycans)
         .def("get_glycan",  &pa::GlycosylationComposition::get_glycan)
         .def("get_ligands",  &pa::GlycosylationComposition::get_ligands)
+        .def("get_torsions_summary", &pa::GlycosylationComposition::get_torsions_summary)
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::XRayData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with X-Ray Crystallography Data")
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::CryoEMData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with CryoEM Data")
         .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
@@ -2764,7 +2869,8 @@ void init_pyanalysis(py::module& m)
         .def("get_expression_system_used",  &pa::GlycosylationComposition_memsafe::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition_memsafe::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition_memsafe::get_summary_of_detected_glycans)
-        .def("get_glycan",  &pa::GlycosylationComposition_memsafe::get_glycan);
+        .def("get_glycan",  &pa::GlycosylationComposition_memsafe::get_glycan)
+        .def("get_torsions_summary", &pa::GlycosylationComposition_memsafe::get_torsions_summary);
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
         .def(py::init<>())
@@ -2783,8 +2889,9 @@ void init_pyanalysis(py::module& m)
         .def("get_glycan_summary", &pa::GlycanStructure::get_glycan_summary)
         .def("get_monosaccharide", &pa::GlycanStructure::get_monosaccharide)
         .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides)
-        .def("query_offline_database", &pa::GlycanStructure::query_offline_database, "Function to query GlyTouCan and GlyConnect databases with a possibility to return closest matches detected on GlyConnect",
+        .def("query_glycomics_database", &pa::GlycanStructure::query_glycomics_database, "Function to query GlyTouCan and GlyConnect databases with a possibility to return closest matches detected on GlyConnect",
         py::arg("importedDatabase"), py::arg("returnClosestMatches") = true, py::arg("returnAllPossiblePermutations") = false, py::arg("nThreads") = -1)
+        .def("get_torsions_summary", &pa::GlycanStructure::get_torsions_summary)
         .def("get_SNFG_strings", &pa::GlycanStructure::get_SNFG_strings, "Returns Privateer generated SNFG representations in SVG string that later can be parsed through Python",
         py::arg("includeClosestMatches") = true)
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::XRayData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with X-Ray Crystallography Data")
@@ -2854,11 +2961,15 @@ void init_pyanalysis(py::module& m)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);
     
-    py::class_<pa::OfflineDatabase>(m, "OfflineDatabase")
+    py::class_<pa::OfflineGlycomicsDatabase>(m, "OfflineGlycomicsDatabase")
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
-        .def("import_json_file", &pa::OfflineDatabase::import_json_file)
-        .def("return_imported_database", &pa::OfflineDatabase::return_imported_database);
+        .def("import_json_file", &pa::OfflineGlycomicsDatabase::import_json_file);
+
+    py::class_<pa::OfflineTorsionsDatabase>(m, "OfflineTorsionsDatabase")
+        .def(py::init<>())
+        .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
+        .def("import_json_file", &pa::OfflineTorsionsDatabase::import_json_file);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

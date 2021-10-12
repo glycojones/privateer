@@ -20,7 +20,6 @@
 
 
 using namespace clipper;
-using json = nlohmann::json;
 
 
 ///////////////////////// MSugar ///////////////////////////////
@@ -2653,6 +2652,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tphi_c1c2o8c8 = " << torsions[5] << "\t\tpsi = " << torsions[1] << "\t\tomega_seven = " << torsions[2] << "\t\tomega_eight = " << torsions[3] << "\t\tomega_nine = " << torsions[4] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 7 )
     {
@@ -2735,6 +2735,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega_six = " << torsions[2] << "\t\tomega_seven = " << torsions[3] << std::endl; 
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 6 )
     {
@@ -2801,6 +2802,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl; 
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 5 )
     {
@@ -2862,6 +2864,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;  
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 4 )
     {
@@ -2921,6 +2924,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;  
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 3 )
     {
@@ -2981,6 +2985,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 2 )
     {
@@ -3039,6 +3044,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
     }
     else if ( link == 1 )
     {
@@ -3106,6 +3112,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                 DBG << "Torsions for when next_sugar has 6 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+            add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
         }
         else if(next_sugar.ring_members().size() == 5)
         {
@@ -3132,6 +3139,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                 DBG << "Torsions for when next_sugar has 5 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl;
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+            add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
         }
     }
 
@@ -3139,6 +3147,58 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     node_list[index].add_connection ( new_connection ); // add the new connection to the previous node
 
     return false;
+}
+
+void MGlycan::add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom)
+{
+    if(!all_torsions_within_mglycan.empty())
+    {
+        auto search_result = std::find_if(all_torsions_within_mglycan.begin(), all_torsions_within_mglycan.end(), [first_residue_name, second_residue_name](MGlycanTorsionSummary& element)
+        {
+            return first_residue_name == element.first_residue_name && second_residue_name == element.second_residue_name;
+        });
+
+        if(search_result != std::end(all_torsions_within_mglycan))
+        {
+            MGlycanTorsionSummary& found_torsion_description = *search_result;
+            found_torsion_description.torsions.push_back(std::make_pair(Phi, Psi));
+            found_torsion_description.atoms.push_back(std::make_pair(first_atom, second_atom));
+        }
+        else
+        {
+            MGlycanTorsionSummary new_torsion;
+            std::string type;
+            if(clipper::data::is_amino_acid(first_residue_name) || clipper::data::is_amino_acid(second_residue_name))
+                type = "protein-sugar";
+            else
+                type = "sugar-sugar";
+            
+            new_torsion.type = type;
+            new_torsion.first_residue_name = first_residue_name;
+            new_torsion.second_residue_name = second_residue_name;
+            new_torsion.atoms.push_back(std::make_pair(first_atom, second_atom));
+            new_torsion.torsions.push_back(std::make_pair(Phi, Psi));
+
+            all_torsions_within_mglycan.push_back(new_torsion);
+        }
+    }
+    else
+    {
+        MGlycanTorsionSummary first_torsion;
+        std::string type;
+        if(clipper::data::is_amino_acid(first_residue_name) || clipper::data::is_amino_acid(second_residue_name))
+            type = "protein-sugar";
+        else
+            type = "sugar-sugar";
+        
+        first_torsion.type = type;
+        first_torsion.first_residue_name = first_residue_name;
+        first_torsion.second_residue_name = second_residue_name;
+        first_torsion.atoms.push_back(std::make_pair(first_atom, second_atom));
+        first_torsion.torsions.push_back(std::make_pair(Phi, Psi));
+
+        all_torsions_within_mglycan.push_back(first_torsion);
+    }
 }
 
 
@@ -3826,6 +3886,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                             psi = clipper::Util::twopi() + psi;
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1);
 
                         list_of_glycans.push_back ( mg );
                         break;
@@ -3880,6 +3941,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1);
 
 
                         if ( linked[j].second.monomer()+2 < mmol[linked[j].second.polymer()].size() )
@@ -3963,6 +4025,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_o_roots[i].first.type().trim(), og1, sugar.type().trim(), c1);
 
 
                         list_of_glycans.push_back ( mg );
@@ -4081,6 +4144,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_c_roots[i].first.type().trim(), cd1, sugar.type().trim(), c1);
 
                         if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
                         // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults.
@@ -4326,6 +4390,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                             psi = clipper::Util::twopi() + psi;
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1);
 
                         list_of_glycans.push_back ( mg );
                         break;
@@ -4368,6 +4433,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1);
 
 
                         if ( linked[j].second.monomer()+2 < mmol[linked[j].second.polymer()].size() )
@@ -4433,6 +4499,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_o_roots[i].first.type().trim(), og1, sugar.type().trim(), c1);
 
 
                         list_of_glycans.push_back ( mg );
@@ -4520,6 +4587,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                                                                 cb.coord_orth() );
 
                         mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
+                        mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_c_roots[i].first.type().trim(), cd1, sugar.type().trim(), c1);
 
                         if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
                         // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults. 

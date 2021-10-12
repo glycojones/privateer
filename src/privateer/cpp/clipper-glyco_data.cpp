@@ -442,6 +442,37 @@ const sugar_database_entry sugar_database[] =
         return false;
     } //!< returns true if found
 
+    bool is_amino_acid ( std::string name )
+    {
+        std::vector<std::string> amino_acids = {
+                                                "ALA",
+                                                "ARG",
+                                                "ASN",
+                                                "ASP",
+                                                "CYS",
+                                                "GLN",
+                                                "GLU",
+                                                "GLY",
+                                                "HIS",
+                                                "ILE",
+                                                "LEU",
+                                                "LYS",
+                                                "MET",
+                                                "PHE",
+                                                "PRO",
+                                                "SER",
+                                                "THR",
+                                                "TRP",
+                                                "TYR",
+                                                "VAL"
+        };
+
+        if ( std::find(amino_acids.begin(), amino_acids.end(), name) != amino_acids.end() )
+            return true;
+        else
+            return false;
+    }
+
     std::string carbname_of( std::string name )
     {
         clipper::String new_name;

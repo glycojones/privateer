@@ -18,6 +18,7 @@
 #include <tuple>
 #include <iostream>
 #include <iomanip>
+#include "privateer-json.h"
 #include "privateer-lib.h"
 #include "privateer-cryo_em.h"
 #include "privateer-xray.h"
@@ -73,6 +74,7 @@ int main(int argc, char** argv)
     clipper::String input_reflections_cif   = "NONE";
     clipper::String input_ccd_code          = "XXX";
     clipper::String ipwurcsjson             = "nopath";
+    clipper::String iptorsionsjson          = "nopath";
     clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
     clipper::String title                   = "generic title";
     clipper::String input_reflections_mtz   = "NONE";
@@ -80,6 +82,8 @@ int main(int argc, char** argv)
     clipper::String input_validation_string = "";
     std::vector<clipper::String> input_validation_options;
     clipper::data::sugar_database_entry external_validation;
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database;
+    std::vector<privateer::json::TorsionsDatabase> torsions_database;
     bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -97,6 +101,7 @@ int main(int argc, char** argv)
     bool check_unmodelled = false;
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
+    bool useTorsionsDataBase = false;
     bool useParallelism = true;
     bool rscc_best = false;
     bool produce_external_restraints = false;
@@ -112,7 +117,6 @@ int main(int argc, char** argv)
     clipper::MTZcrystal opxtal;
     clipper::MTZdataset opdset;
     clipper::MGlycology mgl;
-    nlohmann::json jsonObject;
 
 
     // command input
@@ -276,7 +280,7 @@ int main(int argc, char** argv)
         {
           useWURCSDataBase = true;
         }
-        else if ( args[arg] == "-databasein" )
+        else if ( args[arg] == "-glycomics_dbpath" )
         {
           if ( ++arg < args.size() )
           {
@@ -296,18 +300,54 @@ int main(int argc, char** argv)
             }
             else
             {
-              std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+              std::cout << "Error: No Path was given to -glycomics_dbpath argument!" << std::endl;
               prog.set_termination_message( "Failed" );
               return 1;
             }
           }
           else
           {
-            std::cout << "Error: No Path was given to -databasein argument!" << std::endl;
+            std::cout << "Error: No Path was given to -glycomics_dbpath argument!" << std::endl;
             prog.set_termination_message( "Failed" );
             return 1;
           }
         }
+        else if ( args[arg] == "-plot_torsions" )
+        {
+          useTorsionsDataBase = true;
+        }
+        else if ( args[arg] == "-torsions_dbpath" )
+        {
+          if ( ++arg < args.size() )
+          {
+            if(clipper::String(args[arg])[0] != '-')
+            {
+              iptorsionsjson = args[arg];
+              std::string fileName = iptorsionsjson.tail();
+              std::string fileExtension = fileName.substr( fileName.length() - 5 );
+
+              if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
+              {
+                std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                          << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                prog.set_termination_message( "Failed" );
+                return 1;
+              }
+            }
+            else
+            {
+              std::cout << "Error: No Path was given to -torsions_dbpath argument!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
+            }
+          }
+          else
+          {
+            std::cout << "Error: No Path was given to -torsions_dbpath argument!" << std::endl;
+            prog.set_termination_message( "Failed" );
+            return 1;
+          }
+        }        
         else if ( args[arg] == "-mode" )
         {
           if ( ++arg < args.size() )
@@ -460,7 +500,11 @@ int main(int argc, char** argv)
 
     if(useWURCSDataBase)
     {
-      privateer::util::read_json_file (ipwurcsjson, jsonObject);
+      glycomics_database = privateer::json::read_json_file_for_glycomics_database(ipwurcsjson);
+    }
+    if(useTorsionsDataBase)
+    {
+      torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
     }
 
     // Fast mode, no maps nor correlation calculations
@@ -508,12 +552,18 @@ int main(int argc, char** argv)
                 wurcs_string = list_of_glycans[i].generate_wurcs();
                 std::cout << wurcs_string << std::endl;
 
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
+                }
+
                 if(useWURCSDataBase)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
 
                     // EDIT HERE
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
+                    output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
 
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -555,6 +605,12 @@ int main(int argc, char** argv)
                     std::ostringstream os;
                     os << list_of_glycans[i].get_root_for_filename() << ".svg";
                     plot.write_to_file ( os.str() );
+                }
+
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
             }
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
@@ -1281,7 +1337,7 @@ int main(int argc, char** argv)
                 {
                     std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
                     // EDIT HERE
-                    output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
+                    output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
 
                     if(!finalGlycanPermutationContainer.empty())
                         {
@@ -1324,6 +1380,13 @@ int main(int argc, char** argv)
                     os << list_of_glycans[i].get_root_for_filename() << ".svg";
                     plot.write_to_file ( os.str() );
                 }
+                
+                if(useTorsionsDataBase)
+                {
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
+                }
+                
             }
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
@@ -1347,7 +1410,7 @@ int main(int argc, char** argv)
             {
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
                 // EDIT HERE
-                output_dbquery(jsonObject, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
+                output_dbquery(glycomics_database, wurcs_string, list_of_glycans[i], closest_match_disable, finalGlycanPermutationContainer, glucose_only, debug_output, nThreads, useParallelism);
 
                 if(!finalGlycanPermutationContainer.empty())
                     {
@@ -2156,7 +2219,6 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
@@ -3154,7 +3216,7 @@ int main(int argc, char** argv)
     std::cout << "   Privateer has identified " << n_anomer + n_config + n_pucker + n_conf;
     std::cout << " issues, with " << sugar_count << " of " << ligandList.size() << " sugars affected." << std::endl;
 
-    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, jsonObject);
+    privateer::util::print_XML(ligandList, list_of_glycans, list_of_glycans_associated_to_permutations, input_model, glycomics_database);
 
 
 
