@@ -42,6 +42,7 @@ find_library(CLIPPERCIFDEP NAMES clipper-cif
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 
 find_package(Threads REQUIRED)
+find_package(ZLIB REQUIRED)
 
 
 #Find Privateer's main.cpp file
@@ -72,6 +73,7 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-modelling.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-interactions.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
@@ -90,7 +92,8 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
-                        Threads::Threads)
+                        Threads::Threads
+                        ZLIB::ZLIB)
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
@@ -108,7 +111,9 @@ target_link_libraries ( privateer_exec
                         ${CLIPPERCONTRIBDEP}
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
+                        ${PYTHON_LIBRARY}
+                        Threads::Threads
+                        ZLIB::ZLIB)
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 

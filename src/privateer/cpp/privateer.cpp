@@ -26,6 +26,7 @@
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
 #include "privateer-dbquery.h"
+#include "privateer-interactions.h"
 #include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
@@ -470,6 +471,8 @@ int main(int argc, char** argv)
     }
 
     unsigned int detectedCores;
+
+    privateer::interactions::hydrogenate_input_model(input_model);
 
     if(nThreads == 0 && useParallelism)
       nThreads = std::thread::hardware_concurrency();
