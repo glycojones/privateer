@@ -472,7 +472,7 @@ int main(int argc, char** argv)
 
     unsigned int detectedCores;
 
-    privateer::interactions::hydrogenate_input_model(input_model);
+    // privateer::interactions::hydrogenate_input_model(input_model);
 
     if(nThreads == 0 && useParallelism)
       nThreads = std::thread::hardware_concurrency();

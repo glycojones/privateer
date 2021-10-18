@@ -12,6 +12,7 @@
 #include <fstream>
 #include <string>
 #include <locale>
+#include <algorithm>
 #include "clipper-glyco.h"
 #include "privateer-restraints.h"
 #include <gemmi/mmread.hpp>

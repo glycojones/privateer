@@ -46,9 +46,28 @@ namespace privateer {
                     initial_h, gemmi::count_hydrogen_sites(st));
 
                 // Clean up the H atoms that were placed at (0.00, 0.00, 0.00)
-                // gemmi::Model model = st.models[0];
+                for (gemmi::Model& model : st.models)
+                    for (gemmi::Chain& chain : model.chains)
+                        for (gemmi::Residue& res : chain.residues)
+                        {
+                            std::vector<gemmi::Atom> modified_atoms;
+                            for (gemmi::Atom& atom : res.atoms)
+                            {
+                                if(atom.is_hydrogen())
+                                {
+                                    if(atom.pos.x == 0 && atom.pos.y == 0 && atom.pos.z == 0 && atom.occ == 0)
+                                        continue;
+                                    else
+                                        modified_atoms.push_back(atom);
+                                }
+                                else
+                                {
+                                    modified_atoms.push_back(atom);
+                                }
+                            }
+                            res.atoms = modified_atoms;
+                        }
 
-                
                 std::printf("Writing coordinates to %s\n", output.c_str());
                 gemmi::Ofstream os(output, &std::cout);
                 gemmi::write_pdb(st, os.ref());
