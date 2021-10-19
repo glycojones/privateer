@@ -14,6 +14,7 @@ namespace privateer {
         
         void hydrogenate_input_model(std::string input_model)
         {
+            std::cout << "Hydrogenating '" << input_model << "' using project-gemmi/gemmi third party library." << std::endl;
             try 
             {
                 std::string output = "hydrogenated_input_model.pdb";
@@ -71,6 +72,8 @@ namespace privateer {
                 std::printf("Writing coordinates to %s\n", output.c_str());
                 gemmi::Ofstream os(output, &std::cout);
                 gemmi::write_pdb(st, os.ref());
+
+                std::cout << input_model << " was successfully hydrogenated!" << std::endl;
             }
             catch (std::exception& e) 
             {

@@ -127,9 +127,34 @@ namespace privateer
                     }
                     else if(entry.get_object_key(k).as_string() == "glyconnect") 
                     {
-                        if (entry.get_object_value(k).get_type() != sajson::TYPE_STRING)
-                            fail("Expected TYPE_STRING, got " + json_type_as_string(entry.get_object_value(k).get_type()));
-                        temp.GlyConnectID = entry.get_object_value(k).as_string();
+                        if (entry.get_object_value(k).get_type() == sajson::TYPE_STRING || entry.get_object_value(k).get_type() == sajson::TYPE_ARRAY)
+                        {
+                            if(entry.get_object_value(k).get_type() == sajson::TYPE_STRING)
+                                temp.GlyConnectID = entry.get_object_value(k).as_string();
+                            else
+                            {
+                                sajson::value glyconnect_id_array = entry.get_object_value(k);
+                                if(glyconnect_id_array.get_type() != sajson::TYPE_ARRAY)
+                                    fail("Expected TYPE_ARRAY, got " + json_type_as_string(entry.get_object_value(k).get_type()));
+                                else
+                                {
+                                    std::string GlyConnectID_list = "";
+                                    for (size_t j = 0; j != glyconnect_id_array.get_length(); ++j) 
+                                    {
+                                        sajson::value glyconnect_id_entry = glyconnect_id_array.get_array_element(j);
+                                        if (glyconnect_id_entry.get_type() != sajson::TYPE_STRING)
+                                            fail("Expected TYPE_STRING, got " + json_type_as_string(glyconnect_id_entry.get_type()));
+                                        GlyConnectID_list.append(glyconnect_id_entry.as_string());
+                                        GlyConnectID_list.append(", ");
+                                    }
+                                    GlyConnectID_list.pop_back(); // removes empty space
+                                    GlyConnectID_list.pop_back(); // removes the comma. Yes, I am this lazy.
+                                    temp.GlyConnectID = GlyConnectID_list;
+                                }
+                            }
+                        }
+                        else
+                            fail("Expected TYPE_STRING or TYPE_ARRAY, got " + json_type_as_string(entry.get_object_value(k).get_type()));
                     }
                 }
                 glycomics_database.push_back(temp);
