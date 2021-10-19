@@ -623,8 +623,10 @@ void privateer::util::print_XML ( std::vector < std::pair < clipper::String, cli
         {
             std::vector<clipper::ftype> cpParams = sugarList[i].second.cremer_pople_params();
 
-            clipper::String sugarRSCC = clipper::String ( sugarList[i].second.get_rscc() );
-            sugarRSCC.resize(4);
+            double raw_sugarRSCC = sugarList[i].second.get_rscc();
+            std::stringstream precision_stream;
+            precision_stream << std::fixed << std::setprecision(2) << raw_sugarRSCC;
+            std::string sugarRSCC = precision_stream.str();
 
             clipper::String puckering_amplitude = clipper::String ( sugarList[i].second.puckering_amplitude() );
             puckering_amplitude.resize(5);
