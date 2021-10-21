@@ -472,8 +472,6 @@ int main(int argc, char** argv)
 
     unsigned int detectedCores;
 
-    // privateer::interactions::hydrogenate_input_model(input_model);
-
     if(nThreads == 0 && useParallelism)
       nThreads = std::thread::hardware_concurrency();
 
@@ -1172,6 +1170,11 @@ int main(int argc, char** argv)
 
         of_scm.close();
         of_py.close();
+
+        // privateer::interactions::hydrogenate_input_model(input_model);
+        privateer::interactions::HBondsParser hbonds;
+        // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[15], mmol);
+        std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[10], mmol);
 
         std::cout << "SUMMARY: " << std::endl << std::endl ;
         std::cout << "   Wrong anomer: " << n_anomer << std::endl;
@@ -3209,6 +3212,9 @@ int main(int argc, char** argv)
     privateer::coot::insert_coot_epilogue_python ( of_py );
     of_scm.close();
     of_py.close();
+
+    // privateer::interactions::hydrogenate_input_model(input_model);
+    // privateer::interactions::HBondsParser hbonds;
 
     std::cout << "SUMMARY: " << std::endl << std::endl ;
     std::cout << "   Wrong anomer: " << n_anomer << std::endl;
