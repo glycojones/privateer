@@ -83,7 +83,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
-        DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
+        // DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     }
 
@@ -419,7 +419,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     {
         std::cout << std::endl ;
         DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
-        DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
+        // DBG << "with the coords of = " << this->find("C1", MM::ANY).coord_orth().format() << " on the database..." << std::endl;
         // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
     }
 

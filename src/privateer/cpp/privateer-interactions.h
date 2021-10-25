@@ -15,6 +15,7 @@
 #include <algorithm>
 #include "clipper-glyco.h"
 #include "privateer-restraints.h"
+#include "privateer-lib.h"
 #include <gemmi/mmread.hpp>
 #include <gemmi/monlib.hpp>
 #include <gemmi/placeh.hpp>
@@ -139,6 +140,12 @@ namespace privateer {
 					std::string bond_type;
 				};
 
+				struct monomer_dictionary
+				{
+					std::string monomer_name;
+					std::vector<residue_monomer_library_chem_comp> dictionary_of_atoms;
+				};
+
 				struct atom_info_for_hydrogen_bonding
 				{
 					clipper::MAtom atom;
@@ -153,13 +160,13 @@ namespace privateer {
 				HBondsParser();
 				std::vector<privateer::interactions::HBond> get_HBonds_via_mcdonald_and_thornton(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model, double max_dist = 3.9);
 				std::vector<privateer::interactions::HBondsParser::atom_info_for_hydrogen_bonding> mark_hbond_donors_and_acceptors(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model);
-				int get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);
+				hb_type get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);
 			private:
 				std::vector<energy_library_entry> energy_library;
-				std::vector<residue_monomer_library_chem_comp> residue_library;
+				std::vector<monomer_dictionary> monomer_dict;
 				std::vector<atom_info_for_hydrogen_bonding> marked_hbond_donors_and_acceptors;
 				void import_ener_lib();
-				residue_monomer_library_chem_comp check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type);
+				monomer_dictionary check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type);
 		};
 
         

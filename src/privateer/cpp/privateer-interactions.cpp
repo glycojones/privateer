@@ -118,11 +118,36 @@ namespace privateer {
             return output;
         }
 
-        int privateer::interactions::HBondsParser::get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type)
+        privateer::interactions::HBondsParser::hb_type privateer::interactions::HBondsParser::get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type)
         {
-            check_or_import_monomer_library_chem_comp_for_residue(input_residue_type);
+            privateer::interactions::HBondsParser::monomer_dictionary dict = check_or_import_monomer_library_chem_comp_for_residue(input_residue_type);
+            hb_type hb_t = HB_UNASSIGNED;
 
-            return 0;
+            std::string input_atom_name;
+            char altconf = privateer::util::get_altconformation(input_atom);
+            if(altconf != ' ')
+            {
+                clipper::String temp_string = input_atom.id().substr(0, 4);
+                input_atom_name = temp_string.trim();
+            }
+            else
+                input_atom_name = input_atom.id().trim();
+
+            if(input_residue_type == dict.monomer_name)
+            {
+                std::vector<residue_monomer_library_chem_comp> dict_atoms = dict.dictionary_of_atoms;
+                for(int i = 0; i < dict_atoms.size(); i++)
+                {
+
+                }
+            }
+            else
+                throw std::runtime_error("get_h_bond_type: input_residue_type " + input_residue_type + " does not match dict.monomer_name " + dict.monomer_name);
+                
+
+
+
+            return hb_t;
         }
     }
 }
@@ -170,23 +195,23 @@ void privateer::interactions::HBondsParser::import_ener_lib()
                     export_row.valency = currentGemmiRow[7];
                     export_row.sp = currentGemmiRow[8];
 
-                    if(export_row.type == "." || export_row.type == "n/a")
+                    if(export_row.type == "." || export_row.type == "n/a" || export_row.type.empty())
                         export_row.type = "null";
-                    if(export_row.weight == "." || export_row.weight == "n/a")
+                    if(export_row.weight == "." || export_row.weight == "n/a" || export_row.weight.empty())
                         export_row.weight = "null";
-                    if(export_row.hb_type == "." || export_row.hb_type == "n/a")
+                    if(export_row.hb_type == "." || export_row.hb_type == "n/a" || export_row.hb_type.empty())
                         export_row.hb_type = "null";
-                    if(export_row.vdw_radius == "." || export_row.vdw_radius == "n/a")
+                    if(export_row.vdw_radius == "." || export_row.vdw_radius == "n/a" || export_row.vdw_radius.empty())
                         export_row.vdw_radius = "null";
-                    if(export_row.vdwh_radius == "." || export_row.vdwh_radius == "n/a")
+                    if(export_row.vdwh_radius == "." || export_row.vdwh_radius == "n/a" || export_row.vdwh_radius.empty())
                         export_row.vdwh_radius = "null";
-                    if(export_row.ion_radius == "." || export_row.ion_radius == "n/a")
+                    if(export_row.ion_radius == "." || export_row.ion_radius == "n/a" || export_row.ion_radius.empty())
                         export_row.ion_radius = "null";
-                    if(export_row.element == "." || export_row.element == "n/a")
+                    if(export_row.element == "." || export_row.element == "n/a" || export_row.element.empty())
                         export_row.element = "null";
-                    if(export_row.valency == "." || export_row.valency == "n/a")
+                    if(export_row.valency == "." || export_row.valency == "n/a" || export_row.valency.empty())
                         export_row.valency = "null";
-                    if(export_row.sp == "." || export_row.sp == "n/a")
+                    if(export_row.sp == "." || export_row.sp == "n/a" || export_row.sp.empty())
                         export_row.sp = "null";
                     
 
@@ -216,17 +241,16 @@ void privateer::interactions::HBondsParser::import_ener_lib()
     // std::cout << std::endl;
 }
 
-privateer::interactions::HBondsParser::residue_monomer_library_chem_comp privateer::interactions::HBondsParser::check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type)
+privateer::interactions::HBondsParser::monomer_dictionary privateer::interactions::HBondsParser::check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type)
 {
 
-    auto search_result = std::find_if(std::begin(residue_library), std::end(residue_library),
-    [&input_residue_type](residue_monomer_library_chem_comp& element) {
-        return  element.residue_type == input_residue_type;
+    auto search_result = std::find_if(std::begin(monomer_dict), std::end(monomer_dict),
+    [&input_residue_type](monomer_dictionary& entry) {
+        return  entry.monomer_name == input_residue_type;
     });
 
-    if(search_result != std::end(residue_library))
+    if(search_result != std::end(monomer_dict))
     {
-        std::cout << "returning search result without using gemmi" << std::endl;
         return *search_result;
     }
     else
@@ -249,7 +273,10 @@ privateer::interactions::HBondsParser::residue_monomer_library_chem_comp private
             std::cout << path.str() << std::endl;
             gemmi::cif::Document monomer_dict_gemmi_document = gemmi::cif::read_file( path.str() );
             std::string block_name_search_string = "comp_" + input_residue_type;
-            std::vector<residue_monomer_library_chem_comp> temp_residue_library;
+            std::vector<residue_monomer_library_chem_comp> dict_of_atoms;
+            monomer_dictionary new_entry_in_monomer_dict;
+            new_entry_in_monomer_dict.monomer_name = input_residue_type;
+            std::vector<residue_monomer_library_chem_comp>& export_vector = new_entry_in_monomer_dict.dictionary_of_atoms;
             for (gemmi::cif::Block& block : monomer_dict_gemmi_document.blocks)
             {
                 if (!block.name.empty() && block.name == block_name_search_string)
@@ -260,8 +287,6 @@ privateer::interactions::HBondsParser::residue_monomer_library_chem_comp private
                     gemmi::cif::Table chem_comp_bond_table = block.find("_chem_comp_bond.", 
                                                                         {"comp_id", "atom_id_1", "atom_id_2", "type"});
                     
-                    std::cout << chem_comp_atom_table.width() << std::endl;
-                    std::cout << chem_comp_bond_table.width() << std::endl;
                     if(chem_comp_atom_table.width() != expected_ncolumns_in_chem_comp_atom_table)
                             throw std::runtime_error("chem_comp_atom_table: Number of expected columns doesn't match the number of columns retrieved from '" + input_residue_type + ".cif', Please report this issue to the developers of Privateer.");
                     
@@ -285,64 +310,125 @@ privateer::interactions::HBondsParser::residue_monomer_library_chem_comp private
                         for(size_t j = 0; j != chem_comp_bond_table.length(); ++j)
                         {
                             gemmi::cif::Table::Row currentBondTableGemmiRow = chem_comp_bond_table[j];
-                            if(currentBondTableGemmiRow[1] == export_row.atom_id && currentBondTableGemmiRow[0] == export_row.residue_type)
+                            if(currentBondTableGemmiRow[1] == export_row.atom_id)
                             {
-                                auto bond_table_search_result = std::find_if(std::begin(temp_residue_library), std::end(temp_residue_library),
+                                auto bond_table_search_result = std::find_if(std::begin(dict_of_atoms), std::end(dict_of_atoms),
                                     [&currentBondTableGemmiRow](residue_monomer_library_chem_comp& element) {
-                                        return  element.atom_id == currentBondTableGemmiRow[1] && element.bonded_to_atom_id == currentBondTableGemmiRow[2];
+                                        return  element.atom_id == currentBondTableGemmiRow[1];
                                     });
 
-                                if(bond_table_search_result == std::end(temp_residue_library))
+                                if(bond_table_search_result != std::end(dict_of_atoms))
+                                {
+                                    residue_monomer_library_chem_comp new_export_row = export_row;
+                                    new_export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
+                                    new_export_row.bond_type = currentBondTableGemmiRow[3];
+
+                                    if(new_export_row.residue_type == "." || new_export_row.residue_type == "n/a" || new_export_row.residue_type.empty())
+                                        new_export_row.residue_type = "null";
+                                    if(new_export_row.atom_id == "." || new_export_row.atom_id == "n/a" || new_export_row.atom_id.empty())
+                                        new_export_row.atom_id = "null";
+                                    if(new_export_row.element == "." || new_export_row.element == "n/a" || new_export_row.element.empty())
+                                        new_export_row.element = "null";
+                                    if(new_export_row.energy_type == "." || new_export_row.energy_type == "n/a" || new_export_row.energy_type.empty())
+                                        new_export_row.energy_type = "null";
+                                    if(new_export_row.charge == "." || new_export_row.charge == "n/a" || new_export_row.charge.empty())
+                                        new_export_row.charge = "null";
+                                    if(new_export_row.bonded_to_atom_id == "." || new_export_row.bonded_to_atom_id == "n/a" || new_export_row.bonded_to_atom_id.empty())
+                                        new_export_row.bonded_to_atom_id = "null";
+                                    if(new_export_row.bond_type == "." || new_export_row.bond_type == "n/a" || new_export_row.bond_type.empty())
+                                        new_export_row.bond_type = "null";
+
+                                    dict_of_atoms.push_back(new_export_row);
+                                }
+                                else
                                 {
                                     export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
                                     export_row.bond_type = currentBondTableGemmiRow[3];
 
-                                    if(export_row.residue_type == "." || export_row.residue_type == "n/a")
+                                    if(export_row.residue_type == "." || export_row.residue_type == "n/a" || export_row.residue_type.empty())
                                         export_row.residue_type = "null";
-                                    if(export_row.atom_id == "." || export_row.atom_id == "n/a")
+                                    if(export_row.atom_id == "." || export_row.atom_id == "n/a" || export_row.atom_id.empty())
                                         export_row.atom_id = "null";
-                                    if(export_row.element == "." || export_row.element == "n/a")
+                                    if(export_row.element == "." || export_row.element == "n/a" || export_row.element.empty())
                                         export_row.element = "null";
-                                    if(export_row.energy_type == "." || export_row.energy_type == "n/a")
+                                    if(export_row.energy_type == "." || export_row.energy_type == "n/a" || export_row.energy_type.empty())
                                         export_row.energy_type = "null";
-                                    if(export_row.charge == "." || export_row.charge == "n/a")
+                                    if(export_row.charge == "." || export_row.charge == "n/a" || export_row.charge.empty())
                                         export_row.charge = "null";
-                                    if(export_row.bonded_to_atom_id == "." || export_row.bonded_to_atom_id == "n/a")
+                                    if(export_row.bonded_to_atom_id == "." || export_row.bonded_to_atom_id == "n/a" || export_row.bonded_to_atom_id.empty())
                                         export_row.bonded_to_atom_id = "null";
-                                    if(export_row.bond_type == "." || export_row.bond_type == "n/a")
+                                    if(export_row.bond_type == "." || export_row.bond_type == "n/a" || export_row.bond_type.empty())
                                         export_row.bond_type = "null";
 
-                                    temp_residue_library.push_back(export_row);
-                                }   
+
+                                    dict_of_atoms.push_back(export_row);
+                                } 
                             }
+                        }
+
+                        auto second_bond_table_search_result = std::find_if(std::begin(dict_of_atoms), std::end(dict_of_atoms),
+                            [&export_row](residue_monomer_library_chem_comp& element) {
+                                return  element.atom_id == export_row.atom_id;
+                            });
+
+                        if(second_bond_table_search_result == std::end(dict_of_atoms))
+                        {
+                            if(export_row.residue_type == "." || export_row.residue_type == "n/a" || export_row.residue_type.empty())
+                                export_row.residue_type = "null";
+                            if(export_row.atom_id == "." || export_row.atom_id == "n/a" || export_row.atom_id.empty())
+                                export_row.atom_id = "null";
+                            if(export_row.element == "." || export_row.element == "n/a" || export_row.element.empty())
+                                export_row.element = "null";
+                            if(export_row.energy_type == "." || export_row.energy_type == "n/a" || export_row.energy_type.empty())
+                                export_row.energy_type = "null";
+                            if(export_row.charge == "." || export_row.charge == "n/a" || export_row.charge.empty())
+                                export_row.charge = "null";
+                            if(export_row.bonded_to_atom_id == "." || export_row.bonded_to_atom_id == "n/a" || export_row.bonded_to_atom_id.empty())
+                                export_row.bonded_to_atom_id = "null";
+                            if(export_row.bond_type == "." || export_row.bond_type == "n/a" || export_row.bond_type.empty())
+                                export_row.bond_type = "null";
+
+
+                            dict_of_atoms.push_back(export_row);
                         }
                     }
                 }
             }
-            this->residue_library.insert(this->residue_library.end(), std::make_move_iterator(temp_residue_library.begin()), std::make_move_iterator(temp_residue_library.end()));
 
-            std::cout << std::endl;
-            for(int i = 0; i < residue_library.size(); i++)
+            for(int i = 0; i < dict_of_atoms.size(); i++)
             {
-                std::cout   << i << "/" << residue_library.size() << ": " 
-                            << residue_library[i].residue_type << "\t"
-                            << residue_library[i].atom_id << "\t"
-                            << residue_library[i].element << "\t"
-                            << residue_library[i].energy_type << "\t"
-                            << residue_library[i].charge << "\t"
-                            << residue_library[i].bonded_to_atom_id << "\t"
-                            << residue_library[i].bond_type << std::endl;
+                if(dict_of_atoms[i].element == "H" && dict_of_atoms[i].bonded_to_atom_id == "null")
+                {
+                    for(int j = 0; j < dict_of_atoms.size(); j++)
+                    {
+                        if(dict_of_atoms[i].atom_id == dict_of_atoms[j].bonded_to_atom_id)
+                            dict_of_atoms[i].bonded_to_atom_id = dict_of_atoms[j].atom_id;
+                            dict_of_atoms[i].bond_type = "single";
+                    }
+                }
             }
-            std::cout << std::endl;
 
-            residue_monomer_library_chem_comp most_recent_row = residue_library.back();
-            if (most_recent_row.residue_type == input_residue_type)
-                return most_recent_row;
-            else
-            {
-                std::cout << "WARNING! Unable to add a monomer library record for " << input_residue_type << " , either it's missing from the monomer library or there is a bug in Privateer." << std::endl;
-                return most_recent_row;
-            }
+            export_vector.insert(export_vector.end(), std::make_move_iterator(dict_of_atoms.begin()), std::make_move_iterator(dict_of_atoms.end()));
+            this->monomer_dict.push_back(new_entry_in_monomer_dict);
+
+            // std::cout << std::endl;
+            // for(int i = 0; i < this->monomer_dict.size(); i++)
+            // {
+            //     std::cout << i << "/" << monomer_dict.size() << ": " << monomer_dict[i].monomer_name << std::endl;
+            //     std::vector<residue_monomer_library_chem_comp> dictionary = monomer_dict[i].dictionary_of_atoms;
+            //     for(int j = 0; j < dictionary.size(); j++)
+            //     {
+            //         std::cout << "\t\t" << dictionary[j].atom_id << "\t"
+            //                             << dictionary[j].element << "\t"
+            //                             << dictionary[j].energy_type << "\t"
+            //                             << dictionary[j].charge << "\t"
+            //                             << dictionary[j].bonded_to_atom_id << "\t"
+            //                             << dictionary[j].bond_type << std::endl;
+            //     }
+            // }
+            // std::cout << std::endl;
+
+            return new_entry_in_monomer_dict;
         }
         else
             throw std::runtime_error("Failed to locate $CLIBD_MON. Have ccp4 env variables been sourced?");

@@ -1174,7 +1174,8 @@ int main(int argc, char** argv)
         // privateer::interactions::hydrogenate_input_model(input_model);
         privateer::interactions::HBondsParser hbonds;
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[15], mmol);
-        std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[10], mmol);
+        // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[10], mmol);
+        // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[0], mmol);
 
         std::cout << "SUMMARY: " << std::endl << std::endl ;
         std::cout << "   Wrong anomer: " << n_anomer << std::endl;
