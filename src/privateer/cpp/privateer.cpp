@@ -1172,7 +1172,7 @@ int main(int argc, char** argv)
         of_py.close();
 
         // privateer::interactions::hydrogenate_input_model(input_model);
-        privateer::interactions::HBondsParser hbonds;
+        // privateer::interactions::HBondsParser hbonds(input_model);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[15], mmol);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[10], mmol);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[0], mmol);

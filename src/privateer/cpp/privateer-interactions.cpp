@@ -82,38 +82,63 @@ namespace privateer {
             }
         }
 
-        privateer::interactions::HBondsParser::HBondsParser()
+        privateer::interactions::HBondsParser::HBondsParser(std::string& input_model)
         {
-			this->privateer::interactions::HBondsParser::import_ener_lib();
-            std::vector<atom_info_for_hydrogen_bonding> empty_marked_hbond_donors_and_acceptors;
-            this->marked_hbond_donors_and_acceptors = empty_marked_hbond_donors_and_acceptors;
+            hydrogenate_input_model(input_model);
+            
+            clipper::MMDBfile mfile;
+            clipper::String clipperfied_input_model_path = input_model;
+            privateer::util::read_coordinate_file_mtz(mfile, this->hydrogenated_input_model, clipperfied_input_model_path, true);
+			
+            this->privateer::interactions::HBondsParser::import_ener_lib();
+            this->hydrogenated_input_model = mark_hbond_donors_and_acceptors(this->hydrogenated_input_model);
         }
 
         std::vector<privateer::interactions::HBond> privateer::interactions::HBondsParser::get_HBonds_via_mcdonald_and_thornton(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model, double max_dist)
         {
             std::vector<privateer::interactions::HBond> output;
-            std::vector<privateer::interactions::HBondsParser::atom_info_for_hydrogen_bonding> marked_hbond_donors_and_acceptors = mark_hbond_donors_and_acceptors(input_glycan, input_model);
+            
+            // These distance are from the acceptor to the H - not the donor
+            float min_dist = 0.1; // H-bonds are longer than this
+            
 
             return output;
         }
 
-        std::vector<privateer::interactions::HBondsParser::atom_info_for_hydrogen_bonding> privateer::interactions::HBondsParser::mark_hbond_donors_and_acceptors(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model)
+        clipper::MiniMol privateer::interactions::HBondsParser::mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model)
         {
-            std::vector<privateer::interactions::HBondsParser::atom_info_for_hydrogen_bonding> output;
+            clipper::MiniMol output = input_model;
             std::string monomer_dir = privateer::restraints::check_monlib_access();
             if (monomer_dir.empty())
                 throw std::runtime_error("Failed to locate $CLIBD_MON. Have ccp4 env variables been sourced?");
 
-            std::vector<clipper::MSugar> input_sugars = input_glycan.get_sugars();
-            for(int sugar = 0; sugar < input_sugars.size(); sugar++)
+            for(int chain = 0; chain < output.size(); chain++)
             {
-                clipper::MSugar currentSugar = input_sugars[sugar];
-                for(int atom = 0; atom < currentSugar.size(); atom++)
+                for(int residue = 0; residue < output[chain].size(); residue++)
                 {
-                    clipper::MAtom currentAtom = currentSugar[atom];
-                    int h_bond_type = get_h_bond_type(currentAtom, currentSugar.type().trim());
+                    for(int atom = 0; atom < output[chain][residue].size(); atom++)
+                    {
+                        hb_type h_bond_type = get_h_bond_type(output[chain][residue][atom], output[chain][residue].type().trim());
+                        output[chain][residue][atom].set_property( "hb_type", clipper::Property<hb_type>( h_bond_type ) );
+                    }
                 }
             }
+
+            // for(int chain = 0; chain < output.size(); chain++)
+            // {
+            //     for(int residue = 0; residue < output[chain].size(); residue++)
+            //     {
+            //         for(int atom = 0; atom < output[chain][residue].size(); atom++)
+            //         {
+            //             if(output[chain][residue][atom].exists_property("hb_type"))
+            //             {
+            //                 const hb_type& atom_hb_potential = dynamic_cast<const clipper::Property<hb_type>& >(output[chain][residue][atom].get_property( "hb_type" )).value(); // kurwa biski ugly, bet kak pap tak
+            //                 std::cout   << "Chain " << output[chain].id().trim() << ": " << output[chain][residue].type().trim() << "/" << output[chain][residue].id().trim() 
+            //                             << " - " << output[chain][residue][atom].id().trim() << "\t\t\t" << atom_hb_potential << std::endl;
+            //             }
+            //         }
+            //     }
+            // }
 
             return output;
         }
@@ -138,17 +163,88 @@ namespace privateer {
                 std::vector<residue_monomer_library_chem_comp> dict_atoms = dict.dictionary_of_atoms;
                 for(int i = 0; i < dict_atoms.size(); i++)
                 {
-
+                    if(dict_atoms[i].atom_id == input_atom_name)
+                    {
+                        if(dict_atoms[i].energy_type == "H")
+                        {
+                            if(is_connected_to_hydrogen_donor(input_atom_name, dict_atoms))
+                            {
+                                hb_t = HB_HYDROGEN;
+                            }
+                        }
+                        else
+                        {
+                            std::string current_atom_energy_type = dict_atoms[i].energy_type;
+                            auto search_result_for_hb_type_of_current_atom = std::find_if(std::begin(this->energy_library), std::end(this->energy_library),
+                                [&current_atom_energy_type](energy_library_entry& entry) {
+                                    return  entry.type == current_atom_energy_type;
+                                });
+                            
+                            if(search_result_for_hb_type_of_current_atom != std::end(energy_library))
+                            {
+                                std::string dict_hb_type = search_result_for_hb_type_of_current_atom->hb_type;
+                                if(dict_hb_type == "N")
+                                    hb_t = HB_NEITHER;
+                                else if(dict_hb_type == "D")
+                                    hb_t = HB_DONOR;
+                                else if(dict_hb_type == "A")
+                                    hb_t = HB_ACCEPTOR;
+                                else if(dict_hb_type == "B")
+                                    hb_t = HB_BOTH;
+                                else if(dict_hb_type == "H")
+                                    hb_t = HB_HYDROGEN;
+                            }
+                        }
+                    }
                 }
             }
             else
                 throw std::runtime_error("get_h_bond_type: input_residue_type " + input_residue_type + " does not match dict.monomer_name " + dict.monomer_name);
                 
-
-
-
             return hb_t;
         }
+
+        bool privateer::interactions::HBondsParser::is_connected_to_hydrogen_donor(std::string atom_name, std::vector<residue_monomer_library_chem_comp>& residue_atoms)
+        {
+            bool result = false;
+
+            auto search_result_for_input_hydrogen = std::find_if(std::begin(residue_atoms), std::end(residue_atoms),
+                [&atom_name](residue_monomer_library_chem_comp& entry) {
+                    return  entry.atom_id == atom_name;
+                });
+
+            if(search_result_for_input_hydrogen != std::end(residue_atoms))
+            {
+                std::string current_hydrogen_bonded_to = search_result_for_input_hydrogen->atom_id;
+                auto search_result_for_atom_bonded_to = std::find_if(std::begin(residue_atoms), std::end(residue_atoms),
+                    [&current_hydrogen_bonded_to](residue_monomer_library_chem_comp& entry) {
+                        return  entry.bonded_to_atom_id == current_hydrogen_bonded_to;
+                    });
+                
+                if(search_result_for_atom_bonded_to != std::end(residue_atoms))
+                {
+                    std::string bonded_to_atom_id = search_result_for_atom_bonded_to->bonded_to_atom_id;
+                    std::string bonded_to_energy_type = search_result_for_atom_bonded_to->energy_type;
+                        auto search_result_for_energy_type_of_atom_bonded_to = std::find_if(std::begin(this->energy_library), std::end(this->energy_library),
+                        [&bonded_to_energy_type](energy_library_entry& entry) {
+                            return  entry.type == bonded_to_energy_type;
+                        });
+                    
+                    if(search_result_for_energy_type_of_atom_bonded_to != std::end(energy_library))
+                    {
+                        std::string hb_type = search_result_for_energy_type_of_atom_bonded_to->hb_type;
+                        if(hb_type == "D" || hb_type == "B")
+                        {
+                            result = true;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+
     }
 }
 
@@ -263,10 +359,7 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
         std::locale loc;
 
         char initial = std::tolower(input_residue_type[0],loc);
-        
-        int expected_ncolumns_in_chem_comp_atom_table = 6;
-        int expected_ncolumns_in_chem_comp_bond_table = 4;
-
+    
         if (!monomer_dir.empty()) 
         {
             path << monomer_dir << initial << "/" << input_residue_type << ".cif";
@@ -287,21 +380,19 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
                     gemmi::cif::Table chem_comp_bond_table = block.find("_chem_comp_bond.", 
                                                                         {"comp_id", "atom_id_1", "atom_id_2", "type"});
                     
-                    if(chem_comp_atom_table.width() != expected_ncolumns_in_chem_comp_atom_table)
-                            throw std::runtime_error("chem_comp_atom_table: Number of expected columns doesn't match the number of columns retrieved from '" + input_residue_type + ".cif', Please report this issue to the developers of Privateer.");
-                    
-                    if(chem_comp_bond_table.width() != expected_ncolumns_in_chem_comp_bond_table)
-                            throw std::runtime_error("chem_comp_bond_table: Number of expected columns doesn't match the number of columns retrieved from '" + input_residue_type + ".cif', Please report this issue to the developers of Privateer.");
-
                     for(size_t i = 0; i != chem_comp_atom_table.length(); ++i)
                     {
                         gemmi::cif::Table::Row currentAtomTableGemmiRow = chem_comp_atom_table[i];
                         residue_monomer_library_chem_comp export_row;
 
-                        export_row.residue_type = currentAtomTableGemmiRow[0];
-                        export_row.atom_id = currentAtomTableGemmiRow[1];
-                        export_row.element = currentAtomTableGemmiRow[2];
-                        export_row.energy_type = currentAtomTableGemmiRow[3];
+                        if(chem_comp_atom_table.has_column(0))
+                            export_row.residue_type = currentAtomTableGemmiRow[0];
+                        if(chem_comp_atom_table.has_column(1))
+                            export_row.atom_id = currentAtomTableGemmiRow[1];
+                        if(chem_comp_atom_table.has_column(2))
+                            export_row.element = currentAtomTableGemmiRow[2];
+                        if(chem_comp_atom_table.has_column(3))
+                            export_row.energy_type = currentAtomTableGemmiRow[3];
                         if(chem_comp_atom_table.has_column(4))
                             export_row.charge = currentAtomTableGemmiRow[4];
                         if(chem_comp_atom_table.has_column(5))
@@ -320,8 +411,10 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
                                 if(bond_table_search_result != std::end(dict_of_atoms))
                                 {
                                     residue_monomer_library_chem_comp new_export_row = export_row;
-                                    new_export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
-                                    new_export_row.bond_type = currentBondTableGemmiRow[3];
+                                    if(chem_comp_bond_table.has_column(2))
+                                        new_export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
+                                    if(chem_comp_bond_table.has_column(3))
+                                        new_export_row.bond_type = currentBondTableGemmiRow[3];
 
                                     if(new_export_row.residue_type == "." || new_export_row.residue_type == "n/a" || new_export_row.residue_type.empty())
                                         new_export_row.residue_type = "null";
@@ -342,8 +435,10 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
                                 }
                                 else
                                 {
-                                    export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
-                                    export_row.bond_type = currentBondTableGemmiRow[3];
+                                    if(chem_comp_bond_table.has_column(2))
+                                        export_row.bonded_to_atom_id = currentBondTableGemmiRow[2];
+                                    if(chem_comp_bond_table.has_column(3))
+                                        export_row.bond_type = currentBondTableGemmiRow[3];
 
                                     if(export_row.residue_type == "." || export_row.residue_type == "n/a" || export_row.residue_type.empty())
                                         export_row.residue_type = "null";

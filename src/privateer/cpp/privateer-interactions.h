@@ -146,25 +146,16 @@ namespace privateer {
 					std::vector<residue_monomer_library_chem_comp> dictionary_of_atoms;
 				};
 
-				struct atom_info_for_hydrogen_bonding
-				{
-					clipper::MAtom atom;
-					hb_type		hbond_type;
-					std::string residue_type;
-					std::string residue_ID;
-					std::string residue_seqnum;
-					std::string chain_ID;
-					std::string location; // whether current MGlycan, protein backbone, another sugar from another mglycan, or unknown ligand.
-				};
-
-				HBondsParser();
+				HBondsParser(std::string& input_model);
 				std::vector<privateer::interactions::HBond> get_HBonds_via_mcdonald_and_thornton(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model, double max_dist = 3.9);
-				std::vector<privateer::interactions::HBondsParser::atom_info_for_hydrogen_bonding> mark_hbond_donors_and_acceptors(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model);
+				clipper::MiniMol mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model);
 				hb_type get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);
+				bool is_connected_to_hydrogen_donor(std::string atom_name, std::vector<residue_monomer_library_chem_comp>& residue_atoms);
 			private:
 				std::vector<energy_library_entry> energy_library;
 				std::vector<monomer_dictionary> monomer_dict;
-				std::vector<atom_info_for_hydrogen_bonding> marked_hbond_donors_and_acceptors;
+				clipper::MiniMol hydrogenated_input_model;
+
 				void import_ener_lib();
 				monomer_dictionary check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type);
 		};
