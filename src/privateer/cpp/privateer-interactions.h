@@ -37,23 +37,21 @@ namespace privateer {
 				clipper::MAtom HBonding_hydrogen;
 				clipper::MAtom donor;
 				clipper::MAtom acceptor;
-				clipper::MAtom donor_neighbour;
 				clipper::MAtom acceptor_neighbour;
-				double angle_1;
-				double angle_2;
-				double angle_3;
-				double HBondLength;
+				float angle_1;
+				float angle_2;
+				float angle_3;
+				float HBondLength;
 				bool sugar_atom_is_donor;
 				bool hydrogen_is_sugar_atom;
 				bool bond_has_hydrogen_flag;
 
 				HBond() 
 				{
-					HBonding_hydrogen = clipper::MAtom();
-					donor = clipper::MAtom();
-					acceptor = clipper::MAtom();
-					donor_neighbour = clipper::MAtom();
-					acceptor_neighbour = clipper::MAtom();
+					HBonding_hydrogen = clipper::MAtom().null();
+					donor = clipper::MAtom().null();
+					acceptor = clipper::MAtom().null();
+					acceptor_neighbour = clipper::MAtom().null();
 					sugar_atom_is_donor = true;
 					angle_1 = -1;
 					angle_2 = -1;
@@ -66,12 +64,11 @@ namespace privateer {
 
 				HBond(clipper::MAtom& input_donor, clipper::MAtom input_acceptor)
 				{
-					HBonding_hydrogen = clipper::MAtom();
+					HBonding_hydrogen = clipper::MAtom().null();
 					donor = input_donor;
 					acceptor = input_acceptor;
-					donor_neighbour = clipper::MAtom();
-					acceptor_neighbour = clipper::MAtom();
-					sugar_atom_is_donor = true;
+					acceptor_neighbour = clipper::MAtom().null();
+					sugar_atom_is_donor = false;
 					angle_1 = -1;
 					angle_2 = -1;
 					angle_3 = -1;
@@ -86,9 +83,8 @@ namespace privateer {
 					HBonding_hydrogen = input_hydrogen;
 					bond_has_hydrogen_flag = true;
 					acceptor = input_acceptor;
-					donor = clipper::MAtom();
-					donor_neighbour = clipper::MAtom();
-					acceptor_neighbour = clipper::MAtom();
+					donor = clipper::MAtom().null();
+					acceptor_neighbour = clipper::MAtom().null();
 					sugar_atom_is_donor = input_sugar_atom_is_H_flag;
 					angle_1 = -1;
 					angle_2 = -1;
@@ -147,17 +143,24 @@ namespace privateer {
 				};
 
 				HBondsParser(std::string& input_model);
-				std::vector<privateer::interactions::HBond> get_HBonds_via_mcdonald_and_thornton(clipper::MGlycan& input_glycan, clipper::MiniMol& input_model, double max_dist = 3.9);
 				clipper::MiniMol mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model);
 				hb_type get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);
 				bool is_connected_to_hydrogen_donor(std::string atom_name, std::vector<residue_monomer_library_chem_comp>& residue_atoms);
+				std::vector<privateer::interactions::HBond> get_HBonds_via_mcdonald_and_thornton(int glycanIndex, double max_dist = 3.9);
+				std::vector<std::pair<clipper::MAtom, float>> get_closest_neighbour_atoms(clipper::MAtom& input_atom, clipper::MMonomer& residue_atom_located_in, clipper::String chainID);
+				std::pair<bool, HBond> make_h_bond_from_sugar_hydrogen(clipper::MAtom& hydrogen, clipper::MAtom& acceptor, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours, std::vector<std::pair<clipper::MAtom, float>>& acceptor_neighbours);
+				std::pair<bool, HBond> make_h_bond_from_environment_residue_hydrogen(clipper::MAtom& acceptor_on_sugar, clipper::MAtom& hydrogen, clipper::String hydrogen_residue_name, std::vector<std::pair<clipper::MAtom, float>>& acceptor_on_sugar_neighbours, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours);
 			private:
 				std::vector<energy_library_entry> energy_library;
 				std::vector<monomer_dictionary> monomer_dict;
 				clipper::MiniMol hydrogenated_input_model;
+				clipper::MAtomNonBond manb_object;
+				clipper::MGlycology hydrogenated_mglycology;
 
 				void import_ener_lib();
 				monomer_dictionary check_or_import_monomer_library_chem_comp_for_residue(std::string input_residue_type);
+
+				// std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar::get_stacked_residues
 		};
 
         

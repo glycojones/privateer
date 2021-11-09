@@ -64,6 +64,7 @@ namespace privateer
                                     bool useMTZ, 
                                     int n_refln = 1000,
                                     int n_param = 20);
+        bool check_if_matom_initialized(clipper::MAtom& input);
         void print_usage();
         void print_supported_code_list ();
         char get_altconformation(clipper::MAtom ma);
