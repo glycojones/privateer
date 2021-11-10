@@ -221,15 +221,15 @@ namespace privateer {
 
         void initialize_summary_of_sugar();
 
-        bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_pdb_chain == inputSugar.get_sugar_pdb_chain()); }
+        bool operator==(const CarbohydrateStructure& inputSugar) const { return (sugar_pdb_id == inputSugar.get_sugar_pdb_id() && sugar_chain_id == inputSugar.get_chain_id()); }
 
         pybind11::dict get_sugar_summary( ) { return sugarSummary; };
         
+        std::string get_chain_id() const { return sugar_chain_id; };
         int get_sugar_id( ) const { return sugarID; };
         int get_glycan_id( ) const { return glycanID; };
         int get_seqnum( ) const { return sugar_seqnum; };
         std::string get_sugar_pdb_id() const { return sugar_pdb_id; };
-        std::string get_sugar_pdb_chain() const { return sugar_pdb_chain; };
 
         std::string get_conformation_name() { return sugar_conformation_name; };
         std::string get_conformation_name_iupac() { return sugar_conformation_name_iupac; };
@@ -285,8 +285,8 @@ namespace privateer {
         int sugarID;
         int glycanID;
         int sugar_seqnum;
+        std::string sugar_chain_id;
         std::string sugar_pdb_id;
-        std::string sugar_pdb_chain;
 
         int sugar_conformation_code;
         std::string sugar_conformation_name;

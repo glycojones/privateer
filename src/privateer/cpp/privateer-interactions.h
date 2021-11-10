@@ -33,7 +33,11 @@ namespace privateer {
 
 		class HBond 
 		{
-			public: 
+			public:
+				std::string donor_chainID;
+				std::string acceptor_chainID;
+				clipper::MMonomer donor_residue;
+				clipper::MMonomer acceptor_residue;
 				clipper::MAtom HBonding_hydrogen;
 				clipper::MAtom donor;
 				clipper::MAtom acceptor;
@@ -48,6 +52,10 @@ namespace privateer {
 
 				HBond() 
 				{
+					donor_chainID = "-1";
+					acceptor_chainID = "-1";
+					donor_residue = clipper::MMonomer();
+					acceptor_residue = clipper::MMonomer();
 					HBonding_hydrogen = clipper::MAtom().null();
 					donor = clipper::MAtom().null();
 					acceptor = clipper::MAtom().null();
@@ -62,8 +70,12 @@ namespace privateer {
 					bond_has_hydrogen_flag = false;
 				}
 
-				HBond(clipper::MAtom& input_donor, clipper::MAtom input_acceptor)
+				HBond(std::string input_donor_chainID, clipper::MMonomer& input_donor_residue, clipper::MAtom& input_donor, std::string input_acceptor_chainID, clipper::MMonomer& input_acceptor_residue, clipper::MAtom& input_acceptor)
 				{
+					donor_chainID = input_donor_chainID;
+					acceptor_chainID = input_acceptor_chainID;
+					donor_residue = input_donor_residue;
+					acceptor_residue = input_acceptor_residue;
 					HBonding_hydrogen = clipper::MAtom().null();
 					donor = input_donor;
 					acceptor = input_acceptor;
@@ -78,8 +90,12 @@ namespace privateer {
 					bond_has_hydrogen_flag = false;
 				}
 
-				HBond(clipper::MAtom& input_hydrogen, clipper::MAtom input_acceptor, bool input_sugar_atom_is_H_flag)
+				HBond(std::string input_hydrogen_chainID, clipper::MMonomer& input_hydrogen_residue, clipper::MAtom& input_hydrogen, std::string input_acceptor_chainID, clipper::MMonomer& input_acceptor_residue, clipper::MAtom& input_acceptor, bool input_sugar_atom_is_H_flag)
 				{
+					donor_chainID = input_hydrogen_chainID;
+					acceptor_chainID = input_acceptor_chainID;
+					donor_residue = input_hydrogen_residue;
+					acceptor_residue = input_acceptor_residue;
 					HBonding_hydrogen = input_hydrogen;
 					bond_has_hydrogen_flag = true;
 					acceptor = input_acceptor;
@@ -148,8 +164,8 @@ namespace privateer {
 				bool is_connected_to_hydrogen_donor(std::string atom_name, std::vector<residue_monomer_library_chem_comp>& residue_atoms);
 				std::vector<privateer::interactions::HBond> get_HBonds_via_mcdonald_and_thornton(int glycanIndex, double max_dist = 3.9);
 				std::vector<std::pair<clipper::MAtom, float>> get_closest_neighbour_atoms(clipper::MAtom& input_atom, clipper::MMonomer& residue_atom_located_in, clipper::String chainID);
-				std::pair<bool, HBond> make_h_bond_from_sugar_hydrogen(clipper::MAtom& hydrogen, clipper::MAtom& acceptor, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours, std::vector<std::pair<clipper::MAtom, float>>& acceptor_neighbours);
-				std::pair<bool, HBond> make_h_bond_from_environment_residue_hydrogen(clipper::MAtom& acceptor_on_sugar, clipper::MAtom& hydrogen, clipper::String hydrogen_residue_name, std::vector<std::pair<clipper::MAtom, float>>& acceptor_on_sugar_neighbours, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours);
+				std::pair<bool, HBond> make_h_bond_from_sugar_hydrogen(std::string input_hydrogen_chainID, clipper::MMonomer& input_hydrogen_residue, clipper::MAtom& hydrogen, std::string input_acceptor_chainID, clipper::MMonomer& input_acceptor_residue, clipper::MAtom& acceptor, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours, std::vector<std::pair<clipper::MAtom, float>>& acceptor_neighbours);
+				std::pair<bool, HBond> make_h_bond_from_environment_residue_hydrogen(std::string input_hydrogen_chainID, clipper::MMonomer& input_hydrogen_residue, clipper::MAtom& hydrogen, std::string input_acceptor_on_sugar_chainID, clipper::MMonomer& input_acceptor_on_sugar_residue, clipper::MAtom& acceptor_on_sugar, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours, std::vector<std::pair<clipper::MAtom, float>>& acceptor_on_sugar_neighbours);
 			private:
 				std::vector<energy_library_entry> energy_library;
 				std::vector<monomer_dictionary> monomer_dict;

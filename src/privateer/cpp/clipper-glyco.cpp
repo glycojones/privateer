@@ -36,13 +36,13 @@ MSugar::MSugar( )
 	\param mm A MMonomer object that will be extended into a sugar
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, bool& debug_output, char alt_conf)
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const clipper::MMonomer& mm, bool& debug_output, char alt_conf)
 {
 
 	// we calculate the non-bond object first, then continue with normal creation
     this->debug_output = debug_output;
 	const clipper::MAtomNonBond& nb = MAtomNonBond (ml, 5.0);
-	MSugar(ml, mm, nb, debug_output, alt_conf);
+	MSugar(ml, chainID, mm, nb, debug_output, alt_conf);
 }
 /*
 ok_with_ring() = True
@@ -62,11 +62,12 @@ In MSugar steps where if statement that returns incomplete MSugar, set these to 
 	\param nb An MAtomNonBond object to be used for the determination of the stereochemistry
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, bool& debug_output, char alt_conf )
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, bool& debug_output, char alt_conf )
 {
 
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+    this->sugar_chain_id = chainID;
     this->debug_output = debug_output;
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
@@ -398,10 +399,11 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const cl
     \param validation_data A data structure containing validation data that overrides whatever there is in the database
 	\return The MSugar object, which will contain cremer-pople parameters, conformation code, anomer, handedness and linkage information */
 
-MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf )
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf )
 {
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+    this->sugar_chain_id = chainID;
     this->debug_output = debug_output;
     this->sugar_supported = true;
     this->sugar_parent_molecule = &ml;
@@ -2293,7 +2295,7 @@ std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar:
 ///////////////////////// MDisaccharide ///////////////////////////////
 
 
-MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm, bool& debug_output )
+MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, const clipper::String chainID, clipper::MMonomer& mm, bool& debug_output )
 {
     this->debug_output = debug_output;
     int index = search_disaccharides ( mm.type().c_str() ); // we know beforehand that this is a known disaccharide, no need to re-check
@@ -2301,8 +2303,8 @@ MDisaccharide::MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBo
     clipper::data::sugar_database_entry val_string_one = clipper::data::disaccharide_database[index].sugar_one;
     clipper::data::sugar_database_entry val_string_two = clipper::data::disaccharide_database[index].sugar_two;
 
-    sugar_one = clipper::MSugar ( mmol, mm, manb, val_string_one, debug_output );
-    sugar_two = clipper::MSugar ( mmol, mm, manb, val_string_two, debug_output );
+    sugar_one = clipper::MSugar ( mmol, chainID, mm, manb, val_string_one, debug_output );
+    sugar_two = clipper::MSugar ( mmol, chainID, mm, manb, val_string_two, debug_output );
 
     sugar_one.set_type ( clipper::String( sugar_one.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_one.name_short + "]" ));
     sugar_two.set_type ( clipper::String( sugar_two.type().trim() + "[" + clipper::data::disaccharide_database[index].sugar_two.name_short + "]" ));
@@ -3826,7 +3828,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -3897,7 +3899,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -3980,7 +3982,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                         DBG << "Creating the MSugar object from potential_o_roots" << std::endl;
                     }
                     
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4050,7 +4052,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4095,7 +4097,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4180,7 +4182,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
         {
             if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
             {
-                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
                 list_of_sugars.push_back ( rootSugar );
                 clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
                 
@@ -4211,7 +4213,7 @@ MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBo
                 // Might need to revert this change. To test with running Privateer again on a local pdb_mirror.
                 if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
                 {
-                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
                     list_of_sugars.push_back ( rootSugar );
                     clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
                     
@@ -4329,7 +4331,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4401,7 +4403,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4467,7 +4469,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4524,7 +4526,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4556,7 +4558,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
             {
                 if ( clipper::MSugar::search_database( tmpmon.type().c_str() ) )
                 {
-                    clipper::MSugar sugar( mmol, tmpmon, manb, debug_output );
+                    clipper::MSugar sugar( mmol, mmol[linked[j].second.polymer()].id().trim(), tmpmon, manb, debug_output );
                     if(sugar.ring_members().size() == 5 || sugar.ring_members().size() == 6)
                     {
                         list_of_sugars.push_back ( sugar );
@@ -4623,7 +4625,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
         {
             if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
             {
-                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
                 list_of_sugars.push_back ( rootSugar );
                 clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
                 
@@ -4654,7 +4656,7 @@ void MGlycology::pyinit ( const clipper::MiniMol& mmol, const clipper::MAtomNonB
                 // Might need to revert this change. To test with running Privateer again on a local pdb_mirror.
                 if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
                 {
-                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                    clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
                     list_of_sugars.push_back ( rootSugar );
                     clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
 
@@ -4761,7 +4763,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
             if (std::find_if(sugar_list.begin(), sugar_list.end(),
                 [&](const clipper::MSugar& element) { return element.id() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id(); }) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
             {
-                clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
+                clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()].id().trim(), tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
                     clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];

@@ -134,9 +134,9 @@ namespace clipper
         public:
 
             MSugar ();
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
-            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
+            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
@@ -176,6 +176,8 @@ namespace clipper
 
             clipper::String handedness() const { return sugar_handedness; }
             //!< get the sugar's handedness: "D" for dextro, "L" for laevo, "N" for undetermined and "X" for unsupported (missing from the clipper::data sugar database)
+
+            clipper::String chain_id() const { return sugar_chain_id; };
 
             clipper::String type_of_sugar() const { return sugar_denomination; }
             //!< returns a string containing an anomer-handedness-type denomination, e.g. "beta-D-aldopyranose"
@@ -324,6 +326,7 @@ namespace clipper
             std::vector<clipper::ftype>     sugar_ring_angles;                  // ring angles, starting with last_carbon-O-anomeric carbon
             std::vector<clipper::ftype>     sugar_ring_torsion;                 // torsion angles, starting with C5-O5-C1-C2
             int                             sugar_index;                        // 9999 if unchecked, 101010 if absent from the database, 0-400 if found
+            String                          sugar_chain_id;
             String                          sugar_denomination;                 // e.g. alpha-aldopyranose
             String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
             String                          sugar_handedness;                   // "D", "L" or "undetermined"
@@ -385,7 +388,7 @@ namespace clipper
 
             MDisaccharide () {} //!< null constructor
             MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two, bool& debug_output) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; this->debug_output = debug_output; }
-            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm, bool& debug_output );
+            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, const clipper::String chainID, clipper::MMonomer& mm, bool& debug_output );
             clipper::MSugar& get_first_sugar () { return sugar_one; }
             clipper::MSugar& get_second_sugar () { return sugar_two; }
 
