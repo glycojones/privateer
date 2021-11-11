@@ -82,6 +82,34 @@ namespace privateer {
             }
         }
 
+        privateer::interactions::CHPiBondsParser::CHPiBondsParser(clipper::MiniMol& mmol, clipper::MGlycan& input_glycan)
+        {
+            this->input_model = mmol;
+            this->CHPi_bonds = update_CHPi_bonds(input_glycan);
+        }
+
+        std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::update_CHPi_bonds(clipper::MGlycan& input_glycan)
+        {
+            std::vector<privateer::interactions::CHPiBond> result;
+            std::vector<clipper::MSugar> sugars_in_glycan = input_glycan.get_sugars();
+            for(int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
+            {
+                clipper::MSugar currentSugar = sugars_in_glycan[sugar];
+                std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > contacts = currentSugar.get_stacked_residues();
+                for(int contact = 0; contact < contacts.size(); contact++)
+                {
+                    std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > current_contact = contacts[contact];
+                    float angle = current_contact.second;
+                    CHPiBond new_bond(currentSugar.chain_id().substr(0,1), input_model[current_contact.first.polymer()].id().trim().substr(0,1), currentSugar, input_model[current_contact.first.polymer()][current_contact.first.monomer()], angle);
+                    new_bond.sugarIndex = sugar;
+                    new_bond.glycanSize = sugars_in_glycan.size();
+                    result.push_back(new_bond);
+                }
+            }
+
+            return result;
+        }
+
         privateer::interactions::HBondsParser::HBondsParser(std::string& input_model)
         {
             hydrogenate_input_model(input_model);
@@ -309,14 +337,16 @@ namespace privateer {
                                     std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
                                     std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
                                     std::pair<bool, HBond> new_h_bond = make_h_bond_from_sugar_hydrogen(glycanChainID, currentSugar, currentAtom, hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hb_potential_target_neighbours, hb_potential_neighbour_neighbours );
+                                    new_h_bond.second.sugarIndex = sugar;
+                                    new_h_bond.second.glycanSize = inputGlycanSugars.size();
                                     if(new_h_bond.first)
                                         output.push_back(new_h_bond.second);
                                     
-                                    std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
-                                                << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
-                                                << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                                << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
-                                                << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
+                                    // std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+                                    //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
+                                    //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
+                                    //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                    //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
                                     
                                 }
                             }
@@ -327,14 +357,16 @@ namespace privateer {
                                     std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
                                     std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
                                     std::pair<bool, HBond> new_h_bond = make_h_bond_from_environment_residue_hydrogen(hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], glycanChainID, currentSugar, currentAtom, hb_potential_neighbour_neighbours, hb_potential_target_neighbours);
+                                    new_h_bond.second.sugarIndex = sugar;
+                                    new_h_bond.second.glycanSize = inputGlycanSugars.size();
                                     if(new_h_bond.first)
                                         output.push_back(new_h_bond.second);
                                     
-                                    std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
-                                                << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
-                                                << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                                << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
-                                                << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
+                                    // std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+                                    //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
+                                    //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
+                                    //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                    //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
 
                                 }
                             }
@@ -649,7 +681,7 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
         if (!monomer_dir.empty()) 
         {
             path << monomer_dir << initial << "/" << input_residue_type << ".cif";
-            std::cout << path.str() << std::endl;
+            // std::cout << path.str() << std::endl;
             gemmi::cif::Document monomer_dict_gemmi_document = gemmi::cif::read_file( path.str() );
             std::string block_name_search_string = "comp_" + input_residue_type;
             std::vector<residue_monomer_library_chem_comp> dict_of_atoms;

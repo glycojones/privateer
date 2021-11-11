@@ -42,6 +42,8 @@ namespace privateer {
 				clipper::MAtom donor;
 				clipper::MAtom acceptor;
 				clipper::MAtom acceptor_neighbour;
+				int sugarIndex;
+				int glycanSize;
 				float angle_1;
 				float angle_2;
 				float angle_3;
@@ -61,6 +63,8 @@ namespace privateer {
 					acceptor = clipper::MAtom().null();
 					acceptor_neighbour = clipper::MAtom().null();
 					sugar_atom_is_donor = true;
+					int sugarIndex = -1;
+					int glycanSize = -1;
 					angle_1 = -1;
 					angle_2 = -1;
 					angle_3 = -1;
@@ -81,6 +85,8 @@ namespace privateer {
 					acceptor = input_acceptor;
 					acceptor_neighbour = clipper::MAtom().null();
 					sugar_atom_is_donor = false;
+					int sugarIndex = -1;
+					int glycanSize = -1;
 					angle_1 = -1;
 					angle_2 = -1;
 					angle_3 = -1;
@@ -102,6 +108,8 @@ namespace privateer {
 					donor = clipper::MAtom().null();
 					acceptor_neighbour = clipper::MAtom().null();
 					sugar_atom_is_donor = input_sugar_atom_is_H_flag;
+					int sugarIndex = -1;
+					int glycanSize = -1;
 					angle_1 = -1;
 					angle_2 = -1;
 					angle_3 = -1;
@@ -112,6 +120,40 @@ namespace privateer {
 
 				bool has_hydrogen() const { return bond_has_hydrogen_flag; }
 				bool ligand_atom_is_H() const { return hydrogen_is_sugar_atom; }
+		};
+
+		class CHPiBond
+		{
+			public:
+				std::string sugar_chainID;
+				std::string stacked_residue_chainID;
+				clipper::MSugar sugar;
+				clipper::MMonomer stacked_residue;
+				float angle;
+				int sugarIndex;
+				int glycanSize;
+
+				CHPiBond(std::string input_sugar_chainID, std::string input_stacked_residue_chainID, clipper::MSugar& input_sugar, clipper::MMonomer& input_stacked_residue, float input_angle)
+				{
+					sugar_chainID = input_sugar_chainID;
+					stacked_residue_chainID = input_stacked_residue_chainID;
+					sugar = input_sugar;
+					stacked_residue = input_stacked_residue;
+					angle = input_angle;
+					sugarIndex = -1;
+					glycanSize = -1;
+				}
+		};
+
+		class CHPiBondsParser
+		{
+			public:
+				CHPiBondsParser(clipper::MiniMol& mmol, clipper::MGlycan& input_glycan);
+				std::vector<privateer::interactions::CHPiBond> get_CHPi_bonds() { return CHPi_bonds; };
+			private:
+				clipper::MiniMol input_model;
+				std::vector<privateer::interactions::CHPiBond> CHPi_bonds;
+				std::vector<privateer::interactions::CHPiBond> update_CHPi_bonds(clipper::MGlycan& input_glycan);
 		};
 
 		class HBondsParser
