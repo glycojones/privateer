@@ -5,10 +5,9 @@
 // York Structural Biology Laboratory
 // The University of York
 
-#ifndef PRIVATEER_MODELLING_H_INCLUDED
-#define PRIVATEER_MODELLING_H_INCLUDED
+#ifndef PRIVATEER_INTERACTIONS_H_INCLUDED
+#define PRIVATEER_INTERACTIONS_H_INCLUDED
 
-#include <pybind11/pybind11.h>
 #include <fstream>
 #include <string>
 #include <locale>
@@ -16,14 +15,13 @@
 #include "clipper-glyco.h"
 #include "privateer-restraints.h"
 #include "privateer-lib.h"
-#include <gemmi/mmread.hpp>
-#include <gemmi/monlib.hpp>
-#include <gemmi/placeh.hpp>
-#include <gemmi/fstream.hpp>
-#define GEMMI_READ_CIF_IMPLEMENTATION
-#include <gemmi/read_cif.hpp>
-#define GEMMI_WRITE_IMPLEMENTATION
-#include <gemmi/to_pdb.hpp>
+
+#include "gemmi/mmread.hpp"
+#include "gemmi/monlib.hpp"
+#include "gemmi/placeh.hpp"
+#include "gemmi/fstream.hpp"
+#include "gemmi/cif.hpp"
+#include "gemmi/to_pdb.hpp"
 
 
 
@@ -148,12 +146,15 @@ namespace privateer {
 		class CHPiBondsParser
 		{
 			public:
-				CHPiBondsParser(clipper::MiniMol& mmol, clipper::MGlycan& input_glycan);
-				std::vector<privateer::interactions::CHPiBond> get_CHPi_bonds() { return CHPi_bonds; };
+				// Need to transfer this from MSugar class to this namespace, when get_stacked_residues gets called from Python, the pointers to minimol and manb_object get lost.
+				CHPiBondsParser() { }
+				CHPiBondsParser(std::string& input_model);
+				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
 			private:
 				clipper::MiniMol input_model;
-				std::vector<privateer::interactions::CHPiBond> CHPi_bonds;
-				std::vector<privateer::interactions::CHPiBond> update_CHPi_bonds(clipper::MGlycan& input_glycan);
+				clipper::MAtomNonBond manb_object;
+				clipper::MGlycology mglycology;
+				
 		};
 
 		class HBondsParser
@@ -200,6 +201,7 @@ namespace privateer {
 					std::vector<residue_monomer_library_chem_comp> dictionary_of_atoms;
 				};
 
+				HBondsParser() { }
 				HBondsParser(std::string& input_model);
 				clipper::MiniMol mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model);
 				hb_type get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);

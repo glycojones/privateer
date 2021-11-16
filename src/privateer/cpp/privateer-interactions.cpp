@@ -38,7 +38,7 @@ namespace privateer {
                         res_names.size(), input_model.c_str());
                 
                 gemmi::MonLib monlib = gemmi::read_monomer_lib(monomer_dir, res_names,
-                                                        gemmi::read_cif_gz);
+                                                        gemmi::cif::read_file);
                                 
                 for (size_t i = 0; i != st.models.size(); ++i)
                     gemmi::prepare_topology(st, monlib, i, h_change, false);
@@ -82,29 +82,50 @@ namespace privateer {
             }
         }
 
-        privateer::interactions::CHPiBondsParser::CHPiBondsParser(clipper::MiniMol& mmol, clipper::MGlycan& input_glycan)
+        privateer::interactions::CHPiBondsParser::CHPiBondsParser(std::string& input_model)
         {
-            this->input_model = mmol;
-            this->CHPi_bonds = update_CHPi_bonds(input_glycan);
+
+            clipper::MMDBfile mfile;
+            clipper::String clipperfied_input_model_path = input_model;
+            privateer::util::read_coordinate_file_mtz(mfile, this->input_model, clipperfied_input_model_path, true);
+			
+           
+            this->manb_object = clipper::MAtomNonBond( this->input_model, 5.0);
+
+            this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
         }
 
-        std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::update_CHPi_bonds(clipper::MGlycan& input_glycan)
+        std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_CHPi_interactions(int glycanIndex)
         {
+            std::vector<clipper::MGlycan> list_of_glycans = this->mglycology.get_list_of_glycans();
+            if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
+                throw std::runtime_error("Out of bounds access to std::vector storing MGlycans. Supplied index: " + std::to_string(glycanIndex) + "\tsize of vector: " + std::to_string(list_of_glycans.size()));
+            
             std::vector<privateer::interactions::CHPiBond> result;
-            std::vector<clipper::MSugar> sugars_in_glycan = input_glycan.get_sugars();
+
+            clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
+            std::vector<clipper::MSugar> sugars_in_glycan = inputGlycan.get_sugars();
             for(int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
             {
                 clipper::MSugar currentSugar = sugars_in_glycan[sugar];
                 std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > contacts = currentSugar.get_stacked_residues();
-                for(int contact = 0; contact < contacts.size(); contact++)
+                if(contacts.size() > 0)
                 {
-                    std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > current_contact = contacts[contact];
-                    float angle = current_contact.second;
-                    CHPiBond new_bond(currentSugar.chain_id().substr(0,1), input_model[current_contact.first.polymer()].id().trim().substr(0,1), currentSugar, input_model[current_contact.first.polymer()][current_contact.first.monomer()], angle);
-                    new_bond.sugarIndex = sugar;
-                    new_bond.glycanSize = sugars_in_glycan.size();
-                    result.push_back(new_bond);
+                    for(int contact = 0; contact < contacts.size(); contact++)
+                    {
+                        std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > current_contact = contacts[contact];
+                        float angle = current_contact.second;
+                        CHPiBond new_bond(currentSugar.chain_id().substr(0,1), input_model[current_contact.first.polymer()].id().trim().substr(0,1), currentSugar, input_model[current_contact.first.polymer()][current_contact.first.monomer()], angle);
+                        new_bond.sugarIndex = sugar;
+                        new_bond.glycanSize = sugars_in_glycan.size();
+                        result.push_back(new_bond);
+                    }
                 }
+                else
+                {
+                    return result;
+                }
+
             }
 
             return result;
@@ -458,12 +479,11 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     // Angle H-Acceptor-AcceptorNeighbour
     for(int i = 0; i < acceptor_neighbours.size(); i++)
     {
-        bool AA_angles_are_good = true;
         double H_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen.coord_orth(), acceptor.coord_orth(), acceptor_neighbours[i].first.coord_orth()));
         
         bond.angle_2 = H_A_AA_angle;
         if(H_A_AA_angle < 90)
-            AA_angles_are_good = false;
+            neighbour_distances_and_angles_are_good = false;
         
         // Angle Donor-Acceptor-AcceptorNeighbour
         double D_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), acceptor.coord_orth(), acceptor_neighbours[i].first.coord_orth()));
@@ -472,9 +492,9 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
         bond.angle_3 = D_A_AA_angle;
 
         if(D_A_AA_angle < 90)
-            AA_angles_are_good = false;
+            neighbour_distances_and_angles_are_good = false;
         
-        if(AA_angles_are_good)
+        if(!neighbour_distances_and_angles_are_good)
             break;
     }
 
@@ -528,10 +548,9 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     // Angle Hydrogen-Acceptor-AcceptorNeighbour
     for(int i = 0; i < acceptor_on_sugar_neighbours.size(); i++)
     {
-        bool A_AA_angles_are_good = true;
         double H_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen.coord_orth(), acceptor_on_sugar.coord_orth(), acceptor_on_sugar_neighbours[i].first.coord_orth()));
         if(H_A_AA_angle < 90)
-            A_AA_angles_are_good = false;
+            neighbour_distances_and_angles_are_good = false;
         
 
         bond.acceptor = acceptor_on_sugar;
@@ -542,7 +561,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
         {
             double D_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), acceptor_on_sugar.coord_orth(), acceptor_on_sugar_neighbours[i].first.coord_orth()));
             if(D_A_AA_angle < 90)
-                A_AA_angles_are_good = false;
+                neighbour_distances_and_angles_are_good = false;
             
 
             bond.acceptor_neighbour = acceptor_on_sugar_neighbours[i].first;
@@ -555,7 +574,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
             bond.angle_3 = D_A_AA_angle;
         }
 
-        if(A_AA_angles_are_good)
+        if(!neighbour_distances_and_angles_are_good)
             break;
     }
     

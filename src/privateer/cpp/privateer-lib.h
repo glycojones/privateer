@@ -22,8 +22,6 @@
 #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
 
-#include <pybind11/embed.h>  // py::scoped_interpreter
-
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 inline const std::string b2s ( bool b )

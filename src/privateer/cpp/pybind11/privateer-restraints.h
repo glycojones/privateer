@@ -6,10 +6,10 @@
 // The University of York
 
 
-#include <gemmi/chemcomp.hpp>
-#include <gemmi/cif.hpp>
-#include <gemmi/calculate.hpp>
-#include <gemmi/to_cif.hpp>  // for write_cif_to_stream
+#include "gemmi/chemcomp.hpp"
+#include "gemmi/cif.hpp"
+#include "gemmi/calculate.hpp"
+#include "gemmi/to_cif.hpp"  // for write_cif_to_stream
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <string>

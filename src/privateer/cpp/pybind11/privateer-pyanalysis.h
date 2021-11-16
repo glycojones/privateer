@@ -5,7 +5,6 @@
 // York Structural Biology Laboratory
 // The University of York
 
-
 #include <Python.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -18,6 +17,7 @@
 #include "privateer-xray.h"
 #include "privateer-cryo_em.h"
 #include "privateer-dbquery.h"
+#include "privateer-interactions.h"
 
 
 #ifndef PRIVATEER_PYANALYSIS_H_INCLUDED
@@ -34,12 +34,41 @@ namespace privateer {
     // class Privateer/Session/Core/Settings; // for stuff like setting output directory, calling a pipeline, user settings, generating coot files etc etc.
     // Maybe even that's the place to force users to default nCores arguments and stuff like that.
     // Leaning the closest to class Session or class Core;
+    class GlycosylationInteractions;
+    class GlycosylationComposition;
     class GlycanStructure;
     class CarbohydrateStructure;
     class XRayData;
     class CryoEMData;
     class OfflineGlycomicsDatabase;
     class OfflineTorsionsDatabase;
+
+    class GlycosylationInteractions
+    {
+      public:
+        GlycosylationInteractions() { }
+        GlycosylationInteractions(std::string& path_to_model_file) {
+          this->input_path = path_to_model_file;
+          this->read_from_file(path_to_model_file);
+        }
+        void read_from_file (std::string& path_to_model_file);
+        std::string get_path_of_model_file_used ( ) { return input_path; };
+        
+        pybind11::list get_all_detected_interactions();
+        pybind11::list get_all_detected_hbonds();
+        pybind11::list get_all_detected_chpibonds();
+        pybind11::dict get_all_interactions_for_specific_glycan(int glycanIndex);
+        pybind11::dict get_hbonds_for_specific_glycan(int glycanIndex);
+        pybind11::dict get_chpibonds_for_specific_glycan(int glycanIndex);
+
+      private:
+        std::string input_path;
+        clipper::MiniMol input_model;
+				clipper::MAtomNonBond manb_object;
+				clipper::MGlycology mglycology;
+        privateer::interactions::HBondsParser hbonds;
+        privateer::interactions::CHPiBondsParser chpibonds;
+    };
 
     class GlycosylationComposition 
     {
