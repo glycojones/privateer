@@ -108,13 +108,13 @@ namespace privateer {
             for(int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
             {
                 clipper::MSugar currentSugar = sugars_in_glycan[sugar];
-                std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > contacts = currentSugar.get_stacked_residues();
+                std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > contacts = privateer::interactions::CHPiBondsParser::get_stacked_residues_python(currentSugar);
                 if(contacts.size() > 0)
                 {
                     for(int contact = 0; contact < contacts.size(); contact++)
                     {
                         std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > current_contact = contacts[contact];
-                        float angle = current_contact.second;
+                        float angle = clipper::Util::rad2d(current_contact.second);
                         CHPiBond new_bond(currentSugar.chain_id().substr(0,1), input_model[current_contact.first.polymer()].id().trim().substr(0,1), currentSugar, input_model[current_contact.first.polymer()][current_contact.first.monomer()], angle);
                         new_bond.sugarIndex = sugar;
                         new_bond.glycanSize = sugars_in_glycan.size();
@@ -129,6 +129,86 @@ namespace privateer {
             }
 
             return result;
+        }
+
+        std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(clipper::MSugar& input_sugar)
+        {
+            clipper::MAtom ma;
+            clipper::Coord_orth centre_apolar;
+
+            if ( input_sugar.handedness() == "D" )
+                centre_apolar = clipper::Coord_orth((input_sugar.ring_members()[1].coord_orth().x() +
+                                                    input_sugar.ring_members()[3].coord_orth().x() +
+                                                    input_sugar.ring_members()[5].coord_orth().x() ) / 3.0,
+                                                    (input_sugar.ring_members()[1].coord_orth().y() +
+                                                    input_sugar.ring_members()[3].coord_orth().y() +
+                                                    input_sugar.ring_members()[5].coord_orth().y() ) / 3.0,
+                                                    (input_sugar.ring_members()[1].coord_orth().z() +
+                                                    input_sugar.ring_members()[3].coord_orth().z() +
+                                                    input_sugar.ring_members()[5].coord_orth().z() ) / 3.0 );
+            else
+                centre_apolar = clipper::Coord_orth((input_sugar.ring_members()[1].coord_orth().x() +
+                                                    input_sugar.ring_members()[5].coord_orth().x() ) / 2.0,
+                                                    (input_sugar.ring_members()[1].coord_orth().y() +
+                                                    input_sugar.ring_members()[5].coord_orth().y() ) / 2.0,
+                                                    (input_sugar.ring_members()[1].coord_orth().z() +
+                                                    input_sugar.ring_members()[5].coord_orth().z() ) / 2.0 );
+
+            std::vector<std::pair<clipper::MAtomIndexSymmetry, float>> results;
+
+            const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
+
+            for ( int k = 0 ; k < neighbourhood.size() ; k++ )
+            {
+                const clipper::MMonomer& mmon = this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()];
+
+                if (( mmon.type() != "TRP" ) &&
+                    ( mmon.type() != "TYR" ) &&
+                    ( mmon.type() != "PHE" ) &&
+                    ( mmon.type() != "HIS" ))
+                    continue;
+
+                clipper::ftype distance = 0.0;
+
+                if ( neighbourhood[k].symmetry() == 0 )
+                {
+                    distance = clipper::Coord_orth::length(this->input_model.atom(neighbourhood[k]).coord_orth(), centre_apolar);
+                }
+                else // this neighbour is actually a symmetry mate
+                {
+                    clipper::Spacegroup spgr = this->input_model.spacegroup();
+                    clipper::Coord_frac f1 = this->input_model.atom( neighbourhood[k] ).coord_orth().coord_frac( this->input_model.cell() );
+                    clipper::Coord_frac f2 = centre_apolar.coord_frac( this->input_model.cell() );
+                    f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
+                    f1 = f1.lattice_copy_near( f2 );
+                    distance = sqrt(( f2 - f1 ).lengthsq( this->input_model.cell() ));
+                }
+
+                if ( distance < 4.0 ) // check distance, compliant with Hudson et al., JACS 2015
+                {
+                    clipper::Vec3<clipper::ftype> aromatic_plane = find_aromatic_plane ( mmon );
+                    clipper::ftype angle = get_angle ( aromatic_plane, input_sugar.ring_mean_plane () );
+
+                    if ( angle > 2.75 ) // 0 < angle < Pi, angle must be 30deg at most, also compliant with Hudson et al., JACS 2015
+                    {
+                        std::pair < clipper::MAtomIndexSymmetry, float > individual_result;
+                        individual_result.first = neighbourhood[k];
+                        individual_result.second = angle;
+
+                        int residue;
+
+                        for ( residue = 0 ; residue < results.size(); residue++ )
+                        {
+                            if ( this->input_model[results[residue].first.polymer()][results[residue].first.monomer()].id() == this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() )
+                                break;
+                        }
+
+                        if ( residue == results.size() ) // not found in the results vector
+                            results.push_back ( individual_result );
+                    }
+                }
+            }
+            return results;
         }
 
         privateer::interactions::HBondsParser::HBondsParser(std::string& input_model)

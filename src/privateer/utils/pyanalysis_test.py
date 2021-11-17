@@ -4,6 +4,7 @@ print("____________________GLYCOSYLATION LEVEL_______________")
 glycosylation = pvtcore.GlycosylationComposition(
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
 )
+
 # glycosylation = pvtcore.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
 # print("Expression system defined: " + glycosylation.get_expression_system_used())
 # print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
@@ -17,6 +18,10 @@ glycosylation = pvtcore.GlycosylationComposition(
 # print(result)
 
 listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
+
+interactions = pvtcore.GlycosylationInteractions("/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb")
+result = interactions.get_all_detected_interactions()
+print(result)
 
 print("\n")
 for entry in listOfDetectedGlycans:

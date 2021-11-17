@@ -146,10 +146,10 @@ namespace privateer {
 		class CHPiBondsParser
 		{
 			public:
-				// Need to transfer this from MSugar class to this namespace, when get_stacked_residues gets called from Python, the pointers to minimol and manb_object get lost.
 				CHPiBondsParser() { }
 				CHPiBondsParser(std::string& input_model);
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
+				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar);
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
