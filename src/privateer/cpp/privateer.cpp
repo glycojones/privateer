@@ -26,7 +26,7 @@
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
 #include "privateer-dbquery.h"
-#include "privateer-interactions.h"
+// #include "privateer-interactions.h"
 #include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
@@ -630,7 +630,7 @@ int main(int argc, char** argv)
                 {
                     if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
                     {
-                        clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
+                        clipper::MDisaccharide md(mmol, manb, mmol[p].id().trim(), mmol[p][m], debug_output );
                         sugarList.push_back ( mmol[p][m] );
                         sugarList.push_back ( mmol[p][m] );
                         clipper::String id = mmol[p].id();
@@ -663,17 +663,17 @@ int main(int argc, char** argv)
                         if ( n_conf > 0 )
                         {
                             if ( n_conf == 1 )
-                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                                msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
                             else
                             {
-                                msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
-                                msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
+                                msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
+                                msug_b = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[1]);
                             }
 
                         }
                         else
                         {
-                            msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
+                            msug = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
                         }
 
                         sugarList.push_back(mmol[p][m]);
@@ -725,14 +725,14 @@ int main(int argc, char** argv)
                     {
                         if ( input_validation_options.size() > 0 )
                         {
-                            const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation, debug_output );
+                            const clipper::MSugar msug ( mmol, mmol[p].id().trim(), mmol[p][m], manb, external_validation, debug_output );
 
                             sugarList.push_back(mmol[p][m]);
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
                         }
                         else
                         {
-                            const clipper::MSugar msug(mmol, mmol[p][m], manb, debug_output);
+                            const clipper::MSugar msug(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
 
                             sugarList.push_back(mmol[p][m]);
                             ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
@@ -1171,6 +1171,7 @@ int main(int argc, char** argv)
 
         // privateer::interactions::hydrogenate_input_model(input_model);
         // privateer::interactions::HBondsParser hbonds(input_model);
+        // hbonds.get_HBonds_via_mcdonald_and_thornton(0);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[15], mmol);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[10], mmol);
         // std::vector<privateer::interactions::HBond> hydrogen_bonds = hbonds.get_HBonds_via_mcdonald_and_thornton(list_of_glycans[0], mmol);
@@ -1708,7 +1709,7 @@ int main(int argc, char** argv)
             {
                 if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
                 {
-                    clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
+                    clipper::MDisaccharide md(mmol, manb, mmol[p].id().trim(), mmol[p][m], debug_output );
                     sugarList.push_back ( mmol[p][m] );
                     sugarList.push_back ( mmol[p][m] );
                     clipper::String id = mmol[p].id();
@@ -1756,17 +1757,17 @@ int main(int argc, char** argv)
                     if ( n_conf > 0 )
                     {
                         if ( n_conf == 1 )
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                            msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
                         else
                         {
-                            msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
-                            msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
+                            msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
+                            msug_b = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[1]);
                         }
 
                     }
                     else
                     {
-                        msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
+                        msug = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
                     }
 
                     sugarList.push_back(mmol[p][m]);
@@ -1812,14 +1813,14 @@ int main(int argc, char** argv)
                 {
                     if ( input_validation_options.size() > 0 )
                     {
-                        const clipper::MSugar msug ( mmol, mmol[p][m], manb, external_validation, debug_output );
+                        const clipper::MSugar msug ( mmol, mmol[p].id().trim(), mmol[p][m], manb, external_validation, debug_output );
 
                         sugarList.push_back(mmol[p][m]);
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));
                     }
                     else
                     {
-                        const clipper::MSugar msug(mmol, mmol[p][m], manb, debug_output);
+                        const clipper::MSugar msug(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
 
                         sugarList.push_back(mmol[p][m]);
                         ligandList.push_back(std::pair<clipper::String, clipper::MSugar> (mmol[p].id().trim(), msug));

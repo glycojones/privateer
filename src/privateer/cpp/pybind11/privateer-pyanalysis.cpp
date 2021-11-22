@@ -11,6 +11,240 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
+///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
+
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file) 
+{
+    if(path_to_model_file == "undefined")
+    {
+        throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
+
+    clipper::MMDBfile mfile;
+    clipper::String clipperfied_input_model_path = path_to_model_file;
+    privateer::util::read_coordinate_file_mtz(mfile, this->input_model, clipperfied_input_model_path, true);
+    
+    
+    this->manb_object = clipper::MAtomNonBond( this->input_model, 5.0 );
+
+    this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
+
+    this->hbonds = privateer::interactions::HBondsParser(path_to_model_file);
+    this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file);
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detected_interactions()
+{
+    pybind11::list result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+    for(int i = 0; i < list_of_glycans.size(); i++)
+    {
+        pybind11::dict entry;
+        clipper::MGlycan inputGlycan = list_of_glycans[i];
+
+        std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+        entry["glycanIndex"] = i;
+        entry["glycanWURCS"] = glycanWURCS;
+        entry["totalGlycansInModel"] = list_of_glycans.size();
+        pybind11::dict retrieved_hbonds = get_hbonds_for_specific_glycan(i);
+        pybind11::dict retrieved_chpi = get_chpibonds_for_specific_glycan(i);
+
+        entry["CH_Pi"] = retrieved_chpi["CH_Pi"];
+        entry["HBonds"] = retrieved_hbonds["HBonds"];
+        result.append(entry);
+    }
+    
+    return result;
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detected_hbonds()
+{
+    pybind11::list result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+    for(int i = 0; i < list_of_glycans.size(); i++)
+    {
+        pybind11::dict entry;
+        clipper::MGlycan inputGlycan = list_of_glycans[i];
+
+        std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+        entry["glycanIndex"] = i;
+        entry["glycanWURCS"] = glycanWURCS;
+        entry["totalGlycansInModel"] = list_of_glycans.size();
+        pybind11::dict retrieved_hbonds = get_hbonds_for_specific_glycan(i);
+
+        entry["HBonds"] = retrieved_hbonds["HBonds"];
+        result.append(entry);
+    }
+    
+
+    return result;
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detected_chpibonds()
+{
+    pybind11::list result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+    for(int i = 0; i < list_of_glycans.size(); i++)
+    {
+        pybind11::dict entry;
+        clipper::MGlycan inputGlycan = list_of_glycans[i];
+
+        std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+        entry["glycanIndex"] = i;
+        entry["glycanWURCS"] = glycanWURCS;
+        entry["totalGlycansInModel"] = list_of_glycans.size();
+        pybind11::dict retrieved_chpi = get_chpibonds_for_specific_glycan(i);
+
+        entry["CH_Pi"] = retrieved_chpi["CH_Pi"];
+        result.append(entry);
+    }
+    
+
+    return result;
+}
+
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_all_interactions_for_specific_glycan(int glycanIndex)
+{
+    pybind11::dict result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+
+    if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
+    {
+        throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of glycans detected in the model. \nInput: " + std::to_string(glycanIndex) + "\tPermitted Range: [0-" + std::to_string(list_of_glycans.size() - 1) + "]");
+    }
+
+    clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
+
+    std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+    result["glycanIndex"] = glycanIndex;
+    result["glycanWURCS"] = glycanWURCS;
+    result["totalGlycansInModel"] = list_of_glycans.size();
+    pybind11::dict retrieved_hbonds = get_hbonds_for_specific_glycan(glycanIndex);
+    pybind11::dict retrieved_chpi = get_chpibonds_for_specific_glycan(glycanIndex);
+
+    result["HBonds"] = retrieved_hbonds["HBonds"];
+    result["CH_Pi"] = retrieved_chpi["CH_Pi"];
+
+    return result;
+}
+
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_hbonds_for_specific_glycan(int glycanIndex)
+{
+    pybind11::dict result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+
+    if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
+    {
+        throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of glycans detected in the model. \nInput: " + std::to_string(glycanIndex) + "\tPermitted Range: [0-" + std::to_string(list_of_glycans.size() - 1) + "]");
+    }
+
+    clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
+
+    std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+    result["glycanIndex"] = glycanIndex;
+    result["glycanWURCS"] = glycanWURCS;
+    result["totalGlycansInModel"] = list_of_glycans.size();
+    std::vector<privateer::interactions::HBond> output = hbonds.get_HBonds_via_mcdonald_and_thornton(glycanIndex);
+
+    if(output.size() > 0)
+    {
+        pybind11::list export_list;
+        for(int i = 0; i < output.size(); i++)
+        {
+            clipper::MMonomer donor_residue = output[i].donor_residue;
+            std::string donor_chainID = output[i].donor_chainID.substr(0,1);
+            std::string donor_residueType = donor_residue.type().trim();
+            std::string donor_residueID = donor_residue.id().trim();
+            int donor_residueseqnum = donor_residue.seqnum();
+            clipper::MMonomer acceptor_residue = output[i].acceptor_residue;
+            std::string acceptor_chainID = output[i].acceptor_chainID.substr(0,1);
+            std::string acceptor_residueType = acceptor_residue.type().trim();
+            std::string acceptor_residueID = acceptor_residue.id().trim();
+            int acceptor_residueseqnum = acceptor_residue.seqnum();
+
+            clipper::MAtom HBonding_hydrogen = output[i].HBonding_hydrogen;
+            clipper::MAtom donor_atom = output[i].donor;
+            clipper::MAtom acceptor_atom = output[i].acceptor;
+            clipper::MAtom acceptor_neighbour = output[i].acceptor_neighbour;
+
+            std::string HBonding_hydrogen_id = HBonding_hydrogen.id().trim();
+            std::string donor_atom_id = donor_atom.id().trim();
+            std::string acceptor_atom_id = acceptor_atom.id().trim();
+            std::string acceptor_neighbour_id = acceptor_neighbour.id().trim();
+
+            auto donor = pybind11::dict("donorChainID"_a=donor_chainID, "donorResidueType"_a=donor_residueType, "donorResidueID"_a=donor_residueID, "donorResidueSeqnum"_a=donor_residueseqnum, "donorAtom"_a=donor_atom_id, "donorH"_a=HBonding_hydrogen_id);
+            auto acceptor = pybind11::dict("acceptorChainID"_a=acceptor_chainID, "acceptorResidueType"_a=acceptor_residueType, "acceptorResidueID"_a=acceptor_residueID, "acceptorResidueSeqnum"_a=acceptor_residueseqnum, "acceptorAtom"_a=acceptor_atom_id, "acceptorNeighbour"_a=acceptor_neighbour_id);
+            auto entry = pybind11::dict("sugarIndex"_a=output[i].sugarIndex, "glycanSize"_a=output[i].glycanSize, "donorInfo"_a=donor, "acceptorInfo"_a=acceptor, "angle_1"_a=output[i].angle_1, "angle_2"_a=output[i].angle_2, "angle_3"_a=output[i].angle_3, "HBondLength"_a=output[i].HBondLength, "sugar_atom_is_donor"_a=output[i].sugar_atom_is_donor, "hydrogen_is_sugar_atom"_a=output[i].hydrogen_is_sugar_atom, "bond_has_hydrogen_flag"_a=output[i].bond_has_hydrogen_flag);
+
+            export_list.append(entry);
+        }
+        result["HBonds"] = export_list;
+    }
+    else
+    {
+        result["HBonds"] = pybind11::cast<pybind11::none>(Py_None);
+    }
+
+    return result;
+}
+
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_chpibonds_for_specific_glycan(int glycanIndex)
+{
+    pybind11::dict result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+
+    if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
+    {
+        throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of glycans detected in the model. \nInput: " + std::to_string(glycanIndex) + "\tPermitted Range: [0-" + std::to_string(list_of_glycans.size() - 1) + "]");
+    }
+
+    clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
+
+    std::string glycanWURCS = inputGlycan.generate_wurcs();
+
+    result["glycanIndex"] = glycanIndex;
+    result["glycanWURCS"] = glycanWURCS;
+    result["totalGlycansInModel"] = list_of_glycans.size();
+    std::vector<privateer::interactions::CHPiBond> output = chpibonds.get_CHPi_interactions(glycanIndex);
+
+    if(output.size() > 0)
+    {
+        pybind11::list chpi_interactions;
+        for(int i = 0; i < output.size(); i++)
+        {
+            clipper::MSugar target_sugar = output[i].sugar;
+            clipper::MMonomer stacked_residue = output[i].stacked_residue;
+            std::string target_sugar_type = target_sugar.type().trim();
+            int target_sugar_seqnum = target_sugar.seqnum();
+            std::string target_sugar_pdb_id = target_sugar.id().trim();
+            std::string stacked_residue_type = stacked_residue.type().trim();
+            int stacked_residue_seqnum = stacked_residue.seqnum();
+            std::string stacked_residue_pdb_id = stacked_residue.id().trim();
+            auto targetSugar = pybind11::dict("targetSugarChainID"_a=output[i].sugar_chainID, "target_sugar_type"_a=target_sugar_type, "target_sugar_seqnum"_a=target_sugar_seqnum, "target_sugar_pdb_id"_a=target_sugar_pdb_id);
+            auto stackedResidue = pybind11::dict("stackedResidueChainID"_a=output[i].stacked_residue_chainID, "stacked_residue_type"_a=stacked_residue_type, "stacked_residue_seqnum"_a=stacked_residue_seqnum, "stacked_residue_pdb_id"_a=stacked_residue_pdb_id);
+            auto entry = pybind11::dict("sugarIndex"_a=output[i].sugarIndex, "glycanSize"_a=output[i].glycanSize, "interaction_angle"_a=output[i].angle, "targetSugar"_a=targetSugar, "stackedResidue"_a=stackedResidue);
+            chpi_interactions.append(entry);
+        }
+        result["CH_Pi"] = chpi_interactions;
+    }
+    else
+    {
+        result["CH_Pi"] = pybind11::cast<pybind11::none>(Py_None);
+    }
+
+    return result;
+}
+
+
+///////////////////////////////////////////////// Class GlycosylationComposition END /////////////////////////////////////////////////////////////////
+
+
+
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
 privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool debug_output) 
 {
@@ -63,7 +297,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
+                clipper::MDisaccharide md(mmol, manb, mmol[p].id().trim(), mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -108,17 +342,17 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
+                    msug = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -1085,6 +1319,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     
     this->parentGlycan = mglycan;
     this->sugar = inputSugar;
+    this->sugar_chain_id = inputSugar.chain_id().trim().substr(0,1);
     this->sugarID = sugarID;
     this->glycanID = glycanID;
     this->sugar_conformation_code = inputSugar.conformation_code();
@@ -1126,7 +1361,6 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugar_name_short = inputSugar.short_name();
     this->sugar_seqnum = inputSugar.get_seqnum();
     this->sugar_pdb_id = inputSugar.id();
-    this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
 
     std::vector<clipper::ftype> sugar_ring_angles_vector = inputSugar.ring_angles();
@@ -1238,6 +1472,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->parentGlycan = clipper::MGlycan();
     this->sugar = inputSugar.second;
     this->sugarID = sugarID;
+    this->sugar_chain_id = inputSugar.second.chain_id().trim().substr(0,1);
     this->glycanID = -1;
     this->sugar_conformation_code = inputSugar.second.conformation_code();
     this->sugar_conformation_name = clipper::data::conformational_landscape[sugar_conformation_code];
@@ -1277,7 +1512,6 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_name_short = inputSugar.second.short_name();
     this->sugar_seqnum = inputSugar.second.get_seqnum();
     this->sugar_pdb_id = inputSugar.second.id();
-    this->sugar_pdb_chain = inputSugar.first;
     this->sugar_type = inputSugar.second.full_type();
 
     std::vector<clipper::ftype> sugar_ring_angles_vector = inputSugar.second.ring_angles();
@@ -1361,6 +1595,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->parentGlycan = mglycan;
     this->sugar = inputSugar;
     this->sugarID = sugarID;
+    this->sugar_chain_id = inputSugar.chain_id().trim().substr(0,1);
     this->glycanID = glycanID;
     this->sugar_conformation_code = inputSugar.conformation_code();
     this->sugar_conformation_name = clipper::data::conformational_landscape[sugar_conformation_code];
@@ -1401,7 +1636,6 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->sugar_name_short = inputSugar.short_name();
     this->sugar_seqnum = inputSugar.get_seqnum();
     this->sugar_pdb_id = inputSugar.id();
-    this->sugar_pdb_chain = mglycan.get_chain().substr(0,1);
     this->sugar_type = inputSugar.full_type();
 
     std::vector<clipper::ftype> sugar_ring_angles_vector = inputSugar.ring_angles();
@@ -1501,7 +1735,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
 void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( )
 {
-    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_pdb_chain, "sugar_seqnum"_a=sugar_seqnum, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check, "SugarLinkages"_a=sugar_linkages);
+    auto dict = pybind11::dict ("sugarID"_a=sugarID, "glycanID"_a=glycanID, "sugar_pdb_id"_a=sugar_pdb_id, "sugar_pdb_chain"_a=sugar_chain_id, "sugar_seqnum"_a=sugar_seqnum, "sugar_name_full"_a=sugar_name_full, "sugar_name_short"_a=sugar_name_short, "sugar_anomer"_a=sugar_anomer, "is_sane"_a=sugar_sane, "ExperimentalData"_a=updatedWithExperimentalData, "RSCC"_a=sugar_rscc, "mFo"_a=sugar_accum, "OccupancyCheck"_a=sugar_occupancy_check, "SugarLinkages"_a=sugar_linkages);
 
     this->sugarSummary = dict;
 }
@@ -1604,7 +1838,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
+                clipper::MDisaccharide md(mmol, manb, mmol[p].id().trim(), mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -1649,17 +1883,17 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
+                    msug = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -2370,7 +2604,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         {
             if ( clipper::MDisaccharide::search_disaccharides(mmol[p][m].type().c_str()) != -1 ) // treat disaccharide
             {
-                clipper::MDisaccharide md(mmol, manb, mmol[p][m], debug_output );
+                clipper::MDisaccharide md(mmol, manb, mmol[p].id().trim(), mmol[p][m], debug_output );
                 sugarList.push_back ( mmol[p][m] );
                 sugarList.push_back ( mmol[p][m] );
                 clipper::String id = mmol[p].id();
@@ -2414,17 +2648,17 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                 if ( n_conf > 0 )
                 {
                     if ( n_conf == 1 )
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
                     else
                     {
-                        msug   = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[0]);
-                        msug_b = clipper::MSugar(mmol, mmol[p][m], manb, debug_output, conformers[1]);
+                        msug   = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[0]);
+                        msug_b = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output, conformers[1]);
                     }
 
                 }
                 else
                 {
-                    msug = clipper::MSugar(mmol, mmol[p][m], manb, debug_output);
+                    msug = clipper::MSugar(mmol, mmol[p].id().trim(), mmol[p][m], manb, debug_output);
                 }
 
                 sugarList.push_back(mmol[p][m]);
@@ -2846,6 +3080,17 @@ void init_pyanalysis(py::module& m)
     // Need to pa::GlycosylationComposition_memorysafe(and probably pa::GlycanStructure_memorysafe) class or something like that for them huge ribosomes that
     // cause the Python process to hog all the Computer's memory. 
     // Basically change the paradigm from compute everything first and then rely on getters to call getter that then initiates a computation
+    py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
+        .def(py::init<>())
+        .def(py::init<std::string&>(), py::arg("path_to_model_file")="undefined")
+        .def("get_path_of_model_file_used",  &pa::GlycosylationInteractions::get_path_of_model_file_used)
+        .def("get_all_detected_interactions",  &pa::GlycosylationInteractions::get_all_detected_interactions)
+        .def("get_all_detected_hbonds",  &pa::GlycosylationInteractions::get_all_detected_hbonds)
+        .def("get_all_detected_chpibonds",  &pa::GlycosylationInteractions::get_all_detected_chpibonds)
+        .def("get_all_interactions_for_specific_glycan",  &pa::GlycosylationInteractions::get_all_interactions_for_specific_glycan)
+        .def("get_hbonds_for_specific_glycan", &pa::GlycosylationInteractions::get_hbonds_for_specific_glycan)
+        .def("get_chpibonds_for_specific_glycan", &pa::GlycosylationInteractions::get_chpibonds_for_specific_glycan);
+
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())
         .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
@@ -2905,11 +3150,11 @@ void init_pyanalysis(py::module& m)
         .def(py::init<const int, std::vector<std::pair<clipper::String, clipper::MSugar>>&, privateer::pyanalysis::GlycosylationComposition&, bool>())
         .def(py::self == py::self)
         .def("get_sugar_summary", &pa::CarbohydrateStructure::get_sugar_summary)
+        .def("get_sugar_chain_id", &pa::CarbohydrateStructure::get_chain_id)
         .def("get_sugar_id", &pa::CarbohydrateStructure::get_sugar_id)
         .def("get_glycan_id", &pa::CarbohydrateStructure::get_glycan_id)
         .def("get_seqnum", &pa::CarbohydrateStructure::get_seqnum)
         .def("get_sugar_pdb_id", &pa::CarbohydrateStructure::get_sugar_pdb_id)
-        .def("get_sugar_pdb_chain", &pa::CarbohydrateStructure::get_sugar_pdb_chain)
         .def("get_conformation_name", &pa::CarbohydrateStructure::get_conformation_name)
         .def("get_conformation_name_iupac", &pa::CarbohydrateStructure::get_conformation_name_iupac)
         .def("get_puckering_amplitude", &pa::CarbohydrateStructure::get_puckering_amplitude)

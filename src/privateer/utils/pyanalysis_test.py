@@ -1,15 +1,29 @@
-from privateer import privateer_core as pvt
+from privateer import privateer_core as pvtcore
 
 print("____________________GLYCOSYLATION LEVEL_______________")
-glycosylation = pvt.GlycosylationComposition(
+glycosylation = pvtcore.GlycosylationComposition(
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
 )
-# glycosylation = pvt.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
+
+# glycosylation = pvtcore.GlycosylationComposition("/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb")
 # print("Expression system defined: " + glycosylation.get_expression_system_used())
 # print("Path of the input PDB: " + glycosylation.get_path_of_model_file_used())
 # print("Number of Glycan chains detected in the model: " + str(glycosylation.get_number_of_glycan_chains_detected()))
 
+# interactions = pvtcore.GlycosylationInteractions(
+#     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
+# )
+# interactions.get_chpibonds_for_specific_glycan(0)
+# result = interactions.get_all_detected_hbonds()
+# print(result)
+
 listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
+
+interactions = pvtcore.GlycosylationInteractions(
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
+)
+result = interactions.get_all_detected_interactions()
+print(result)
 
 print("\n")
 for entry in listOfDetectedGlycans:
@@ -38,7 +52,7 @@ print("get_sugar_id() = " + str(sugar.get_sugar_id()))
 print("get_glycan_id() = " + str(sugar.get_glycan_id()))
 print("get_sugar_seqnum() = " + str(sugar.get_seqnum()))
 print("get_sugar_pdb_id() = " + str(sugar.get_sugar_pdb_id()))
-print("get_sugar_pdb_chain() = " + sugar.get_sugar_pdb_chain())
+# print("get_sugar_pdb_chain() = " + sugar.get_sugar_pdb_chain())
 print("get_conformation_name() = " + sugar.get_conformation_name())
 print("get_conformation_name_iupac() = " + sugar.get_conformation_name_iupac())
 print("get_puckering_amplitude() = " + str(sugar.get_puckering_amplitude()))
@@ -79,8 +93,8 @@ for key, value in sugarSummary.items():
     print("{}: {}".format(key, value))
 print("_______________________")
 
-# XRayData = pvt.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb", "NONE", 2.5, -1)
-XRayData = pvt.XRayData(
+# XRayData = pvtcore.XRayData("/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.mtz", "/Users/haroldas/Dev/privateer_python/tests/test_data/5fjj.pdb", "NONE", 2.5, -1)
+XRayData = pvtcore.XRayData(
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz",
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb",
     "NONE",
@@ -119,7 +133,7 @@ print(sugarUpdatedTwo.get_sugar_summary())
 ligands = glycosylation.get_ligands()
 print("Ligands.len() = " + str(len(ligands)))
 
-glycosylationMasterConstructor = pvt.GlycosylationComposition(
+glycosylationMasterConstructor = pvtcore.GlycosylationComposition(
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb",
     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz",
     "NONE",
@@ -136,7 +150,7 @@ for entry in discoteque:
     print("_______________________")
 
 
-glycosylation = pvt.GlycosylationComposition(
+glycosylation = pvtcore.GlycosylationComposition(
     "/home/harold/Dev/privateer_python/tests/test_data/2h6o_carbremediation.pdb"
 )
 
@@ -150,9 +164,9 @@ for entry in listOfDetectedGlycans:
 
 glycan = glycosylation.get_glycan(6)
 
-json = pvt.OfflineGlycomicsDatabase()
+json = pvtcore.OfflineGlycomicsDatabase()
 
-glycoproteomicsoutput = glycan.query_offline_database(json, True, True)
+glycoproteomicsoutput = glycan.query_glycomics_database(json, True, True)
 
 print(glycoproteomicsoutput)
 
@@ -166,7 +180,7 @@ print(
     "Now getting from class without having to repeat compute intensive functon\n\n\n\n"
 )
 
-glycoproteomicsoutputrepeated = glycan.query_offline_database(json, True, True)
+glycoproteomicsoutputrepeated = glycan.query_glycomics_database(json, True, True)
 
 permutations = glycoproteomicsoutputrepeated["permutations"]
 for entry in permutations:

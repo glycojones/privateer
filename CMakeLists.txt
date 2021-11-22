@@ -42,7 +42,6 @@ find_library(CLIPPERCIFDEP NAMES clipper-cif
 add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
 
 find_package(Threads REQUIRED)
-find_package(ZLIB REQUIRED)
 
 
 #Find Privateer's main.cpp file
@@ -63,6 +62,7 @@ file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json
     DESTINATION ${CLIBDENV})
 
 add_library(privateer_lib
+            ${PRIVATEER_SOURCE_DIR}/cpp/third-party/gemmi_compilation_unit.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
@@ -92,8 +92,7 @@ target_link_libraries ( privateer_lib
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
-                        Threads::Threads
-                        ZLIB::ZLIB)
+                        Threads::Threads)
 
 set_target_properties ( privateer_lib    PROPERTIES OUTPUT_NAME privateer )
 
@@ -112,8 +111,7 @@ target_link_libraries ( privateer_exec
                         ${CLIPPERCCP4DEP}
                         ${CLIPPERCIFDEP}
                         ${PYTHON_LIBRARY}
-                        Threads::Threads
-                        ZLIB::ZLIB)
+                        Threads::Threads)
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
