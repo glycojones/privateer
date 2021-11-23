@@ -1704,13 +1704,17 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 
 	clipper::MAtom next_carbon = configurational_substituent;
 
-	while ( is_stereocentre( next_carbon, mmol ) && (next_carbon.id().trim() != configurational_carbon.name().trim() ) ) ////////////////////// CONTINUE HERE
+	while ( is_stereocentre( next_carbon, mmol ) && (next_carbon.id().trim() != configurational_carbon.id().trim() ) ) ////////////////////// CONTINUE HERE
 	{
 		configurational_carbon = next_carbon;
 		const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(configurational_carbon.coord_orth(), 1.2);
 
 		for ( int i2 = 0 ; i2 < neighbourhood.size() ; i2++ )
 		{
+            if(debug_output && i2 == 1 || debug_output && i2 == neighbourhood.size()-2)
+            {
+                DBG << "i2 in while loop: " << i2 << "\tneighbourhood.size() " << neighbourhood.size() << std::endl;
+            }
 			if ( !is_part_of_ring(mmol.atom(neighbourhood[i2]),ring_atoms)
 				&& (mmol.atom(neighbourhood[i2]).element().trim() != "H" )
 				&& altconf_compatible(get_altconf(mmol.atom(neighbourhood[i2])), get_altconf(configurational_carbon)))
