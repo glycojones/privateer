@@ -2595,18 +2595,29 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
             o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
             c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
-            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
-            o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+            
+            // Temporary workaround until more general solution can be generated...
+            if(first_sugar.type().trim() == "SIA" || first_sugar.type().trim() == "SLB")
+            {
+                c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+                o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+            }
+
         }
         else if(first_sugar.ring_members().size() == 5)
         {
-            c6 = first_sugar.ring_members()[5];
+            c6 = first_sugar.ring_members()[4];
             first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O6 for omega_seven
             c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
             o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
             c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
-            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
-            o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+
+
+            if(first_sugar.type().trim() == "SIA" || first_sugar.type().trim() == "SLB")
+            {
+                c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+                o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
+            }
         }
         else
         {
@@ -2640,13 +2651,16 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                         c8.coord_orth(),
                                                         c7.coord_orth(),
                                                         o7.coord_orth() );
+
+
+        if(first_sugar.type().trim() == "SIA")
+        {
+            omega_nine = clipper::Coord_orth::torsion (     o9.coord_orth(),
+                                                            c9.coord_orth(),
+                                                            c8.coord_orth(),
+                                                            o8.coord_orth() );
+        }
         
-        omega_nine = clipper::Coord_orth::torsion (     o9.coord_orth(),
-                                                        c9.coord_orth(),
-                                                        c8.coord_orth(),
-                                                        o8.coord_orth() );
-
-
         new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
         if(debug_output)
         {
@@ -2691,7 +2705,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else if(first_sugar.ring_members().size() == 5)
         {
-            c5 = first_sugar.ring_members()[5];
+            c5 = first_sugar.ring_members()[4];
             c6 = first_sugar[first_sugar.lookup("C6",clipper::MM::ANY)];
             o6 = first_sugar[first_sugar.lookup("O6",clipper::MM::ANY)];
             c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
