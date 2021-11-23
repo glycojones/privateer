@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->
+<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="1000" 
+     height="500" 
+     viewBox="0 0 1000 500 "
+     preserveAspectRatio="xMinYMinXMaxYMax meet">
+
+  <style>
+    .my_blue   { fill:#0090bc; }
+    .my_red    { fill:#ed1c24; }
+    .my_yellow { fill:#ffd400; }
+  </style>
+  <defs>
+    <filter id="displace">
+      <feTurbulence  baseFrequency=".05" numOctaves="3" result="myturbulence" />
+      <feDisplacementMap in="SourceGraphic" in2="myturbulence" scale="10" />
+    </filter>
+
+    <!-- Half-yellow pattern --> 
+      <pattern id="half_yellow" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <rect width="50" height="50" x="0" y="0" style="stroke:none; fill:#ffd400;"/>
+        <polygon points='0 0, 0 50, 50 50' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- Half-blue pattern --> 
+      <pattern id="half_blue" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <rect width="50" height="50" x="0" y="0" style="stroke:none; fill:#0090bc;"/>
+        <polygon points='0 0, 0 50, 50 50' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- Half-green pattern --> 
+      <pattern id="half_green" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <rect width="50" height="50" x="0" y="0" style="stroke:none; fill:#00a651;"/>
+        <polygon points='0 0, 0 50, 50 50' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- yellow_left pattern --> 
+      <pattern id="yellow_left" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <polygon points='25 0, 50 25, 25 50, 0 25' style="stroke:none; fill:#ffd400;"/>
+        <polygon points='25 0, 25 50, 0 25' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- blue_up pattern --> 
+      <pattern id="blue_up" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <polygon points='25 0, 50 25, 25 50, 0 25' style="stroke:none; fill:#0090bc;"/>
+        <polygon points='0 25, 50 25, 25 50' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- green_right pattern --> 
+      <pattern id="green_right" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <polygon points='25 0, 50 25, 25 50, 0 25' style="stroke:none; fill:#00a651;"/>
+        <polygon points='0 25, 25 50, 25 0' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!-- tan_down pattern --> 
+      <pattern id="tan_down" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" >
+        <polygon points='25 0, 50 25, 25 50, 0 25' style="stroke:none; fill:#966432;"/>
+        <polygon points='0 25, 50 25, 25 0' rx="0" ry="0" style="stroke:#ffffff; stroke-width:1.5; fill:#ffffff;" />
+      </pattern>
+    <!--  Glc   --> <circle r ="25" cx ="25" cy ="25" id="glc" style=" stroke:#ffffff; fill:#0090bc;stroke-width:2.8;" />
+    <!--  Gal   --> <circle r ="25" cx ="25" cy ="25" id="gal" style=" stroke:#ffffff; fill:#ffd400;stroke-width:2.8;" />
+    <!--  Man   --> <circle r ="25" cx ="25" cy ="25" id="man" style=" stroke:#ffffff; fill:#00a651;stroke-width:2.8;" />
+    <!--  Fuc   --> <polygon points='0 50, 25 0, 50 50' rx="0" ry="0" id="fuc" style=" stroke:#ffffff; fill:#ed1c24;stroke-width:2.8;" />
+    <!--  Xyl   --> <polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx="0" ry="0" id="xyl" style=" stroke:#ffffff; fill:#ff7f00;stroke-width:2.8;" />
+    <!-- GlcNAc --> <rect width ="50" height="50" id="glcnac" style=" stroke:#ffffff; fill:#0090bc;stroke-width:2.8;" />
+    <!-- GalNAc --> <rect width ="50" height="50" id="galnac" style=" stroke:#ffffff; fill:#ffd400;stroke-width:2.8;" />
+    <!-- ManNAc --> <rect width ="50" height="50" id="mannac" style=" stroke:#ffffff; fill:#00a651;stroke-width:2.8;" />
+    <!-- GlcN --> <rect width ="50" height="50" id="glcn" style=" stroke:#ffffff; fill: url(#half_blue);stroke-width:2.8;" />
+    <!-- GalN --> <rect width ="50" height="50" id="galn" style=" stroke:#ffffff; fill: url(#half_yellow);stroke-width:2.8;" />
+    <!-- ManN --> <rect width ="50" height="50" id="mann" style=" stroke:#ffffff; fill: url(#half_green);stroke-width:2.8;" />
+    <!-- Neu5Ac --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="neu5ac" style=" stroke:#ffffff; fill:#a54399;stroke-width:2.8;" />
+    <!-- Neu5Gc --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="neu5gc" style=" stroke:#ffffff; fill:#8fcce9;stroke-width:2.8;" />
+    <!-- KDN --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="kdn" style=" stroke:#ffffff; fill:#00a651;stroke-width:2.8;" />
+    <!-- GlcA --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="glca" style=" stroke:#ffffff; fill: url(#blue_up);stroke-width:2.8;" />
+    <!-- IdoA --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="idoa" style=" stroke:#ffffff; fill: url(#tan_down);stroke-width:2.8;" />
+    <!-- GalA --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="gala" style=" stroke:#ffffff; fill: url(#yellow_left);stroke-width:2.8;" />
+    <!-- ManA --> <polygon points='25 0, 50 25, 25 50, 0 25' rx="0" ry="0" id="mana" style=" stroke:#ffffff; fill: url(#green_right);stroke-width:2.8;" />
+    <!-- alpha  --> <line x1="0" y1="0" x2="110" y2="0" style="stroke:#ffffff; stroke-width:2; stroke-linecap:round; stroke-dasharray:9,6;" id="alpha" />
+    <!--  beta  --> <line x1="0" y1="0" x2="110" y2="0" style="stroke:#ffffff; stroke-width:2; stroke-linecap:round;" id="beta" />
+    <!-- Other  --> <polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx="0" ry="0" id="unk" style=" stroke:#ffffff; fill:#ffffff;stroke-width:4.0; " />
+  </defs>
+
+<title>demo</title>
+  <use xlink:href="#beta" x="900" y="305" id="" transform="rotate(180 900 305)" ><title>Beta bond</title></use>
+  <use xlink:href="#alpha" x="750" y="305" id="" transform="rotate(180 750 305)" ><title>Alpha bond</title></use>
+  <use xlink:href="#glc" x="60" y="60" id="" ><title>Glucose</title></use>
+  <use xlink:href="#gal" x="170" y="60" id="" ><title>Galactose</title></use>
+  <use xlink:href="#man" x="280" y="60" id="" ><title>Mannose</title></use>
+  <use xlink:href="#fuc" x="390" y="60" id="" ><title>Fucose</title></use>
+  <use xlink:href="#xyl" x="500" y="60" id="" ><title>Xylose</title></use>
+  <use xlink:href="#glcn" x="60" y="170" id="" ><title>Glucosamine</title></use>
+  <use xlink:href="#galn" x="170" y="170" id="" ><title>Galactosamine</title></use>
+  <use xlink:href="#mann" x="280" y="170" id="" ><title>Mannosamine</title></use>
+  <use xlink:href="#glca" x="390" y="170" id="" ><title>Glucuronic acid</title></use>
+  <use xlink:href="#gala" x="500" y="170" id="" ><title>Galacturonic acid</title></use>
+  <use xlink:href="#mana" x="610" y="170" id="" ><title>Mannuronic acid</title></use>
+  <use xlink:href="#idoa" x="720" y="170" id="" ><title>Iduronic acid</title></use>
+  <use xlink:href="#neu5ac" x="830" y="170" id="" ><title>N-acetyl Neuraminic acid</title></use>
+  <use xlink:href="#neu5gc" x="940" y="170" id="" ><title>N-glycolyl Neuraminic acid</title></use>
+  <use xlink:href="#kdn" x="390" y="280" id="" ><title>KDN</title></use>
+  <use xlink:href="#unk" x="500" y="280" id="" ><title>Unknown</title></use>
+<text x="525" y="314" text-anchor="middle" font-family="Helvetica" font-size="24" font-weight="bold">U</text>
+  <use xlink:href="#glcnac" x="60" y="280" id="" ><title>N-acetyl D-Glucosamine</title></use>
+  <use xlink:href="#galnac" x="170" y="280" id="" ><title>N-acetyl D-Galactosamine</title></use>
+  <use xlink:href="#mannac" x="280" y="280" id="" ><title>N-acetyl D-Mannosamine</title></use>
+  <g id="glycan_root" transform="translate(160 400)" >
+    <rect width="160" height="50" rx="10" ry="10" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <line x1="30" y1="0" x2="30" y2="50" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <text x="7" y="32" class="my_blue" font-weight="bold" font-family="Helvetica" font-size="24">n</text>
+    <text x="92" y="32" fill="black" text-anchor="middle" font-weight="bold" font-family="Helvetica" font-size="24">ASN<tspan baseline-shift="sub" font-weight="normal" font-size="20">A/62</tspan></text>
+</g>
+  <g id="glycan_root" transform="translate(460 400)" >
+    <rect width="160" height="50" rx="10" ry="10" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <line x1="30" y1="0" x2="30" y2="50" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <text x="7" y="32" class="my_red" font-weight="bold" font-family="Helvetica" font-size="24">o</text>
+    <text x="92" y="32" fill="black" text-anchor="middle" font-weight="bold" font-family="Helvetica" font-size="24">THR<tspan baseline-shift="sub" font-weight="normal" font-size="20">T/1000</tspan></text>
+</g>
+  <g id="glycan_root" transform="translate(760 400)" >
+    <rect width="160" height="50" rx="10" ry="10" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <line x1="30" y1="0" x2="30" y2="50" style="stroke:#000000; fill:#ffffff; stroke-width:2.0;" />
+    <text x="7" y="32" class="my_yellow" font-weight="bold" font-family="Helvetica" font-size="24">s</text>
+    <text x="92" y="32" fill="black" text-anchor="middle" font-weight="bold" font-family="Helvetica" font-size="24">CYS<tspan baseline-shift="sub" font-weight="normal" font-size="20">C/4</tspan></text>
+</g>
+
+</svg>
