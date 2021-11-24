@@ -1,12 +1,3 @@
-#!/bin/sh
-#SBATCH --time=04:00:00                # Time limit hrs:min:sec
-#SBATCH --mem=4000                     # Total memory limit
-#SBATCH --mail-type=END,FAIL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=hb1115@york.ac.uk   # Where to send mail
-#SBATCH --account=CS-MPMSEDM-2018
-# module load compiler/GCC/8.2.0-2.31.1
-# module load devel/CMake/3.13.3-GCCcore-8.2.0
-
 cmake --version || "CMake is not found!. Install CMake then re-run this script " || exit 3
 gcc --version  || "GCC is not found!. Install GCC then re-run this script " || exit 3
 
@@ -27,22 +18,6 @@ dependencyDir=$mainDir/dependencies
 
 export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
-
-
-# cd $dependencyDir
-# if [[ ! -d $dependencyDir/bzr ]]; then
-# mkdir bzr
-# cd bzr
-# wget https://launchpad.net/bzr/2.7/2.7.0/+download/bzr-2.7.0.tar.gz
-# tar -zxvf bzr-2.7.0.tar.gz
-# cd bzr-2.7.0
-# python2 setup.py install --home ~
-# fi
-
-# if [[ ! -f bzr ]]; then
-# echo "Bazaar installation ... falied. We can not continue the rest of the installation steps."
-# exit 3
-# fi
 
 
 cd $dependencyDir
@@ -225,55 +200,4 @@ if [[ -f lib/libclipper-core.so  ]]; then
 echo "clipper "
 readelf -p .comment lib/libclipper-core.so | grep  "GCC" | sort --unique
 fi
-fi
-
-if [[ ! -d lib/data ]]; then
-cd $dependencyDir/lib
-if [[  -d data ]]; then
-rm -rf data
-fi
-
-mkdir data
-cd data
-mkdir monomers
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/monomers/trunk/
-cd trunk
-mv * $dependencyDir/lib/data/monomers
-fi
-cd $dependencyDir/lib/data
-rm -rf trunk
-cd $dependencyDir
-
-if [[ -f $dependencyDir/lib/libfftw.so ]]; then
-FFTW2LIB=$dependencyDir/lib/librfftw.so
-fi
-if [[ -f $dependencyDir/lib/libmmdb2.so ]]; then
-MMDB2LIB=$dependencyDir/lib/libmmdb2.so
-fi
-if [[ -f $dependencyDir/lib/libccp4c.so ]]; then
-CCP4CLIB=$dependencyDir/lib/libccp4c.so
-fi
-if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then
-CCP4SRSLIB=$dependencyDir/lib/libccp4srs.so
-fi
-if [[ -f $dependencyDir/lib/libccp4srs.so ]]; then
-CLIPPERLIB=$dependencyDir/lib/libclipper.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-core.so ]]; then
-CLIPPERCORELIB=$dependencyDir/lib/libclipper-core.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-mmdb.so ]]; then
-CLIPPERMMDBLIB=$dependencyDir/lib/libclipper-mmdb.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-minimol.so ]]; then
-CLIPPERMINIMOLLIB=$dependencyDir/lib/libclipper-minimol.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-contrib.so ]]; then
-CLIPPERCONTRIBLIB=$dependencyDir/lib/libclipper-contrib.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-ccp4.so ]]; then
-CLIPPERCCP4LIB=$dependencyDir/lib/libclipper-ccp4.so
-fi
-if [[ -f $dependencyDir/lib/libclipper-cif.so ]]; then
-CLIPPERCIFLIB=$dependencyDir/lib/libclipper-cif.so
 fi
