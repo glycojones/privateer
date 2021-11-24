@@ -1,6 +1,6 @@
 #!/bin/sh
 #SBATCH --time=00:30:00                # Time limit hrs:min:sec
-#SBATCH --mem=1000                     # Total memory limit
+#SBATCH --mem=4000                     # Total memory limit
 #SBATCH --mail-type=ALL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=hb1115@york.ac.uk   # Where to send mail
 #SBATCH --account=chem-structglyco-2019
@@ -33,6 +33,7 @@ export CPPFLAGS="-I$mainDir/dependencies/include"
 
 python -m venv privateerpython
 source $mainDir/privateerpython/bin/activate
+source $mainDir/ccp4.envsetup-sh
 pip install -r requirements.txt
 
 cd $dependencyDir
