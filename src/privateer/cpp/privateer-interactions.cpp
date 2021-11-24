@@ -136,6 +136,11 @@ namespace privateer {
             clipper::MAtom ma;
             clipper::Coord_orth centre_apolar;
 
+            std::vector<std::pair<clipper::MAtomIndexSymmetry, float>> results;
+
+            if(input_sugar.ring_members().size() < 6 || input_sugar.type_of_sugar().trim() == "unsupported")
+                return results;
+
             if ( input_sugar.handedness() == "D" )
                 centre_apolar = clipper::Coord_orth((input_sugar.ring_members()[1].coord_orth().x() +
                                                     input_sugar.ring_members()[3].coord_orth().x() +
@@ -154,7 +159,7 @@ namespace privateer {
                                                     (input_sugar.ring_members()[1].coord_orth().z() +
                                                     input_sugar.ring_members()[5].coord_orth().z() ) / 2.0 );
 
-            std::vector<std::pair<clipper::MAtomIndexSymmetry, float>> results;
+            
 
             const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
 
