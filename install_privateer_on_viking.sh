@@ -31,7 +31,9 @@ dependencyDir=$mainDir/dependencies
 export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
 
+python -m venv privateerpython
 source $mainDir/privateerpython/bin/activate
+pip install -r requirements.txt
 
 cd $dependencyDir
 if [[ ! -d $dependencyDir/bzr ]]; then
