@@ -2,7 +2,7 @@
 #SBATCH --job-name=sigma_male_grindset          # Job name
 #SBATCH --time=48:00:00                         # Time limit hrs:min:sec
 #SBATCH --mem=16gb                              # Total memory limit
-#SBATCH ----threads-per-core=16                 # nThreads
+#SBATCH --ntasks=4
 #SBATCH --mail-type=ALL                         # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=hb1115@york.ac.uk           # Where to send mail
 #SBATCH --account=chem-structglyco-2019
