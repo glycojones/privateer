@@ -2217,6 +2217,11 @@ std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar:
     clipper::MAtom ma;
     clipper::Coord_orth centre_apolar;
 
+    std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > results;
+
+    if(ring_members().size() < 6 || type_of_sugar().trim() == "unsupported")
+        return results;
+
     if ( this->handedness() == "D" )
         centre_apolar = clipper::Coord_orth((ring_members()[1].coord_orth().x() +
                                              ring_members()[3].coord_orth().x() +
@@ -2234,8 +2239,6 @@ std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar:
                                              ring_members()[5].coord_orth().y() ) / 2.0,
                                             (ring_members()[1].coord_orth().z() +
                                              ring_members()[5].coord_orth().z() ) / 2.0 );
-
-    std::vector<std::pair<clipper::MAtomIndexSymmetry, clipper::ftype > > results;
 
     const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(centre_apolar, 5.0);
 

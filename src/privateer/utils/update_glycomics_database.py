@@ -96,7 +96,7 @@ def return_data_from_glyconnect(outputFolder):
 
     exceptions = {8849: "G49108TO", 8850: "G70323CJ"}
 
-    _ranges = [{"start": 0, "end": 3686}, {"start": 8847, "end": 11050}]
+    _ranges = [{"start": 0, "end": 3687}, {"start": 8847, "end": 11050}]
     # _ranges = [{"start": 0, "end": 25}, {"start": 8845, "end": 8897}]
     _structure_entries_begin = 7
     output = {}
