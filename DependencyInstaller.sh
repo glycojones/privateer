@@ -24,13 +24,19 @@ export FC=$GFORTRAN
 
 mainDir=$PWD
 dependencyDir=$mainDir/dependencies
-# if [[ ! -d $mainDir/bzr ]]; then
+
+export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
+export CPPFLAGS="-I$mainDir/dependencies/include"
+
+
+# cd $dependencyDir
+# if [[ ! -d $dependencyDir/bzr ]]; then
 # mkdir bzr
 # cd bzr
 # wget https://launchpad.net/bzr/2.7/2.7.0/+download/bzr-2.7.0.tar.gz
 # tar -zxvf bzr-2.7.0.tar.gz
 # cd bzr-2.7.0
-# python setup.py install --home ~
+# python2 setup.py install --home ~
 # fi
 
 # if [[ ! -f bzr ]]; then
@@ -38,9 +44,6 @@ dependencyDir=$mainDir/dependencies
 # exit 3
 # fi
 
-
-export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
-export CPPFLAGS="-I$mainDir/dependencies/include"
 
 cd $dependencyDir
 # Clipper only works with fftw2
