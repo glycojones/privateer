@@ -11,6 +11,323 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
+///////////////////////////////////////////////// Class ClipperInterfaceLayer  ////////////////////////////////////////////////////////////////////
+
+void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string path_to_model_file) 
+{
+    if(path_to_model_file == "undefined")
+    {
+        std::cout << "No path was provided for model file input! Exiting." << std::endl;
+        return;
+    }
+
+    pybind11::dict result;
+
+    clipper::MMDBfile mfile;
+    clipper::MiniMol mmol;
+    clipper::String clipperfied_input_model_path = path_to_model_file;
+
+    const int mmdbflags = mmdb::MMDBF_IgnoreBlankLines | mmdb::MMDBF_IgnoreDuplSeqNum | mmdb::MMDBF_IgnoreNonCoorPDBErrors | mmdb::MMDBF_IgnoreRemarks | mmdb::MMDBF_EnforceUniqueChainID;
+    mfile.SetFlag( mmdbflags );
+
+    mfile.read_file( clipperfied_input_model_path.trim() );
+    mfile.import_minimol( mmol );
+
+    if ( mmol.cell().is_null() )
+        mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
+
+    
+    float totalModelScatter = 0;
+    float totalAtomsInModel = 0;
+    float global_B_fac_sum = 0;
+    pybind11::list polymers;
+    for(int chain = 0; chain < mmol.size(); chain++)
+    {
+        std::string chainID = mmol[chain].id().trim();
+        int numberOfMonomers = mmol[chain].size();
+        int totalAtomsInChain = 0;
+        float chain_B_fac_sum = 0;
+        pybind11::list monomers;
+        for(int monomer = 0; monomer < mmol[chain].size(); monomer++)
+        {
+            std::string monomerID = mmol[chain][monomer].id().trim();
+            std::string monomer_type = mmol[chain][monomer].type().trim();
+            int         monomer_seqnum = mmol[chain][monomer].seqnum();
+            int         numberOfAtoms = mmol[chain][monomer].size();
+            float       residue_B_fac_sum = 0;
+            pybind11::list atoms;
+            for(int atom = 0; atom < mmol[chain][monomer].size(); atom++)
+            {
+                std::string atomID = mmol[chain][monomer][atom].id().trim();
+                std::string atom_name = mmol[chain][monomer][atom].name().trim();
+                std::string atom_element = mmol[chain][monomer][atom].element().trim();
+                clipper::Coord_orth atom_coord = mmol[chain][monomer][atom].coord_orth();
+                float atom_x = atom_coord.x();
+                float atom_y = atom_coord.y();
+                float atom_z = atom_coord.z();
+                std::string xyz = std::to_string(atom_x) + "," + std::to_string(atom_y) + "," + std::to_string(atom_z);
+                auto dict_xyz = pybind11::dict("x"_a=atom_x, "y"_a=atom_y, "z"_a=atom_z);
+                float atom_occupancy = mmol[chain][monomer][atom].occupancy();
+                float atom_U_iso = mmol[chain][monomer][atom].u_iso();
+                float atom_B_fac = clipper::Util::u2b(mmol[chain][monomer][atom].u_iso());
+                totalModelScatter = totalModelScatter + pow(clipper::AtomShapeFn(mmol[chain][monomer][atom]).f(0.3), 2);
+                float individual_atom_scatter = pow(clipper::AtomShapeFn(mmol[chain][monomer][atom]).f(0.3), 2);
+                totalAtomsInModel++;
+                totalAtomsInChain++;
+                residue_B_fac_sum = residue_B_fac_sum + atom_B_fac;
+                chain_B_fac_sum = chain_B_fac_sum = atom_B_fac;
+                global_B_fac_sum = global_B_fac_sum + atom_B_fac;
+
+                auto currentAtom = pybind11::dict("index"_a=atom, "atomID"_a=atomID, "atomName"_a=atom_name, "atomElement"_a=atom_element, "xyz"_a=xyz, "coords"_a=dict_xyz, "occupancy"_a=atom_occupancy, "U_iso"_a=atom_U_iso, "B_fac"_a=atom_B_fac, "atomScatter"_a=individual_atom_scatter);
+                atoms.append(currentAtom);
+            }
+            float residue_avg_B_fac = residue_B_fac_sum / numberOfAtoms;
+            
+            auto currentMonomer = pybind11::dict("index"_a=monomer, "monomerID"_a=monomerID, "monomerType"_a=monomer_type, "monomerSeqnum"_a=monomer_seqnum, "monomer_B_fac_sum"_a=residue_B_fac_sum, "monomer_avg_B_fac"_a=residue_avg_B_fac, "numberOfAtoms"_a=numberOfAtoms, "atoms"_a=atoms);
+            monomers.append(currentMonomer);
+        }
+        float chain_avg_B_fac = chain_B_fac_sum / totalAtomsInChain;
+        
+        auto currentPolymer = pybind11::dict("index"_a=chain, "chainID"_a=chainID, "numberOfMonomers"_a=numberOfMonomers, "chain_B_fac_sum"_a=chain_B_fac_sum, "chain_avg_B_fac"_a=chain_avg_B_fac, "totalAtomsInChain"_a=totalAtomsInChain, "monomers"_a=monomers);
+        polymers.append(currentPolymer);
+    }
+    float global_B_avg = global_B_fac_sum / totalAtomsInModel;
+    float numberOfRefinedParameters = totalAtomsInModel * 4;
+
+
+    float cell_a_star = mmol.cell().a_star();
+    float cell_b_star = mmol.cell().b_star();
+    float cell_c_star = mmol.cell().c_star();
+    float cell_alpha_star = mmol.cell().alpha_star();
+    float cell_beta_star = mmol.cell().beta_star();
+    float cell_gamma_star = mmol.cell().gamma_star();
+    float cell_a = mmol.cell().a();
+    float cell_b = mmol.cell().b();
+    float cell_c = mmol.cell().c();
+    float cell_alpha = mmol.cell().alpha();
+    float cell_beta = mmol.cell().beta();
+    float cell_gamma = mmol.cell().gamma();
+    float cell_alpha_deg = mmol.cell().alpha_deg();
+    float cell_beta_deg = mmol.cell().beta_deg();
+    float cell_gamma_deg = mmol.cell().gamma_deg();
+    float cell_volume = mmol.cell().volume();
+
+    auto Cell = pybind11::dict("a_star"_a=cell_a_star, "b_star"_a=cell_b_star, "c_star"_a=cell_c_star, "alpha_star"_a=cell_alpha_star,
+                                "beta_star"_a=cell_beta_star, "gamma_star"_a=cell_gamma_star, "a"_a=cell_a, "b"_a=cell_b, "c"_a=cell_c,
+                                "alpha"_a=cell_alpha, "beta"_a=cell_beta, "gamma"_a=cell_gamma, "alpha_deg"_a=cell_alpha_deg,
+                                "beta_deg"_a=cell_beta_deg, "gamma_deg"_a=cell_gamma_deg, "volume"_a=cell_volume);
+
+    int spacegroup_num_symops = mmol.spacegroup().num_symops();
+    int spacegroup_num_primops = mmol.spacegroup().num_primops();
+    int spacegroup_num_primitive_symops = mmol.spacegroup().num_primitive_symops();
+    int spacegroup_num_centering_symops = mmol.spacegroup().num_centering_symops();
+    int spacegroup_num_inversion_symops = mmol.spacegroup().num_inversion_symops();
+    int spacegroup_num_primitive_noninversion_symops = mmol.spacegroup().num_primitive_noninversion_symops();
+    
+    pybind11::list symops;
+    for(int i = 0; i < spacegroup_num_symops; i++)
+    {
+        std::string symop = mmol.spacegroup().symop(i).format();
+        auto currentSymop = pybind11::dict("index"_a=i, "symop"_a=symop);
+    }
+    pybind11::list primitive_symops;
+    for(int i = 0; i < spacegroup_num_primitive_symops; i++)
+    {
+        std::string primitive_symop = mmol.spacegroup().primitive_symop(i).format();
+        auto currentPrimitiveSymop = pybind11::dict("index"_a=i, "primitive_symop"_a=primitive_symop);
+    }
+    pybind11::list inversion_symops;
+    for(int i = 0; i < spacegroup_num_inversion_symops; i++)
+    {
+        std::string inversion_symop = mmol.spacegroup().inversion_symop(i).format();
+        auto currentInversionSymop = pybind11::dict("index"_a=i, "inversion_symop"_a=inversion_symop);
+    }
+    pybind11::list centering_symops;
+    for(int i = 0; i < spacegroup_num_centering_symops; i++)
+    {
+        std::string centering_symop = mmol.spacegroup().centering_symop(i).format();
+        auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
+    } 
+    auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
+
+    bool spacegroup_invariant_under_change_of_hand = mmol.spacegroup().invariant_under_change_of_hand();
+    int spacegroup_number = mmol.spacegroup().spacegroup_number();
+    std::string spacegroup_symbol_hall = mmol.spacegroup().symbol_hall();
+    std::string spacegroup_symbol_hm = mmol.spacegroup().symbol_hm();
+    std::string spacegroup_symbol_laue = mmol.spacegroup().symbol_laue();
+    
+    clipper::Coord_frac spacegroup_asu_max = mmol.spacegroup().asu_max();
+    std::string spacegroup_asu_max_uvw = std::to_string(spacegroup_asu_max.u()) + "," + std::to_string(spacegroup_asu_max.v()) + "," + std::to_string(spacegroup_asu_max.w());
+    float spacegroup_asu_max_u = spacegroup_asu_max.u();
+    float spacegroup_asu_max_v = spacegroup_asu_max.v();
+    float spacegroup_asu_max_w = spacegroup_asu_max.w();
+    auto dict_spacegroup_asu_max_uvw = pybind11::dict("u"_a=spacegroup_asu_max_u, "v"_a=spacegroup_asu_max_v, "w"_a=spacegroup_asu_max_w);
+    
+    clipper::Coord_frac spacegroup_asu_min = mmol.spacegroup().asu_min();
+    std::string spacegroup_asu_min_uvw = std::to_string(spacegroup_asu_min.u()) + "," + std::to_string(spacegroup_asu_min.v()) + "," + std::to_string(spacegroup_asu_min.w());
+    float spacegroup_asu_min_u = spacegroup_asu_min.u();
+    float spacegroup_asu_min_v = spacegroup_asu_min.v();
+    float spacegroup_asu_min_w = spacegroup_asu_min.w();
+    auto dict_spacegroup_asu_min_uvw = pybind11::dict("u"_a=spacegroup_asu_min_u, "v"_a=spacegroup_asu_min_v, "w"_a=spacegroup_asu_min_w);
+
+    auto Spacegroup = pybind11::dict("num_symops"_a=spacegroup_num_symops, "num_primops"_a=spacegroup_num_primops, "num_primitive_symops"_a=spacegroup_num_primitive_symops,
+                                    "num_centering_symops"_a=spacegroup_num_centering_symops, "num_inversion_symops"_a=spacegroup_num_inversion_symops, "num_primitive_noninversion_symops"_a=spacegroup_num_primitive_noninversion_symops,
+                                    "spacegroup_invariant_under_change_of_hand"_a=spacegroup_invariant_under_change_of_hand, "spacegroup_number"_a=spacegroup_number, "symbol_hall"_a=spacegroup_symbol_hall, "symbol_hm"_a=spacegroup_symbol_hm,
+                                    "symbol_laue"_a=spacegroup_symbol_laue, "asu_max_uvw"_a=spacegroup_asu_max_uvw, "asu_max"_a=dict_spacegroup_asu_max_uvw, "asu_min_uvw"_a=spacegroup_asu_min_uvw, "asu_min"_a=dict_spacegroup_asu_min_uvw, "symop"_a=symops);
+    
+
+
+    result["input_path"] = path_to_model_file;
+    result["Cell"] = Cell;
+    result["Spacegroup"] = Spacegroup;
+    result["totalAtomsInModel"] = totalAtomsInModel;
+    result["model_B_avg"] = global_B_avg;
+    result["model_B_fac_sum"] = global_B_fac_sum;
+    result["numberOfRefinedParameters"] = numberOfRefinedParameters;
+    result["polymers"] = polymers;
+
+    this->model_data = result;
+}
+
+
+void privateer::pyanalysis::ClipperInterfaceLayer::parse_mtz_data_file(std::string path_to_mtz_file) 
+{
+    if(path_to_mtz_file == "undefined")
+    {
+        std::cout << "No path was provided for experimental data file input! Exiting." << std::endl;
+        return;
+    }
+
+    pybind11::dict result;
+
+    clipper::CCP4MTZfile mtzin;
+    clipper::HKL_info hklinfo;
+    clipper::String clipperfied_input_mtz_path = path_to_mtz_file;
+
+    mtzin.set_column_label_mode( clipper::CCP4MTZfile::Legacy );
+    mtzin.open_read( clipperfied_input_mtz_path.trim() );
+
+    try // we could be in trouble should the MTZ file have no cell parameters
+    {
+        mtzin.import_hkl_info( hklinfo );     // read spacegroup, cell, resolution, HKL's
+    }
+    catch (...)
+    {
+        std::cout << "Imported MTZ file has got no Cell parameters, returning empty results. Please refer to model file for Cell parameters" << std::endl;
+        return;
+    }
+
+    float cell_a_star = hklinfo.cell().a_star();
+    float cell_b_star = hklinfo.cell().b_star();
+    float cell_c_star = hklinfo.cell().c_star();
+    float cell_alpha_star = hklinfo.cell().alpha_star();
+    float cell_beta_star = hklinfo.cell().beta_star();
+    float cell_gamma_star = hklinfo.cell().gamma_star();
+    float cell_a = hklinfo.cell().a();
+    float cell_b = hklinfo.cell().b();
+    float cell_c = hklinfo.cell().c();
+    float cell_alpha = hklinfo.cell().alpha();
+    float cell_beta = hklinfo.cell().beta();
+    float cell_gamma = hklinfo.cell().gamma();
+    float cell_alpha_deg = hklinfo.cell().alpha_deg();
+    float cell_beta_deg = hklinfo.cell().beta_deg();
+    float cell_gamma_deg = hklinfo.cell().gamma_deg();
+    float cell_volume = hklinfo.cell().volume();
+
+    auto Cell = pybind11::dict("a_star"_a=cell_a_star, "b_star"_a=cell_b_star, "c_star"_a=cell_c_star, "alpha_star"_a=cell_alpha_star,
+                                "beta_star"_a=cell_beta_star, "gamma_star"_a=cell_gamma_star, "a"_a=cell_a, "b"_a=cell_b, "c"_a=cell_c,
+                                "alpha"_a=cell_alpha, "beta"_a=cell_beta, "gamma"_a=cell_gamma, "alpha_deg"_a=cell_alpha_deg,
+                                "beta_deg"_a=cell_beta_deg, "gamma_deg"_a=cell_gamma_deg, "volume"_a=cell_volume);
+
+    int spacegroup_num_symops = hklinfo.spacegroup().num_symops();
+    int spacegroup_num_primops = hklinfo.spacegroup().num_primops();
+    int spacegroup_num_primitive_symops = hklinfo.spacegroup().num_primitive_symops();
+    int spacegroup_num_centering_symops = hklinfo.spacegroup().num_centering_symops();
+    int spacegroup_num_inversion_symops = hklinfo.spacegroup().num_inversion_symops();
+    int spacegroup_num_primitive_noninversion_symops = hklinfo.spacegroup().num_primitive_noninversion_symops();
+    
+    pybind11::list symops;
+    for(int i = 0; i < spacegroup_num_symops; i++)
+    {
+        std::string symop = hklinfo.spacegroup().symop(i).format();
+        auto currentSymop = pybind11::dict("index"_a=i, "symop"_a=symop);
+    }
+    pybind11::list primitive_symops;
+    for(int i = 0; i < spacegroup_num_primitive_symops; i++)
+    {
+        std::string primitive_symop = hklinfo.spacegroup().primitive_symop(i).format();
+        auto currentPrimitiveSymop = pybind11::dict("index"_a=i, "primitive_symop"_a=primitive_symop);
+    }
+    pybind11::list inversion_symops;
+    for(int i = 0; i < spacegroup_num_inversion_symops; i++)
+    {
+        std::string inversion_symop = hklinfo.spacegroup().inversion_symop(i).format();
+        auto currentInversionSymop = pybind11::dict("index"_a=i, "inversion_symop"_a=inversion_symop);
+    }
+    pybind11::list centering_symops;
+    for(int i = 0; i < spacegroup_num_centering_symops; i++)
+    {
+        std::string centering_symop = hklinfo.spacegroup().centering_symop(i).format();
+        auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
+    } 
+    auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
+
+    bool spacegroup_invariant_under_change_of_hand = hklinfo.spacegroup().invariant_under_change_of_hand();
+    int spacegroup_number = hklinfo.spacegroup().spacegroup_number();
+    std::string spacegroup_symbol_hall = hklinfo.spacegroup().symbol_hall();
+    std::string spacegroup_symbol_hm = hklinfo.spacegroup().symbol_hm();
+    std::string spacegroup_symbol_laue = hklinfo.spacegroup().symbol_laue();
+    
+    clipper::Coord_frac spacegroup_asu_max = hklinfo.spacegroup().asu_max();
+    std::string spacegroup_asu_max_uvw = std::to_string(spacegroup_asu_max.u()) + "," + std::to_string(spacegroup_asu_max.v()) + "," + std::to_string(spacegroup_asu_max.w());
+    float spacegroup_asu_max_u = spacegroup_asu_max.u();
+    float spacegroup_asu_max_v = spacegroup_asu_max.v();
+    float spacegroup_asu_max_w = spacegroup_asu_max.w();
+    auto dict_spacegroup_asu_max_uvw = pybind11::dict("u"_a=spacegroup_asu_max_u, "v"_a=spacegroup_asu_max_v, "w"_a=spacegroup_asu_max_w);
+    
+    clipper::Coord_frac spacegroup_asu_min = hklinfo.spacegroup().asu_min();
+    std::string spacegroup_asu_min_uvw = std::to_string(spacegroup_asu_min.u()) + "," + std::to_string(spacegroup_asu_min.v()) + "," + std::to_string(spacegroup_asu_min.w());
+    float spacegroup_asu_min_u = spacegroup_asu_min.u();
+    float spacegroup_asu_min_v = spacegroup_asu_min.v();
+    float spacegroup_asu_min_w = spacegroup_asu_min.w();
+    auto dict_spacegroup_asu_min_uvw = pybind11::dict("u"_a=spacegroup_asu_min_u, "v"_a=spacegroup_asu_min_v, "w"_a=spacegroup_asu_min_w);
+
+    auto Spacegroup = pybind11::dict("num_symops"_a=spacegroup_num_symops, "num_primops"_a=spacegroup_num_primops, "num_primitive_symops"_a=spacegroup_num_primitive_symops,
+                                    "num_centering_symops"_a=spacegroup_num_centering_symops, "num_inversion_symops"_a=spacegroup_num_inversion_symops, "num_primitive_noninversion_symops"_a=spacegroup_num_primitive_noninversion_symops,
+                                    "spacegroup_invariant_under_change_of_hand"_a=spacegroup_invariant_under_change_of_hand, "spacegroup_number"_a=spacegroup_number, "symbol_hall"_a=spacegroup_symbol_hall, "symbol_hm"_a=spacegroup_symbol_hm,
+                                    "symbol_laue"_a=spacegroup_symbol_laue, "asu_max_uvw"_a=spacegroup_asu_max_uvw, "asu_max"_a=dict_spacegroup_asu_max_uvw, "asu_min_uvw"_a=spacegroup_asu_min_uvw, "asu_min"_a=dict_spacegroup_asu_min_uvw, "symop"_a=symops);
+
+
+    std::string HKL_sampling = hklinfo.hkl_sampling().format();
+    clipper::HKL HKL_sampling_limit_HKL = hklinfo.hkl_sampling().hkl_limit();
+    const clipper::Coord_reci_frac unrounded_HKL = hklinfo.hkl_sampling().hkl_limit().coord_reci_frac();
+    float us = unrounded_HKL.us();
+    float vs = unrounded_HKL.vs();
+    float ws = unrounded_HKL.ws();
+    auto uvws = pybind11::dict("us"_a=us, "vs"_a=vs, "ws"_a=ws);
+    auto HKL_sampling_limit = pybind11::dict("h"_a=HKL_sampling_limit_HKL.h(), "k"_a=HKL_sampling_limit_HKL.k(), "l"_a=HKL_sampling_limit_HKL.l(), "unrounded_hkl"_a=uvws);
+    int num_reflections = hklinfo.num_reflections();
+
+    clipper::Resolution resolution = hklinfo.resolution();
+    float resolution_limit = resolution.limit();
+    float resolution_invresolsq_limit = resolution.invresolsq_limit();
+
+    result["input_path"] = path_to_mtz_file;
+    result["Cell"] = Cell;
+    result["Spacegroup"] = Spacegroup;
+    result["num_reflections"] = num_reflections;
+    result["HKL_sampling_limit"] = HKL_sampling_limit;
+    result["resolution_limit"] = resolution_limit;
+    result["resolution_invresolsq_limit"] = resolution_invresolsq_limit;
+    
+
+    this->mtz_data = result;
+}
+    
+    
+
+///////////////////////////////////////////////// Class ClipperInterfaceLayer END /////////////////////////////////////////////////////////////////
+
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
 void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file) 
