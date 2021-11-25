@@ -11,9 +11,9 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-///////////////////////////////////////////////// Class ClipperInterfaceLayer  ////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////// Class CrystallographicData  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string path_to_model_file) 
+void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& path_to_model_file) 
 {
     if(path_to_model_file == "undefined")
     {
@@ -38,7 +38,7 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string 
 
     
     float totalModelScatter = 0;
-    float totalAtomsInModel = 0;
+    int totalAtomsInModel = 0;
     float global_B_fac_sum = 0;
     pybind11::list polymers;
     for(int chain = 0; chain < mmol.size(); chain++)
@@ -92,7 +92,7 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string 
         polymers.append(currentPolymer);
     }
     float global_B_avg = global_B_fac_sum / totalAtomsInModel;
-    float numberOfRefinedParameters = totalAtomsInModel * 4;
+    int numberOfRefinedParameters = totalAtomsInModel * 4;
 
 
     float cell_a_star = mmol.cell().a_star();
@@ -129,24 +129,28 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string 
     {
         std::string symop = mmol.spacegroup().symop(i).format();
         auto currentSymop = pybind11::dict("index"_a=i, "symop"_a=symop);
+        symops.append(currentSymop);
     }
     pybind11::list primitive_symops;
     for(int i = 0; i < spacegroup_num_primitive_symops; i++)
     {
         std::string primitive_symop = mmol.spacegroup().primitive_symop(i).format();
         auto currentPrimitiveSymop = pybind11::dict("index"_a=i, "primitive_symop"_a=primitive_symop);
+        primitive_symops.append(currentPrimitiveSymop);
     }
     pybind11::list inversion_symops;
     for(int i = 0; i < spacegroup_num_inversion_symops; i++)
     {
         std::string inversion_symop = mmol.spacegroup().inversion_symop(i).format();
         auto currentInversionSymop = pybind11::dict("index"_a=i, "inversion_symop"_a=inversion_symop);
+        inversion_symops.append(currentInversionSymop);
     }
     pybind11::list centering_symops;
     for(int i = 0; i < spacegroup_num_centering_symops; i++)
     {
         std::string centering_symop = mmol.spacegroup().centering_symop(i).format();
         auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
+        centering_symops.append(currentCenteringSymop);
     } 
     auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
 
@@ -173,7 +177,7 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string 
     auto Spacegroup = pybind11::dict("num_symops"_a=spacegroup_num_symops, "num_primops"_a=spacegroup_num_primops, "num_primitive_symops"_a=spacegroup_num_primitive_symops,
                                     "num_centering_symops"_a=spacegroup_num_centering_symops, "num_inversion_symops"_a=spacegroup_num_inversion_symops, "num_primitive_noninversion_symops"_a=spacegroup_num_primitive_noninversion_symops,
                                     "spacegroup_invariant_under_change_of_hand"_a=spacegroup_invariant_under_change_of_hand, "spacegroup_number"_a=spacegroup_number, "symbol_hall"_a=spacegroup_symbol_hall, "symbol_hm"_a=spacegroup_symbol_hm,
-                                    "symbol_laue"_a=spacegroup_symbol_laue, "asu_max_uvw"_a=spacegroup_asu_max_uvw, "asu_max"_a=dict_spacegroup_asu_max_uvw, "asu_min_uvw"_a=spacegroup_asu_min_uvw, "asu_min"_a=dict_spacegroup_asu_min_uvw, "symop"_a=symops);
+                                    "symbol_laue"_a=spacegroup_symbol_laue, "asu_max_uvw"_a=spacegroup_asu_max_uvw, "asu_max"_a=dict_spacegroup_asu_max_uvw, "asu_min_uvw"_a=spacegroup_asu_min_uvw, "asu_min"_a=dict_spacegroup_asu_min_uvw, "symop"_a=symop);
     
 
 
@@ -190,7 +194,7 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_model_file(std::string 
 }
 
 
-void privateer::pyanalysis::ClipperInterfaceLayer::parse_mtz_data_file(std::string path_to_mtz_file) 
+void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::string& path_to_mtz_file) 
 {
     if(path_to_mtz_file == "undefined")
     {
@@ -251,24 +255,28 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_mtz_data_file(std::stri
     {
         std::string symop = hklinfo.spacegroup().symop(i).format();
         auto currentSymop = pybind11::dict("index"_a=i, "symop"_a=symop);
+        symops.append(currentSymop);
     }
     pybind11::list primitive_symops;
     for(int i = 0; i < spacegroup_num_primitive_symops; i++)
     {
         std::string primitive_symop = hklinfo.spacegroup().primitive_symop(i).format();
         auto currentPrimitiveSymop = pybind11::dict("index"_a=i, "primitive_symop"_a=primitive_symop);
+        primitive_symops.append(currentPrimitiveSymop);
     }
     pybind11::list inversion_symops;
     for(int i = 0; i < spacegroup_num_inversion_symops; i++)
     {
         std::string inversion_symop = hklinfo.spacegroup().inversion_symop(i).format();
         auto currentInversionSymop = pybind11::dict("index"_a=i, "inversion_symop"_a=inversion_symop);
+        inversion_symops.append(currentInversionSymop);
     }
     pybind11::list centering_symops;
     for(int i = 0; i < spacegroup_num_centering_symops; i++)
     {
         std::string centering_symop = hklinfo.spacegroup().centering_symop(i).format();
         auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
+        centering_symops.append(currentCenteringSymop);
     } 
     auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
 
@@ -326,7 +334,7 @@ void privateer::pyanalysis::ClipperInterfaceLayer::parse_mtz_data_file(std::stri
     
     
 
-///////////////////////////////////////////////// Class ClipperInterfaceLayer END /////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////// Class CrystallographicData END /////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
@@ -3397,6 +3405,12 @@ void init_pyanalysis(py::module& m)
     // Need to pa::GlycosylationComposition_memorysafe(and probably pa::GlycanStructure_memorysafe) class or something like that for them huge ribosomes that
     // cause the Python process to hog all the Computer's memory. 
     // Basically change the paradigm from compute everything first and then rely on getters to call getter that then initiates a computation
+    py::class_<pa::CrystallographicData>(m, "CrystallographicData")
+        .def(py::init<>())
+        .def(py::init<std::string&, std::string&>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined")
+        .def("get_model_data", &pa::CrystallographicData::get_model_data)
+        .def("get_mtz_data", &pa::CrystallographicData::get_mtz_data);
+
     py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_model_file")="undefined")

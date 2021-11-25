@@ -34,7 +34,7 @@ namespace privateer {
     // class Privateer/Session/Core/Settings; // for stuff like setting output directory, calling a pipeline, user settings, generating coot files etc etc.
     // Maybe even that's the place to force users to default nCores arguments and stuff like that.
     // Leaning the closest to class Session or class Core;
-    class ClipperInterfaceLayer;
+    class CrystallographicData;
     class GlycosylationInteractions;
     class GlycosylationComposition;
     class GlycanStructure;
@@ -44,11 +44,11 @@ namespace privateer {
     class OfflineGlycomicsDatabase;
     class OfflineTorsionsDatabase;
 
-    class ClipperInterfaceLayer
+    class CrystallographicData
     {
       public:
-        ClipperInterfaceLayer() { }
-        ClipperInterfaceLayer(std::string path_to_model_file="undefined", std::string path_to_mtz_file="undefined")
+        CrystallographicData() { }
+        CrystallographicData(std::string path_to_model_file, std::string path_to_mtz_file)
         {
           if(path_to_model_file != "undefined")
             this->parse_model_file(path_to_model_file);
@@ -64,8 +64,8 @@ namespace privateer {
         pybind11::dict model_data;
         pybind11::dict mtz_data;
 
-        void parse_model_file(std::string path_to_model_file);
-        void parse_mtz_data_file(std::string path_to_mtz_file);
+        void parse_model_file(std::string& path_to_model_file);
+        void parse_mtz_data_file(std::string& path_to_mtz_file);
 
     };
 
