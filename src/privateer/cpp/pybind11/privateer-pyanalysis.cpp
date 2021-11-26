@@ -187,6 +187,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
     result["totalAtomsInModel"] = totalAtomsInModel;
     result["model_B_avg"] = global_B_avg;
     result["model_B_fac_sum"] = global_B_fac_sum;
+    result["totalScatteringPower"] = totalModelScatter;
     result["numberOfRefinedParameters"] = numberOfRefinedParameters;
     result["polymers"] = polymers;
 

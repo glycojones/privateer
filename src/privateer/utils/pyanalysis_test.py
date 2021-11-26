@@ -25,6 +25,16 @@ interactions = pvtcore.GlycosylationInteractions(
 result = interactions.get_all_detected_interactions()
 print(result)
 
+crystalography = pvtcore.CrystallographicData(
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb",
+    "/home/harold/Dev/privateer_python/tests/test_data/5fjj.mtz",
+)
+
+pdbdata = crystalography.get_model_data()
+mtzdata = crystalography.get_mtz_data()
+# print(pdbdata)
+# print(mtzdata)
+
 print("\n")
 for entry in listOfDetectedGlycans:
     for key, value in entry.items():
