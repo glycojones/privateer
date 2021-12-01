@@ -24,7 +24,7 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
             if(closest_match_disable) std::cout << "\nWARNING: Unable to find a matching GlyConnectID for WURCS sequence from this Glycan sequence! If you would like to find the closest match on GlyConnect database please delete the -closest_match_disable option!" << std::endl;
             else
             {
-                std::cout << "\nWARNING: Unable to find a matching GlyConnectID for WURCS sequence from this Glycan sequence! Attempting to find the closest matches on GlyConnect database by carrying out permutations" << std::endl;
+                std::cout << "\nAttempting to find the closest matches on GlyConnect database by carrying out permutations" << std::endl;
 
                 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
                 
@@ -32,7 +32,7 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
                 else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output);   
                 
                 if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
-                else std::cout << "ERROR: Unable to generate permutations that would be found in GlyConnect database!" << std::endl;
+                else std::cout << "ERROR: Privateer was unable to generate permutations that would be found in GlyConnect database!" << std::endl;
             }
         }
         else if (valueLocation != -1 && currentGlycan.number_of_nodes() <= 1)
@@ -45,6 +45,7 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
             if(closest_match_disable) std::cout << "\nWARNING: Unable to find a matching GlyTouCanID for WURCS sequence from this Glycan sequence! If you would like to find the closest match on GlyConnect database please delete the -closest_match_disable option!" << std::endl;
             else
             {
+                std::cout << "\nERROR: Unable to match a generated WURCS sequence to GlyTouCanID in imported database file! Attempting to find the closest matches on GlyConnect database by carrying out permutations" << std::endl;
                 if ( currentGlycan.number_of_nodes() > 1)
                 {
                     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
@@ -53,7 +54,7 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
                     else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output); 
 
                     if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
-                    else std::cout << "ERROR: Unable to generate permutations that would be found on GlyConnect database!" << std::endl;
+                    else std::cout << "ERROR: Privateer was unable to generate permutations that would be found on GlyConnect database!" << std::endl;
                 }
                 else std::cout << "ERROR: Glycan is too short for permutations, therefore unable to generate alternative GlyTouCan and GlyConnect IDs!" << std::endl;
             }

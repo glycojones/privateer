@@ -107,13 +107,11 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
             std::vector<int> editable_nodes_for_anomer_permutations = get_editable_node_list_for_anomer_permutations(sugarsLeafNode);
 
             generate_all_anomer_permutations(result, editable_nodes_for_anomer_permutations, permutatedGlycanLeafNode, glycomics_database, residuePermutations, residueDeletions);
-
             std::vector<int> editable_nodes_for_monomer_permutations = get_editable_node_list_for_monomer_permutations(sugarsLeafNode, glucose_only);
 
             bool statusControl = false;
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
             generate_all_monomer_permutations_parallel_initial(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, glycomics_database, residueDeletions, debug_output, nThreads, useParallelism, statusControl);
-            
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
 
             residueDeletions++;
@@ -141,7 +139,7 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
             bool statusControl = false;
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> tempResultMonomerPermutations;
             generate_all_monomer_permutations_parallel_subsequent(tempResultMonomerPermutations, editable_leaf_nodes_for_monomer_permutations, editable_last_nodes_for_monomer_permutations, permutatedGlycanLeafNode, permutatedGlycanLastNode, glycomics_database, residueDeletions, debug_output, nThreads, useParallelism, statusControl);
-            
+
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
 
             residueDeletions++;
@@ -197,9 +195,12 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                            }
 
-                            tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
@@ -228,7 +229,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
                         std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerAlpha[index] = tempContainer;
                     }
@@ -279,9 +280,11 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-
-                            tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            }
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanBravo.generate_wurcs();
@@ -310,7 +313,7 @@ void generate_all_monomer_permutations_parallel_initial(std::vector<std::pair<cl
 
                         std::vector < clipper::MSugar > sugars = tempGlycanBravo.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerBravo[index] = tempContainer;
                     }
@@ -387,9 +390,11 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-
-                            tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                            }
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
@@ -417,7 +422,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                         std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerLeafAlpha[index] = tempContainer;
                     }
@@ -467,9 +472,11 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-
-                            tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            }
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanBravo.generate_wurcs();
@@ -497,7 +504,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                         std::vector < clipper::MSugar > sugars = tempGlycanBravo.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerLeafBravo[index] = tempContainer;
                     }
@@ -548,9 +555,11 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-
-                            tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanAlpha.replace_sugar_at_index(nodeID, msug);
+                            }
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanAlpha.generate_wurcs();
@@ -578,7 +587,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                         std::vector < clipper::MSugar > sugars = tempGlycanAlpha.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Alpha = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Alpha, tempGlycanAlpha, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerLastAlpha[index] = tempContainer;
                     }
@@ -628,9 +637,11 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msug.type().trim());
                             
-                            msug.set_type(alternative_monomers[0]);
-
-                            tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            if(!alternative_monomers.empty())
+                            {
+                                msug.set_type(alternative_monomers[0]);
+                                tempGlycanBravo.replace_sugar_at_index(nodeID, msug);
+                            }
                         }
                         
                         clipper::String temporaryWURCS = tempGlycanBravo.generate_wurcs();
@@ -658,7 +669,7 @@ void generate_all_monomer_permutations_parallel_subsequent(std::vector<std::pair
 
                         std::vector < clipper::MSugar > sugars = tempGlycanBravo.get_sugars();
                         std::vector<int> editable_nodes_for_anomer_permutations_Bravo = get_editable_node_list_for_anomer_permutations(sugars);
-                    
+
                         generate_all_anomer_permutations(tempContainer, editable_nodes_for_anomer_permutations_Bravo, tempGlycanBravo, glycomics_database, residuePermutations, residueDeletions);      
                         threadSafeContainerLastBravo[index] = tempContainer;
                     }
@@ -718,7 +729,6 @@ std::vector<std::pair<clipper::MGlycan, std::vector<int>>> generate_closest_matc
             generate_all_monomer_permutations_singlethreaded(tempResultMonomerPermutations, editable_nodes_for_monomer_permutations, permutatedGlycanLeafNode, glycomics_database, residueDeletions, debug_output);
             
             result.insert( result.end(), tempResultMonomerPermutations.begin(), tempResultMonomerPermutations.end() );
-            
             remove_first_leaf_node_and_check_db(result, permutatedGlycanLeafNode, glycomics_database, residueDeletions);
             remove_last_node_and_check_db(result, permutatedGlycanLastNode, glycomics_database, residueDeletions);
 
@@ -784,11 +794,14 @@ void generate_all_monomer_permutations_singlethreaded(std::vector<std::pair<clip
 
             std::vector<std::string> alternative_monomers = clipper::data::alternative_monomer(msugAlpha.type().trim());
             
-            msugAlpha.set_type(alternative_monomers[0]);
-            msugBravo.set_type(alternative_monomers[1]);
+            if(alternative_monomers.size() == 2)
+            {
+                msugAlpha.set_type(alternative_monomers[0]);
+                msugBravo.set_type(alternative_monomers[1]);
 
-            tempGlycanAlpha.replace_sugar_at_index(nodeID, msugAlpha);
-            tempGlycanBravo.replace_sugar_at_index(nodeID, msugBravo);
+                tempGlycanAlpha.replace_sugar_at_index(nodeID, msugAlpha);
+                tempGlycanBravo.replace_sugar_at_index(nodeID, msugBravo);
+            }
         }
         clipper::String temporaryWURCSAlpha = tempGlycanAlpha.generate_wurcs();
         clipper::String temporaryWURCSBravo = tempGlycanBravo.generate_wurcs();
