@@ -2526,11 +2526,14 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
     if(debug_output)
     {
-        DBG << "Linking " << first_sugar.type() << " with " << next_sugar.type() << std::endl;
+        DBG << "Linking " << first_sugar.chain_id().trim() << "/" <<  first_sugar.id().trim() << first_sugar.type() << " with " << next_sugar.chain_id().trim() << "/" <<  next_sugar.id().trim() << next_sugar.type() << std::endl;
     }
 
     for ( int i = 0 ; i < node_list.size() ; i++ )
-        if ( strcmp( node_list[i].get_sugar().id().c_str(), first_sugar.id().c_str()) == 0)
+        if (    strcmp( node_list[i].get_sugar().id().c_str(), first_sugar.id().c_str()) == 0 &&
+                strcmp( node_list[i].get_sugar().type().c_str(), first_sugar.type().c_str()) == 0 &&
+                strcmp( node_list[i].get_sugar().chain_id().c_str(), first_sugar.chain_id().c_str()) == 0 && 
+                node_list[i].get_sugar().seqnum() == first_sugar.seqnum())
         {
             found = true;
             index = i;
@@ -4770,7 +4773,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
         DBG << "contacts.size() = " << contacts.size() << std::endl;
         for (int i = 0 ; i < contacts.size() ; i++ )
         {
-            DBG << "Detected contacts[" << i << "].first.id().trim() from msug = " << contacts[i].first.id().trim() << "\t\t\tcontacts[" << i << "].second....id().trim() = " << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type().trim() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()].id() << std::endl;
+            DBG << "Detected contacts[" << i << "].first.id().trim() from msug = " << msug.id().trim() << msug.type().trim() << "- " << contacts[i].first.id().trim() << "\t\t\tcontacts[" << i << "].second....id().trim() = " << tmpmol[contacts[i].second.polymer()].id().trim() << "/" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type().trim() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id() << "-" << tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()].id() << std::endl;
             DBG << "Distance of contacts[" << i << "].first and  = " << "contacts[" << i << "].second = " << clipper::Coord_orth::length(contacts[i].first.coord_orth(), tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()].coord_orth()) << std::endl;
         }
     }
@@ -4781,7 +4784,10 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
 
             const std::vector<clipper::MSugar> sugar_list = mg.get_sugars();
             if (std::find_if(sugar_list.begin(), sugar_list.end(),
-                [&](const clipper::MSugar& element) { return element.id() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id(); }) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
+                [&](const clipper::MSugar& element) { return    element.chain_id().trim() == tmpmol[contacts[i].second.polymer()].id().trim() &&
+                                                                element.id() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].id() &&
+                                                                element.type().trim() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type().trim() && 
+                                                                element.seqnum() == tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].seqnum(); }) == sugar_list.end()) // prevent wrong circular linkages in glycosylation
             {
                 clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()].id().trim(), tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)

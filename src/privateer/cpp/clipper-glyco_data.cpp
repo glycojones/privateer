@@ -117,7 +117,7 @@ const sugar_database_entry sugar_database[] =
     { "49A" ,	 "N", 	 "L", 	 "4,9-AMINO-2,4-DEOXY-2,3-DEHYDRO-N-ACETYL-NEUR" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.082 },
     { "4AM" ,	 "N", 	 "L", 	 "N4-AMINO-2-DEOXY-2,3-DEHYDRO-N-NEURAMINICACID" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.071 },
     { "4GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)OXAMICACID" ,            "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.075 },
-    { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 },
+    { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "7D1" ,    "N",    "D",    "1,2-Dideoxy-D-mannose",                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
@@ -363,6 +363,7 @@ const sugar_database_entry sugar_database[] =
     { "PA1" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-ALPHA-D-GLUCOPYRANOSE" ,          "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.023 },
     { "PDX" ,	 "A", 	 "D", 	 "2,3-DI-O-SULFO-ALPHA-D-GLUCOPYRANOSE" ,           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.037 },
     { "PH5" ,	 "A", 	 "L", 	 "2-PHENYL-PROP5AC" ,                               "O6 C2 C3 C4 C5 C6", 0.621, "1c4", 0.003, 2.005 },
+    { "PKM" ,	 "A", 	 "D", 	 "4-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 },
     { "PNA" ,	 "A", 	 "D", 	 "4'-NITROPHENYL-ALPHA-D-MANNOPYRANOSIDE" ,         "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.027 },
     { "PNG" ,	 "A", 	 "D", 	 "4'-NITROPHENYL-ALPHA-D-GLUCOPYRANOSIDE" ,         "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.002, 2.063 },
     { "PNJ" ,	 "B", 	 "D", 	 "PNP-BETA-D-GLUCOSAMINE" ,                         "O5 C1 C2 C3 C4 C5", 0.618, "4c1", 0.018, 4.026 },
@@ -778,6 +779,8 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "G6P" ) wurcs_residue_code = "a2122h-1a_1-5_6*OPO/3O/3=O";
         else if ( name == "5N6" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O_9*OCC/3=O";
         else if ( name == "TYV" ) wurcs_residue_code = "a1d22m-1a_1-5";
+        else if ( name == "PKM" ) wurcs_residue_code = "Aad21122h-2a_2-6_4*OCC/3=O_5*NCC/3=O";
+        else if ( name == "ABE" ) wurcs_residue_code = "a2d12m-1a_1-5";
         
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
