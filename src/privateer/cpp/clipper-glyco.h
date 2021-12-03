@@ -762,7 +762,7 @@ namespace clipper
             MGlycology ( const clipper::MiniMol&, bool debug_output, std::string expression_system = "undefined" );
             MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system = "undefined" );
 
-            void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system );
+            void init ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system );
             clipper::MGlycan get_glycan_by_id ( int id ) { return list_of_glycans[id]; };
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {
