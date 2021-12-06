@@ -352,7 +352,7 @@ namespace clipper
             int                             sugar_conformation;
             clipper::String                 sugar_alternate_confcode;
             std::vector < MSugar >          sugar_linked_to;                    // size: number of carbon atoms - 1
-            clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
+            clipper::String                 sugar_context;                  // n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
             int                             glycan_index;
             bool                            debug_output;
 
@@ -649,7 +649,7 @@ namespace clipper
             void add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
             std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
-            const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan or s-glycan
+            const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
             // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
             std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
             std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
@@ -742,7 +742,7 @@ namespace clipper
 
         private:
             bool debug_output;
-            clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan or s-glycan
+            clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
             std::pair < clipper::MMonomer, clipper::MSugar > root;     // this is the root, should be null if this is a ligand saccharide
             std::vector < Node > node_list;                 // interlinked nodes
             clipper::String chain;                          // Chain ID for this glycan

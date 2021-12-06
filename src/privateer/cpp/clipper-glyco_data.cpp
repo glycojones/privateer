@@ -478,7 +478,8 @@ const sugar_database_entry sugar_database[] =
                                                 "TYR",
                                                 "VAL",
                                                 "HYP", // hydroxyproline
-                                                "LYZ" // hydroxylysine
+                                                "LYZ", // hydroxylysine
+                                                "SEP" // phosphoserine
         };
 
         if ( std::find(amino_acids.begin(), amino_acids.end(), name) != amino_acids.end() )

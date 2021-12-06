@@ -839,6 +839,11 @@ int main(int argc, char** argv)
                               ligandList[index].second.set_context ( "s-glycan" );
                               fprintf ( output, "\t(s) " );
                             }
+                            else if ( list_of_glycans[i].get_type() == "p-glycan" )
+                            {
+                              ligandList[index].second.set_context ( "p-glycan" );
+                              fprintf ( output, "\t(p) " );
+                            }
                             else if ( list_of_glycans[i].get_type() == "ligand" )
                             {
                                 ligandList[index].second.set_context ( "ligand" );
@@ -976,6 +981,12 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "s-glycan" );
                                 
                                 std::cout << "\t(s) ";
+                            }
+                            else if ( list_of_glycans[i].get_type() == "p-glycan" )
+                            {
+                                ligandList[index].second.set_context ( "p-glycan" );
+                                
+                                std::cout << "\t(p) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "ligand" )
                             {
@@ -2081,6 +2092,10 @@ int main(int argc, char** argv)
 									{
 										ligandList[index].second.set_context ( "s-glycan" );
 									}
+									else if ( list_of_glycans[i].get_type() == "p-glycan" )
+									{
+										ligandList[index].second.set_context ( "p-glycan" );
+									}
                                     else if ( list_of_glycans[i].get_type() == "ligand" )
                                     {
                                         ligandList[index].second.set_context ( "ligand" );
@@ -2212,9 +2227,10 @@ int main(int argc, char** argv)
                                 ligandList[index].second.set_context ( "s-glycan" );
                                 
                             }
-                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            else if ( list_of_glycans[i].get_type() == "p-glycan" )
                             {
-                                ligandList[index].second.set_context ( "ligand" );
+                                ligandList[index].second.set_context ( "p-glycan" );
+                                
                             }
                             else if ( list_of_glycans[i].get_type() == "ligand" )
                             {
@@ -2785,6 +2801,10 @@ int main(int argc, char** argv)
 									{
 										ligandList[index].second.set_context ( "s-glycan" );
 									}
+									else if ( list_of_glycans[i].get_type() == "p-glycan" )
+									{
+										ligandList[index].second.set_context ( "p-glycan" );
+									}
                                     else if ( list_of_glycans[i].get_type() == "ligand" )
                                     {
                                         ligandList[index].second.set_context ( "ligand" );
@@ -2919,9 +2939,9 @@ int main(int argc, char** argv)
                             {
                                 ligandList[index].second.set_context ( "s-glycan" ); 
                             }
-                            else if ( list_of_glycans[i].get_type() == "ligand" )
+                            else if ( list_of_glycans[i].get_type() == "p-glycan" )
                             {
-                                ligandList[index].second.set_context ( "ligand" );
+                                ligandList[index].second.set_context ( "p-glycan" ); 
                             }
                             else if ( list_of_glycans[i].get_type() == "ligand" )
                             {

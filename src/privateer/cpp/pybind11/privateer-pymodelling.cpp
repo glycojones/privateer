@@ -44,7 +44,7 @@ std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single
     std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);
 
     if ( result == code_conversion.end() )
-        return "X";
+        return three_letter_code;
     else
         return result->second;
 }
