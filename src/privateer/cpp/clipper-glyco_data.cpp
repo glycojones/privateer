@@ -856,6 +856,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "M8C" ) wurcs_residue_code = "a2112A-1a_1-5_6*OC";
         else if ( name == "SHB" ) wurcs_residue_code = "a2112A-1b_1-5_6*OC";
         else if ( name == "MUB" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
+        else if ( name == "GC4" ) wurcs_residue_code = "a21d2A-1b_1-5";
 
         
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
