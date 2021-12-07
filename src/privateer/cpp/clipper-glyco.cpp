@@ -3842,6 +3842,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
             else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
             else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
             else if ( mmol[pol][mon].type() == "ASP" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type() == "GLU" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
             else if ( mmol[pol][mon].type() == "HYP" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxyproline
             else if ( mmol[pol][mon].type() == "LYZ" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxylysine
             else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
@@ -4017,6 +4018,11 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CG", clipper::MM::ANY);      // CG
                         aa_atom_bravo = potential_o_roots[i].first.find("CB", clipper::MM::ANY);     // CB
+                    }
+                    else if(potential_o_roots[i].first.type().trim() == "GLU")
+                    {
+                        aa_atom_alpha = potential_o_roots[i].first.find("CD", clipper::MM::ANY);      // CD
+                        aa_atom_bravo = potential_o_roots[i].first.find("CG", clipper::MM::ANY);     // CG
                     }
                     else if(potential_o_roots[i].first.type().trim() == "HYP")
                     {
@@ -4845,6 +4851,23 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
     {
         int id1 = mm.lookup ( "OD2", clipper::MM::ANY );
         int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "GLU" )
+    {
+        int id1 = mm.lookup ( "OE2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OE1", clipper::MM::ANY );
 
         if ( id1 != -1 )
         {

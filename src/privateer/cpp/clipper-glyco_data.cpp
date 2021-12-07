@@ -429,6 +429,7 @@ const sugar_database_entry sugar_database[] =
     { "VG1" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOSE-1-PHOSPHATE-6-VANADATE" ,         "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 2.033 },
     { "X1P" ,	 "A", 	 "D", 	 "1-O-PHOSPHONO-ALPHA-D-XYLOPYRANOSE" ,             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.039 },
     { "X2F" ,	 "A", 	 "D", 	 "2-DEOXY-2-FLUOROXYLOPYRANOSE" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.070 },
+    { "YIO" ,	 "B", 	 "D", 	 "1-thio-beta-D-galactopyranose" ,                  "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "XYF" ,	 "B", 	 "D", 	 "5(R)-5-FLUORO-BETA-D-XYLOPYRANOSYL-ENZYMEINT" ,   "O5 C1 C2 C3 C4 C5", 0.557, "4c1", 0.012, 1.634 },
     { "XYP" ,	 "B",	 "D",	 "BETA-D-XYLOPYRANOSE" ,                            "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 2.003 },
     { "XYS" ,	 "A", 	 "D", 	 "XYLOPYRANOSE" ,                                   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 },
@@ -821,6 +822,10 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "MDA" ) wurcs_residue_code = "ad622m-1b_1-5_3*C";
         else if ( name == "AQA" ) wurcs_residue_code = "a21eEA-1b_1-5";
         else if ( name == "9RN" ) wurcs_residue_code = "a2112h-1a_1-5_3-6";
+        else if ( name == "YIO" ) wurcs_residue_code = "a2112h-1b_1-5";
+        else if ( name == "GCO" ) wurcs_residue_code = "A2122h"; // linear form of sugar, not implemented in the above table. 
+        else if ( name == "NBG" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O";
+        else if ( name == "MBG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC";
 
         
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
