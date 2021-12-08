@@ -3854,7 +3854,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
         potential_rootless_polysaccharides.push_back(special_rootless_polysaccharides[i]);
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first, potential_n_roots[i].second ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -3952,7 +3952,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
     for ( int i = 0 ; i < potential_o_roots.size() ; i++ )  // create o-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_o_roots[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_o_roots[i].first, potential_o_roots[i].second ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -4071,7 +4071,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
     for ( int i = 0 ; i < potential_s_roots.size() ; i++ )  // create s-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_s_roots[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_s_roots[i].first, potential_s_roots[i].second ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -4153,7 +4153,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
     for ( int i = 0 ; i < potential_c_roots.size() ; i++ )  // create c-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_c_roots[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_c_roots[i].first, potential_c_roots[i].second ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -4257,7 +4257,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
     for ( int i = 0 ; i < potential_p_roots.size() ; i++ )  // create c-glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_p_roots[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_p_roots[i].first, potential_p_roots[i].second ) ;
 
         for ( int j = 0 ; j < linked.size() ; j++ )
         {
@@ -4336,7 +4336,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
     for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
     {
-        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first ) ;
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first, potential_rootless_polysaccharides[i].second ) ;
 
         if(linked.empty())
         {
@@ -4459,7 +4459,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
     {
         DBG << "clipper::MGlycan mg.number_of_nodes() = " << mg.number_of_nodes() << "\tmsug.id() = " << msug.id() << std::endl;
     }
-    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > contacts = get_contacts ( msug );
+    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > contacts = get_contacts ( msug, msug.chain_id() );
 
     const clipper::MiniMol& tmpmol = *this->mmol;
 
@@ -4770,12 +4770,15 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
 }
 
 
-const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > MGlycology::get_contacts ( const clipper::MMonomer& mm )
+const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > MGlycology::get_contacts ( const clipper::MMonomer& mm, const clipper::String monomer_chain_id )
 {
     // mm can be aminoacid (typically ASN) or sugar: ND2, O2, O3, O4, O6
 
     std::vector < clipper::MAtom > candidates; // look for the possibilities
     std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
+
+    if(debug_output)
+        DBG << "Input: " << monomer_chain_id << "/" << mm.id().trim() << "-" << mm.type().trim() << std::endl;
 
     if ( mm.type().trim() == "ASN" )
     {
@@ -5109,8 +5112,13 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
-                if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                // if (    (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
+                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
+                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                 if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                    &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                 {                            //         of crappy structures in MG
                     if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]),
                                              get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
@@ -5118,7 +5126,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
                         
                         if(debug_output)
-                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << std::endl;
+                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "from: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
 
                         if(get_altconf(tmpAtom) != ' ')
                         {
