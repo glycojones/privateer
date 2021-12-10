@@ -3788,7 +3788,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
 
                     if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
-                    nodeHasSpecialCase = true;
+                        nodeHasSpecialCase = true;
 
                     if(nodeHasSpecialCase) break;
                 }

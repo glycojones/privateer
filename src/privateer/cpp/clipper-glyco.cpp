@@ -2572,7 +2572,105 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                     phi_cone_ctwo_oeight_ceight = 0.0;
 
     clipper::MAtom actual_c1, first_sugar_c1, c1, o1, c2, o2, c3, o3, c4, o4, c5, o5_next_sugar, o5, next_sugar_ring_oxygen, c6, o6, first_sugar_ring_oxygen, c7, o7, c8, o8, c9, o9;
-    if ( link == 8 )
+    if ( link == 9 )
+    {
+        // next_sugar 2 SIA
+        // first_sugar 1 SLB
+        if(next_sugar.ring_members().size() == 6)
+        {
+            o6 = next_sugar.ring_members()[0];              // O6
+            c2 = next_sugar.ring_members()[1];              // C2
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)];
+            o9 = next_sugar.anomeric_substituent();         // O9 usually
+        }
+        else if(next_sugar.ring_members().size() == 5)
+        {
+            o6 = next_sugar.ring_members()[0];              // O5
+            c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; 
+            c2 = next_sugar.ring_members()[1];              // C2
+            o9 = next_sugar.anomeric_substituent();         // O8 usually
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << next_sugar.ring_members().size() << std::endl;
+            std::cout << "\tnext_sugar info: " << next_sugar.type().trim() << "-" << next_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        if(first_sugar.ring_members().size() == 6)
+        {
+            c6 = first_sugar.ring_members()[5];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O6 for omega_seven
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
+            c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            o8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+
+        }
+        else if(first_sugar.ring_members().size() == 5)
+        {
+            c6 = first_sugar.ring_members()[4];
+            first_sugar_ring_oxygen = first_sugar.ring_members()[0]; // O6 for omega_seven
+            c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
+            o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
+            c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            o8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
+            c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
+        }
+        else
+        {
+            std::cout << "ERROR: Unsupported ring size, expecting either a 5 membered or 6 membered ring." << std::endl;
+            std::cout << "\tRing size received: " << first_sugar.ring_members().size() << std::endl;
+            std::cout << "\tfirst_sugar info: " << first_sugar.type().trim() << "-" << first_sugar.id().trim() << std::endl;
+            throw std::runtime_error("Unsupported ring size");
+        }
+
+        phi   = clipper::Coord_orth::torsion ( o6.coord_orth(),
+                                               c2.coord_orth(),
+                                               o9.coord_orth(),
+                                               c9.coord_orth() );
+        
+        phi_cone_ctwo_oeight_ceight   = clipper::Coord_orth::torsion (  c1.coord_orth(),
+                                                                        c2.coord_orth(),
+                                                                        o9.coord_orth(),
+                                                                        c9.coord_orth() );
+
+        psi   = clipper::Coord_orth::torsion ( c2.coord_orth(),
+                                               o9.coord_orth(),
+                                               c9.coord_orth(),
+                                               c8.coord_orth() );
+
+        omega_seven = clipper::Coord_orth::torsion (    o7.coord_orth(),
+                                                        c7.coord_orth(),
+                                                        c6.coord_orth(),
+                                                        first_sugar_ring_oxygen.coord_orth() );
+
+        omega_eight = clipper::Coord_orth::torsion (    o8.coord_orth(),
+                                                        c8.coord_orth(),
+                                                        c7.coord_orth(),
+                                                        o7.coord_orth() );
+
+
+        if(first_sugar.type().trim() == "SIA" || first_sugar.type().trim() == "SLB")
+        {
+            omega_nine = clipper::Coord_orth::torsion (     o9.coord_orth(),
+                                                            c9.coord_orth(),
+                                                            c8.coord_orth(),
+                                                            o8.coord_orth() );
+        }
+        
+        new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
+        if(debug_output)
+        {
+            std::vector<clipper::ftype32> torsions = new_connection.get_torsions();
+            DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tphi_c1c2o8c8 = " << torsions[5] << "\t\tpsi = " << torsions[1] << "\t\tomega_seven = " << torsions[2] << "\t\tomega_eight = " << torsions[3] << "\t\tomega_nine = " << torsions[4] << std::endl;
+        }
+        new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
+        add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+    }
+    else if ( link == 8 )
     {
         // next_sugar 5 SIA - MAN
         // first_sugar 4 SIA - BMA
@@ -2621,13 +2719,6 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             c7 = first_sugar[first_sugar.lookup("C7",clipper::MM::ANY)];
             o7 = first_sugar[first_sugar.lookup("O7",clipper::MM::ANY)];
             c8 = first_sugar[first_sugar.lookup("C8",clipper::MM::ANY)];
-
-
-            if(first_sugar.type().trim() == "SIA" || first_sugar.type().trim() == "SLB")
-            {
-                c9 = first_sugar[first_sugar.lookup("C9",clipper::MM::ANY)];
-                o9 = first_sugar[first_sugar.lookup("O9",clipper::MM::ANY)];
-            }
         }
         else
         {
@@ -2663,7 +2754,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                                                         o7.coord_orth() );
 
 
-        if(first_sugar.type().trim() == "SIA")
+        if(first_sugar.type().trim() == "SIA" || first_sugar.type().trim() == "SLB")
         {
             omega_nine = clipper::Coord_orth::torsion (     o9.coord_orth(),
                                                             c9.coord_orth(),
@@ -4979,6 +5070,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "O9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "S1", clipper::MM::ANY );
 
         if ( id != -1 )
@@ -5015,6 +5111,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "S8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "S9", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -5059,6 +5160,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "N9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "F1", clipper::MM::ANY );
 
         if ( id != -1 )
@@ -5095,6 +5201,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "F8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F9", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
