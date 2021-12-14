@@ -121,6 +121,7 @@ const sugar_database_entry sugar_database[] =
     { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
+    { "6PZ" ,	 "B", 	 "D", 	 "5,7-bisacetamido-3,5,7,9-tetradeoxy-L-glycero-alpha-L-manno-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "7CV" ,    "A",    "L",    "6-deoxy-2,3-di-O-methyl-alpha-L-mannopyranose",   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "7D1" ,    "N",    "D",    "1,2-Dideoxy-D-mannose",                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "7LQ" ,    "N",    "D",    "GLC-CHEX",                                        "C7 C1 C2 C3 C4 C5", 0.593, "4h5", 0.003, 1.304 },
@@ -969,6 +970,8 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "MXY" ) wurcs_residue_code = "a1221m-1b_1-5_2*OC";
         else if ( name == "WIA" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC_6*S";
         else if ( name == "SHD" ) wurcs_residue_code = "a1222h-1a_1-5";
+        else if ( name == "1GN" ) wurcs_residue_code = "a2112h-1b_1-5_2*N";
+        else if ( name == "6PZ" ) wurcs_residue_code = "Aad22111m-2a_2-6_5*NCC/3=O_7*NCC/3=O";
 
 
 
