@@ -120,6 +120,7 @@ const sugar_database_entry sugar_database[] =
     { "4NN" ,	 "N", 	 "D", 	 "N-[(5S,6R)-5-hydroxy-6-(hydroxymethyl)-2-oxo-5,6-dihydro-2H-pyran-3-yl]acetamide" ,    "O5 C1 C2 C3 C4 C5", 0.621, "5ev", 0.003, 2.016 },
     { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
+    { "6LW" ,	 "N", 	 "D", 	 "(Z)-L-Arabinonhydroximo-1,4-lactone" , 			"O4 C1 C2 C3 C4", 0.552, "ev3", 0.018, 4.147 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "6PZ" ,	 "B", 	 "D", 	 "5,7-bisacetamido-3,5,7,9-tetradeoxy-L-glycero-alpha-L-manno-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "7CV" ,    "A",    "L",    "6-deoxy-2,3-di-O-methyl-alpha-L-mannopyranose",   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
@@ -899,7 +900,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "MUB" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
         else if ( name == "GC4" ) wurcs_residue_code = "a21d2A-1b_1-5";
         else if ( name == "B6D" ) wurcs_residue_code = "a2122m-1b_1-5_2*NCC/3=O_4*NCC/3=O";
-        else if ( name == "Z5L" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC";
+        else if ( name == "Z5L" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_2*S";
         else if ( name == "4NN" ) wurcs_residue_code = "AZz22h_1-5_2*NCC/3=O";
         else if ( name == "BG6" ) wurcs_residue_code = "a2122h-1b_1-5_6*OPO/3O/3=O";
         else if ( name == "K5B" ) wurcs_residue_code = "AOd2122h_4-7";
@@ -972,7 +973,7 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "SHD" ) wurcs_residue_code = "a1222h-1a_1-5";
         else if ( name == "1GN" ) wurcs_residue_code = "a2112h-1b_1-5_2*N";
         else if ( name == "6PZ" ) wurcs_residue_code = "Aad22111m-2a_2-6_5*NCC/3=O_7*NCC/3=O";
-
+        else if ( name == "6LW" ) wurcs_residue_code = "A211h_1-4_1*=NO";
 
 
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
