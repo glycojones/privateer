@@ -117,6 +117,7 @@ const sugar_database_entry sugar_database[] =
     { "49A" ,	 "N", 	 "L", 	 "4,9-AMINO-2,4-DEOXY-2,3-DEHYDRO-N-ACETYL-NEUR" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.082 },
     { "4AM" ,	 "N", 	 "L", 	 "N4-AMINO-2-DEOXY-2,3-DEHYDRO-N-NEURAMINICACID" ,  "O6 C2 C3 C4 C5 C6", 0.340, "5h4", 0.087, 9.071 },
     { "4GP" ,	 "B", 	 "D", 	 "N-(BETA-D-GLUCOPYRANOSYL)OXAMICACID" ,            "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.075 },
+    { "4GL" ,	 "A", 	 "D", 	 "alpha-D-gulopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.382 },
     { "4NN" ,	 "N", 	 "D", 	 "N-[(5S,6R)-5-hydroxy-6-(hydroxymethyl)-2-oxo-5,6-dihydro-2H-pyran-3-yl]acetamide" ,    "O5 C1 C2 C3 C4 C5", 0.621, "5ev", 0.003, 2.016 },
     { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
@@ -280,6 +281,7 @@ const sugar_database_entry sugar_database[] =
     { "GLG" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOPYRANOSYL-2-CARBOXYLICACIDAMID" ,    "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.054 },
     { "GLP" ,	 "A", 	 "D", 	 "GLUCOSAMINE6-PHOSPHATE" ,                         "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.028 },
     { "GLS" ,	 "B", 	 "D", 	 "BETA-D-GLUCOPYRANOSESPIROHYDANTOIN" ,             "O5 C1 C2 C3 C4 C5", 0.613, "4c1", 0.003, 2.134 },
+    { "GM0" ,	 "A", 	 "D", 	 "4-O-phosphono-L-glycero-alpha-D-manno-heptopyranose","O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.016 },
     { "GMB" ,	 "B", 	 "D", 	 "1,7-DI-O-PHOSPHONO-L-GLYCERO-BETA-D-MANNO-HEP" ,  "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.002, 1.365 },
     { "GMH" ,	 "A", 	 "D", 	 "L-GLYCERO-D-MANNO-HEPTOPYRANOSE" ,                "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.016 },
     { "GNA" ,	 "B", 	 "L", 	 "2,4-DEOXY-4-GUANIDINO-5-N-ACETYL-NEURAMINICA" ,   "O6 C2 C3 C4 C5 C6", 0.620, "1c4", 0.003, 2.009 },
@@ -454,6 +456,7 @@ const sugar_database_entry sugar_database[] =
     { "TOA" ,	 "A", 	 "D", 	 "3-DEOXY-3-AMINOGLUCOSE" ,                         "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.021 },
     { "TOC" ,	 "A", 	 "D", 	 "2,3,6-TRIDEOXY-2,6-DIAMINOGLUCOSE" , 	            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.047 },
     { "TQY" ,	 "A", 	 "D", 	 "6-O-octanoyl-alpha-D-glucopyranose" , 	        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.047 },
+    { "TT7" ,	 "B", 	 "D", 	 "4-O-phosphono-beta-D-fructofuranose" ,            "O5 C2 C3 C4 C5"   , 0.372, "3ev", 0.016, 5.716 }, // new entry 01/12/2021
     { "TUP" ,	 "A", 	 "D", 	 "3-deoxy-3-fluoro-alpha-D-glucopyranose" ,         "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.047 },
     { "TVS" ,	 "B", 	 "D", 	 "prop-2-en-1-yl 2-(acetylamino)-2-deoxy-beta-D-glucopyranoside" , "O5 C1 C2 C3 C4 C5", 0.540, "4c1", 0.010, 1.500 }, // new entry 01/12/2021
     { "TVV" ,	 "B", 	 "D", 	 "	3-O-prop-2-yn-1-yl-beta-D-galactopyranose" ,    "O5 C1 C2 C3 C4 C5", 0.540, "4c1", 0.010, 1.500 }, // new entry 01/12/2021
@@ -974,7 +977,21 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "1GN" ) wurcs_residue_code = "a2112h-1b_1-5_2*N";
         else if ( name == "6PZ" ) wurcs_residue_code = "Aad22111m-2a_2-6_5*NCC/3=O_7*NCC/3=O";
         else if ( name == "6LW" ) wurcs_residue_code = "A211h_1-4_1*=NO";
-
+        else if ( name == "ARA" ) wurcs_residue_code = "a211h-1a_1-5";
+        else if ( name == "TT7" ) wurcs_residue_code = "ha122h-2b_2-5_4*OPO/3O/3=O";
+        else if ( name == "4GL" ) wurcs_residue_code = "a2212h-1a_1-5";
+        else if ( name == "MBF" ) wurcs_residue_code = "a1122h-1b_1-5_2*F";
+        else if ( name == "DLG" ) wurcs_residue_code = "a2d12h-1b_1-5_1*OCCCCCC";
+        else if ( name == "GS1" ) wurcs_residue_code = "a2122h-1b_1-5_1*S";
+        else if ( name == "OPM" ) wurcs_residue_code = "a1122h-1a_1-5_1*OCCCCC";
+        else if ( name == "DRI" ) wurcs_residue_code = "ad122m-1b_1-5_4*OC";
+        else if ( name == "LXB" ) wurcs_residue_code = "a2212h-1b_1-5_2*NCC/3=O";
+        else if ( name == "LXZ" ) wurcs_residue_code = "a1212h-1a_1-5_2*NCC/3=O";
+        else if ( name == "NGZ" ) wurcs_residue_code = "a1211h-1a_1-5_2*NCC/3=O";
+        else if ( name == "GL0" ) wurcs_residue_code = "a2212h-1b_1-5";
+        else if ( name == "GXL" ) wurcs_residue_code = "a1221h-1a_1-5";
+        else if ( name == "GM0" ) wurcs_residue_code = "a11221h-1a_1-5_4*OPO/3O/3=O";
+        
 
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
