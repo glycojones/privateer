@@ -124,6 +124,7 @@ const sugar_database_entry sugar_database[] =
     { "6LW" ,	 "N", 	 "D", 	 "(Z)-L-Arabinonhydroximo-1,4-lactone" , 			"O4 C1 C2 C3 C4", 0.552, "ev3", 0.018, 4.147 },
     { "6MN" ,	 "A", 	 "D", 	 "2-AMINO-2-DEOXY-6-O-PHOSPHONO-ALPHA-D-MANNOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "6PZ" ,	 "B", 	 "D", 	 "5,7-bisacetamido-3,5,7,9-tetradeoxy-L-glycero-alpha-L-manno-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
+    { "6S2" ,    "B",    "D",    "methyl 2-acetamido-2-deoxy-6-O-sulfo-beta-D-glucopyranoside", "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.033 },
     { "7CV" ,    "A",    "L",    "6-deoxy-2,3-di-O-methyl-alpha-L-mannopyranose",   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "7D1" ,    "N",    "D",    "1,2-Dideoxy-D-mannose",                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.369 },
     { "7LQ" ,    "N",    "D",    "GLC-CHEX",                                        "C7 C1 C2 C3 C4 C5", 0.593, "4h5", 0.003, 1.304 },
@@ -308,6 +309,7 @@ const sugar_database_entry sugar_database[] =
     { "GZL" ,	 "B", 	 "D", 	 "beta-D-galactofuranose" ,                         "O4 C1 C2 C3 C4", 0.372, "ev3", 0.002, 2.051 }, // new entry 01/12/2021
     { "H1M" ,	 "A", 	 "D", 	 "METHYL2-DEOXY-2-(2-HYDROXYETHYL)-ALPHA-D-MAN" ,   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.364 },
     { "H2P" ,	 "A", 	 "D", 	 "HEPTULOSE-2-PHOSPHATE" ,                          "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.072 },
+    { "HSH" ,	 "B", 	 "D", 	 "octyl beta-D-galactopyranoside" ,                 "O5 C1 C2 C3 C4 C5", 0.623, "4c1", 0.003, 2.051 },
     { "HSQ" ,	 "A", 	 "L", 	 "2-acetylamino-2-deoxy-alpha-L-idopyranose" ,      "O5 C1 C2 C3 C4 C5", 0.621, "1c4", 0.003, 2.037 },
     { "IDG" ,	 "B", 	 "L", 	 "O-2,6-DIAMINO-2,6-DIDEOXY-BETA-L-IDOPYRANOSE" ,   "O5 C1 C2 C3 C4 C5", 0.621, "1c4", 0.003, 2.037 },
     { "IDR" ,	 "A", 	 "L", 	 "L-IDURONICACID" ,                                 "O5 C1 C2 C3 C4 C5", 0.621, "1c4", 0.003, 2.021 },
@@ -476,6 +478,8 @@ const sugar_database_entry sugar_database[] =
     { "VJ4" ,	 "A", 	 "D", 	 "2-deoxy-2-{[(1S,3R)-1-hydroxy-3-(pentanoyloxy)undecyl]amino}-4-O-phosphono-alpha-D-glucopyranose" , "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.045 },
     { "WIA" ,	 "B", 	 "D", 	 "methyl 6-thio-beta-D-galactopyranoside" ,         "O5 C1 C2 C3 C4 C5", 0.623, "4c1", 0.003, 2.051 },
     { "X1P" ,	 "A", 	 "D", 	 "1-O-PHOSPHONO-ALPHA-D-XYLOPYRANOSE" ,             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.039 },
+    { "X0X" ,	 "B", 	 "D", 	 "beta-D-talopyranuronic acid",                    "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
+    { "X1X" ,	 "A", 	 "D", 	 "alpha-D-talopyranuronic acid",                    "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "X2F" ,	 "A", 	 "D", 	 "2-DEOXY-2-FLUOROXYLOPYRANOSE" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.070 },
     { "YIO" ,	 "B", 	 "D", 	 "1-thio-beta-D-galactopyranose" ,                  "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "XYF" ,	 "B", 	 "D", 	 "5(R)-5-FLUORO-BETA-D-XYLOPYRANOSYL-ENZYMEINT" ,   "O5 C1 C2 C3 C4 C5", 0.557, "4c1", 0.012, 1.634 },
@@ -1003,7 +1007,12 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "TVG" ) wurcs_residue_code = "a2112h-1b_1-4_1*OCCC";
         else if ( name == "TRV" ) wurcs_residue_code = "ha122h-2b_2-5_6*OCCCCCCCC/3=O";
         else if ( name == "JHM" ) wurcs_residue_code = "ad122h-1a_1-5_6*OSO/3=O/3=O";
-
+        else if ( name == "6S2" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_6*OSO/3=O/3=O";
+        else if ( name == "X0X" ) wurcs_residue_code = "a1112A-1b_1-5";
+        else if ( name == "X1X" ) wurcs_residue_code = "a1112A-1a_1-5";
+        else if ( name == "HSH" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCCCC";
+        
+        
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
         return wurcs_residue_code;
