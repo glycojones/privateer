@@ -103,6 +103,7 @@ const sugar_database_entry sugar_database[] =
     { "293" ,	 "A", 	 "D", 	 "(2S,4R,5S,6R)-6-((S)-1,2-DIHYDROXYETHYL)TETRAH" , "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.386 },
     { "2DG" ,	 "A", 	 "D", 	 "2-DEOXY-BETA-D-GALACTOSE" , 	 		    "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.036 },
     { "2DR" ,	 "B", 	 "D", 	 "2-DEOXY-BETA-D-ERYTHRO-PENTOFURANOSE" , 	    "O4 C1 C2 C3 C4",    0.379, "ev1", 0.014, 5.461 },
+    { "2F8" ,	 "A", 	 "D", 	 "methyl 2-acetamido-2-deoxy-alpha-D-glucopyranoside","O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.377 },
     { "2FG" ,	 "B", 	 "D", 	 "2-FLUORO-2-DEOXY-BETA-D-GALACTOPYRANOSE" , 	    "O5 C1 C2 C3 C4 C5", 0.594, "4c1", 0.002, 1.388 },
     { "2GL" ,	 "A", 	 "D", 	 "4-O-ACETYL-2,6-DIDEOXY-ALPHA-D-GALACTO-HEXOPY" ,  "O5 C1 C2 C3 C4 C5", 0.533, "1c4", 0.004, 2.549 },
     { "2GS" ,	 "A", 	 "D", 	 "2-O-METHYL-ALPHA-D-GALACTOPYRANOSE" , 	    "O5 C1 C2 C3 C4 C5", 0.532, "1c4", 0.004, 2.485 },
@@ -120,6 +121,7 @@ const sugar_database_entry sugar_database[] =
     { "4GL" ,	 "A", 	 "D", 	 "alpha-D-gulopyranose" ,                           "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.382 },
     { "4NN" ,	 "N", 	 "D", 	 "N-[(5S,6R)-5-hydroxy-6-(hydroxymethyl)-2-oxo-5,6-dihydro-2H-pyran-3-yl]acetamide" ,    "O5 C1 C2 C3 C4 C5", 0.621, "5ev", 0.003, 2.016 },
     { "5KV" ,	 "B", 	 "D", 	 "2-deoxy-6-O-sulfo-2-(sulfoamino)-beta-D-glucopyranose","O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.374 },
+    { "5LT" ,	 "A", 	 "D", 	 "3,4-di-O-sulfo-alpha-D-glucopyranose" ,           "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.002, 1.380 },
     { "5N6" ,	 "A", 	 "D", 	 "9-O-acetyl-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranosonic acid" , "O6 C2 C3 C4 C5 C6", 0.593, "1c4", 0.001, 1.379 }, // new entry 01/12/2021
     { "6GP" ,	 "B", 	 "D", 	 "METHYL-N-(BETA-D-GLUCOPYRANOSYL)OXAMATE" ,        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.001 },
     { "6LW" ,	 "N", 	 "D", 	 "(Z)-L-Arabinonhydroximo-1,4-lactone" , 			"O4 C1 C2 C3 C4", 0.552, "ev3", 0.018, 4.147 },
@@ -294,13 +296,14 @@ const sugar_database_entry sugar_database[] =
     { "GNS" ,	 "A", 	 "D", 	 "2-deoxy-2-(sulfoamino)-alpha-D-glucopyranose" ,   "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.045 },
     { "GNX" ,	 "A", 	 "D", 	 "2-deoxy-3-O-sulfo-2-(sulfoamino)-alpha-D-glucopyranose" , "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.045 },
     { "GP1" ,	 "A", 	 "D", 	 "2-amino-2-deoxy-1-O-phosphono-alpha-D-glucopyranose","O5 C1 C2 C3 C4 C5", 0.625, "4c1", 0.003, 2.036 },
-{ "GP4" ,	 "A", 	 "D", 	 "GLUCOSAMINE4-PHOSPHATE" ,                             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.028 },
+    { "GP4" ,	 "A", 	 "D", 	 "GLUCOSAMINE4-PHOSPHATE" ,                             "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.028 },
     { "GPM" ,	 "N", 	 "D", 	 "(1S)-1,5-anhydro-1-(phosphonomethyl)-D-glucitol" ,"O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.377 },
     { "GS1" ,	 "B", 	 "D", 	 "1-THIO-BETA-D-GLUCOPYRANOSE" ,                    "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.029 },
     { "GTM" ,	 "B", 	 "D", 	 "O1-METHYL-4-DEOXY-4-THIO-BETA-D-GLUCOSE" ,        "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 1.992 },
     { "GTR" ,	 "B", 	 "D", 	 "GALACTURONIC ACID",                               "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.026 },
     { "GU0" ,	 "B", 	 "D", 	 "2,3,6-TRI-O-SULFONATO-ALPHA-L-GALACTOPYRANOSE" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.335 },
     { "GU1" ,	 "B", 	 "D", 	 "2,3-di-O-methyl-beta-D-glucopyranuronic acid" ,   "O5 C1 C2 C3 C4 C5", 0.557, "1c4", 0.002, 1.853 },
+    { "GU2" ,	 "A", 	 "L", 	 "2,3-di-O-methyl-alpha-L-idopyranuronic acid" ,    "O5 C1 C2 C3 C4 C5", 0.557, "1c4", 0.002, 1.853 },
     { "GU3" ,	 "A", 	 "D", 	 "METHYL3-O-METHYL-2,6-DI-O-SULFO-ALPHA-D-GLUC" ,   "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.387 },
     { "GU4" ,	 "A", 	 "D", 	 "2,3,4,6-TETRA-O-SULFONATO-ALPHA-D-GLUCOPYRANO" ,  "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.039 },
     { "GU5" ,	 "A", 	 "D", 	 "2,3-DI-O-METHYL-6-O-SULFONATO-ALPHA-D-GLUCOPY" ,  "O5 C1 C2 C3 C4 C5", 0.518, "1c4", 0.004, 2.739 },
@@ -320,6 +323,7 @@ const sugar_database_entry sugar_database[] =
     { "IDS" ,	 "A", 	 "L", 	 "2-O-SULFO-ALPHA-L-IDOPYRANURONICACID" ,           "O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.016 },
     { "IDY" ,	 "A", 	 "L", 	 "1-O-methyl-2-O-sulfo-alpha-L-idopyranuronic acid","O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.016 },
     { "IMK" ,	 "B", 	 "D", 	 "2-(BETA-D-GLUCOPYRANOSYL)-5-METHYL-1-BENZIMID" ,  "O5 C1 C2 C3 C4 C5", 0.555, "4c1", 0.002, 1.855 },
+    { "IDU" ,	 "B", 	 "D", 	 "2-O-sulfo-beta-L-altropyranuronic acid",          "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "IPT" ,	 "B", 	 "D", 	 "ISOPROPYL-1-BETA-D-THIOGALACTOSIDE" ,             "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.042 },
     { "IXD" ,	 "N", 	 "N", 	 "4-DEOXY-2-O-SULFO-BETA-D-ERYTHRO-HEX-4-ENOPYR" ,  "O5 C1 C2 C3 C4 C5", 0.511, "2h1", 0.095, 7.412 },
     { "JHM" ,	 "A", 	 "D", 	 "2-DEOXY-6-O-SULFO-ALPHA-D-ARABINO-HEXOPYRANOS" ,  "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.001, 1.370 },
@@ -420,6 +424,7 @@ const sugar_database_entry sugar_database[] =
     { "PRP" ,	 "A", 	 "D", 	 "ALPHA-PHOSPHORIBOSYLPYROPHOSPHORICACID" ,         "O4 C1 C2 C3 C4"   , 0.381, "Oev", 0.015, 5.696 },
     { "PSG" ,	 "B", 	 "D", 	 "PARA-NITROPHENYL1-THIO-BETA-D-GLUCOPYRANOSID" ,   "O5 C1 C2 C3 C4 C5", 0.558, "4c1", 0.002, 1.830 },
     { "PSV" ,	 "A", 	 "D", 	 "ALPHA-D-PSICOFURANOSE" ,                          "O5 C2 C3 C4 C5"   , 0.378, "ev4", 0.017, 5.851 },
+    { "PZU" ,	 "A", 	 "D", 	 "alpha-D-Paratopyranose" ,                         "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.382 },
     { "RAM" ,	 "A", 	 "L", 	 "ALPHA-L-RHAMNOSE" ,                               "O5 C1 C2 C3 C4 C5", 0.620, "1c4", 0.003, 2.041 },
     { "RAO" ,	 "A", 	 "L", 	 "1-O-METHYL-ALPHA-RHAMNOSE" ,                      "O5 C1 C2 C3 C4 C5", 0.621, "1c4", 0.002, 2.046 },
     { "RER" ,	 "A", 	 "L", 	 "(1R,3S,4S,5S)-3-AMINO-2,3,6-TRIDEOXY-3-METHYL" ,  "O5 C1 C2 C3 C4 C5", 0.592, "1c4", 0.002, 1.366 },
@@ -441,6 +446,7 @@ const sugar_database_entry sugar_database[] =
     { "SG4" ,	 "A", 	 "D", 	 "3,4-DI-O-ACETYL-6-O-SULFAMOYL-ALPHA-D-GLUCOPY" ,  "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.397 },
     { "SGA" ,	 "B", 	 "D", 	 "O3-SULFONYLGALACTOSE" ,                           "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.039 },
     { "SGC" ,	 "B", 	 "D", 	 "4-DEOXY-4-THIO-BETA-D-GLUCOPYRANOSE" ,            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.022 },
+    { "SGD" ,	 "A", 	 "D", 	 "6-thio-alpha-D-glucopyranose" ,                   "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 2.035 },
     { "SGN" ,	 "A", 	 "D", 	 "N,O6-DISULFO-GLUCOSAMINE" ,                       "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.003, 1.997 },
     { "SHB" ,	 "B", 	 "D", 	 "methyl beta-D-galactopyranuronate" ,              "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.001, 1.370 },
     { "SHD" ,	 "A", 	 "D", 	 "alpha-D-altropyranose" ,                          "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
@@ -468,6 +474,8 @@ const sugar_database_entry sugar_database[] =
     { "TOC" ,	 "A", 	 "D", 	 "2,3,6-TRIDEOXY-2,6-DIAMINOGLUCOSE" , 	            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.047 },
     { "TQY" ,	 "A", 	 "D", 	 "6-O-octanoyl-alpha-D-glucopyranose" , 	        "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.047 },
     { "TT7" ,	 "B", 	 "D", 	 "4-O-phosphono-beta-D-fructofuranose" ,            "O5 C2 C3 C4 C5"   , 0.372, "3ev", 0.016, 5.716 }, // new entry 01/12/2021
+    { "TUG" ,	 "A", 	 "D", 	 "3,4-di-O-sulfo-alpha-D-altropyranose" ,           "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.002, 1.380 },
+    { "TUJ" ,	 "A", 	 "D", 	 "1,2,3,4-tetra-O-sulfo-alpha-D-allopyranose" ,     "O5 C1 C2 C3 C4 C5", 0.592, "4c1", 0.002, 1.380 },
     { "TUP" ,	 "A", 	 "D", 	 "3-deoxy-3-fluoro-alpha-D-glucopyranose" ,         "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.047 },
     { "TVG" ,	 "B", 	 "D", 	 "propyl beta-D-galactofuranoside" ,                "O5 C1 C2 C3 C4 C5", 0.540, "4c1", 0.010, 1.500 }, // new entry 01/12/2021
     { "TVS" ,	 "B", 	 "D", 	 "prop-2-en-1-yl 2-(acetylamino)-2-deoxy-beta-D-glucopyranoside" , "O5 C1 C2 C3 C4 C5", 0.540, "4c1", 0.010, 1.500 }, // new entry 01/12/2021
@@ -475,12 +483,14 @@ const sugar_database_entry sugar_database[] =
     { "TWA" ,	 "B", 	 "D", 	 "2,3,4-tri-O-sulfo-beta-D-altropyranose" ,         "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "TWD" ,	 "B", 	 "D", 	 "2,3-di-O-sulfo-alpha-L-glucopyranose" ,           "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.051 },
     { "TWJ" ,	 "B", 	 "D", 	 "1-thio-beta-D-talopyranose",                      "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
+    { "TWY" ,	 "B", 	 "D", 	 "4-thio-beta-D-xylopyranose",                      "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "TXB" ,	 "A", 	 "D", 	 "4-deoxy-4-thio-alpha-D-xylopyranose" ,            "O5 C1 C2 C3 C4 C5", 0.620, "4c1", 0.002, 2.039 },
     { "TYV" ,	 "A", 	 "D", 	 "TYVELOSE" ,                                       "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.003, 2.047 },
     { "U1Y" ,	 "B", 	 "D", 	 "methyl 6-thio-beta-D-glucopyranoside",            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "U2A" ,	 "B", 	 "D", 	 "methyl 2-thio-beta-D-glucopyranoside",            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "U2D" ,	 "A", 	 "D", 	 "6-O-decanoyl-alpha-D-glucopyranose",              "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "UAP" ,	 "A", 	 "D", 	 "1,4-DIDEOXY-5-DEHYDRO-O2-SULFO-GLUCURONICACI" ,   "O5 C1 C2 C3 C4 C5", 0.442, "1h2", 0.100, 8.090 },
+    { "UEA" ,	 "B", 	 "D", 	 "beta-D-sorbofuranose" ,                           "O5 C2 C3 C4 C5", 0.372, "ev1", 0.002, 2.051 }, // new entry 01/12/2021
     { "VG1" ,	 "A", 	 "D", 	 "ALPHA-D-GLUCOSE-1-PHOSPHATE-6-VANADATE" ,         "O5 C1 C2 C3 C4 C5", 0.619, "4c1", 0.003, 2.033 },
     { "VJ1" ,	 "A", 	 "D", 	 "2-deoxy-3-O-[(1R,3R)-1,3-dihydroxytetradecyl]-2-{[(3R)-3-hydroxytetradecanoyl]amino}-1-O-phosphono-alpha-D-glucopyranose" , "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.045 },
     { "VJ4" ,	 "A", 	 "D", 	 "2-deoxy-2-{[(1S,3R)-1-hydroxy-3-(pentanoyloxy)undecyl]amino}-4-O-phosphono-alpha-D-glucopyranose" , "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.045 },
@@ -502,6 +512,7 @@ const sugar_database_entry sugar_database[] =
     { "YZ0" ,	 "B", 	 "D", 	 "methyl beta-D-mannopyranoside" ,                  "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.001, 2.060 },
     { "Z3Q" ,	 "B", 	 "D", 	 "2-azidoethyl 2-acetamido-2-deoxy-beta-D-glucopyranoside", "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "Z4R" ,	 "A", 	 "D", 	 "methyl 3-thio-alpha-D-mannopyranoside" ,          "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.001, 2.060 },
+    { "Z4U" ,	 "A", 	 "D", 	 "methyl 4-thio-alpha-D-xylopyranoside" ,           "O5 C1 C2 C3 C4 C5", 0.622, "4c1", 0.001, 2.060 },
     { "Z4Y" ,	 "A", 	 "D", 	 "6-thio-alpha-D-mannopyranose" ,                   "O5 C1 C2 C3 C4 C5", 0.548, "4c1", 0.002, 1.803 },
     { "Z5L" ,	 "A", 	 "D", 	 "methyl 2-thio-alpha-D-mannopyranoside" ,          "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.003, 2.027 },
     { "Z61" ,	 "A", 	 "D", 	 "2-deoxy-alpha-D-arabino-hexopyranose",            "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
@@ -515,6 +526,7 @@ const sugar_database_entry sugar_database[] =
     { "ZD0" ,	 "A", 	 "D", 	 "methyl 4,6-dideoxy-4-{[(2R)-2,4-dihydroxybutanoyl]amino}-alpha-D-mannopyranoside", "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.377 },
     { "ZDO" ,	 "A", 	 "D", 	 "methyl 2-deoxy-6-O-sulfo-2-(sulfoamino)-alpha-D-glucopyranoside", "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.377 },
     { "ZCZ" ,	 "A", 	 "D", 	 "4,6-dideoxy-4-{[(2R)-2,4-dihydroxybutanoyl]amino}-2-O-methyl-alpha-D-mannopyranose", "O5 C1 C2 C3 C4 C5", 0.593, "4c1", 0.002, 1.377 },
+    { "ZEE" ,	 "B", 	 "L", 	 "beta-L-talopyranose",                             "O5 C1 C2 C3 C4 C5", 0.621, "4c1", 0.002, 2.051 }, // new entry 01/12/2021
     { "  A" ,	 "B",	 "D", 	 "ADENOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.236, "Oev", 0.016, 3.834 },   // RNA/DNA
     { "  U" ,    "B",    "D",    "URIDINE-5'-MONOPHOSPHATE" ,                     "O4' C1' C2' C3' C4'", 0.291, "Oev", 0.019, 4.394 },   //
     { "  G" ,    "B",    "D",    "GUANOSINE-5'-MONOPHOSPHATE" ,                   "O4' C1' C2' C3' C4'", 0.241, "Oev", 0.016, 3.844 },   //
@@ -927,8 +939,15 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "K5B" ) wurcs_residue_code = "AOd2122h_4-7";
         else if ( name == "Z9L" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
         else if ( name == "Z9K" ) wurcs_residue_code = "a2121A-1a_1-5_2*OSO/3=O/3=O_3*OC";
-        else if ( name == "GU6" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        else if ( name == "GU0" ) wurcs_residue_code = "a2122h-1b_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
         else if ( name == "GU1" ) wurcs_residue_code = "a2122A-1b_1-5_2*OC_3*OC";
+        else if ( name == "GU2" ) wurcs_residue_code = "a2121A-1a_1-5_2*OC_3*OC";
+        else if ( name == "GU3" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
+        else if ( name == "GU4" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
+        else if ( name == "GU5" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OSO/3=O/3=O";
+        else if ( name == "GU6" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        else if ( name == "GU8" ) wurcs_residue_code = "a2122h-1b_1-5_2*OC_3*OC_6*OC";
+        else if ( name == "GU9" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OC";
         else if ( name == "Z9H" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OC_4*OC_6*OSO/3=O/3=O";
         else if ( name == "NG6" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O";
         else if ( name == "VJ1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*NCCC^RCCCCCCCCCCC/5O/3=O_3*OC^RCC^RCCCCCCCCCCC/5O/3O";
@@ -1036,6 +1055,22 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "TWJ" ) wurcs_residue_code = "a1112h-1b_1-5_1*S";
         else if ( name == "GCT" ) wurcs_residue_code = "a2112A-1b_1-5";
         else if ( name == "GLF" ) wurcs_residue_code = "a2122h-1a_1-5_1*F";
+        else if ( name == "G1P" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O";
+        else if ( name == "TUJ" ) wurcs_residue_code = "a2222h-1a_1-5_1*OSO/3=O/3=O_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        else if ( name == "TUG" ) wurcs_residue_code = "a1222h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        else if ( name == "5LT" ) wurcs_residue_code = "a2122h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        else if ( name == "2F8" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*NCC/3=O";
+        else if ( name == "IDU" ) wurcs_residue_code = "a2111A-1b_1-5_2*OSO/3=O/3=O";
+        else if ( name == "AXR" ) wurcs_residue_code = "a122h-1a_1-4_1*OC";
+        else if ( name == "BXX" ) wurcs_residue_code = "a122h-1b_1-4";
+        else if ( name == "ZEE" ) wurcs_residue_code = "a2221h-1b_1-5";
+        else if ( name == "UEA" ) wurcs_residue_code = "ha212h-2b_2-5";
+        else if ( name == "GP4" ) wurcs_residue_code = "a2122h-1a_1-5_2*N_4*OPO/3O/3=O";
+        else if ( name == "SGD" ) wurcs_residue_code = "a2122h-1a_1-5_6*S";
+        else if ( name == "Z4U" ) wurcs_residue_code = "a212h-1a_1-5_1*OC_4*S";
+        else if ( name == "TWY" ) wurcs_residue_code = "a212h-1b_1-5_4*S";
+        else if ( name == "PZU" ) wurcs_residue_code = "a2d22m-1a_1-5";
+
 
         else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
