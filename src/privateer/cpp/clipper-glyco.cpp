@@ -4417,7 +4417,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                                                             [&accounted_for_sugars](std::pair<clipper::MMonomer, clipper::String>& rootless_glycan) {
                                                                 if (std::find_if(accounted_for_sugars.begin(), accounted_for_sugars.end(), 
                                                                         [&rootless_glycan](clipper::MSugar& accounted_for_sugar){ 
-                                                                        return  accounted_for_sugar.chain_id() == rootless_glycan.second &&
+                                                                        return  accounted_for_sugar.chain_id().trim() == rootless_glycan.second.trim() &&
                                                                                 accounted_for_sugar.id().trim() == rootless_glycan.first.id().trim() && 
                                                                                 accounted_for_sugar.type().trim() == rootless_glycan.first.type().trim() && 
                                                                                 accounted_for_sugar.seqnum() == rootless_glycan.first.seqnum(); }) != accounted_for_sugars.end()) 
@@ -4507,7 +4507,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                                                             [&accounted_for_sugars](std::pair<clipper::MMonomer, clipper::String>& rootless_glycan) {
                                                                 if (std::find_if(accounted_for_sugars.begin(), accounted_for_sugars.end(), 
                                                                         [&rootless_glycan](clipper::MSugar& accounted_for_sugar){ 
-                                                                        return  accounted_for_sugar.chain_id() == rootless_glycan.second &&
+                                                                        return  accounted_for_sugar.chain_id().trim() == rootless_glycan.second.trim() &&
                                                                                 accounted_for_sugar.id().trim() == rootless_glycan.first.id().trim() && 
                                                                                 accounted_for_sugar.type().trim() == rootless_glycan.first.type().trim() && 
                                                                                 accounted_for_sugar.seqnum() == rootless_glycan.first.seqnum(); }) != accounted_for_sugars.end()) 
@@ -5286,13 +5286,13 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
-                // if (    (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
-                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
-                //     ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
+                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
+                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                     )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                 //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
-                 if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                    &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                 {                            //         of crappy structures in MG
                     if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]),
                                              get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
