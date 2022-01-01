@@ -790,7 +790,7 @@ namespace clipper
             const std::vector < std::pair< clipper::String, clipper::MMonomer > > get_overlapping_residues ( const clipper::MMonomer& mm );
             const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm, const clipper::String monomer_chain_id );
             int parse_order ( clipper::String str ) { const char *s = str.c_str(); return atoi(&s[2]); }
-            void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug );
+            void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars );
             const char get_altconf ( const clipper::MAtom& ) const;
             std::string expression_system;
 

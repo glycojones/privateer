@@ -3887,62 +3887,30 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_c_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_p_roots;
     std::vector<std::pair<clipper::MMonomer, clipper::String>> potential_rootless_polysaccharides;
-    std::vector<std::pair<clipper::MMonomer, clipper::String>> special_rootless_polysaccharides;
-    
+
+    std::vector < clipper::MGlycan > list_of_glycans_modelled_as_glycosylation;
+    std::vector < clipper::MGlycan > list_of_glycans_modelled_as_ligands;
+    std::vector < clipper::MGlycan > list_of_glycans_modelled_as_single_residues;
+    std::vector < clipper::MSugar > accounted_for_sugars;
 
     for ( int pol = 0; pol < mmol.size() ; pol++ )
         for ( int mon = 0 ; mon < mmol[pol].size() ; mon++ )
         {
-            std::vector<clipper::MAtom> KDOlikerecipe;
-            for (int atom = 0; atom < mmol[pol][mon].size(); atom++)
-            {
-                clipper::MAtom tmpAtom = mmol[pol][mon][atom];
-                if(get_altconf(tmpAtom) != ' ')
-                {
-                    const char altconf = get_altconf(tmpAtom);
-                    
-                    std::string altConfSymbol(1, altconf);
-                    std::string O1_with_altconf = "O1 :" + altConfSymbol;
-                    std::string C1_with_altconf = "C1 :" + altConfSymbol;
-                    std::string OA_with_altconf = "O1A :" + altConfSymbol;
-                    std::string OB_with_altconf = "O1B :" + altConfSymbol;
-
-                    if (tmpAtom.id().trim() == O1_with_altconf)
-                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-                    
-                    if (tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == OA_with_altconf || tmpAtom.id().trim() == OB_with_altconf)
-                        KDOlikerecipe.push_back(tmpAtom);
-                }
-                else
-                    if (tmpAtom.id().trim() == "O1") 
-                        potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-                    
-                    if (tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "O1A" || tmpAtom.id().trim() == "O1B")
-                        KDOlikerecipe.push_back(tmpAtom);
-            }
-            if(KDOlikerecipe.size() == 3)
-                special_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-
-            // Will need to keep this list up to date with the latest discoveries
-            // To do: include check on other ligands, such as lipids (e.g. ceramide O-glycosylation)
-            // ASP is not added as potential root.
-            if ( mmol[pol][mon].type() == "ASN" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // n-linked GlcNAc ?
-            else if ( mmol[pol][mon].type() == "ARG" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Arginine rhamnosylation?
-            else if ( mmol[pol][mon].type() == "LYS" ) potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-            else if ( mmol[pol][mon].type() == "THR" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // o-linked stuff ?
-            else if ( mmol[pol][mon].type() == "SER" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-            else if ( mmol[pol][mon].type() == "TYR" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-            else if ( mmol[pol][mon].type() == "ASP" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-            else if ( mmol[pol][mon].type() == "GLU" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
-            else if ( mmol[pol][mon].type() == "HYP" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxyproline
-            else if ( mmol[pol][mon].type() == "LYZ" ) potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxylysine
-            else if ( mmol[pol][mon].type() == "CYS" ) potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
-            else if ( mmol[pol][mon].type() == "TRP" ) potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
-            else if ( mmol[pol][mon].type() == "SEP" ) potential_p_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Phosphoglycosylation - no recorded cases on PDB yet.
-            // SEP - phosphoserine - cant find a case on PDB for phosphoglycan
+            if ( mmol[pol][mon].type().trim() == "ASN" )        potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // n-linked GlcNAc ?
+            else if ( mmol[pol][mon].type().trim() == "ARG" )   potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Arginine rhamnosylation?
+            else if ( mmol[pol][mon].type().trim() == "LYS" )   potential_n_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type().trim() == "THR" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // o-linked stuff ?
+            else if ( mmol[pol][mon].type().trim() == "SER" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type().trim() == "TYR" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type().trim() == "ASP" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type().trim() == "GLU" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( mmol[pol][mon].type().trim() == "HYP" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxyproline
+            else if ( mmol[pol][mon].type().trim() == "LYZ" )   potential_o_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // hydroxylysine
+            else if ( mmol[pol][mon].type().trim() == "CYS" )   potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
+            else if ( mmol[pol][mon].type().trim() == "TRP" )   potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
+            else if ( mmol[pol][mon].type().trim() == "SEP" )   potential_p_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Phosphoglycosylation - no recorded cases on PDB yet.
+            else if ( clipper::data::found_in_database(mmol[pol][mon].type().trim()) )      potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
         }
-    for(int i = 0; i < special_rootless_polysaccharides.size(); i++)
-        potential_rootless_polysaccharides.push_back(special_rootless_polysaccharides[i]);
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_n_roots[i].first, potential_n_roots[i].second ) ;
@@ -4032,7 +4000,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                             mg.add_root_annotation ( " Warning: this glycosylation point does not follow the Asn-X-Thr/Ser consensus sequence. ");
                     }
 
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_glycosylation.push_back ( mg );
 
                     break;
                 }
@@ -4152,7 +4120,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_o_roots[i].first.type().trim(), og1, sugar.type().trim(), c1);
 
 
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_glycosylation.push_back ( mg );
                     break;
                 }
             }
@@ -4235,7 +4203,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_s_roots[i].first.type().trim(), sg, sugar.type().trim(), c1);
 
 
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_glycosylation.push_back ( mg );
                     break;
                 }
             }
@@ -4339,7 +4307,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                         if (!firstConsensus && !secondConsensus) mg.add_root_annotation ( " Warning: this glycosylation point does not follow the Trp-X-X-Trp or Trp-Ser/Thr-X-Cys consensus sequence. ");
                     }
 
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_glycosylation.push_back ( mg );
                     break;
                 }
             }
@@ -4417,44 +4385,57 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
                     mg.add_torsions_for_plots(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_p_roots[i].first.type().trim(), op, sugar.type().trim(), c1);
 
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_glycosylation.push_back ( mg );
                     break;
                 }
             }
         }
     }
 
+    // Might have to split extension process into two, first traditional, then ligands only. Delete roots from reserved_sugars that have been assigned to other glycans.
+    for ( int i = 0 ; i < list_of_glycans_modelled_as_glycosylation.size() ; i++ )
+    {
+        std::vector < clipper::MSugar >& sugar_list = list_of_glycans_modelled_as_glycosylation[i].get_sugars();
+        clipper::MSugar first_sugar = clipper::MSugar ( sugar_list.front() );
 
-    for ( int i = 0 ; i < potential_rootless_polysaccharides.size() ; i++ )  // create ligand glycan roots with first sugar
+        if(debug_output)
+        {
+            DBG << "Extending tree of glycan from root of " << list_of_glycans_modelled_as_glycosylation[i].get_root_for_filename() << "\twith detected sugar = " << first_sugar.type() << "-" << first_sugar.id() << "/" <<first_sugar.get_seqnum() << std::endl;
+        }
+        
+        if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
+            extend_tree ( list_of_glycans_modelled_as_glycosylation[i] , first_sugar, accounted_for_sugars );
+
+        list_of_glycans_modelled_as_glycosylation[i].set_annotations( this->expression_system );
+
+        sugar_list = list_of_glycans_modelled_as_glycosylation[i].get_sugars(); // update the sugars
+        accounted_for_sugars.insert(accounted_for_sugars.end(), sugar_list.begin(), sugar_list.end());
+    }
+
+    // pretty cursed STL function to remove sugars from vectors that have already been included in other clipper::MGlycan objects contained within list_of_glycans_modelled_as_glycosylation
+    potential_rootless_polysaccharides.erase(std::remove_if(potential_rootless_polysaccharides.begin(), potential_rootless_polysaccharides.end(),
+                                                            [&accounted_for_sugars](std::pair<clipper::MMonomer, clipper::String>& rootless_glycan) {
+                                                                if (std::find_if(accounted_for_sugars.begin(), accounted_for_sugars.end(), 
+                                                                        [&rootless_glycan](clipper::MSugar& accounted_for_sugar){ 
+                                                                        return  accounted_for_sugar.chain_id() == rootless_glycan.second &&
+                                                                                accounted_for_sugar.id().trim() == rootless_glycan.first.id().trim() && 
+                                                                                accounted_for_sugar.type().trim() == rootless_glycan.first.type().trim() && 
+                                                                                accounted_for_sugar.seqnum() == rootless_glycan.first.seqnum(); }) != accounted_for_sugars.end()) 
+                                                                {
+                                                                    return true;
+                                                                }
+                                                                else 
+                                                                {
+                                                                    return false;
+                                                                }
+                                                            }), potential_rootless_polysaccharides.end());
+
+
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size(); i++ )  // create ligand glycan roots with first sugar
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first, potential_rootless_polysaccharides[i].second ) ;
 
-        if(linked.empty())
-        {
-            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
-            {
-                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
-                list_of_sugars.push_back ( rootSugar );
-                clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
-                
-                if(debug_output)
-                {
-                    DBG << "Created the rootSugar object in linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
-                    DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
-                    DBG << "rootSugar is " << rootSugar.type() << std::endl;
-                    DBG << "id is " << root_sugar_chain_id << std::endl;
-                }
-                
-                clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
-                                        rootSugar,
-                                        root_sugar_chain_id,
-                                        debug_output,
-                                        this->expression_system );
-                mg.set_kind_of_glycan ( "ligand" );
-                list_of_glycans.push_back ( mg );
-            }
-        }
-        else
+        if(!linked.empty())
         {
             for ( int j = 0 ; j < linked.size() ; j++ )
             {
@@ -4482,30 +4463,99 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                                             this->expression_system );
 
                     mg.set_kind_of_glycan ( "ligand" );
-                    list_of_glycans.push_back ( mg );
+                    list_of_glycans_modelled_as_ligands.push_back ( mg );
                     break;
                 }
             }
         }
     }
 
-
-
-    for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
+    std::vector<int> vector_indices_to_remove;
+    for ( int i = 0 ; i < list_of_glycans_modelled_as_ligands.size() ; i++ )
     {
-        std::vector < clipper::MSugar >& sugar_list = list_of_glycans[i].get_sugars();
+        std::vector < clipper::MSugar >& sugar_list = list_of_glycans_modelled_as_ligands[i].get_sugars();
         clipper::MSugar first_sugar = clipper::MSugar ( sugar_list.front() );
 
         if(debug_output)
         {
-            DBG << "Extending tree of glycan from root of " << list_of_glycans[i].get_root_for_filename() << "\twith detected sugar = " << first_sugar.type() << "-" << first_sugar.id() << "/" <<first_sugar.get_seqnum() << std::endl;
+            DBG << "Extending tree of glycan from root of " << list_of_glycans_modelled_as_ligands[i].get_root_for_filename() << "\twith detected sugar = " << first_sugar.type() << "-" << first_sugar.id() << "/" <<first_sugar.get_seqnum() << std::endl;
         }
         
+        int initialLength = list_of_glycans_modelled_as_ligands[i].get_sugars().size();
         if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
-            extend_tree ( list_of_glycans[i] , first_sugar );
+            extend_tree ( list_of_glycans_modelled_as_ligands[i] , first_sugar, accounted_for_sugars );
+        int lengthAfterTreeExtension = list_of_glycans_modelled_as_ligands[i].get_sugars().size();
+        
+        if(lengthAfterTreeExtension == initialLength)
+            vector_indices_to_remove.push_back(i);
+        else
+        {
+            list_of_glycans_modelled_as_ligands[i].set_annotations( this->expression_system );
 
-        list_of_glycans[i].set_annotations( this->expression_system );
+            sugar_list = list_of_glycans_modelled_as_ligands[i].get_sugars(); // update the sugars
+            accounted_for_sugars.insert(accounted_for_sugars.end(), sugar_list.begin(), sugar_list.end());
+        }
     }
+
+    for (int i = vector_indices_to_remove.size() - 1; i >= 0; i--)
+    {
+        list_of_glycans_modelled_as_ligands.erase(list_of_glycans_modelled_as_ligands.begin()+vector_indices_to_remove[i]);
+    }
+
+    // pretty cursed STL function to remove sugars from vectors that have already been included in other clipper::MGlycan objects contained within list_of_glycans_modelled_as_glycosylation
+    potential_rootless_polysaccharides.erase(std::remove_if(potential_rootless_polysaccharides.begin(), potential_rootless_polysaccharides.end(),
+                                                            [&accounted_for_sugars](std::pair<clipper::MMonomer, clipper::String>& rootless_glycan) {
+                                                                if (std::find_if(accounted_for_sugars.begin(), accounted_for_sugars.end(), 
+                                                                        [&rootless_glycan](clipper::MSugar& accounted_for_sugar){ 
+                                                                        return  accounted_for_sugar.chain_id() == rootless_glycan.second &&
+                                                                                accounted_for_sugar.id().trim() == rootless_glycan.first.id().trim() && 
+                                                                                accounted_for_sugar.type().trim() == rootless_glycan.first.type().trim() && 
+                                                                                accounted_for_sugar.seqnum() == rootless_glycan.first.seqnum(); }) != accounted_for_sugars.end()) 
+                                                                {
+                                                                    return true;
+                                                                }
+                                                                else 
+                                                                {
+                                                                    return false;
+                                                                }
+                                                            }), potential_rootless_polysaccharides.end());
+
+
+    for ( int i = 0 ; i < potential_rootless_polysaccharides.size(); i++ )  // create ligand glycan roots with first sugar
+    {
+        std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first, potential_rootless_polysaccharides[i].second ) ;
+
+        if(linked.empty())
+        {
+            if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
+            {
+                clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
+                list_of_sugars.push_back ( rootSugar );
+                clipper::String root_sugar_chain_id = potential_rootless_polysaccharides[i].second.substr(0,1);
+                
+                if(debug_output)
+                {
+                    DBG << "Created the rootSugar object in linked.empty(): " << root_sugar_chain_id << "/" << rootSugar.type().trim() << "-" << rootSugar.id().trim() << std::endl;
+                    DBG << "potential rootles roots is " << potential_rootless_polysaccharides[i].first.type() << std::endl;
+                    DBG << "rootSugar is " << rootSugar.type() << std::endl;
+                    DBG << "id is " << root_sugar_chain_id << std::endl;
+                }
+                
+                clipper::MGlycan mg (   potential_rootless_polysaccharides[i].second,
+                                        rootSugar,
+                                        root_sugar_chain_id,
+                                        debug_output,
+                                        this->expression_system );
+                mg.set_kind_of_glycan ( "ligand" );
+                list_of_glycans_modelled_as_single_residues.push_back ( mg );
+            }
+        }
+    }
+
+    // accounted_for_sugars.insert(accounted_for_sugars.end(), sugar_list.begin(), sugar_list.end());
+    this->list_of_glycans.insert(this->list_of_glycans.end(), list_of_glycans_modelled_as_glycosylation.begin(), list_of_glycans_modelled_as_glycosylation.end());
+    this->list_of_glycans.insert(this->list_of_glycans.end(), list_of_glycans_modelled_as_ligands.begin(), list_of_glycans_modelled_as_ligands.end());
+    this->list_of_glycans.insert(this->list_of_glycans.end(), list_of_glycans_modelled_as_single_residues.begin(), list_of_glycans_modelled_as_single_residues.end());
 }
 
 std::string MGlycology::write_external_restraints ( bool restrain_rings,
@@ -4544,7 +4594,7 @@ const char MGlycology::get_altconf(const clipper::MAtom& ma) const
 	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
 }                                                       // We will return a blank character if there is no code present or if it is, but is blank
 
-void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
+void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars )
 {
     if(debug_output)
     {
@@ -4578,27 +4628,40 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug )
                 clipper::MSugar tmpsug = clipper::MSugar ( *this->mmol, tmpmol[contacts[i].second.polymer()].id().trim(), tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()], *this->manb, debug_output );
                 if(tmpsug.ring_members().size() == 5 || tmpsug.ring_members().size() == 6)
                 {
-                    clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
-                    if(get_altconf(contacts[i].first) != ' ' && get_altconf(acceptorAtom) != ' ')
+                    // check if sugar is not a part of another glycan
+                    auto search_result = std::find_if(accounted_for_sugars.begin(), accounted_for_sugars.end(), [&tmpsug](clipper::MSugar& reserved_sugar)
                     {
-                        if(altconf_compatible(get_altconf(contacts[i].first), get_altconf(acceptorAtom)))
+                        return  tmpsug.chain_id() == reserved_sugar.chain_id() && 
+                                tmpsug.id().trim() == reserved_sugar.id().trim() && 
+                                tmpsug.type().trim() == reserved_sugar.type().trim() && 
+                                tmpsug.seqnum() == reserved_sugar.seqnum(); 
+                    
+                    }); 
+
+                    if(search_result == std::end(accounted_for_sugars))
+                    {
+                        clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
+                        if(get_altconf(contacts[i].first) != ' ' && get_altconf(acceptorAtom) != ' ')
+                        {
+                            if(altconf_compatible(get_altconf(contacts[i].first), get_altconf(acceptorAtom)))
+                            {
+                                if(debug_output)
+                                {
+                                    DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                                }
+                                mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
+                                extend_tree ( mg, tmpsug, accounted_for_sugars );
+                            }
+                        }
+                        else
                         {
                             if(debug_output)
                             {
                                 DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
                             }
                             mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
-                            extend_tree ( mg, tmpsug );
+                            extend_tree ( mg, tmpsug, accounted_for_sugars );
                         }
-                    }
-                    else
-                    {
-                        if(debug_output)
-                        {
-                            DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
-                        }
-                        mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
-                        extend_tree ( mg, tmpsug );
                     }
                 }
             }
