@@ -4660,9 +4660,9 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                             {
                                 if(debug_output)
                                 {
-                                    DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                                    DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                                 }
-                                mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
+                                mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom);
                                 extend_tree ( mg, tmpsug, accounted_for_sugars );
                             }
                         }
@@ -4670,9 +4670,9 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                         {
                             if(debug_output)
                             {
-                                DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first.id() ) << std::endl;
+                                DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                             }
-                            mg.link_sugars ( parse_order ( contacts[i].first.id() ), msug, tmpsug, contacts[i].first, acceptorAtom);
+                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom);
                             extend_tree ( mg, tmpsug, accounted_for_sugars );
                         }
                     }
@@ -4681,6 +4681,62 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
         }
     }
 }
+
+int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& sugar)
+{
+    const clipper::MiniMol& tmpmol = *mmol;
+
+    std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( atom_in_sugar.coord_orth(), 2.0 );
+    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
+
+    for (int j = 0 ; j < contacts.size() ; j++ )
+    {
+        if ( (  (tmpmol[contacts[j].polymer()].id().trim() == sugar.chain_id().trim())
+            &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() == sugar.id().trim())
+            &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() == sugar.type().trim())
+            &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() == sugar.seqnum())
+            &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].element().trim() == "C")
+            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), atom_in_sugar.coord_orth() ) <= 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+        {                            //         of crappy structures in MG
+            if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(atom_in_sugar) ) )
+            {
+                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                link_tmp.first = atom_in_sugar;
+                link_tmp.second = contacts[j];
+                tmpresults.push_back ( link_tmp );
+                if(debug_output)
+                {
+                    DBG << "atom_in_sugar = " << atom_in_sugar.id().trim() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].id().trim() << std::endl;
+                }
+            }
+        }
+    }        
+
+    std::sort(tmpresults.begin(), tmpresults.end(), [&tmpmol](const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &left, const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &right) {
+        if(tmpmol[left.second.polymer()][left.second.monomer()].type().trim() == tmpmol[right.second.polymer()][right.second.monomer()].type().trim() && tmpmol[left.second.polymer()][left.second.monomer()].id() == tmpmol[right.second.polymer()][right.second.monomer()].id())
+        {
+            clipper::ftype distanceLeft = clipper::Coord_orth::length(left.first.coord_orth(), tmpmol[left.second.polymer()][left.second.monomer()][left.second.atom()].coord_orth());
+            clipper::ftype distanceRight = clipper::Coord_orth::length(right.first.coord_orth(), tmpmol[right.second.polymer()][right.second.monomer()][right.second.atom()].coord_orth());
+            return distanceLeft < distanceRight;
+        }
+        else return false;
+    });
+    
+    std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > closest_pair = tmpresults.front();
+
+    clipper::MAtom atom_to_parse = tmpmol[closest_pair.second.polymer()][closest_pair.second.monomer()][closest_pair.second.atom()];
+    clipper::String atom_to_parse_id = atom_to_parse.id().trim();
+    const char *s = atom_to_parse_id.c_str();
+
+    int result = std::atoi(&s[1]);
+    
+    if(debug_output)
+    {
+        DBG << "Returning parsed linkage identifier: " << result << "\t from atom_to_parse_id " << atom_to_parse_id << std::endl;
+    }
+    
+    return result;
+}    
 
 
 const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology::get_overlapping_residues ( const clipper::MMonomer& mm )
@@ -5106,7 +5162,12 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
     }   
     else
     {
-        int id = mm.lookup ( "O1", clipper::MM::ANY );
+        int id = mm.lookup ( "O", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O1", clipper::MM::ANY );
         
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -5147,6 +5208,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "O9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -5196,6 +5262,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         if ( id != -1 )
             candidates.push_back ( mm[id] );
 
+        id = mm.lookup ( "N", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
         id = mm.lookup ( "N1", clipper::MM::ANY );
 
         if ( id != -1 )
@@ -5237,6 +5308,11 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
             candidates.push_back ( mm[id] );
 
         id = mm.lookup ( "N9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F", clipper::MM::ANY );
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
@@ -5285,6 +5361,56 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
     }
 
     if ( candidates.size() == 0 )
@@ -5307,8 +5433,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                 //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                 //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                 {                            //         of crappy structures in MG
-                    if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]),
-                                             get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()])))
+                    if ( altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
                     {
                         clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
                         
