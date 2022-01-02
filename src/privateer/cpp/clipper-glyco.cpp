@@ -196,7 +196,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
         this->sugar_ring_elements = this->ringMembers();
     }
 
-	if (this->sugar_ring_elements.size() == 5)
+	if (this->sugar_ring_elements.size() == 5 && clipper::data::sugar_database[sugar_index].ref_conformation != "Pln")
 	{
 		this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
@@ -206,7 +206,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 			DBG << "After checking the conformation..." << std::endl;
 		}
 	}
-	else if (this->sugar_ring_elements.size() == 6)
+	else if (this->sugar_ring_elements.size() == 6 && clipper::data::sugar_database[sugar_index].ref_conformation != "Pln")
 	{
 		this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
 		this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
@@ -230,22 +230,29 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
         this->sugar_conformation = 0;
         
 	}
-
-    if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
+    
+    if (!sugar_ring_elements.empty() && sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
     {
         this->sugar_type = "aldose";
         this->sugar_denomination = "aldo";
     }
-    else
+    else if(!sugar_ring_elements.empty() && sugar_ring_elements[1].name().trim().find("C2") != std::string::npos)
     {
         this->sugar_type = "ketose";
         this->sugar_denomination = "keto";
     }
+    else
+    {
+        this->sugar_type = "linear";
+        this->sugar_denomination = "linear";
+    }
 
 	if (sugar_ring_elements.size() == 5)
         this->sugar_denomination = this->sugar_denomination + "furanose";
-	else
+	else if(sugar_ring_elements.size() == 6)
         this->sugar_denomination = this->sugar_denomination + "pyranose";
+    else 
+        this->sugar_denomination = this->sugar_denomination + "_unsupported";
 
 	this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
 
@@ -259,7 +266,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 	}
 
 
-	if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
+	if (!sugar_ring_elements.empty() && examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
 
     clipper::String ref_conformation;
     clipper::ftype  ref_puckering;
@@ -484,7 +491,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
         sugar_ring_elements.push_back((*this)[index_atom]);
     }
 
-    if (this->sugar_ring_elements.size() == 5)
+    if (this->sugar_ring_elements.size() == 5 && clipper::data::sugar_database[sugar_index].ref_conformation != "Pln")
     {
         this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
         this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
@@ -494,7 +501,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
             DBG << "After checking the conformation..." << std::endl;
         }
     }
-    else if (this->sugar_ring_elements.size() == 6)
+    else if (this->sugar_ring_elements.size() == 6 && clipper::data::sugar_database[sugar_index].ref_conformation != "Pln")
     {
         this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
         this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
@@ -514,36 +521,42 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 
     }
 
-    if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
+    
+    if (!sugar_ring_elements.empty() && sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
     {
         this->sugar_type = "aldose";
         this->sugar_denomination = "aldo";
     }
-    else
+    else if(!sugar_ring_elements.empty() && sugar_ring_elements[1].name().trim().find("C2") != std::string::npos)
     {
         this->sugar_type = "ketose";
         this->sugar_denomination = "keto";
     }
-
-    if (sugar_ring_elements.size() == 5)
-        this->sugar_denomination = this->sugar_denomination + "furanose";
     else
-        this->sugar_denomination = this->sugar_denomination + "pyranose";
-
-    this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
-
-    // sanity check:
-    this->sugar_sane = false;
-
-    if(debug_output)
     {
-        DBG << "Just before examining the ring..." << std::endl;
+        this->sugar_type = "linear";
+        this->sugar_denomination = "linear";
     }
 
-    if ( examine_ring() )
-        sugar_diag_ring = true;
-    else
-        sugar_diag_ring = false;
+	if (sugar_ring_elements.size() == 5)
+        this->sugar_denomination = this->sugar_denomination + "furanose";
+	else if(sugar_ring_elements.size() == 6)
+        this->sugar_denomination = this->sugar_denomination + "pyranose";
+    else 
+        this->sugar_denomination = this->sugar_denomination + "_unsupported";
+
+	this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
+
+	// sanity check:
+
+	this->sugar_sane = false;
+
+	if(debug_output)
+    {
+		DBG << "Just before examining the ring..." << std::endl;
+	}
+
+	if (!sugar_ring_elements.empty() && examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
 
     clipper::String ref_conformation;
     clipper::ftype  ref_puckering;
@@ -5300,7 +5313,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
                         
                         if(debug_output)
-                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "from: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
+                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
 
                         if(get_altconf(tmpAtom) != ' ')
                         {

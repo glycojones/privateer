@@ -581,8 +581,13 @@ const sugar_database_entry sugar_database[] =
     { "  C" ,    "B",    "D",    "CYTIDINE-5'-MONOPHOSPHATE" ,                    "O4' C1' C2' C3' C4'", 0.272, "Oev", 0.017, 4.170 },   //
     { " DA" ,	 "B",	 "D", 	 "2'-DEOXYADENOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.193, "ev4", 0.015, 3.993 },   //
     { " DG" ,    "B",    "D",    "2'-DEOXYGUANOSINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.181, "ev4", 0.019, 4.432 },   //
-    { " DC" ,    "B",    "D",    "2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE" ,            "O4' C1' C2' C3' C4'", 0.189, "Ot4", 0.018, 3.623 },   //
-    { " DT" ,    "B",    "D",    "2'-DEOXYTHYMIDINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.245, "ev3", 0.017, 4.176 } } ;//
+    { " DC" ,    "B",    "D",    "2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE" ,            "O4' C1' C2' C3' C4'", 0.189, "Ot4", 0.018, 3.623 },  //
+    { " DT" ,    "B",    "D",    "2'-DEOXYTHYMIDINE-5'-MONOPHOSPHATE" ,           "O4' C1' C2' C3' C4'", 0.245, "ev3", 0.017, 4.176 },
+    { "GCO" ,	 "N", 	 "D", 	 "D-gluconic acid" ,                                "O5 C1 C2 C3 C4 C5",  0,    "Pln", 0.000, 0.000 }, // linear
+    { "GLO" ,	 "N", 	 "D", 	 "D-glucose" ,                                      "O5 C1 C2 C3 C4 C5",  0,    "Pln", 0.000, 0.000 }, // linear
+    { "SOR" ,	 "N", 	 "D", 	 "D-sorbitol" ,                                     "O5 C1 C2 C3 C4 C5",  0,    "Pln", 0.000, 0.000 }, // linear
+    { "XLS" ,	 "N", 	 "D", 	 "D-xylose" ,                                       "O4 C1 C2 C3 C4",     0,    "Pln", 0.000, 0.000 }, // linear
+    { "XYL" ,	 "N", 	 "D", 	 "D-Xylitol" ,                                      "O4 C1 C2 C3 C4",     0,    "Pln", 0.000, 0.000 } }; // linear 
 
     const int sugar_database_size = sizeof( sugar_database ) / sizeof( sugar_database[0] );
 
@@ -958,7 +963,11 @@ const sugar_database_entry sugar_database[] =
         else if ( name == "AQA" ) wurcs_residue_code = "a21eEA-1b_1-5";
         else if ( name == "9RN" ) wurcs_residue_code = "a2112h-1a_1-5_3-6";
         else if ( name == "YIO" ) wurcs_residue_code = "a2112h-1b_1-5_1*S";
-        else if ( name == "GCO" ) wurcs_residue_code = "A2122h"; // linear form of sugar, not implemented in the above table. 
+        else if ( name == "GCO" ) wurcs_residue_code = "A2122h";
+        else if ( name == "GLO" ) wurcs_residue_code = "o2122h";
+        else if ( name == "SOR" ) wurcs_residue_code = "h2122h";
+        else if ( name == "XLS" ) wurcs_residue_code = "o212h";
+        else if ( name == "XYL" ) wurcs_residue_code = "h212h";
         else if ( name == "NBG" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O";
         else if ( name == "MBG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC";
         else if ( name == "AHR" ) wurcs_residue_code = "a211h-1a_1-4";
