@@ -3630,18 +3630,15 @@ clipper::String MGlycan::generate_wurcs()
             wurcs_string += "-";
 
             wurcs_string += convertNumberToLetter(connectedToNodeID);
-            if (msug.full_type() == "ketose")
-            {
-                wurcs_string += "2";
-                if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
-                    wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
-            }
-            else
-            {
-                wurcs_string += "1";
-                if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
-                    wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
-            }
+            
+            clipper::String acceptorAtomID = linkage_atoms.second.id().trim();
+            const char *acceptorLinkagePositionChar = acceptorAtomID.c_str();
+
+            int acceptorLinkagePosition = std::atoi(&acceptorLinkagePositionChar[1]);
+
+            wurcs_string += std::to_string(acceptorLinkagePosition);
+            if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
+                wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
             
 
             wurcs_string += "_";
@@ -3692,19 +3689,15 @@ clipper::String MGlycan::generate_wurcs()
                     wurcs_string += "-";
 
                     wurcs_string += convertNumberToLetter(connectedToNodeID);
-                    if (msug.full_type() == "ketose")
-                    {
-                        wurcs_string += "2";
-                        if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
-                            wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
-                    }
-                    else
-                    {
-                        wurcs_string += "1";
-                        if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
-                            wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
-                    }
             
+                    clipper::String acceptorAtomID = linkage_atoms.second.id().trim();
+                    const char *acceptorLinkagePositionChar = acceptorAtomID.c_str();
+
+                    int acceptorLinkagePosition = std::atoi(&acceptorLinkagePositionChar[1]);
+
+                    wurcs_string += std::to_string(acceptorLinkagePosition);
+                    if(linkage_atoms.first.element().trim() == "S" || linkage_atoms.first.element().trim() == "F" || linkage_atoms.first.element().trim() == "N")
+                        wurcs_string += "*" + linkage_atoms.first.element().trim() + "*";
 
                     if (i < (node_list.size() - 2))
                         wurcs_string += "_";
@@ -5422,78 +5415,12 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         char prefered_altconf = ' ';
         for ( int i = 0 ; i < candidates.size() ; i++ )
         {
-            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
+            if(candidates[i].element().trim() != "C")
+            {
+                std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
             
-            bool altConfDetected = false;
-            bool managedToFindContactInSameAltConf = false;
-            for (int j = 0 ; j < contacts.size() ; j++ )
-            {
-                if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
-                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
-                    ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                     )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
-                //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
-                {                            //         of crappy structures in MG
-                    if ( altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
-                    {
-                        clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
-                        
-                        if(debug_output)
-                            DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
-
-                        if(get_altconf(tmpAtom) != ' ')
-                        {
-                            const char altconf = get_altconf(tmpAtom);
-                            
-
-                            std::string altConfSymbol(1, altconf);
-                            std::string C1_with_altconf = "C1 :" + altConfSymbol;
-                            std::string C2_with_altconf = "C2 :" + altConfSymbol;
-
-                            if(debug_output)
-                                DBG << "tmpAtom.id().trim(): " << tmpAtom.id().trim() << "\tC1_with_altconf:" << C1_with_altconf << std::endl;
-
-                            if(tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == C2_with_altconf) 
-                            {
-                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                                link_tmp.first = candidates[i];
-                                link_tmp.second = contacts[j];
-                                tmpresults.push_back ( link_tmp );
-                                managedToFindContactInSameAltConf = true;
-                                if(debug_output)
-                                {
-                                    DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
-                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
-                                }
-                            }
-                        }
-                        else 
-                        {
-                            if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2") 
-                            {
-                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                                link_tmp.first = candidates[i];
-                                link_tmp.second = contacts[j];
-                                tmpresults.push_back ( link_tmp );
-                                managedToFindContactInSameAltConf = true;
-                                if(debug_output)
-                                {
-                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
-                                }
-                            }
-                        }
-                    }
-                    else if( !altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
-                    {
-                        altConfDetected = true;
-                    }
-                }
-            }
-
-            if (altConfDetected && !managedToFindContactInSameAltConf)
-            {
+                bool altConfDetected = false;
+                bool managedToFindContactInSameAltConf = false;
                 for (int j = 0 ; j < contacts.size() ; j++ )
                 {
                     if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
@@ -5504,57 +5431,229 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                     //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG
-
-                        clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
-                        if(prefered_altconf == ' ' && get_altconf(tmpAtom) != ' ')
-                            prefered_altconf = get_altconf(tmpAtom);
-                        
-                        if(debug_output)
-                            DBG << "tmpAtom.id().trim(), but this time with altconfs ayyy lmao = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << "\tcurrent prefered_altConf = " << prefered_altconf << std::endl;
-
-                        if(get_altconf(tmpAtom) == prefered_altconf && get_altconf(tmpAtom) != ' ')
+                        if ( altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
                         {
-                            const char altconf = get_altconf(tmpAtom);
+                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
                             
-
-                            std::string altConfSymbol(1, altconf);
-                            std::string C1_with_altconf = "C1 :" + altConfSymbol;
-                            std::string C2_with_altconf = "C2 :" + altConfSymbol;
-
                             if(debug_output)
-                                DBG << "tmpAtom.id().trim(): " << tmpAtom.id().trim() << "\tC1_with_altconf:" << C1_with_altconf << std::endl;
+                                DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
 
-                            if(tmpAtom.id().trim() == C1_with_altconf || tmpAtom.id().trim() == C2_with_altconf) 
+                            if(get_altconf(tmpAtom) != ' ')
                             {
-                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                                link_tmp.first = candidates[i];
-                                link_tmp.second = contacts[j];
-                                tmpresults.push_back ( link_tmp );
-                                if(debug_output)
+
+                                if(tmpAtom.element().trim() == "C") 
                                 {
-                                    DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
-                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                            else 
+                            {
+                                if(tmpAtom.element().trim() == "C") 
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
                                 }
                             }
                         }
-                        else if(get_altconf(tmpAtom) == ' ')
+                        else if( !altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
                         {
-                            if(tmpAtom.id().trim() == "C1" || tmpAtom.id().trim() == "C2") 
-                            {
-                                std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
-                                link_tmp.first = candidates[i];
-                                link_tmp.second = contacts[j];
-                                tmpresults.push_back ( link_tmp );
-                                managedToFindContactInSameAltConf = true;
-                                if(debug_output)
-                                {
-                                    DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
-                                }
-                            }
+                            altConfDetected = true;
                         }
                     }
-                } 
-            }   
+                }
+
+                if (altConfDetected && !managedToFindContactInSameAltConf)
+                {
+                    for (int j = 0 ; j < contacts.size() ; j++ )
+                    {
+                        if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                        //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        {                            //         of crappy structures in MG
+
+                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                            if(prefered_altconf == ' ' && get_altconf(tmpAtom) != ' ')
+                                prefered_altconf = get_altconf(tmpAtom);
+                            
+                            if(debug_output)
+                                DBG << "tmpAtom.id().trim(), but this time with altconfs ayyy lmao = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << "\tcurrent prefered_altConf = " << prefered_altconf << std::endl;
+
+                            if(get_altconf(tmpAtom) == prefered_altconf && get_altconf(tmpAtom) != ' ')
+                            {
+                                const char altconf = get_altconf(tmpAtom);
+                                
+                                if(tmpAtom.element().trim() == "C") 
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    if(debug_output)
+                                    {
+                                        DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                            else if(get_altconf(tmpAtom) == ' ')
+                            {
+                                if(tmpAtom.element().trim() == "C") 
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }   
+            }
+            else if(candidates[i].element().trim() == "C")
+            {
+                std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
+            
+                bool altConfDetected = false;
+                bool managedToFindContactInSameAltConf = false;
+                for (int j = 0 ; j < contacts.size() ; j++ )
+                {
+                    if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
+                        ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                        ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
+                        ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                        )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                    //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                    //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                    {                            //         of crappy structures in MG
+                        if ( altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
+                        {
+                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                            
+                            if(debug_output)
+                                DBG << "tmpAtom.id().trim() = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << std::endl;
+
+                            if(get_altconf(tmpAtom) != ' ')
+                            {
+
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F") 
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                            else 
+                            {
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F")  
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                        }
+                        else if( !altconf_compatible( get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(candidates[i]) ) )
+                        {
+                            altConfDetected = true;
+                        }
+                    }
+                }
+
+                if (altConfDetected && !managedToFindContactInSameAltConf)
+                {
+                    for (int j = 0 ; j < contacts.size() ; j++ )
+                    {
+                        if ( (  (tmpmol[contacts[j].polymer()].id().trim() != monomer_chain_id.trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
+                            ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
+                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                        //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        {                            //         of crappy structures in MG
+
+                            clipper::MAtom tmpAtom = tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()];
+                            if(prefered_altconf == ' ' && get_altconf(tmpAtom) != ' ')
+                                prefered_altconf = get_altconf(tmpAtom);
+                            
+                            if(debug_output)
+                                DBG << "tmpAtom.id().trim(), but this time with altconfs ayyy lmao = " << tmpAtom.id().trim() << "\tfrom: " << tmpmol[contacts[j].polymer()].id().trim() << "/" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() << "-" << tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() << "\tcurrent prefered_altConf = " << prefered_altconf << std::endl;
+
+                            if(get_altconf(tmpAtom) == prefered_altconf && get_altconf(tmpAtom) != ' ')
+                            {
+                                const char altconf = get_altconf(tmpAtom);
+                                
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F")  
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    if(debug_output)
+                                    {
+                                        DBG << "Contact detected between atoms of altconf = " << get_altconf(tmpAtom) << std::endl;
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                            else if(get_altconf(tmpAtom) == ' ')
+                            {
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F") 
+                                {
+                                    std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
+                                    link_tmp.first = candidates[i];
+                                    link_tmp.second = contacts[j];
+                                    tmpresults.push_back ( link_tmp );
+                                    managedToFindContactInSameAltConf = true;
+                                    if(debug_output)
+                                    {
+                                        DBG << "link_tmp.first(MAtom).id() = " << candidates[i].id() << "\tlink_tmp.second(MAtomNonBond) aka tmpAtom = " << tmpAtom.id() << std::endl;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }   
+            }
+        
         }
 
         std::sort(tmpresults.begin(), tmpresults.end(), [&tmpmol](const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &left, const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &right) {
