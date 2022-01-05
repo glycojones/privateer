@@ -4466,7 +4466,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
         const clipper::MGlycan::Node& first_node = list_of_glycans[i].get_node(0);
 
         // create the first connection, which does not really exist as it is not a sugar-sugar linkage
-        clipper::MGlycan::Linkage link (0, first_node.get_sugar().anomer(), 0);
+        clipper::MGlycan::Linkage link (0, first_node.get_sugar().anomer(), 0, true);
         clipper::ftype32 phi = list_of_glycans[i].get_glycosylation_torsions()[0], psi = list_of_glycans[i].get_glycosylation_torsions()[1];
         link.set_torsions (phi, psi, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 

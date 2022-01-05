@@ -441,10 +441,11 @@ namespace clipper
                                                          torsion_phi ( linkage.torsion_phi ),
                                                          torsion_psi ( linkage.torsion_psi ) { }
                     */
-                    Linkage ( int index, std::string anomericity, int connect_to_id )
+                    Linkage ( int index, std::string anomericity, int connect_to_id, bool noncircular )
                     {
                         node_id = connect_to_id;
                         this->index = index;
+                        this->noncircular = noncircular;
                         this->type = anomericity;
                         torsion_phi = torsion_psi = torsion_omega = 0.0;
                         donorAtom = acceptorAtom = clipper::MAtom();
@@ -456,6 +457,7 @@ namespace clipper
                     void set_order ( int order ) { index = order; }
 
                     int get_linked_node_id ( ) const { return node_id; }
+                    bool connection_is_non_circular ( ) const { return noncircular; };
                     void modify_linked_node_id ( int modified_connect_to_id ) { node_id = modified_connect_to_id; }
 
                     std::string get_anomericity ( ) const { return type; }
@@ -562,6 +564,7 @@ namespace clipper
                     float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
                     int index;                  // carbon to which this is connected
                     int node_id;                // sugar connected to by this linkage
+                    bool noncircular;
                     std::string type;           // anomer
                     std::string annotation;     // include validation information
                     clipper::MAtom donorAtom;
@@ -601,6 +604,7 @@ namespace clipper
 
                     //const std::vector< Linkage >& get_connections () const { return connections; }
                     int add_connection ( const Linkage& connection ) { connections.push_back ( connection ); return connections.size()-1; }
+                    int add_circular_connection ( const Linkage& connection ) { connections.insert(connections.begin(), connection); return 0; }
 
                     const int number_of_connections ( ) const { return connections.size(); }
 
@@ -645,7 +649,7 @@ namespace clipper
 
             }; // class Node
 
-            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom ); // true if there's been any problem
+            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular ); // true if there's been any problem
             void add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
             std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
