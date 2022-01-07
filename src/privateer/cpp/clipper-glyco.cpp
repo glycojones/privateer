@@ -2580,20 +2580,20 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     // mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
 
     // This is where I gave up when it came to cyclic glycans. Code behaviour is identical to the state before this whole quest, despite numerous line changes.
-    clipper::MSugar lastInsertedSugar = node_list.back().get_sugar();
-    if(debug_output)
-        DBG << "lastInsertedSugar.id() = " << lastInsertedSugar.id().trim() << "\tnext_sugar.id() = " << first_sugar.id().trim() << "\tnoncircual = " << std::boolalpha << noncircular << std::endl;
-    if( lastInsertedSugar.chain_id().trim() == next_sugar.chain_id().trim() && 
-        lastInsertedSugar.id().trim() == next_sugar.id().trim() &&
-        lastInsertedSugar.type().trim() == next_sugar.type().trim() && 
-        lastInsertedSugar.seqnum() == next_sugar.seqnum() )
-    {
-        if(debug_output)
-        {
-            DBG << "The linkage between the two sugars has already been added in previous iteration." << std::endl;
-        }
-        return true;
-    }
+    // clipper::MSugar lastInsertedSugar = node_list.back().get_sugar();
+    // if(debug_output)
+    //     DBG << "lastInsertedSugar.id() = " << lastInsertedSugar.id().trim() << "\tnext_sugar.id() = " << next_sugar.id().trim() << "\tfirst_sugar.id() " << first_sugar.id().trim() << "\tnoncircual = " << std::boolalpha << noncircular << std::endl;
+    // if( lastInsertedSugar.chain_id().trim() == next_sugar.chain_id().trim() && 
+    //     lastInsertedSugar.id().trim() == next_sugar.id().trim() &&
+    //     lastInsertedSugar.type().trim() == next_sugar.type().trim() && 
+    //     lastInsertedSugar.seqnum() == next_sugar.seqnum() )
+    // {
+    //     if(debug_output)
+    //     {
+    //         DBG << "The linkage between the two sugars has already been added in previous iteration." << std::endl;
+    //     }
+    //     return true;
+    // }
 
     if(noncircular)
     {
@@ -3510,18 +3510,58 @@ std::vector < std::string > MGlycan::obtain_unique_WURCS_residues()
 {
     std::vector < std::string > uniqueResidues;
 
-    for(int i = 0; i < node_list.size(); i++)
+    if(node_list.size() > 0)
     {
-        clipper::MSugar msug;
-        std::string msug_wurcs_string;
+        bool glycanHasCircularLinkage = false;
+        int rootCircularLinkageAttachedTo;
+        for(int i = 0; i < node_list[0].number_of_connections(); i++)
+        {
+            if(!node_list[0].get_connection(i).connection_is_non_circular())
+                glycanHasCircularLinkage = true;
+                rootCircularLinkageAttachedTo = node_list[0].get_connection(i).get_linked_node_id();
+                break;
+        }
+        
+        if(glycanHasCircularLinkage)
+        {
+            
+            clipper::MSugar lastResidue = node_list[rootCircularLinkageAttachedTo].get_sugar();
+            std::string lastResidueUniqueRES = clipper::data::convert_to_wurcs_residue_code ( lastResidue.type().trim() );
+            if (std::find(uniqueResidues.begin(), uniqueResidues.end(), lastResidueUniqueRES) == uniqueResidues.end()) {
+                    uniqueResidues.push_back(lastResidueUniqueRES);
+            }
 
-        msug = node_list[i].get_sugar();
-        msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() );
+            for(int i = 0; i < node_list.size(); i++)
+            {
+                clipper::MSugar msug;
+                std::string msug_wurcs_string;
+                
+                msug = node_list[i].get_sugar();
+                msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() );
 
-        if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_wurcs_string) == uniqueResidues.end()) {
-            uniqueResidues.push_back(msug_wurcs_string);
+                if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_wurcs_string) == uniqueResidues.end()) {
+                    uniqueResidues.push_back(msug_wurcs_string);
+                }
+            }
+        }
+        else
+        {
+            for(int i = 0; i < node_list.size(); i++)
+            {
+                clipper::MSugar msug;
+                std::string msug_wurcs_string;
+                
+                msug = node_list[i].get_sugar();
+                msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code ( msug.type().trim() );
+
+                if (std::find(uniqueResidues.begin(), uniqueResidues.end(), msug_wurcs_string) == uniqueResidues.end()) {
+                    uniqueResidues.push_back(msug_wurcs_string);
+                }
+            }
         }
     }
+
+
     return uniqueResidues;
 }
 
@@ -3627,12 +3667,20 @@ clipper::String MGlycan::generate_wurcs()
 
         wurcs_string += "-";
 
-        // Add sequence information, by relating to monomer descriptions contained within std::vector < std::string > uniqueResidueList.
-        for (int i = 1; i < node_list.size(); i++)
+        bool glycanHasCircularLinkage = false;
+        int rootCircularLinkageAttachedTo;
+        for(int i = 0; i < node_list[0].number_of_connections(); i++)
+        {
+            if(!node_list[0].get_connection(i).connection_is_non_circular())
+                glycanHasCircularLinkage = true;
+                rootCircularLinkageAttachedTo = node_list[0].get_connection(i).get_linked_node_id();
+                break;
+        }
+        
+        if(glycanHasCircularLinkage)
         {
             std::string msug_wurcs_string;
-
-            msug = node_list[i].get_sugar();
+            msug = node_list[0].get_sugar();
             msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code(msug.type().trim());
 
             std::vector<std::string>::iterator residueAssigner = std::find(uniqueResidueList.begin(), uniqueResidueList.end(), msug_wurcs_string);
@@ -3640,8 +3688,43 @@ clipper::String MGlycan::generate_wurcs()
             int residueID = std::distance(uniqueResidueList.begin(), residueAssigner);
 
             wurcs_string += std::to_string(residueID + 1);
-            if (i < (node_list.size() - 1))
-                wurcs_string += "-";
+            wurcs_string += "-";
+
+            for (int i = 1; i < node_list.size(); i++)
+            {
+                if(i != rootCircularLinkageAttachedTo)
+                {
+                    msug = node_list[i].get_sugar();
+                    msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code(msug.type().trim());
+
+                    std::vector<std::string>::iterator residueAssigner = std::find(uniqueResidueList.begin(), uniqueResidueList.end(), msug_wurcs_string);
+
+                    int residueID = std::distance(uniqueResidueList.begin(), residueAssigner);
+
+                    wurcs_string += std::to_string(residueID + 1);
+                    if ( i < (node_list.size() - 1) && ( ((i+1) != rootCircularLinkageAttachedTo || i < (node_list.size() - 2))) )
+                        wurcs_string += "-";
+                }
+            }
+        }
+        else
+        {
+            // Add sequence information, by relating to monomer descriptions contained within std::vector < std::string > uniqueResidueList.
+            for (int i = 1; i < node_list.size(); i++)
+            {
+                std::string msug_wurcs_string;
+
+                msug = node_list[i].get_sugar();
+                msug_wurcs_string = clipper::data::convert_to_wurcs_residue_code(msug.type().trim());
+
+                std::vector<std::string>::iterator residueAssigner = std::find(uniqueResidueList.begin(), uniqueResidueList.end(), msug_wurcs_string);
+
+                int residueID = std::distance(uniqueResidueList.begin(), residueAssigner);
+
+                wurcs_string += std::to_string(residueID + 1);
+                if (i < (node_list.size() - 1))
+                    wurcs_string += "-";
+            }
         }
 
         if(debug_output)
@@ -4771,11 +4854,39 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
             }
             else if(terminal_sugar_connected_to_root && !currentTerminalSugarAlreadyConnectedToRoot)
             {
-                clipper::MSugar tmpsug = sugar_list.front();
-                clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
-                if(get_altconf(contacts[i].first) != ' ' && get_altconf(acceptorAtom) != ' ')
+                clipper::MGlycan::Node rootNode = mg.get_node(0);
+                bool currentPairConnected = false;
+                for(int j = 0; j < rootNode.number_of_connections(); j++)
                 {
-                    if(altconf_compatible(get_altconf(contacts[i].first), get_altconf(acceptorAtom)))
+                    int connectedToNodeID = rootNode.get_connection(j).get_linked_node_id();
+                    clipper::MSugar rootConnectedToOtherMSugar = mg.get_node(connectedToNodeID).get_sugar();
+                    
+                    if( msug.chain_id().trim() == rootConnectedToOtherMSugar.chain_id().trim() &&
+                        msug.id().trim() == rootConnectedToOtherMSugar.id().trim() &&
+                        msug.type().trim() == rootConnectedToOtherMSugar.type().trim() && 
+                        msug.seqnum() == rootConnectedToOtherMSugar.seqnum() )
+                    {
+                        currentPairConnected = true;
+                        break;
+                    }
+                }
+                
+                if(!currentPairConnected)
+                {
+                    clipper::MSugar tmpsug = sugar_list.front();
+                    clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
+                    if(get_altconf(contacts[i].first) != ' ' && get_altconf(acceptorAtom) != ' ')
+                    {
+                        if(altconf_compatible(get_altconf(contacts[i].first), get_altconf(acceptorAtom)))
+                        {
+                            if(debug_output)
+                            {
+                                DBG << "parse_order - terminal/root connection ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
+                            }
+                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
+                        }
+                    }
+                    else
                     {
                         if(debug_output)
                         {
@@ -4783,16 +4894,8 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                         }
                         mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
                     }
+                    currentTerminalSugarAlreadyConnectedToRoot = true;
                 }
-                else
-                {
-                    if(debug_output)
-                    {
-                        DBG << "parse_order - terminal/root connection ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
-                    }
-                    mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
-                }
-                currentTerminalSugarAlreadyConnectedToRoot = true;
             }
         }
     }
