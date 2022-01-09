@@ -5012,375 +5012,6 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
     }
     else
     {
-        int id = mm.lookup ( "O1", clipper::MM::ANY );
-        
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "O2", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "O3", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "O4", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        
-        id = mm.lookup ( "O5", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "O6", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        
-        id = mm.lookup ( "O7", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "O8", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S2", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S3", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S4", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S5", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S6", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S7", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "S8", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N2", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N3", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N4", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N5", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N6", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N7", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "N8", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F2", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F3", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F4", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F5", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F6", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F7", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-
-        id = mm.lookup ( "F8", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-    }
-
-    if ( candidates.size() == 0 )
-        return tmpresults;  // empty result
-    else
-    {
-        const clipper::MiniMol& tmpmol = *mmol;
-
-        for ( int i = 0 ; i < candidates.size() ; i++ )
-        {
-            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
-            for (int j = 0 ; j < contacts.size() ; j++ )
-            {
-                if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
-                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 0.25 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
-                {                            //         of crappy structures in MG
-                    tmpresults.push_back(std::make_pair(tmpmol[contacts[j].polymer()].id().trim(), tmpmol[contacts[j].polymer()][contacts[j].monomer()]));
-                }
-            }        
-        }
-
-        for(int i = 0; i < tmpresults.size(); i++)
-        {
-            std::pair< clipper::String, clipper::MMonomer > currentResult = tmpresults[i];
-            
-            auto searchresult_finalOutput = std::find_if(std::begin(finalOutput), std::end(finalOutput), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
-                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
-            });
-            auto searchresult_tmpresults = std::find_if(std::begin(tmpresults) + (i+1), std::end(tmpresults), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
-                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
-            });
-            
-            if(searchresult_finalOutput == std::end(finalOutput) && searchresult_tmpresults != std::end(tmpresults))
-                finalOutput.push_back(currentResult);
-
-        }
-        return finalOutput;
-    }
-}
-
-
-const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > MGlycology::get_contacts ( const clipper::MMonomer& mm, const clipper::String monomer_chain_id )
-{
-    // mm can be aminoacid (typically ASN) or sugar: ND2, O2, O3, O4, O6
-
-    std::vector < clipper::MAtom > candidates; // look for the possibilities
-    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
-
-    if(debug_output)
-        DBG << "Input: " << monomer_chain_id << "/" << mm.id().trim() << "-" << mm.type().trim() << std::endl;
-
-    if ( mm.type().trim() == "ASN" )
-    {
-        int id1 = mm.lookup ( "ND2", clipper::MM::ANY );
-        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
-
-        if ( id1 != -1 )
-        {
-            candidates.push_back ( mm[id1] );
-
-            if ( id2 != -1 )
-                candidates.push_back ( mm[id2] );
-        }
-        else if ( id2 != -1 )
-            candidates.push_back ( mm[id2] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "ARG" )
-    {
-        int id1 = mm.lookup ( "NH2", clipper::MM::ANY );
-        int id2 = mm.lookup ( "NH1", clipper::MM::ANY );
-
-        if ( id1 != -1 )
-        {
-            candidates.push_back ( mm[id1] );
-
-            if ( id2 != -1 )
-                candidates.push_back ( mm[id2] );
-        }
-        else if ( id2 != -1 )
-            candidates.push_back ( mm[id2] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "LYS" )
-    {
-        int id = mm.lookup ( "NZ", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "THR" )
-    {
-        int id = mm.lookup ( "OG1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "SER" )
-    {
-        int id = mm.lookup ( "OG", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "TYR" )
-    {
-        int id = mm.lookup ( "OH", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "ASP" )
-    {
-        int id1 = mm.lookup ( "OD2", clipper::MM::ANY );
-        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
-
-        if ( id1 != -1 )
-        {
-            candidates.push_back ( mm[id1] );
-
-            if ( id2 != -1 )
-                candidates.push_back ( mm[id2] );
-        }
-        else if ( id2 != -1 )
-            candidates.push_back ( mm[id2] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "GLU" )
-    {
-        int id1 = mm.lookup ( "OE2", clipper::MM::ANY );
-        int id2 = mm.lookup ( "OE1", clipper::MM::ANY );
-
-        if ( id1 != -1 )
-        {
-            candidates.push_back ( mm[id1] );
-
-            if ( id2 != -1 )
-                candidates.push_back ( mm[id2] );
-        }
-        else if ( id2 != -1 )
-            candidates.push_back ( mm[id2] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "HYP" )
-    {
-        int id = mm.lookup ( "OD1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "LYZ" )
-    {
-        int id = mm.lookup ( "OH", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "CYS" )
-    {
-        int id = mm.lookup ( "SG", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "TRP" )
-    {
-        int id = mm.lookup ( "CD1", clipper::MM::ANY );
-
-        if ( id != -1 )
-            candidates.push_back ( mm[id] );
-        else return tmpresults; // empty result
-
-    }
-    else if ( mm.type().trim() == "SEP" )
-    {
-        int id1 = mm.lookup ( "O2P", clipper::MM::ANY );
-        int id2 = mm.lookup ( "O3P", clipper::MM::ANY );
-
-        if ( id1 != -1 )
-        {
-            candidates.push_back ( mm[id1] );
-
-            if ( id2 != -1 )
-                candidates.push_back ( mm[id2] );
-        }
-        else if ( id2 != -1 )
-            candidates.push_back ( mm[id2] );
-        else return tmpresults; // empty result
-
-    }   
-    else
-    {
         int id = mm.lookup ( "O", clipper::MM::ANY );
         
         if ( id != -1 )
@@ -5630,6 +5261,913 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
 
         if ( id != -1 )
             candidates.push_back ( mm[id] );
+    }
+
+    if ( candidates.size() == 0 )
+        return tmpresults;  // empty result
+    else
+    {
+        const clipper::MiniMol& tmpmol = *mmol;
+
+        for ( int i = 0 ; i < candidates.size() ; i++ )
+        {
+            std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
+            for (int j = 0 ; j < contacts.size() ; j++ )
+            {
+                if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
+                && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 0.25 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                {                            //         of crappy structures in MG
+                    tmpresults.push_back(std::make_pair(tmpmol[contacts[j].polymer()].id().trim(), tmpmol[contacts[j].polymer()][contacts[j].monomer()]));
+                }
+            }        
+        }
+
+        for(int i = 0; i < tmpresults.size(); i++)
+        {
+            std::pair< clipper::String, clipper::MMonomer > currentResult = tmpresults[i];
+            
+            auto searchresult_finalOutput = std::find_if(std::begin(finalOutput), std::end(finalOutput), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
+                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
+            });
+            auto searchresult_tmpresults = std::find_if(std::begin(tmpresults) + (i+1), std::end(tmpresults), [&currentResult](const std::pair<clipper::String, clipper::MMonomer> &vectorElement) {
+                return currentResult.first == vectorElement.first && currentResult.second.id().trim() == vectorElement.second.id().trim() && currentResult.second.type().trim() == vectorElement.second.type().trim() && currentResult.second.seqnum() == vectorElement.second.seqnum();
+            });
+            
+            if(searchresult_finalOutput == std::end(finalOutput) && searchresult_tmpresults != std::end(tmpresults))
+                finalOutput.push_back(currentResult);
+
+        }
+        return finalOutput;
+    }
+}
+
+
+const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > MGlycology::get_contacts ( const clipper::MMonomer& mm, const clipper::String monomer_chain_id )
+{
+    // mm can be aminoacid (typically ASN) or sugar: ND2, O2, O3, O4, O6
+
+    std::vector < clipper::MAtom > candidates; // look for the possibilities
+    std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
+
+    if(debug_output)
+        DBG << "Input: " << monomer_chain_id << "/" << mm.id().trim() << "-" << mm.type().trim() << std::endl;
+
+    if ( mm.type().trim() == "ASN" )
+    {
+        int id1 = mm.lookup ( "ND2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "ARG" )
+    {
+        int id1 = mm.lookup ( "NH2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "NH1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "LYS" )
+    {
+        int id = mm.lookup ( "NZ", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "THR" )
+    {
+        int id = mm.lookup ( "OG1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "SER" )
+    {
+        int id = mm.lookup ( "OG", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "TYR" )
+    {
+        int id = mm.lookup ( "OH", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "ASP" )
+    {
+        int id1 = mm.lookup ( "OD2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OD1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "GLU" )
+    {
+        int id1 = mm.lookup ( "OE2", clipper::MM::ANY );
+        int id2 = mm.lookup ( "OE1", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "HYP" )
+    {
+        int id = mm.lookup ( "OD1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "LYZ" )
+    {
+        int id = mm.lookup ( "OH", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "CYS" )
+    {
+        int id = mm.lookup ( "SG", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "TRP" )
+    {
+        int id = mm.lookup ( "CD1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        else return tmpresults; // empty result
+
+    }
+    else if ( mm.type().trim() == "SEP" )
+    {
+        int id1 = mm.lookup ( "O2P", clipper::MM::ANY );
+        int id2 = mm.lookup ( "O3P", clipper::MM::ANY );
+
+        if ( id1 != -1 )
+        {
+            candidates.push_back ( mm[id1] );
+
+            if ( id2 != -1 )
+                candidates.push_back ( mm[id2] );
+        }
+        else if ( id2 != -1 )
+            candidates.push_back ( mm[id2] );
+        else return tmpresults; // empty result
+
+    }   
+    else
+    {
+        int id = mm.lookup ( "O", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O1", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O1A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O1B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O2A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O2B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O3A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O3B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O4A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O4B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O5A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O5B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O6A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O6B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "O7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O7A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O7B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O8A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O8B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O9A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "O9B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S1A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S1B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S2A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S2B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S3A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S3B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S4A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S4B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S5A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S5B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S6A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S6B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S7A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S7B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S8A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S8B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S9A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "S9B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N1A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N1B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N2A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N2B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N3A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N3B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N4A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N4B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N5A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N5B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N6A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N6B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N7A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N7B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N8A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N8B", clipper::MM::ANY );
+
+        id = mm.lookup ( "N9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N9A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "N9B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F1", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F1A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F1B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F2A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F2B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F3A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F3B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F4A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F4B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F5A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F5B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F6A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F6B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F7A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F7B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F8A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F8B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F9A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "F9B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C1", clipper::MM::ANY );
+        
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C1A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C1B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C2", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C2A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C2B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C3", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C3A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C3B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C4", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C4A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C4B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "C5", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C5A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C5B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C6", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C6A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C6B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+        
+        id = mm.lookup ( "C7", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C7A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C7B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C8", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C8A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C8B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C9", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C9A", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
+        id = mm.lookup ( "C9B", clipper::MM::ANY );
+
+        if ( id != -1 )
+            candidates.push_back ( mm[id] );
+
     }
 
     if ( candidates.size() == 0 )
