@@ -42,7 +42,8 @@ namespace privateer {
             clipper::ftype Phi;        
             clipper::ftype Psi;
 			clipper::ftype Phi_error;
-			clipper::ftype Psi_error;    
+			clipper::ftype Psi_error;   
+			clipper::String linked_type; 
         };
 
 

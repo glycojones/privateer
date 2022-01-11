@@ -19,8 +19,19 @@ namespace privateer
     {
         const protein_sidechain_glycosylation backbone_instructions[] =
         {
-            { "ASN", "ND2", "CG", "CB", -97.5, 178.0, 25.0, 25.0 },
-            { "ASP", "OD2", "CG", "CB", -97.5, 178.0, 25.0, 25.0 }
+            { "ASN", "ND2", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "n-linked" }, //n-glycosylation
+            { "ARG", "NH2", "CZ", "NE", -97.5, 178.0, 25.0, 25.0, "n-linked" }, //n-glycosylation
+            { "LYS", "NZ",  "CE", "CD", -97.5, 178.0, 25.0, 25.0, "n-linked" }, //n-glycosylation
+            { "THR", "OG1", "CB", "CA", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "SER", "OG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "TYR", "OH",  "CZ", "CE1",-97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "ASP", "OD2", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "GLU", "OE2", "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
+            { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
+            // { "TRP", "CD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
 
@@ -141,7 +152,8 @@ namespace privateer
             clipper::ftype targetPhi;        
             clipper::ftype targetPsi;
             clipper::ftype Phi_error;        
-            clipper::ftype Psi_error; 
+            clipper::ftype Psi_error;
+            clipper::String linked_type;
 
             if(receiver_atom_index != -1)
             {
@@ -153,6 +165,7 @@ namespace privateer
                 targetPsi = privateer::modelling::backbone_instructions[receiver_atom_index].Psi;
                 Phi_error = privateer::modelling::backbone_instructions[receiver_atom_index].Phi_error;
                 Psi_error = privateer::modelling::backbone_instructions[receiver_atom_index].Psi_error;
+                linked_type = privateer::modelling::backbone_instructions[receiver_atom_index].linked_type;
 
                 if(userValuesChanged)
                 {
@@ -167,10 +180,10 @@ namespace privateer
                 }
 
                 if(enable_user_messages && !debug_output)
-                    std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Target Phi = " << targetPhi << ", target Psi = " << targetPsi << std::endl;
+                    std::cout << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. This will produce a " << linked_type << " glycan. Target Phi = " << targetPhi << ", target Psi = " << targetPsi << std::endl;
 
                 if(debug_output)
-                    DBG << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. Target Phi = " << targetPhi << " target Psi = " << targetPsi << std::endl;
+                    DBG << "Successfully located " << residue_name << " instructions. Will connect glycan to " << connected_atom << " with " << vector_point_alpha << " and " << vector_point_bravo << " used to generate rotation-translation matrix. This will produce a " << linked_type << " glycan. Target Phi = " << targetPhi << " target Psi = " << targetPsi << std::endl;
 
             }
             else
@@ -260,10 +273,10 @@ namespace privateer
                 sugar_vector_point = privateer::modelling::sugar_instructions[glycan_grafting_type].vector_point;
 
                 if(enable_user_messages && !debug_output)
-                    std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " and " << sugar_vector_point << " used to generate rotation-translation matrix." << std::endl;
+                    std::cout << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan via " << sugar_connection_atom << " and " << sugar_vector_point << " used to translate onto " << connected_atom << " atom. The graft should result in a " << linked_type << " glycan." << std::endl;
 
                 if(debug_output)
-                    DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_connection_atom << " and " << sugar_vector_point << " used to translate onto " << connected_atom << " atom." << std::endl;
+                    DBG << "Successfully located " << glycan_type << " glycan grafting instructions. Will connect glycan using " << sugar_connection_atom << " and " << sugar_vector_point << " used to translate onto " << connected_atom << " atom. The graft should result in a " << linked_type << " glycan." << std::endl;
             }
             else
             {
@@ -1149,9 +1162,11 @@ namespace privateer
 
                             if(previously_identified == std::end(clashing_residues))
                             {
-                                // Make sure that we are not detecting root protein side-chain as a clash.
+                                // Make sure that we are not detecting root protein side-chain as a clash. 
                                 if(root_chain_id.trim() != input_model[detected_chain].id().trim() || input_protein_side_chain_residue.id().trim() != input_model[detected_chain][detected_monomer].id().trim() || input_protein_side_chain_residue.type().trim() != input_model[detected_chain][detected_monomer].type().trim() || input_protein_side_chain_residue.seqnum() != input_model[detected_chain][detected_monomer].seqnum())
-                                    clashing_residues.push_back( std::make_pair(std::make_pair(input_model[detected_chain][detected_monomer], root_chain_id), std::make_pair(currentSugar, root_sugar_chain_id)) );
+                                     // Also ignore water for now... but prolly would be a better idea to just check whether not protein or sugar... or make a seperate list of ignorable solvent. 
+                                    if(input_model[detected_chain][detected_monomer].type().trim() != "HOH")
+                                        clashing_residues.push_back( std::make_pair(std::make_pair(input_model[detected_chain][detected_monomer], root_chain_id), std::make_pair(currentSugar, root_sugar_chain_id)) );
                             }
                         }
                         

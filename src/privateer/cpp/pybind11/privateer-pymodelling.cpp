@@ -320,6 +320,7 @@ void privateer::pymodelling::Builder::export_grafted_model(std::string& output_p
 {
     clipper::MMDBfile pdbfile;
     pdbfile.export_minimol( export_model );
+    std::cout << "Attempting to write PDB file with grafted glycans in the following path: " << output_path << std::endl;
     pdbfile.write_file( output_path );
 }
 
