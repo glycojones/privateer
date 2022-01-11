@@ -6181,7 +6181,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
         {
             if(candidates[i].element().trim() != "C")
             {
-                std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
+                std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.0 );
             
                 bool altConfDetected = false;
                 bool managedToFindContactInSameAltConf = false;
@@ -6191,7 +6191,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                        )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG
@@ -6250,7 +6250,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                         //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                         {                            //         of crappy structures in MG
@@ -6310,7 +6310,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                        )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG
@@ -6369,7 +6369,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                             ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                            )  &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                         //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                         {                            //         of crappy structures in MG

@@ -351,7 +351,7 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
     privateer::util::read_coordinate_file_mtz(mfile, this->input_model, clipperfied_input_model_path, true);
     
     
-    this->manb_object = clipper::MAtomNonBond( this->input_model, 5.0 );
+    this->manb_object = clipper::MAtomNonBond( this->input_model, 8.0 );
 
     this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
 
@@ -566,7 +566,356 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_chpibonds_f
     return result;
 }
 
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_neighborhoods()
+{
+    pybind11::list result;
+    int numGlycans = mglycology.get_list_of_glycans().size();
+    for(int i = 0; i < numGlycans; i++)
+    {
+        pybind11::dict item = get_neighborhood_for_specific_glycan(i);
+        result.append(item);
+    }
+    
 
+    return result;
+}
+
+
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhood_for_specific_glycan(int glycanIndex)
+{
+    pybind11::dict result;
+    std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
+
+    if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
+    {
+        throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of glycans detected in the model. \nInput: " + std::to_string(glycanIndex) + "\tPermitted Range: [0-" + std::to_string(list_of_glycans.size() - 1) + "]");
+    }
+
+    clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
+
+    std::string glycanWURCS = inputGlycan.generate_wurcs();
+    std::pair < clipper::MMonomer, clipper::MSugar > root = inputGlycan.get_root();
+    clipper::MSugar rootSugar = root.second;
+    clipper::MMonomer rootMMonomer = root.first;
+
+    if(rootSugar.ring_members().size() == 5 || rootSugar.ring_members().size() == 6)
+    {
+        struct SequenceInfo
+        {
+            std::string ChainID;
+            std::string ChainType;
+            int MiniMolChainIndex; 
+            int smallest_residue_index = -42069;
+            int biggest_residue_index = -42069;
+            int detected_contacts = 0;
+            std::string fullSequence;
+            pybind11::list sequenceDetails;
+            std::string contactIsolatedSequence;
+        };
+        std::vector<SequenceInfo> ChainInfo;
+
+
+        const clipper::MiniMol& tmpmol = this->input_model;
+        clipper::MAtom originAtom = rootSugar.ring_members()[4];
+        std::vector < clipper::MAtomIndexSymmetry > contacts = manb_object.atoms_near ( originAtom.coord_orth(), 7.0 );
+        std::vector < clipper::MAtomIndexSymmetry > refined_contact_results;
+
+        std::sort(contacts.begin(), contacts.end(), [tmpmol, &originAtom](const clipper::MAtomIndexSymmetry &left, const clipper::MAtomIndexSymmetry &right) {
+                clipper::ftype distanceLeft = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[left.polymer()][left.monomer()][left.atom()].coord_orth());
+                clipper::ftype distanceRight = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[right.polymer()][right.monomer()][right.atom()].coord_orth());
+                return distanceLeft < distanceRight;
+            // if(tmpmol[left.polymer()][left.monomer()].type().trim() == tmpmol[right.polymer()][right.monomer()].type().trim() && tmpmol[left.polymer()][left.monomer()].id() == tmpmol[right.polymer()][right.monomer()].id())
+            // {
+            //     clipper::ftype distanceLeft = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[left.polymer()][left.monomer()][left.atom()].coord_orth());
+            //     clipper::ftype distanceRight = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[right.polymer()][right.monomer()][right.atom()].coord_orth());
+            //     return distanceLeft < distanceRight;
+            // }
+            // else return false;
+        });
+
+        int rootMMonomerPolymerIndex;
+        int rootMMonomerResidueIndex;
+
+        for (int i = 0 ; i < contacts.size(); i++ )
+        {
+            if ( (( clipper::data::is_amino_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ||
+                    clipper::data::is_nucleic_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ) &&
+                    inputGlycan.get_chain().trim() != tmpmol[contacts[i].polymer()].id().trim() ||
+                    rootMMonomer.id().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() || 
+                    rootMMonomer.type().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() || 
+                    rootMMonomer.seqnum() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) && 
+                    (clipper::Coord_orth::length ( tmpmol[contacts[i].polymer()][contacts[i].monomer()][contacts[i].atom()].coord_orth(), originAtom.coord_orth() ) <= 7.0 ))  
+            {          
+                auto search_result_already_accounted_for = std::find_if(refined_contact_results.begin(), refined_contact_results.end(), [tmpmol, &originAtom, &contacts, i](const clipper::MAtomIndexSymmetry& element) 
+                { 
+                    return      tmpmol[element.polymer()].id().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
+                                tmpmol[element.polymer()][element.monomer()].id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() &&
+                                tmpmol[element.polymer()][element.monomer()].type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() && 
+                                tmpmol[element.polymer()][element.monomer()].seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum();
+                });
+
+                if(search_result_already_accounted_for == std::end(refined_contact_results))                
+                    refined_contact_results.push_back(contacts[i]);
+            }
+            else if ((  clipper::data::is_amino_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ||
+                        clipper::data::is_nucleic_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ) &&
+                        inputGlycan.get_chain().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
+                        rootMMonomer.id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() && 
+                        rootMMonomer.type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() && 
+                        rootMMonomer.seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) 
+            {
+                rootMMonomerPolymerIndex = contacts[i].polymer();
+                rootMMonomerResidueIndex = contacts[i].monomer();
+            }
+        }
+
+        result["glycanIndex"] = glycanIndex;
+        result["glycanWURCS"] = glycanWURCS;
+        result["totalGlycansInModel"] = list_of_glycans.size();
+        std::string rootSugarChainID = rootSugar.chain_id().trim().substr(0,1);
+        std::string rootSugarType = rootSugar.type().trim();
+        std::string rootSugarTargetAtom = originAtom.id().trim();
+        int rootSugarSeqnum = rootSugar.seqnum();
+        auto targetSugar = pybind11::dict("rootSugarChainID"_a=rootSugarChainID, "rootSugarType"_a=rootSugarType, "rootSugarSeqnum"_a=rootSugarSeqnum, "rootSugarTargetAtom"_a=rootSugarTargetAtom);
+        result["rootSugar"] = targetSugar;
+
+        if(rootMMonomer.size() > 0)
+        {
+            std::string rootMMonomerChainID = inputGlycan.get_chain().substr(0,1);
+            std::string rootMMonomerType = rootMMonomer.type().trim();
+            std::string rootMMonomerCode = convert_three_letter_code_to_single_letter(rootMMonomerType);
+            int rootMMonomerSeqnum = rootMMonomer.seqnum();
+            auto targetMMonomer = pybind11::dict("rootAminoAcidChainID"_a=rootMMonomerChainID, "rootAminoAcidType"_a=rootMMonomerType, "rootAminoAcidCode"_a=rootMMonomerCode, "rootAminoAcidSeqnum"_a=rootMMonomerSeqnum);
+            std::string glycosylationType = inputGlycan.get_type();
+            result["rootAminoAcid"] = targetMMonomer;
+            result["glycosylationType"] = glycosylationType;
+        }
+        else
+        {
+            result["rootAminoAcid"] = pybind11::cast<pybind11::none>(Py_None);
+            result["glycosylationType"] = "ligand";
+        }
+        
+        if(!refined_contact_results.empty())
+        {
+            for(int i = 0; i < tmpmol.size(); i++)
+            {
+                SequenceInfo object;
+                object.MiniMolChainIndex = i;
+                object.ChainID = tmpmol[i].id().trim().substr(0,1);
+                std::string chainType;
+                
+                pybind11::list residues;
+                std::string complete_polymer_seq;
+                if(tmpmol[i].size() > 0)
+                {
+                    clipper::MMonomer firstResidue = tmpmol[i][0];
+                    if(clipper::data::is_amino_acid(firstResidue.type().trim()))
+                        chainType = "protein";
+                    else if(clipper::data::is_nucleic_acid(firstResidue.type().trim()))
+                        chainType = "nucleic";
+                    else
+                        continue;
+                }
+                else
+                    continue;
+                
+                object.ChainType = chainType;
+                for(int j = 0; j < tmpmol[i].size(); j++)
+                {
+                    std::string residueType = tmpmol[i][j].type().trim();
+                    std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+                    int residueSeqnum = tmpmol[i][j].seqnum();
+                    auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueCode"_a=residueCode, "residueSeqnum"_a=residueSeqnum);
+                    complete_polymer_seq += residueCode;
+                    residues.append(residue_dict);
+                }
+                object.fullSequence = complete_polymer_seq;
+                object.sequenceDetails = residues;
+
+                ChainInfo.push_back(object);
+            }
+            for(int i = 0; i < refined_contact_results.size(); i++)
+            {
+                auto ChainStructTarget = std::find_if(ChainInfo.begin(), ChainInfo.end(), [tmpmol, &refined_contact_results, i](SequenceInfo& element)
+                {
+                    return element.ChainID == tmpmol[refined_contact_results[i].polymer()].id().trim().substr(0,1) && element.MiniMolChainIndex == refined_contact_results[i].polymer();
+                });
+
+                if(ChainStructTarget != std::end(ChainInfo))
+                {
+                    int index = std::distance(ChainInfo.begin(), ChainStructTarget);
+                    if(ChainInfo[index].MiniMolChainIndex == rootMMonomerPolymerIndex)
+                    {
+                        if(ChainInfo[index].biggest_residue_index == -42069 && ChainInfo[index].smallest_residue_index == -42069)
+                        {
+                            ChainInfo[index].biggest_residue_index = rootMMonomerResidueIndex;
+                            ChainInfo[index].smallest_residue_index = rootMMonomerResidueIndex;
+                        }
+
+                        if(refined_contact_results[i].monomer() > ChainInfo[index].biggest_residue_index)
+                            ChainInfo[index].biggest_residue_index = refined_contact_results[i].monomer();
+                        else if(refined_contact_results[i].monomer() < ChainInfo[index].smallest_residue_index)
+                            ChainInfo[index].smallest_residue_index = refined_contact_results[i].monomer();
+                        
+                        ChainInfo[index].detected_contacts++;
+                    }
+                    else
+                    {
+                        if(ChainInfo[index].biggest_residue_index == -42069 && ChainInfo[index].smallest_residue_index == -42069)
+                        {
+                            ChainInfo[index].biggest_residue_index = refined_contact_results[i].monomer();
+                            ChainInfo[index].smallest_residue_index = refined_contact_results[i].monomer();
+                        }
+
+                        if(refined_contact_results[i].monomer() > ChainInfo[index].biggest_residue_index)
+                            ChainInfo[index].biggest_residue_index = refined_contact_results[i].monomer();
+                        else if(refined_contact_results[i].monomer() < ChainInfo[index].smallest_residue_index)
+                            ChainInfo[index].smallest_residue_index = refined_contact_results[i].monomer();
+                        
+                        ChainInfo[index].detected_contacts++;
+                    }
+                }
+            }
+            
+            pybind11::list SequenceList;
+            for(int i = 0; i < ChainInfo.size(); i++)
+            {
+                SequenceInfo current_element = ChainInfo[i];
+
+                if(current_element.smallest_residue_index == -42069 || current_element.biggest_residue_index == -42069)
+                    continue;
+
+                std::string tmp_partial_sequence;
+                for(int residue = current_element.smallest_residue_index; residue <= current_element.biggest_residue_index; residue++)
+                {
+                    std::string residueType = tmpmol[current_element.MiniMolChainIndex][residue].type().trim();
+                    std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+                    tmp_partial_sequence += residueCode;
+                }
+                current_element.contactIsolatedSequence = tmp_partial_sequence;
+                auto sequence_dict = pybind11::dict("ChainID"_a=current_element.ChainID, "ChainType"_a=current_element.ChainType, "MiniMolChainIndex"_a=current_element.MiniMolChainIndex, "firstResidue"_a=current_element.smallest_residue_index, "lastResidue"_a=current_element.biggest_residue_index, "nContacts"_a=current_element.detected_contacts, "FullSequence"_a=current_element.fullSequence, "SequenceDetails"_a=current_element.sequenceDetails, "ContactIsolatedSequence"_a=current_element.contactIsolatedSequence);
+                SequenceList.append(sequence_dict);
+            }
+            result["SequenceList"] = SequenceList;
+
+            pybind11::list contacts_list;
+            for(int i = 0; i < refined_contact_results.size(); i++)
+            {
+                auto ChainStructTarget = std::find_if(ChainInfo.begin(), ChainInfo.end(), [tmpmol, &refined_contact_results, i](SequenceInfo& element)
+                {
+                    return element.ChainID == tmpmol[refined_contact_results[i].polymer()].id().trim().substr(0,1) && element.MiniMolChainIndex == refined_contact_results[i].polymer();
+                });
+
+                if(ChainStructTarget != std::end(ChainInfo))
+                {
+                    SequenceInfo current_element = *ChainStructTarget;
+                    int offset = current_element.smallest_residue_index;
+
+                    std::string detectedContactChainID = tmpmol[refined_contact_results[i].polymer()].id().trim().substr(0,1);
+                    std::string detectedContactMonomerID = tmpmol[refined_contact_results[i].polymer()][refined_contact_results[i].monomer()].id().trim();
+                    std::string detectedContactMonomerType = tmpmol[refined_contact_results[i].polymer()][refined_contact_results[i].monomer()].type().trim();
+                    std::string detectedContactMonomerSingleLetter = convert_three_letter_code_to_single_letter(detectedContactMonomerType);
+                    std::string detectedContactAtom = tmpmol[refined_contact_results[i].polymer()][refined_contact_results[i].monomer()][refined_contact_results[i].atom()].id().trim();
+                    int detectedContactMonomerSeqnum = tmpmol[refined_contact_results[i].polymer()][refined_contact_results[i].monomer()].seqnum();
+                    float contactDistance = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[refined_contact_results[i].polymer()][refined_contact_results[i].monomer()][refined_contact_results[i].atom()].coord_orth());
+                    auto contact_dict = pybind11::dict("ChainID"_a=detectedContactChainID, "MonomerID"_a=detectedContactMonomerID, "MonomerType"_a=detectedContactMonomerType, "MonomerSingleLetter"_a=detectedContactMonomerSingleLetter, "ContactAtom"_a=detectedContactAtom, "MonomerSeqnum"_a=detectedContactMonomerSeqnum, "localSeqOffset"_a=offset, "ContactDistance"_a=contactDistance);
+                    contacts_list.append(contact_dict);
+                }
+            }
+
+            
+            result["Contacts"] = contacts_list;
+        }
+        else
+        {
+            result["SequenceList"] = pybind11::cast<pybind11::none>(Py_None);
+            result["Contacts"] = pybind11::cast<pybind11::none>(Py_None);
+        }
+    }
+    else
+    {
+        result["glycanIndex"] = glycanIndex;
+        result["glycanWURCS"] = glycanWURCS;
+        result["totalGlycansInModel"] = list_of_glycans.size();
+        result["rootSugar"] = pybind11::cast<pybind11::none>(Py_None);
+
+        result["rootAminoAcid"] = pybind11::cast<pybind11::none>(Py_None);
+        result["glycosylationType"] = pybind11::cast<pybind11::none>(Py_None);
+
+        result["SequenceList"] = pybind11::cast<pybind11::none>(Py_None);
+        result["Contacts"] = pybind11::cast<pybind11::none>(Py_None);
+    }
+
+    return result;
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_protein_sequence_information_for_entire_model( ) 
+{
+    pybind11::list output;
+    for(int i = 0; i < input_model.size(); i++)
+    {
+        pybind11::list residues;
+        std::string complete_polymer_seq;
+        for(int j = 0; j < input_model[i].size(); j++)
+        {
+            std::string residueType = input_model[i][j].type().trim();
+            std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+            int residueSeqnum = input_model[i][j].seqnum();
+            auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueCode"_a=residueCode, "residueSeqnum"_a=residueSeqnum);
+            complete_polymer_seq += residueCode;
+            residues.append(residue_dict);
+        }
+        std::string chainID = input_model[i].id().trim();
+        auto mpolymer_dict = pybind11::dict("index"_a = i, "ChainID"_a=chainID, "Sequence"_a=complete_polymer_seq, "Residues"_a=residues);
+        output.append(mpolymer_dict);
+    }
+    return output;
+}
+
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_protein_sequence_information_for_single_chain (int chainMiniMolIndex)
+{
+    if(chainMiniMolIndex >= input_model.size() || chainMiniMolIndex < 0 )
+         throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of chains in the model. \nInput: " + std::to_string(chainMiniMolIndex) + "\tPermitted Range: [0-" + std::to_string(input_model.size() - 1) + "]");
+    
+    pybind11::list residues;
+    std::string complete_polymer_seq;
+    for(int j = 0; j < input_model[chainMiniMolIndex].size(); j++)
+    {
+        std::string residueType = input_model[chainMiniMolIndex][j].type().trim();
+        std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+        int residueSeqnum = input_model[chainMiniMolIndex][j].seqnum();
+        auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueCode"_a=residueCode, "residueSeqnum"_a=residueSeqnum);
+        complete_polymer_seq += residueCode;
+        residues.append(residue_dict);
+    }
+    std::string chainID = input_model[chainMiniMolIndex].id().trim();
+    auto mpolymer_dict = pybind11::dict("index"_a = chainMiniMolIndex, "ChainID"_a=chainID, "Sequence"_a=complete_polymer_seq, "Residues"_a=residues);
+
+    return mpolymer_dict;
+}
+
+// Private methods
+std::string privateer::pyanalysis::GlycosylationInteractions::convert_three_letter_code_to_single_letter(std::string three_letter_code)
+{
+    std::unordered_map<std::string, std::string> code_conversion = 
+    {
+        {"ALA", "A"}, {"ARG", "R"}, {"ASN", "N"}, {"ASP", "D"},
+        {"CYS", "C"}, {"GLN", "Q"}, {"GLU", "E"}, {"GLY", "G"},
+        {"HIS", "H"}, {"ILE", "I"}, {"LEU", "L"}, {"LYS", "K"},
+        {"MET", "M"}, {"PHE", "F"}, {"PRO", "P"}, {"SER", "S"},
+        {"THR", "T"}, {"TRP", "W"}, {"TYR", "Y"}, {"VAL", "V"},
+        {"HYP", "P"}, {"LYZ", "K"}, {"SEP", "S"},
+        {"DA", "A"}, {"DC", "C"}, {"DG", "G"}, {"DT", "T"}
+    };
+
+    std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);
+
+    if ( result == code_conversion.end() )
+        return three_letter_code + "_";
+    else
+        return result->second;
+}
 ///////////////////////////////////////////////// Class GlycosylationComposition END /////////////////////////////////////////////////////////////////
 
 
@@ -3441,7 +3790,11 @@ void init_pyanalysis(py::module& m)
         .def("get_all_detected_chpibonds",  &pa::GlycosylationInteractions::get_all_detected_chpibonds)
         .def("get_all_interactions_for_specific_glycan",  &pa::GlycosylationInteractions::get_all_interactions_for_specific_glycan)
         .def("get_hbonds_for_specific_glycan", &pa::GlycosylationInteractions::get_hbonds_for_specific_glycan)
-        .def("get_chpibonds_for_specific_glycan", &pa::GlycosylationInteractions::get_chpibonds_for_specific_glycan);
+        .def("get_chpibonds_for_specific_glycan", &pa::GlycosylationInteractions::get_chpibonds_for_specific_glycan)
+        .def("get_all_glycan_neighborhoods", &pa::GlycosylationInteractions::get_all_glycan_neighborhoods)
+        .def("get_neighborhood_for_specific_glycan", &pa::GlycosylationInteractions::get_neighborhood_for_specific_glycan)
+        .def("get_protein_sequence_information_for_entire_model", &pa::GlycosylationInteractions::get_protein_sequence_information_for_entire_model)
+        .def("get_protein_sequence_information_for_single_chain", &pa::GlycosylationInteractions::get_protein_sequence_information_for_single_chain);
 
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())

@@ -38,7 +38,8 @@ std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single
         {"CYS", "C"}, {"GLN", "Q"}, {"GLU", "E"}, {"GLY", "G"},
         {"HIS", "H"}, {"ILE", "I"}, {"LEU", "L"}, {"LYS", "K"},
         {"MET", "M"}, {"PHE", "F"}, {"PRO", "P"}, {"SER", "S"},
-        {"THR", "T"}, {"TRP", "W"}, {"TYR", "Y"}, {"VAL", "V"}
+        {"THR", "T"}, {"TRP", "W"}, {"TYR", "Y"}, {"VAL", "V"},
+        {"HYP", "P"}, {"LYZ", "K"}, {"SEP", "S"}
     };
 
     std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);

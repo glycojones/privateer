@@ -17,6 +17,12 @@ glycosylation = pvtcore.GlycosylationComposition(
 # result = interactions.get_all_detected_hbonds()
 # print(result)
 
+# interactions = pvtcore.GlycosylationInteractions(
+#     "/home/harold/Dev/privateer_python/tests/test_data/5fjj.pdb"
+# )
+# result = interactions.get_all_glycan_neighborhoods()
+# print(result)
+
 listOfDetectedGlycans = glycosylation.get_summary_of_detected_glycans()
 
 interactions = pvtcore.GlycosylationInteractions(

@@ -87,6 +87,13 @@ namespace privateer {
         pybind11::dict get_hbonds_for_specific_glycan(int glycanIndex);
         pybind11::dict get_chpibonds_for_specific_glycan(int glycanIndex);
 
+        pybind11::list get_all_glycan_neighborhoods();
+        pybind11::dict get_neighborhood_for_specific_glycan(int glycanIndex);
+
+
+        pybind11::list get_protein_sequence_information_for_entire_model();
+        pybind11::dict get_protein_sequence_information_for_single_chain (int chainMiniMolIndex);
+        
       private:
         std::string input_path;
         clipper::MiniMol input_model;
@@ -94,6 +101,8 @@ namespace privateer {
 				clipper::MGlycology mglycology;
         privateer::interactions::HBondsParser hbonds;
         privateer::interactions::CHPiBondsParser chpibonds;
+
+        std::string convert_three_letter_code_to_single_letter (std::string three_letter_code);
     };
 
     class GlycosylationComposition 

@@ -642,6 +642,21 @@ const sugar_database_entry sugar_database[] =
             return false;
     }
 
+    bool is_nucleic_acid ( std::string name )
+    {
+        std::vector<std::string> nucleic_acids = {
+                                                "DA",
+                                                "DG",
+                                                "DC",
+                                                "DT" 
+        };
+
+        if ( std::find(nucleic_acids.begin(), nucleic_acids.end(), name) != nucleic_acids.end() )
+            return true;
+        else
+            return false;
+    }
+
     std::string carbname_of( std::string name )
     {
         clipper::String new_name;
