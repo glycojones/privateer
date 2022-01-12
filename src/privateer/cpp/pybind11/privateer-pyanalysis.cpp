@@ -1194,12 +1194,13 @@ void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_dete
         auto glycanObject = glycans[glycanID].cast<privateer::pyanalysis::GlycanStructure>();
         std::string wurcsNotation = glycanObject.get_wurcs_notation();
         std::string kindOfGlycan = glycanObject.get_glycosylation_type();
+        std::string glycanChainID = glycanObject.get_root_sugar_chain_id();
         
         auto rootSummary = glycanObject.get_root_info();
         
         auto protein_glycan_linkage_torsion = glycanObject.get_protein_glycan_linkage_torsions();
         
-        auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData);
+        auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "glycanChainID"_a=glycanChainID, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData);
         list.append(dict);
     }
     this->glycosylationSummary = list;

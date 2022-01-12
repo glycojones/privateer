@@ -45,7 +45,7 @@ std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single
     std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);
 
     if ( result == code_conversion.end() )
-        return three_letter_code;
+        return three_letter_code + "_";
     else
         return result->second;
 }
@@ -181,6 +181,8 @@ pybind11::list privateer::pymodelling::Builder::get_protein_sequence_information
         {
             std::string residueType = input[i][j].type().trim();
             std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+            if (j + 1 == input[i].size() && residueCode.back() == '_')
+                residueCode.pop_back();
             int residueSeqnum = input[i][j].seqnum();
             auto residue_dict = pybind11::dict("index"_a=j, "residueType"_a=residueType, "residueCode"_a=residueCode, "residueSeqnum"_a=residueSeqnum);
             complete_polymer_seq += residueCode;
