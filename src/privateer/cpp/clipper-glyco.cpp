@@ -67,6 +67,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+    this->sugar_diagnostics = clipper::MSugar::Diagnostics(false);
     this->sugar_chain_id = chainID;
     this->debug_output = debug_output;
     this->sugar_supported = true;
@@ -283,16 +284,44 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 
 	    if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) )
           || ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
+        {
 	        sugar_diag_chirality = true;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_handedness = sugar_handedness;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.database_sugar_handedness = clipper::data::sugar_database[sugar_index].handedness;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.final_result = sugar_diag_chirality;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.initialized = true;
+        }
 	    else
+        {
             sugar_diag_chirality = false;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_handedness = sugar_handedness;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.database_sugar_handedness = clipper::data::sugar_database[sugar_index].handedness;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.final_result = sugar_diag_chirality;
+            this->sugar_diagnostics.sugar_diag_chirality_diagnostics.initialized = true;
+        }
 
 
 	    if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
-		     || ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
-	        sugar_diag_anomer = true;
+            || ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
+        {
+            sugar_diag_anomer = true;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_anomer = sugar_anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.database_sugar_anomer = clipper::data::sugar_database[sugar_index].anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.final_result = sugar_diag_anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.initialized = true;
+        }
 	    else
+        {
             sugar_diag_anomer = false;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_anomer = sugar_anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.database_sugar_anomer = clipper::data::sugar_database[sugar_index].anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.final_result = sugar_diag_anomer;
+            this->sugar_diagnostics.sugar_diag_anomer_diagnostics.initialized = true;
+        }
 
         if ( ref_conformation == conformation_name() )
             sugar_diag_conformation = true;
@@ -310,9 +339,31 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
         if ( sugar_diag_conformation )
         {
             if (( puckering_amplitude() > ref_puckering - 0.18 ) && (puckering_amplitude() < ref_puckering + 0.15 ))
+            {
                 sugar_diag_puckering = true;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = ref_puckering - 0.18;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = ref_puckering + 0.15;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "and";
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = ref_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+            }
             else
+            {
                 sugar_diag_puckering = false;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = ref_puckering - 0.18;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = ref_puckering + 0.15;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "and";
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = ref_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+            }
 
             if ( sugar_ring_bond_rmsd < ( ref_bonds_rmsd + 0.039 ) )
                 sugar_diag_bonds_rmsd = true;
@@ -327,20 +378,57 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
         else
         {
             if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.42 ))
+            {
                 sugar_diag_puckering = false;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+            }
             else
+            {
                 sugar_diag_puckering = true;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+                this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+            }
 
             sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
         }
 
 	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
             sugar_sane = true;
+        
+        sugar_diagnostics.update_diagnostic_status(true);
+        sugar_diagnostics.update_sugar_sane_status(sugar_sane);
 	}
 	else
 	{
 	    sugar_diag_anomer=true;
 	    sugar_diag_chirality=true;  // perform a generic test based on rough ideal values
+
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_found_db = this->sugar_found_db;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_anomer = sugar_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.database_sugar_anomer = "NotFound";
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.final_result = sugar_diag_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.initialized = true;
+
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_found_db = this->sugar_found_db;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_handedness = sugar_handedness;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.database_sugar_handedness = "NotFound";
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.final_result = sugar_diag_chirality;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.initialized = true;
 
 	    if (sugar_ring_elements.size() == 5)
 	    {
@@ -380,13 +468,37 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
             sugar_diag_conformation = false;
 
         if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.42 ))
+        {
             sugar_diag_puckering = false;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+        }
         else
+        {
             sugar_diag_puckering = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = this->sugar_found_db;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+        }
 
 	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
             sugar_sane = true;
 
+        sugar_diagnostics.update_diagnostic_status(true);
+        sugar_diagnostics.update_sugar_sane_status(sugar_sane);
 	}
 
 	if(debug_output)
@@ -410,6 +522,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 {
     copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
 
+    this->sugar_diagnostics = clipper::MSugar::Diagnostics(false);
     this->sugar_chain_id = chainID;
     this->debug_output = debug_output;
     this->sugar_supported = true;
@@ -571,16 +684,44 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 
     if ( ( ( sugar_handedness != "D" ) && ( validation_data.handedness != "D" ) )
 	    || ( ( sugar_handedness != "L" ) && ( validation_data.handedness != "L" ) ) )
+    {
         sugar_diag_chirality = true;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_found_db = this->sugar_found_db;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_handedness = sugar_handedness;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.database_sugar_handedness = validation_data.handedness;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.final_result = sugar_diag_chirality;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.initialized = true;
+    }
     else
+    {
         sugar_diag_chirality = false;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_found_db = this->sugar_found_db;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.sugar_handedness = sugar_handedness;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.database_sugar_handedness = validation_data.handedness;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.final_result = sugar_diag_chirality;
+        this->sugar_diagnostics.sugar_diag_chirality_diagnostics.initialized = true;
+    }
 
 
     if ( ( ( sugar_anomer == "alpha") && ( validation_data.anomer != "B" ) )
 	    || ( ( sugar_anomer == "beta") && ( validation_data.anomer != "A" ) ) )
+    {
         sugar_diag_anomer = true;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_found_db = true;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_anomer = sugar_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.database_sugar_anomer = clipper::data::sugar_database[sugar_index].anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.final_result = sugar_diag_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.initialized = true;
+    }
     else
+    {
         sugar_diag_anomer = false;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_found_db = true;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.sugar_anomer = sugar_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.database_sugar_anomer = validation_data.anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.final_result = sugar_diag_anomer;
+        this->sugar_diagnostics.sugar_diag_anomer_diagnostics.initialized = true;
+    }
 
     if ( ref_conformation == conformation_name() )
         sugar_diag_conformation = true;
@@ -599,9 +740,31 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
     if ( sugar_diag_conformation )
     {
         if (( puckering_amplitude() > ref_puckering - 0.18 ) && (puckering_amplitude() < ref_puckering + 0.15))
+        {
             sugar_diag_puckering = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = ref_puckering - 0.18;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = ref_puckering + 0.15;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "and";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = ref_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+        }
         else
+        {
             sugar_diag_puckering = false;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = ref_puckering - 0.18;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = ref_puckering + 0.15;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "and";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = ref_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+        }
 
         if ( sugar_ring_bond_rmsd < ( ref_bonds_rmsd + 0.039 ) )
             sugar_diag_bonds_rmsd = true;
@@ -616,14 +779,41 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
     else
     {
         if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.42 ))
+        {
             sugar_diag_puckering = false;
-        else sugar_diag_puckering = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+            
+        }
+        else 
+        {
+            sugar_diag_puckering = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_found_db = true;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_min = 0.42;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.range_max = 0.9;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.comparison_operator = "or";
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.sugar_diag_conformation = sugar_diag_conformation;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.reference_puckering = 0;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.calculated_puckering_amplitude = puckering_amplitude();
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.final_result = sugar_diag_puckering;
+            this->sugar_diagnostics.sugar_diag_puckering_diagnostics.initialized = true;
+        }
 
         sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
     }
 
     if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
         sugar_sane = true;
+    
+    sugar_diagnostics.update_diagnostic_status(true);
+    sugar_diagnostics.update_sugar_sane_status(sugar_sane);
 
     if(debug_output)
     {
@@ -803,7 +993,8 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         if  (( mmol.atom( neighbourhood[i] ).element().trim() != "H" ) && (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[5].name().trim()))
         // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
         {
-            if ( bonded ( mmol.atom(neighbourhood[i]), ring_atoms[5]) ) // check link
+            std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair> dummy_diagnostic;
+            if ( bonded ( mmol.atom(neighbourhood[i]), ring_atoms[5], dummy_diagnostic) ) // check link
             {
                 if ( !is_part_of_ring(mmol.atom(neighbourhood[i]), ring_atoms) && (ring_atoms[5].occupancy() == mmol.atom(neighbourhood[i]).occupancy() ) ) // eliminate ring neighbours
                 {
@@ -1138,7 +1329,8 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
             if (( mmol.atom(neighbourhood[i]).element().trim() != "H" ) &&
                 (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[4].name().trim())) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
             {
-                if ( bonded(mmol.atom(neighbourhood[i]), ring_atoms[4]) ) // check link
+                std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair> dummy_diagnostic;
+                if ( bonded(mmol.atom(neighbourhood[i]), ring_atoms[4], dummy_diagnostic) ) // check link
                     if ( !is_part_of_ring ( mmol.atom(neighbourhood[i]), ring_atoms ) ) // eliminate ring neighbours
                     {
 
@@ -1697,7 +1889,8 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 			//			&& (( get_altconf(mmol.atom(neighbourhood[i2])) == ' ' )
 			//			|| ( get_altconf(mmol.atom(neighbourhood[i2])) == 'A' ) ) ) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
 					{
-						if ( bonded (mmol.atom(neighbourhood[i2]), configurational_carbon) ) // check link
+                        std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair> dummy_diagnostic;
+						if ( bonded (mmol.atom(neighbourhood[i2]), configurational_carbon, dummy_diagnostic) ) // check link
 							if (( mmol.atom(neighbourhood[i2]).name().trim() != ring_atoms[i-1].name().trim())
 								&& ( mmol.atom(neighbourhood[i2]).name().trim() != ring_atoms[0].name().trim() )
 								&& ( mmol.atom(neighbourhood[i2]).name().trim() != configurational_carbon.name().trim() ))
@@ -1734,7 +1927,8 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
 //				&& (( get_altconf(mmol.atom(neighbourhood[i2])) == ' ' )
 //				|| ( get_altconf(mmol.atom(neighbourhood[i2])) == 'A' ) ) ) // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
 			{   // set next carbon and configurational (subs, carbon)
-				if ( bonded (mmol.atom(neighbourhood[i2]), configurational_carbon) ) // check link
+                std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair> dummy_diagnostic;
+				if ( bonded (mmol.atom(neighbourhood[i2]), configurational_carbon, dummy_diagnostic) ) // check link
 				{
 						if ( (mmol.atom(neighbourhood[i2])).element().trim() == "C")
 						{	if ( clipper::Coord_orth::length( mmol.atom( neighbourhood[i2] ).coord_orth(), ring_atoms[ring_atoms.size()-1].coord_orth() )
@@ -2009,7 +2203,7 @@ bool MSugar::examine_ring()
 	clipper::ftype norm_a = sqrt(pow(vec_a[0],2) + pow(vec_a[1],2) + pow(vec_a[2],2));
 	clipper::ftype norm_b = sqrt(pow(vec_b[0],2) + pow(vec_b[1],2) + pow(vec_b[2],2));
 
-        sugar_ring_angles.push_back( ( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) ))) );
+    sugar_ring_angles.push_back( ( clipper::Util::rad2d(acos(clipper::Vec3<clipper::ftype>::dot(vec_a, vec_b)/ (norm_a *norm_b) ))) );
 	sugar_ring_bonds.push_back( clipper::Coord_orth::length(sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),sugar_ring_elements[0].coord_orth()) );
 
 	sugar_ring_torsion.push_back ( clipper::Util::rad2d ( clipper::Coord_orth::torsion ( sugar_ring_elements[sugar_ring_elements.size()-1].coord_orth(),
@@ -2018,7 +2212,7 @@ bool MSugar::examine_ring()
 													      sugar_ring_elements[2].coord_orth() ) ) );
     }
 
-    for (i = 1 ; i < sugar_ring_elements.size() -1 ; i++ )  // calculate bond angles (all), lengths (all) and torsions (minus last one)
+    for (i = 1 ; i < sugar_ring_elements.size() - 1; i++ )  // calculate bond angles (all), lengths (all) and torsions (minus last one)
     {
         clipper::Vec3<clipper::ftype> vec_a(sugar_ring_elements[i-1].coord_orth().x() - sugar_ring_elements[i].coord_orth().x(),
                                                                                         sugar_ring_elements[i-1].coord_orth().y() - sugar_ring_elements[i].coord_orth().y(),
@@ -2090,27 +2284,37 @@ bool MSugar::examine_ring()
     sugar_ring_angle_rmsd = rmsd_angles;
     sugar_ring_bond_rmsd = rmsd_bonds;
 
-    for (i = 0 ; i < sugar_ring_elements.size() -1 ; i++)
-        if (!bonded(sugar_ring_elements[i], sugar_ring_elements[i+1]))
+    for (i = 0 ; i < sugar_ring_elements.size() - 1; i++)
+    {
+        if (!bonded(sugar_ring_elements[i], sugar_ring_elements[i+1], this->sugar_diagnostics.sugar_diag_ring_diagnostics.ring_atom_diagnostic))
         {
             if(debug_output)
             {
                 DBG << std::endl << "Returning false - sugar_ring_elements[" << i << "].id().trim() "  << sugar_ring_elements[i].id().trim() << "\t\t\tsugar_ring_elements[" << i+1 << "].id().trim() " << sugar_ring_elements[i+1].id().trim() << std::endl;
             }
+            this->sugar_diagnostics.sugar_diag_ring_diagnostics.initialized = true;
+            this->sugar_diagnostics.sugar_diag_ring_diagnostics.final_result = false;
             return false;
         }
-        if (!bonded(sugar_ring_elements[i], sugar_ring_elements[0]))
+    }
+    
+    // comment for future person editing this code: i++ gets incremented after the loop does a cycle, so loop finishes when i = 4, but after that cycle i gets iterated to 5, thus the bottom segment makes sense. 
+    if (!bonded(sugar_ring_elements[i], sugar_ring_elements[0], this->sugar_diagnostics.sugar_diag_ring_diagnostics.ring_atom_diagnostic))
+    {
+        if(debug_output)
         {
-            if(debug_output)
-            {
-                DBG << std::endl << "Returning false - sugar_ring_elements[" << i << "].id().trim() "  << sugar_ring_elements[i].id().trim() << "\t\t\tsugar_ring_elements[" << 0 << "].id().trim() " << sugar_ring_elements[0].id().trim() << std::endl;
-            }
-            return false;
+            DBG << std::endl << "Returning false - sugar_ring_elements[" << i << "].id().trim() "  << sugar_ring_elements[i].id().trim() << "\t\t\tsugar_ring_elements[0_" << 0 << "].id().trim() " << sugar_ring_elements[0].id().trim() << std::endl;
         }
-        else
-        {
-            return true;
-        }
+        this->sugar_diagnostics.sugar_diag_ring_diagnostics.initialized = true;
+        this->sugar_diagnostics.sugar_diag_ring_diagnostics.final_result = false;
+        return false;
+    }
+    else
+    {
+        this->sugar_diagnostics.sugar_diag_ring_diagnostics.initialized = true;
+        this->sugar_diagnostics.sugar_diag_ring_diagnostics.final_result = true;
+        return true;
+    }
 	    
 }
 
@@ -2120,49 +2324,151 @@ bool MSugar::examine_ring()
  * 	\return A boolean value with the obvious answer
  */
 
-bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) const
+bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two, std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair>& ring_atom_diagnostic) const
 {
     clipper::ftype distance = clipper::Coord_orth::length( ma_one.coord_orth(), ma_two.coord_orth() );
     if(debug_output)
     {
         DBG << std::endl << "Received - ma_one.id().trim() " << ma_one.id().trim() << "\t\t\tma_two.id().trim() " << ma_two.id().trim() << "\tdistance = " << distance << std::endl;
     }
+    clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair current_pair;
+    current_pair.measured_distance = distance;
     if ( ma_one.element().trim() == "C" )
     {
         if ( ma_two.element().trim() == "C" )
         {
             if ((distance >  1.18 ) && ( distance < 1.62 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.18;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // C-C or C=C
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.18;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "N" )
         {
             if ((distance >  1.24 ) && ( distance < 1.62 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.24;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // C-N or C=N
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.24;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "O" )
         {
-            if ((distance >  1.16 ) && ( distance < 1.60 ))
+            if ((distance > 1.16 ) && ( distance < 1.60 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.16;
+                current_pair.distance_max = 1.60;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // C-O or C=O
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.16;
+                current_pair.distance_max = 1.60;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "S" )
         {
             if (( distance > 1.2 ) && ( distance < 2.0 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.2;
+                current_pair.distance_max = 2.0;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // C-S or C=S
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.2;
+                current_pair.distance_max = 2.0;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "H" )
         {
             if ((distance >  0.96 ) && ( distance < 1.14 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.96;
+                current_pair.distance_max = 1.14;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // C-H
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.96;
+                current_pair.distance_max = 1.14;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
     }
     else if ( ma_one.element().trim() == "N" )
@@ -2170,16 +2476,56 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
         if ( ma_two.element().trim() == "C" )
         {
             if ((distance >  1.24 ) && ( distance < 1.62 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.24;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // N-C or N=C
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.24;
+                current_pair.distance_max = 1.62;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "H" )
         {
             if ((distance >  0.90 ) && ( distance < 1.10 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.90;
+                current_pair.distance_max = 1.10;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // N-H
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.90;
+                current_pair.distance_max = 1.10;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
     }
     else if ( ma_one.element().trim() == "O" )
@@ -2187,16 +2533,56 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
         if ( ma_two.element().trim() == "C" )
         {
             if ((distance >  1.16 ) && ( distance < 1.60 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.16;
+                current_pair.distance_max = 1.60;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // O-C or O=C
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.16;
+                current_pair.distance_max = 1.60;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "H" )
         {
             if ((distance >  0.88 ) && ( distance < 1.04 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.88;
+                current_pair.distance_max = 1.04;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // O-H
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.88;
+                current_pair.distance_max = 1.04;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
     }
     else if ( ma_one.element().trim() == "S" )
@@ -2204,23 +2590,91 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
         if ( ma_two.element().trim() == "C" )
         {
             if ((distance >  1.26 ) && ( distance < 2.00 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.26;
+                current_pair.distance_max = 2.00;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // O-C or O=C
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 1.26;
+                current_pair.distance_max = 2.00;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
         else if ( ma_two.element().trim() == "H" )
         {
             if ((distance >  0.78 ) && ( distance < 1.24 ))
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.78;
+                current_pair.distance_max = 1.24;
+                current_pair.atom_result = true;
+                ring_atom_diagnostic.push_back(current_pair);
                 return true; // O-H
+            }
             else
+            {
+                current_pair.ma_one_atom = ma_one.id().trim();
+                current_pair.ma_one_element = ma_one.element().trim();
+                current_pair.ma_two_atom = ma_two.id().trim();
+                current_pair.ma_two_element = ma_two.element().trim();
+                current_pair.distance_min = 0.78;
+                current_pair.distance_max = 1.24;
+                current_pair.atom_result = false;
+                ring_atom_diagnostic.push_back(current_pair);
                 return false;
+            }
         }
     }
     else if (( distance > 1.2) && (distance < 2.0))
+    {
+        current_pair.ma_one_atom = ma_one.id().trim();
+        current_pair.ma_one_element = ma_one.element().trim();
+        current_pair.ma_two_atom = ma_two.id().trim();
+        current_pair.ma_two_element = ma_two.element().trim();
+        current_pair.distance_min = 1.2;
+        current_pair.distance_max = 2.0;
+        current_pair.atom_result = true;
+        ring_atom_diagnostic.push_back(current_pair);
         return true; // unknown bond
+    }
     else
+    {
+        current_pair.ma_one_atom = ma_one.id().trim();
+        current_pair.ma_one_element = ma_one.element().trim();
+        current_pair.ma_two_atom = ma_two.id().trim();
+        current_pair.ma_two_element = ma_two.element().trim();
+        current_pair.distance_min = 1.2;
+        current_pair.distance_max = 2.0;
+        current_pair.atom_result = false;
+        ring_atom_diagnostic.push_back(current_pair);
         return false;
-
+    }
+    
+    current_pair.ma_one_atom = ma_one.id().trim();
+    current_pair.ma_one_element = ma_one.element().trim();
+    current_pair.ma_two_atom = ma_two.id().trim();
+    current_pair.ma_two_element = ma_two.element().trim();
+    current_pair.distance_min = 0;
+    current_pair.distance_max = 0;
+    current_pair.atom_result = false;
+    ring_atom_diagnostic.push_back(current_pair);
     return false; // in case we haven't found any match
 }
 

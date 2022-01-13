@@ -304,6 +304,8 @@ namespace privateer {
         int get_ring_cardinality() { return sugar_ring_cardinality; };
         pybind11::list get_cremer_pople_params() { return sugar_cremer_pople_params; };
         bool is_sane() { return sugar_sane; };
+        pybind11::dict get_complete_diagnostics() { return complete_diagnostics; };
+        pybind11::dict get_isolated_issues_from_diagnostics() { return condensed_diagnostics; };
         std::string get_privateer_diagnostic() { return privateer_diagnostic; };
         std::string get_name_full() { return sugar_name_full; };
         std::string get_name_short() { return sugar_name_short; };
@@ -364,6 +366,8 @@ namespace privateer {
         // const clipper::Vec3<ftype>& sugar_mean_plane; // leave this for future implementation.
         pybind11::list sugar_cremer_pople_params; // std::vector<ftype>
         bool sugar_sane;
+        pybind11::dict complete_diagnostics;
+        pybind11::dict condensed_diagnostics;
         std::string privateer_diagnostic;
         std::string sugar_name_full;
         std::string sugar_name_short;

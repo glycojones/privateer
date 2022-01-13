@@ -2022,6 +2022,118 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 
     this->sugar_sane = inputSugar.is_sane();
 
+    clipper::MSugar::Diagnostics detailed_diagnostics = inputSugar.get_detailed_diagnostics();
+    pybind11::list ring_atom_diagnostics;
+    pybind11::list isolated_ring_atom_diagnostics_with_issues;
+    for(int i = 0; i < detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic.size(); i++)
+    {
+        std::string bond = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_element + "-" + detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_element;
+        std::string firstAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_atom;
+        std::string secondAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_atom;
+        float distance_max = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_max;
+        float distance_min = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_min;
+        float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
+        bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
+
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
+                                                "firstAtom"_a=firstAtom, 
+                                                "secondAtom"_a=secondAtom, 
+                                                "maxDistance"_a=distance_max,
+                                                "minDistance"_a=distance_min,
+                                                "calculatedDistance"_a=measured_distance,
+                                                "result"_a=atom_result);
+
+        ring_atom_diagnostics.append(ring_atom_dict);
+
+        if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
+            isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
+    }
+    
+    bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
+    float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
+    float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
+    std::string puckering_comparison_operator = detailed_diagnostics.get_puckering_diagnostics().comparison_operator;
+    bool    puckering_sugar_diag_conformation = detailed_diagnostics.get_puckering_diagnostics().sugar_diag_conformation;
+    float   puckering_reference_puckering = detailed_diagnostics.get_puckering_diagnostics().reference_puckering;
+    float   puckering_calculated_puckering_amplitude = detailed_diagnostics.get_puckering_diagnostics().calculated_puckering_amplitude;
+    bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
+    bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
+
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+                                                    "minValue"_a=puckering_range_min,
+                                                    "maxValue"_a=puckering_range_max, 
+                                                    "operator"_a=puckering_comparison_operator,
+                                                    "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
+                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
+                                                    "initialized"_a=puckering_initialized,
+                                                    "result"_a=puckering_final_result);
+    
+    
+    bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
+    std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
+    std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
+    bool    anomer_initialized = detailed_diagnostics.get_anomer_diagnostics().initialized;
+    bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
+
+
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+                                                    "computedAnomer"_a=anomer_sugar_anomer,
+                                                    "referenceAnomer"_a=anomer_database_sugar_anomer,
+                                                    "initialized"_a=anomer_initialized,
+                                                    "result"_a=anomer_final_result);
+    
+
+    bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
+    std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
+    std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
+    bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
+    bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
+    
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+                                                    "computedChirality"_a=chirality_sugar_handedness,
+                                                    "referenceChirality"_a=chirality_database_sugar_handedness,
+                                                    "initialized"_a=chirality_initialized,
+                                                    "result"_a=chirality_final_result);
+
+    bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
+                                                "result"_a=ring_final_result,
+                                                "ring_atoms"_a=ring_atom_diagnostics);
+    
+    bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
+                                                        "result"_a=isolated_ring_final_result,
+                                                        "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
+
+    
+    this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
+
+
+    if(!detailed_diagnostics.get_puckering_diagnostics().initialized || !detailed_diagnostics.get_puckering_diagnostics().final_result)
+        this->condensed_diagnostics["PuckeringDiagnostics"] = puckering_diagnostics;
+    else
+        this->condensed_diagnostics["PuckeringDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_anomer_diagnostics().initialized || !detailed_diagnostics.get_anomer_diagnostics().final_result)
+        this->condensed_diagnostics["AnomerDiagnostics"] = anomer_diagnostics;
+    else
+        this->condensed_diagnostics["AnomerDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_chirality_diagnostics().initialized || !detailed_diagnostics.get_chirality_diagnostics().final_result)
+        this->condensed_diagnostics["ChiralityDiagnostics"] = chirality_diagnostics;
+    else
+        this->condensed_diagnostics["ChiralityDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_ring_diagnostics().initialized || !detailed_diagnostics.get_ring_diagnostics().final_result)
+        this->condensed_diagnostics["RingDiagnostics"] = ring_diagnostics;
+    else
+        this->condensed_diagnostics["RingDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+    
     std::string sugardiagnostic;
     if(inputSugar.is_sane())
     {
@@ -2173,6 +2285,118 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_cremer_pople_params=sugar_cremer_pople_params;
     this->sugar_sane = inputSugar.second.is_sane();
 
+    clipper::MSugar::Diagnostics detailed_diagnostics = inputSugar.second.get_detailed_diagnostics();
+    pybind11::list ring_atom_diagnostics;
+    pybind11::list isolated_ring_atom_diagnostics_with_issues;
+    for(int i = 0; i < detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic.size(); i++)
+    {
+        std::string bond = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_element + "-" + detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_element;
+        std::string firstAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_atom;
+        std::string secondAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_atom;
+        float distance_max = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_max;
+        float distance_min = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_min;
+        float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
+        bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
+
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
+                                                "firstAtom"_a=firstAtom, 
+                                                "secondAtom"_a=secondAtom, 
+                                                "maxDistance"_a=distance_max,
+                                                "minDistance"_a=distance_min,
+                                                "calculatedDistance"_a=measured_distance,
+                                                "result"_a=atom_result);
+
+        ring_atom_diagnostics.append(ring_atom_dict);
+
+        if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
+            isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
+    }
+    
+    bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
+    float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
+    float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
+    std::string puckering_comparison_operator = detailed_diagnostics.get_puckering_diagnostics().comparison_operator;
+    bool    puckering_sugar_diag_conformation = detailed_diagnostics.get_puckering_diagnostics().sugar_diag_conformation;
+    float   puckering_reference_puckering = detailed_diagnostics.get_puckering_diagnostics().reference_puckering;
+    float   puckering_calculated_puckering_amplitude = detailed_diagnostics.get_puckering_diagnostics().calculated_puckering_amplitude;
+    bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
+    bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
+
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+                                                    "minValue"_a=puckering_range_min,
+                                                    "maxValue"_a=puckering_range_max, 
+                                                    "operator"_a=puckering_comparison_operator,
+                                                    "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
+                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
+                                                    "initialized"_a=puckering_initialized,
+                                                    "result"_a=puckering_final_result);
+    
+    
+    bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
+    std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
+    std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
+    bool    anomer_initialized = detailed_diagnostics.get_anomer_diagnostics().initialized;
+    bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
+
+
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+                                                    "computedAnomer"_a=anomer_sugar_anomer,
+                                                    "referenceAnomer"_a=anomer_database_sugar_anomer,
+                                                    "initialized"_a=anomer_initialized,
+                                                    "result"_a=anomer_final_result);
+    
+
+    bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
+    std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
+    std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
+    bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
+    bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
+    
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+                                                    "computedChirality"_a=chirality_sugar_handedness,
+                                                    "referenceChirality"_a=chirality_database_sugar_handedness,
+                                                    "initialized"_a=chirality_initialized,
+                                                    "result"_a=chirality_final_result);
+
+    bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
+                                                "result"_a=ring_final_result,
+                                                "ring_atoms"_a=ring_atom_diagnostics);
+    
+    bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
+                                                        "result"_a=isolated_ring_final_result,
+                                                        "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
+
+    
+    this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
+
+
+    if(!detailed_diagnostics.get_puckering_diagnostics().initialized || !detailed_diagnostics.get_puckering_diagnostics().final_result)
+        this->condensed_diagnostics["PuckeringDiagnostics"] = puckering_diagnostics;
+    else
+        this->condensed_diagnostics["PuckeringDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_anomer_diagnostics().initialized || !detailed_diagnostics.get_anomer_diagnostics().final_result)
+        this->condensed_diagnostics["AnomerDiagnostics"] = anomer_diagnostics;
+    else
+        this->condensed_diagnostics["AnomerDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_chirality_diagnostics().initialized || !detailed_diagnostics.get_chirality_diagnostics().final_result)
+        this->condensed_diagnostics["ChiralityDiagnostics"] = chirality_diagnostics;
+    else
+        this->condensed_diagnostics["ChiralityDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_ring_diagnostics().initialized || !detailed_diagnostics.get_ring_diagnostics().final_result)
+        this->condensed_diagnostics["RingDiagnostics"] = ring_diagnostics;
+    else
+        this->condensed_diagnostics["RingDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
     std::string sugardiagnostic;
     if(inputSugar.second.is_sane())
     {
@@ -2296,6 +2520,118 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->sugar_cremer_pople_params=sugar_cremer_pople_params;
 
     this->sugar_sane = inputSugar.is_sane();
+
+   clipper::MSugar::Diagnostics detailed_diagnostics = inputSugar.get_detailed_diagnostics();
+    pybind11::list ring_atom_diagnostics;
+    pybind11::list isolated_ring_atom_diagnostics_with_issues;
+    for(int i = 0; i < detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic.size(); i++)
+    {
+        std::string bond = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_element + "-" + detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_element;
+        std::string firstAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_one_atom;
+        std::string secondAtom = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].ma_two_atom;
+        float distance_max = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_max;
+        float distance_min = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].distance_min;
+        float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
+        bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
+
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
+                                                "firstAtom"_a=firstAtom, 
+                                                "secondAtom"_a=secondAtom, 
+                                                "maxDistance"_a=distance_max,
+                                                "minDistance"_a=distance_min,
+                                                "calculatedDistance"_a=measured_distance,
+                                                "result"_a=atom_result);
+
+        ring_atom_diagnostics.append(ring_atom_dict);
+
+        if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
+            isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
+    }
+    
+    bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
+    float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
+    float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
+    std::string puckering_comparison_operator = detailed_diagnostics.get_puckering_diagnostics().comparison_operator;
+    bool    puckering_sugar_diag_conformation = detailed_diagnostics.get_puckering_diagnostics().sugar_diag_conformation;
+    float   puckering_reference_puckering = detailed_diagnostics.get_puckering_diagnostics().reference_puckering;
+    float   puckering_calculated_puckering_amplitude = detailed_diagnostics.get_puckering_diagnostics().calculated_puckering_amplitude;
+    bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
+    bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
+
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+                                                    "minValue"_a=puckering_range_min,
+                                                    "maxValue"_a=puckering_range_max, 
+                                                    "operator"_a=puckering_comparison_operator,
+                                                    "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
+                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
+                                                    "initialized"_a=puckering_initialized,
+                                                    "result"_a=puckering_final_result);
+    
+    
+    bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
+    std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
+    std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
+    bool    anomer_initialized = detailed_diagnostics.get_anomer_diagnostics().initialized;
+    bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
+
+
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+                                                    "computedAnomer"_a=anomer_sugar_anomer,
+                                                    "referenceAnomer"_a=anomer_database_sugar_anomer,
+                                                    "initialized"_a=anomer_initialized,
+                                                    "result"_a=anomer_final_result);
+    
+
+    bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
+    std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
+    std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
+    bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
+    bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
+    
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+                                                    "computedChirality"_a=chirality_sugar_handedness,
+                                                    "referenceChirality"_a=chirality_database_sugar_handedness,
+                                                    "initialized"_a=chirality_initialized,
+                                                    "result"_a=chirality_final_result);
+
+    bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
+                                                "result"_a=ring_final_result,
+                                                "ring_atoms"_a=ring_atom_diagnostics);
+    
+    bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
+    bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
+    
+    auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
+                                                        "result"_a=isolated_ring_final_result,
+                                                        "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
+
+    
+    this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
+
+
+    if(!detailed_diagnostics.get_puckering_diagnostics().initialized || !detailed_diagnostics.get_puckering_diagnostics().final_result)
+        this->condensed_diagnostics["PuckeringDiagnostics"] = puckering_diagnostics;
+    else
+        this->condensed_diagnostics["PuckeringDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_anomer_diagnostics().initialized || !detailed_diagnostics.get_anomer_diagnostics().final_result)
+        this->condensed_diagnostics["AnomerDiagnostics"] = anomer_diagnostics;
+    else
+        this->condensed_diagnostics["AnomerDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_chirality_diagnostics().initialized || !detailed_diagnostics.get_chirality_diagnostics().final_result)
+        this->condensed_diagnostics["ChiralityDiagnostics"] = chirality_diagnostics;
+    else
+        this->condensed_diagnostics["ChiralityDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
+
+    if(!detailed_diagnostics.get_ring_diagnostics().initialized || !detailed_diagnostics.get_ring_diagnostics().final_result)
+        this->condensed_diagnostics["RingDiagnostics"] = ring_diagnostics;
+    else
+        this->condensed_diagnostics["RingDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
 
     std::string sugardiagnostic;
     if(inputSugar.is_sane())
@@ -3870,6 +4206,8 @@ void init_pyanalysis(py::module& m)
         .def("get_ring_cardinality", &pa::CarbohydrateStructure::get_ring_cardinality)
         .def("get_cremer_pople_params", &pa::CarbohydrateStructure::get_cremer_pople_params)
         .def("is_sane", &pa::CarbohydrateStructure::is_sane)
+        .def("get_complete_diagnostics", &pa::CarbohydrateStructure::get_complete_diagnostics)
+        .def("get_isolated_issues_from_diagnostics", &pa::CarbohydrateStructure::get_isolated_issues_from_diagnostics)
         .def("get_privateer_diagnostic", &pa::CarbohydrateStructure::get_privateer_diagnostic)
         .def("get_name_full", &pa::CarbohydrateStructure::get_name_full)
         .def("get_name_short", &pa::CarbohydrateStructure::get_name_short)

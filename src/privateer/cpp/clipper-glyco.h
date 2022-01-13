@@ -139,6 +139,81 @@ namespace clipper
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
+            class Diagnostics 
+            {
+                public:
+
+                    struct sugar_diag_puckering_diagnostics_template
+                    {
+                        bool sugar_found_db;
+                        float range_min;
+                        float range_max;
+                        std::string comparison_operator;
+                        bool sugar_diag_conformation;
+                        float reference_puckering;
+                        float calculated_puckering_amplitude;
+                        bool initialized = false;
+                        bool final_result;
+                    };
+
+                    struct sugar_diag_anomer_diagnostics_template
+                    {
+                        bool sugar_found_db;
+                        std::string sugar_anomer;
+                        std::string database_sugar_anomer;
+                        bool initialized = false;
+                        bool final_result;
+                    };
+
+                    struct sugar_diag_chirality_diagnostics_template
+                    {
+                        bool sugar_found_db;
+                        std::string sugar_handedness;
+                        std::string database_sugar_handedness;
+                        bool initialized = false;
+                        bool final_result;
+                    };
+
+                    struct sugar_diag_ring_diagnostics_atom_pair
+                    {
+                        std::string ma_one_atom;
+                        std::string ma_two_atom;
+                        std::string ma_one_element;
+                        std::string ma_two_element;
+                        float distance_min;
+                        float distance_max;
+                        float measured_distance;
+                        bool atom_result;
+                    };
+
+                    struct sugar_diag_ring_diagnostics_template
+                    {
+                        bool initialized = true;
+                        bool final_result;
+                        std::vector<sugar_diag_ring_diagnostics_atom_pair> ring_atom_diagnostic;
+                    };
+
+                    Diagnostics () { this->diagnostic_complete = false; };
+                    Diagnostics ( bool sugar_diagnostic_complete ) { this->diagnostic_complete = sugar_diagnostic_complete; };
+                    void update_diagnostic_status ( bool sugar_diagnostic_complete ) { this->diagnostic_complete = sugar_diagnostic_complete; }
+                    void update_sugar_sane_status ( bool sugar_sane_status ) { this->sugar_sane = sugar_sane_status; }
+
+
+                    sugar_diag_puckering_diagnostics_template get_puckering_diagnostics() { return sugar_diag_puckering_diagnostics; };
+                    sugar_diag_anomer_diagnostics_template get_anomer_diagnostics() { return sugar_diag_anomer_diagnostics; };
+                    sugar_diag_chirality_diagnostics_template get_chirality_diagnostics() { return sugar_diag_chirality_diagnostics; };
+                    sugar_diag_ring_diagnostics_template get_ring_diagnostics() { return sugar_diag_ring_diagnostics; };
+
+                    sugar_diag_puckering_diagnostics_template sugar_diag_puckering_diagnostics;
+                    sugar_diag_anomer_diagnostics_template sugar_diag_anomer_diagnostics;
+                    sugar_diag_chirality_diagnostics_template sugar_diag_chirality_diagnostics;
+                    sugar_diag_ring_diagnostics_template sugar_diag_ring_diagnostics;
+                private:
+                    bool diagnostic_complete;
+                    bool sugar_sane;
+                    
+            };
+
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
 
             const clipper::String conformation_name() const { return clipper::data::conformational_landscape[sugar_conformation]; }
@@ -277,6 +352,8 @@ namespace clipper
 
             void set_context ( clipper::String context ) { this->sugar_context = context; }
 
+            Diagnostics get_detailed_diagnostics () const { return sugar_diagnostics; };
+
         private:
 
             typedef std::vector< std::pair< clipper::MAtom, clipper::MAtom > > visited_arcs;
@@ -308,7 +385,7 @@ namespace clipper
 
 
             // We'll use the sugar_ prefix throughout the class for private members
-
+            Diagnostics                     sugar_diagnostics;
             const MiniMol*                  sugar_parent_molecule;
             const MAtomNonBond*             sugar_parent_molecule_nonbond;
             Coord_orth                      sugar_centre;
@@ -373,7 +450,7 @@ namespace clipper
             bool                                            is_stereocentre ( const clipper::MAtom&, const clipper::MiniMol& ); // accesses object
             bool                                            is_part_of_ring ( const clipper::MAtom&, const std::vector<clipper::MAtom> ) const;
             bool                                            bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
-            bool                                            bonded ( const clipper::MAtom&, const clipper::MAtom& ) const;
+            bool                                            bonded ( const clipper::MAtom&, const clipper::MAtom&, std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair>& ring_atom_diagnostic ) const;
             bool                                            lookup_database ( clipper::String );
             bool                                            examine_ring();
 
