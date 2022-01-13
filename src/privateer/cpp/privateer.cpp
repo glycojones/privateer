@@ -2075,10 +2075,10 @@ int main(int argc, char** argv)
 
 							for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
 							{
-							if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
-                                list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                                list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
-                                list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
+							if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                                    list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
+                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                                    list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
 								{
 									if ( list_of_glycans[i].get_type() == "n-glycan" )
 									{
@@ -2790,10 +2790,10 @@ int main(int argc, char** argv)
 
 							for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
 							{
-								if ( list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
-                                    list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
-                                    list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
+								if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                                        list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
+                                        list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                                        list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
 								{
 									if ( list_of_glycans[i].get_type() == "n-glycan" )
 									{
