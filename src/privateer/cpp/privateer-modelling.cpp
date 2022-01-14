@@ -30,7 +30,7 @@ namespace privateer
             { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
-            // { "TRP", "CD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            { "TRP", "CD1", "CG", "CB", 100.0,  15.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
