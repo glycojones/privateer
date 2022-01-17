@@ -648,7 +648,14 @@ const sugar_database_entry sugar_database[] =
                                                 "DA",
                                                 "DG",
                                                 "DC",
-                                                "DT" 
+                                                "DT",
+                                                "DU",
+                                                "A",
+                                                "G",
+                                                "C",
+                                                "T",
+                                                "U"
+
         };
 
         if ( std::find(nucleic_acids.begin(), nucleic_acids.end(), name) != nucleic_acids.end() )

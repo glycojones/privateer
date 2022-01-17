@@ -5139,7 +5139,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
     {
         std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > linked = get_contacts ( potential_rootless_polysaccharides[i].first, potential_rootless_polysaccharides[i].second ) ;
 
-        if(linked.empty())
+        if(linked.empty() && !clipper::data::is_nucleic_acid(potential_rootless_polysaccharides[i].first.type().trim()))
         {
             if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
             {
