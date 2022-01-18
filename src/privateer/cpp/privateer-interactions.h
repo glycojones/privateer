@@ -27,7 +27,7 @@
 
 namespace privateer {
 	namespace interactions {
-		void hydrogenate_input_model(std::string input_model);
+		void hydrogenate_input_model(std::string input_model, std::string output_path);
 
 		class HBond 
 		{
@@ -202,7 +202,7 @@ namespace privateer {
 				};
 
 				HBondsParser() { }
-				HBondsParser(std::string& input_model);
+				HBondsParser(std::string& input_model, std::string output_path = "undefined");
 				clipper::MiniMol mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model);
 				hb_type get_h_bond_type(clipper::MAtom& input_atom, std::string input_residue_type);
 				bool is_connected_to_hydrogen_donor(std::string atom_name, std::vector<residue_monomer_library_chem_comp>& residue_atoms);

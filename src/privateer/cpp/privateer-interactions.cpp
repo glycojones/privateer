@@ -12,12 +12,16 @@
 namespace privateer {
 	namespace interactions {
         
-        void hydrogenate_input_model(std::string input_model)
+        void hydrogenate_input_model(std::string input_model, std::string output_path)
         {
             std::cout << "Hydrogenating '" << input_model << "' using project-gemmi/gemmi third party library." << std::endl;
             try 
             {
-                std::string output = "hydrogenated_input_model.pdb";
+                std::string output; 
+                if(output == "undefined")
+                    output = "hydrogenated_input_model.pdb";
+                else 
+                    output = output_path;
                 gemmi::HydrogenChange h_change = gemmi::HydrogenChange::ReAdd;
                 std::string monomer_dir = privateer::restraints::check_monlib_access();
                 if (monomer_dir.empty())
@@ -216,12 +220,16 @@ namespace privateer {
             return results;
         }
 
-        privateer::interactions::HBondsParser::HBondsParser(std::string& input_model)
+        privateer::interactions::HBondsParser::HBondsParser(std::string& input_model, std::string output_path)
         {
-            hydrogenate_input_model(input_model);
+            hydrogenate_input_model(input_model, output_path);
             
             clipper::MMDBfile mfile;
-            clipper::String clipperfied_input_model_path = "hydrogenated_input_model.pdb";
+            clipper::String clipperfied_input_model_path;
+            if(output_path == "undefined")
+                clipperfied_input_model_path = "hydrogenated_input_model.pdb";
+            else
+                clipperfied_input_model_path = output_path;
             privateer::util::read_coordinate_file_mtz(mfile, this->hydrogenated_input_model, clipperfied_input_model_path, true);
 			
             this->privateer::interactions::HBondsParser::import_ener_lib();
