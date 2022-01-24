@@ -73,12 +73,12 @@ namespace privateer {
     {
       public:
         GlycosylationInteractions() { }
-        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file) {
+        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds) {
           this->input_path = path_to_model_file;
           this->output_path = path_to_output_file;
-          this->read_from_file(path_to_model_file, path_to_output_file);
+          this->read_from_file(path_to_model_file, path_to_output_file, enableHBonds);
         }
-        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file);
+        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds);
         std::string get_path_of_model_file_used ( ) { return input_path; };
         
         pybind11::list get_all_detected_interactions();

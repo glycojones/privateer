@@ -339,7 +339,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file) 
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds) 
 {
     if(path_to_model_file == "undefined")
     {
@@ -355,8 +355,13 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
 
     this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
 
-    this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
-    this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file);
+    if(!mglycology.get_list_of_glycans().empty())
+    {
+        if(enableHBonds)
+            this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
+
+        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file);
+    }
 }
 
 pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detected_interactions()
@@ -596,7 +601,12 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
     std::string glycanWURCS = inputGlycan.generate_wurcs();
     std::pair < clipper::MMonomer, clipper::MSugar > root = inputGlycan.get_root();
     clipper::MSugar rootSugar = root.second;
-    clipper::MMonomer rootMMonomer = root.first;
+    clipper::MMonomer rootMMonomer;
+
+    if(root.first.size() > 0)
+        rootMMonomer = root.first;
+    else
+        rootMMonomer = rootSugar;
 
     if(rootSugar.ring_members().size() == 5 || rootSugar.ring_members().size() == 6)
     {
@@ -632,7 +642,6 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
             // }
             // else return false;
         });
-
         int rootMMonomerPolymerIndex;
         int rootMMonomerResidueIndex;
 
@@ -657,12 +666,10 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                 if(search_result_already_accounted_for == std::end(refined_contact_results))                
                     refined_contact_results.push_back(contacts[i]);
             }
-            else if ((  clipper::data::is_amino_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ||
-                        clipper::data::is_nucleic_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ) &&
-                        inputGlycan.get_chain().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
+            else if ((  inputGlycan.get_chain().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
                         rootMMonomer.id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() && 
                         rootMMonomer.type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() && 
-                        rootMMonomer.seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) 
+                        rootMMonomer.seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() )) 
             {
                 rootMMonomerPolymerIndex = contacts[i].polymer();
                 rootMMonomerResidueIndex = contacts[i].monomer();
@@ -777,15 +784,12 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                     }
                 }
             }
-            
             pybind11::list SequenceList;
             for(int i = 0; i < ChainInfo.size(); i++)
             {
                 SequenceInfo current_element = ChainInfo[i];
-
                 if(current_element.smallest_residue_index == -42069 || current_element.biggest_residue_index == -42069)
                     continue;
-
                 std::string tmp_partial_sequence;
                 for(int residue = current_element.smallest_residue_index; residue <= current_element.biggest_residue_index; residue++)
                 {
@@ -798,7 +802,6 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                 SequenceList.append(sequence_dict);
             }
             result["SequenceList"] = SequenceList;
-
             pybind11::list contacts_list;
             for(int i = 0; i < refined_contact_results.size(); i++)
             {
@@ -823,7 +826,6 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                     contacts_list.append(contact_dict);
                 }
             }
-
             
             result["Contacts"] = contacts_list;
         }
@@ -4135,7 +4137,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined")
+        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHBonds")=true)
         .def("get_path_of_model_file_used",  &pa::GlycosylationInteractions::get_path_of_model_file_used)
         .def("get_all_detected_interactions",  &pa::GlycosylationInteractions::get_all_detected_interactions)
         .def("get_all_detected_hbonds",  &pa::GlycosylationInteractions::get_all_detected_hbonds)
